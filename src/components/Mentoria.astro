@@ -1,0 +1,44 @@
+---
+// Mentoria: 8 entregas.
+const itens = [
+  { n: "/01", h: "Decisão e prioridades", p: "Identificar quais decisões realmente importam, o que precisa ser priorizado e onde concentrar energia para gerar avanço real." },
+  { n: "/02", h: "Organização da complexidade", p: "Transformar excesso de informações, problemas e possibilidades em direção clara e prática." },
+  { n: "/03", h: "Estratégia, comunicação e execução", p: "Conectar o que se quer construir, como isso é comunicado e como vira movimento concreto." },
+  { n: "/04", h: "Posicionamento de autoridade", p: "Definir pelo que se quer ser reconhecido, qual território ocupar e como comunicar valor de forma objetiva." },
+  { n: "/05", h: "LinkedIn estratégico", p: "Transformar experiência, resultados e visão de negócio em presença relevante: perfil, narrativa e conteúdo alinhados ao objetivo." },
+  { n: "/06", h: "Narrativa profissional ou empresarial", p: "Explicar com clareza quem é, o que faz, para quem gera valor e por que deve ser levado a sério." },
+  { n: "/07", h: "Crescimento com percepção de valor", p: "Não apenas fazer bem, mas ser reconhecido pelo valor certo, pelas pessoas certas e no mercado certo." },
+  { n: "/08", h: "Desenvolvimento de visão executiva", p: "Enxergar o negócio de cima: conectar as partes, antecipar consequências e decidir como quem ocupa a cadeira de liderança." },
+];
+---
+
+<section class="ment" id="mentoria">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Mentoria</span>
+    </div>
+    <div class="ment-head">
+      <h2 class="reveal">O que entrego como mentoria.</h2>
+      <p class="reveal d1">
+        Mentoria para <b>empresários, executivos, heads e gerentes</b> que
+        precisam transformar excesso de informação em direção clara e crescer
+        sendo reconhecidos pelo valor certo.
+      </p>
+    </div>
+    <div class="mgrid">
+      {
+        itens.map((i) => (
+          <div class="mitem reveal">
+            <div class="mn">{i.n}</div>
+            <h3>{i.h}</h3>
+            <p>{i.p}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="ment-cta">
+      <a class="btn btn-violet" href="#contato">Quero iniciar uma mentoria</a>
+      <span class="who">Encontros individuais · tema de atuação definido em conjunto</span>
+    </div>
+  </div>
+</section>

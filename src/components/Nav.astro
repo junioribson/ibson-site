@@ -1,0 +1,86 @@
+---
+import Logo from "./Logo.astro";
+
+const links = [
+  { href: "#sobre", label: "Sobre", id: "sobre" },
+  { href: "#cases", label: "Cases", id: "cases" },
+  { href: "#proliferarte", label: "ProliferArte", id: "proliferarte" },
+  { href: "#repertorio", label: "Repertório", id: "repertorio" },
+  { href: "#mentoria", label: "Mentoria", id: "mentoria" },
+  { href: "#palestras", label: "Palestras", id: "palestras" },
+  { href: "#artigos", label: "Artigos", id: "artigos" },
+  { href: "#contato", label: "Contato", id: "contato" },
+];
+---
+
+<nav id="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">
+      <Logo class="brand-logo" />
+      <span><b>IBSON JUNIOR</b><span class="bs">Estrategista Digital</span></span>
+    </a>
+    <div class="nav-links">
+      {links.map((l) => <a href={l.href} data-s={l.id}>{l.label}</a>)}
+    </div>
+    <div class="nav-r">
+      <a class="nav-cta" href="#contato">Conversar →</a>
+      <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu">
+  {links.map((l) => <a href={l.href}><span>{l.label}</span></a>)}
+  <div class="mfoot">IBSONJUNIOR.COM.BR · ESTRATÉGIA · COGNIÇÃO · ATENÇÃO</div>
+</div>
+
+<style>
+  .brand-logo { color: var(--purple); }
+</style>
+
+<script>
+  const nav = document.getElementById("nav");
+  const hamb = document.getElementById("hamb");
+  const mmenu = document.getElementById("mmenu");
+
+  // Estado "scrolled" da nav
+  const onScroll = () => {
+    if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Menu hambúrguer
+  const closeMenu = () => {
+    document.body.classList.remove("menu", "lock");
+    hamb?.setAttribute("aria-expanded", "false");
+  };
+  hamb?.addEventListener("click", () => {
+    const open = document.body.classList.toggle("menu");
+    document.body.classList.toggle("lock", open);
+    hamb.setAttribute("aria-expanded", String(open));
+  });
+  mmenu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Link ativo conforme a seção visível
+  const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".nav-links a")];
+  const ids = ["sobre", "cases", "proliferarte", "repertorio", "mentoria", "palestras", "artigos", "contato"];
+  const spy = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          navLinks.forEach((l) => l.classList.toggle("on", l.dataset.s === e.target.id));
+        }
+      }),
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+  ids
+    .map((i) => document.getElementById(i))
+    .filter((el): el is HTMLElement => Boolean(el))
+    .forEach((s) => spy.observe(s));
+</script>

@@ -1,0 +1,70 @@
+---
+// Artigos: cards com a CAPA REAL DO ARTIGO + título + link para o LinkedIn.
+// Ponha `cover` com o caminho da capa real (ex.: "/assets/artigos/estrategia.jpg") quando chegar;
+// até lá cada card usa um placeholder em degradê.
+const BASE = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/";
+
+interface Artigo {
+  k: string;
+  t: string;
+  url: string;
+  cover?: string | null;
+}
+
+const artigos: Artigo[] = [
+  { k: "Estratégia", t: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca.", url: BASE, cover: null },
+  { k: "Produtividade", t: "Reuniões-placebo e o custo invisível do multitasking", url: BASE, cover: null },
+  { k: "Atenção", t: "A velocidade virou virtude, e talvez aí comece o problema", url: BASE, cover: null },
+  { k: "IA & Mídia", t: "A IA pode ser motor. O humano precisa continuar no volante.", url: BASE, cover: null },
+  { k: "Jornalismo", t: "Todo mundo publica. Poucos informam.", url: BASE, cover: null },
+  { k: "Liderança", t: "Quando tudo parece urgente, critério vira liderança.", url: BASE, cover: null },
+];
+
+const grads = [
+  "linear-gradient(140deg,#2A0148,#5B2EE6)",
+  "linear-gradient(140deg,#1C0E04,#44026F)",
+  "linear-gradient(140deg,#44026F,#C94F8A)",
+  "linear-gradient(140deg,#150026,#5B2EE6)",
+  "linear-gradient(140deg,#2A0148,#7B57F0)",
+  "linear-gradient(140deg,#1C0E04,#5B2EE6)",
+];
+---
+
+<section class="arts" id="artigos">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Artigos</span>
+    </div>
+    <div class="arts-head reveal">
+      <h2>O pensamento, por extenso.</h2>
+      <div class="meta">Publicados no LinkedIn ↗</div>
+    </div>
+    <div class="agrid">
+      {
+        artigos.map((a, i) => (
+          <a class="acard reveal" href={a.url} target="_blank" rel="noopener">
+            <div class="cov">
+              {a.cover ? (
+                <img loading="lazy" src={a.cover} alt={a.t} />
+              ) : (
+                <div class="cov-ph" style={`background:${grads[i % grads.length]}`}>
+                  <span>IB</span>
+                </div>
+              )}
+            </div>
+            <div class="ov">
+              <div class="ak">{a.k}</div>
+              <h3>{a.t}</h3>
+              <span class="rd">Ler no LinkedIn ↗</span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+    <div class="arts-foot reveal">
+      <a href={BASE} target="_blank" rel="noopener">
+        Ver todos no LinkedIn <span>↗</span>
+      </a>
+    </div>
+  </div>
+</section>

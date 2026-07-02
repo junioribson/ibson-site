@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Tokens de design (CLAUDE.md) expostos como utilitários Tailwind v4.
+   Ex.: bg-cream, text-ink, text-violet, font-mono, font-sans.
+   ========================================================================== */
+@theme {
+  /* Paleta */
+  --color-cream: #EBE3D1;
+  --color-cream-hi: #F3EEE0;
+  --color-ink: #1C0E04;
+  --color-ink-soft: #5a4a39;
+  --color-purple: #44026F;
+  --color-purple-deep: #2A0148;
+  --color-night: #150026;
+  --color-violet: #5B2EE6;
+  --color-violet-2: #7B57F0;
+  --color-gold: #B0925E;
+  --color-magenta: #C94F8A;
+  --color-tint: #E9DCF7;
+
+  /* Tipografia */
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Layout editorial */
+  --spacing-gut: 40px;
+  --breakpoint-nav: 1180px;
+}
+
+/* Variáveis auxiliares + apelidos curtos das cores.
+   Os apelidos apontam para os tokens Tailwind, mantendo cor única de verdade. */
+:root {
+  --cream: var(--color-cream);
+  --cream-hi: var(--color-cream-hi);
+  --ink: var(--color-ink);
+  --ink-soft: var(--color-ink-soft);
+  --purple: var(--color-purple);
+  --purple-deep: var(--color-purple-deep);
+  --night: var(--color-night);
+  --violet: var(--color-violet);
+  --violet-2: var(--color-violet-2);
+  --magenta: var(--color-magenta);
+  --gold: var(--color-gold);
+  --tint: var(--color-tint);
+
+  --hair: rgba(28, 14, 4, 0.16);
+  --hair-2: rgba(28, 14, 4, 0.08);
+  --maxw: 1320px;
+  --gut: 40px;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body.lock { overflow: hidden; }
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--color-violet); color: #fff; }
+:focus-visible { outline: 2px solid var(--color-violet); outline-offset: 3px; }
+
+/* ==========================================================================
+   Helpers editoriais reaproveitados nos componentes
+   ========================================================================== */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gut); }
+.mono { font-family: var(--font-mono); }
+.display { font-weight: 800; letter-spacing: -0.04em; line-height: 0.95; }
+.accent { color: var(--color-violet); }
+
+/* Grão de papel sobre todo o fundo creme */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Cabeçalho de seção (bolinha + régua + rótulo mono) */
+.shead { display: flex; align-items: center; gap: 14px; margin-bottom: 40px; }
+.shead .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--color-violet); flex: 0 0 auto; }
+.shead .rule { flex: 0 0 50px; height: 1px; background: var(--color-ink); opacity: 0.45; }
+.shead .lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--color-ink-soft); }
+
+/* Botões */
+.btn { font-weight: 700; font-size: 14.5px; border-radius: 2px; padding: 15px 26px; text-align: center; display: inline-block; transition: transform .25s var(--e), background .3s, color .3s, box-shadow .3s; }
+.btn-fill { background: var(--color-ink); color: var(--color-cream); }
+.btn-fill:hover { background: var(--color-violet); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(91,46,230,.3); }
+.btn-line { border: 1.5px solid var(--color-ink); }
+.btn-line:hover { background: var(--color-ink); color: var(--color-cream); transform: translateY(-2px); }
+.btn-violet { background: var(--color-violet); color: #fff; }
+.btn-violet:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(91,46,230,.5); }
+.btn-ghost { border: 1.5px solid rgba(255,255,255,.42); color: var(--color-cream); }
+.btn-ghost:hover { background: var(--color-cream); color: var(--color-ink); transform: translateY(-2px); }
+
+/* Animação de entrada (reveal) */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--e), transform .9s var(--e); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; }
+.reveal.d2 { transition-delay: .16s; }
+.reveal.d3 { transition-delay: .24s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}

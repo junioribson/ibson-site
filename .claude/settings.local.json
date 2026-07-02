@@ -14,7 +14,15 @@
       "Bash(command -v volta)",
       "Read(//Users/ibsonjunior/**)",
       "Bash(sw_vers)",
-      "Bash(curl -sI --max-time 10 https://nodejs.org/dist/index.json)"
+      "Bash(curl -sI --max-time 10 https://nodejs.org/dist/index.json)",
+      "Bash(git mv *)",
+      "Bash(awk 'NR>=55 && NR<=180 {print NR\": \"$0}' reference/index.reference.html)",
+      "Bash(awk 'NR>=181 && NR<=357 {print NR\": \"$0}' reference/index.reference.html)",
+      "Bash(awk 'NR>=358 && NR<=637 {line=$0; gsub\\(/data:image\\\\/[a-zA-Z0-9;,+/=]*/,\"«IMG»\",line\\); print NR\": \"line}' reference/index.reference.html)",
+      "Bash(perl -pe 's{data:image/[A-Za-z0-9;,+/=]+}{«IMG»}g')",
+      "Bash(perl -pe 's{«IMG»[^\"]*}{«IMG»}g')",
+      "Bash(awk 'NR>=40 && NR<=54 {print NR\": \"$0}' reference/index.reference.html)",
+      "Bash(git add *)"
     ]
   }
 }

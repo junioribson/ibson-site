@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "site",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "4321"],
+      "runtimeExecutable": "/Users/ibsonjunior/.local/opt/node/bin/node",
+      "runtimeArgs": ["node_modules/astro/astro.js", "dev", "--host", "--port", "4321"],
       "port": 4321
     }
   ]
