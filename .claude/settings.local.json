@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk 'NR>=655 && NR<=695 {line=$0; gsub\\(/data:image[^\"]*/,\"«BASE64»\",line\\); print NR\": \"substr\\(line,1,200\\)}' index.html)",
+      "Bash(awk 'NR>=455 && NR<=490 {line=$0; gsub\\(/data:image[^\"]*/,\"«IMG»\",line\\); print NR\": \"substr\\(line,1,160\\)}' index.html)",
+      "Bash(awk 'NR>=434 && NR<=455 {line=$0; gsub\\(/data:image[^\"]{40,}/,\"«BASE64-IMG»\",line\\); print NR\": \"substr\\(line,1,140\\)}' index.html)",
+      "Bash(git init *)",
+      "Bash(git config *)",
+      "Bash(npm -v)",
+      "Read(//opt/homebrew/bin/**)",
+      "Read(//opt/homebrew/**)",
+      "Bash(command -v brew)",
+      "Bash(brew --version)",
+      "Bash(command -v volta)",
+      "Read(//Users/ibsonjunior/**)",
+      "Bash(sw_vers)",
+      "Bash(curl -sI --max-time 10 https://nodejs.org/dist/index.json)"
+    ]
+  }
+}
