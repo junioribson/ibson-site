@@ -3,9 +3,21 @@
 > Idioma: responda sempre em português do Brasil.
 
 ## Objetivo
-Site de marca pessoal de Ibson Junior: estrategista digital, mentor, palestrante e
-conselheiro em formação. É uma obra de marca pessoal, nível estúdio sênior. O site deve
-transmitir uma mensagem poderosa, não parecer template. Desvinculado de qualquer empregador atual.
+Site de marca pessoal de Ibson Junior: uma mente executiva madura sobre consciência,
+decisão, liderança, conteúdo, IA, cultura e responsabilidade em ambientes de pressão.
+É uma obra de marca pessoal, nível estúdio sênior. O site deve transmitir uma mensagem
+poderosa, não parecer template. Desvinculado de qualquer empregador atual.
+
+## Posicionamento (território)
+Território central: consciência aplicada à vida, ao trabalho, às relações e às decisões
+em tempos complexos. Tese-mãe: em um tempo em que todos disputam atenção, a diferença
+está em quem ainda consegue sustentar critério. Apresentar Ibson como executivo de
+conteúdo, liderança e comunicação (não reduzir a "estrategista digital" nem a marketing/
+tráfego/creator). Voz madura, humana, direta, com repertório, sem autopromoção. Evitar
+tom de guru, coach motivacional, frases genéricas e texto com cara de IA. Ordem das
+seções: Hero, Tese, Sobre, Cases, ProliferArte, Trajetória em imagens, Artigos,
+Repertório, Mentoria, Palestras, Vídeos, Contato. Camada de conteúdo editável em
+`src/data/content.ts`. Fatos incertos ficam com comentário TODO no código, nunca inventar.
 
 ## Stack
 - Astro + Tailwind (site estático, rápido, ótimo para deploy).
@@ -15,7 +27,7 @@ transmitir uma mensagem poderosa, não parecer template. Desvinculado de qualque
 
 ## Regras inegociáveis (Don'ts)
 - NUNCA usar travessão (— ou –) em nenhum texto. Usar vírgula, ponto, dois-pontos ou parênteses.
-- NÃO mencionar o empregador atual nem cargo atual. O site é sobre o repertório dele.
+- NUNCA nomear o empregador atual (ex.: Football Sites, Better Collective). O cargo genérico "Diretor de Conteúdo no Brasil" pode aparecer de forma breve e discreta, apenas como contexto de trajetória, sem protagonismo. O site é sobre o repertório dele.
 - NÃO usar tom imperativo ("transforme"). Usar linguagem narrativa e observacional.
 - NÃO usar arquétipos como logos desenhados. Arquétipos são imagens fotorrealistas de fundo.
 - NÃO deixar quebrar no mobile: testar sempre no preview ao vivo em 3 larguras.

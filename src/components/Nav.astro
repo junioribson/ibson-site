@@ -1,29 +1,21 @@
 ---
 import Logo from "./Logo.astro";
+import { nav } from "../data/content";
 
-const links = [
-  { href: "#sobre", label: "Sobre", id: "sobre" },
-  { href: "#cases", label: "Cases", id: "cases" },
-  { href: "#proliferarte", label: "ProliferArte", id: "proliferarte" },
-  { href: "#repertorio", label: "Repertório", id: "repertorio" },
-  { href: "#mentoria", label: "Mentoria", id: "mentoria" },
-  { href: "#palestras", label: "Palestras", id: "palestras" },
-  { href: "#artigos", label: "Artigos", id: "artigos" },
-  { href: "#contato", label: "Contato", id: "contato" },
-];
+const links = nav.links;
 ---
 
 <nav id="nav">
   <div class="nav-in">
     <a class="brand" href="#top">
       <Logo class="brand-logo" />
-      <span><b>IBSON JUNIOR</b><span class="bs">Estrategista Digital</span></span>
+      <span><b>IBSON JUNIOR</b><span class="bs">Conteúdo · Liderança · Decisão</span></span>
     </a>
     <div class="nav-links">
       {links.map((l) => <a href={l.href} data-s={l.id}>{l.label}</a>)}
     </div>
     <div class="nav-r">
-      <a class="nav-cta" href="#contato">Conversar →</a>
+      <a class="nav-cta" href={nav.cta.href}>{nav.cta.label}</a>
       <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -33,7 +25,7 @@ const links = [
 
 <div class="mmenu" id="mmenu">
   {links.map((l) => <a href={l.href}><span>{l.label}</span></a>)}
-  <div class="mfoot">IBSONJUNIOR.COM.BR · ESTRATÉGIA · COGNIÇÃO · ATENÇÃO</div>
+  <div class="mfoot">IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE</div>
 </div>
 
 <style>
@@ -41,18 +33,18 @@ const links = [
 </style>
 
 <script>
-  const nav = document.getElementById("nav");
+  import { nav } from "../data/content";
+
+  const navEl = document.getElementById("nav");
   const hamb = document.getElementById("hamb");
   const mmenu = document.getElementById("mmenu");
 
-  // Estado "scrolled" da nav
   const onScroll = () => {
-    if (nav) nav.classList.toggle("scrolled", window.scrollY > 24);
+    if (navEl) navEl.classList.toggle("scrolled", window.scrollY > 24);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Menu hambúrguer
   const closeMenu = () => {
     document.body.classList.remove("menu", "lock");
     hamb?.setAttribute("aria-expanded", "false");
@@ -69,7 +61,7 @@ const links = [
 
   // Link ativo conforme a seção visível
   const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".nav-links a")];
-  const ids = ["sobre", "cases", "proliferarte", "repertorio", "mentoria", "palestras", "artigos", "contato"];
+  const ids = nav.links.map((l) => l.id);
   const spy = new IntersectionObserver(
     (entries) =>
       entries.forEach((e) => {

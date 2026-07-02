@@ -1,25 +1,45 @@
 ---
-// Palestras: convite + atmosfera de noite (lua cheia + estrelas).
+// Palestras: frente nova, aberta com elegância, sem inventar histórico.
+// Atmosfera de noite preservada. Seis temas reais em desenvolvimento.
+import { talks } from "../data/content";
 ---
 
 <section class="pal" id="palestras">
   <div class="pa" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
   <div class="moon" aria-hidden="true"></div>
-  <div class="wrap in">
+  <div class="wrap pal-body">
     <div class="reveal">
       <div class="lbl">Palestras</div>
-      <h2>
-        Se o meu conteúdo te fez <span class="accent">parar e pensar</span>, ele
-        pode fazer o mesmo com a sua plateia.
-      </h2>
-      <p>
-        Atenção, estratégia, produtividade e o impacto da IA na mídia e na
-        decisão. Provocações que saem do palco como direção, não como aplauso.
-      </p>
+      <h2>{talks.title}</h2>
+      <p>{talks.subtitle}</p>
+      <div style="margin-top:18px;max-width:52ch">
+        {talks.intro.map((p) => <p style="margin-top:12px">{p}</p>)}
+      </div>
     </div>
-    <div class="cta reveal d1">
-      <a class="btn btn-ghost" href="#contato">Convidar para palestrar →</a>
+
+    <div class="talks-grid reveal">
+      {
+        talks.themes.map((th, i) => (
+          <div class="talk">
+            <div class="tn">/{String(i + 1).padStart(2, "0")}</div>
+            <h3>{th.title}</h3>
+            <p>{th.description}</p>
+            <span class="who">{th.audience}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="reveal">
+      <div class="pal-meta">
+        {talks.formats.map((fmt) => <span class="pm">{fmt}</span>)}
+        {talks.durations.map((d) => <span class="pm">{d}</span>)}
+      </div>
+      <div class="ment-cta">
+        <a class="btn btn-ghost" href={talks.cta.href}>{talks.cta.label} →</a>
+      </div>
+      <p class="pal-note">{talks.note}</p>
     </div>
   </div>
 </section>

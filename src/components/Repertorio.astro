@@ -1,0 +1,87 @@
+---
+// Repertório: lastro intelectual que sustenta a prática. Coruja como arquétipo
+// (discernimento, visão, leitura fina). Fatos reais apenas.
+import { archetypes } from "../data/content";
+
+const itens = [
+  "Formação executiva em conselhos e governança",
+  // Fato do CLAUDE.md: coautoria em obra editorial.
+  "Coautoria no livro Conselho Diário, 365 Insights Estratégicos",
+  "Artigos autorais mensais sobre IA, cultura, conteúdo e decisão",
+  "Liderança de equipes e operações editoriais",
+  "Reflexão contínua sobre atenção, responsabilidade e maturidade profissional",
+];
+---
+
+<section class="repo repertorio" id="repertorio">
+  <div
+    class="arch-layer on-light arch-right"
+    style={`--arch-img:url('${archetypes.owl.src}');--arch-tint:var(--purple-deep);--arch-opacity:.09`}
+    aria-hidden="true"
+  >
+  </div>
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Repertório</span>
+    </div>
+    <div class="rep-grid">
+      <div class="reveal">
+        <h2>Repertório que sustenta a prática.</h2>
+        <p>
+          A autoridade que me interessa não nasce apenas da exposição. Nasce da
+          combinação entre experiência, leitura, escuta, reflexão e
+          responsabilidade diante das decisões.
+        </p>
+      </div>
+      <ul class="rep-list reveal d1">
+        {itens.map((i) => <li>{i}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .repertorio .rep-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 54px;
+    align-items: start;
+  }
+  .repertorio h2 {
+    font-size: clamp(26px, 3.4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.06;
+    max-width: 16ch;
+  }
+  .repertorio .rep-grid > div p {
+    margin-top: 22px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.72;
+    max-width: 46ch;
+  }
+  .rep-list { list-style: none; border-top: 1px solid var(--hair); }
+  .rep-list li {
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--hair-2);
+    font-size: 16.5px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .rep-list li::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--violet);
+    flex: 0 0 auto;
+    transform: translateY(-2px);
+  }
+  @media (max-width: 980px) {
+    .repertorio .rep-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>

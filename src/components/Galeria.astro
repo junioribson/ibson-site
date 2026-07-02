@@ -1,0 +1,40 @@
+---
+// Trajetória em imagens: humaniza o site. Somente fotos reais ou placeholders
+// assumidos. Nunca palco, plateia ou evento falsos.
+// TODO(asset): substituir cada item por foto real em /assets/retratos ou /assets/capas.
+interface GalItem {
+  cap: string;
+  src?: string | null;
+  size?: "tall" | "wide" | "";
+}
+const items: GalItem[] = [
+  { cap: "Retrato editorial", src: null, size: "tall" },
+  { cap: "Construção de audiência", src: null, size: "wide" },
+  { cap: "Cultura e comunidade", src: null, size: "" },
+  { cap: "Conteúdo e responsabilidade", src: null, size: "" },
+  { cap: "Trajetória editorial", src: null, size: "wide" },
+  { cap: "Reflexões em construção", src: null, size: "" },
+];
+---
+
+<section class="gal" id="trajetoria">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Trajetória em imagens</span>
+    </div>
+    <div class="galgrid">
+      {
+        items.map((it) => (
+          <figure class={`galitem reveal ${it.size === "tall" ? "g-tall" : it.size === "wide" ? "g-wide" : ""}`}>
+            {it.src ? (
+              <img loading="lazy" src={it.src} alt={it.cap} />
+            ) : (
+              <span class="ph-note">A CHEGAR</span>
+            )}
+            <figcaption class="cap">{it.cap}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

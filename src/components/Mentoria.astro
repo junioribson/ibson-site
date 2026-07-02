@@ -1,44 +1,50 @@
 ---
-// Mentoria: 8 entregas.
-const itens = [
-  { n: "/01", h: "Decisão e prioridades", p: "Identificar quais decisões realmente importam, o que precisa ser priorizado e onde concentrar energia para gerar avanço real." },
-  { n: "/02", h: "Organização da complexidade", p: "Transformar excesso de informações, problemas e possibilidades em direção clara e prática." },
-  { n: "/03", h: "Estratégia, comunicação e execução", p: "Conectar o que se quer construir, como isso é comunicado e como vira movimento concreto." },
-  { n: "/04", h: "Posicionamento de autoridade", p: "Definir pelo que se quer ser reconhecido, qual território ocupar e como comunicar valor de forma objetiva." },
-  { n: "/05", h: "LinkedIn estratégico", p: "Transformar experiência, resultados e visão de negócio em presença relevante: perfil, narrativa e conteúdo alinhados ao objetivo." },
-  { n: "/06", h: "Narrativa profissional ou empresarial", p: "Explicar com clareza quem é, o que faz, para quem gera valor e por que deve ser levado a sério." },
-  { n: "/07", h: "Crescimento com percepção de valor", p: "Não apenas fazer bem, mas ser reconhecido pelo valor certo, pelas pessoas certas e no mercado certo." },
-  { n: "/08", h: "Desenvolvimento de visão executiva", p: "Enxergar o negócio de cima: conectar as partes, antecipar consequências e decidir como quem ocupa a cadeira de liderança." },
-];
+// Mentoria: conversa estratégica de alto valor, aberta e madura.
+// Cavalo-marinho como camada sutil (adaptação, escuta, relações humanas).
+import { mentorship as m, archetypes } from "../data/content";
 ---
 
 <section class="ment" id="mentoria">
+  <div
+    class="arch-layer on-light arch-right"
+    style={`--arch-img:url('${archetypes.seahorse.src}');--arch-tint:var(--magenta);--arch-opacity:.08`}
+    aria-hidden="true"
+  >
+  </div>
   <div class="wrap">
     <div class="shead reveal">
       <span class="dot"></span><span class="rule"></span><span class="lbl">Mentoria</span>
     </div>
     <div class="ment-head">
-      <h2 class="reveal">O que entrego como mentoria.</h2>
-      <p class="reveal d1">
-        Mentoria para <b>empresários, executivos, heads e gerentes</b> que
-        precisam transformar excesso de informação em direção clara e crescer
-        sendo reconhecidos pelo valor certo.
-      </p>
+      <h2 class="reveal">{m.title}</h2>
+      <div class="ment-intro reveal d1">
+        <p>{m.subtitle}</p>
+      </div>
     </div>
-    <div class="mgrid">
-      {
-        itens.map((i) => (
-          <div class="mitem reveal">
-            <div class="mn">{i.n}</div>
-            <h3>{i.h}</h3>
-            <p>{i.p}</p>
-          </div>
-        ))
-      }
+
+    <div class="ment-cols reveal">
+      <div class="ment-col">
+        <h3>O que é</h3>
+        {m.whatIs.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="ment-col">
+        <h3>Para quem é</h3>
+        <ul>
+          {m.whoFor.map((i) => <li>{i}</li>)}
+        </ul>
+      </div>
     </div>
-    <div class="ment-cta">
-      <a class="btn btn-violet" href="#contato">Quero iniciar uma mentoria</a>
-      <span class="who">Encontros individuais · tema de atuação definido em conjunto</span>
+
+    <div class="reveal">
+      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);margin-bottom:16px">Temas possíveis</h3>
+      <div class="chips">
+        {m.topics.map((t) => <span class="chip">{t}</span>)}
+      </div>
+    </div>
+
+    <div class="ment-cta reveal">
+      <a class="btn btn-violet" href={m.cta.href}>{m.cta.label}</a>
+      <span class="who">{m.note}</span>
     </div>
   </div>
 </section>

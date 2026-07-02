@@ -1,27 +1,22 @@
 ---
-// Tese / Manifesto: intenção vs estratégia; atenção como ativo.
+import { thesis, archetypes } from "../data/content";
 ---
 
 <section class="tese" id="tese">
+  <div
+    class="arch-layer on-dark arch-left"
+    style={`--arch-img:url('${archetypes.wolf.src}');--arch-tint:var(--violet-2);--arch-opacity:.1`}
+    aria-hidden="true"
+  >
+  </div>
   <div class="wrap tese-grid">
-    <blockquote class="reveal">
-      Intenção não é estratégia. A diferença aparece quando o ambiente pressiona.
-    </blockquote>
+    <div class="reveal">
+      <div class="kicker">{thesis.kicker}</div>
+      <blockquote>{thesis.title}</blockquote>
+    </div>
     <div class="body reveal d1">
-      <p>
-        Vivemos o paradoxo de uma década que nunca falou tanto em estratégia e
-        raramente a sustentou.
-      </p>
-      <p>
-        Entre reuniões placebo e o multitasking tóxico, o desperdício de capital
-        humano já custa bilhões. Não por falta de esforço, e sim por falta de
-        direção. A velocidade virou virtude, e talvez seja exatamente aí que o
-        problema começa.
-      </p>
-      <p>
-        Meu trabalho é separar o que parece importante do que de fato importa:
-        dar clareza, organizar a complexidade e transformar ruído em decisão.
-      </p>
+      {thesis.body.map((p) => <p>{p}</p>)}
+      <p class="closing">{thesis.closing}</p>
     </div>
   </div>
 </section>

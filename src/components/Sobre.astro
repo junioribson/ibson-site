@@ -1,6 +1,8 @@
 ---
-// Sobre: retrato + fio condutor "de galerias de arte a comunidades de milhões".
-// Quando o retrato chegar, defina `photo` com o caminho (ex.: "/assets/retratos/ibson.jpg").
+// Sobre: trajetória com autoridade, sem currículo nem autopromoção.
+// TODO(asset): quando houver retrato editorial, definir `photo`
+// (ex.: "/assets/retratos/ibson.jpg"). Até lá, placeholder sóbrio.
+import { about } from "../data/content";
 const photo: string | null = null;
 ---
 
@@ -14,9 +16,9 @@ const photo: string | null = null;
         <div class="fr">
           {
             photo ? (
-              <img src={photo} alt="Ibson Junior" />
+              <img src={photo} alt="Retrato editorial de Ibson Junior." />
             ) : (
-              <div class="ph-portrait" aria-label="Retrato de Ibson Junior (a chegar)">
+              <div class="ph-portrait" aria-label="Retrato editorial de Ibson Junior (a chegar)">
                 <span>RETRATO</span>
               </div>
             )
@@ -24,34 +26,20 @@ const photo: string | null = null;
         </div>
       </div>
       <div class="reveal d1">
-        <h2>
-          De galerias de arte a comunidades de milhões: sempre lidei com
-          audiência.
-        </h2>
-        <div class="kis">
-          Estrategista digital · Mentor<br />Palestrante · Conselheiro em formação
-        </div>
+        <h2>{about.title}</h2>
+        <p class="about-sub">{about.subtitle}</p>
         <div class="body">
-          <p>
-            Comecei aproximando arte e público, muito antes de existir a
-            expressão economia da atenção. Foi ali que aprendi o ofício que
-            carrego até hoje: construir audiência onde quase ninguém olha e
-            transformar apreciação em alcance.
-          </p>
-          <p>
-            Daí em diante escalei o mesmo princípio. Fundei a <strong>WolfLife</strong>,
-            ecossistema de comunidades digitais com mais de 150 milhões de
-            seguidores, e a vendi em 2025. Sigo à frente da <strong>ProliferArte</strong>,
-            movimento cultural que mantenho há 18 anos. E participei da
-            construção e da venda de uma operação brasileira de mídia esportiva
-            digital.
-          </p>
-          <p>
-            O fio condutor nunca mudou: estratégia complexa, lastro em dados e
-            resultado extraordinário. Hoje coloco essa bagagem a serviço de quem
-            precisa decidir melhor, se posicionar com clareza e crescer com
-            percepção de valor.
-          </p>
+          {about.body.map((p) => <p set:html={p} />)}
+        </div>
+        <div class="about-proofs">
+          {
+            about.microprovas.map((m) => (
+              <div class="pr">
+                <span class="k">{m.k}</span>
+                <span class="v">{m.v}</span>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -59,6 +47,13 @@ const photo: string | null = null;
 </section>
 
 <style>
+  .about-sub {
+    margin-top: 14px;
+    font-size: 17px;
+    color: var(--ink-soft);
+    font-style: italic;
+    max-width: 48ch;
+  }
   .ph-portrait {
     width: 100%;
     height: 100%;

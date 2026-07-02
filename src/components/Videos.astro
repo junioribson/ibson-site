@@ -1,0 +1,35 @@
+---
+// Vídeos: frente em construção. Sem thumbnail falsa, sem vídeo inventado.
+import { videos } from "../data/content";
+---
+
+<section class="vids" id="videos">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Vídeos</span>
+    </div>
+    <div class="arts-head reveal">
+      <h2>{videos.title}</h2>
+      <div class="meta">Em construção</div>
+    </div>
+    <p class="vids-intro reveal">{videos.intro}</p>
+
+    <div class="vgrid">
+      {
+        videos.cards.map((title) => (
+          <div class="vcard reveal">
+            <div class="vthumb"><span class="play" aria-hidden="true"></span></div>
+            <div class="vtx">
+              <div class="vtag">Reflexão · em breve</div>
+              <h3>{title}</h3>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="vids-foot reveal">
+      <a href={videos.cta.href} target="_blank" rel="noopener">{videos.cta.label} ↗</a>
+    </div>
+  </div>
+</section>

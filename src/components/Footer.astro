@@ -1,40 +1,34 @@
 ---
 import Logo from "./Logo.astro";
+import { footer, nav } from "../data/content";
 ---
 
 <footer>
   <div class="wrap">
     <div class="arch">
       <span class="al">Símbolos de território</span>
-      <div class="ag-mono">Lobo · Coruja · Cavalo-marinho · Explorador</div>
+      <div class="ag-mono">Lobo · Coruja · Cavalo-marinho</div>
     </div>
     <div class="foot-top">
       <div class="foot-brand">
         <Logo class="foot-logo" />
-        <b>IBSON JUNIOR</b><span class="s">Estrategista Digital</span>
-        <p>
-          Estratégia, conteúdo e atenção para pessoas e marcas que querem ser
-          lembradas, não apenas vistas.
-        </p>
+        <b>{footer.name.toUpperCase()}</b><span class="s">{footer.line}</span>
+        <p>{footer.complement}</p>
       </div>
       <div class="fcol">
         <h4>Navegar</h4>
-        <a href="#sobre">Sobre</a>
-        <a href="#cases">Cases</a>
-        <a href="#proliferarte">ProliferArte</a>
-        <a href="#mentoria">Mentoria</a>
-        <a href="#artigos">Artigos</a>
+        {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
       </div>
       <div class="fcol">
         <h4>Conectar</h4>
         <a href="https://www.linkedin.com/in/ibson-junior/" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="mailto:contato@ibsonjunior.com.br">E-mail ↗</a>
-        <a href="#contato">Trabalhar juntos</a>
+        <a href="#contato">Iniciar uma conversa</a>
       </div>
     </div>
     <div class="foot-base">
       <span>© 2026 IBSON JUNIOR · IBSONJUNIOR.COM.BR</span>
-      <span>ESTRATÉGIA · COGNIÇÃO · ATENÇÃO</span>
+      <span>CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE</span>
     </div>
   </div>
 </footer>

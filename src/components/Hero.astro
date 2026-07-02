@@ -1,10 +1,21 @@
 ---
-// Hero: só efeito de cor (aurora animada na paleta), sem foto.
+// Hero: território central em poucos segundos. Aurora preservada (CLAUDE.md pede
+// hero sem foto). O lobo entra como camada editorial de fundo, discreta.
+// TODO(asset): se houver retrato editorial, avaliar compor foto real aqui
+// (/assets/retratos/ibson-hero.jpg), mantendo a leitura premium.
+import { hero, archetypes } from "../data/content";
 ---
 
 <section class="hero" id="hero">
   <div class="aurora" aria-hidden="true">
     <i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i>
+  </div>
+  <div
+    class="arch-layer on-light arch-right"
+    style={`--arch-img:url('${archetypes.wolf.src}');--arch-tint:var(--purple);--arch-opacity:.1`}
+    role="img"
+    aria-label={archetypes.wolf.alt}
+  >
   </div>
   <div class="ridge" aria-hidden="true">
     <svg viewBox="0 0 800 600" preserveAspectRatio="xMaxYMax meet">
@@ -17,30 +28,45 @@
     <div class="hero-in">
       <div class="hero-eye">
         <span class="r"></span>
-        <span class="k">Estrategista Digital · Mentor · Palestrante</span>
+        <span class="k">{hero.topline}</span>
       </div>
       <h1 class="display">
-        <span class="ln"><span style="transition-delay:.12s">Nunca se falou</span></span>
-        <span class="ln"><span style="transition-delay:.2s">tanto de estratégia.</span></span>
-        <span class="ln"><span style="transition-delay:.32s">E nunca se viu</span></span>
-        <span class="ln"><span class="accent" style="transition-delay:.42s">tão pouca.</span></span>
+        <span class="ln"><span style="transition-delay:.12s">Consciência, decisão</span></span>
+        <span class="ln"><span style="transition-delay:.22s">e responsabilidade</span></span>
+        <span class="ln"><span class="accent" style="transition-delay:.34s">em tempos complexos.</span></span>
       </h1>
-      <p class="sub">
-        Sempre lidei com audiência. Construo estratégias complexas que viram
-        resultado e ajudo pessoas e marcas a enxergar o que importa, ocupar o
-        território certo e ser lembradas, não apenas vistas.
-      </p>
+      <p class="sub">{hero.subheadline}</p>
+      <p class="sub sub-2">{hero.complement}</p>
       <div class="hero-actions">
-        <a class="btn btn-fill" href="#contato">Iniciar uma conversa</a>
-        <a class="btn btn-line" href="#cases">Ver os cases</a>
+        <a class="btn btn-fill" href={hero.ctas.primary.href}>{hero.ctas.primary.label}</a>
+        <a class="btn btn-line" href={hero.ctas.secondary.href}>{hero.ctas.secondary.label}</a>
+        <a class="btn-text" href={hero.ctas.tertiary.href}>{hero.ctas.tertiary.label} ↗</a>
       </div>
     </div>
+    <ul class="hero-proofs">
+      {hero.microprovas.map((p) => <li>{p}</li>)}
+    </ul>
   </div>
   <div class="scrollcue"><span>Role para descer</span><span class="bar"></span></div>
 </section>
 
+<style>
+  .hero-in { max-width: min(94vw, 880px); }
+  .hero :global(h1) {
+    font-size: clamp(32px, 6vw, 96px);
+    max-width: 16ch;
+  }
+  .sub, .sub-2 { max-width: 56ch; }
+  .sub-2 {
+    margin-top: 16px;
+    font-size: clamp(15px, 1.2vw, 17px);
+    color: var(--ink-soft);
+    font-weight: 400;
+    transition-delay: 0.8s;
+  }
+</style>
+
 <script>
-  // Dispara as animações de entrada do hero após o carregamento
   const hero = document.getElementById("hero");
   requestAnimationFrame(() => requestAnimationFrame(() => hero?.classList.add("in")));
 </script>

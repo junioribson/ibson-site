@@ -1,18 +1,8 @@
 ---
-// ProliferArte (desde 2008): movimento cultural + estante de publicações.
-// Edite título/URL de cada publicação. Ponha `cover` com o caminho da capa em alta
-// (ex.: "/assets/capas/beleza-da-natureza.jpg") quando o arquivo chegar; até lá usa placeholder.
-interface Pub {
-  title: string;
-  url: string;
-  cover?: string | null;
-}
-
-const pubs: Pub[] = [
-  { title: "A Beleza da Natureza", url: "#", cover: null },
-  { title: "Revista ProliferArte", url: "#", cover: null },
-  { title: "Arte Aberta", url: "#", cover: null },
-];
+// ProliferArte: origem cultural e primeiro laboratório de audiência.
+// Capas em alta a chegar (public/assets/capas). Até lá, placeholders elegantes.
+import { cases } from "../data/content";
+const p = cases.proliferarte;
 
 const phGrads = [
   "linear-gradient(150deg,#2A0148,#5B2EE6)",
@@ -24,46 +14,32 @@ const phGrads = [
 <section class="prolifer" id="proliferarte">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">ProliferArte · desde 2008</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{p.name} · desde 2008</span>
     </div>
     <div class="pro-grid">
       <div class="reveal">
-        <h2>Há 18 anos transformando arte em audiência e cultura em movimento.</h2>
+        <h2>Cultura, comunidade e o primeiro laboratório de audiência.</h2>
         <div class="body">
-          <p>
-            Fundei a <strong>ProliferArte</strong> em 2008, uma comunidade
-            digital dedicada a tornar a arte acessível e a dar voz à cultura.
-            Antes de qualquer algoritmo, ela já fazia o que continua fazendo:
-            aproximar artistas independentes de novas plateias e romper as
-            barreiras entre quem cria e quem aprecia.
-          </p>
-          <p>
-            Mais do que um projeto, é um movimento que segue sob a minha
-            liderança, gerando impacto cultural e social pela visibilidade e
-            pela conexão. Foi o meu primeiro grande exercício de estratégia de
-            audiência, e é onde tudo começou.
-          </p>
+          {p.body.map((par) => <p>{par}</p>)}
         </div>
       </div>
       <div class="pro-stats reveal d1">
-        <div class="ps"><div class="n">18 <em>anos</em></div><div class="t">à frente do movimento</div></div>
-        <div class="ps"><div class="n">1,5 <em>Mi+</em></div><div class="t">na comunidade</div></div>
+        {
+          p.provas.map((s) => (
+            <div class="ps"><div class="n">{s.n}</div><div class="t">{s.t}</div></div>
+          ))
+        }
       </div>
     </div>
     <div class="reveal">
       <div class="pubs-lbl">Publicações</div>
       <div class="pubs">
         {
-          pubs.map((p, i) => (
-            <a
-              class="pub"
-              href={p.url}
-              target={p.url !== "#" ? "_blank" : undefined}
-              rel={p.url !== "#" ? "noopener" : undefined}
-            >
+          p.galeria.map((pub, i) => (
+            <div class="pub">
               <div class="pc">
-                {p.cover ? (
-                  <img loading="lazy" src={p.cover} alt={p.title} />
+                {pub.src ? (
+                  <img loading="lazy" src={pub.src} alt={`Publicação da ProliferArte: ${pub.title}`} />
                 ) : (
                   <div class="cov-ph" style={`background:${phGrads[i % phGrads.length]}`}>
                     <span>IB</span>
@@ -71,10 +47,10 @@ const phGrads = [
                 )}
               </div>
               <div class="pb">
-                <h3>{p.title}</h3>
-                <span class="pl">Ver ↗</span>
+                <h3>{pub.title}</h3>
+                <span class="pl">Cultura</span>
               </div>
-            </a>
+            </div>
           ))
         }
       </div>

@@ -1,5 +1,9 @@
 ---
-// Contato: mentoria, palestra, conselho.
+// Contato: rotas claras por intenção + formulário.
+// O formulário compõe um e-mail no cliente (mailto), sem backend.
+// TODO(infra): integrar um serviço de formulário (ex.: Formspree) para receber
+// envios sem depender do cliente de e-mail do visitante.
+import { contact } from "../data/content";
 ---
 
 <section class="contato" id="contato">
@@ -10,26 +14,98 @@
     <div class="shead reveal">
       <span class="dot"></span><span class="rule"></span><span class="lbl">Contato</span>
     </div>
-    <h2 class="reveal display">
-      Mentoria, palestra ou um conselho à mesa.
-      <span class="accent">Vamos conversar.</span>
-    </h2>
-    <p class="reveal d1">
-      Se você foi impactado pelo meu conteúdo e quer levar essa direção para o
-      seu time, seu evento ou a sua carreira, é só chamar.
-    </p>
-    <div class="contato-actions reveal d2">
-      <a class="btn btn-violet" href="mailto:contato@ibsonjunior.com.br">
-        Enviar uma mensagem
-      </a>
-      <a
-        class="btn btn-ghost"
-        href="https://www.linkedin.com/in/ibson-junior/"
-        target="_blank"
-        rel="noopener"
-      >
-        Conectar no LinkedIn ↗
-      </a>
+    <h2 class="reveal display">{contact.title}</h2>
+    <p class="lead reveal d1">{contact.subtitle}</p>
+
+    <div class="contato-grid">
+      <div class="quick reveal">
+        {
+          contact.quickButtons.map((label) => (
+            <a href="#form-contato" data-subject={label} class="qbtn">
+              {label} <span>→</span>
+            </a>
+          ))
+        }
+        <a href={`mailto:${contact.email}`} class="qbtn">
+          {contact.email} <span>↗</span>
+        </a>
+      </div>
+
+      <form class="cform reveal d1" id="form-contato">
+        <div>
+          <label for="cf-nome">Nome</label>
+          <input id="cf-nome" name="nome" type="text" autocomplete="name" required />
+        </div>
+        <div>
+          <label for="cf-empresa">Empresa</label>
+          <input id="cf-empresa" name="empresa" type="text" autocomplete="organization" />
+        </div>
+        <div>
+          <label for="cf-email">E-mail</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div>
+          <label for="cf-whats">WhatsApp</label>
+          <input id="cf-whats" name="whatsapp" type="tel" autocomplete="tel" />
+        </div>
+        <div class="full">
+          <label for="cf-assunto">Assunto</label>
+          <select id="cf-assunto" name="assunto">
+            {contact.subjects.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div class="full">
+          <label for="cf-msg">Mensagem</label>
+          <textarea id="cf-msg" name="mensagem" required></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-violet">Enviar mensagem</button>
+          <span class="note">{contact.support}</span>
+        </div>
+      </form>
     </div>
   </div>
 </section>
+
+<script define:vars={{ email: contact.email }}>
+  const form = document.getElementById("form-contato");
+  const assunto = document.getElementById("cf-assunto");
+
+  // Botões de rota rápida: pré-selecionam o assunto e levam ao formulário.
+  document.querySelectorAll(".quick a[data-subject]").forEach((a) => {
+    a.addEventListener("click", () => {
+      const sub = a.getAttribute("data-subject") || "";
+      const map = {
+        "Convidar para palestra": "Palestra",
+        "Falar sobre mentoria": "Mentoria",
+        "Propor entrevista": "Entrevista",
+        "Falar sobre consultoria": "Consultoria",
+      };
+      if (assunto && map[sub]) assunto.value = map[sub];
+    });
+  });
+
+  // Envio: compõe um e-mail com os campos preenchidos.
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const nome = data.get("nome") || "";
+    const empresa = data.get("empresa") || "";
+    const emailFrom = data.get("email") || "";
+    const whats = data.get("whatsapp") || "";
+    const sub = data.get("assunto") || "Contato";
+    const msg = data.get("mensagem") || "";
+    const corpo = [
+      `Nome: ${nome}`,
+      empresa ? `Empresa: ${empresa}` : "",
+      `E-mail: ${emailFrom}`,
+      whats ? `WhatsApp: ${whats}` : "",
+      "",
+      msg,
+    ].filter(Boolean).join("\n");
+    const href =
+      `mailto:${email}?subject=${encodeURIComponent(`[Site] ${sub}`)}` +
+      `&body=${encodeURIComponent(corpo)}`;
+    window.location.href = href;
+  });
+</script>

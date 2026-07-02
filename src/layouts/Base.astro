@@ -1,16 +1,14 @@
 ---
 import "../styles/global.css";
 import "../styles/sections.css";
+import { seo } from "../data/content";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const {
-  title = "Ibson Junior · Estrategista Digital · Mentor · Palestrante",
-  description = "Marca pessoal de Ibson Junior: estrategista digital, mentor, palestrante e conselheiro em formação. De galerias de arte a comunidades de milhões, sempre lidei com audiência.",
-} = Astro.props;
+const { title = seo.title, description = seo.description } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,9 +21,13 @@ const {
     <meta name="description" content={description} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:title" content={seo.ogTitle} />
+    <meta property="og:description" content={seo.ogDescription} />
+    <meta property="og:image" content={seo.ogImage} />
     <meta property="og:url" content="https://ibsonjunior.com.br" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.ogTitle} />
+    <meta name="twitter:description" content={seo.ogDescription} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
