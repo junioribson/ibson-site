@@ -142,3 +142,44 @@ nav.scrolled {
 .btn-line:hover { background: var(--cream); color: #150026; }
 .btn-fill { background: var(--violet); color: #fff; }
 .btn-fill:hover { background: var(--violet-2); }
+
+/* ==========================================================================
+   CONTRASTE (referência Trakto): elementos claros/fortes sobre o quase-preto.
+   ========================================================================== */
+:root {
+  --ink-soft: #cbc0e2;
+  --text-soft: #ddd3ee;
+  --panel: rgba(255, 255, 255, 0.055);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-2: rgba(255, 255, 255, 0.08);
+}
+
+/* Fundos de seção quase pretos, para os elementos saltarem */
+.cases, .vids {
+  background:
+    radial-gradient(58% 48% at 88% -6%, rgba(123, 87, 240, 0.16), transparent 60%),
+    linear-gradient(170deg, #120b1f 0%, #0a0713 74%);
+}
+.sobre, .prolifer, .gal, .arts, .ment { background: transparent; }
+
+/* Títulos brancos */
+.sobre h2, .cases-head h2, .pro-grid h2, .arts-head h2, .ment-head h2,
+.casecard h3, .vcard h3, .art-body h3, .pub h3, .pro-fb-text h3,
+.repertorio h2, .pressrow .pt, .subcase .st { color: #fff; }
+
+/* Rótulos e acentos mais fortes */
+.shead .lbl { color: #e6cd8f; }
+.pc-n, .art-cat, .ment-col h3, .pressrow .pk, .subcase .num { color: #a98bff; }
+.subcase .sk, .casecard .cc-tag { color: #e6cd8f; }
+
+/* Corpo de texto mais legível */
+.sobre .body p, .cases-head p, .pro-grid .body p, .arts-intro, .gal-intro,
+.ment-intro p, .vids-intro, .casecard p, .about-sub,
+.ment-col p, .ment-col li, .tese .body p { color: #d8cee8; }
+
+/* Bordas de painel mais visíveis */
+.pub, .tcard, .mitem, .pressrow, .subcase, .casecard, .artcard,
+.pc-item, .gcard, .ment-col, .pro-fb, .vcard, .chips .chip { border-color: rgba(255, 255, 255, 0.14); }
+
+/* Botão fantasma mais claro */
+.btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
