@@ -183,3 +183,72 @@ nav.scrolled {
 
 /* Botão fantasma mais claro */
 .btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
+
+/* ==========================================================================
+   PREMIUM QUENTE v6: ameixa/vinho + bronze/champagne. Menos roxo frio,
+   mais calor e sofisticação. Uma seção clara para ritmo.
+   ========================================================================== */
+
+/* Base mais quente (quase preto com viés ameixa/marrom) e texto champagne */
+body { background: #0e0a12; color: #f1e7d4; }
+
+:root {
+  --gold: #cba86a;          /* bronze/champagne dourado */
+  --ink-soft: #cabda2;      /* secundário quente, legível */
+  --text-soft: #d8cbb2;
+  --text-dim: #9c9080;
+  --plum: #2a1524;
+  --wine: #24101c;
+  --amber: #e0894e;         /* energia pontual (CTA/ativo), com moderação */
+}
+
+/* Selection e foco em bronze */
+::selection { background: var(--gold); color: #17110a; }
+
+/* Fundos de seção: profundidade ameixa/vinho + halo bronze (não roxo frio) */
+.cases, .vids {
+  background:
+    radial-gradient(58% 48% at 88% -6%, rgba(203, 168, 106, 0.10), transparent 60%),
+    linear-gradient(170deg, #170c15 0%, #0d0810 74%);
+}
+.cases::before, .vids::before, .sobre::before, .prolifer::before,
+.gal::before, .arts::before, .ment::before {
+  background:
+    radial-gradient(36vw 36vw at 14% 16%, rgba(120, 60, 100, 0.16), transparent 62%),
+    radial-gradient(30vw 30vw at 88% 86%, rgba(203, 168, 106, 0.10), transparent 62%);
+}
+
+/* Rótulos e acentos em bronze/champagne; violeta vira ameixa quente */
+.shead .lbl { color: var(--gold); }
+.shead .dot { background: var(--gold); box-shadow: 0 0 0 4px rgba(203, 168, 106, 0.16); }
+.pc-n, .art-cat, .ment-col h3, .pressrow .pk, .subcase .num { color: #c99be0; }
+.subcase .sk, .casecard .cc-tag { color: var(--gold); }
+
+/* Nav CTA e botões primários com energia âmbar/bronze pontual */
+.nav-cta { background: linear-gradient(100deg, #7a3b64, #b06a4a); }
+.nav-cta:hover { background: linear-gradient(100deg, #8a4670, #c47a54); }
+
+/* Feat (WolfLife) e blocos ink: aquecer o fundo */
+.feat { background: linear-gradient(158deg, #1c0f18, #150a12); }
+.feat .fk { color: var(--gold); }
+.feat .big em { color: #d8a86a; }
+
+/* Moldura do retrato em bronze */
+.sobre-photo::before { border-color: var(--gold); opacity: 0.7; }
+
+/* ---- TESE vira SEÇÃO CLARA (manifesto champagne), quebra a densidade ---- */
+.tese {
+  background:
+    radial-gradient(70% 55% at 82% -12%, rgba(203, 168, 106, 0.22), transparent 60%),
+    linear-gradient(158deg, #f4ede1 0%, #ece1cf 100%);
+  color: #23190f;
+  border-top: 1px solid rgba(35, 25, 15, 0.1);
+  border-bottom: 1px solid rgba(35, 25, 15, 0.1);
+}
+.tese::before, .tese::after { display: none; }
+.tese .arch-layer { display: none; }
+.tese .kicker { color: #9c6f2e; }
+.tese blockquote { color: #1c1409; }
+.tese .body p { color: #5a4d38; }
+.tese .body p:first-child { color: #1c1409; }
+.tese .closing { color: #9c6f2e; }
