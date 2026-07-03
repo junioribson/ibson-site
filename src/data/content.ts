@@ -240,7 +240,7 @@ export const articles = {
       summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
       readingTime: "8 min",
       url: ART_URL.governanca,
-      cover: null,
+      cover: "/assets/artigos/artigo-governanca.webp",
     },
     {
       category: "Comunicação e cultura",
