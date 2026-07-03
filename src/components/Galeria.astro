@@ -1,17 +1,12 @@
 ---
-// Últimos acontecimentos: galeria de aparições recentes (eventos, palestras,
-// lançamentos, conselho). Editável: o Ibson atualiza com novas fotos.
-// TODO(asset): salvar as fotos em /assets/eventos e apontar `src` de cada item.
-interface Evento {
-  cap: string;
-  src?: string | null;
-  size?: "tall" | "wide" | "";
-}
-const eventos: Evento[] = [
-  { cap: "Board Academy · formação Advanced para Advisor", src: "/assets/eventos/board-academy.jpg", size: "wide" },
-  { cap: "Lançamento do livro Conselho Diário", src: "/assets/eventos/board-livro.jpg", size: "tall" },
-  { cap: "Encontro de conselheiros", src: "/assets/eventos/board-conselheiros.jpg", size: "" },
-  { cap: "Board · comunidade de governança", src: "/assets/eventos/board-grupo.jpg", size: "wide" },
+// Últimos acontecimentos: galeria limpa e responsiva de aparições recentes.
+// Grade uniforme (mesma proporção), sem legendas. Atualizável: basta trocar/
+// acrescentar caminhos em `fotos` (arquivos em /assets/eventos).
+const fotos: string[] = [
+  "/assets/eventos/board-academy.jpg",
+  "/assets/eventos/board-livro.jpg",
+  "/assets/eventos/board-conselheiros.jpg",
+  "/assets/eventos/board-grupo.jpg",
 ];
 ---
 
@@ -21,16 +16,11 @@ const eventos: Evento[] = [
       <span class="dot"></span><span class="rule"></span><span class="lbl">Últimos acontecimentos</span>
     </div>
     <p class="gal-intro reveal">Registros recentes de eventos, palestras, conselho e cultura. Um espaço vivo, atualizado a cada nova aparição.</p>
-    <div class="galgrid">
+    <div class="galgrid2 reveal stagger">
       {
-        eventos.map((it) => (
-          <figure class={`galitem reveal ${it.size === "tall" ? "g-tall" : it.size === "wide" ? "g-wide" : ""}`}>
-            {it.src ? (
-              <img loading="lazy" src={it.src} alt={it.cap} />
-            ) : (
-              <span class="ph-note">A CHEGAR</span>
-            )}
-            <figcaption class="cap">{it.cap}</figcaption>
+        fotos.map((src) => (
+          <figure class="gcard">
+            <img loading="lazy" src={src} alt="Aparição recente de Ibson Junior" />
           </figure>
         ))
       }
@@ -39,5 +29,38 @@ const eventos: Evento[] = [
 </section>
 
 <style>
-  .gal-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.7; max-width: 56ch; margin: -20px 0 38px; }
+  .gal-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.7; max-width: 56ch; margin: -20px 0 40px; }
+  .galgrid2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .gcard {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--hair);
+    background: var(--cream-hi);
+    box-shadow: 0 14px 34px -26px rgba(42, 1, 72, 0.4);
+  }
+  .gcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.7s var(--e), filter 0.5s var(--e);
+  }
+  .gcard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(21, 0, 38, 0.28));
+    opacity: 0;
+    transition: opacity 0.5s var(--e);
+  }
+  .gcard:hover img { transform: scale(1.06); }
+  .gcard:hover::after { opacity: 1; }
+  @media (max-width: 1100px) { .galgrid2 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .galgrid2 { grid-template-columns: 1fr; gap: 16px; } }
 </style>

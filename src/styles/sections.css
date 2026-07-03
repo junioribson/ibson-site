@@ -936,3 +936,7 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
 
 /* Realce de contraste em rótulos monoespaçados (legibilidade) */
 .shead .lbl { color: #6b5947; }
+
+/* Logo do case (ex.: Futmarketing) no topo do card, com respiro */
+.casecard .cc-logo { height: 60px; width: auto; display: block; margin-bottom: 22px; }
+@media (max-width: 600px) { .casecard .cc-logo { height: 50px; } }

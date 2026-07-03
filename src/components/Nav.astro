@@ -1,8 +1,10 @@
 ---
 import Logo from "./Logo.astro";
+import Icon from "./Icon.astro";
 import { nav } from "../data/content";
 
 const links = nav.links;
+const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
 ---
 
 <nav id="nav">
@@ -15,6 +17,9 @@ const links = nav.links;
       {links.map((l) => <a href={l.href} data-s={l.id}>{l.label}</a>)}
     </div>
     <div class="nav-r">
+      <a class="nav-li" href={LINKEDIN} target="_blank" rel="noopener" aria-label="Conecte-se comigo no LinkedIn" title="Conecte-se comigo no LinkedIn">
+        <Icon name="linkedin" class="ic" />
+      </a>
       <a class="nav-cta" href={nav.cta.href}>{nav.cta.label}</a>
       <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -25,11 +30,29 @@ const links = nav.links;
 
 <div class="mmenu" id="mmenu">
   {links.map((l) => <a href={l.href}><span>{l.label}</span></a>)}
+  <a class="mmenu-li" href={LINKEDIN} target="_blank" rel="noopener">
+    <Icon name="linkedin" class="ic" /> Conecte-se comigo no LinkedIn
+  </a>
   <div class="mfoot">IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE</div>
 </div>
 
 <style>
   .brand-logo { color: var(--purple); }
+  .nav-li {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 3px;
+    border: 1px solid var(--hair); color: var(--ink);
+    transition: background 0.3s, color 0.3s, transform 0.25s var(--e), border-color 0.3s;
+  }
+  .nav-li:hover { background: #0a66c2; border-color: #0a66c2; color: #fff; transform: translateY(-2px); }
+  .nav-li .ic { width: 18px; height: 18px; }
+  .mmenu-li {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
+    color: var(--tint); margin-top: 22px;
+  }
+  .mmenu-li .ic { width: 20px; height: 20px; }
+  @media (max-width: 1180px) { .nav-li { display: none; } }
 </style>
 
 <script>

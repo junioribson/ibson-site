@@ -5,6 +5,7 @@
 // envios sem depender do cliente de e-mail do visitante.
 import { contact } from "../data/content";
 import Moon from "./Moon.astro";
+import Icon from "./Icon.astro";
 ---
 
 <section class="contato" id="contato">
@@ -20,6 +21,10 @@ import Moon from "./Moon.astro";
 
     <div class="contato-grid">
       <div class="quick reveal">
+        <a class="qbtn qbtn-li" href={contact.linkedin} target="_blank" rel="noopener">
+          <span class="qb-l"><Icon name="linkedin" class="ic" /> Conecte-se comigo no LinkedIn</span>
+          <span>↗</span>
+        </a>
         {
           contact.quickButtons.map((label) => (
             <a href="#form-contato" data-subject={label} class="qbtn">
@@ -67,6 +72,13 @@ import Moon from "./Moon.astro";
     </div>
   </div>
 </section>
+
+<style>
+  .qbtn-li { border-color: rgba(10, 102, 194, 0.6); }
+  .qbtn-li:hover { background: #0a66c2; border-color: #0a66c2; }
+  .qb-l { display: inline-flex; align-items: center; gap: 10px; }
+  .qb-l .ic { width: 18px; height: 18px; }
+</style>
 
 <script define:vars={{ email: contact.email }}>
   const form = document.getElementById("form-contato");

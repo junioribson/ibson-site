@@ -80,10 +80,10 @@ export const about = {
   subtitle:
     "Antes de falar sobre autoridade, é preciso entender o caminho que construiu o repertório.",
   body: [
-    "Ibson Junior é executivo de conteúdo, liderança e comunicação, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
-    "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a WolfLife, ecossistema de comunidades digitais vendido em 2025, lidera a ProliferArte desde 2008 e participou da construção e venda de uma operação brasileira de mídia esportiva digital.",
-    "Hoje, atua como Diretor de Conteúdo na Futbol Sites, liderando operações editoriais, e é conselheiro administrativo de Dr. José Eduardo, referência em osteopatia e criador do método Mães que Curam. Reflete publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
-    "O fio condutor da sua trajetória é a capacidade de construir sentido em ambientes de alta complexidade: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
+    "Ibson Junior é <strong>executivo de conteúdo, liderança e comunicação</strong>, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
+    "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong>WolfLife</strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong>ProliferArte</strong> desde 2008 e participou da construção e venda de uma operação brasileira de mídia esportiva digital.",
+    "Hoje, atua como <strong>Diretor de Conteúdo na Futbol Sites</strong>, liderando operações editoriais, e é <strong>conselheiro administrativo de Dr. José Eduardo</strong>, referência em osteopatia e criador do método Mães que Curam. Reflete publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
+    "O fio condutor da sua trajetória é a capacidade de <em>construir sentido em ambientes de alta complexidade</em>: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
   ],
   microprovas: [
     { k: "WolfLife", v: "comunidade digital de grande escala" },
