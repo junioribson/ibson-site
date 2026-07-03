@@ -60,7 +60,7 @@ const { title = seo.title, description = seo.description } = Astro.props;
       const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (!reduce) {
         const bar = document.getElementById("scrollbar");
-        const layers = [...document.querySelectorAll<HTMLElement>(".arch-layer")];
+        const layers = [...document.querySelectorAll<HTMLElement>(".arch-layer, [data-parallax]")];
         let ticking = false;
         const update = () => {
           const h = document.documentElement.scrollHeight - window.innerHeight;
@@ -69,9 +69,11 @@ const { title = seo.title, description = seo.description } = Astro.props;
           const vh = window.innerHeight;
           for (const el of layers) {
             const r = el.getBoundingClientRect();
+            if (r.bottom < -200 || r.top > vh + 200) continue; // fora da tela: pula
             const center = r.top + r.height / 2;
             const off = (center - vh / 2) / vh; // -1..1 aprox
-            el.style.transform = `translate3d(0, ${(-off * 34).toFixed(1)}px, 0)`;
+            const speed = parseFloat(el.dataset.speed || (el.classList.contains("arch-layer") ? "34" : "26"));
+            el.style.transform = `translate3d(0, ${(-off * speed).toFixed(1)}px, 0)`;
           }
           ticking = false;
         };
