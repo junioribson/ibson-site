@@ -461,16 +461,16 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
 .subcase {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 34px;
+  gap: 26px;
   align-items: center;
   border: 1px solid var(--hair);
   border-radius: 5px;
-  padding: 34px 36px;
+  padding: 22px 26px;
   background: var(--cream);
   margin-bottom: 24px;
 }
 .subcase .num {
-  font-size: clamp(48px, 7vw, 88px);
+  font-size: clamp(38px, 5vw, 58px);
   font-weight: 800;
   letter-spacing: -0.05em;
   line-height: 0.85;
