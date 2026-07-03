@@ -2,13 +2,14 @@
 // Palestras: cards cinematográficos com imagem de fundo + texto sobreposto.
 // Clima de noite (lua + estrelas). Sem inventar histórico.
 import { talks } from "../data/content";
-import Moon from "./Moon.astro";
 ---
 
 <section class="pal" id="palestras">
   <div class="pa" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
-  <Moon class="moon" />
+  <div class="pal-owl" aria-hidden="true" data-parallax data-speed="20">
+    <img src="/assets/arquetipos/owl-editorial.webp" alt="" loading="lazy" />
+  </div>
   <div class="wrap pal-body">
     <div class="reveal">
       <div class="lbl">Palestras</div>
@@ -55,6 +56,28 @@ import Moon from "./Moon.astro";
 </section>
 
 <style>
+  .pal-owl {
+    position: absolute;
+    right: 3%;
+    top: 4%;
+    width: min(28vw, 360px);
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .pal-owl img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 46px rgba(203, 168, 106, 0.22));
+    animation: owl-breathe 9s ease-in-out infinite;
+  }
+  @keyframes owl-breathe {
+    0%, 100% { opacity: 0.82; }
+    50% { opacity: 1; }
+  }
+  @media (max-width: 900px) { .pal-owl { opacity: 0.32; width: 46vw; right: -6%; top: 2%; } }
+  @media (prefers-reduced-motion: reduce) { .pal-owl img { animation: none; } }
+
   .pcards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
