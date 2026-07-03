@@ -247,15 +247,9 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
     radial-gradient(1.2px 1.2px at 70% 80%, rgba(255,255,255,.45), transparent),
     radial-gradient(1.3px 1.3px at 18% 46%, rgba(255,255,255,.5), transparent),
     radial-gradient(1.2px 1.2px at 52% 70%, rgba(255,255,255,.4), transparent); }
-.moon { position: absolute; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle at 36% 32%, #fdfbf2 0%, #f1ead7 38%, #dccfb2 66%, #b9aa8a 100%);
-  box-shadow: 0 0 2px 1px rgba(255,250,235,.5), 0 0 80px 26px rgba(240,230,205,.26), inset -16px -16px 42px rgba(120,100,70,.4); }
-.moon::before { content: ""; position: absolute; inset: 0; border-radius: 50%; opacity: .6;
-  background: radial-gradient(circle at 62% 58%, rgba(140,120,88,.5), transparent 15%),
-    radial-gradient(circle at 41% 66%, rgba(140,120,88,.4), transparent 11%),
-    radial-gradient(circle at 56% 30%, rgba(140,120,88,.35), transparent 10%),
-    radial-gradient(circle at 30% 45%, rgba(140,120,88,.32), transparent 9%),
-    radial-gradient(circle at 70% 40%, rgba(140,120,88,.28), transparent 8%); }
+/* Contêiner da lua realista (SVG em Moon.astro) */
+.moon { position: absolute; pointer-events: none; }
+.moon svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .pal .moon { width: clamp(120px,16vw,220px); aspect-ratio: 1; right: 7%; top: 12%; z-index: 1; }
 .contato .moon { width: clamp(88px,11vw,160px); aspect-ratio: 1; right: 8%; top: 12%; z-index: 1; opacity: .92; }
 .contato .stars { opacity: .5; }
@@ -382,30 +376,33 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   flex: 0 0 auto;
 }
 
-/* --- Tese como manifesto escuro ---------------------------------------- */
+/* --- Tese como manifesto luminoso -------------------------------------- */
 .tese {
-  background: linear-gradient(160deg, #241206 0%, var(--ink) 78%);
-  color: var(--cream);
-  border-top: none;
-  border-bottom: none;
+  background:
+    radial-gradient(120% 80% at 78% -10%, rgba(123, 87, 240, 0.1), transparent 60%),
+    radial-gradient(90% 70% at 6% 110%, rgba(176, 146, 94, 0.12), transparent 60%),
+    var(--cream-hi);
+  color: var(--ink);
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
 }
-.tese blockquote { color: #fff; }
+.tese blockquote { color: var(--ink); }
 .tese .kicker {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--violet);
   margin-bottom: 22px;
 }
-.tese .body p { color: #cdbfae; }
-.tese .body p:first-child { color: #fff; }
+.tese .body p { color: var(--ink-soft); }
+.tese .body p:first-child { color: var(--ink); }
 .tese .closing {
   margin-top: 26px;
   font-size: clamp(18px, 2vw, 23px);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--violet-2);
+  color: var(--violet);
   max-width: 40ch;
 }
 

@@ -4,12 +4,13 @@
 // TODO(infra): integrar um serviço de formulário (ex.: Formspree) para receber
 // envios sem depender do cliente de e-mail do visitante.
 import { contact } from "../data/content";
+import Moon from "./Moon.astro";
 ---
 
 <section class="contato" id="contato">
   <div class="glow" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
-  <div class="moon" aria-hidden="true"></div>
+  <Moon class="moon" />
   <div class="wrap in">
     <div class="shead reveal">
       <span class="dot"></span><span class="rule"></span><span class="lbl">Contato</span>

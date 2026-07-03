@@ -27,7 +27,10 @@ Repertório, Mentoria, Palestras, Vídeos, Contato. Camada de conteúdo editáve
 
 ## Regras inegociáveis (Don'ts)
 - NUNCA usar travessão (— ou –) em nenhum texto. Usar vírgula, ponto, dois-pontos ou parênteses.
-- NUNCA nomear o empregador atual (ex.: Football Sites, Better Collective). O cargo genérico "Diretor de Conteúdo no Brasil" pode aparecer de forma breve e discreta, apenas como contexto de trajetória, sem protagonismo. O site é sobre o repertório dele.
+- Cargo atual permitido: "Diretor de Conteúdo na Futbol Sites" (pode nomear a Futbol Sites, de forma discreta). NUNCA mencionar Better Collective. O site é sobre o repertório dele, sem dar protagonismo ao cargo.
+- Nome oficial do case de mídia esportiva: Futmarketing (não Footmarketing).
+- Credencial de conselho: conselheiro administrativo de Dr. José Eduardo (osteopata D.O., criador do método Mães que Curam, referência de mercado com mais de 2 milhões de seguidores), há mais de 1 ano.
+- Logomarca oficial: marca triangular (montanha) em `/public/assets/logo/logo-roxa.png` (fundo claro) e `logo-branca.png` (fundo escuro), extraída do material de marca do Ibson. Não usar marca desenhada à mão.
 - NÃO usar tom imperativo ("transforme"). Usar linguagem narrativa e observacional.
 - NÃO usar arquétipos como logos desenhados. Arquétipos são imagens fotorrealistas de fundo.
 - NÃO deixar quebrar no mobile: testar sempre no preview ao vivo em 3 larguras.

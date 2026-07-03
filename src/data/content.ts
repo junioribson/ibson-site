@@ -8,14 +8,14 @@
 // Regra de linguagem: nunca usar travessão; frases claras, humanas e densas.
 // ============================================================================
 
-// TODO(fato): confirmar a grafia oficial do projeto de mídia esportiva.
-// O CLAUDE.md e a referência usavam "Futmarketing"; o brief pede "Footmarketing".
-// Ajuste esta constante quando a grafia estiver confirmada.
-export const FOOTMARKETING_NAME = "Footmarketing";
+// Grafia oficial confirmada pelo Ibson: Futmarketing.
+export const FUTMARKETING_NAME = "Futmarketing";
 
-// TODO(fato): confirmar o papel exato na operação (o brief indica CEO;
-// a versão anterior dizia "participação na construção e venda").
-export const FOOTMARKETING_ROLE = "CEO";
+// TODO(fato): confirmar o papel exato na operação (usando CEO conforme brief).
+export const FUTMARKETING_ROLE = "CEO";
+
+// Empregador atual permitido pelo Ibson: Futbol Sites (NUNCA mencionar Better Collective).
+export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
 
 export const seo = {
   title: "Ibson Junior | Consciência, Decisão e Responsabilidade",
@@ -56,10 +56,10 @@ export const hero = {
   },
   // Microprovas discretas: cargo genérico, sem nomear empregador atual.
   microprovas: [
-    "Diretor de Conteúdo no Brasil",
+    CARGO_ATUAL,
     "Fundador da WolfLife",
     "Fundador da ProliferArte",
-    `${FOOTMARKETING_ROLE} da ${FOOTMARKETING_NAME}, com participação na construção e venda da operação`,
+    `${FUTMARKETING_ROLE} da ${FUTMARKETING_NAME}, com participação na construção e venda da operação`,
     "Artigos mensais sobre IA, cultura, liderança, conteúdo e responsabilidade",
   ],
 };
@@ -82,15 +82,15 @@ export const about = {
   body: [
     "Ibson Junior é executivo de conteúdo, liderança e comunicação, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
     "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a WolfLife, ecossistema de comunidades digitais vendido em 2025, lidera a ProliferArte desde 2008 e participou da construção e venda de uma operação brasileira de mídia esportiva digital.",
-    "Hoje, atua como Diretor de Conteúdo no Brasil, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
+    "Hoje, atua como Diretor de Conteúdo na Futbol Sites, liderando operações editoriais, e é conselheiro administrativo de Dr. José Eduardo, referência em osteopatia e criador do método Mães que Curam. Reflete publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
     "O fio condutor da sua trajetória é a capacidade de construir sentido em ambientes de alta complexidade: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
   ],
   microprovas: [
     { k: "WolfLife", v: "comunidade digital de grande escala" },
     { k: "ProliferArte", v: "movimento cultural ativo desde 2008" },
-    { k: FOOTMARKETING_NAME, v: `${FOOTMARKETING_ROLE} e participação na venda da operação` },
-    { k: "Direção de conteúdo", v: "liderança editorial no Brasil" },
-    { k: "Artigos", v: "produção autoral mensal no LinkedIn" },
+    { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} e participação na venda da operação` },
+    { k: "Futbol Sites", v: "Diretor de Conteúdo, liderança editorial" },
+    { k: "Conselho", v: "conselheiro administrativo de Dr. José Eduardo" },
   ],
 };
 
@@ -123,10 +123,10 @@ export const cases = {
     body: "Em uma das entregas de maior escala, a WolfLife apoiou o crescimento do TikTok no Brasil por meio de distribuição massiva em comunidades no Facebook, gerando mais de 9 bilhões de visualizações e ampliando o reconhecimento da marca em território nacional.",
   },
   footmarketing: {
-    name: FOOTMARKETING_NAME,
+    name: FUTMARKETING_NAME,
     tag: "Mídia esportiva · Operação digital · M&A",
     body: [
-      `Na ${FOOTMARKETING_NAME}, Ibson atuou como ${FOOTMARKETING_ROLE} e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.`,
+      `Na ${FUTMARKETING_NAME}, Ibson atuou como ${FUTMARKETING_ROLE} e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.`,
       "O case mostra uma dimensão importante da sua trajetória: transformar visão editorial, audiência e oportunidade de mercado em ativo estratégico.",
       "A venda da operação foi noticiada pelo Yahoo Finance, funcionando como chancela externa da relevância do movimento dentro do mercado de mídia e marketing esportivo.",
     ],
@@ -165,6 +165,7 @@ export interface Article {
   summary: string;
   readingTime: string;
   url: string;
+  cover?: string | null;
 }
 
 // TODO(links): substituir url por links definitivos de cada artigo no LinkedIn.
@@ -176,46 +177,93 @@ export const articles = {
     "Textos sobre consciência, decisão, IA, cultura, conteúdo, liderança e responsabilidade.",
   intro:
     "Os artigos são a base editorial da minha marca pessoal. Neles, organizo reflexões mais longas sobre temas que atravessam trabalho, tecnologia, comunicação e maturidade em ambientes complexos.",
+  // Artigos reais do LinkedIn (do print enviado pelo Ibson).
+  // TODO(asset): adicionar a capa real de cada artigo em /assets/artigos e apontar em `cover`.
+  // TODO(titulo): alguns títulos aparecem truncados no print; confirmar os finais.
   list: [
     {
       category: "Conteúdo e responsabilidade",
       date: "2026",
-      title:
-        "Na Copa do Mundo, conteúdo não disputa apenas atenção. Disputa responsabilidade.",
-      summary:
-        "Uma reflexão sobre cobertura, IA, algoritmos, emoção, distribuição e o papel de quem informa em eventos de escala global.",
-      readingTime: "6 min",
+      title: "Na Copa do Mundo, conteúdo não disputa apenas atenção. Disputa responsabilidade.",
+      summary: "Entre o grito de gol e a narrativa, cobrir a Copa com consciência é mais do que informar.",
+      readingTime: "13 min",
       url: LINKEDIN,
+      cover: null,
     },
     {
       category: "Carreira e consciência",
       date: "2026",
-      title: "Quando a profissão vira identidade",
-      summary:
-        "Uma reflexão sobre o risco de reduzir quem somos ao cargo que ocupamos e o impacto disso sobre criatividade, relações e decisões.",
-      readingTime: "5 min",
+      title: "Quando a profissão vira identidade, a pessoa começa a desaparecer",
+      summary: "Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra.",
+      readingTime: "14 min",
       url: LINKEDIN,
+      cover: null,
     },
     {
-      category: "IA e decisão",
+      category: "Produtividade e atenção",
       date: "2026",
-      title: "A IA pode ser motor, mas o humano precisa continuar no volante",
-      summary:
-        "Uma reflexão sobre eficiência, julgamento humano e responsabilidade em tempos de automação.",
-      readingTime: "5 min",
+      title: "Cérebro podre: a pandemia invisível que transforma o trabalho",
+      summary: "Entre reuniões placebo e o multitasking tóxico, o desperdício de capital humano custa caro.",
+      readingTime: "14 min",
       url: LINKEDIN,
+      cover: null,
+    },
+    {
+      category: "Estratégia",
+      date: "2026",
+      title: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca.",
+      summary: "A diferença entre intenção e estratégia aparece quando o ambiente pressiona.",
+      readingTime: "9 min",
+      url: LINKEDIN,
+      cover: null,
+    },
+    {
+      category: "Governança e decisão",
+      date: "2026",
+      title: "A qualidade da decisão é o núcleo da governança moderna",
+      summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
+      readingTime: "8 min",
+      url: LINKEDIN,
+      cover: null,
+    },
+    {
+      category: "Comunicação e cultura",
+      date: "2026",
+      title: "Quando a comunicação falha, a estratégia vira ruído",
+      summary: "A comunicação sustenta cultura, governança e previsibilidade. Mas costuma ser negligenciada.",
+      readingTime: "6 min",
+      url: LINKEDIN,
+      cover: null,
+    },
+    {
+      category: "Vida e trabalho",
+      date: "2026",
+      title: "O tempo é um oceano",
+      summary: "Quem não aprende a velejar vira passageiro da própria vida.",
+      readingTime: "10 min",
+      url: LINKEDIN,
+      cover: null,
+    },
+    {
+      category: "IA e discernimento",
+      date: "2026",
+      title: "Fascinados pela inteligência artificial, estamos ignorando o essencial",
+      summary: "Quando não nos autoavaliamos com franqueza, não conseguimos usar bem a tecnologia.",
+      readingTime: "8 min",
+      url: LINKEDIN,
+      cover: null,
     },
     {
       category: "Cultura e liderança",
       date: "2026",
-      title: "Cultura não é o que a empresa diz",
-      summary:
-        "Uma reflexão sobre comportamento, coerência e os sinais invisíveis que moldam uma organização.",
-      readingTime: "4 min",
+      title: "Cultura não é PowerPoint, mas a energia vital que sustenta a organização",
+      summary: "Quando vivida em todos os níveis, a cultura transforma relações, decisões e resultados.",
+      readingTime: "9 min",
       url: LINKEDIN,
+      cover: null,
     },
   ] as Article[],
-  allUrl: LINKEDIN,
+  allUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/articles/",
 };
 
 export const talks = {

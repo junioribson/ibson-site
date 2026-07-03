@@ -1,27 +1,12 @@
 ---
-// Marca temporária: "pico" geométrico em currentColor (roxo em fundo claro,
-// branco em fundo escuro). Substituir por /assets/logo/logo-*.png quando o Ibson enviar.
+// Logomarca oficial de Ibson Junior (extraída do material de marca em alta).
+// variant "roxa" para fundos claros, "branca" para fundos escuros.
 interface Props {
   class?: string;
+  variant?: "roxa" | "branca";
 }
-const { class: className } = Astro.props;
+const { class: className, variant = "roxa" } = Astro.props;
+const src = variant === "branca" ? "/assets/logo/logo-branca.png" : "/assets/logo/logo-roxa.png";
 ---
 
-<svg
-  class={className}
-  viewBox="0 0 40 40"
-  fill="none"
-  role="img"
-  aria-label="Ibson Junior"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M20 4 L36 36 L27 36 L20 21 L13 36 L4 36 Z"
-    fill="currentColor"
-  ></path>
-  <path
-    d="M20 13 L27 27 L20 27 L20 13 Z"
-    fill="currentColor"
-    opacity="0.45"
-  ></path>
-</svg>
+<img class={className} src={src} alt="Ibson Junior" width="843" height="843" />
