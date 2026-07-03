@@ -40,11 +40,17 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
   .brand-logo { color: var(--purple); }
   .nav-li {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 40px; height: 40px; border-radius: 3px;
-    border: 1px solid var(--hair); color: var(--ink);
-    transition: background 0.3s, color 0.3s, transform 0.25s var(--e), border-color 0.3s;
+    width: 40px; height: 40px; border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.22); color: #f1e7d4;
+    transition: background 0.3s, color 0.3s, transform 0.25s var(--e), border-color 0.3s, box-shadow 0.3s;
   }
-  .nav-li:hover { background: #0a66c2; border-color: #0a66c2; color: #fff; transform: translateY(-2px); }
+  .nav-li:hover {
+    color: #db6bff;
+    border-color: #db6bff;
+    background: rgba(219, 107, 255, 0.1);
+    box-shadow: 0 0 20px -3px rgba(219, 107, 255, 0.75);
+    transform: translateY(-2px);
+  }
   .nav-li .ic { width: 18px; height: 18px; }
   .mmenu-li {
     display: inline-flex; align-items: center; gap: 12px;
