@@ -1,14 +1,7 @@
 ---
-// ProliferArte: origem cultural e primeiro laboratório de audiência.
-// Capas em alta a chegar (public/assets/capas). Até lá, placeholders elegantes.
+// ProliferArte: origem cultural, contadores animados e estante de publicações reais.
 import { cases } from "../data/content";
 const p = cases.proliferarte;
-
-const phGrads = [
-  "linear-gradient(150deg,#2A0148,#5B2EE6)",
-  "linear-gradient(150deg,#44026F,#C94F8A)",
-  "linear-gradient(150deg,#150026,#7B57F0)",
-];
 ---
 
 <section class="prolifer" id="proliferarte">
@@ -23,37 +16,128 @@ const phGrads = [
           {p.body.map((par) => <p>{par}</p>)}
         </div>
       </div>
-      <div class="pro-stats reveal d1">
-        {
-          p.provas.map((s) => (
-            <div class="ps"><div class="n">{s.n}</div><div class="t">{s.t}</div></div>
-          ))
-        }
-      </div>
     </div>
+
+    <div class="pro-counters reveal">
+      {
+        p.provas.map((s) => (
+          <div class="pc-item">
+            {s.static ? (
+              <div class="pc-n">{s.display}</div>
+            ) : (
+              <div class="pc-n">
+                <span
+                  class="count"
+                  data-to={s.to}
+                  data-decimals={s.decimals ?? 0}
+                  data-suffix={s.suffix ?? ""}
+                >0{s.suffix}</span>
+              </div>
+            )}
+            <div class="pc-t">{s.label}</div>
+          </div>
+        ))
+      }
+    </div>
+
     <div class="reveal">
-      <div class="pubs-lbl">Publicações</div>
+      <div class="pubs-lbl">Publicações e coletâneas</div>
       <div class="pubs">
         {
-          p.galeria.map((pub, i) => (
-            <div class="pub">
+          p.galeria.map((pub) => (
+            <a
+              class="pub"
+              href={pub.url}
+              target={pub.url && pub.url !== "#" ? "_blank" : undefined}
+              rel={pub.url && pub.url !== "#" ? "noopener" : undefined}
+            >
               <div class="pc">
                 {pub.src ? (
                   <img loading="lazy" src={pub.src} alt={`Publicação da ProliferArte: ${pub.title}`} />
                 ) : (
-                  <div class="cov-ph" style={`background:${phGrads[i % phGrads.length]}`}>
-                    <span>IB</span>
-                  </div>
+                  <div class="cov-ph" style="background:linear-gradient(150deg,#2A0148,#5B2EE6)"><span>IB</span></div>
                 )}
               </div>
               <div class="pb">
                 <h3>{pub.title}</h3>
-                <span class="pl">Cultura</span>
+                <span class="pl">Ver ↗</span>
               </div>
-            </div>
+            </a>
           ))
         }
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .pro-counters {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--hair);
+    border: 1px solid var(--hair);
+    margin: 6px 0 54px;
+  }
+  .pc-item { background: var(--cream); padding: 26px 20px 24px; }
+  .pc-n {
+    font-size: clamp(26px, 3vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: var(--purple);
+    font-variant-numeric: tabular-nums;
+  }
+  .pc-t {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  @media (max-width: 980px) {
+    .pro-counters { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .pro-counters { grid-template-columns: repeat(2, 1fr); }
+    .pc-n { font-size: 28px; }
+  }
+</style>
+
+<script>
+  // Contador animado (count-up) ao entrar na tela, com formatação pt-BR.
+  const fmt = (v: number, decimals: number) =>
+    v.toLocaleString("pt-BR", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+
+  const animate = (el: HTMLElement) => {
+    const to = parseFloat(el.dataset.to || "0");
+    const decimals = parseInt(el.dataset.decimals || "0", 10);
+    const suffix = el.dataset.suffix || "";
+    const dur = 1600;
+    let start = 0;
+    const step = (ts: number) => {
+      if (!start) start = ts;
+      const t = Math.min(1, (ts - start) / dur);
+      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      el.textContent = fmt(to * eased, decimals) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(to, decimals) + suffix;
+    };
+    requestAnimationFrame(step);
+  };
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          animate(e.target as HTMLElement);
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  document.querySelectorAll<HTMLElement>(".count").forEach((el) => io.observe(el));
+</script>

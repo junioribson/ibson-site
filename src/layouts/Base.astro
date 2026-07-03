@@ -38,6 +38,7 @@ const { title = seo.title, description = seo.description } = Astro.props;
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
+    <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
     <slot />
 
     <script>
@@ -54,6 +55,36 @@ const { title = seo.title, description = seo.description } = Astro.props;
         { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
       );
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      // Movimento: barra de progresso + parallax leve nas camadas de arquétipo.
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reduce) {
+        const bar = document.getElementById("scrollbar");
+        const layers = [...document.querySelectorAll<HTMLElement>(".arch-layer")];
+        let ticking = false;
+        const update = () => {
+          const h = document.documentElement.scrollHeight - window.innerHeight;
+          const p = h > 0 ? window.scrollY / h : 0;
+          if (bar) bar.style.transform = `scaleX(${p})`;
+          const vh = window.innerHeight;
+          for (const el of layers) {
+            const r = el.getBoundingClientRect();
+            const center = r.top + r.height / 2;
+            const off = (center - vh / 2) / vh; // -1..1 aprox
+            el.style.transform = `translate3d(0, ${(-off * 34).toFixed(1)}px, 0)`;
+          }
+          ticking = false;
+        };
+        const onScroll = () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll, { passive: true });
+        update();
+      }
     </script>
   </body>
 </html>

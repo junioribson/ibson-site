@@ -1,30 +1,30 @@
 ---
-// Trajetória em imagens: humaniza o site. Somente fotos reais ou placeholders
-// assumidos. Nunca palco, plateia ou evento falsos.
-// TODO(asset): substituir cada item por foto real em /assets/retratos ou /assets/capas.
-interface GalItem {
+// Últimos acontecimentos: galeria de aparições recentes (eventos, palestras,
+// lançamentos, conselho). Editável: o Ibson atualiza com novas fotos.
+// TODO(asset): salvar as fotos em /assets/eventos e apontar `src` de cada item.
+interface Evento {
   cap: string;
   src?: string | null;
   size?: "tall" | "wide" | "";
 }
-const items: GalItem[] = [
-  { cap: "Retrato editorial", src: null, size: "tall" },
-  { cap: "Construção de audiência", src: null, size: "wide" },
-  { cap: "Cultura e comunidade", src: null, size: "" },
-  { cap: "Conteúdo e responsabilidade", src: null, size: "" },
-  { cap: "Trajetória editorial", src: null, size: "wide" },
-  { cap: "Reflexões em construção", src: null, size: "" },
+const eventos: Evento[] = [
+  { cap: "Board Academy · formação Advanced para Advisor", src: null, size: "wide" },
+  { cap: "Lançamento do livro Conselho Diário", src: null, size: "tall" },
+  { cap: "Encontro de conselheiros", src: null, size: "" },
+  { cap: "ProliferArte · cultura e comunidade", src: null, size: "" },
+  { cap: "Bastidores editoriais", src: null, size: "" },
 ];
 ---
 
-<section class="gal" id="trajetoria">
+<section class="gal" id="acontecimentos">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Trajetória em imagens</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">Últimos acontecimentos</span>
     </div>
+    <p class="gal-intro reveal">Registros recentes de eventos, palestras, conselho e cultura. Um espaço vivo, atualizado a cada nova aparição.</p>
     <div class="galgrid">
       {
-        items.map((it) => (
+        eventos.map((it) => (
           <figure class={`galitem reveal ${it.size === "tall" ? "g-tall" : it.size === "wide" ? "g-wide" : ""}`}>
             {it.src ? (
               <img loading="lazy" src={it.src} alt={it.cap} />
@@ -38,3 +38,7 @@ const items: GalItem[] = [
     </div>
   </div>
 </section>
+
+<style>
+  .gal-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.7; max-width: 56ch; margin: -20px 0 38px; }
+</style>

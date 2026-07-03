@@ -144,16 +144,21 @@ export const cases = {
       "Ao longo da trajetória, a ProliferArte se consolidou como uma comunidade digital de cultura, dando visibilidade a artistas, ampliando acesso e construindo pontes entre criação e audiência.",
       "Mais do que um projeto cultural, a ProliferArte foi o primeiro grande laboratório de Ibson sobre audiência, pertencimento, comunicação e impacto social.",
     ],
+    // Contadores animados (contam ao entrar na tela). `static` não anima.
     provas: [
-      { n: "2008", t: "início do movimento" },
-      { n: "1,5 Mi+", t: "pessoas na comunidade" },
-      { n: "Ativo", t: "cultura e visibilidade" },
-    ],
-    // Capas em alta a chegar; até lá, placeholders elegantes.
+      { display: "Desde 2008", label: "início do movimento", static: true },
+      { to: 18, suffix: " anos", label: "à frente do movimento" },
+      { to: 1.5, decimals: 1, suffix: " Mi+", label: "pessoas na comunidade" },
+      { to: 30, suffix: " Mi+", label: "alcance mensal" },
+      { to: 1.5, decimals: 1, suffix: " Mi+", label: "engajamento mensal" },
+      { to: 12, suffix: " Mi+", label: "impactados por ano" },
+    ] as Array<{ display?: string; label: string; static?: boolean; to?: number; decimals?: number; suffix?: string }>,
+    // Capas reais extraídas dos PDFs do Ibson (publicações e coletâneas).
+    // TODO(link): apontar `url` de cada publicação quando houver página/loja.
     galeria: [
-      { title: "A Beleza da Natureza", src: null as string | null },
-      { title: "Revista ProliferArte", src: null as string | null },
-      { title: "Arte Aberta", src: null as string | null },
+      { title: "Revista ProliferArte: Retrato", src: "/assets/capas/revista-retrato.png" as string | null, url: "#" },
+      { title: "ValorizArte: Transbordando Percepção", src: "/assets/capas/valorizarte.png" as string | null, url: "#" },
+      { title: "Mente Aberta: Evolução dos Pensamentos", src: "/assets/capas/mente-aberta.png" as string | null, url: "#" },
     ],
   },
 };
