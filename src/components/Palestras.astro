@@ -56,26 +56,34 @@ import { talks } from "../data/content";
 </section>
 
 <style>
+  /* Coruja integrada ao fundo: blend screen faz o céu escuro dissolver e só a
+     constelação dourada aparecer, fundida com a noite da seção. */
   .pal-owl {
     position: absolute;
-    right: 3%;
-    top: 4%;
-    width: min(28vw, 360px);
-    z-index: 1;
+    right: -4%;
+    top: -8%;
+    width: min(50vw, 680px);
+    height: 86%;
+    z-index: 0;
     pointer-events: none;
     will-change: transform;
   }
   .pal-owl img {
     width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 46px rgba(203, 168, 106, 0.22));
+    height: 100%;
+    object-fit: contain;
+    object-position: right top;
+    mix-blend-mode: screen;
+    opacity: 0.7;
+    -webkit-mask-image: radial-gradient(72% 78% at 64% 42%, #000 42%, transparent 82%);
+    mask-image: radial-gradient(72% 78% at 64% 42%, #000 42%, transparent 82%);
     animation: owl-breathe 9s ease-in-out infinite;
   }
   @keyframes owl-breathe {
-    0%, 100% { opacity: 0.82; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.82; }
   }
-  @media (max-width: 900px) { .pal-owl { opacity: 0.32; width: 46vw; right: -6%; top: 2%; } }
+  @media (max-width: 900px) { .pal-owl { opacity: 0.55; width: 82vw; right: -14%; top: -2%; height: 60%; } }
   @media (prefers-reduced-motion: reduce) { .pal-owl img { animation: none; } }
 
   .pcards {

@@ -193,7 +193,7 @@ export const articles = {
       summary: "Entre o grito de gol e a narrativa, cobrir a Copa com consciência é mais do que informar.",
       readingTime: "13 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-copa.webp",
     },
     {
       category: "Carreira e consciência",
@@ -229,7 +229,7 @@ export const articles = {
       summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
       readingTime: "8 min",
       url: LINKEDIN,
-      cover: "/assets/artigos/artigo-governanca.webp",
+      cover: null,
     },
     {
       category: "Comunicação e cultura",
@@ -265,7 +265,7 @@ export const articles = {
       summary: "Quando vivida em todos os níveis, a cultura transforma relações, decisões e resultados.",
       readingTime: "9 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-cultura.webp",
     },
   ] as Article[],
   allUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/articles/",
