@@ -1,0 +1,144 @@
+/* ==========================================================================
+   TEMA ESCURO CINEMATOGRÁFICO (híbrido escuro).
+   Aplicado por cima de sections.css. Base escura, texto claro, acentos
+   luminosos (violeta + dourado), painéis em vidro. "Luz dentro do escuro".
+   ========================================================================== */
+
+/* Flip de tokens de linha e texto secundário (afeta todo o site de uma vez) */
+:root {
+  --hair: rgba(255, 255, 255, 0.12);
+  --hair-2: rgba(255, 255, 255, 0.06);
+  --ink-soft: #b9aacb;
+}
+
+/* Grão legível no escuro */
+.grain { mix-blend-mode: soft-light; opacity: 0.06; }
+
+/* Rótulos de seção */
+.shead .lbl { color: var(--gold); }
+.shead .rule { background: rgba(255, 255, 255, 0.45); opacity: 1; }
+.shead .dot { background: var(--violet); box-shadow: 0 0 0 4px rgba(91, 46, 230, 0.16); }
+
+/* ---- NAV ---- */
+nav.scrolled {
+  background: rgba(18, 10, 28, 0.82);
+  box-shadow: 0 1px 0 var(--line);
+}
+.brand b { color: var(--cream); }
+.brand .bs { color: var(--text-dim); }
+.hamb { border-color: var(--line); }
+.hamb span { background: var(--cream); }
+.nav-cta { background: var(--violet); }
+.nav-cta:hover { background: var(--violet-2); }
+.nav-li { border-color: var(--line); color: var(--cream); }
+
+/* ---- HERO ---- */
+.hx {
+  background:
+    radial-gradient(120% 90% at 82% 4%, rgba(123, 87, 240, 0.28), transparent 55%),
+    radial-gradient(90% 80% at 4% 104%, rgba(176, 146, 94, 0.14), transparent 55%),
+    linear-gradient(168deg, #1c1030 0%, #150826 52%, #100718 100%);
+}
+.hx-k { color: var(--text-dim); }
+.hx-rail { color: var(--text-dim); }
+.hx-sub { color: var(--text-soft); }
+.hx-word { color: rgba(255, 255, 255, 0.13); }
+.hx-word b { color: var(--violet-2); }
+.hx-mark { opacity: 0.14; }
+.hx-mark path { fill: var(--violet); }
+.hx-btn-fill { background: var(--violet); color: #fff; }
+.hx-btn-fill::before { background: linear-gradient(100deg, var(--violet-2), var(--magenta)); }
+.hx-btn-line { border-color: rgba(255, 255, 255, 0.3); color: var(--cream); }
+.hx-btn-line:hover { border-color: #fff; background: rgba(255, 255, 255, 0.06); }
+.hx-scroll { color: var(--text-dim); }
+.hx-scroll-line { background: rgba(255, 255, 255, 0.4); }
+
+/* ---- Fundos de seção que eram claros ---- */
+.sobre, .cases, .prolifer, .gal, .arts, .ment, .vids {
+  background: transparent;
+  border-top: 1px solid var(--line);
+}
+.cases, .vids {
+  background:
+    radial-gradient(60% 50% at 88% -6%, rgba(123, 87, 240, 0.12), transparent 60%),
+    linear-gradient(170deg, #170d24 0%, #120a1c 72%);
+}
+/* orbs das seções claras: tom para escuro */
+.sobre::before, .cases::before, .prolifer::before, .gal::before,
+.arts::before, .ment::before, .vids::before {
+  background:
+    radial-gradient(38vw 38vw at 14% 16%, rgba(123, 87, 240, 0.14), transparent 62%),
+    radial-gradient(30vw 30vw at 88% 86%, rgba(176, 146, 94, 0.10), transparent 62%);
+}
+
+/* ---- Cartões e painéis: vidro escuro ---- */
+.pub, .tcard, .mitem, .pressrow, .subcase, .casecard, .artcard,
+.pc-item, .gcard, .ment-col, .pro-fb, .libcard {
+  background: var(--panel);
+  border-color: var(--line);
+}
+.pub:hover, .tcard:hover, .artcard:hover, .subcase:hover { box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.7); }
+.pub .pc { background: #0f0a18; }
+.chips .chip { background: rgba(255, 255, 255, 0.05); border-color: var(--line); color: var(--text-soft); }
+
+/* Cases (bloco escuro): o feat já é escuro; ajustes finos */
+.cases-head p { color: var(--text-soft); }
+.pressrow .pt b { color: #fff; }
+.pressrow .pk { color: var(--violet-2); }
+.subcase .num { color: var(--violet-2); }
+.subcase .sk { color: var(--gold); }
+.subcase .st { color: var(--text-soft); }
+.casecard .cc-tag { color: var(--gold); }
+.casecard h3 { color: #fff; }
+.casecard p { color: var(--text-soft); }
+.casecard .cc-cta { border-color: rgba(255, 255, 255, 0.28); color: var(--cream); }
+.casecard .cc-cta:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
+
+/* Sobre */
+.sobre h2 { color: #fff; }
+.about-sub { color: var(--text-soft); }
+.sobre .body p { color: var(--text-soft); }
+.sobre .body p strong, .sobre .body p em { color: #fff; }
+.about-proofs { border-color: var(--line); }
+.about-proofs .pr { border-color: var(--line-2); }
+.about-proofs .pr .v { color: var(--text-soft); }
+
+/* ProliferArte */
+.pro-grid h2 { color: #fff; }
+.pro-grid .body p { color: var(--text-soft); }
+.pc-n { color: var(--violet-2); }
+.pub h3 { color: #fff; }
+.pro-fb-text h3 { color: #fff; }
+.pro-fb-text p { color: var(--text-soft); }
+
+/* Galeria */
+.gal-intro { color: var(--text-soft); }
+
+/* Artigos */
+.arts-head h2 { color: #fff; }
+.arts-intro { color: var(--text-soft); }
+.artcard { background: var(--panel); }
+.art-body h3 { color: #fff; }
+.art-time { color: var(--text-dim); }
+.arts-foot a { color: var(--cream); }
+
+/* Repertório (marrom): manter, texto já claro */
+.repo.repertorio { border-top: 1px solid var(--line); }
+
+/* Mentoria */
+.ment-head h2 { color: #fff; }
+.ment-intro p { color: var(--text-soft); }
+.ment-col h3 { color: var(--violet-2); }
+.ment-col p, .ment-col li { color: var(--text-soft); }
+.ment-cta .who { color: var(--text-dim); }
+
+/* Vídeos */
+.vids-intro { color: var(--text-soft); }
+.vcard { background: var(--panel); border-color: var(--line); }
+.vcard h3 { color: #fff; }
+
+/* Botões utilitários no escuro */
+.btn-line { border-color: rgba(255, 255, 255, 0.28); color: var(--cream); }
+.btn-line:hover { background: var(--cream); color: #150026; }
+.btn-fill { background: var(--violet); color: #fff; }
+.btn-fill:hover { background: var(--violet-2); }

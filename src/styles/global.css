@@ -63,8 +63,8 @@ html {
 }
 
 body {
-  background: var(--color-cream);
-  color: var(--color-ink);
+  background: #120a1c;
+  color: var(--color-cream);
   font-family: var(--font-sans);
   font-size: 17px;
   line-height: 1.6;
@@ -72,6 +72,18 @@ body {
   overflow-x: hidden;
 }
 body.lock { overflow: hidden; }
+
+/* Tokens de superfície do tema escuro */
+:root {
+  --surface: #170d24;
+  --surface-2: #1e1130;
+  --panel: rgba(255, 255, 255, 0.045);
+  --line: rgba(255, 255, 255, 0.10);
+  --line-2: rgba(255, 255, 255, 0.06);
+  --text: #ece3d4;
+  --text-soft: #c1b2cf;
+  --text-dim: #8f80a0;
+}
 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }

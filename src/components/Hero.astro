@@ -76,9 +76,9 @@ const keywords = ["Consciência", "Decisão", "Liderança", "Conteúdo", "IA", "
     overflow: hidden;
     padding: 150px 0 0;
     background:
-      radial-gradient(120% 90% at 82% 6%, rgba(123, 87, 240, 0.16), transparent 55%),
-      radial-gradient(90% 80% at 0% 100%, rgba(176, 146, 94, 0.14), transparent 55%),
-      var(--cream);
+      radial-gradient(120% 90% at 82% 4%, rgba(123, 87, 240, 0.30), transparent 55%),
+      radial-gradient(90% 80% at 2% 104%, rgba(176, 146, 94, 0.16), transparent 55%),
+      linear-gradient(168deg, #1c1030 0%, #150826 52%, #100718 100%);
   }
 
   /* Campo de luz */
@@ -165,7 +165,7 @@ const keywords = ["Consciência", "Decisão", "Liderança", "Conteúdo", "IA", "
     max-width: 52ch;
     font-size: clamp(16px, 1.4vw, 20px);
     line-height: 1.55;
-    color: #40331f;
+    color: #c8b9d6;
     font-weight: 500;
     opacity: 0;
     transform: translateY(14px);
@@ -183,23 +183,23 @@ const keywords = ["Consciência", "Decisão", "Liderança", "Conteúdo", "IA", "
     transition: transform .3s var(--e), box-shadow .3s, color .3s;
   }
   .hx-btn span { position: relative; z-index: 2; }
-  .hx-btn-fill { background: var(--ink); color: var(--cream); }
-  .hx-btn-fill::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, var(--purple), var(--violet)); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--e); }
-  .hx-btn-fill:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -16px rgba(91, 46, 230, 0.55); }
+  .hx-btn-fill { background: var(--violet); color: #fff; }
+  .hx-btn-fill::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(100deg, var(--violet-2), var(--magenta)); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--e); }
+  .hx-btn-fill:hover { transform: translateY(-3px); box-shadow: 0 20px 40px -16px rgba(91, 46, 230, 0.6); }
   .hx-btn-fill:hover::before { transform: scaleX(1); }
-  .hx-btn-line { border: 1.5px solid rgba(28, 14, 4, 0.28); color: var(--ink); }
-  .hx-btn-line:hover { border-color: var(--ink); transform: translateY(-3px); }
+  .hx-btn-line { border: 1.5px solid rgba(255, 255, 255, 0.3); color: var(--cream); }
+  .hx-btn-line:hover { border-color: #fff; background: rgba(255, 255, 255, 0.06); transform: translateY(-3px); }
 
   /* Marquee */
   .hx-marquee { position: absolute; left: 0; right: 0; bottom: 84px; z-index: 2; overflow: hidden; opacity: 0; animation: rise 1s var(--e) .9s forwards; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
   .hx-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
   .hx-set { display: flex; }
-  .hx-word { font-family: var(--font-sans); font-weight: 800; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -0.02em; color: color-mix(in srgb, var(--ink) 16%, transparent); white-space: nowrap; padding: 0 6px; }
+  .hx-word { font-family: var(--font-sans); font-weight: 800; font-size: clamp(20px, 2.6vw, 34px); letter-spacing: -0.02em; color: rgba(255, 255, 255, 0.13); white-space: nowrap; padding: 0 6px; }
   .hx-word b { color: var(--violet); margin: 0 22px; font-weight: 800; }
   @keyframes marquee { to { transform: translateX(-50%); } }
 
   .hx-scroll { position: absolute; right: var(--gut); bottom: 30px; z-index: 3; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-soft); opacity: 0; animation: rise 1s var(--e) 1s forwards; }
-  .hx-scroll-line { width: 40px; height: 1px; background: var(--ink); position: relative; overflow: hidden; }
+  .hx-scroll-line { width: 40px; height: 1px; background: rgba(255, 255, 255, 0.4); position: relative; overflow: hidden; }
   .hx-scroll-line::after { content: ""; position: absolute; inset: 0; background: var(--violet); animation: slide 1.8s var(--e) infinite; }
 
   @keyframes rise { to { opacity: 1; transform: none; } }
