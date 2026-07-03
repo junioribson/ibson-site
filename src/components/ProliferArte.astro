@@ -71,15 +71,44 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
   .pro-counters {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 1px;
-    background: var(--hair);
-    border: 1px solid var(--hair);
-    margin: 6px 0 54px;
+    gap: 14px;
+    margin: 10px 0 54px;
   }
-  .pc-item { background: rgba(255, 255, 255, 0.035); padding: 26px 20px 24px; }
-  .pc-n { color: var(--violet-2); }
-  .pc-n { font-size: clamp(26px, 3vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95; color: var(--purple); font-variant-numeric: tabular-nums; }
-  .pc-t { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; line-height: 1.4; }
+  .pc-item {
+    position: relative;
+    background: linear-gradient(160deg, rgba(219, 107, 255, 0.09), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(219, 107, 255, 0.2);
+    border-radius: 12px;
+    padding: 26px 20px 24px;
+    overflow: hidden;
+    transition: transform 0.4s var(--e), border-color 0.4s, box-shadow 0.4s;
+  }
+  .pc-item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #db6bff 45%, #f0a35c 55%, transparent);
+    background-size: 220% 100%;
+    animation: pc-sheen 3.6s linear infinite;
+    opacity: 0.8;
+  }
+  @keyframes pc-sheen { 0% { background-position: 220% 0; } 100% { background-position: -220% 0; } }
+  .pc-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(219, 107, 255, 0.55);
+    box-shadow: 0 20px 44px -22px rgba(219, 107, 255, 0.65);
+  }
+  .pc-n {
+    font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95;
+    font-variant-numeric: tabular-nums; color: #db6bff;
+    background: linear-gradient(100deg, #b98bff 0%, #db6bff 38%, #f0a35c 74%, #b98bff 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: accent-slide 6s linear infinite;
+    filter: drop-shadow(0 0 16px rgba(219, 107, 255, 0.4));
+  }
+  .pc-t { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #d3c6e6; margin-top: 12px; line-height: 1.4; }
 
   .pub figcaption.pb { padding: 18px 22px 22px; }
   .pub .pb h3 { font-size: 16px; }
