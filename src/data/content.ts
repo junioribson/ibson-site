@@ -321,7 +321,7 @@ export const talks = {
       description:
         "Sobre carreira, repertório, criatividade, cansaço e o risco de reduzir a vida ao cargo.",
       audience: "Empresas, lideranças, RH, educação corporativa e profissionais em transição.",
-      cover: null as string | null,
+      cover: "/assets/palestras/palestra-identidade.webp",
     },
   ],
   formats: ["Palestra", "Painel", "Roda executiva", "Workshop", "Aula especial", "Conversa com lideranças"],
