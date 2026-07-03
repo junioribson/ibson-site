@@ -9,7 +9,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "wrangler pages deploy dist --project-name=ibson-junior"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
@@ -17,6 +18,7 @@
     "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
-    "pngjs": "^7.0.0"
+    "pngjs": "^7.0.0",
+    "wrangler": "^4.107.0"
   }
 }
