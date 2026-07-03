@@ -252,3 +252,57 @@ body { background: #0e0a12; color: #f1e7d4; }
 .tese .body p { color: #5a4d38; }
 .tese .body p:first-child { color: #1c1409; }
 .tese .closing { color: #9c6f2e; }
+
+/* ==========================================================================
+   EFEITO NEON + MOVIMENTO (WolfLife, TikTok, formulário de contato)
+   ========================================================================== */
+@keyframes sheen-x { 0% { background-position: 220% 0; } 100% { background-position: -220% 0; } }
+
+/* Números neon animados (WolfLife e subcase 9 Bi+) */
+.fstats .fs .n, .subcase .num, .subcase .num em {
+  background: linear-gradient(100deg, #b98bff 0%, #db6bff 38%, #f0a35c 74%, #b98bff 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accent-slide 6s linear infinite;
+  filter: drop-shadow(0 0 14px rgba(219, 107, 255, 0.4));
+}
+
+/* Subcase TikTok: coluna + rótulo + logo */
+.subcase-left { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.num-sub {
+  font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #e6cd8f;
+}
+.tiktok-logo {
+  margin-top: 16px;
+  overflow: visible;
+  filter: drop-shadow(0 0 12px rgba(37, 244, 238, 0.4)) drop-shadow(0 0 12px rgba(254, 44, 85, 0.35));
+}
+.tiktok-logo .tk-c { fill: #25f4ee; animation: tk-c 2.8s ease-in-out infinite; }
+.tiktok-logo .tk-r { fill: #fe2c55; animation: tk-r 2.8s ease-in-out infinite; }
+.tiktok-logo .tk-w { fill: #fff; }
+@keyframes tk-c { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-1.6px, 1.2px); } }
+@keyframes tk-r { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(1.6px, -1.2px); } }
+
+/* Formulário de contato com o mesmo efeito (borda neon + linha de luz correndo) */
+.cform {
+  position: relative;
+  border: 1px solid rgba(219, 107, 255, 0.3);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 0 46px -22px rgba(219, 107, 255, 0.55);
+}
+.cform::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 2px; z-index: 3;
+  background: linear-gradient(90deg, transparent, #db6bff 45%, #f0a35c 55%, transparent);
+  background-size: 220% 100%;
+  animation: sheen-x 3.6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiktok-logo .tk-c, .tiktok-logo .tk-r { animation: none; }
+  .cform::before { animation: none; }
+}
