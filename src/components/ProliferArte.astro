@@ -11,6 +11,7 @@ const p = cases.proliferarte;
     </div>
     <div class="pro-grid">
       <div class="reveal">
+        <img class="pro-logo" src="/assets/logo/proliferarte.png" alt="ProliferArte" width="200" height="200" loading="lazy" />
         <h2>Cultura, comunidade e o primeiro laboratório de audiência.</h2>
         <div class="body">
           {p.body.map((par) => <p>{par}</p>)}
@@ -71,6 +72,7 @@ const p = cases.proliferarte;
 </section>
 
 <style>
+  .pro-logo { height: 92px; width: auto; margin-bottom: 20px; }
   .pro-counters {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
