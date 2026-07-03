@@ -820,3 +820,109 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   .arch-layer { opacity: 0.06 !important; }
   .vids, .gal { padding: 62px 0; }
 }
+
+/* ==========================================================================
+   SISTEMA VISUAL v3: alternância de fundos, orbs animados e textura.
+   Objetivo: mais punch, profundidade e movimento (referência trakto),
+   dentro da paleta (branco/creme, roxo, marrom).
+   ========================================================================== */
+
+/* Orbs de fundo animados (movimento e profundidade). Aplicados direto às
+   seções por seletor, sem precisar mexer no markup. */
+.sobre, .cases, .prolifer, .gal, .arts, .ment, .vids, .repo, .tese {
+  position: relative;
+  isolation: isolate;
+}
+.arts { overflow: hidden; }
+.sobre::before, .cases::before, .prolifer::before, .gal::before,
+.arts::before, .ment::before, .vids::before {
+  content: "";
+  position: absolute;
+  inset: -12% 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(36vw 36vw at 14% 16%, rgba(123, 87, 240, 0.10), transparent 62%),
+    radial-gradient(30vw 30vw at 88% 86%, rgba(176, 146, 94, 0.12), transparent 62%),
+    radial-gradient(22vw 22vw at 64% 40%, rgba(201, 79, 138, 0.06), transparent 64%);
+  animation: orb-drift 32s ease-in-out infinite alternate;
+  will-change: transform;
+}
+/* garante conteúdo acima dos orbs */
+.sobre > .wrap, .cases > .wrap, .prolifer > .wrap, .gal > .wrap,
+.arts > .wrap, .ment > .wrap, .vids > .wrap { position: relative; z-index: 2; }
+@keyframes orb-drift {
+  0% { transform: translate3d(-2%, 1%, 0) scale(1); }
+  100% { transform: translate3d(3%, -2%, 0) scale(1.08); }
+}
+
+/* Textura de grade editorial fina para blocos escuros */
+.tex-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 48px);
+  -webkit-mask-image: radial-gradient(130% 100% at 50% 0%, #000, transparent 76%);
+  mask-image: radial-gradient(130% 100% at 50% 0%, #000, transparent 76%);
+}
+
+/* ---- TESE agora é um BLOCO ROXO de impacto ---- */
+.tese {
+  background: linear-gradient(158deg, #3a0b63 0%, #2A0148 48%, #150026 100%);
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.tese::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(30vw 30vw at 82% 18%, rgba(123, 87, 240, 0.5), transparent 60%),
+    radial-gradient(26vw 26vw at 10% 96%, rgba(201, 79, 138, 0.32), transparent 60%);
+  filter: blur(20px);
+  animation: orb-drift 28s ease-in-out infinite alternate;
+}
+.tese .wrap { position: relative; z-index: 2; }
+.tese blockquote { color: #fff; }
+.tese .kicker { color: var(--gold); }
+.tese .body p { color: #d9c7f5; }
+.tese .body p:first-child { color: #fff; }
+.tese .closing { color: #fff; font-weight: 800; }
+
+/* ---- REPERTÓRIO agora é um BLOCO MARROM ---- */
+.repo.repertorio {
+  background: linear-gradient(158deg, #2b1608 0%, #1C0E04 62%, #140a03 100%);
+  color: var(--cream);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.repo.repertorio::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(28vw 28vw at 86% 22%, rgba(176, 146, 94, 0.28), transparent 60%),
+    radial-gradient(24vw 24vw at 8% 92%, rgba(123, 87, 240, 0.2), transparent 62%);
+  filter: blur(18px);
+  animation: orb-drift 30s ease-in-out infinite alternate;
+}
+.repo.repertorio .wrap { position: relative; z-index: 2; }
+.repo.repertorio .shead .lbl { color: var(--gold); }
+.repo.repertorio .shead .rule { background: var(--gold); opacity: 0.5; }
+
+/* Palestras e Contato: um pouco mais de vida nos orbs já existentes */
+.pal .pa { background: radial-gradient(circle, rgba(123, 87, 240, 0.6), transparent 66%); }
+
+/* Realce de contraste em rótulos monoespaçados (legibilidade) */
+.shead .lbl { color: #6b5947; }
