@@ -940,3 +940,64 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
 /* Logo do case (ex.: Futmarketing) no topo do card, com respiro */
 .casecard .cc-logo { height: 60px; width: auto; display: block; margin-bottom: 22px; }
 @media (max-width: 600px) { .casecard .cc-logo { height: 50px; } }
+
+/* ==========================================================================
+   LINGUAGEM CINEMATOGRÁFICA v4: luz dramática (dourado + violeta) nos blocos.
+   "Luz dentro da riqueza": profundidade escura com foco de luz.
+   ========================================================================== */
+
+/* Foco de luz superior (spotlight) reutilizável para blocos escuros */
+.tese::after, .repo.repertorio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 40% at 50% -6%, rgba(176, 146, 94, 0.16), transparent 60%),
+    radial-gradient(46% 34% at 84% 108%, rgba(123, 87, 240, 0.18), transparent 60%);
+}
+
+/* CONTATO cinematográfico */
+.contato {
+  background:
+    radial-gradient(70% 50% at 50% -8%, rgba(123, 87, 240, 0.32), transparent 58%),
+    radial-gradient(50% 40% at 12% 106%, rgba(176, 146, 94, 0.16), transparent 60%),
+    linear-gradient(170deg, #1c0e04 0%, #26063f 58%, #150026 100%);
+}
+.contato .glow {
+  background: radial-gradient(circle, rgba(123, 87, 240, 0.5), transparent 62%);
+  filter: blur(30px);
+}
+.contato h2 {
+  font-size: clamp(38px, 6vw, 92px);
+  letter-spacing: -0.045em;
+}
+.contato .lead { color: #d9c7f5; }
+.contato .shead .lbl { color: var(--gold); }
+.contato .shead .rule { background: var(--gold); opacity: 0.55; }
+
+/* Painel do formulário com vidro sutil e borda dourada fina */
+.cform {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(176, 146, 94, 0.22);
+  border-radius: 14px;
+  padding: 30px;
+  backdrop-filter: blur(6px);
+}
+.cform input, .cform select, .cform textarea {
+  background: rgba(0, 0, 0, 0.22);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+.cform input:focus, .cform select:focus, .cform textarea:focus {
+  border-color: var(--gold);
+  background: rgba(0, 0, 0, 0.32);
+}
+.quick a {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+}
+.quick a:hover { background: var(--violet); border-color: var(--violet); }
+
+@media (max-width: 620px) { .cform { padding: 22px; } }
