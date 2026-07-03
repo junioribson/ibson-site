@@ -1,6 +1,6 @@
 ---
-// Palestras: frente nova, aberta com elegância, sem inventar histórico.
-// Atmosfera de noite preservada. Seis temas reais em desenvolvimento.
+// Palestras: cards cinematográficos com imagem de fundo + texto sobreposto.
+// Clima de noite (lua + estrelas). Sem inventar histórico.
 import { talks } from "../data/content";
 import Moon from "./Moon.astro";
 ---
@@ -19,15 +19,24 @@ import Moon from "./Moon.astro";
       </div>
     </div>
 
-    <div class="talks-grid reveal stagger">
+    <div class="pcards reveal stagger">
       {
         talks.themes.map((th, i) => (
-          <div class="talk">
-            <div class="tn">/{String(i + 1).padStart(2, "0")}</div>
-            <h3>{th.title}</h3>
-            <p>{th.description}</p>
-            <span class="who">{th.audience}</span>
-          </div>
+          <article class="pcard">
+            {th.cover ? (
+              <img class="pcard-img" loading="lazy" src={th.cover} alt="" />
+            ) : (
+              <div class="pcard-img pcard-ph" />
+            )}
+            <div class="pcard-ov">
+              <div class="pcard-n">/{String(i + 1).padStart(2, "0")}</div>
+              <div class="pcard-txt">
+                <h3>{th.title}</h3>
+                <p>{th.description}</p>
+                <span class="pcard-who">{th.audience}</span>
+              </div>
+            </div>
+          </article>
         ))
       }
     </div>
@@ -44,3 +53,84 @@ import Moon from "./Moon.astro";
     </div>
   </div>
 </section>
+
+<style>
+  .pcards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin: 44px 0 34px;
+  }
+  .pcard {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 26px 60px -34px rgba(0, 0, 0, 0.8);
+    isolation: isolate;
+  }
+  .pcard-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.9s var(--e);
+  }
+  .pcard-ph { background: linear-gradient(150deg, #3a0a5e, #180030 70%); }
+  .pcard:hover .pcard-img { transform: scale(1.06); }
+  .pcard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(21, 0, 38, 0.12) 0%, rgba(21, 0, 38, 0.35) 42%, rgba(15, 0, 28, 0.93) 100%);
+  }
+  .pcard-ov {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 26px 28px;
+  }
+  .pcard-n {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .pcard-txt h3 {
+    font-size: clamp(19px, 1.5vw, 23px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+    color: #fff;
+  }
+  .pcard-txt p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e4d8f5;
+    margin-top: 10px;
+    /* mostra 3 linhas, resto no hover */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: -webkit-line-clamp 0.3s;
+  }
+  .pcard:hover .pcard-txt p { -webkit-line-clamp: 6; }
+  .pcard-who {
+    display: block;
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: #b49fd6;
+  }
+  @media (max-width: 1100px) { .pcards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .pcards { grid-template-columns: 1fr; } .pcard { aspect-ratio: 16 / 12; } }
+</style>

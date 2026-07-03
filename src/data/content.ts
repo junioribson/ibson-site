@@ -279,42 +279,49 @@ export const talks = {
     "Estou estruturando uma frente de palestras e conversas executivas a partir dos temas que venho desenvolvendo em artigos, liderança e experiências profissionais.",
     "A proposta não é levar respostas prontas, mas provocar clareza, responsabilidade e maturidade em quem decide, comunica e lidera.",
   ],
+  // TODO(asset): a 6ª imagem (tema "Quando a profissão vira identidade") chega depois.
   themes: [
     {
       title: "Conteúdo não disputa apenas atenção. Disputa responsabilidade.",
       description:
         "Sobre comunicação, IA, algoritmos, jornalismo, confiança e responsabilidade editorial em um ambiente saturado de informação.",
       audience: "Marketing, comunicação, mídia, liderança, conteúdo, reputação e cultura.",
+      cover: "/assets/palestras/palestra-conteudo.webp",
     },
     {
       title: "A IA pode ser motor. O humano precisa continuar no volante.",
       description:
         "Uma conversa sobre produtividade, discernimento, julgamento humano e responsabilidade no uso da inteligência artificial.",
       audience: "Lideranças, equipes de conteúdo, tecnologia, RH, educação e negócios.",
+      cover: "/assets/palestras/palestra-ia.webp",
     },
     {
       title: "Critério sob pressão.",
       description:
         "Como decidir melhor quando velocidade, volume e urgência parecem dominar o ambiente.",
       audience: "Executivos, gestores, coordenadores, heads e equipes de alta demanda.",
+      cover: "/assets/palestras/palestra-criterio.webp",
     },
     {
       title: "Cultura é o que a organização aprende a tolerar.",
       description:
         "Sobre comportamento, confiança, coerência e os sinais invisíveis que moldam empresas.",
       audience: "RH, cultura, liderança, gestão e desenvolvimento organizacional.",
+      cover: "/assets/palestras/palestra-cultura.webp",
     },
     {
       title: "Governança pessoal precede a cadeira.",
       description:
         "Uma reflexão sobre maturidade, autoconsciência, reputação e responsabilidade antes do poder formal.",
       audience: "Líderes, conselheiros em formação, executivos e profissionais em transição.",
+      cover: "/assets/palestras/palestra-governanca.webp",
     },
     {
       title: "Quando a profissão vira identidade.",
       description:
         "Sobre carreira, repertório, criatividade, cansaço e o risco de reduzir a vida ao cargo.",
       audience: "Empresas, lideranças, RH, educação corporativa e profissionais em transição.",
+      cover: null as string | null,
     },
   ],
   formats: ["Palestra", "Painel", "Roda executiva", "Workshop", "Aula especial", "Conversa com lideranças"],
