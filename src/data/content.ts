@@ -202,7 +202,7 @@ export const articles = {
       summary: "Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra.",
       readingTime: "14 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-identidade.webp",
     },
     {
       category: "Produtividade e atenção",
@@ -229,7 +229,7 @@ export const articles = {
       summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
       readingTime: "8 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-governanca.webp",
     },
     {
       category: "Comunicação e cultura",
@@ -238,7 +238,7 @@ export const articles = {
       summary: "A comunicação sustenta cultura, governança e previsibilidade. Mas costuma ser negligenciada.",
       readingTime: "6 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-comunicacao.webp",
     },
     {
       category: "Vida e trabalho",
@@ -247,7 +247,7 @@ export const articles = {
       summary: "Quem não aprende a velejar vira passageiro da própria vida.",
       readingTime: "10 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-oceano.webp",
     },
     {
       category: "IA e discernimento",
@@ -256,7 +256,7 @@ export const articles = {
       summary: "Quando não nos autoavaliamos com franqueza, não conseguimos usar bem a tecnologia.",
       readingTime: "8 min",
       url: LINKEDIN,
-      cover: null,
+      cover: "/assets/artigos/artigo-ia.webp",
     },
     {
       category: "Cultura e liderança",
