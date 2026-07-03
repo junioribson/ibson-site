@@ -173,8 +173,19 @@ export interface Article {
   cover?: string | null;
 }
 
-// TODO(links): substituir url por links definitivos de cada artigo no LinkedIn.
 const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/";
+
+// Links reais de cada artigo no LinkedIn (enviados pelo Ibson).
+const ART_URL = {
+  copa: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/",
+  cerebro: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/",
+  estrategia: "https://www.linkedin.com/pulse/nunca-se-falou-tanto-de-estrat%C3%A9gia-e-viu-t%C3%A3o-pouca-ibson-junior-3c5rf/",
+  governanca: "https://www.linkedin.com/pulse/qualidade-da-decis%C3%A3o-%C3%A9-o-n%C3%BAcleo-governan%C3%A7a-moderna-ibson-junior-jgk1f/",
+  comunicacao: "https://www.linkedin.com/pulse/quando-comunica%C3%A7%C3%A3o-falha-estrat%C3%A9gia-vira-ru%C3%ADdo-ibson-junior-sgxre/",
+  oceano: "https://www.linkedin.com/pulse/o-tempo-%C3%A9-um-oceano-ibson-junior-2tstc/",
+  ia: "https://www.linkedin.com/pulse/fascinados-pela-intelig%C3%AAncia-artificial-estamos-ignorando-junior-8km7f/",
+  cultura: "https://www.linkedin.com/pulse/cultura-n%C3%A3o-%C3%A9-powerpoint-mas-energia-vital-que-sustenta-ibson-junior-lpiwf/",
+};
 
 export const articles = {
   title: "Artigos e ensaios.",
@@ -192,7 +203,7 @@ export const articles = {
       title: "Na Copa do Mundo, conteúdo não disputa apenas atenção. Disputa responsabilidade.",
       summary: "Entre o grito de gol e a narrativa, cobrir a Copa com consciência é mais do que informar.",
       readingTime: "13 min",
-      url: LINKEDIN,
+      url: ART_URL.copa,
       cover: "/assets/artigos/artigo-copa.webp",
     },
     {
@@ -210,8 +221,8 @@ export const articles = {
       title: "Cérebro podre: a pandemia invisível que transforma o trabalho",
       summary: "Entre reuniões placebo e o multitasking tóxico, o desperdício de capital humano custa caro.",
       readingTime: "14 min",
-      url: LINKEDIN,
-      cover: null,
+      url: ART_URL.cerebro,
+      cover: "/assets/artigos/artigo-cerebro.webp",
     },
     {
       category: "Estratégia",
@@ -219,8 +230,8 @@ export const articles = {
       title: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca.",
       summary: "A diferença entre intenção e estratégia aparece quando o ambiente pressiona.",
       readingTime: "9 min",
-      url: LINKEDIN,
-      cover: null,
+      url: ART_URL.estrategia,
+      cover: "/assets/artigos/artigo-estrategia.webp",
     },
     {
       category: "Governança e decisão",
@@ -228,7 +239,7 @@ export const articles = {
       title: "A qualidade da decisão é o núcleo da governança moderna",
       summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
       readingTime: "8 min",
-      url: LINKEDIN,
+      url: ART_URL.governanca,
       cover: null,
     },
     {
@@ -237,7 +248,7 @@ export const articles = {
       title: "Quando a comunicação falha, a estratégia vira ruído",
       summary: "A comunicação sustenta cultura, governança e previsibilidade. Mas costuma ser negligenciada.",
       readingTime: "6 min",
-      url: LINKEDIN,
+      url: ART_URL.comunicacao,
       cover: "/assets/artigos/artigo-comunicacao.webp",
     },
     {
@@ -246,7 +257,7 @@ export const articles = {
       title: "O tempo é um oceano",
       summary: "Quem não aprende a velejar vira passageiro da própria vida.",
       readingTime: "10 min",
-      url: LINKEDIN,
+      url: ART_URL.oceano,
       cover: "/assets/artigos/artigo-oceano.webp",
     },
     {
@@ -255,7 +266,7 @@ export const articles = {
       title: "Fascinados pela inteligência artificial, estamos ignorando o essencial",
       summary: "Quando não nos autoavaliamos com franqueza, não conseguimos usar bem a tecnologia.",
       readingTime: "8 min",
-      url: LINKEDIN,
+      url: ART_URL.ia,
       cover: "/assets/artigos/artigo-ia.webp",
     },
     {
@@ -264,7 +275,7 @@ export const articles = {
       title: "Cultura não é PowerPoint, mas a energia vital que sustenta a organização",
       summary: "Quando vivida em todos os níveis, a cultura transforma relações, decisões e resultados.",
       readingTime: "9 min",
-      url: LINKEDIN,
+      url: ART_URL.cultura,
       cover: "/assets/artigos/artigo-cultura.webp",
     },
   ] as Article[],
