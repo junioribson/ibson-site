@@ -21,6 +21,13 @@ export const FUTMARKETING_ROLE = "CEO";
 export const FUTBOL_SITES_URL = "https://www.futbolsites.net/pt";
 export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
 
+// Analytics e Search Console. Preencher quando o Ibson criar as contas Google:
+// - GA_MEASUREMENT_ID: o ID do Google Analytics 4, no formato "G-XXXXXXXXXX".
+// - GSC_VERIFICATION: o valor "content" da meta tag de verificação do Search Console.
+// Enquanto estiverem vazios, nada é injetado (site não quebra, sem chamadas inúteis).
+export const GA_MEASUREMENT_ID = "";
+export const GSC_VERIFICATION = "";
+
 export const seo = {
   title: "Ibson Junior | Critério, Liderança e Decisão",
   description:

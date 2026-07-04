@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import "../styles/sections.css";
 import "../styles/dark.css";
-import { seo } from "../data/content";
+import { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } from "../data/content";
 
 interface Props {
   title?: string;
@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { title = seo.title, description = seo.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
 ---
 
 <!doctype html>
@@ -20,6 +21,9 @@ const { title = seo.title, description = seo.description } = Astro.props;
     <link rel="icon" type="image/png" href="/assets/logo/logo-roxa.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo.ogTitle} />
@@ -36,6 +40,20 @@ const { title = seo.title, description = seo.description } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
+    {
+      GA_MEASUREMENT_ID && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+          <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID);
+          </script>
+        </>
+      )
+    }
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
