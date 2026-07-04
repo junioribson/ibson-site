@@ -26,9 +26,9 @@ export const seo = {
   description:
     "Site oficial de Ibson Junior. Artigos, palestras, mentorias e conversas sobre liderança, IA, cultura, conteúdo, comunicação, governança pessoal e tomada de decisão em tempos complexos.",
   ogTitle:
-    "Ibson Junior | Critério para decidir, comunicar e liderar em tempos complexos",
+    "Ibson Junior | Critério, liderança e decisão em tempos complexos",
   ogDescription:
-    "Reflexões, artigos e conversas executivas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em ambientes de pressão, excesso de informação e transformação.",
+    "Reflexões, artigos, palestras e conversas executivas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em ambientes de pressão, excesso de informação e transformação.",
   // TODO(asset): gerar imagem Open Graph 1200x630 e salvar em public/assets/og/og-ibson.jpg
   ogImage: "/assets/og/og-ibson.jpg",
 };
@@ -48,7 +48,7 @@ export const nav = {
 
 export const hero = {
   topline: "Conteúdo · Liderança · Decisão · IA · Cultura",
-  headline: "Critério para decidir, comunicar e liderar em tempos complexos.",
+  headline: "Quando tudo acelera, clareza vira responsabilidade.",
   subheadline:
     "Reflexões, artigos e conversas executivas para líderes, equipes e organizações que precisam pensar melhor em ambientes de pressão, excesso de informação e transformação digital.",
   complement:
@@ -86,7 +86,7 @@ export const about = {
   body: [
     "Ibson Junior é <strong>executivo de conteúdo, liderança e comunicação</strong>, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
     "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong>WolfLife</strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong>ProliferArte</strong> desde 2008 e atuou como <strong>CEO da Futmarketing</strong>, participando da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.",
-    "Também foi criador do site <strong>Entenados no Futebol</strong>, responsável pelo nome e pela concepção inicial da marca, e teve papel direto na chegada da <strong>BolaVIP</strong> ao Brasil, em um movimento iniciado entre 2017 e 2018, quando a marca já existia em outros países da América do Sul, mas ainda não operava no mercado brasileiro.",
+    "Também foi criador do site <strong>Antenados no Futebol</strong>, responsável pelo nome e pela concepção inicial da marca, e teve papel direto na chegada da <strong>Bolavip</strong> ao Brasil, em um movimento iniciado entre 2017 e 2018, quando a marca já existia em outros países da América do Sul, mas ainda não operava no mercado brasileiro.",
     "Hoje, atua como <strong>Diretor de Conteúdo no Brasil</strong>, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
     "O fio condutor da sua trajetória é a capacidade de <em>construir sentido em ambientes de alta complexidade</em>: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
   ],
@@ -94,8 +94,8 @@ export const about = {
     { k: "WolfLife", v: "comunidade digital de grande escala" },
     { k: "ProliferArte", v: "movimento cultural ativo desde 2008" },
     { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} e participação na venda da operação` },
-    { k: "Entenados no Futebol", v: "criação, nome e concepção inicial" },
-    { k: "BolaVIP Brasil", v: "participação na chegada da marca ao país" },
+    { k: "Antenados no Futebol", v: "criação, nome e concepção inicial" },
+    { k: "Bolavip Brasil", v: "participação na chegada da marca ao país" },
     { k: "Direção de conteúdo", v: "liderança editorial no Brasil" },
     { k: "Conselho", v: "atuação administrativa e formação em governança" },
   ],
@@ -134,7 +134,7 @@ export const cases = {
     tag: "Mídia esportiva · Operação digital · M&A",
     body: [
       `Na ${FUTMARKETING_NAME}, Ibson atuou como ${FUTMARKETING_ROLE} e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.`,
-      "A atuação envolveu a criação do site Entenados no Futebol, incluindo a escolha do nome e a concepção inicial do projeto, além da participação direta na chegada da BolaVIP ao Brasil, entre 2017 e 2018, quando a marca já existia em países da América do Sul, mas ainda não havia sido consolidada no mercado brasileiro.",
+      "A atuação envolveu a criação do site Antenados no Futebol, incluindo a escolha do nome e a concepção inicial do projeto, além da participação direta na chegada da Bolavip ao Brasil, entre 2017 e 2018, quando a marca já existia em países da América do Sul, mas ainda não havia sido consolidada no mercado brasileiro.",
       "O case mostra uma dimensão importante da sua trajetória: transformar visão editorial, audiência e oportunidade de mercado em ativo estratégico.",
       "A venda da operação foi noticiada pelo Yahoo Finance, funcionando como chancela externa da relevância do movimento dentro do mercado de mídia e marketing esportivo.",
     ],
