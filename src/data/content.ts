@@ -16,10 +16,10 @@ export const FUTMARKETING_NAME = "Futmarketing";
 // TODO(fato): confirmar o papel exato na operação (usando CEO conforme brief).
 export const FUTMARKETING_ROLE = "CEO";
 
-// Cargo atual: por decisão editorial do Ibson, o site não dá protagonismo ao
-// empregador atual. A direção de conteúdo aparece de forma genérica, focada no
-// repertório (NUNCA mencionar Better Collective; não destacar Futbol Sites).
-export const CARGO_ATUAL = "Direção de conteúdo no Brasil, em operação editorial digital de alta escala";
+// Cargo atual permitido pelo Ibson (e no CLAUDE.md): Diretor de Conteúdo na
+// Futbol Sites, podendo hiperlinkar o site oficial. NUNCA mencionar Better Collective.
+export const FUTBOL_SITES_URL = "https://www.futbolsites.net/pt";
+export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
 
 export const seo = {
   title: "Ibson Junior | Critério, Liderança e Decisão",
@@ -87,7 +87,7 @@ export const about = {
     "Ibson Junior é <strong>executivo de conteúdo, liderança e comunicação</strong>, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
     "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong>WolfLife</strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong>ProliferArte</strong> desde 2008 e atuou como <strong>CEO da Futmarketing</strong>, participando da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.",
     "Também foi criador do site <strong>Antenados no Futebol</strong>, responsável pelo nome e pela concepção inicial da marca, e teve papel direto na chegada da <strong>Bolavip</strong> ao Brasil, em um movimento iniciado entre 2017 e 2018, quando a marca já existia em outros países da América do Sul, mas ainda não operava no mercado brasileiro.",
-    "Hoje, atua como <strong>Diretor de Conteúdo no Brasil</strong>, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
+    'Hoje, atua como <strong>Diretor de Conteúdo na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a></strong>, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.',
     "O fio condutor da sua trajetória é a capacidade de <em>construir sentido em ambientes de alta complexidade</em>: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
   ],
   microprovas: [
@@ -96,7 +96,7 @@ export const about = {
     { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} e participação na venda da operação` },
     { k: "Antenados no Futebol", v: "criação, nome e concepção inicial" },
     { k: "Bolavip Brasil", v: "participação na chegada da marca ao país" },
-    { k: "Direção de conteúdo", v: "liderança editorial no Brasil" },
+    { k: "Futbol Sites", v: "Diretor de Conteúdo, liderança editorial no Brasil" },
     { k: "Conselho", v: "atuação administrativa e formação em governança" },
   ],
 };

@@ -10,7 +10,7 @@ const itens = [
   "Coautor do livro Conselho Diário, 365 Insights Estratégicos",
   "Organizador de obras editoriais da ProliferArte, como Mente Aberta e ValorizArte",
   "Artigos autorais mensais sobre IA, cultura, conteúdo, liderança e decisão",
-  "Direção de conteúdo no Brasil, em operação editorial digital de alta escala",
+  'Diretor de Conteúdo na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operações editoriais no Brasil',
   "Criação e desenvolvimento de ativos editoriais no mercado esportivo digital, incluindo Antenados no Futebol e participação na chegada da Bolavip ao Brasil",
 ];
 ---
@@ -36,7 +36,7 @@ const itens = [
         </p>
       </div>
       <ul class="rep-list reveal d1">
-        {itens.map((i) => <li>{i}</li>)}
+        {itens.map((i) => <li set:html={i} />)}
       </ul>
     </div>
   </div>
@@ -75,6 +75,14 @@ const itens = [
     color: var(--cream);
     line-height: 1.5;
   }
+  .rep-list :global(a) {
+    color: #db6bff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(219, 107, 255, 0.5);
+    transition: color 0.25s, text-decoration-color 0.25s;
+  }
+  .rep-list :global(a:hover) { color: #ec8bff; text-decoration-color: #ec8bff; }
   .rep-list li::before {
     content: "";
     width: 7px;
