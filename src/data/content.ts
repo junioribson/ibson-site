@@ -362,8 +362,10 @@ export const mentorship = {
     "A mentoria existe para trabalhar esse ponto: organizar pensamento, lapidar posicionamento, fortalecer presença e transformar repertório em direção prática.",
   ],
   whatIs: [
-    "Um processo estratégico individual para revisar trajetória, identificar território, ajustar narrativa profissional e definir próximos movimentos com mais consciência.",
-    "Pode envolver marca pessoal, comunicação executiva, carreira, liderança, governança pessoal, LinkedIn, produção de conteúdo, repertório, tomada de decisão e clareza de posicionamento.",
+    "Uma mentoria executiva individual para transformar experiência em clareza: revisar trajetória, identificar território, ajustar a narrativa profissional e definir os próximos movimentos com mais consciência e critério.",
+    "Não é curso nem fórmula pronta. É uma conversa estratégica conduzida a partir de repertório real em liderança, conteúdo, comunicação e tomada de decisão, para você enxergar com nitidez onde está, para onde quer ir e o que precisa mudar.",
+    "No caminho, trabalhamos marca pessoal, comunicação executiva, posicionamento, LinkedIn estratégico, governança pessoal e produção de conteúdo, sempre ligando percepção de valor a decisões concretas.",
+    "O objetivo não é você falar mais. É ser compreendido, lembrado e respeitado pela coerência entre o que você pensa, comunica e entrega.",
   ],
   whoFor: [
     "Líderes",

@@ -5,12 +5,12 @@ import { talks } from "../data/content";
 ---
 
 <section class="pal" id="palestras">
-  <div class="pa" aria-hidden="true"></div>
-  <div class="stars" aria-hidden="true"></div>
-  <div class="pal-owl" aria-hidden="true" data-parallax data-speed="20">
+  <div class="pal-owl" aria-hidden="true" data-parallax data-speed="14">
     <img src="/assets/arquetipos/owl-editorial.webp" alt="" loading="lazy" />
   </div>
-  <div class="pal-veil" aria-hidden="true"></div>
+  <div class="pa" aria-hidden="true"></div>
+  <div class="pal-scrim" aria-hidden="true"></div>
+  <canvas class="pal-net" aria-hidden="true"></canvas>
   <div class="wrap pal-body">
     <div class="reveal">
       <div class="lbl">Palestras</div>
@@ -56,14 +56,19 @@ import { talks } from "../data/content";
 </section>
 
 <style>
-  /* Coruja integrada ao fundo: blend screen faz o céu escuro dissolver e só a
-     constelação dourada aparecer, fundida com a noite da seção. */
+  /* Fundo da seção: roxo à esquerda, noite quase preta à direita, para a coruja
+     (constelação sobre céu escuro) se fundir de forma nativa, como o lobo. */
+  .pal {
+    background: linear-gradient(102deg, #2a0148 0%, #200a3a 42%, #0c0518 100%);
+  }
+  /* Coruja como retrato editorial de fundo, nítida e inteira (object-fit contain),
+     com a constelação dissolvendo nas bordas por máscara radial. */
   .pal-owl {
     position: absolute;
-    right: -10%;
-    top: -14%;
-    width: min(60vw, 800px);
-    height: 104%;
+    top: 30px;
+    right: min(0px, -1vw);
+    width: min(50vw, 620px);
+    height: min(92%, 920px);
     z-index: 0;
     pointer-events: none;
     will-change: transform;
@@ -72,32 +77,31 @@ import { talks } from "../data/content";
     width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: right top;
-    mix-blend-mode: screen;
-    opacity: 0.45;
-    filter: saturate(0.72);
-    /* máscara bem mais suave: dissolve nas bordas, sem contorno de recorte */
-    -webkit-mask-image: radial-gradient(64% 70% at 68% 38%, #000 8%, transparent 74%);
-    mask-image: radial-gradient(64% 70% at 68% 38%, #000 8%, transparent 74%);
-    animation: owl-breathe 10s ease-in-out infinite;
+    object-position: center top;
+    opacity: 0.97;
+    -webkit-mask-image: radial-gradient(72% 66% at 54% 40%, #000 55%, transparent 90%);
+    mask-image: radial-gradient(72% 66% at 54% 40%, #000 55%, transparent 90%);
+    animation: owl-breathe 12s ease-in-out infinite;
   }
   @keyframes owl-breathe {
-    0%, 100% { opacity: 0.38; }
-    50% { opacity: 0.56; }
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 1; }
   }
-  /* Véu que funde coruja, brilho e estrelas numa só atmosfera e protege o texto */
-  .pal-veil {
+  /* Scrim: escurece a esquerda (texto legível) e o rodapé (funde nos cards) */
+  .pal-scrim {
     position: absolute;
     inset: 0;
     z-index: 1;
     pointer-events: none;
     background:
-      radial-gradient(135% 100% at 8% 62%, rgba(24, 0, 48, 0.62), transparent 58%),
-      linear-gradient(180deg, rgba(30, 6, 60, 0.34) 0%, transparent 26%, transparent 68%, rgba(15, 0, 28, 0.55) 100%);
+      linear-gradient(99deg, #230b3f 24%, rgba(35, 11, 63, 0.5) 48%, transparent 72%),
+      linear-gradient(180deg, transparent 60%, rgba(10, 4, 22, 0.6) 100%);
   }
+  /* Rede de partículas reativa ao cursor (mesma linguagem do hero do lobo) */
+  .pal-net { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
   @media (max-width: 900px) {
-    .pal-owl { width: 88vw; right: -18%; top: 0; height: 62%; }
-    .pal-veil { background: radial-gradient(140% 80% at 50% 30%, transparent 30%, rgba(15,0,28,.5) 92%); }
+    .pal-owl { width: 74vw; right: -10%; top: 8px; height: min(70%, 560px); }
+    .pal-scrim { background: linear-gradient(180deg, rgba(35,11,63,.15) 0%, transparent 34%, transparent 62%, rgba(10,4,22,.55) 100%); }
   }
   @media (prefers-reduced-motion: reduce) { .pal-owl img { animation: none; } }
 
@@ -185,3 +189,74 @@ import { talks } from "../data/content";
   @media (max-width: 1100px) { .pcards { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 620px) { .pcards { grid-template-columns: 1fr; } .pcard { aspect-ratio: 16 / 12; } }
 </style>
+
+<script>
+  // Rede de constelação dourada, reativa ao cursor, no clima da coruja.
+  const sec = document.getElementById("palestras");
+  const canvas = sec?.querySelector<HTMLCanvasElement>(".pal-net");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (canvas && sec && !reduce) {
+    const ctx = canvas.getContext("2d")!;
+    let W = 0, H = 0;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const mouse = { x: -9999, y: -9999 };
+    interface Node { x: number; y: number; vx: number; vy: number; }
+    let nodes: Node[] = [];
+
+    const build = () => {
+      const r = sec.getBoundingClientRect();
+      W = r.width; H = r.height;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      canvas.style.width = W + "px"; canvas.style.height = H + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.min(64, Math.round((W * H) / 30000));
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22,
+      }));
+    };
+
+    const step = () => {
+      ctx.clearRect(0, 0, W, H);
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+        const dx = mouse.x - n.x, dy = mouse.y - n.y;
+        if (dx * dx + dy * dy < 26000) { n.x += dx * 0.0014; n.y += dy * 0.0014; }
+      }
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 132) {
+            ctx.strokeStyle = `rgba(214,182,120,${(1 - dist / 132) * 0.34})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+          }
+        }
+      }
+      for (const n of nodes) {
+        const dm = Math.hypot(mouse.x - n.x, mouse.y - n.y);
+        const glow = dm < 160 ? 1 - dm / 160 : 0;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, 1.2 + glow * 1.7, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(232,206,150,${0.4 + glow * 0.55})`;
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(step);
+    };
+
+    let raf = 0;
+    sec.addEventListener("mousemove", (e) => {
+      const r = sec.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    sec.addEventListener("mouseleave", () => { mouse.x = -9999; mouse.y = -9999; });
+    window.addEventListener("resize", build);
+    build();
+    step();
+  }
+</script>
