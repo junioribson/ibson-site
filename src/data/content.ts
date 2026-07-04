@@ -25,7 +25,7 @@ export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
 // - GA_MEASUREMENT_ID: o ID do Google Analytics 4, no formato "G-XXXXXXXXXX".
 // - GSC_VERIFICATION: o valor "content" da meta tag de verificação do Search Console.
 // Enquanto estiverem vazios, nada é injetado (site não quebra, sem chamadas inúteis).
-export const GA_MEASUREMENT_ID = "";
+export const GA_MEASUREMENT_ID = "G-5S4SJGES22";
 export const GSC_VERIFICATION = "";
 
 export const seo = {
