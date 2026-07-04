@@ -700,7 +700,7 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   margin-left: 3px;
 }
 .vcard .vtx { padding: 18px 20px 22px; }
-.vcard .vtag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet); }
+.vcard .vtag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #db6bff; text-shadow: 0 0 14px rgba(219, 107, 255, 0.6); }
 .vcard h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; margin-top: 8px; }
 .vids-foot a {
   font-family: var(--font-mono);

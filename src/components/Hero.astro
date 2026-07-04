@@ -131,9 +131,12 @@ import { hero } from "../data/content";
   }
   @media (max-width: 620px) {
     .wh { padding-top: 120px; }
-    .wh-h1 { font-size: clamp(40px, 13vw, 62px); }
+    .wh-h1 { font-size: clamp(28px, 9.2vw, 58px); }
     .wh-cta .wh-btn { flex: 1 1 auto; text-align: center; }
     .wh-scroll { display: none; }
+  }
+  @media (max-width: 360px) {
+    .wh-h1 { font-size: 30px; letter-spacing: -0.045em; }
   }
   @media (prefers-reduced-motion: reduce) {
     .wh-h1 .ln > i, .wh-eye, .wh-sub, .wh-cta, .wh-scroll { animation: none !important; opacity: 1 !important; transform: none !important; }
