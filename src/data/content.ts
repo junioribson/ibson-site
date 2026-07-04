@@ -14,17 +14,19 @@ export const FUTMARKETING_NAME = "Futmarketing";
 // TODO(fato): confirmar o papel exato na operação (usando CEO conforme brief).
 export const FUTMARKETING_ROLE = "CEO";
 
-// Empregador atual permitido pelo Ibson: Futbol Sites (NUNCA mencionar Better Collective).
-export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
+// Cargo atual: por decisão editorial do Ibson, o site não dá protagonismo ao
+// empregador atual. A direção de conteúdo aparece de forma genérica, focada no
+// repertório (NUNCA mencionar Better Collective; não destacar Futbol Sites).
+export const CARGO_ATUAL = "Direção de conteúdo no Brasil, em operação editorial digital de alta escala";
 
 export const seo = {
   title: "Ibson Junior | Consciência, Decisão e Responsabilidade",
   description:
-    "Artigos, palestras, mentorias e conversas executivas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em tempos complexos.",
+    "Site oficial de Ibson Junior. Artigos, palestras, mentorias e conversas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em tempos complexos.",
   ogTitle:
     "Ibson Junior | Consciência, decisão e responsabilidade em tempos complexos",
   ogDescription:
-    "Uma plataforma autoral sobre liderança, IA, conteúdo, cultura, comunicação e decisões em ambientes de pressão e transformação.",
+    "Reflexões, artigos e conversas executivas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em ambientes de pressão e transformação.",
   // TODO(asset): gerar imagem Open Graph 1200x630 e salvar em public/assets/og/og-ibson.jpg
   ogImage: "/assets/og/og-ibson.jpg",
 };
@@ -39,14 +41,14 @@ export const nav = {
     { href: "#videos", label: "Vídeos", id: "videos" },
     { href: "#contato", label: "Contato", id: "contato" },
   ],
-  cta: { href: "#contato", label: "Vamos nos conectar?" },
+  cta: { href: "#contato", label: "Vamos conversar?" },
 };
 
 export const hero = {
   topline: "Conteúdo · Liderança · Decisão · IA · Cultura",
   headline: "Consciência, decisão e responsabilidade em tempos complexos.",
   subheadline:
-    "Reflexões, artigos e conversas executivas para líderes, equipes e organizações que precisam pensar melhor em ambientes de pressão, excesso de informação e transformação digital.",
+    "Reflexões, artigos e conversas executivas para líderes, equipes e organizações que precisam decidir melhor em ambientes de pressão, excesso de informação e transformação digital.",
   complement:
     "Minha trajetória passa pela construção de audiência, liderança editorial, cultura, negócios digitais e tomada de decisão. Este espaço reúne ideias, cases e conversas para quem precisa transformar repertório em clareza, presença e direção.",
   ctas: {
@@ -68,8 +70,8 @@ export const thesis = {
   kicker: "A tese",
   title: "Estratégia começa quando a pressão chega.",
   body: [
-    "Em um mundo que produz mais informação do que capacidade de interpretação, o diferencial não está em fazer mais. Está em decidir melhor.",
-    "Meu trabalho parte dessa tensão: separar o que parece urgente do que realmente importa, transformar ruído em clareza e ajudar pessoas e organizações a sustentarem critério quando o ambiente empurra para o automático.",
+    "Em um mundo que produz mais conteúdo do que capacidade de interpretação, o diferencial não está em aparecer mais. Está em decidir melhor.",
+    "Meu trabalho parte dessa tensão: separar urgência de importância, transformar ruído em clareza e ajudar líderes, equipes e organizações a sustentarem critério quando tecnologia, mercado e cultura empurram para o automático.",
   ],
   closing:
     "A velocidade pode abrir caminhos. Mas é o critério que define se eles levam a algum lugar.",
@@ -81,16 +83,16 @@ export const about = {
     "Antes de falar sobre autoridade, é preciso entender o caminho que construiu o repertório.",
   body: [
     "Ibson Junior é <strong>executivo de conteúdo, liderança e comunicação</strong>, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.",
-    "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong>WolfLife</strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong>ProliferArte</strong> desde 2008 e participou da construção e venda de uma operação brasileira de mídia esportiva digital.",
-    "Hoje, atua como <strong>Diretor de Conteúdo na Futbol Sites</strong>, liderando operações editoriais, e é <strong>conselheiro administrativo de Dr. José Eduardo</strong>, referência em osteopatia e criador do método Mães que Curam. Reflete publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
+    "Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong>WolfLife</strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong>ProliferArte</strong> desde 2008 e atuou como <strong>CEO da Futmarketing</strong>, participando da construção e venda de uma operação brasileira de mídia esportiva digital.",
+    "Hoje, atua como <strong>Diretor de Conteúdo no Brasil</strong>, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.",
     "O fio condutor da sua trajetória é a capacidade de <em>construir sentido em ambientes de alta complexidade</em>: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor.",
   ],
   microprovas: [
     { k: "WolfLife", v: "comunidade digital de grande escala" },
     { k: "ProliferArte", v: "movimento cultural ativo desde 2008" },
     { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} e participação na venda da operação` },
-    { k: "Futbol Sites", v: "Diretor de Conteúdo, liderança editorial" },
-    { k: "Conselho", v: "conselheiro administrativo de Dr. José Eduardo" },
+    { k: "Direção de conteúdo", v: "liderança editorial no Brasil" },
+    { k: "Conselho", v: "atuação administrativa e formação em governança" },
   ],
 };
 
@@ -119,7 +121,7 @@ export const cases = {
   tiktok: {
     name: "Case TikTok no Brasil",
     big: "9 Bi+",
-    bigLabel: "visualizações entregues",
+    bigLabel: "visualizações geradas em distribuição via comunidades",
     body: "Em uma das entregas de maior escala, a WolfLife apoiou o crescimento do TikTok no Brasil por meio de distribuição massiva em comunidades no Facebook, gerando mais de 9 bilhões de visualizações e ampliando o reconhecimento da marca em território nacional.",
   },
   footmarketing: {
@@ -190,7 +192,7 @@ const ART_URL = {
 export const articles = {
   title: "Artigos e ensaios.",
   subtitle:
-    "Textos sobre consciência, decisão, IA, cultura, conteúdo, liderança e responsabilidade.",
+    "Textos autorais sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão.",
   intro:
     "Os artigos são a base editorial da minha marca pessoal. Neles, organizo reflexões mais longas sobre temas que atravessam trabalho, tecnologia, comunicação e maturidade em ambientes complexos.",
   // Artigos reais do LinkedIn (do print enviado pelo Ibson).
@@ -225,7 +227,7 @@ export const articles = {
       cover: "/assets/artigos/artigo-cerebro.webp",
     },
     {
-      category: "Estratégia",
+      category: "Estratégia e decisão",
       date: "2026",
       title: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca.",
       summary: "A diferença entre intenção e estratégia aparece quando o ambiente pressiona.",
@@ -287,8 +289,9 @@ export const talks = {
   subtitle:
     "Reflexões para empresas, eventos, lideranças e equipes que precisam pensar melhor em tempos de pressão, ruído e transformação.",
   intro: [
-    "Estou estruturando uma frente de palestras e conversas executivas a partir dos temas que venho desenvolvendo em artigos, liderança e experiências profissionais.",
+    "Estou abrindo uma frente de palestras e conversas executivas a partir dos temas que venho desenvolvendo em artigos, liderança e experiências profissionais.",
     "A proposta não é levar respostas prontas, mas provocar clareza, responsabilidade e maturidade em quem decide, comunica e lidera.",
+    "São encontros para transformar inquietação em conversa séria: IA, cultura, conteúdo, decisão, atenção, liderança e governança pessoal.",
   ],
   // TODO(asset): a 6ª imagem (tema "Quando a profissão vira identidade") chega depois.
   themes: [
@@ -346,12 +349,12 @@ export const mentorship = {
   subtitle:
     "Uma conversa estratégica para profissionais que precisam organizar repertório, presença e direção.",
   intro: [
-    "A mentoria é voltada para pessoas que estão em momentos de transição, crescimento ou maior exposição profissional e precisam pensar com mais clareza sobre posicionamento, decisões, comunicação e próximos passos.",
-    "Não se trata de fórmula pronta. É um espaço de escuta, organização e provocação estratégica para transformar experiência em direção.",
+    "A mentoria não começa por fórmula. Começa por diagnóstico.",
+    "É um espaço individual para revisar trajetória, identificar território, ajustar narrativa profissional e definir próximos movimentos com mais consciência.",
   ],
   whatIs: [
     "Uma conversa estratégica individual para organizar pensamento, trajetória, posicionamento e tomada de decisão.",
-    "Pode envolver marca pessoal, comunicação executiva, carreira, liderança, governança pessoal, conteúdo e clareza de próximos passos.",
+    "Pode envolver marca pessoal, comunicação executiva, carreira, liderança, governança pessoal, conteúdo, LinkedIn e clareza de próximos passos.",
   ],
   whoFor: [
     "Líderes",
@@ -373,7 +376,7 @@ export const mentorship = {
     "Repertório e autoridade",
     "Direção de carreira",
   ],
-  cta: { href: "#contato", label: "Quero conversar sobre mentoria" },
+  cta: { href: "#contato", label: "Falar sobre mentoria" },
   note: "Formato e escopo definidos em conversa, de acordo com o momento e a necessidade de cada pessoa.",
 };
 
@@ -381,7 +384,7 @@ export const videos = {
   title: "Vídeos e reflexões.",
   subtitle: "Uma nova frente para aproximar as ideias da fala.",
   intro:
-    "Estou iniciando uma frente de vídeos para o LinkedIn, com reflexões curtas sobre liderança, IA, cultura, conteúdo, decisão e responsabilidade. Este espaço reunirá esses registros à medida que forem publicados.",
+    "Estou iniciando uma frente de vídeos para o LinkedIn, com reflexões curtas sobre liderança, IA, cultura, conteúdo, decisão e responsabilidade. Este espaço será atualizado com registros reais à medida que forem publicados.",
   // Placeholders assumidos: nenhum vídeo gravado ainda.
   cards: [
     "Critério em tempos de velocidade",
@@ -395,23 +398,23 @@ export const videos = {
 export const contact = {
   title: "Vamos conversar?",
   subtitle:
-    "Para palestras, mentorias, painéis, entrevistas, projetos editoriais, consultoria ou conversas executivas, entre em contato.",
+    "Para palestras, mentorias, conselho, entrevistas, painéis ou projetos editoriais, entre em contato.",
   quickButtons: [
     "Convidar para palestra",
     "Falar sobre mentoria",
     "Propor entrevista",
-    "Falar sobre consultoria",
+    "Falar sobre conselho/advisory",
   ],
   subjects: [
     "Palestra",
     "Mentoria",
-    "Consultoria",
+    "Conselho / advisory",
     "Entrevista",
     "Painel ou evento",
     "Projeto editorial",
     "Outro assunto",
   ],
-  support: "Se a conversa fizer sentido, retorno com disponibilidade e próximos passos.",
+  support: "Se a conversa fizer sentido, retorno com disponibilidade, contexto e próximos passos.",
   email: "contato@ibsonjunior.com.br",
   linkedin: "https://www.linkedin.com/in/ibson-junior/",
 };
@@ -420,7 +423,7 @@ export const footer = {
   name: "Ibson Junior",
   line: "Consciência, decisão e responsabilidade em tempos complexos.",
   complement:
-    "Artigos, palestras, mentorias e conversas executivas sobre liderança, IA, cultura, comunicação, conteúdo e tomada de decisão.",
+    "Artigos, palestras, mentorias e conversas sobre liderança, IA, cultura, comunicação, conteúdo e tomada de decisão.",
 };
 
 // Arquétipos como camadas de arte editorial de fundo.
