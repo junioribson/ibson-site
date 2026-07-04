@@ -10,13 +10,14 @@ import { talks } from "../data/content";
   <div class="pal-owl" aria-hidden="true" data-parallax data-speed="20">
     <img src="/assets/arquetipos/owl-editorial.webp" alt="" loading="lazy" />
   </div>
+  <div class="pal-veil" aria-hidden="true"></div>
   <div class="wrap pal-body">
     <div class="reveal">
       <div class="lbl">Palestras</div>
       <h2>{talks.title}</h2>
       <p>{talks.subtitle}</p>
-      <div style="margin-top:18px;max-width:52ch">
-        {talks.intro.map((p) => <p style="margin-top:12px">{p}</p>)}
+      <div class="pal-intro">
+        {talks.intro.map((p) => <p set:html={p} />)}
       </div>
     </div>
 
@@ -59,10 +60,10 @@ import { talks } from "../data/content";
      constelação dourada aparecer, fundida com a noite da seção. */
   .pal-owl {
     position: absolute;
-    right: -4%;
-    top: -8%;
-    width: min(50vw, 680px);
-    height: 86%;
+    right: -10%;
+    top: -14%;
+    width: min(60vw, 800px);
+    height: 104%;
     z-index: 0;
     pointer-events: none;
     will-change: transform;
@@ -73,17 +74,37 @@ import { talks } from "../data/content";
     object-fit: contain;
     object-position: right top;
     mix-blend-mode: screen;
-    opacity: 0.7;
-    -webkit-mask-image: radial-gradient(72% 78% at 64% 42%, #000 42%, transparent 82%);
-    mask-image: radial-gradient(72% 78% at 64% 42%, #000 42%, transparent 82%);
-    animation: owl-breathe 9s ease-in-out infinite;
+    opacity: 0.45;
+    filter: saturate(0.72);
+    /* máscara bem mais suave: dissolve nas bordas, sem contorno de recorte */
+    -webkit-mask-image: radial-gradient(64% 70% at 68% 38%, #000 8%, transparent 74%);
+    mask-image: radial-gradient(64% 70% at 68% 38%, #000 8%, transparent 74%);
+    animation: owl-breathe 10s ease-in-out infinite;
   }
   @keyframes owl-breathe {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 0.82; }
+    0%, 100% { opacity: 0.38; }
+    50% { opacity: 0.56; }
   }
-  @media (max-width: 900px) { .pal-owl { opacity: 0.55; width: 82vw; right: -14%; top: -2%; height: 60%; } }
+  /* Véu que funde coruja, brilho e estrelas numa só atmosfera e protege o texto */
+  .pal-veil {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(135% 100% at 8% 62%, rgba(24, 0, 48, 0.62), transparent 58%),
+      linear-gradient(180deg, rgba(30, 6, 60, 0.34) 0%, transparent 26%, transparent 68%, rgba(15, 0, 28, 0.55) 100%);
+  }
+  @media (max-width: 900px) {
+    .pal-owl { width: 88vw; right: -18%; top: 0; height: 62%; }
+    .pal-veil { background: radial-gradient(140% 80% at 50% 30%, transparent 30%, rgba(15,0,28,.5) 92%); }
+  }
   @media (prefers-reduced-motion: reduce) { .pal-owl img { animation: none; } }
+
+  .pal-intro { margin-top: 20px; max-width: 54ch; }
+  .pal-intro p { margin-top: 13px; }
+  .pal-intro p:first-child { margin-top: 0; }
+  .pal-intro :global(strong) { color: #fff; font-weight: 700; }
 
   .pcards {
     display: grid;

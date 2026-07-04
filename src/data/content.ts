@@ -296,10 +296,10 @@ export const talks = {
   subtitle:
     "Encontros para empresas, eventos e lideranças que não querem apenas preencher uma agenda, mas instalar uma conversa que continue depois que a palestra termina.",
   intro: [
-    "Uma boa palestra não entrega apenas frases bonitas. Ela organiza uma inquietação que já existe na sala e dá linguagem para que pessoas e equipes enxerguem melhor o que estão vivendo.",
-    "Estou abrindo essa frente para levar aos encontros corporativos as teses que venho desenvolvendo em artigos, liderança e experiências reais: como decidir sob pressão, preservar critério em ambientes acelerados, usar IA sem terceirizar julgamento e construir cultura em meio ao excesso de ruído.",
-    "A proposta é unir densidade e humanidade. Menos espetáculo, mais presença. Menos fórmula, mais reflexão. Menos motivação passageira, mais clareza para seguir pensando depois.",
-    "Se a empresa precisa falar de futuro sem superficialidade, IA sem deslumbramento, liderança sem clichê e cultura sem cartaz na parede, essa conversa faz sentido.",
+    "Uma boa palestra não entrega apenas frases bonitas. Ela <strong>organiza uma inquietação que já existe na sala</strong> e dá linguagem para que pessoas e equipes enxerguem melhor o que estão vivendo.",
+    "Levo aos encontros corporativos as teses que venho desenvolvendo em artigos, liderança e experiências reais: como <strong>decidir sob pressão</strong>, <strong>preservar critério</strong> em ambientes acelerados, <strong>usar IA sem terceirizar o julgamento</strong> e <strong>construir cultura</strong> em meio ao excesso de ruído.",
+    "A proposta é unir <strong>densidade e humanidade</strong>. Menos espetáculo, mais presença. Menos fórmula, mais reflexão. Menos motivação passageira, mais clareza para seguir pensando depois.",
+    "Se a empresa precisa falar de <strong>futuro sem superficialidade, IA sem deslumbramento, liderança sem clichê e cultura sem cartaz na parede</strong>, essa conversa faz sentido.",
   ],
   // TODO(asset): a 6ª imagem (tema "Quando a profissão vira identidade") chega depois.
   themes: [

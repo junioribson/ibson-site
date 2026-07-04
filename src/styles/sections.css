@@ -104,6 +104,7 @@ body.menu .mmenu { transform: none; }
 .feat .fglow { position: absolute; right: -10%; top: -40%; width: 50%; height: 160%; background: radial-gradient(circle, rgba(91,46,230,.4), transparent 64%); filter: blur(40px); pointer-events: none; }
 .feat .fl { position: relative; z-index: 2; }
 .feat .fk { font-family: var(--font-mono); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); }
+.feat .feat-logo { display: block; width: clamp(150px, 15vw, 190px); height: auto; border-radius: 14px; background: #f4f4f2; box-shadow: 0 14px 34px -18px rgba(0,0,0,.55); }
 .feat .big { font-size: clamp(64px,9vw,128px); font-weight: 800; letter-spacing: -.05em; line-height: .86; color: #fff; margin-top: 16px; }
 .feat .big em { font-style: normal; color: var(--violet-2); }
 .feat .blab { margin-top: 16px; font-size: 16.5px; color: #cdbfae; max-width: 30ch; line-height: 1.55; }
