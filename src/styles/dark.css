@@ -99,8 +99,6 @@ nav.scrolled {
 .about-sub { color: var(--text-soft); }
 .sobre .body p { color: var(--text-soft); }
 .sobre .body p strong, .sobre .body p em { color: #fff; }
-.about-proofs { border-color: var(--line); }
-.about-proofs .pr { border-color: var(--line-2); }
 .about-proofs .pr .v { color: var(--text-soft); }
 
 /* ProliferArte */

@@ -406,28 +406,41 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   max-width: 40ch;
 }
 
-/* --- Sobre: microprovas ------------------------------------------------- */
+/* --- Sobre: microprovas (grid de cards, rótulo em roxo neon) ------------- */
 .about-proofs {
-  margin-top: 30px;
-  border-top: 1px solid var(--hair);
-  padding-top: 8px;
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
+/* item ímpar final ocupa a linha inteira, sem sobrar espaço em branco */
+.about-proofs .pr:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .about-proofs .pr {
   display: flex;
-  gap: 16px;
-  align-items: baseline;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--hair-2);
+  flex-direction: column;
+  gap: 7px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border: 1px solid rgba(219, 107, 255, 0.18);
+  border-radius: 11px;
+  background: linear-gradient(160deg, rgba(219, 107, 255, 0.07), rgba(255, 255, 255, 0.012));
+  transition: transform 0.35s var(--e), border-color 0.35s, box-shadow 0.35s;
+}
+.about-proofs .pr:hover {
+  transform: translateY(-3px);
+  border-color: rgba(219, 107, 255, 0.5);
+  box-shadow: 0 18px 38px -22px rgba(219, 107, 255, 0.6);
 }
 .about-proofs .pr .k {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--violet);
-  flex: 0 0 40%;
+  font-weight: 700;
+  color: #db6bff;
+  text-shadow: 0 0 16px rgba(219, 107, 255, 0.55);
 }
-.about-proofs .pr .v { font-size: 15px; color: var(--ink-soft); }
+.about-proofs .pr .v { font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
 
 /* --- Cases v2: cabeçalho + cards estruturados -------------------------- */
 .cases-head { margin-bottom: 46px; }
@@ -818,8 +831,7 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   .ment-cols { grid-template-columns: 1fr; }
   .talks-grid { grid-template-columns: 1fr; }
   .arts-lib { grid-template-columns: 1fr; }
-  .about-proofs .pr { flex-direction: column; gap: 4px; }
-  .about-proofs .pr .k { flex-basis: auto; }
+  .about-proofs { grid-template-columns: 1fr; }
   .vids, .gal { padding: 78px 0; }
   .galgrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
   .galitem.g-wide { grid-column: span 2; }
