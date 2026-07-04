@@ -5,13 +5,13 @@ import { archetypes } from "../data/content";
 
 // TODO(asset): logomarca de Dr. José Eduardo / Mães que Curam quando o Ibson enviar.
 const itens = [
-  "Atuação como conselheiro administrativo em projeto de saúde, educação e comunidade liderado pelo Dr. José Eduardo, contribuindo com estratégia, comunicação e crescimento",
-  "Formação executiva Advanced em Conselhos e Governança pela Board Academy",
-  "Coautor do livro Conselho Diário, 365 Insights Estratégicos",
-  "Organizador de obras editoriais da ProliferArte, como Mente Aberta e ValorizArte",
-  "Artigos autorais mensais sobre IA, cultura, conteúdo, liderança e decisão",
-  'Diretor de Conteúdo na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operações editoriais no Brasil',
-  "Criação e desenvolvimento de ativos editoriais no mercado esportivo digital, incluindo Antenados no Futebol e participação na chegada da Bolavip ao Brasil",
+  "<strong>Conselheiro administrativo</strong> em projeto liderado pelo Dr. José Eduardo, nas frentes de saúde, educação e comunidade.",
+  "<strong>Formação executiva Advanced</strong> em Conselhos e Governança pela Board Academy.",
+  "<strong>Coautor</strong> do livro Conselho Diário, 365 Insights Estratégicos.",
+  "<strong>Organizador de obras editoriais</strong> da ProliferArte, como Mente Aberta e ValorizArte.",
+  "<strong>Artigos autorais mensais</strong> sobre IA, cultura, conteúdo, liderança e decisão.",
+  '<strong>Diretor de Conteúdo</strong> na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operações editoriais no Brasil.',
+  "<strong>Criação de ativos editoriais</strong> no esporte digital: Antenados no Futebol e a chegada da Bolavip ao Brasil.",
 ];
 ---
 
@@ -27,13 +27,23 @@ const itens = [
       <span class="dot"></span><span class="rule"></span><span class="lbl">Repertório</span>
     </div>
     <div class="rep-grid">
-      <div class="reveal">
+      <div class="rep-left reveal">
         <h2>Repertório que sustenta a prática.</h2>
         <p>
-          A autoridade que me interessa não nasce apenas da exposição. Nasce da
-          combinação entre experiência, leitura, escuta, responsabilidade e
-          decisões tomadas sob pressão.
+          A autoridade que me interessa não nasce da exposição. Nasce da
+          combinação entre experiência, leitura, escuta e decisões tomadas sob
+          pressão. Cada linha ao lado é menos um título e mais uma marca de
+          percurso: é desse acúmulo, e não do cargo do momento, que nasce o
+          critério.
         </p>
+        <img
+          class="rep-photo"
+          src="/assets/retratos/ibson-preto.jpg"
+          alt="Retrato de Ibson Junior."
+          width="514"
+          height="900"
+          loading="lazy"
+        />
       </div>
       <ul class="rep-list reveal d1">
         {itens.map((i) => <li set:html={i} />)}
@@ -47,7 +57,20 @@ const itens = [
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 54px;
-    align-items: start;
+    align-items: stretch;
+  }
+  .rep-left { display: flex; flex-direction: column; }
+  .rep-photo {
+    margin-top: 28px;
+    width: 100%;
+    flex: 1 1 0;
+    height: 0;
+    min-height: 260px;
+    object-fit: cover;
+    object-position: 50% 16%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 26px 60px -34px rgba(0, 0, 0, 0.8);
   }
   .repertorio h2 {
     font-size: clamp(26px, 3.4vw, 44px);
@@ -83,6 +106,7 @@ const itens = [
     transition: color 0.25s, text-decoration-color 0.25s;
   }
   .rep-list :global(a:hover) { color: #ec8bff; text-decoration-color: #ec8bff; }
+  .rep-list :global(strong) { color: #fff; font-weight: 700; }
   .rep-list li::before {
     content: "";
     width: 7px;
@@ -93,6 +117,7 @@ const itens = [
     transform: translateY(-2px);
   }
   @media (max-width: 980px) {
-    .repertorio .rep-grid { grid-template-columns: 1fr; gap: 30px; }
+    .repertorio .rep-grid { grid-template-columns: 1fr; gap: 30px; align-items: start; }
+    .rep-photo { flex: none; height: auto; aspect-ratio: 4 / 5; max-height: 520px; margin-top: 26px; }
   }
 </style>

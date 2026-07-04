@@ -43,7 +43,7 @@ export const nav = {
     { href: "#videos", label: "Vídeos", id: "videos" },
     { href: "#contato", label: "Contato", id: "contato" },
   ],
-  cta: { href: "#contato", label: "Vamos conversar?" },
+  cta: { href: "#contato", label: "Vamos nos conectar?" },
 };
 
 export const hero = {
