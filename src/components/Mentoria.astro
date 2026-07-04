@@ -22,6 +22,10 @@ import { mentorship as m, archetypes } from "../data/content";
       </div>
     </div>
 
+    <div class="ment-lead reveal">
+      {m.intro.map((p) => <p>{p}</p>)}
+    </div>
+
     <div class="ment-cols reveal">
       <div class="ment-col">
         <h3>O que é</h3>
@@ -36,7 +40,7 @@ import { mentorship as m, archetypes } from "../data/content";
     </div>
 
     <div class="reveal">
-      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);margin-bottom:16px">Temas possíveis</h3>
+      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);margin-bottom:16px">O que pode ser trabalhado</h3>
       <div class="chips">
         {m.topics.map((t) => <span class="chip">{t}</span>)}
       </div>
@@ -48,3 +52,11 @@ import { mentorship as m, archetypes } from "../data/content";
     </div>
   </div>
 </section>
+
+<style>
+  .ment-lead { max-width: 70ch; margin: -18px 0 46px; }
+  .ment-lead p { font-size: 17px; line-height: 1.72; color: #d8cee8; margin-bottom: 14px; }
+  .ment-lead p:first-child { font-size: clamp(19px, 1.7vw, 22px); font-weight: 600; color: #fff; line-height: 1.5; }
+  .ment-lead p:last-child { margin-bottom: 0; }
+  @media (max-width: 760px) { .ment-lead { margin: 6px 0 34px; } }
+</style>

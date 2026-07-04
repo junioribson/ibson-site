@@ -50,9 +50,9 @@ export const hero = {
   topline: "Conteúdo · Liderança · Decisão · IA · Cultura",
   headline: "Quando tudo acelera, clareza vira responsabilidade.",
   subheadline:
-    "Reflexões, artigos e conversas executivas para líderes, equipes e organizações que precisam pensar melhor em ambientes de pressão, excesso de informação e transformação digital.",
+    "Para líderes, equipes e organizações que precisam decidir com critério, comunicar com profundidade e construir confiança em um mundo ruidoso demais para ser conduzido no automático.",
   complement:
-    "Minha trajetória passa pela construção de audiência, liderança editorial, cultura, negócios digitais e tomada de decisão. Este espaço reúne ideias, cases e conversas para quem precisa transformar repertório em clareza, presença e direção.",
+    "Minha trajetória atravessa construção de audiência, liderança editorial, cultura, negócios digitais e tomada de decisão. Este espaço reúne artigos, cases, mentorias, palestras e conversas executivas para transformar repertório em clareza, presença e direção.",
   ctas: {
     primary: { href: "#sobre", label: "Conhecer trajetória" },
     secondary: { href: "#contato", label: "Convidar para uma conversa" },
@@ -291,55 +291,56 @@ export const articles = {
 };
 
 export const talks = {
-  title: "Palestras e conversas executivas.",
+  title: "Palestras para provocar clareza onde o ruído virou rotina.",
   subtitle:
-    "Reflexões para empresas, eventos, lideranças e equipes que precisam pensar melhor em tempos de pressão, ruído e transformação.",
+    "Encontros para empresas, eventos e lideranças que não querem apenas preencher uma agenda, mas instalar uma conversa que continue depois que a palestra termina.",
   intro: [
-    "Estou abrindo uma frente de palestras e conversas executivas a partir dos temas que venho desenvolvendo em artigos, liderança e experiências profissionais.",
-    "A proposta não é levar respostas prontas, mas provocar clareza, responsabilidade e maturidade em quem decide, comunica e lidera.",
-    "São encontros para transformar inquietação em conversa séria: IA, cultura, conteúdo, decisão, atenção, liderança e governança pessoal.",
+    "Uma boa palestra não entrega apenas frases bonitas. Ela organiza uma inquietação que já existe na sala e dá linguagem para que pessoas e equipes enxerguem melhor o que estão vivendo.",
+    "Estou abrindo essa frente para levar aos encontros corporativos as teses que venho desenvolvendo em artigos, liderança e experiências reais: como decidir sob pressão, preservar critério em ambientes acelerados, usar IA sem terceirizar julgamento e construir cultura em meio ao excesso de ruído.",
+    "A proposta é unir densidade e humanidade. Menos espetáculo, mais presença. Menos fórmula, mais reflexão. Menos motivação passageira, mais clareza para seguir pensando depois.",
+    "Se a empresa precisa falar de futuro sem superficialidade, IA sem deslumbramento, liderança sem clichê e cultura sem cartaz na parede, essa conversa faz sentido.",
   ],
   // TODO(asset): a 6ª imagem (tema "Quando a profissão vira identidade") chega depois.
   themes: [
     {
       title: "Conteúdo não disputa apenas atenção. Disputa responsabilidade.",
       description:
-        "Sobre comunicação, IA, algoritmos, jornalismo, confiança e responsabilidade editorial em um ambiente saturado de informação.",
+        "Uma palestra sobre comunicação, IA, algoritmos, jornalismo, confiança e o desafio de informar em um ambiente onde quase tudo compete por clique, retenção e reação.",
       audience: "Marketing, comunicação, mídia, liderança, conteúdo, reputação e cultura.",
       cover: "/assets/palestras/palestra-conteudo.webp",
     },
     {
       title: "A IA pode ser motor. O humano precisa continuar no volante.",
       description:
-        "Uma conversa sobre produtividade, discernimento, julgamento humano e responsabilidade no uso da inteligência artificial.",
+        "Uma conversa sobre produtividade, discernimento e julgamento humano em um momento em que a inteligência artificial acelera processos, mas também pode reduzir o nível de exigência das decisões.",
       audience: "Lideranças, equipes de conteúdo, tecnologia, RH, educação e negócios.",
       cover: "/assets/palestras/palestra-ia.webp",
     },
     {
       title: "Critério sob pressão.",
       description:
-        "Como decidir melhor quando velocidade, volume e urgência parecem dominar o ambiente.",
+        "Como decidir melhor quando a velocidade, o volume e a urgência tentam ocupar o lugar da clareza.",
       audience: "Executivos, gestores, coordenadores, heads e equipes de alta demanda.",
       cover: "/assets/palestras/palestra-criterio.webp",
     },
     {
       title: "Cultura é o que a organização aprende a tolerar.",
       description:
-        "Sobre comportamento, confiança, coerência e os sinais invisíveis que moldam empresas.",
+        "Uma reflexão sobre comportamento, confiança, coerência e os sinais invisíveis que moldam uma empresa muito antes do discurso oficial.",
       audience: "RH, cultura, liderança, gestão e desenvolvimento organizacional.",
       cover: "/assets/palestras/palestra-cultura.webp",
     },
     {
       title: "Governança pessoal precede a cadeira.",
       description:
-        "Uma reflexão sobre maturidade, autoconsciência, reputação e responsabilidade antes do poder formal.",
+        "Uma palestra sobre maturidade, autoconsciência, reputação e responsabilidade antes do poder formal.",
       audience: "Líderes, conselheiros em formação, executivos e profissionais em transição.",
       cover: "/assets/palestras/palestra-governanca.webp",
     },
     {
       title: "Quando a profissão vira identidade.",
       description:
-        "Sobre carreira, repertório, criatividade, cansaço e o risco de reduzir a vida ao cargo.",
+        "Sobre carreira, repertório, criatividade, cansaço e o risco de reduzir a vida ao cargo que se ocupa.",
       audience: "Empresas, lideranças, RH, educação corporativa e profissionais em transição.",
       cover: "/assets/palestras/palestra-identidade.webp",
     },
@@ -347,29 +348,31 @@ export const talks = {
   formats: ["Palestra", "Painel", "Roda executiva", "Workshop", "Aula especial", "Conversa com lideranças"],
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Convidar para palestra" },
-  note: "Disponível para eventos corporativos, encontros executivos, painéis, aulas especiais e conversas com lideranças.",
+  note: "Disponível para eventos corporativos, encontros executivos, painéis, aulas especiais, rodas de liderança e conversas com equipes.",
 };
 
 export const mentorship = {
-  title: "Mentoria para clareza, posicionamento e decisão.",
+  title: "Mentoria para transformar repertório em direção.",
   subtitle:
-    "Uma conversa estratégica para profissionais que precisam organizar repertório, presença e direção.",
+    "Para profissionais que já têm história, experiência e ambição, mas precisam organizar posicionamento, narrativa e próximos movimentos com mais clareza.",
   intro: [
     "A mentoria não começa por fórmula. Começa por diagnóstico.",
-    "É um espaço individual para revisar trajetória, identificar território, ajustar narrativa profissional e definir próximos movimentos com mais consciência.",
+    "Existe um momento em que acumular experiência já não basta. É preciso entender o que essa experiência comunica, qual território ela sustenta e que tipo de percepção ela constrói no mercado.",
+    "A mentoria existe para trabalhar esse ponto: organizar pensamento, lapidar posicionamento, fortalecer presença e transformar repertório em direção prática.",
   ],
   whatIs: [
-    "Uma conversa estratégica individual para organizar pensamento, trajetória, posicionamento e tomada de decisão.",
-    "Pode envolver marca pessoal, comunicação executiva, carreira, liderança, governança pessoal, conteúdo, LinkedIn e clareza de próximos passos.",
+    "Um processo estratégico individual para revisar trajetória, identificar território, ajustar narrativa profissional e definir próximos movimentos com mais consciência.",
+    "Pode envolver marca pessoal, comunicação executiva, carreira, liderança, governança pessoal, LinkedIn, produção de conteúdo, repertório, tomada de decisão e clareza de posicionamento.",
   ],
   whoFor: [
     "Líderes",
     "Gestores",
     "Especialistas",
     "Executivos em transição",
-    "Profissionais que querem fortalecer presença",
-    "Pessoas que precisam comunicar melhor seu valor",
-    "Profissionais que desejam transformar experiência em posicionamento",
+    "Profissionais em crescimento",
+    "Pessoas que querem fortalecer presença profissional",
+    "Profissionais que precisam comunicar melhor seu valor",
+    "Pessoas que desejam transformar experiência em autoridade percebida",
   ],
   topics: [
     "Clareza de posicionamento",
@@ -381,9 +384,10 @@ export const mentorship = {
     "Governança pessoal",
     "Repertório e autoridade",
     "Direção de carreira",
+    "Presença e percepção de valor",
   ],
   cta: { href: "#contato", label: "Falar sobre mentoria" },
-  note: "Formato e escopo definidos em conversa, de acordo com o momento e a necessidade de cada pessoa.",
+  note: "Não existe pacote genérico. O escopo nasce do diagnóstico, do momento profissional e da clareza do que precisa mudar.",
 };
 
 export const videos = {
