@@ -80,6 +80,13 @@ nav.scrolled {
 .pub:hover, .tcard:hover, .artcard:hover, .subcase:hover { box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.7); }
 .pub .pc { background: #0f0a18; }
 .chips .chip { background: rgba(255, 255, 255, 0.05); border-color: var(--line); color: var(--text-soft); }
+.chips .chip:hover {
+  color: #db6bff;
+  border-color: rgba(219, 107, 255, 0.6);
+  background: rgba(219, 107, 255, 0.12);
+  box-shadow: 0 0 18px -2px rgba(219, 107, 255, 0.6);
+  transform: translateY(-2px);
+}
 
 /* Cases (bloco escuro): o feat já é escuro; ajustes finos */
 .cases-head p { color: var(--text-soft); }

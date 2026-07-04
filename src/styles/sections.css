@@ -294,8 +294,18 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   .tese, .sobre, .cases, .prolifer, .repo, .ment, .pal, .arts, .contato { padding: 62px 0; }
   .pubs { grid-template-columns: 1fr 1fr; gap: 14px; } .pub .pb { flex-direction: column; align-items: flex-start; gap: 6px; }
   .agrid { grid-template-columns: 1fr; } .acard .cov { aspect-ratio: 16/11; }
-  .foot-top { grid-template-columns: 1fr; } .foot-base { flex-direction: column; gap: 6px; }
-  .pal .moon { width: 110px; right: 5%; top: 8%; } .contato .moon { width: 84px; }
+  .foot-top { grid-template-columns: 1fr 1fr; gap: 26px 22px; } .foot-base { flex-direction: column; gap: 6px; }
+  .fcol a { margin-bottom: 10px; font-size: 14px; }
+  .pal .moon { width: 110px; right: 5%; top: 8%; }
+}
+/* Telefone: lua vira banner de destaque no topo do Contato, texto depois */
+@media (max-width: 620px) {
+  .contato .moon {
+    position: static;
+    width: clamp(124px, 36vw, 156px);
+    height: clamp(124px, 36vw, 156px);
+    margin: 4px auto 24px;
+  }
 }
 
 /* ==========================================================================
@@ -575,6 +585,8 @@ footer { background: var(--night); color: #b9a8d4; padding: 66px 0 40px; }
   padding: 8px 14px;
   color: var(--ink-soft);
   background: var(--cream-hi);
+  transition: color 0.25s, border-color 0.25s, background 0.25s, box-shadow 0.25s, transform 0.2s var(--e);
+  cursor: default;
 }
 
 /* --- Palestras v2: temas ----------------------------------------------- */
