@@ -109,7 +109,7 @@ import Icon from "./Icon.astro";
     e.preventDefault();
     if (!btn || !note) return;
     const data = Object.fromEntries(new FormData(form).entries());
-    data.subject = `[Site] ${data.assunto || "Contato"} — ${data.nome || ""}`;
+    data.subject = `[Site] ${data.assunto || "Contato"} · ${data.nome || ""}`;
     data.from_name = "Site Ibson Junior";
 
     const btnLabel = btn.textContent;

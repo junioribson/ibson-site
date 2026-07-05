@@ -109,6 +109,46 @@ export const about = {
   ],
 };
 
+// Últimos posts no LinkedIn: as artes que o Ibson cria (renomeadas ibson-junior-*)
+// ficam hospedadas AQUI, no próprio site, para o Google Images indexá-las (o LinkedIn
+// é difícil de indexar). Contagens são estáticas (o LinkedIn não expõe API pública).
+// TODO(ibson): substituir os exemplos abaixo pelos posts reais:
+//   - image: a arte do post em /assets/posts/ibson-junior-post-*.jpg (o Ibson envia)
+//   - url: o link do post específico no LinkedIn
+//   - reactions/comments/shares: as contagens (o Ibson informa)
+export const linkedinPosts = {
+  title: "Últimos posts no LinkedIn",
+  subtitle:
+    "Reflexões e artes que publico sobre liderança, IA, cultura, conteúdo e decisão. Clique para abrir o post no LinkedIn.",
+  profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+  posts: [
+    {
+      image: "/assets/artigos/ibson-junior-artigo-estrategia.webp",
+      url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+      alt: "Post de Ibson Junior no LinkedIn sobre estratégia e decisão",
+      reactions: 0,
+      comments: 0,
+      shares: 0,
+    },
+    {
+      image: "/assets/artigos/ibson-junior-artigo-ia.webp",
+      url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+      alt: "Post de Ibson Junior no LinkedIn sobre inteligência artificial",
+      reactions: 0,
+      comments: 0,
+      shares: 0,
+    },
+    {
+      image: "/assets/artigos/ibson-junior-artigo-cultura.webp",
+      url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+      alt: "Post de Ibson Junior no LinkedIn sobre cultura e liderança",
+      reactions: 0,
+      comments: 0,
+      shares: 0,
+    },
+  ] as Array<{ image: string; url: string; alt: string; reactions: number; comments: number; shares: number }>,
+};
+
 export const cases = {
   title: "Cases que conectam audiência, cultura e negócios.",
   subtitle:
