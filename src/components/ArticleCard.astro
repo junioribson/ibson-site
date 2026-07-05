@@ -1,0 +1,89 @@
+---
+// Card de artigo reutilizável (home e biblioteca /artigos). Dados vêm da
+// content collection. Aponta sempre para a página interna /artigos/<slug>.
+interface Props {
+  slug: string;
+  title: string;
+  cover: string;
+  category: string;
+  readingTime: string;
+  date?: string;
+  excerpt?: string; // se presente, mostra o resumo (usado na biblioteca)
+}
+const { slug, title, cover, category, readingTime, date, excerpt } = Astro.props;
+---
+
+<a class="artcard reveal" href={`/artigos/${slug}`}>
+  <div class="art-cover">
+    <img loading="lazy" src={cover} alt={`Artigo de Ibson Junior: ${title}`} />
+  </div>
+  <div class="art-body">
+    <div class="art-meta">
+      <span class="art-cat">{category}</span>
+      <span class="art-time">{readingTime}</span>
+    </div>
+    <h3>{title}</h3>
+    {excerpt && <p class="art-ex">{excerpt}</p>}
+    <span class="art-foot">
+      {date && <span class="art-date">{date}</span>}
+      <span class="art-read">Ler artigo →</span>
+    </span>
+  </div>
+</a>
+
+<style>
+  .artcard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--hair);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.045);
+    transition: transform 0.45s var(--e), box-shadow 0.45s var(--e), border-color 0.3s;
+  }
+  .artcard:hover {
+    transform: translateY(-6px);
+    border-color: rgba(219, 107, 255, 0.4);
+    box-shadow: 0 26px 50px -30px rgba(42, 1, 72, 0.55);
+  }
+  .art-cover { aspect-ratio: 16 / 10; overflow: hidden; position: relative; }
+  .art-cover img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s var(--e);
+  }
+  .artcard:hover .art-cover img { transform: scale(1.05); }
+  .art-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .art-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .art-cat {
+    font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
+    letter-spacing: 0.02em; text-transform: uppercase; color: #db6bff;
+    text-shadow: 0 0 16px rgba(219, 107, 255, 0.55);
+  }
+  .art-time {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-body h3 {
+    font-size: 19px; font-weight: 800; letter-spacing: -0.02em;
+    line-height: 1.22; color: #fff;
+  }
+  .art-ex {
+    font-size: 14.5px; line-height: 1.6; color: var(--text-soft);
+    margin: 0; flex: 1;
+  }
+  .art-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; margin-top: 4px;
+  }
+  .art-date {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-soft);
+  }
+  .art-read {
+    font-family: var(--font-sans); font-weight: 800; font-size: 13.5px;
+    letter-spacing: 0.01em; color: #db6bff;
+    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5);
+    transition: color 0.3s, text-shadow 0.3s; margin-left: auto;
+  }
+  .artcard:hover .art-read { color: #ec8bff; text-shadow: 0 0 22px rgba(236, 139, 255, 0.7); }
+</style>

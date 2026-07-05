@@ -41,7 +41,7 @@ const articleSchema = {
   <main id="top" class="artpage">
     <article class="art">
       <div class="wrap art-in">
-        <a class="art-back" href="/#artigos">‹ Artigos</a>
+        <a class="art-back" href="/artigos">‹ Todos os artigos</a>
         <div class="art-cat">{d.category}</div>
         <h1 class="art-title">{d.title}</h1>
         <div class="art-byline">
@@ -58,8 +58,8 @@ const articleSchema = {
           <Content />
         </div>
         <div class="art-foot">
-          <a class="art-li" href={d.linkedinUrl} target="_blank" rel="noopener">Ver o original no LinkedIn ↗</a>
-          <a class="art-more" href="/#artigos">Ver mais artigos</a>
+          <a class="art-more" href="/artigos">← Ver todos os artigos</a>
+          <a class="art-share" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener">Compartilhar no LinkedIn ↗</a>
         </div>
       </div>
     </article>
@@ -135,7 +135,8 @@ const articleSchema = {
     margin-top: 48px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.12);
     display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
   }
-  .art-li { color: #db6bff; font-weight: 800; font-size: 14px; text-shadow: 0 0 16px rgba(219, 107, 255, 0.45); }
-  .art-more { color: var(--ink-soft); font-weight: 700; font-size: 14px; }
+  .art-more { color: #db6bff; font-weight: 800; font-size: 14px; text-shadow: 0 0 16px rgba(219, 107, 255, 0.45); }
+  .art-share { color: var(--ink-soft); font-weight: 700; font-size: 14px; transition: color 0.3s; }
+  .art-share:hover { color: #db6bff; }
   @media (max-width: 620px) { .artpage { padding-top: 80px; } .art-in { padding-bottom: 60px; } }
 </style>

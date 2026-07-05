@@ -1,16 +1,13 @@
 ---
-// Artigos como biblioteca/galeria autoral: capa, título, tempo de leitura, link.
-// Quando a capa real chegar (/assets/artigos/*.jpg), defina `cover` em content.ts.
+// Bloco de artigos na home: mostra os 3 artigos MAIS RECENTES (dinâmico, por data).
+// A lista completa fica na biblioteca /artigos. Cada card abre a página no site.
+import { getCollection } from "astro:content";
 import { articles } from "../data/content";
+import ArticleCard from "./ArticleCard.astro";
 
-const grads = [
-  "linear-gradient(150deg,#3a0a5e,#5B2EE6)",
-  "linear-gradient(150deg,#1C0E04,#44026F)",
-  "linear-gradient(150deg,#44026F,#C94F8A)",
-  "linear-gradient(150deg,#241206,#7B57F0)",
-  "linear-gradient(150deg,#2A0148,#5B2EE6)",
-  "linear-gradient(150deg,#150026,#7B57F0)",
-];
+const latest = (await getCollection("artigos"))
+  .sort((a, b) => b.data.dateISO.localeCompare(a.data.dateISO))
+  .slice(0, 3);
 ---
 
 <section class="arts" id="artigos">
@@ -20,45 +17,26 @@ const grads = [
     </div>
     <div class="arts-head reveal">
       <h2>{articles.title}</h2>
-      <div class="meta">Publicados no LinkedIn ↗</div>
+      <div class="meta">Os mais recentes</div>
     </div>
     <p class="arts-intro reveal">{articles.intro}</p>
 
     <div class="artgrid">
       {
-        articles.list.map((a, i) => (
-          <a
-            class="artcard reveal"
-            href={a.slug ? `/artigos/${a.slug}` : a.url}
-            target={a.slug ? undefined : "_blank"}
-            rel={a.slug ? undefined : "noopener"}
-          >
-            <div class="art-cover">
-              {a.cover ? (
-                <img loading="lazy" src={a.cover} alt={`Artigo de Ibson Junior: ${a.title}`} />
-              ) : (
-                <div class="art-ph" style={`background:${grads[i % grads.length]}`}>
-                  <span class="art-ph-cat">{a.category}</span>
-                </div>
-              )}
-            </div>
-            <div class="art-body">
-              <div class="art-meta">
-                <span class="art-cat">{a.category}</span>
-                <span class="art-time">{a.readingTime}</span>
-              </div>
-              <h3>{a.title}</h3>
-              <span class="art-read">Ler artigo {a.slug ? "→" : "↗"}</span>
-            </div>
-          </a>
+        latest.map((a) => (
+          <ArticleCard
+            slug={a.id}
+            title={a.data.title}
+            cover={a.data.cover}
+            category={a.data.category}
+            readingTime={a.data.readingTime}
+          />
         ))
       }
     </div>
 
     <div class="arts-foot reveal">
-      <a href={articles.allUrl} target="_blank" rel="noopener">
-        Ver todos no LinkedIn <span>↗</span>
-      </a>
+      <a href="/artigos">Ver todos os artigos <span>→</span></a>
     </div>
   </div>
 </section>
@@ -69,103 +47,6 @@ const grads = [
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
-  .artcard {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid var(--hair);
-    border-radius: 6px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.045);
-    transition: transform 0.45s var(--e), box-shadow 0.45s var(--e), border-color 0.3s;
-  }
-  .art-body h3 { color: #fff; }
-  .artcard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 26px 50px -30px rgba(42, 1, 72, 0.4);
-  }
-  .art-cover {
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    position: relative;
-  }
-  .art-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s var(--e);
-  }
-  .artcard:hover .art-cover img {
-    transform: scale(1.05);
-  }
-  .art-ph {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    padding: 18px;
-    position: relative;
-  }
-  .art-ph::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 26% 20%, rgba(255, 255, 255, 0.16), transparent 60%);
-  }
-  .art-ph-cat {
-    position: relative;
-    z-index: 2;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  .art-body {
-    padding: 22px 24px 26px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
-  }
-  .art-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
-  .art-cat {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: 12.5px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    color: #db6bff;
-    text-shadow: 0 0 16px rgba(219, 107, 255, 0.55);
-  }
-  .art-time {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .art-body h3 {
-    font-size: 19px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.22;
-    flex: 1;
-  }
-  .art-read {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: 13.5px;
-    letter-spacing: 0.01em;
-    color: #db6bff;
-    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5);
-    transition: color 0.3s, text-shadow 0.3s;
-  }
-  .artcard:hover .art-read { color: #ec8bff; text-shadow: 0 0 22px rgba(236, 139, 255, 0.7); }
   @media (max-width: 980px) {
     .artgrid { grid-template-columns: 1fr 1fr; }
   }

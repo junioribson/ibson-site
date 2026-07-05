@@ -20,6 +20,13 @@ Objetivo: reproduzir os artigos do LinkedIn **no site**, idênticos em texto e i
 diagramados em nível premium, com schema `BlogPosting` + canonical próprio (assim o
 Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<slug>`.
 
+**Arquitetura de navegação (dinâmica, feita nesta rodada):**
+- Home, bloco `Artigos.astro`: mostra só os **3 mais recentes** (dinâmico, `getCollection` ordenado por `dateISO`), com botão "Ver todos os artigos" para `/artigos`. Menu "Artigos" continua rolando para esse bloco (`/#artigos`).
+- `/artigos` (`src/pages/artigos/index.astro`): **biblioteca premium** com todos os artigos (destaque "Mais recente" + galeria), ordenada por data.
+- Card compartilhado: `src/components/ArticleCard.astro` (home e biblioteca).
+- Páginas de artigo: link "Ver o original no LinkedIn" REMOVIDO (o original agora é o site); rodapé tem "Ver todos os artigos" (`/artigos`) + "Compartilhar no LinkedIn". Voltar leva a `/artigos`.
+- Obs: `articles.list`/`allUrl` em `content.ts` ficaram sem uso (a fonte da verdade agora é a content collection dos `.md`); mantidos por ora, podem ser removidos numa limpeza futura.
+
 **Sistema já construído (pronto para reuso):**
 - `src/content.config.ts`, coleção `artigos` (glob loader) + schema (title, date, dateISO, category, readingTime, cover, excerpt, linkedinUrl).
 - `src/pages/artigos/[...slug].astro`, template de leitura premium + schema `BlogPosting` + canonical próprio + OG.
