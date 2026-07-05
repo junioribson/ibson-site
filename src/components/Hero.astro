@@ -13,11 +13,6 @@ const { hero } = getContent(Astro.currentLocale);
   <canvas class="wh-net" aria-hidden="true"></canvas>
 
   <div class="wrap wh-in">
-    <div class="wh-eye">
-      <span class="wh-dot"></span>
-      <span class="wh-k">{hero.topline}</span>
-    </div>
-
     <h1 class="wh-h1">
       {
         hero.headlineLines.map((line, i) => (

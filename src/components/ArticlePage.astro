@@ -162,6 +162,11 @@ const articleSchema = {
   .art-body :global(p) {
     font-size: clamp(17px, 1.35vw, 19px); line-height: 1.78;
     color: #e7dcc6; margin: 0 0 24px; max-width: 68ch;
+    text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+  }
+  /* Em telas estreitas, justificar deixa buracos: volta ao alinhamento à esquerda. */
+  @media (max-width: 560px) {
+    .art-body :global(p) { text-align: left; hyphens: manual; }
   }
   .art-body :global(p:first-of-type) {
     font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; color: #fff; font-weight: 500;
