@@ -91,7 +91,7 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #db6bff 45%, #f0a35c 55%, transparent);
+    background: linear-gradient(90deg, transparent, var(--accent) 45%, #f0a35c 55%, transparent);
     background-size: 220% 100%;
     animation: pc-sheen 3.6s linear infinite;
     opacity: 0.8;
@@ -100,16 +100,16 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
   .pc-item:hover {
     transform: translateY(-5px);
     border-color: rgba(219, 107, 255, 0.55);
-    box-shadow: 0 20px 44px -22px rgba(219, 107, 255, 0.65);
+    box-shadow: 0 20px 44px -22px var(--glow);
   }
   .pc-n {
     font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95;
-    font-variant-numeric: tabular-nums; color: #db6bff;
-    background: linear-gradient(100deg, #b98bff 0%, #db6bff 38%, #f0a35c 74%, #b98bff 100%);
+    font-variant-numeric: tabular-nums; color: var(--accent);
+    background: linear-gradient(100deg, #b98bff 0%, var(--accent) 38%, #f0a35c 74%, #b98bff 100%);
     background-size: 220% 100%;
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
     animation: accent-slide 6s linear infinite;
-    filter: drop-shadow(0 0 16px rgba(219, 107, 255, 0.4));
+    filter: drop-shadow(0 0 16px var(--glow));
   }
   .pc-t { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #d3c6e6; margin-top: 12px; line-height: 1.4; }
 

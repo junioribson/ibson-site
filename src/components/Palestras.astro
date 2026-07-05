@@ -166,7 +166,7 @@ const ui = t(Astro.currentLocale);
   .pal-intro { margin-top: 20px; max-width: 54ch; }
   .pal-intro p { margin-top: 13px; }
   .pal-intro p:first-child { margin-top: 0; }
-  .pal-intro :global(strong) { color: #fff; font-weight: 700; }
+  .pal-intro :global(strong) { color: var(--heading); font-weight: 700; }
 
   .pcards {
     display: grid;
@@ -187,7 +187,7 @@ const ui = t(Astro.currentLocale);
   }
   .pcard:hover {
     transform: translateY(-6px);
-    box-shadow: 0 36px 70px -32px rgba(0, 0, 0, 0.9), 0 0 44px -20px rgba(219, 107, 255, 0.55);
+    box-shadow: 0 36px 70px -32px rgba(0, 0, 0, 0.9), 0 0 44px -20px var(--glow);
   }
   .pcard-media {
     aspect-ratio: 16 / 10;

@@ -43,7 +43,7 @@ const ui = t(Astro.currentLocale);
     </div>
 
     <div class="reveal">
-      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#db6bff;text-shadow:0 0 14px rgba(219,107,255,.6);margin-bottom:16px">{ui.mentTopics}</h3>
+      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-shadow:0 0 14px var(--glow);margin-bottom:16px">{ui.mentTopics}</h3>
       <div class="chips">
         {m.topics.map((t) => <span class="chip">{t}</span>)}
       </div>
@@ -59,7 +59,7 @@ const ui = t(Astro.currentLocale);
 <style>
   .ment-lead { max-width: 70ch; margin: -18px 0 46px; }
   .ment-lead p { font-size: 17px; line-height: 1.72; color: #d8cee8; margin-bottom: 14px; }
-  .ment-lead p:first-child { font-size: clamp(19px, 1.7vw, 22px); font-weight: 600; color: #fff; line-height: 1.5; }
+  .ment-lead p:first-child { font-size: clamp(19px, 1.7vw, 22px); font-weight: 600; color: var(--heading); line-height: 1.5; }
   .ment-lead p:last-child { margin-bottom: 0; }
   @media (max-width: 760px) { .ment-lead { margin: 6px 0 34px; } }
 </style>

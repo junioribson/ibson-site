@@ -104,7 +104,7 @@ const itens = rep.itens;
     object-fit: cover;
     object-position: 50% 16%;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--line);
     box-shadow: 0 30px 66px -34px rgba(0, 0, 0, 0.85);
   }
   .rep-left .rep-list { margin-top: 30px; }
@@ -114,16 +114,16 @@ const itens = rep.itens;
     letter-spacing: -0.035em;
     line-height: 1.06;
     max-width: 16ch;
-    color: #fff;
+    color: var(--heading);
   }
   .repertorio .rep-grid > div p {
     margin-top: 22px;
     font-size: 17px;
-    color: #e7dcc6;
+    color: var(--text);
     line-height: 1.72;
     max-width: 46ch;
   }
-  .rep-list { list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.14); }
+  .rep-list { list-style: none; border-top: 1px solid var(--line); }
   .rep-list li {
     display: flex;
     gap: 16px;
@@ -135,14 +135,14 @@ const itens = rep.itens;
     line-height: 1.5;
   }
   .rep-list :global(a) {
-    color: #db6bff;
+    color: var(--accent);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-color: rgba(219, 107, 255, 0.5);
     transition: color 0.25s, text-decoration-color 0.25s;
   }
-  .rep-list :global(a:hover) { color: #ec8bff; text-decoration-color: #ec8bff; }
-  .rep-list :global(strong) { color: #fff; font-weight: 700; }
+  .rep-list :global(a:hover) { color: var(--accent); text-decoration-color: var(--accent); }
+  .rep-list :global(strong) { color: var(--heading); font-weight: 700; }
   .rep-list li::before {
     content: "";
     width: 7px;

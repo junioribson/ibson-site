@@ -63,26 +63,68 @@ html {
 }
 
 body {
-  background: #09060f;
-  color: var(--color-cream);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-sans);
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  transition: background 0.5s var(--e), color 0.5s var(--e);
 }
 body.lock { overflow: hidden; }
 
-/* Tokens de superfície do tema escuro */
+/* ==========================================================================
+   TEMAS: tokens semânticos. Escuro é o padrão; claro em [data-theme="light"].
+   Componentes e camadas usam estes tokens (var(--heading), var(--accent)...),
+   então o botão sol/lua troca tudo de forma harmônica.
+   ========================================================================== */
 :root {
+  color-scheme: dark;
+  --bg: #09060f;
   --surface: #170d24;
   --surface-2: #1e1130;
+  --section-a: #170d24;
+  --section-b: #120a1c;
   --panel: rgba(255, 255, 255, 0.045);
+  --panel-2: rgba(255, 255, 255, 0.06);
   --line: rgba(255, 255, 255, 0.10);
   --line-2: rgba(255, 255, 255, 0.06);
-  --text: #ece3d4;
+  --line-strong: rgba(255, 255, 255, 0.20);
+  --text: #e7dcc6;
   --text-soft: #c1b2cf;
   --text-dim: #8f80a0;
+  --heading: #ffffff;
+  --accent: #db6bff;
+  --accent-deep: #b14bff;
+  --glow: rgba(219, 107, 255, 0.5);
+  --hero-net: rgba(123, 87, 240, 0.9);
+  --scrim: rgba(9, 6, 15, 0.7);
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f2ea;
+  --surface: #efe8d9;
+  --surface-2: #f1ebde;
+  --section-a: #f1ebdd;
+  --section-b: #f7f3ea;
+  --panel: #ffffff;
+  --panel-2: rgba(28, 14, 4, 0.035);
+  --line: rgba(28, 14, 4, 0.12);
+  --line-2: rgba(28, 14, 4, 0.07);
+  --line-strong: rgba(28, 14, 4, 0.2);
+  --text: #33261a;
+  --text-soft: #6b5a47;
+  --text-dim: #94826c;
+  --heading: #1a1109;
+  --accent: #5b2ee6;
+  --accent-deep: #44026f;
+  --glow: transparent;
+  --hero-net: rgba(91, 46, 230, 0.5);
+  --scrim: rgba(246, 242, 234, 0.6);
+  --hair: rgba(28, 14, 4, 0.14);
+  --hair-2: rgba(28, 14, 4, 0.07);
+  --ink-soft: #6b5a47;
 }
 
 img { max-width: 100%; display: block; }

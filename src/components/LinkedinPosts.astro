@@ -41,11 +41,11 @@ const posts = lk.posts.slice(0, 8);
   .lk-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .lk-head h2 {
     font-size: clamp(26px, 3.4vw, 44px); font-weight: 800; letter-spacing: -0.035em;
-    line-height: 1.06; color: #fff; max-width: 20ch;
+    line-height: 1.06; color: var(--heading); max-width: 20ch;
   }
   .lk-all {
     font-family: var(--font-sans); font-weight: 800; font-size: 13.5px;
-    color: #db6bff; text-shadow: 0 0 16px rgba(219, 107, 255, 0.5); white-space: nowrap;
+    color: var(--accent); text-shadow: 0 0 16px var(--glow); white-space: nowrap;
   }
   .lk-sub { margin-top: 14px; font-size: 16px; color: var(--ink-soft); line-height: 1.6; max-width: 60ch; }
 
@@ -73,14 +73,14 @@ const posts = lk.posts.slice(0, 8);
     display: block;
     border-radius: 14px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: #0d0a14;
+    border: 1px solid var(--line);
+    background: var(--surface);
     transition: transform 0.35s var(--e), border-color 0.35s, box-shadow 0.35s;
   }
   .lk-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(219, 107, 255, 0.45);
-    box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.8), 0 0 34px -20px rgba(219, 107, 255, 0.55);
+    border-color: var(--accent);
+    box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.8), 0 0 34px -20px var(--glow);
   }
   .lk-img { display: block; height: 100%; width: auto; }
 
@@ -91,7 +91,7 @@ const posts = lk.posts.slice(0, 8);
     font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
     color: #fff; padding: 8px 14px; border-radius: 999px;
     background: rgba(15, 10, 24, 0.82); backdrop-filter: blur(6px);
-    border: 1px solid rgba(219, 107, 255, 0.5);
+    border: 1px solid var(--glow);
     box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.8);
     white-space: nowrap; pointer-events: none;
     transition: opacity 0.3s, transform 0.3s var(--e);
@@ -101,12 +101,12 @@ const posts = lk.posts.slice(0, 8);
   .lk-nav {
     position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
     width: 44px; height: 44px; border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--line-strong);
     background: rgba(15, 10, 24, 0.8); backdrop-filter: blur(6px);
     color: #fff; font-size: 22px; line-height: 1; cursor: pointer;
     transition: background 0.25s, border-color 0.25s, transform 0.2s var(--e);
   }
-  .lk-nav:hover { background: rgba(219, 107, 255, 0.2); border-color: #db6bff; }
+  .lk-nav:hover { background: var(--glow); border-color: var(--accent); }
   .lk-prev { left: -6px; }
   .lk-next { right: -6px; }
   @media (max-width: 760px) {

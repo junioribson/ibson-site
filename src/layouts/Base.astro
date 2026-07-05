@@ -59,6 +59,18 @@ const personSchema = {
 <html lang={htmlLang(locale)}>
   <head>
     <meta charset="UTF-8" />
+    <script is:inline>
+      // Aplica o tema (claro/escuro) antes da renderização, sem flash. Padrão: escuro.
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "light" && t !== "dark") t = "dark";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#09060f" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />

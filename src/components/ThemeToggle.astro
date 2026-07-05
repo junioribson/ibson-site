@@ -1,0 +1,61 @@
+---
+// Botão de tema (claro/escuro), estilo pílula sol/lua. O estado visual é
+// controlado por [data-theme] no <html>; o clique só troca o tema e persiste.
+---
+
+<button class="theme-toggle" type="button" role="switch" aria-label="Alternar tema claro ou escuro" title="Tema claro / escuro">
+  <span class="tt-track">
+    <svg class="tt-ic tt-sun" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2" fill="currentColor"></circle>
+      <g stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M12 2.4v2.4M12 19.2v2.4M2.4 12h2.4M19.2 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"></path>
+      </g>
+    </svg>
+    <svg class="tt-ic tt-moon" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+      <path fill="currentColor" d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z"></path>
+    </svg>
+    <span class="tt-thumb"></span>
+  </span>
+</button>
+
+<style>
+  .theme-toggle { background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; }
+  .tt-track {
+    position: relative; width: 62px; height: 30px; border-radius: 999px;
+    border: 1px solid var(--line-strong); background: var(--panel-2);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 8px; transition: background 0.3s, border-color 0.3s;
+  }
+  .theme-toggle:hover .tt-track { border-color: var(--accent); }
+  .tt-ic { z-index: 1; color: var(--text-dim); transition: color 0.3s; }
+  .tt-thumb {
+    position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet-2), var(--violet));
+    box-shadow: 0 4px 12px -3px rgba(91, 46, 230, 0.65);
+    transition: transform 0.38s var(--e);
+    transform: translateX(32px); /* padrão (escuro): sobre a lua, à direita */
+  }
+  /* Ícone ativo em branco (sob o thumb roxo). Padrão escuro: lua ativa. */
+  .tt-moon { color: #fff; }
+  :root[data-theme="light"] .tt-thumb { transform: translateX(0); }
+  :root[data-theme="light"] .tt-sun { color: #fff; }
+  :root[data-theme="light"] .tt-moon { color: var(--text-dim); }
+</style>
+
+<script>
+  const root = document.documentElement;
+  const btns = [...document.querySelectorAll(".theme-toggle")];
+  const sync = () => {
+    const light = root.getAttribute("data-theme") === "light";
+    btns.forEach((b) => b.setAttribute("aria-checked", String(light)));
+  };
+  sync();
+  btns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      sync();
+    })
+  );
+</script>

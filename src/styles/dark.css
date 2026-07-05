@@ -4,13 +4,6 @@
    luminosos (violeta + dourado), painéis em vidro. "Luz dentro do escuro".
    ========================================================================== */
 
-/* Flip de tokens de linha e texto secundário (afeta todo o site de uma vez) */
-:root {
-  --hair: rgba(255, 255, 255, 0.12);
-  --hair-2: rgba(255, 255, 255, 0.06);
-  --ink-soft: #b9aacb;
-}
-
 /* Grão legível no escuro */
 .grain { mix-blend-mode: soft-light; opacity: 0.06; }
 
@@ -21,7 +14,7 @@
 
 /* ---- NAV ---- */
 nav.scrolled {
-  background: rgba(18, 10, 28, 0.82);
+  background: var(--scrim);
   box-shadow: 0 1px 0 var(--line);
 }
 .brand b { color: var(--cream); }
@@ -42,14 +35,14 @@ nav.scrolled {
 .hx-k { color: var(--text-dim); }
 .hx-rail { color: var(--text-dim); }
 .hx-sub { color: var(--text-soft); }
-.hx-word { color: rgba(255, 255, 255, 0.13); }
+.hx-word { color: var(--line); }
 .hx-word b { color: var(--violet-2); }
 .hx-mark { opacity: 0.14; }
 .hx-mark path { fill: var(--violet); }
 .hx-btn-fill { background: var(--violet); color: #fff; }
 .hx-btn-fill::before { background: linear-gradient(100deg, var(--violet-2), var(--magenta)); }
-.hx-btn-line { border-color: rgba(255, 255, 255, 0.3); color: var(--cream); }
-.hx-btn-line:hover { border-color: #fff; background: rgba(255, 255, 255, 0.06); }
+.hx-btn-line { border-color: var(--line-strong); color: var(--cream); }
+.hx-btn-line:hover { border-color: var(--heading); background: var(--panel-2); }
 .hx-scroll { color: var(--text-dim); }
 .hx-scroll-line { background: rgba(255, 255, 255, 0.4); }
 
@@ -61,7 +54,7 @@ nav.scrolled {
 .cases, .vids {
   background:
     radial-gradient(60% 50% at 88% -6%, rgba(123, 87, 240, 0.12), transparent 60%),
-    linear-gradient(170deg, #170d24 0%, #120a1c 72%);
+    linear-gradient(170deg, var(--section-a) 0%, var(--section-b) 72%);
 }
 /* orbs das seções claras: tom para escuro */
 .sobre::before, .cases::before, .prolifer::before, .gal::before,
@@ -78,52 +71,52 @@ nav.scrolled {
   border-color: var(--line);
 }
 .pub:hover, .tcard:hover, .artcard:hover, .subcase:hover { box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.7); }
-.pub .pc { background: #0f0a18; }
-.chips .chip { background: rgba(255, 255, 255, 0.05); border-color: var(--line); color: var(--text-soft); }
+.pub .pc { background: var(--surface); }
+.chips .chip { background: var(--panel); border-color: var(--line); color: var(--text-soft); }
 .chips .chip:hover {
-  color: #db6bff;
+  color: var(--accent);
   border-color: rgba(219, 107, 255, 0.6);
   background: rgba(219, 107, 255, 0.12);
-  box-shadow: 0 0 18px -2px rgba(219, 107, 255, 0.6);
+  box-shadow: 0 0 18px -2px var(--glow);
   transform: translateY(-2px);
 }
 
 /* Cases (bloco escuro): o feat já é escuro; ajustes finos */
 .cases-head p { color: var(--text-soft); }
-.pressrow .pt b { color: #fff; }
+.pressrow .pt b { color: var(--heading); }
 .pressrow .pk { color: var(--violet-2); }
 .subcase .num { color: var(--violet-2); }
 .subcase .sk { color: var(--gold); }
 .subcase .st { color: var(--text-soft); }
 .casecard .cc-tag { color: var(--gold); }
-.casecard h3 { color: #fff; }
+.casecard h3 { color: var(--heading); }
 .casecard p { color: var(--text-soft); }
-.casecard .cc-cta { border-color: rgba(255, 255, 255, 0.28); color: var(--cream); }
+.casecard .cc-cta { border-color: var(--line-strong); color: var(--cream); }
 .casecard .cc-cta:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
 
 /* Sobre */
-.sobre h2 { color: #fff; }
+.sobre h2 { color: var(--heading); }
 .about-sub { color: var(--text-soft); }
 .sobre .body p { color: var(--text-soft); }
-.sobre .body p strong, .sobre .body p em { color: #fff; }
+.sobre .body p strong, .sobre .body p em { color: var(--heading); }
 .about-proofs .pr .v { color: var(--text-soft); }
 
 /* ProliferArte */
-.pro-grid h2 { color: #fff; }
+.pro-grid h2 { color: var(--heading); }
 .pro-grid .body p { color: var(--text-soft); }
 .pc-n { color: var(--violet-2); }
-.pub h3 { color: #fff; }
-.pro-fb-text h3 { color: #fff; }
+.pub h3 { color: var(--heading); }
+.pro-fb-text h3 { color: var(--heading); }
 .pro-fb-text p { color: var(--text-soft); }
 
 /* Galeria */
 .gal-intro { color: var(--text-soft); }
 
 /* Artigos */
-.arts-head h2 { color: #fff; }
+.arts-head h2 { color: var(--heading); }
 .arts-intro { color: var(--text-soft); }
 .artcard { background: var(--panel); }
-.art-body h3 { color: #fff; }
+.art-body h3 { color: var(--heading); }
 .art-time { color: var(--text-dim); }
 .arts-foot a { color: var(--cream); }
 
@@ -131,7 +124,7 @@ nav.scrolled {
 .repo.repertorio { border-top: 1px solid var(--line); }
 
 /* Mentoria */
-.ment-head h2 { color: #fff; }
+.ment-head h2 { color: var(--heading); }
 .ment-intro p { color: var(--text-soft); }
 .ment-col h3 { color: var(--violet-2); }
 .ment-col p, .ment-col li { color: var(--text-soft); }
@@ -140,10 +133,10 @@ nav.scrolled {
 /* Vídeos */
 .vids-intro { color: var(--text-soft); }
 .vcard { background: var(--panel); border-color: var(--line); }
-.vcard h3 { color: #fff; }
+.vcard h3 { color: var(--heading); }
 
 /* Botões utilitários no escuro */
-.btn-line { border-color: rgba(255, 255, 255, 0.28); color: var(--cream); }
+.btn-line { border-color: var(--line-strong); color: var(--cream); }
 .btn-line:hover { background: var(--cream); color: #150026; }
 .btn-fill { background: var(--violet); color: #fff; }
 .btn-fill:hover { background: var(--violet-2); }
@@ -151,8 +144,7 @@ nav.scrolled {
 /* ==========================================================================
    CONTRASTE (referência Trakto): elementos claros/fortes sobre o quase-preto.
    ========================================================================== */
-:root {
-  --ink-soft: #cbc0e2;
+:root:not([data-theme="light"]) {
   --text-soft: #ddd3ee;
   --panel: rgba(255, 255, 255, 0.055);
   --line: rgba(255, 255, 255, 0.14);
@@ -163,31 +155,31 @@ nav.scrolled {
 .cases, .vids {
   background:
     radial-gradient(58% 48% at 88% -6%, rgba(123, 87, 240, 0.16), transparent 60%),
-    linear-gradient(170deg, #120b1f 0%, #0a0713 74%);
+    linear-gradient(170deg, var(--section-a) 0%, var(--section-b) 74%);
 }
 .sobre, .prolifer, .gal, .arts, .ment { background: transparent; }
 
 /* Títulos brancos */
 .sobre h2, .cases-head h2, .pro-grid h2, .arts-head h2, .ment-head h2,
 .casecard h3, .vcard h3, .art-body h3, .pub h3, .pro-fb-text h3,
-.repertorio h2, .pressrow .pt, .subcase .st { color: #fff; }
+.repertorio h2, .pressrow .pt, .subcase .st { color: var(--heading); }
 
-/* Rótulos e acentos mais fortes */
-.shead .lbl { color: #e6cd8f; }
-.pc-n, .art-cat, .ment-col h3, .pressrow .pk, .subcase .num { color: #a98bff; }
-.subcase .sk, .casecard .cc-tag { color: #e6cd8f; }
+/* Rótulos e acentos mais fortes (só no escuro; no claro usam os tokens) */
+:root:not([data-theme="light"]) .shead .lbl { color: #e6cd8f; }
+:root:not([data-theme="light"]) :is(.pc-n, .art-cat, .ment-col h3, .pressrow .pk, .subcase .num) { color: #a98bff; }
+:root:not([data-theme="light"]) :is(.subcase .sk, .casecard .cc-tag) { color: #e6cd8f; }
 
 /* Corpo de texto mais legível */
 .sobre .body p, .cases-head p, .pro-grid .body p, .arts-intro, .gal-intro,
 .ment-intro p, .vids-intro, .casecard p, .about-sub,
-.ment-col p, .ment-col li, .tese .body p { color: #d8cee8; }
+.ment-col p, .ment-col li, .tese .body p { color: var(--text); }
 
 /* Bordas de painel mais visíveis */
 .pub, .tcard, .mitem, .pressrow, .subcase, .casecard, .artcard,
-.pc-item, .gcard, .ment-col, .pro-fb, .vcard, .chips .chip { border-color: rgba(255, 255, 255, 0.14); }
+.pc-item, .gcard, .ment-col, .pro-fb, .vcard, .chips .chip { border-color: var(--line); }
 
 /* Botão fantasma mais claro */
-.btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
+:root:not([data-theme="light"]) .btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #fff; }
 
 /* ==========================================================================
    PREMIUM QUENTE v6: ameixa/vinho + bronze/champagne. Menos roxo frio,
@@ -195,11 +187,10 @@ nav.scrolled {
    ========================================================================== */
 
 /* Base mais quente (quase preto com viés ameixa/marrom) e texto champagne */
-body { background: #0e0a12; color: #f1e7d4; }
+body { background: var(--bg); color: var(--text); }
 
-:root {
+:root:not([data-theme="light"]) {
   --gold: #cba86a;          /* bronze/champagne dourado */
-  --ink-soft: #cabda2;      /* secundário quente, legível */
   --text-soft: #d8cbb2;
   --text-dim: #9c9080;
   --plum: #2a1524;
@@ -214,7 +205,7 @@ body { background: #0e0a12; color: #f1e7d4; }
 .cases, .vids {
   background:
     radial-gradient(58% 48% at 88% -6%, rgba(203, 168, 106, 0.10), transparent 60%),
-    linear-gradient(170deg, #170c15 0%, #0d0810 74%);
+    linear-gradient(170deg, var(--section-a) 0%, var(--section-b) 74%);
 }
 .cases::before, .vids::before, .sobre::before, .prolifer::before,
 .gal::before, .arts::before, .ment::before {
@@ -240,12 +231,12 @@ body { background: #0e0a12; color: #f1e7d4; }
 .nav-cta:hover {
   background-image: linear-gradient(100deg, #7b57f0 0%, #db6bff 42%, #ff7ac0 62%, #f0a35c 100%);
   background-position: 100% 0;
-  box-shadow: 0 0 20px -2px rgba(219, 107, 255, 0.85), 0 0 42px -10px rgba(123, 87, 240, 0.7);
+  box-shadow: 0 0 20px -2px var(--glow), 0 0 42px -10px rgba(123, 87, 240, 0.7);
   transform: translateY(-2px);
 }
 
 /* Feat (WolfLife) e blocos ink: aquecer o fundo */
-.feat { background: linear-gradient(158deg, #1c0f18, #150a12); }
+.feat { background: linear-gradient(158deg, var(--section-a), var(--section-b)); }
 .feat .fk { color: var(--gold); }
 .feat .big em { color: #d8a86a; }
 
@@ -282,7 +273,7 @@ body { background: #0e0a12; color: #f1e7d4; }
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: accent-slide 6s linear infinite;
-  filter: drop-shadow(0 0 14px rgba(219, 107, 255, 0.4));
+  filter: drop-shadow(0 0 14px var(--glow));
 }
 
 /* Subcase TikTok: logo (selo) ao lado do número, compacto e responsivo */
@@ -311,7 +302,7 @@ body { background: #0e0a12; color: #f1e7d4; }
   border: 1px solid rgba(219, 107, 255, 0.3);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 0 46px -22px rgba(219, 107, 255, 0.55);
+  box-shadow: 0 0 46px -22px var(--glow);
 }
 .cform::before {
   content: "";
@@ -325,3 +316,29 @@ body { background: #0e0a12; color: #f1e7d4; }
   .tiktok-logo .tk-c, .tiktok-logo .tk-r { animation: none; }
   .cform::before { animation: none; }
 }
+
+/* ==========================================================================
+   AJUSTE FINO DO TEMA CLARO: glows/orbs decorativos sutis, sem manchas roxas.
+   ========================================================================== */
+:root[data-theme="light"] .cases,
+:root[data-theme="light"] .vids {
+  background: linear-gradient(170deg, var(--section-a) 0%, var(--section-b) 78%);
+}
+:root[data-theme="light"] .sobre::before,
+:root[data-theme="light"] .cases::before,
+:root[data-theme="light"] .prolifer::before,
+:root[data-theme="light"] .gal::before,
+:root[data-theme="light"] .arts::before,
+:root[data-theme="light"] .ment::before,
+:root[data-theme="light"] .vids::before {
+  background:
+    radial-gradient(34vw 34vw at 14% 16%, rgba(91, 46, 230, 0.05), transparent 62%),
+    radial-gradient(30vw 30vw at 88% 86%, rgba(176, 146, 94, 0.05), transparent 62%);
+}
+:root[data-theme="light"] .cform,
+:root[data-theme="light"] .cform { border-color: rgba(91, 46, 230, 0.18); }
+:root[data-theme="light"] .cform::before { opacity: 0.55; }
+/* Rótulos/acentos dourados ficam pouco legíveis no creme: usa o roxo da marca */
+:root[data-theme="light"] .subcase .sk,
+:root[data-theme="light"] .casecard .cc-tag { color: var(--accent-deep); }
+:root[data-theme="light"] .shead .rule { background: var(--line-strong); }

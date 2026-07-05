@@ -94,11 +94,11 @@ const collectionSchema = {
   .lib-hero { padding-top: 46px; padding-bottom: 20px; }
   .lib-back {
     font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
-    color: #db6bff; display: inline-block; margin-bottom: 26px;
+    color: var(--accent); display: inline-block; margin-bottom: 26px;
   }
   .lib-title {
     font-size: clamp(34px, 6vw, 64px); font-weight: 800; letter-spacing: -0.04em;
-    line-height: 1.02; color: #fff; margin-top: 10px;
+    line-height: 1.02; color: var(--heading); margin-top: 10px;
   }
   .lib-intro {
     margin-top: 18px; max-width: 62ch; font-size: clamp(16px, 1.5vw, 19px);
@@ -107,11 +107,11 @@ const collectionSchema = {
   .feat {
     display: grid; grid-template-columns: 1.15fr 1fr; gap: 0;
     margin: 40px 0 52px; border: 1px solid var(--hair); border-radius: 12px;
-    overflow: hidden; background: rgba(255, 255, 255, 0.045);
+    overflow: hidden; background: var(--panel);
     transition: transform 0.45s var(--e), box-shadow 0.45s var(--e), border-color 0.3s;
   }
   .feat:hover {
-    transform: translateY(-4px); border-color: rgba(219, 107, 255, 0.4);
+    transform: translateY(-4px); border-color: var(--accent);
     box-shadow: 0 34px 66px -34px rgba(42, 1, 72, 0.6);
   }
   .feat-cover { position: relative; overflow: hidden; min-height: 260px; }
@@ -131,18 +131,18 @@ const collectionSchema = {
   }
   .feat-cat {
     font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
-    text-transform: uppercase; letter-spacing: 0.02em; color: #db6bff;
-    text-shadow: 0 0 16px rgba(219, 107, 255, 0.55);
+    text-transform: uppercase; letter-spacing: 0.02em; color: var(--accent);
+    text-shadow: 0 0 16px var(--glow);
   }
   .feat-dot { opacity: 0.5; }
   .feat-body h2 {
     font-size: clamp(23px, 2.6vw, 32px); font-weight: 800; letter-spacing: -0.03em;
-    line-height: 1.12; color: #fff;
+    line-height: 1.12; color: var(--heading);
   }
   .feat-body p { font-size: 16px; line-height: 1.6; color: var(--text-soft); margin: 0; }
   .feat-read {
-    font-family: var(--font-sans); font-weight: 800; font-size: 14px; color: #db6bff;
-    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5); margin-top: 4px;
+    font-family: var(--font-sans); font-weight: 800; font-size: 14px; color: var(--accent);
+    text-shadow: 0 0 16px var(--glow); margin-top: 4px;
   }
   .libgrid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;

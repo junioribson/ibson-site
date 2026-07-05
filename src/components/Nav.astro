@@ -1,6 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import Icon from "./Icon.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 import { getContent, localizePath, normalizeLocale, LANGS } from "../i18n/utils";
 import { t } from "../i18n/ui";
 
@@ -41,6 +42,7 @@ const homeHref = localizePath("/", locale);
           ))
         }
       </div>
+      <div class="nav-theme"><ThemeToggle /></div>
       <a class="nav-li" href={LINKEDIN} target="_blank" rel="noopener" aria-label={ui.connectLinkedin} title={ui.connectLinkedin}>
         <Icon name="linkedin" class="ic" />
       </a>
@@ -63,6 +65,7 @@ const homeHref = localizePath("/", locale);
       ))
     }
   </div>
+  <div class="mtheme"><span class="mtheme-lbl">{ui.themeLabel}</span><ThemeToggle /></div>
   <a class="mmenu-li" href={LINKEDIN} target="_blank" rel="noopener">
     <Icon name="linkedin" class="ic" /> {ui.connectLinkedin}
   </a>
@@ -74,14 +77,14 @@ const homeHref = localizePath("/", locale);
   .nav-li {
     display: inline-flex; align-items: center; justify-content: center;
     width: 40px; height: 40px; border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.22); color: #f1e7d4;
+    border: 1px solid var(--line-strong); color: var(--text);
     transition: background 0.3s, color 0.3s, transform 0.25s var(--e), border-color 0.3s, box-shadow 0.3s;
   }
   .nav-li:hover {
-    color: #db6bff;
-    border-color: #db6bff;
+    color: var(--accent);
+    border-color: var(--accent);
     background: rgba(219, 107, 255, 0.1);
-    box-shadow: 0 0 20px -3px rgba(219, 107, 255, 0.75);
+    box-shadow: 0 0 20px -3px var(--glow);
     transform: translateY(-2px);
   }
   .nav-li .ic { width: 18px; height: 18px; }
@@ -96,15 +99,19 @@ const homeHref = localizePath("/", locale);
     transition: background 0.25s, color 0.25s, opacity 0.25s;
   }
   .lang .lang-flag { font-size: 15px; line-height: 1; }
-  .lang:hover { opacity: 1; background: rgba(255, 255, 255, 0.07); color: #fff; }
-  .lang.on { opacity: 1; color: #fff; background: rgba(219, 107, 255, 0.16); }
-  .lang.on .lang-code { color: #db6bff; }
+  .lang:hover { opacity: 1; background: var(--panel-2); color: var(--heading); }
+  .lang.on { opacity: 1; color: var(--heading); background: rgba(219, 107, 255, 0.16); }
+  .lang.on .lang-code { color: var(--accent); }
   /* Bandeiras compactas no topo: só o ícone (o código PT/ES/EN aparece no menu mobile) */
   .lang .lang-code { display: none; }
   .lang { padding: 6px 7px; }
+  .nav-theme { display: inline-flex; align-items: center; }
   @media (max-width: 1280px) {
     .nav-li { display: none; }
+    .nav-theme { display: none; }
   }
+  .mtheme { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
+  .mtheme-lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.03em; color: var(--tint); }
 
   /* Bandeiras no menu mobile */
   .mlangs { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
@@ -114,7 +121,7 @@ const homeHref = localizePath("/", locale);
     color: var(--tint);
   }
   .mlang .lang-flag { font-size: 20px; }
-  .mlang.on { color: #db6bff; }
+  .mlang.on { color: var(--accent); }
 
   .mmenu-li {
     display: inline-flex; align-items: center; gap: 12px;
