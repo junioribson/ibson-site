@@ -342,6 +342,11 @@ body { background: var(--bg); color: var(--text); }
 :root[data-theme="light"] .subcase .sk,
 :root[data-theme="light"] .casecard .cc-tag { color: var(--accent-deep); }
 :root[data-theme="light"] .shead .rule { background: var(--line-strong); }
+/* As camadas de arquétipo (.arch-layer) são fotos ESCURAS pensadas para o tema
+   escuro. No claro, o mix-blend-mode: multiply as transforma em retângulos
+   cinza sobre o creme (lobo/coruja/lua aparecendo como caixa). Como as seções
+   claras já têm seus próprios halos sutis, escondemos os arquétipos no claro. */
+:root[data-theme="light"] .arch-layer { display: none; }
 
 /* ==========================================================================
    TEMA CLARO v2 (revisão de designer): contraste, impacto e blocos escuros
