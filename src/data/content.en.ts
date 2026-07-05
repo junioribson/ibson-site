@@ -114,7 +114,7 @@ export const about = {
 // is hosted HERE, on the site itself, so Google Images can index it (LinkedIn
 // is hard to index). Counts are static (LinkedIn does not expose a public API).
 // TODO(ibson): replace the examples below with the real posts:
-//   - image: the post artwork in /assets/posts/ibson-junior-post-*.jpg (Ibson sends it)
+//   - image: the post artwork in /assets/posts/ibson-junior-post-*.webp (Ibson sends it)
 //   - url: the link to the specific post on LinkedIn
 //   - reactions/comments/shares: the counts (Ibson provides them)
 export const linkedinPosts = {
@@ -127,42 +127,42 @@ export const linkedinPosts = {
   // Last update: 2026-07-05.
   posts: [
     {
-      image: "/assets/posts/ibson-junior-post-vitoria-postura.jpg",
+      image: "/assets/posts/ibson-junior-post-vitoria-postura.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7479149707659825152/",
       alt: "Post artwork by Ibson Junior on LinkedIn: I admire those who grow without turning anyone into a stepping stone, character is also an achievement.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.jpg",
+      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7478545542411632642/",
       alt: "Post artwork by Ibson Junior on LinkedIn: AI can be the engine, the human must stay at the wheel.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.jpg",
+      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7477458378286493696/",
       alt: "Post artwork by Ibson Junior on LinkedIn: speed delivers reach, judgment builds relevance.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cansaco-limite.jpg",
+      image: "/assets/posts/ibson-junior-post-cansaco-limite.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7476605347814825984/",
       alt: "Post artwork by Ibson Junior on LinkedIn: there are things we only call strength because we have not yet learned to call them a limit, maturity is also care.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.jpg",
+      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7476008937306275840/",
       alt: "Post artwork by Ibson Junior on LinkedIn: being close to the news increases responsibility.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.jpg",
+      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7460712281094430721/",
       alt: "Post artwork by Ibson Junior on LinkedIn: the one who decides is not the one who understands the problem.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.jpg",
+      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7459923332491001856/",
       alt: "Post artwork by Ibson Junior on LinkedIn: multitasking does not exist, there is a constant switching of attention.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-governanca-decisao.jpg",
+      image: "/assets/posts/ibson-junior-post-governanca-decisao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7459628428930105344/",
       alt: "Photo of Ibson Junior at a Board Academy event, on governance, boards and decision-making.",
     },
@@ -232,9 +232,9 @@ export const cases = {
     // Real covers extracted from Ibson's PDFs (publications and collections).
     // TODO(link): point the `url` of each publication when there is a page/store.
     galeria: [
-      { title: "ProliferArte Magazine: Portrait", src: "/assets/capas/revista-retrato.png" as string | null, url: "#" },
-      { title: "ValorizArte: Overflowing Perception", src: "/assets/capas/valorizarte.png" as string | null, url: "#" },
-      { title: "Open Mind: Evolution of Thoughts", src: "/assets/capas/mente-aberta.png" as string | null, url: "#" },
+      { title: "ProliferArte Magazine: Portrait", src: "/assets/capas/revista-retrato.webp" as string | null, url: "#" },
+      { title: "ValorizArte: Overflowing Perception", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
+      { title: "Open Mind: Evolution of Thoughts", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
     ],
   },
 };
@@ -528,11 +528,11 @@ export const archetypes = {
     alt: "Editorial artwork of a wolf representing territory, strategy and reading of the environment.",
   },
   owl: {
-    src: "/assets/arquetipos/owl-editorial.jpg",
+    src: "/assets/arquetipos/owl-editorial.webp",
     alt: "Editorial artwork of an owl representing discernment, vision and wisdom.",
   },
   seahorse: {
-    src: "/assets/arquetipos/moon-network.jpg",
+    src: "/assets/arquetipos/moon-network.webp",
     alt: "Editorial artwork of a seahorse representing adaptation, care and balance.",
   },
 };

@@ -114,7 +114,7 @@ export const about = {
 // quedan alojadas AQUÍ, en el propio sitio, para que Google Images las indexe (LinkedIn
 // es difícil de indexar). Los conteos son estáticos (LinkedIn no expone API pública).
 // TODO(ibson): reemplazar los ejemplos de abajo por las publicaciones reales:
-//   - image: el arte de la publicación en /assets/posts/ibson-junior-post-*.jpg (lo envía Ibson)
+//   - image: el arte de la publicación en /assets/posts/ibson-junior-post-*.webp (lo envía Ibson)
 //   - url: el enlace de la publicación específica en LinkedIn
 //   - reactions/comments/shares: los conteos (los informa Ibson)
 export const linkedinPosts = {
@@ -127,42 +127,42 @@ export const linkedinPosts = {
   // Última actualización: 2026-07-05.
   posts: [
     {
-      image: "/assets/posts/ibson-junior-post-vitoria-postura.jpg",
+      image: "/assets/posts/ibson-junior-post-vitoria-postura.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7479149707659825152/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: admiro a quien crece sin convertir a nadie en escalón, el carácter también es una conquista.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.jpg",
+      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7478545542411632642/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: la IA puede ser motor, el humano necesita seguir al volante.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.jpg",
+      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7477458378286493696/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: la velocidad entrega alcance, el criterio construye relevancia.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cansaco-limite.jpg",
+      image: "/assets/posts/ibson-junior-post-cansaco-limite.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7476605347814825984/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: hay cosas que solo llamamos fuerza porque todavía no aprendimos a llamarlas límite, la madurez también es cuidado.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.jpg",
+      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7476008937306275840/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: estar cerca de la noticia aumenta la responsabilidad.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.jpg",
+      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7460712281094430721/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: quien decide no es quien entiende el problema.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.jpg",
+      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7459923332491001856/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: la multitarea no existe, existe un cambio constante de atención.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-governanca-decisao.jpg",
+      image: "/assets/posts/ibson-junior-post-governanca-decisao.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7459628428930105344/",
       alt: "Foto de Ibson Junior en un evento de Board Academy, sobre gobernanza, consejo y toma de decisiones.",
     },
@@ -232,9 +232,9 @@ export const cases = {
     // Portadas reales extraídas de los PDFs de Ibson (publicaciones y compilaciones).
     // TODO(link): apuntar `url` de cada publicación cuando haya página/tienda.
     galeria: [
-      { title: "Revista ProliferArte: Retrato", src: "/assets/capas/revista-retrato.png" as string | null, url: "#" },
-      { title: "ValorizArte: Transbordando Percepción", src: "/assets/capas/valorizarte.png" as string | null, url: "#" },
-      { title: "Mente Abierta: Evolución de los Pensamientos", src: "/assets/capas/mente-aberta.png" as string | null, url: "#" },
+      { title: "Revista ProliferArte: Retrato", src: "/assets/capas/revista-retrato.webp" as string | null, url: "#" },
+      { title: "ValorizArte: Transbordando Percepción", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
+      { title: "Mente Abierta: Evolución de los Pensamientos", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
     ],
   },
 };
@@ -528,11 +528,11 @@ export const archetypes = {
     alt: "Arte editorial de lobo que representa territorio, estrategia y lectura de entorno.",
   },
   owl: {
-    src: "/assets/arquetipos/owl-editorial.jpg",
+    src: "/assets/arquetipos/owl-editorial.webp",
     alt: "Arte editorial de búho que representa discernimiento, visión y sabiduría.",
   },
   seahorse: {
-    src: "/assets/arquetipos/moon-network.jpg",
+    src: "/assets/arquetipos/moon-network.webp",
     alt: "Arte editorial de caballito de mar que representa adaptación, cuidado y equilibrio.",
   },
 };

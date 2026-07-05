@@ -43,7 +43,7 @@ El medio necesita proveer a la cúpula de información sobre la operación. La c
 
 El consejo trae el referencial externo que ninguna de las partes visualiza: ni la operación, ni el medio, ni la cúpula. El bagaje, la experiencia y la alteridad de esos miembros califican la información para la toma de decisión.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.png" alt="Sala de consejo con ejecutivos alrededor de la mesa y la marca de Ibson Junior al centro, bajo los pilares calidad, protocolo y norte. Ilustración del artículo de Ibson Junior sobre la calidad de la decisión en la gobernanza." loading="lazy" width="606" style="max-width:606px" height="400" /><figcaption>Un consejo no impone dirección. Ilumina el criterio. En el silencio estratégico entre calidad, protocolo y norte, las decisiones dejan de ser impulsos y pasan a ser arquitectura.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.webp" alt="Sala de consejo con ejecutivos alrededor de la mesa y la marca de Ibson Junior al centro, bajo los pilares calidad, protocolo y norte. Ilustración del artículo de Ibson Junior sobre la calidad de la decisión en la gobernanza." loading="lazy" width="606" style="max-width:606px" height="400" /><figcaption>Un consejo no impone dirección. Ilumina el criterio. En el silencio estratégico entre calidad, protocolo y norte, las decisiones dejan de ser impulsos y pasan a ser arquitectura.</figcaption></figure>
 
 ## Consejo: catalizador de calidad, protocolo y norte
 
@@ -69,7 +69,7 @@ Ese proceso coincidió con el auge de la pandemia, cuando gran parte del mercado
 
 > La claridad de criterio precedió cualquier crecimiento.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.jpg" alt="Infografía del récord histórico de BolaVIP: más de 1.000 millones de sesiones en 2022 (1.001.449.743), el medio deportivo digital más leído de Brasil, de FutbolSites. Referencia en el artículo de Ibson Junior sobre gobernanza y decisión." loading="lazy" width="1000" style="max-width:1000px" height="1000" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.webp" alt="Infografía del récord histórico de BolaVIP: más de 1.000 millones de sesiones en 2022 (1.001.449.743), el medio deportivo digital más leído de Brasil, de FutbolSites. Referencia en el artículo de Ibson Junior sobre gobernanza y decisión." loading="lazy" width="1000" style="max-width:1000px" height="1000" /></figure>
 
 El resultado llegó en 2022, cuando alcanzamos la marca de 1.000 millones de sesiones y consolidamos Bolavip como líder de audiencia en medios deportivos digitales en Brasil y en América Latina, superando a competidores tradicionales. El crecimiento se volvió visible. La arquitectura ya existía antes de él.
 

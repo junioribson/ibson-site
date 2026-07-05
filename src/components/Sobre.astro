@@ -1,12 +1,12 @@
 ---
 // Sobre: trajetória com autoridade, sem currículo nem autopromoção.
 // TODO(asset): quando houver retrato editorial, definir `photo`
-// (ex.: "/assets/retratos/ibson.jpg"). Até lá, placeholder sóbrio.
+// (ex.: "/assets/retratos/ibson.webp"). Até lá, placeholder sóbrio.
 import { getContent } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { about } = getContent(Astro.currentLocale);
 const ui = t(Astro.currentLocale);
-const photo: string | null = "/assets/retratos/ibson-junior-retrato.jpg";
+const photo: string | null = "/assets/retratos/ibson-junior-retrato.webp";
 ---
 
 <section class="sobre" id="sobre">

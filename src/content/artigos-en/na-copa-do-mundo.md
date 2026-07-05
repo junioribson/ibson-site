@@ -33,7 +33,7 @@ For decades, information arrived through more predictable paths. The printed new
 
 > The news did not only change format. It changed path.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.png" alt="World Cup news consumed on multiple screens: laptop and cell phone connected by a data flow. Illustration from Ibson Junior's article on content and responsibility." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.webp" alt="World Cup news consumed on multiple screens: laptop and cell phone connected by a data flow. Illustration from Ibson Junior's article on content and responsibility." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
 
 Before, the person searched, clicked, read, compared sources and, with more or less patience, built a view. Today, often, the information appears before it is sought. It arrives in a 12-second cut, in a caption, in a screenshot, in an automatic summary, in a ready-made answer, in a short video, in an algorithmic recommendation or in an already packaged interpretation.
 
@@ -59,7 +59,7 @@ When a platform starts to summarize, organize and present answers directly on th
 
 Content stops fighting only for the click. It fights to be understood, cited, contextualized, preserved and not reduced to a shallow answer.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.png" alt="A man carefully analyzing a flow of notifications and content on a laptop. Illustration from Ibson Junior's article on attention and responsibility in the World Cup coverage." loading="lazy" width="710" style="max-width:710px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.webp" alt="A man carefully analyzing a flow of notifications and content on a laptop. Illustration from Ibson Junior's article on attention and responsibility in the World Cup coverage." loading="lazy" width="710" style="max-width:710px" height="400" /></figure>
 
 This is a delicate point for anyone who works with content. AI can help a lot. It can accelerate research, organize the agenda, find patterns, suggest paths, summarize large volumes of information and give speed to processes that before would take much more time. But speed is not synonymous with criteria.
 
@@ -91,7 +91,7 @@ Do we use it to inform better or just to capture more screen time?
 
 ## The fan is not a metric
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.png" alt="Emotional fans in the stadium during a night match of the World Cup. Illustration from Ibson Junior's article on narrative, emotion and responsibility in football." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.webp" alt="Emotional fans in the stadium during a night match of the World Cup. Illustration from Ibson Junior's article on narrative, emotion and responsibility in football." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
 
 Today, the main asset of interest for companies is people's attention. But attention is not a neutral thing, especially in football.
 
@@ -181,7 +181,7 @@ Concentrating on doing what is right, even without immediate volume, can generat
 
 ## Journalism in times of noise
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.png" alt="A journalist in a newsroom surrounded by screens, taking notes during the World Cup coverage. Illustration from Ibson Junior's article on content and responsibility." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.webp" alt="A journalist in a newsroom surrounded by screens, taking notes during the World Cup coverage. Illustration from Ibson Junior's article on content and responsibility." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
 
 I have a lot of respect for journalism. Not as an abstract ideal, but as a craft.
 

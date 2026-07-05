@@ -33,7 +33,7 @@ Durante décadas, la información llegaba por caminos más previsibles. El diari
 
 > La noticia no cambió solo de formato. Cambió de camino.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.png" alt="Noticias del Mundial consumidas en múltiples pantallas: laptop y celular conectados por un flujo de datos. Ilustración del artículo de Ibson Junior sobre contenido y responsabilidad." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.webp" alt="Noticias del Mundial consumidas en múltiples pantallas: laptop y celular conectados por un flujo de datos. Ilustración del artículo de Ibson Junior sobre contenido y responsabilidad." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
 
 Antes, la persona buscaba, clicaba, leía, comparaba fuentes y, con más o menos paciencia, construía una visión. Hoy, muchas veces, la información aparece antes de ser buscada. Llega en un corte de 12 segundos, en un subtítulo, en una captura, en un resumen automático, en una respuesta lista, en un video corto, en una recomendación algorítmica o en una interpretación ya empaquetada.
 
@@ -59,7 +59,7 @@ Cuando una plataforma pasa a resumir, organizar y presentar respuestas directame
 
 El contenido deja de pelear apenas por el clic. Pelea para ser comprendido, citado, contextualizado, preservado y no reducido a una respuesta superficial.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.png" alt="Hombre analizando con atención un flujo de notificaciones y contenidos en el laptop. Ilustración del artículo de Ibson Junior sobre atención y responsabilidad en la cobertura del Mundial." loading="lazy" width="710" style="max-width:710px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.webp" alt="Hombre analizando con atención un flujo de notificaciones y contenidos en el laptop. Ilustración del artículo de Ibson Junior sobre atención y responsabilidad en la cobertura del Mundial." loading="lazy" width="710" style="max-width:710px" height="400" /></figure>
 
 Este es un punto delicado para cualquier persona que trabaja con contenido. La IA puede ayudar mucho. Puede acelerar la investigación, organizar la agenda, encontrar patrones, sugerir caminos, resumir grandes volúmenes de información y darle velocidad a procesos que antes llevarían mucho más tiempo. Pero la velocidad no es sinónimo de criterio.
 
@@ -91,7 +91,7 @@ La pregunta incómoda es qué hacemos con esa disponibilidad emocional.
 
 ## El hincha no es una métrica
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.png" alt="Hinchas emocionados en el estadio durante un partido nocturno del Mundial. Ilustración del artículo de Ibson Junior sobre narrativa, emoción y responsabilidad en el fútbol." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.webp" alt="Hinchas emocionados en el estadio durante un partido nocturno del Mundial. Ilustración del artículo de Ibson Junior sobre narrativa, emoción y responsabilidad en el fútbol." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
 
 Hoy, el principal activo de interés de las empresas es la atención de las personas. Pero la atención no es algo neutral, especialmente en el fútbol.
 
@@ -181,7 +181,7 @@ Concentrarse en hacer lo correcto, incluso sin volumen inmediato, puede generar 
 
 ## Periodismo en tiempos de ruido
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.png" alt="Periodista en una redacción rodeada de pantallas, tomando notas durante la cobertura del Mundial. Ilustración del artículo de Ibson Junior sobre contenido y responsabilidad." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.webp" alt="Periodista en una redacción rodeada de pantallas, tomando notas durante la cobertura del Mundial. Ilustración del artículo de Ibson Junior sobre contenido y responsabilidad." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
 
 Tengo mucho respeto por el periodismo. No como ideal abstracto, sino como oficio.
 

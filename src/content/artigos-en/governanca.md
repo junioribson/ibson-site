@@ -43,7 +43,7 @@ The middle needs to supply the top with information about the operation. The top
 
 The board brings the external reference that none of the parties can see: neither the operation, nor the middle, nor the top. The background, the experience and the otherness of these members qualify the information for decision-making.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.png" alt="Boardroom with executives around the table and Ibson Junior's brand at the center, under the pillars quality, protocol and true north. Illustration from Ibson Junior's article on the quality of the decision in governance." loading="lazy" width="606" style="max-width:606px" height="400" /><figcaption>A board does not impose direction. It illuminates the criterion. In the strategic silence between quality, protocol and true north, decisions cease to be impulses and become architecture.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.webp" alt="Boardroom with executives around the table and Ibson Junior's brand at the center, under the pillars quality, protocol and true north. Illustration from Ibson Junior's article on the quality of the decision in governance." loading="lazy" width="606" style="max-width:606px" height="400" /><figcaption>A board does not impose direction. It illuminates the criterion. In the strategic silence between quality, protocol and true north, decisions cease to be impulses and become architecture.</figcaption></figure>
 
 ## The board: catalyst of quality, protocol and true north
 
@@ -69,7 +69,7 @@ This process coincided with the peak of the pandemic, when much of the market wa
 
 > Clarity of criteria preceded any growth.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.jpg" alt="Infographic of BolaVIP's historic record: more than 1 billion sessions in 2022 (1,001,449,743), the most-read digital sports media in Brazil, from FutbolSites. Reference in Ibson Junior's article on governance and decision." loading="lazy" width="1000" style="max-width:1000px" height="1000" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.webp" alt="Infographic of BolaVIP's historic record: more than 1 billion sessions in 2022 (1,001,449,743), the most-read digital sports media in Brazil, from FutbolSites. Reference in Ibson Junior's article on governance and decision." loading="lazy" width="1000" style="max-width:1000px" height="1000" /></figure>
 
 The result came in 2022, when we reached the mark of 1 billion sessions and consolidated Bolavip as the audience leader in digital sports media in Brazil and Latin America, surpassing traditional competitors. Growth became visible. The architecture already existed before it.
 

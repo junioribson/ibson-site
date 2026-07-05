@@ -23,13 +23,13 @@ Há uma tensão observável nesse contexto: de um lado, a estratégia como retó
 
 Estratégia não é o que impressiona na hora da apresentação. Não é o slide bonito, o efeito especial, a mera narrativa adequada à marca. Ela não se revela no momento da formulação, mas na consistência das decisões posteriores.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.png" alt="Ilustração de um homem cavando vários buracos atrás de sacos de dinheiro, metáfora dos atalhos e ganhos imediatos que fragilizam a estratégia. Artigo de Ibson Junior sobre estratégia e decisão." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.webp" alt="Ilustração de um homem cavando vários buracos atrás de sacos de dinheiro, metáfora dos atalhos e ganhos imediatos que fragilizam a estratégia. Artigo de Ibson Junior sobre estratégia e decisão." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
 
 > Estratégia é a capacidade de sustentar uma direção ao longo do tempo, mesmo quando o ambiente pressiona por mudanças.
 
 Diretrizes estratégicas exigem leitura de cenário, sensibilidade, amplitude de visão e, sobretudo, capacidade de permanência. Não basta criar uma direção em um momento de clareza. É preciso mantê-la quando o vento muda, quando a temperatura aumenta, quando surgem ruídos, crises, oportunidades e tentações.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.png" alt="Ilustração de um homem ao leme de um barco em meio à tempestade, olhando com binóculos, metáfora de sustentar a direção estratégica sob pressão. Artigo de Ibson Junior sobre estratégia." loading="lazy" width="605" style="max-width:605px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.webp" alt="Ilustração de um homem ao leme de um barco em meio à tempestade, olhando com binóculos, metáfora de sustentar a direção estratégica sob pressão. Artigo de Ibson Junior sobre estratégia." loading="lazy" width="605" style="max-width:605px" height="400" /></figure>
 
 Existe um ponto pouco tratado quando se fala de estratégia: **sustentação emocional**. Decidir um caminho é relativamente simples. Sustentar esse caminho quando surgem dúvidas, pressões e alternativas aparentemente melhores exige maturidade emocional. Inteligência emocional, nesse contexto, não é soft skill. É disciplina estratégica. Sem ela, qualquer direção bem definida se torna vulnerável ao primeiro sinal de desconforto.
 
@@ -49,7 +49,7 @@ Hoje, contudo, o que se vê em muitas empresas é exatamente o contrário. **Org
 
 Em muitas empresas, o que se chama de estratégia já é apenas instinto tentando parecer sofisticação.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.png" alt="Ilustração de uma equipe soterrada por relatórios e setas apontando para todos os lados, metáfora das decisões reativas ao ruído do mercado. Artigo de Ibson Junior sobre estratégia e tática." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.webp" alt="Ilustração de uma equipe soterrada por relatórios e setas apontando para todos os lados, metáfora das decisões reativas ao ruído do mercado. Artigo de Ibson Junior sobre estratégia e tática." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
 
 Toda estratégia pode ser aperfeiçoada, refinada e aprofundada. Ela funciona como uma bússola em mar aberto. Não é o mapa desenhado antes da viagem que garante o rumo, mas a capacidade de mantê-lo quando o vento muda, quando a corrente está contra e quando o horizonte é um nevoeiro. É aí que se descobre se havia direcionamento ou apenas intenção.
 
@@ -99,6 +99,6 @@ Quando o ambiente começa a pressionar, quando a execução expõe os limites da
 
 Estratégia não falha quando o plano encontra dificuldade. Ela falha quando a liderança perde a coragem de sustentar o que definiu como direção.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.png" alt="Ilustração de um tabuleiro de xadrez com o rei adversário tombado, metáfora da decisão estratégica que sustenta a direção. Artigo de Ibson Junior sobre estratégia e governança." loading="lazy" width="597" style="max-width:597px" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.webp" alt="Ilustração de um tabuleiro de xadrez com o rei adversário tombado, metáfora da decisão estratégica que sustenta a direção. Artigo de Ibson Junior sobre estratégia e governança." loading="lazy" width="597" style="max-width:597px" height="400" /></figure>
 
 E talvez seja por isso que a pergunta mais relevante não esteja na qualidade do plano, mas na consistência das decisões que vêm depois. O que realmente define estratégia nas organizações: **o plano que se constrói ou a consistência das decisões que se sustentam ao longo do tempo?**

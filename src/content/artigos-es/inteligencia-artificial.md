@@ -31,7 +31,7 @@ La cuenta de ese gran agotamiento ya está llegando, pero ¿quién la va a pagar
 
 **La factura no es meramente individual, sino colectiva, y las empresas tienen mucho que ver con eso.** Sin embargo, el autoconocimiento, el autodominio y la inteligencia emocional a nivel individual son fundamentales para el efecto cascada de los comportamientos.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.png" alt="Comparación entre una conversación presencial acogedora y una reunión por video, sobre escucha y empatía en el liderazgo. Ilustración del artículo de Ibson Junior sobre inteligencia artificial e inteligencia emocional." loading="lazy" width="600" style="max-width:600px" height="400" /><figcaption>El liderazgo que escucha y acoge abre caminos que la autoridad nunca alcanza.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.webp" alt="Comparación entre una conversación presencial acogedora y una reunión por video, sobre escucha y empatía en el liderazgo. Ilustración del artículo de Ibson Junior sobre inteligencia artificial e inteligencia emocional." loading="lazy" width="600" style="max-width:600px" height="400" /><figcaption>El liderazgo que escucha y acoge abre caminos que la autoridad nunca alcanza.</figcaption></figure>
 
 ## El papel del liderazgo: percibir, acoger, orientar
 
