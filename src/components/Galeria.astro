@@ -2,6 +2,15 @@
 // Últimos acontecimentos: galeria limpa e responsiva de aparições recentes.
 // Grade uniforme (mesma proporção), sem legendas. Atualizável: basta trocar/
 // acrescentar caminhos em `fotos` (arquivos em /assets/eventos).
+import { normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
+const galIntro = ({
+  pt: "Registros recentes de formação executiva, encontros, conselho, cultura e bastidores que ajudam a compor minha trajetória fora dos textos.",
+  es: "Registros recientes de formación ejecutiva, encuentros, consejo, cultura y bastidores que ayudan a componer mi trayectoria más allá de los textos.",
+  en: "Recent moments from executive training, gatherings, board work, culture and behind the scenes that help shape my journey beyond the writing.",
+} as const)[locale];
 const fotos: string[] = [
   "/assets/eventos/board-academy.jpg",
   "/assets/eventos/board-livro.jpg",
@@ -13,9 +22,9 @@ const fotos: string[] = [
 <section class="gal" id="acontecimentos">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Últimos acontecimentos</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerGaleria}</span>
     </div>
-    <p class="gal-intro reveal">Registros recentes de formação executiva, encontros, conselho, cultura e bastidores que ajudam a compor minha trajetória fora dos textos.</p>
+    <p class="gal-intro reveal">{galIntro}</p>
     <div class="galgrid2 reveal stagger">
       {
         fotos.map((src) => (

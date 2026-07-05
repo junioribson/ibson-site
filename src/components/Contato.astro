@@ -3,7 +3,10 @@
 // O formulário compõe um e-mail no cliente (mailto), sem backend.
 // TODO(infra): integrar um serviço de formulário (ex.: Formspree) para receber
 // envios sem depender do cliente de e-mail do visitante.
-import { contact } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { contact } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 import Moon from "./Moon.astro";
 import Icon from "./Icon.astro";
 ---
@@ -14,7 +17,7 @@ import Icon from "./Icon.astro";
   <Moon class="moon" />
   <div class="wrap in">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Contato</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerContato}</span>
     </div>
     <h2 class="reveal display">{contact.title}</h2>
     <p class="lead reveal d1">{contact.subtitle}</p>
@@ -41,15 +44,15 @@ import Icon from "./Icon.astro";
         <input type="hidden" name="access_key" value="ae5d5592-e6e5-4e58-bd78-d24f8240874c" />
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
         <div>
-          <label for="cf-nome">Nome</label>
+          <label for="cf-nome">{ui.formName}</label>
           <input id="cf-nome" name="nome" type="text" autocomplete="name" required />
         </div>
         <div>
-          <label for="cf-empresa">Empresa</label>
+          <label for="cf-empresa">{ui.formCompany}</label>
           <input id="cf-empresa" name="empresa" type="text" autocomplete="organization" />
         </div>
         <div>
-          <label for="cf-email">E-mail</label>
+          <label for="cf-email">{ui.formEmail}</label>
           <input id="cf-email" name="email" type="email" autocomplete="email" required />
         </div>
         <div>
@@ -57,17 +60,17 @@ import Icon from "./Icon.astro";
           <input id="cf-whats" name="whatsapp" type="tel" autocomplete="tel" />
         </div>
         <div class="full">
-          <label for="cf-assunto">Assunto</label>
+          <label for="cf-assunto">{ui.formSubject}</label>
           <select id="cf-assunto" name="assunto">
             {contact.subjects.map((s) => <option value={s}>{s}</option>)}
           </select>
         </div>
         <div class="full">
-          <label for="cf-msg">Mensagem</label>
+          <label for="cf-msg">{ui.formMessage}</label>
           <textarea id="cf-msg" name="mensagem" required></textarea>
         </div>
         <div class="actions">
-          <button type="submit" class="btn btn-violet">Enviar mensagem</button>
+          <button type="submit" class="btn btn-violet">{ui.formSend}</button>
           <span class="note">{contact.support}</span>
         </div>
       </form>
@@ -82,7 +85,7 @@ import Icon from "./Icon.astro";
   .qb-l .ic { width: 18px; height: 18px; }
 </style>
 
-<script define:vars={{ email: contact.email }}>
+<script define:vars={{ email: contact.email, successMsg: ui.formSuccess }}>
   const form = document.getElementById("form-contato");
   const assunto = document.getElementById("cf-assunto");
 
@@ -129,7 +132,7 @@ import Icon from "./Icon.astro";
         form.reset();
         btn.textContent = "Enviado ✓";
         note.style.color = "#8ff0b8";
-        note.textContent = "Mensagem enviada. Obrigado, retorno em breve com disponibilidade e próximos passos.";
+        note.textContent = successMsg;
       } else {
         throw new Error(json.message || "falha");
       }

@@ -1,6 +1,8 @@
 ---
 // Card de artigo reutilizável (home e biblioteca /artigos). Dados vêm da
 // content collection. Aponta sempre para a página interna /artigos/<slug>.
+import { localizePath, normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
 interface Props {
   slug: string;
   title: string;
@@ -11,9 +13,11 @@ interface Props {
   excerpt?: string; // se presente, mostra o resumo (usado na biblioteca)
 }
 const { slug, title, cover, category, readingTime, date, excerpt } = Astro.props;
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
 ---
 
-<a class="artcard reveal" href={`/artigos/${slug}`}>
+<a class="artcard reveal" href={localizePath(`/artigos/${slug}`, locale)}>
   <div class="art-cover">
     <img loading="lazy" src={cover} alt={`Artigo de Ibson Junior: ${title}`} />
   </div>
@@ -26,7 +30,7 @@ const { slug, title, cover, category, readingTime, date, excerpt } = Astro.props
     {excerpt && <p class="art-ex">{excerpt}</p>}
     <span class="art-foot">
       {date && <span class="art-date">{date}</span>}
-      <span class="art-read">Ler artigo →</span>
+      <span class="art-read">{ui.readArticle}</span>
     </span>
   </div>
 </a>

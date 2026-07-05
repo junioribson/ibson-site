@@ -2,7 +2,8 @@
 // Últimos posts no LinkedIn: carrossel de artes (hospedadas no próprio site para
 // indexação no Google Imagens). Cada card mostra a arte COMPLETA (qualquer
 // formato, sem corte) e abre o post exato no LinkedIn ao clicar.
-import { linkedinPosts as lk } from "../data/content";
+import { getContent } from "../i18n/utils";
+const { linkedinPosts: lk } = getContent(Astro.currentLocale);
 // Mostra no máximo 8 posts (os mais recentes). O resto fica no LinkedIn.
 const posts = lk.posts.slice(0, 8);
 ---

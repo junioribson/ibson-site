@@ -1,7 +1,8 @@
 ---
 // HERO v3: lobo constelação (arquétipo) como cena, com rede de pontos animada
 // reativa ao cursor. Alto contraste, tipografia grande, texto à esquerda.
-import { hero } from "../data/content";
+import { getContent } from "../i18n/utils";
+const { hero } = getContent(Astro.currentLocale);
 ---
 
 <section class="wh" id="hero">
@@ -18,9 +19,16 @@ import { hero } from "../data/content";
     </div>
 
     <h1 class="wh-h1">
-      <span class="ln"><i style="--d:.06s">Quando tudo acelera,</i></span>
-      <span class="ln"><i style="--d:.16s">clareza vira</i></span>
-      <span class="ln"><i style="--d:.26s" class="wh-accent">responsabilidade.</i></span>
+      {
+        hero.headlineLines.map((line, i) => (
+          <span class="ln">
+            <i
+              style={`--d:${(0.06 + i * 0.1).toFixed(2)}s`}
+              class:list={{ "wh-accent": i === hero.headlineLines.length - 1 }}
+            >{line}</i>
+          </span>
+        ))
+      }
     </h1>
 
     <p class="wh-sub">{hero.subheadline}</p>

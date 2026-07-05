@@ -1,18 +1,59 @@
 ---
 // Repertório: lastro intelectual que sustenta a prática. Coruja como arquétipo
 // (discernimento, visão, leitura fina). Fatos reais apenas.
-import { archetypes } from "../data/content";
+import { getContent, normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const locale = normalizeLocale(Astro.currentLocale);
+const { archetypes } = getContent(locale);
+const ui = t(locale);
 
 // TODO(asset): logomarca de Dr. José Eduardo / Mães que Curam quando o Ibson enviar.
-const itens = [
-  "<strong>Conselheiro administrativo</strong> em projeto liderado pelo Dr. José Eduardo, nas frentes de saúde, educação e comunidade.",
-  "<strong>Formação executiva Advanced</strong> em Conselhos e Governança pela Board Academy.",
-  "<strong>Coautor</strong> do livro Conselho Diário, 365 Insights Estratégicos.",
-  "<strong>Organizador de obras editoriais</strong> da ProliferArte, como Mente Aberta e ValorizArte.",
-  "<strong>Artigos autorais mensais</strong> sobre IA, cultura, conteúdo, liderança e decisão.",
-  '<strong>Diretor de Conteúdo</strong> na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operações editoriais no Brasil.',
-  "<strong>Criação de ativos editoriais</strong> no esporte digital: Antenados no Futebol e a chegada da Bolavip ao Brasil.",
-];
+const REP = {
+  pt: {
+    h2: "Repertório que sustenta a prática.",
+    intro:
+      "A autoridade que me interessa não nasce da exposição. Nasce da combinação entre experiência, leitura, escuta e decisões tomadas sob pressão. Cada linha abaixo é menos um título e mais uma marca de percurso: é desse acúmulo, e não do cargo do momento, que nasce o critério.",
+    itens: [
+      "<strong>Conselheiro administrativo</strong> em projeto liderado pelo Dr. José Eduardo, nas frentes de saúde, educação e comunidade.",
+      "<strong>Formação executiva Advanced</strong> em Conselhos e Governança pela Board Academy.",
+      "<strong>Coautor</strong> do livro Conselho Diário, 365 Insights Estratégicos.",
+      "<strong>Organizador de obras editoriais</strong> da ProliferArte, como Mente Aberta e ValorizArte.",
+      "<strong>Artigos autorais mensais</strong> sobre IA, cultura, conteúdo, liderança e decisão.",
+      '<strong>Diretor de Conteúdo</strong> na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operações editoriais no Brasil.',
+      "<strong>Criação de ativos editoriais</strong> no esporte digital: Antenados no Futebol e a chegada da Bolavip ao Brasil.",
+    ],
+  },
+  es: {
+    h2: "Un repertorio que sostiene la práctica.",
+    intro:
+      "La autoridad que me interesa no nace de la exposición. Nace de la combinación entre experiencia, lectura, escucha y decisiones tomadas bajo presión. Cada línea a continuación es menos un título y más una marca de recorrido: es de esa acumulación, y no del cargo del momento, que nace el criterio.",
+    itens: [
+      "<strong>Consejero administrativo</strong> en un proyecto liderado por el Dr. José Eduardo, en los frentes de salud, educación y comunidad.",
+      "<strong>Formación ejecutiva Advanced</strong> en Consejos y Gobernanza por la Board Academy.",
+      "<strong>Coautor</strong> del libro Conselho Diário, 365 Insights Estratégicos.",
+      "<strong>Organizador de obras editoriales</strong> de ProliferArte, como Mente Aberta y ValorizArte.",
+      "<strong>Artículos de autor mensuales</strong> sobre IA, cultura, contenido, liderazgo y decisión.",
+      '<strong>Director de Contenido</strong> en <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, liderando operaciones editoriales en Brasil.',
+      "<strong>Creación de activos editoriales</strong> en el deporte digital: Antenados no Futebol y la llegada de Bolavip a Brasil.",
+    ],
+  },
+  en: {
+    h2: "A repertoire that sustains the practice.",
+    intro:
+      "The authority I care about is not born from exposure. It comes from the combination of experience, reading, listening and decisions made under pressure. Each line below is less a title and more a mark of the journey: it is from that accumulation, not from the current role, that judgment is born.",
+    itens: [
+      "<strong>Advisory board member</strong> in a project led by Dr. José Eduardo, across health, education and community.",
+      "<strong>Advanced executive training</strong> in Boards and Governance by Board Academy.",
+      "<strong>Co-author</strong> of the book Conselho Diário, 365 Insights Estratégicos.",
+      "<strong>Editor of editorial works</strong> for ProliferArte, such as Mente Aberta and ValorizArte.",
+      "<strong>Monthly authored articles</strong> on AI, culture, content, leadership and decision-making.",
+      '<strong>Content Director</strong> at <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a>, leading editorial operations in Brazil.',
+      "<strong>Creation of editorial assets</strong> in digital sports: Antenados no Futebol and Bolavip's arrival in Brazil.",
+    ],
+  },
+} as const;
+const rep = REP[locale];
+const itens = rep.itens;
 ---
 
 <section class="repo repertorio" id="repertorio">
@@ -24,18 +65,12 @@ const itens = [
   </div>
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Repertório</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerRepertorio}</span>
     </div>
     <div class="rep-grid">
       <div class="rep-left reveal">
-        <h2>Repertório que sustenta a prática.</h2>
-        <p>
-          A autoridade que me interessa não nasce da exposição. Nasce da
-          combinação entre experiência, leitura, escuta e decisões tomadas sob
-          pressão. Cada linha abaixo é menos um título e mais uma marca de
-          percurso: é desse acúmulo, e não do cargo do momento, que nasce o
-          critério.
-        </p>
+        <h2>{rep.h2}</h2>
+        <p>{rep.intro}</p>
         <ul class="rep-list">
           {itens.map((i) => <li set:html={i} />)}
         </ul>

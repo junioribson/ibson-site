@@ -2,14 +2,17 @@
 // Sobre: trajetória com autoridade, sem currículo nem autopromoção.
 // TODO(asset): quando houver retrato editorial, definir `photo`
 // (ex.: "/assets/retratos/ibson.jpg"). Até lá, placeholder sóbrio.
-import { about } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { about } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 const photo: string | null = "/assets/retratos/ibson-junior-retrato.jpg";
 ---
 
 <section class="sobre" id="sobre">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Sobre</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerSobre}</span>
     </div>
     <div class="sobre-grid">
       <div class="sobre-photo reveal">

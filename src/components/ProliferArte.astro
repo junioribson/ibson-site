@@ -1,7 +1,10 @@
 ---
 // ProliferArte: origem cultural, contadores animados, estante de publicações
 // (só apresentação, sem link) e convite para o Facebook do movimento.
-import { cases } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { cases } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 import Icon from "./Icon.astro";
 const p = cases.proliferarte;
 const FACEBOOK = "https://www.facebook.com/ProliferArte/";
@@ -10,11 +13,11 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
 <section class="prolifer" id="proliferarte">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">{p.name} · desde 2008</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{p.name} · {ui.proliferSince}</span>
     </div>
     <div class="pro-grid">
       <div class="reveal">
-        <h2>Cultura, comunidade e o primeiro laboratório de audiência.</h2>
+        <h2>{ui.proliferH2}</h2>
         <div class="body">
           {p.body.map((par) => <p>{par}</p>)}
         </div>
@@ -57,8 +60,8 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
     <div class="pro-fb reveal">
       <img class="pro-fb-logo" src="/assets/logo/proliferarte.png" alt="ProliferArte" width="220" height="220" loading="lazy" />
       <div class="pro-fb-text">
-        <h3>A ProliferArte é um movimento vivo.</h3>
-        <p>Acompanhe as publicações, os artistas e a comunidade na página oficial.</p>
+        <h3>{ui.proliferLiveTitle}</h3>
+        <p>{ui.proliferLiveText}</p>
       </div>
       <a class="pro-fb-btn" href={FACEBOOK} target="_blank" rel="noopener">
         <Icon name="facebook" class="ic" /> Seguir no Facebook

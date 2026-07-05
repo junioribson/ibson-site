@@ -1,0 +1,159 @@
+---
+// Biblioteca de artigos (galeria) locale-aware: destaque + grade. Usado pelas
+// páginas /artigos, /es/artigos e /en/artigos.
+import { getCollection } from "astro:content";
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+import ArticleCard from "./ArticleCard.astro";
+import { getContent, localizePath, normalizeLocale, articlesCollection } from "../i18n/utils";
+import { t } from "../i18n/ui";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const { articles } = getContent(locale);
+const ui = t(locale);
+
+const all = (await getCollection(articlesCollection(locale))).sort((a, b) =>
+  b.data.dateISO.localeCompare(a.data.dateISO)
+);
+const [featured, ...rest] = all;
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: `${articles.title} — Ibson Junior`,
+  url: new URL(localizePath("/artigos", locale), "https://ibsonjunior.com.br").href,
+  about: { "@type": "Person", name: "Ibson Junior", url: "https://ibsonjunior.com.br" },
+  hasPart: all.map((a) => ({
+    "@type": "BlogPosting",
+    headline: a.data.title,
+    url: new URL(localizePath(`/artigos/${a.id}`, locale), "https://ibsonjunior.com.br").href,
+    datePublished: a.data.dateISO,
+    image: `https://ibsonjunior.com.br${a.data.cover}`,
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+<Nav />
+<main id="top" class="libpage">
+  <header class="wrap lib-hero">
+    <a class="lib-back" href={localizePath("/", locale)}>{ui.libraryHome}</a>
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.libraryKicker}</span>
+    </div>
+    <h1 class="lib-title reveal">{articles.title}</h1>
+    <p class="lib-intro reveal">{articles.subtitle}</p>
+  </header>
+
+  {
+    featured && (
+      <div class="wrap">
+        <a class="feat reveal" href={localizePath(`/artigos/${featured.id}`, locale)}>
+          <div class="feat-cover">
+            <img src={featured.data.cover} alt={`Ibson Junior: ${featured.data.title}`} loading="eager" />
+            <span class="feat-badge">{ui.libraryMostRecent}</span>
+          </div>
+          <div class="feat-body">
+            <div class="feat-meta">
+              <span class="feat-cat">{featured.data.category}</span>
+              <span class="feat-dot">·</span>
+              <span>{featured.data.date}</span>
+              <span class="feat-dot">·</span>
+              <span>{featured.data.readingTime}</span>
+            </div>
+            <h2>{featured.data.title}</h2>
+            <p>{featured.data.excerpt}</p>
+            <span class="feat-read">{ui.readArticle}</span>
+          </div>
+        </a>
+
+        <div class="libgrid">
+          {
+            rest.map((a) => (
+              <ArticleCard
+                slug={a.id}
+                title={a.data.title}
+                cover={a.data.cover}
+                category={a.data.category}
+                readingTime={a.data.readingTime}
+                date={a.data.date}
+                excerpt={a.data.excerpt}
+              />
+            ))
+          }
+        </div>
+      </div>
+    )
+  }
+</main>
+<Footer />
+
+<style>
+  .libpage { padding-top: 92px; }
+  .lib-hero { padding-top: 46px; padding-bottom: 20px; }
+  .lib-back {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
+    color: #db6bff; display: inline-block; margin-bottom: 26px;
+  }
+  .lib-title {
+    font-size: clamp(34px, 6vw, 64px); font-weight: 800; letter-spacing: -0.04em;
+    line-height: 1.02; color: #fff; margin-top: 10px;
+  }
+  .lib-intro {
+    margin-top: 18px; max-width: 62ch; font-size: clamp(16px, 1.5vw, 19px);
+    line-height: 1.6; color: var(--text-soft);
+  }
+  .feat {
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 0;
+    margin: 40px 0 52px; border: 1px solid var(--hair); border-radius: 12px;
+    overflow: hidden; background: rgba(255, 255, 255, 0.045);
+    transition: transform 0.45s var(--e), box-shadow 0.45s var(--e), border-color 0.3s;
+  }
+  .feat:hover {
+    transform: translateY(-4px); border-color: rgba(219, 107, 255, 0.4);
+    box-shadow: 0 34px 66px -34px rgba(42, 1, 72, 0.6);
+  }
+  .feat-cover { position: relative; overflow: hidden; min-height: 260px; }
+  .feat-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--e); }
+  .feat:hover .feat-cover img { transform: scale(1.05); }
+  .feat-badge {
+    position: absolute; top: 16px; left: 16px; z-index: 2;
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: #fff; padding: 6px 12px; border-radius: 999px;
+    background: linear-gradient(100deg, var(--violet-2), var(--color-magenta, #c94f8a));
+    box-shadow: 0 8px 22px -8px rgba(123, 87, 240, 0.8);
+  }
+  .feat-body { padding: 34px 36px; display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+  .feat-meta {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 12px; color: var(--ink-soft);
+  }
+  .feat-cat {
+    font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.02em; color: #db6bff;
+    text-shadow: 0 0 16px rgba(219, 107, 255, 0.55);
+  }
+  .feat-dot { opacity: 0.5; }
+  .feat-body h2 {
+    font-size: clamp(23px, 2.6vw, 32px); font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.12; color: #fff;
+  }
+  .feat-body p { font-size: 16px; line-height: 1.6; color: var(--text-soft); margin: 0; }
+  .feat-read {
+    font-family: var(--font-sans); font-weight: 800; font-size: 14px; color: #db6bff;
+    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5); margin-top: 4px;
+  }
+  .libgrid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    padding-bottom: 90px;
+  }
+  @media (max-width: 900px) {
+    .feat { grid-template-columns: 1fr; }
+    .feat-cover { min-height: 220px; aspect-ratio: 16 / 9; }
+    .libgrid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .libgrid { grid-template-columns: 1fr; }
+  }
+</style>

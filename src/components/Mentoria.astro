@@ -1,7 +1,10 @@
 ---
 // Mentoria: conversa estratégica de alto valor, aberta e madura.
 // Cavalo-marinho como camada sutil (adaptação, escuta, relações humanas).
-import { mentorship as m, archetypes } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { mentorship: m, archetypes } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 ---
 
 <section class="ment" id="mentoria">
@@ -13,7 +16,7 @@ import { mentorship as m, archetypes } from "../data/content";
   </div>
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Mentoria</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerMentoria}</span>
     </div>
     <div class="ment-head">
       <h2 class="reveal">{m.title}</h2>
@@ -28,11 +31,11 @@ import { mentorship as m, archetypes } from "../data/content";
 
     <div class="ment-cols reveal">
       <div class="ment-col">
-        <h3>O que é</h3>
+        <h3>{ui.mentWhatIs}</h3>
         {m.whatIs.map((p) => <p>{p}</p>)}
       </div>
       <div class="ment-col">
-        <h3>Para quem é</h3>
+        <h3>{ui.mentWhoFor}</h3>
         <ul>
           {m.whoFor.map((i) => <li>{i}</li>)}
         </ul>
@@ -40,7 +43,7 @@ import { mentorship as m, archetypes } from "../data/content";
     </div>
 
     <div class="reveal">
-      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#db6bff;text-shadow:0 0 14px rgba(219,107,255,.6);margin-bottom:16px">O que pode ser trabalhado</h3>
+      <h3 style="font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#db6bff;text-shadow:0 0 14px rgba(219,107,255,.6);margin-bottom:16px">{ui.mentTopics}</h3>
       <div class="chips">
         {m.topics.map((t) => <span class="chip">{t}</span>)}
       </div>

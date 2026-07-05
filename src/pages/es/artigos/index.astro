@@ -1,7 +1,7 @@
 ---
-import Base from "../../layouts/Base.astro";
-import ArticlesLibrary from "../../components/ArticlesLibrary.astro";
-import { getContent, normalizeLocale } from "../../i18n/utils";
+import Base from "../../../layouts/Base.astro";
+import ArticlesLibrary from "../../../components/ArticlesLibrary.astro";
+import { getContent, normalizeLocale } from "../../../i18n/utils";
 const locale = normalizeLocale(Astro.currentLocale);
 const { articles } = getContent(locale);
 ---

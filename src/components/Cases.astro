@@ -1,7 +1,10 @@
 ---
 // Cases como prova de repertório: contexto, decisão, o que foi construído,
 // prova e aprendizado. Números como prova, não como espetáculo.
-import { cases, archetypes } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t as tr } from "../i18n/ui";
+const { cases, archetypes } = getContent(Astro.currentLocale);
+const ui = tr(Astro.currentLocale);
 const { wolflife: w, tiktok: t, footmarketing: f } = cases;
 ---
 
@@ -14,7 +17,7 @@ const { wolflife: w, tiktok: t, footmarketing: f } = cases;
   </div>
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Cases &amp; Trajetória</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerCases}</span>
     </div>
     <div class="cases-head reveal">
       <h2>{cases.title}</h2>

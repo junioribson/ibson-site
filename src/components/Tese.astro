@@ -1,5 +1,6 @@
 ---
-import { thesis, archetypes } from "../data/content";
+import { getContent } from "../i18n/utils";
+const { thesis, archetypes } = getContent(Astro.currentLocale);
 ---
 
 <section class="tese" id="tese">

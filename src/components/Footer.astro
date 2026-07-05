@@ -1,6 +1,10 @@
 ---
 import Logo from "./Logo.astro";
-import { footer, nav } from "../data/content";
+import { getContent, localizePath, normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const locale = normalizeLocale(Astro.currentLocale);
+const { footer, nav } = getContent(locale);
+const ui = t(locale);
 ---
 
 <footer>
@@ -12,20 +16,20 @@ import { footer, nav } from "../data/content";
         <p>{footer.complement}</p>
       </div>
       <div class="fcol">
-        <h3 class="fcol-h">Navegar</h3>
-        {nav.links.map((l) => <a href={l.href}>{l.label}</a>)}
+        <h3 class="fcol-h">{ui.footerNavigate}</h3>
+        {nav.links.map((l) => <a href={localizePath(l.href, locale)}>{l.label}</a>)}
       </div>
       <div class="fcol">
-        <h3 class="fcol-h">Conectar</h3>
+        <h3 class="fcol-h">{ui.footerConnect}</h3>
         <a href="https://www.linkedin.com/in/ibson-junior/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:contato@ibsonjunior.com.br">E-mail ↗</a>
-        <a href="#contato">Convidar para palestra</a>
-        <a href="#contato">Falar sobre mentoria</a>
+        <a href="mailto:contato@ibsonjunior.com.br">{ui.footerEmail}</a>
+        <a href={localizePath("/#contato", locale)}>{ui.footerInviteTalk}</a>
+        <a href={localizePath("/#contato", locale)}>{ui.footerTalkMentoring}</a>
       </div>
     </div>
     <div class="foot-base">
-      <span>© 2026 IBSON JUNIOR · SITE OFICIAL</span>
-      <span>CONSCIÊNCIA · LIDERANÇA · DECISÃO</span>
+      <span>{ui.footerRights}</span>
+      <span>{ui.footerTagline}</span>
     </div>
   </div>
 </footer>

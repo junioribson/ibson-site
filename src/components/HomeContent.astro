@@ -1,0 +1,39 @@
+---
+// Corpo da home (Nav + seções + Footer). Os componentes leem Astro.currentLocale,
+// então as 3 páginas (/, /es/, /en/) reaproveitam este mesmo conteúdo.
+import Nav from "./Nav.astro";
+import Hero from "./Hero.astro";
+import Tese from "./Tese.astro";
+import Sobre from "./Sobre.astro";
+import LinkedinPosts from "./LinkedinPosts.astro";
+import Cases from "./Cases.astro";
+import ProliferArte from "./ProliferArte.astro";
+import Galeria from "./Galeria.astro";
+import Artigos from "./Artigos.astro";
+import Repertorio from "./Repertorio.astro";
+import Mentoria from "./Mentoria.astro";
+import Palestras from "./Palestras.astro";
+import Videos from "./Videos.astro";
+import Contato from "./Contato.astro";
+import Footer from "./Footer.astro";
+---
+
+<Nav />
+<main id="top">
+  <!-- Arco emocional: reconhecimento, tensão, autoridade, prova,
+       profundidade, aplicação, conversão. -->
+  <Hero />
+  <Tese />
+  <Sobre />
+  <LinkedinPosts />
+  <Cases />
+  <ProliferArte />
+  <Galeria />
+  <Artigos />
+  <Repertorio />
+  <Mentoria />
+  <Palestras />
+  <Videos />
+  <Contato />
+</main>
+<Footer />

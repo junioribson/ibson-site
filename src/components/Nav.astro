@@ -1,27 +1,51 @@
 ---
 import Logo from "./Logo.astro";
 import Icon from "./Icon.astro";
-import { nav } from "../data/content";
+import { getContent, localizePath, normalizeLocale, LANGS } from "../i18n/utils";
+import { t } from "../i18n/ui";
 
+const locale = normalizeLocale(Astro.currentLocale);
+const { nav } = getContent(locale);
+const ui = t(locale);
 const links = nav.links;
 const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
+const here = Astro.url.pathname; // preserva a página atual ao trocar de idioma
+const homeHref = localizePath("/", locale);
 ---
 
 <nav id="nav">
   <div class="nav-in">
-    <a class="brand" href="/">
+    <a class="brand" href={homeHref}>
       <Logo class="brand-logo" variant="branca" />
       <span><b>IBSON JUNIOR</b><span class="bs">Conteúdo · Liderança · Decisão</span></span>
     </a>
     <div class="nav-links">
-      {links.map((l) => <a href={l.href} data-s={l.id}>{l.label}</a>)}
+      {links.map((l) => <a href={localizePath(l.href, locale)} data-s={l.id}>{l.label}</a>)}
     </div>
     <div class="nav-r">
-      <a class="nav-li" href={LINKEDIN} target="_blank" rel="noopener" aria-label="Conecte-se comigo no LinkedIn" title="Conecte-se comigo no LinkedIn">
+      <div class="langsel" role="group" aria-label="Idioma / Language">
+        {
+          LANGS.map((lg) => (
+            <a
+              class:list={["lang", { on: lg.code === locale }]}
+              href={localizePath(here, lg.code)}
+              hreflang={lg.htmlLang}
+              lang={lg.htmlLang}
+              title={lg.label}
+              aria-label={lg.label}
+              data-lang={lg.code}
+            >
+              <span class="lang-flag">{lg.flag}</span>
+              <span class="lang-code">{lg.short}</span>
+            </a>
+          ))
+        }
+      </div>
+      <a class="nav-li" href={LINKEDIN} target="_blank" rel="noopener" aria-label={ui.connectLinkedin} title={ui.connectLinkedin}>
         <Icon name="linkedin" class="ic" />
       </a>
-      <a class="nav-cta" href={nav.cta.href}>{nav.cta.label}</a>
-      <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false">
+      <a class="nav-cta" href={localizePath(nav.cta.href, locale)}>{nav.cta.label}</a>
+      <button class="hamb" id="hamb" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -29,11 +53,20 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
 </nav>
 
 <div class="mmenu" id="mmenu">
-  {links.map((l) => <a href={l.href}><span>{l.label}</span></a>)}
+  {links.map((l) => <a href={localizePath(l.href, locale)}><span>{l.label}</span></a>)}
+  <div class="mlangs">
+    {
+      LANGS.map((lg) => (
+        <a class:list={["mlang", { on: lg.code === locale }]} href={localizePath(here, lg.code)} data-lang={lg.code} hreflang={lg.htmlLang}>
+          <span class="lang-flag">{lg.flag}</span> {lg.label}
+        </a>
+      ))
+    }
+  </div>
   <a class="mmenu-li" href={LINKEDIN} target="_blank" rel="noopener">
-    <Icon name="linkedin" class="ic" /> Conecte-se comigo no LinkedIn
+    <Icon name="linkedin" class="ic" /> {ui.connectLinkedin}
   </a>
-  <div class="mfoot">IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE</div>
+  <div class="mfoot">{ui.menuTagline}</div>
 </div>
 
 <style>
@@ -52,18 +85,45 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
     transform: translateY(-2px);
   }
   .nav-li .ic { width: 18px; height: 18px; }
+
+  /* Seletor de idioma (bandeiras) */
+  .langsel { display: inline-flex; align-items: center; gap: 2px; margin-right: 4px; }
+  .lang {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 6px 8px; border-radius: 7px;
+    font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.04em;
+    color: var(--text-dim, #b9aacb); opacity: 0.72;
+    transition: background 0.25s, color 0.25s, opacity 0.25s;
+  }
+  .lang .lang-flag { font-size: 15px; line-height: 1; }
+  .lang:hover { opacity: 1; background: rgba(255, 255, 255, 0.07); color: #fff; }
+  .lang.on { opacity: 1; color: #fff; background: rgba(219, 107, 255, 0.16); }
+  .lang.on .lang-code { color: #db6bff; }
+  @media (max-width: 1180px) {
+    .nav-li { display: none; }
+    .lang .lang-code { display: none; }
+    .lang { padding: 6px 6px; }
+  }
+
+  /* Bandeiras no menu mobile */
+  .mlangs { display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+  .mlang {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.03em;
+    color: var(--tint);
+  }
+  .mlang .lang-flag { font-size: 20px; }
+  .mlang.on { color: #db6bff; }
+
   .mmenu-li {
     display: inline-flex; align-items: center; gap: 12px;
     font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
     color: var(--tint); margin-top: 22px;
   }
   .mmenu-li .ic { width: 20px; height: 20px; }
-  @media (max-width: 1180px) { .nav-li { display: none; } }
 </style>
 
 <script>
-  import { nav } from "../data/content";
-
   const navEl = document.getElementById("nav");
   const hamb = document.getElementById("hamb");
   const mmenu = document.getElementById("mmenu");
@@ -88,9 +148,16 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/";
     if (e.key === "Escape") closeMenu();
   });
 
-  // Link ativo conforme a seção visível
+  // Ao escolher um idioma nas bandeiras, guarda a preferência (a autodetecção respeita).
+  document.querySelectorAll<HTMLAnchorElement>("[data-lang]").forEach((a) => {
+    a.addEventListener("click", () => {
+      try { localStorage.setItem("lang", a.dataset.lang || ""); } catch (e) {}
+    });
+  });
+
+  // Link ativo conforme a seção visível (ids são iguais em todos os idiomas)
   const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".nav-links a")];
-  const ids = nav.links.map((l) => l.id);
+  const ids = navLinks.map((l) => l.dataset.s).filter(Boolean) as string[];
   const spy = new IntersectionObserver(
     (entries) =>
       entries.forEach((e) => {

@@ -6,6 +6,11 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ibsonjunior.com.br',
+  i18n: {
+    locales: ['pt', 'es', 'en'],
+    defaultLocale: 'pt',
+    routing: { prefixDefaultLocale: false },
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

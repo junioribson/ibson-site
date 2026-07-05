@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import Base from "../../layouts/Base.astro";
-import ArticlePage from "../../components/ArticlePage.astro";
+import Base from "../../../layouts/Base.astro";
+import ArticlePage from "../../../components/ArticlePage.astro";
 
 export async function getStaticPaths() {
-  const artigos = await getCollection("artigos");
+  const artigos = await getCollection("artigosEn");
   return artigos.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

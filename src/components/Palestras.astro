@@ -1,7 +1,10 @@
 ---
 // Palestras: cards cinematográficos com imagem de fundo + texto sobreposto.
 // Clima de noite (lua + estrelas). Sem inventar histórico.
-import { talks } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { talks } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 ---
 
 <section class="pal" id="palestras">
@@ -14,7 +17,7 @@ import { talks } from "../data/content";
     <canvas class="pal-net" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="reveal pal-hero-txt">
-        <div class="lbl">Palestras</div>
+        <div class="lbl">{ui.kickerPalestras}</div>
         <h2>{talks.title}</h2>
         <p>{talks.subtitle}</p>
         <div class="pal-intro">

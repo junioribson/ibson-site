@@ -2,10 +2,14 @@
 // Bloco de artigos na home: mostra os 3 artigos MAIS RECENTES (dinâmico, por data).
 // A lista completa fica na biblioteca /artigos. Cada card abre a página no site.
 import { getCollection } from "astro:content";
-import { articles } from "../data/content";
+import { getContent, localizePath, normalizeLocale, articlesCollection } from "../i18n/utils";
+import { t } from "../i18n/ui";
 import ArticleCard from "./ArticleCard.astro";
 
-const latest = (await getCollection("artigos"))
+const locale = normalizeLocale(Astro.currentLocale);
+const { articles } = getContent(locale);
+const ui = t(locale);
+const latest = (await getCollection(articlesCollection(locale)))
   .sort((a, b) => b.data.dateISO.localeCompare(a.data.dateISO))
   .slice(0, 3);
 ---
@@ -13,11 +17,11 @@ const latest = (await getCollection("artigos"))
 <section class="arts" id="artigos">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Artigos</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.artigosKicker}</span>
     </div>
     <div class="arts-head reveal">
       <h2>{articles.title}</h2>
-      <div class="meta">Os mais recentes</div>
+      <div class="meta">{ui.artigosLatest}</div>
     </div>
     <p class="arts-intro reveal">{articles.intro}</p>
 
@@ -36,7 +40,7 @@ const latest = (await getCollection("artigos"))
     </div>
 
     <div class="arts-foot reveal">
-      <a href="/artigos">Ver todos os artigos <span>→</span></a>
+      <a href={localizePath("/artigos", locale)}>{ui.artigosSeeAll} <span>→</span></a>
     </div>
   </div>
 </section>

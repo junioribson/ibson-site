@@ -1,12 +1,15 @@
 ---
 // Vídeos: frente em construção. Sem thumbnail falsa, sem vídeo inventado.
-import { videos } from "../data/content";
+import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
+const { videos } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 ---
 
 <section class="vids" id="videos">
   <div class="wrap">
     <div class="shead reveal">
-      <span class="dot"></span><span class="rule"></span><span class="lbl">Vídeos</span>
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerVideos}</span>
     </div>
     <div class="arts-head reveal">
       <h2>{videos.title}</h2>

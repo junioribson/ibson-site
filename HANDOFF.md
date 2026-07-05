@@ -118,7 +118,21 @@ para o Google indexar as imagens `ibson-junior-*`. Componente pronto, só coment
 
 ---
 
-## FRENTE 3, Site em 3 idiomas (PT / ES / EN)  🔴 NÃO INICIADA
+## FRENTE 3, Site em 3 idiomas (PT / ES / EN)  ✅ NO AR
+
+**Como funciona:**
+- i18n nativo do Astro (`astro.config.mjs`): `pt` padrão em `/`, `es` em `/es/`, `en` em `/en/`. Cada idioma é URL indexável, com `hreflang` (Base.astro) e `<html lang>` correto.
+- Bandeiras no topo (Nav) 🇧🇷 🇪🇸 🇺🇸: trocam o idioma mantendo a página atual e guardam a escolha em `localStorage` (a autodetecção respeita).
+- **Autodetecção** (script inline no Base): na 1ª visita sem escolha salva, redireciona por `navigator.language` (es-*/en-*), sem loop, sempre reversível pelas bandeiras.
+- **Artigos:** botão "Traduzir" (🌐) na página do artigo abre o mesmo texto no outro idioma. Rotas por idioma (`/artigos`, `/es/artigos`, `/en/artigos` e `/.../[slug]`).
+- **Camada de conteúdo:** `content.ts` (PT) + `content.es.ts` + `content.en.ts` (mesma forma). Resolver em `src/i18n/utils.ts` (`getContent(locale)`). Microcopy de UI em `src/i18n/ui.ts` (`t(locale)`). Artigos traduzidos em coleções `artigosEs`/`artigosEn` (`src/content/artigos-es|en/`).
+- Componentes leem `Astro.currentLocale`. Home/biblioteca/artigo extraídos em `HomeContent`, `ArticlesLibrary`, `ArticlePage` (reaproveitados pelas 3 línguas).
+
+**Como ADICIONAR um idioma ou editar traduções:** editar `content.<lang>.ts`, `ui.ts` e os `.md` das coleções. Para um novo artigo, criar o `.md` em `artigos/`, `artigos-es/` e `artigos-en/` (mesmo slug).
+
+**A revisar (recomendado):** as traduções ES/EN foram feitas por IA com voz madura; uma revisão de nativo dá o acabamento final "zero erros". Corrigido de passagem: o `governanca.md` (PT) mencionava "Better Collective" (removido).
+
+### (histórico) Estado anterior: NÃO INICIADA
 
 Objetivo: bandeiras no **topo** (PT-BR, ES, EN). Clicar traduz o **site inteiro** para o idioma.
 Motivo: expandir território e a força do nome. Níveis do Ibson: português fluente, espanhol

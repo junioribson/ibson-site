@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import "../styles/sections.css";
 import "../styles/dark.css";
-import { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } from "../data/content";
+import { getContent, normalizeLocale, htmlLang, localizePath, LANGS } from "../i18n/utils";
 
 interface Props {
   title?: string;
@@ -11,9 +11,15 @@ interface Props {
   jsonLd?: unknown;
 }
 
+const locale = normalizeLocale(Astro.currentLocale);
+const { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } = getContent(locale);
 const { title = seo.title, description = seo.description, ogImage, jsonLd } = Astro.props;
 const socialImage = ogImage ?? seo.ogImage;
 const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
+const alternates = LANGS.map((l) => ({
+  hreflang: l.htmlLang,
+  href: new URL(localizePath(Astro.url.pathname, l.code), "https://ibsonjunior.com.br").href,
+}));
 
 // Dados estruturados: diz ao Google que o site é sobre a PESSOA Ibson Junior,
 // com foto e perfis, ajudando a associar a imagem dele ao nome (entidade).
@@ -50,7 +56,7 @@ const personSchema = {
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={htmlLang(locale)}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,6 +68,33 @@ const personSchema = {
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    {alternates.map((a) => (<link rel="alternate" hreflang={a.hreflang} href={a.href} />))}
+    <link rel="alternate" hreflang="x-default" href="https://ibsonjunior.com.br/" />
+    <script is:inline>
+      // Autodetecção de idioma: na 1ª visita, se o idioma do navegador for ES/EN,
+      // redireciona; respeita a escolha manual salva (bandeiras). Sem loop.
+      (function () {
+        try {
+          var path = location.pathname;
+          var cur = /^\/(es|en)(\/|$)/.test(path) ? RegExp.$1 : "pt";
+          function localize(t) {
+            var base = path.replace(/^\/(es|en)(?=\/|$)/, "") || "/";
+            if (t === "pt") return base;
+            return "/" + t + (base === "/" ? "/" : base);
+          }
+          var stored = localStorage.getItem("lang");
+          if (stored === "pt" || stored === "es" || stored === "en") {
+            if (stored !== cur) location.replace(localize(stored));
+            return;
+          }
+          if (sessionStorage.getItem("autoredir")) return;
+          sessionStorage.setItem("autoredir", "1");
+          var lang = (navigator.language || "").toLowerCase();
+          var t = lang.indexOf("es") === 0 ? "es" : lang.indexOf("en") === 0 ? "en" : "pt";
+          if (t !== cur) location.replace(localize(t));
+        } catch (e) {}
+      })();
+    </script>
     {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? personSchema)} />
 

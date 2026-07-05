@@ -56,6 +56,7 @@ export const nav = {
 export const hero = {
   topline: "Conteúdo · Liderança · Decisão · IA · Cultura",
   headline: "Quando tudo acelera, clareza vira responsabilidade.",
+  headlineLines: ["Quando tudo acelera,", "clareza vira", "responsabilidade."],
   subheadline:
     "Para líderes, equipes e organizações que precisam decidir com critério, comunicar com profundidade e construir confiança em um mundo ruidoso demais para ser conduzido no automático.",
   complement:
