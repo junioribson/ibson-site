@@ -30,7 +30,7 @@ const grads = [
           <a class="artcard reveal" href={a.url} target="_blank" rel="noopener">
             <div class="art-cover">
               {a.cover ? (
-                <img loading="lazy" src={a.cover} alt={a.title} />
+                <img loading="lazy" src={a.cover} alt={`Artigo de Ibson Junior: ${a.title}`} />
               ) : (
                 <div class="art-ph" style={`background:${grads[i % grads.length]}`}>
                   <span class="art-ph-cat">{a.category}</span>

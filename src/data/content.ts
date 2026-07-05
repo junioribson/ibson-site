@@ -220,7 +220,7 @@ export const articles = {
       summary: "Entre o grito de gol e a narrativa, cobrir a Copa com consciência é mais do que informar.",
       readingTime: "13 min",
       url: ART_URL.copa,
-      cover: "/assets/artigos/artigo-copa.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-copa.webp",
     },
     {
       category: "Carreira e consciência",
@@ -229,7 +229,7 @@ export const articles = {
       summary: "Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra.",
       readingTime: "14 min",
       url: LINKEDIN,
-      cover: "/assets/artigos/artigo-identidade.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-identidade.webp",
     },
     {
       category: "Produtividade e atenção",
@@ -238,7 +238,7 @@ export const articles = {
       summary: "Entre reuniões placebo e o multitasking tóxico, o desperdício de capital humano custa caro.",
       readingTime: "14 min",
       url: ART_URL.cerebro,
-      cover: "/assets/artigos/artigo-cerebro.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-cerebro.webp",
     },
     {
       category: "Estratégia e decisão",
@@ -247,7 +247,7 @@ export const articles = {
       summary: "A diferença entre intenção e estratégia aparece quando o ambiente pressiona.",
       readingTime: "9 min",
       url: ART_URL.estrategia,
-      cover: "/assets/artigos/artigo-estrategia.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-estrategia.webp",
     },
     {
       category: "Governança e decisão",
@@ -256,7 +256,7 @@ export const articles = {
       summary: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões.",
       readingTime: "8 min",
       url: ART_URL.governanca,
-      cover: "/assets/artigos/artigo-governanca.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-governanca.webp",
     },
     {
       category: "Comunicação e cultura",
@@ -265,7 +265,7 @@ export const articles = {
       summary: "A comunicação sustenta cultura, governança e previsibilidade. Mas costuma ser negligenciada.",
       readingTime: "6 min",
       url: ART_URL.comunicacao,
-      cover: "/assets/artigos/artigo-comunicacao.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-comunicacao.webp",
     },
     {
       category: "Vida e trabalho",
@@ -274,7 +274,7 @@ export const articles = {
       summary: "Quem não aprende a velejar vira passageiro da própria vida.",
       readingTime: "10 min",
       url: ART_URL.oceano,
-      cover: "/assets/artigos/artigo-oceano.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-oceano.webp",
     },
     {
       category: "IA e discernimento",
@@ -283,7 +283,7 @@ export const articles = {
       summary: "Quando não nos autoavaliamos com franqueza, não conseguimos usar bem a tecnologia.",
       readingTime: "8 min",
       url: ART_URL.ia,
-      cover: "/assets/artigos/artigo-ia.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-ia.webp",
     },
     {
       category: "Cultura e liderança",
@@ -292,7 +292,7 @@ export const articles = {
       summary: "Quando vivida em todos os níveis, a cultura transforma relações, decisões e resultados.",
       readingTime: "9 min",
       url: ART_URL.cultura,
-      cover: "/assets/artigos/artigo-cultura.webp",
+      cover: "/assets/artigos/ibson-junior-artigo-cultura.webp",
     },
   ] as Article[],
   allUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/articles/",

@@ -3,7 +3,7 @@
 // TODO(asset): quando houver retrato editorial, definir `photo`
 // (ex.: "/assets/retratos/ibson.jpg"). Até lá, placeholder sóbrio.
 import { about } from "../data/content";
-const photo: string | null = "/assets/retratos/ibson-navy.jpg";
+const photo: string | null = "/assets/retratos/ibson-junior-retrato.jpg";
 ---
 
 <section class="sobre" id="sobre">
@@ -16,7 +16,7 @@ const photo: string | null = "/assets/retratos/ibson-navy.jpg";
         <div class="fr">
           {
             photo ? (
-              <img src={photo} alt="Retrato editorial de Ibson Junior." />
+              <img src={photo} alt="Ibson Junior, executivo de conteúdo, liderança e comunicação." width="1330" height="1400" />
             ) : (
               <div class="ph-portrait" aria-label="Retrato editorial de Ibson Junior (a chegar)">
                 <span>RETRATO</span>
