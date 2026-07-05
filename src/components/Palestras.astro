@@ -71,6 +71,9 @@ const ui = t(Astro.currentLocale);
       radial-gradient(116% 88% at 74% 14%, rgba(102, 48, 158, 0.5) 0%, transparent 56%),
       radial-gradient(120% 100% at 10% 92%, rgba(52, 14, 92, 0.42) 0%, transparent 58%),
       #0b0617;
+    /* Reseta o clip-path diagonal legado (sections.css) que cortava o topo
+       da coruja/estrelas criando uma emenda. Topo reto. */
+    clip-path: none;
   }
   /* Bloco do topo: a coruja vive AQUI, com overflow, então nunca invade os cards */
   .pal-top {

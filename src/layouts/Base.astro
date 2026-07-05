@@ -62,18 +62,21 @@ const personSchema = {
     <meta charset="UTF-8" />
     <script is:inline>
       // Aplica o tema (claro/escuro) antes da renderização, sem flash. Padrão: escuro.
+      // Também define o theme-color (cor da barra do navegador) conforme o tema.
       (function () {
+        var t = "dark";
         try {
-          var t = localStorage.getItem("theme");
+          t = localStorage.getItem("theme");
           if (t !== "light" && t !== "dark") t = "dark";
-          document.documentElement.setAttribute("data-theme", t);
-        } catch (e) {
-          document.documentElement.setAttribute("data-theme", "dark");
-        }
+        } catch (e) {}
+        document.documentElement.setAttribute("data-theme", t);
+        var m = document.createElement("meta");
+        m.name = "theme-color";
+        m.content = t === "light" ? "#f6f2ea" : "#09060f";
+        document.head.appendChild(m);
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#09060f" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" />
     <link rel="apple-touch-icon" href="/favicon-180.png" />

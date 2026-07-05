@@ -118,7 +118,7 @@ const articleSchema = {
   }
   .art-translate summary::-webkit-details-marker { display: none; }
   .art-translate[open] summary,
-  .art-translate summary:hover { border-color: var(--accent); color: #fff; background: var(--glow); }
+  .art-translate summary:hover { border-color: var(--accent); color: #fff; background: var(--accent); }
   .art-langs {
     position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
     display: flex; flex-direction: column; min-width: 180px; max-width: calc(100vw - 40px);
@@ -133,7 +133,7 @@ const articleSchema = {
     transition: background 0.2s, color 0.2s;
   }
   .art-lang span { font-size: 18px; }
-  .art-lang:hover { background: var(--glow); color: #fff; }
+  .art-lang:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
   .art-lang.on { color: var(--accent); }
 
   .art-cat {

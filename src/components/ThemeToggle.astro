@@ -55,6 +55,8 @@
       const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute("content", next === "light" ? "#f6f2ea" : "#09060f");
       sync();
     })
   );

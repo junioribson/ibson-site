@@ -129,6 +129,15 @@ const homeHref = localizePath("/", locale);
     color: var(--tint); margin-top: 16px;
   }
   .mmenu-li .ic { width: 20px; height: 20px; }
+
+  /* Telas bem estreitas (~360px): evita aperto/estouro do cabeçalho. */
+  @media (max-width: 400px) {
+    .nav-in { gap: 8px; }
+    .brand { min-width: 0; }
+    .brand b { font-size: 13px; }
+    .langsel { gap: 0; margin-right: 0; }
+    .lang { padding: 5px 5px; }
+  }
 </style>
 
 <script>

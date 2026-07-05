@@ -2,7 +2,9 @@
 // HERO v3: lobo constelação (arquétipo) como cena, com rede de pontos animada
 // reativa ao cursor. Alto contraste, tipografia grande, texto à esquerda.
 import { getContent } from "../i18n/utils";
+import { t } from "../i18n/ui";
 const { hero } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 ---
 
 <section class="wh" id="hero">
@@ -34,7 +36,7 @@ const { hero } = getContent(Astro.currentLocale);
     </div>
   </div>
 
-  <a class="wh-scroll" href="#tese" aria-label="Descer"><span>Role</span><span class="wh-scroll-line"></span></a>
+  <a class="wh-scroll" href="#tese" aria-label={ui.heroScrollAria}><span>{ui.heroScrollLabel}</span><span class="wh-scroll-line"></span></a>
 </section>
 
 <style>

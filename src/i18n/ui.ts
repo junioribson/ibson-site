@@ -53,6 +53,8 @@ type UIStrings = {
   proliferLiveText: string;
   themeLabel: string;
   brandTagline: string;
+  heroScrollLabel: string;
+  heroScrollAria: string;
 };
 
 const UI: Record<"pt" | "es" | "en", UIStrings> = {
@@ -108,6 +110,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveText: "Acompanhe as publicações, os artistas e a comunidade na página oficial.",
     themeLabel: "Tema",
     brandTagline: "Conteúdo · Liderança · Decisão",
+    heroScrollLabel: "Role",
+    heroScrollAria: "Descer",
   },
   es: {
     footerNavigate: "Navegar",
@@ -161,6 +165,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveText: "Sigue las publicaciones, los artistas y la comunidad en la página oficial.",
     themeLabel: "Tema",
     brandTagline: "Contenido · Liderazgo · Decisión",
+    heroScrollLabel: "Baja",
+    heroScrollAria: "Bajar",
   },
   en: {
     footerNavigate: "Navigate",
@@ -214,6 +220,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveText: "Follow the publications, artists and community on the official page.",
     themeLabel: "Theme",
     brandTagline: "Content · Leadership · Decision",
+    heroScrollLabel: "Scroll",
+    heroScrollAria: "Scroll down",
   },
 };
 

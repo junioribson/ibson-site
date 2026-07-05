@@ -193,6 +193,7 @@ body { background: var(--bg); color: var(--text); }
   --gold: #cba86a;          /* bronze/champagne dourado */
   --text-soft: #d8cbb2;
   --text-dim: #9c9080;
+  --ink-soft: #b8a98f;      /* legível sobre o escuro (legendas, metadados) */
   --plum: #2a1524;
   --wine: #24101c;
   --amber: #e0894e;         /* energia pontual (CTA/ativo), com moderação */
@@ -451,3 +452,11 @@ body { background: var(--bg); color: var(--text); }
 }
 /* Tag de vídeo/artigo com glow inexistente no claro: roxo sólido legível. */
 :root[data-theme="light"] .vcard .vtag { color: var(--accent-deep); }
+/* Rótulos que eram lilás/dourado pálido (regras fixas do escuro) sobre cards
+   brancos no claro: Mentoria (O que é/Para quem é), ProliferArte, imprensa e a
+   sublegenda "visualizações". Roxo da marca, legível. */
+:root[data-theme="light"] :is(.ment-col h3, .pc-n, .pressrow .pk, .num-sub) {
+  color: var(--accent-deep);
+}
+/* Corpo branco do logo TikTok some no card branco: escurece no claro. */
+:root[data-theme="light"] .tiktok-logo .tk-w { fill: #15121b; }
