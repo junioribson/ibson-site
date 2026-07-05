@@ -455,7 +455,7 @@ export const archetypes = {
     alt: "Arte editorial de lobo representando território, estratégia e leitura de ambiente.",
   },
   owl: {
-    src: "/assets/arquetipos/owl-editorial.webp",
+    src: "/assets/arquetipos/owl-editorial.jpg",
     alt: "Arte editorial de coruja representando discernimento, visão e sabedoria.",
   },
   seahorse: {
