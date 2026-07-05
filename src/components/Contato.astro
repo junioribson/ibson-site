@@ -38,6 +38,8 @@ import Icon from "./Icon.astro";
       </div>
 
       <form class="cform reveal d1" id="form-contato">
+        <input type="hidden" name="access_key" value="ae5d5592-e6e5-4e58-bd78-d24f8240874c" />
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
         <div>
           <label for="cf-nome">Nome</label>
           <input id="cf-nome" name="nome" type="text" autocomplete="name" required />
@@ -98,27 +100,44 @@ import Icon from "./Icon.astro";
     });
   });
 
-  // Envio: compõe um e-mail com os campos preenchidos.
-  form?.addEventListener("submit", (e) => {
+  // Envio real via Web3Forms (sem sair da página), com feedback ao visitante.
+  const btn = form?.querySelector('button[type="submit"]');
+  const note = form?.querySelector(".note");
+  const noteDefault = note?.textContent || "";
+
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const data = new FormData(form);
-    const nome = data.get("nome") || "";
-    const empresa = data.get("empresa") || "";
-    const emailFrom = data.get("email") || "";
-    const whats = data.get("whatsapp") || "";
-    const sub = data.get("assunto") || "Contato";
-    const msg = data.get("mensagem") || "";
-    const corpo = [
-      `Nome: ${nome}`,
-      empresa ? `Empresa: ${empresa}` : "",
-      `E-mail: ${emailFrom}`,
-      whats ? `WhatsApp: ${whats}` : "",
-      "",
-      msg,
-    ].filter(Boolean).join("\n");
-    const href =
-      `mailto:${email}?subject=${encodeURIComponent(`[Site] ${sub}`)}` +
-      `&body=${encodeURIComponent(corpo)}`;
-    window.location.href = href;
+    if (!btn || !note) return;
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.subject = `[Site] ${data.assunto || "Contato"} — ${data.nome || ""}`;
+    data.from_name = "Site Ibson Junior";
+
+    const btnLabel = btn.textContent;
+    btn.setAttribute("disabled", "true");
+    btn.textContent = "Enviando...";
+    note.style.color = "";
+    note.textContent = "Enviando sua mensagem...";
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.reset();
+        btn.textContent = "Enviado ✓";
+        note.style.color = "#8ff0b8";
+        note.textContent = "Mensagem enviada. Obrigado, retorno em breve com disponibilidade e próximos passos.";
+      } else {
+        throw new Error(json.message || "falha");
+      }
+    } catch (err) {
+      btn.removeAttribute("disabled");
+      btn.textContent = btnLabel;
+      note.style.color = "#f0a35c";
+      note.textContent = `Não consegui enviar agora. Escreva direto para ${email}.`;
+    }
   });
 </script>
