@@ -38,7 +38,10 @@ const personSchema = {
       "Estratégia editorial",
       "Governança pessoal",
     ],
-    sameAs: ["https://www.linkedin.com/in/ibson-junior/"],
+    sameAs: [
+      "https://www.linkedin.com/in/ibson-junior/",
+      "https://x.com/IbsonJunior",
+    ],
   },
 };
 ---
@@ -66,6 +69,8 @@ const personSchema = {
     <meta property="og:image" content={seo.ogImage} />
     <meta property="og:url" content="https://ibsonjunior.com.br" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@IbsonJunior" />
+    <meta name="twitter:creator" content="@IbsonJunior" />
     <meta name="twitter:title" content={seo.ogTitle} />
     <meta name="twitter:description" content={seo.ogDescription} />
 
