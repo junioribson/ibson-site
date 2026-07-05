@@ -121,32 +121,31 @@ export const linkedinPosts = {
   subtitle:
     "Reflexões e artes que publico sobre liderança, IA, cultura, conteúdo e decisão. Clique para abrir o post no LinkedIn.",
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+  // TODO(ibson): substituir pelos posts REAIS (arte + link), do mais recente para o
+  // mais antigo, até 8. Enquanto isso, as entradas abaixo são AMOSTRAS de proporções
+  // variadas (retrato, quadrado, paisagem) só para demonstrar o layout responsivo.
   posts: [
     {
-      image: "/assets/artigos/ibson-junior-artigo-estrategia.webp",
+      image: "/assets/artigos/inline/ibson-junior-cerebro-podre-reunioes-improdutivas-infografico.png",
       url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
-      alt: "Post de Ibson Junior no LinkedIn sobre estratégia e decisão",
-      reactions: 0,
-      comments: 0,
-      shares: 0,
+      alt: "Post de Ibson Junior no LinkedIn (amostra, formato retrato)",
     },
     {
-      image: "/assets/artigos/ibson-junior-artigo-ia.webp",
+      image: "/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.jpg",
       url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
-      alt: "Post de Ibson Junior no LinkedIn sobre inteligência artificial",
-      reactions: 0,
-      comments: 0,
-      shares: 0,
+      alt: "Post de Ibson Junior no LinkedIn (amostra, formato quadrado)",
     },
     {
-      image: "/assets/artigos/ibson-junior-artigo-cultura.webp",
+      image: "/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.png",
       url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
-      alt: "Post de Ibson Junior no LinkedIn sobre cultura e liderança",
-      reactions: 0,
-      comments: 0,
-      shares: 0,
+      alt: "Post de Ibson Junior no LinkedIn (amostra, formato paisagem)",
     },
-  ] as Array<{ image: string; url: string; alt: string; reactions: number; comments: number; shares: number }>,
+    {
+      image: "/assets/artigos/inline/ibson-junior-cerebro-podre-dependencia-digital-trabalho.png",
+      url: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
+      alt: "Post de Ibson Junior no LinkedIn (amostra, formato quase quadrado)",
+    },
+  ] as Array<{ image: string; url: string; alt: string }>,
 };
 
 export const cases = {

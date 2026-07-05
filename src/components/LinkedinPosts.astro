@@ -1,8 +1,8 @@
 ---
-// Últimos posts no LinkedIn: carrossel lateral de artes (hospedadas no próprio
-// site para indexação no Google Images). Cada card abre o post no LinkedIn.
+// Últimos posts no LinkedIn: carrossel de artes (hospedadas no próprio site para
+// indexação no Google Imagens). Cada card mostra a arte COMPLETA (qualquer
+// formato, sem corte) e abre o post exato no LinkedIn ao clicar.
 import { linkedinPosts as lk } from "../data/content";
-const fmt = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1).replace(".0", "") + "k" : String(n));
 // Mostra no máximo 8 posts (os mais recentes). O resto fica no LinkedIn.
 const posts = lk.posts.slice(0, 8);
 ---
@@ -24,24 +24,8 @@ const posts = lk.posts.slice(0, 8);
         {
           posts.map((p) => (
             <a class="lk-card" href={p.url} target="_blank" rel="noopener" aria-label="Abrir post no LinkedIn">
-              <div class="lk-media">
-                <img class="lk-img" src={p.image} alt={p.alt} loading="lazy" />
-              </div>
-              <div class="lk-meta">
-                <span class="lk-stat" title="Reações">
-                  <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.9-9.2C.6 8.7 2 5.5 5 5.1c1.9-.3 3.4.7 4.2 2 .8-1.3 2.3-2.3 4.2-2 3 .4 4.4 3.6 2.9 6.7C19.5 16.4 12 21 12 21z"/></svg>
-                  {fmt(p.reactions)}
-                </span>
-                <span class="lk-stat" title="Comentários">
-                  <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H8l-4 4V5a1 1 0 0 1 1-1z"/></svg>
-                  {fmt(p.comments)}
-                </span>
-                <span class="lk-stat" title="Compartilhamentos">
-                  <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M17 7l-1.4 1.4 2.6 2.6H8a5 5 0 0 0-5 5v2h2v-2a3 3 0 0 1 3-3h10.2l-2.6 2.6L17 19l5-5-5-5z"/></svg>
-                  {fmt(p.shares)}
-                </span>
-                <span class="lk-open">no LinkedIn ↗</span>
-              </div>
+              <img class="lk-img" src={p.image} alt={p.alt} loading="lazy" />
+              <span class="lk-hint">Ver no LinkedIn ↗</span>
             </a>
           ))
         }
@@ -55,26 +39,19 @@ const posts = lk.posts.slice(0, 8);
   .lkposts { position: relative; overflow: hidden; padding: 96px 0; }
   .lk-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .lk-head h2 {
-    font-size: clamp(26px, 3.4vw, 44px);
-    font-weight: 800;
-    letter-spacing: -0.035em;
-    line-height: 1.06;
-    color: #fff;
-    max-width: 20ch;
+    font-size: clamp(26px, 3.4vw, 44px); font-weight: 800; letter-spacing: -0.035em;
+    line-height: 1.06; color: #fff; max-width: 20ch;
   }
   .lk-all {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: 13.5px;
-    color: #db6bff;
-    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5);
-    white-space: nowrap;
+    font-family: var(--font-sans); font-weight: 800; font-size: 13.5px;
+    color: #db6bff; text-shadow: 0 0 16px rgba(219, 107, 255, 0.5); white-space: nowrap;
   }
   .lk-sub { margin-top: 14px; font-size: 16px; color: var(--ink-soft); line-height: 1.6; max-width: 60ch; }
 
   .lk-wrap { position: relative; margin-top: 32px; }
   .lk-scroller {
     display: flex;
+    align-items: stretch; /* todos os cards com a mesma altura */
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -85,15 +62,18 @@ const posts = lk.posts.slice(0, 8);
   }
   .lk-scroller::-webkit-scrollbar { display: none; }
 
+  /* Altura fixa, largura automática: qualquer formato mantém sua proporção,
+     imagem inteira visível (sem corte), fileira alinhada. */
   .lk-card {
-    flex: 0 0 clamp(260px, 78vw, 340px);
+    position: relative;
+    flex: 0 0 auto;
+    height: clamp(320px, 56vh, 460px);
     scroll-snap-align: start;
-    display: flex;
-    flex-direction: column;
+    display: block;
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.04);
+    background: #0d0a14;
     transition: transform 0.35s var(--e), border-color 0.35s, box-shadow 0.35s;
   }
   .lk-card:hover {
@@ -101,44 +81,37 @@ const posts = lk.posts.slice(0, 8);
     border-color: rgba(219, 107, 255, 0.45);
     box-shadow: 0 26px 54px -30px rgba(0, 0, 0, 0.8), 0 0 34px -20px rgba(219, 107, 255, 0.55);
   }
-  /* imagem 100% visível (sem corte), legível por inteiro */
-  .lk-media { background: #0d0a14; }
-  .lk-img { display: block; width: 100%; height: auto; }
+  .lk-img { display: block; height: 100%; width: auto; }
 
-  .lk-meta {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 13px 16px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--ink-soft);
+  /* Dica de clique (aparece no hover, sem poluir a arte) */
+  .lk-hint {
+    position: absolute; bottom: 12px; left: 50%;
+    transform: translateX(-50%) translateY(8px); opacity: 0;
+    font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
+    color: #fff; padding: 8px 14px; border-radius: 999px;
+    background: rgba(15, 10, 24, 0.82); backdrop-filter: blur(6px);
+    border: 1px solid rgba(219, 107, 255, 0.5);
+    box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.8);
+    white-space: nowrap; pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s var(--e);
   }
-  .lk-stat { display: inline-flex; align-items: center; gap: 5px; }
-  .lk-stat svg { color: #db6bff; opacity: 0.9; }
-  .lk-open { margin-left: auto; color: #db6bff; font-weight: 700; white-space: nowrap; }
+  .lk-card:hover .lk-hint { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   .lk-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 3;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+    width: 44px; height: 44px; border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(15, 10, 24, 0.8);
-    backdrop-filter: blur(6px);
-    color: #fff;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
+    background: rgba(15, 10, 24, 0.8); backdrop-filter: blur(6px);
+    color: #fff; font-size: 22px; line-height: 1; cursor: pointer;
     transition: background 0.25s, border-color 0.25s, transform 0.2s var(--e);
   }
   .lk-nav:hover { background: rgba(219, 107, 255, 0.2); border-color: #db6bff; }
   .lk-prev { left: -6px; }
   .lk-next { right: -6px; }
-  @media (max-width: 760px) { .lk-nav { display: none; } }
+  @media (max-width: 760px) {
+    .lk-nav { display: none; }
+    .lk-hint { opacity: 1; transform: translateX(-50%); } /* no touch, dica sempre visível */
+  }
 </style>
 
 <script>
