@@ -79,7 +79,25 @@ site. Mantido por fidelidade; decidir com o Ibson se remove nas páginas interna
 
 ---
 
-## FRENTE 2, Seção "Últimos posts no LinkedIn"  🟡 CONSTRUÍDA, DESATIVADA (aguardando dados reais)
+## FRENTE 2, Seção "Últimos posts no LinkedIn"  ✅ NO AR (8 posts reais)
+
+**Como está:** carrossel na home (após "Sobre") com os 8 posts mais recentes, cada card = arte
+completa (qualquer formato, sem corte, altura fixa/largura auto), sem contagens, clique abre o post.
+Artes em `public/assets/posts/ibson-junior-post-<tema>.jpg`, dados em `linkedinPosts` (`content.ts`).
+
+### Como ATUALIZAR a cada 3-4 dias (fluxo repetível)
+Depende do navegador logado (a página de atividades exige login; scraping anônimo não funciona).
+1. Extensão **Claude for Chrome** conectada + Chrome logado no LinkedIn do Ibson.
+2. Abrir `https://www.linkedin.com/in/ibson-junior/recent-activity/all/`, rolar p/ carregar ~8 posts.
+3. Rodar no navegador o JS que lista os posts com imagem (retorna `urn` + texto). Snippet salvo em
+   `scripts/linkedin-extract.js` (colar via javascript_tool).
+4. Para cada urn: baixar a arte pública. `node scripts/update-linkedin-posts.mjs '<json com urn/slug>'`
+   (usa o `og:image` do permalink `feed/update/urn:li:activity:<urn>/`, ~980px, sem login).
+5. Ver cada arte (a frase da arte às vezes difere da legenda) e escrever o ALT fiel + slug SEO.
+6. Atualizar o array `posts` em `content.ts` (mais recente primeiro) e a data de "Última atualização".
+7. `npm run build` e `git push` (deploy Vercel).
+
+### (histórico) Estado anterior: CONSTRUÍDA, DESATIVADA (aguardava dados reais)
 
 Objetivo: galeria lateralizada (carrossel) que hospeda as **artes dos POSTS** (não os artigos)
 para o Google indexar as imagens `ibson-junior-*`. Componente pronto, só comentado na home.
