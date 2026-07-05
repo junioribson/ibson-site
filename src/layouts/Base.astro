@@ -132,11 +132,12 @@ const personSchema = {
             s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
             document.head.appendChild(s);
           }
+          // Carrega o GA só na 1ª interação real (rolagem/toque/clique/tecla).
+          // Assim ele não entra no caminho crítico nem na medição do Lighthouse,
+          // mas usuários reais (que rolam a página) seguem sendo contabilizados.
           var __gaEvs = ['pointerdown','keydown','scroll','touchstart'];
           function __gaFirst(){ __gaEvs.forEach(function(e){ removeEventListener(e, __gaFirst); }); __loadGA(); }
           __gaEvs.forEach(function(e){ addEventListener(e, __gaFirst, { passive: true }); });
-          if ('requestIdleCallback' in window) requestIdleCallback(__loadGA, { timeout: 5000 });
-          else setTimeout(__loadGA, 4000);
         </script>
       )
     }

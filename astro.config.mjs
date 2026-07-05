@@ -6,6 +6,9 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ibsonjunior.com.br',
+  // Embute o CSS no HTML: elimina a requisicao de CSS que bloqueava a
+  // renderizacao (principal gargalo de FCP/LCP no mobile).
+  build: { inlineStylesheets: 'always' },
   i18n: {
     locales: ['pt', 'es', 'en'],
     defaultLocale: 'pt',
