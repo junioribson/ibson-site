@@ -99,14 +99,15 @@ const homeHref = localizePath("/", locale);
   .lang:hover { opacity: 1; background: rgba(255, 255, 255, 0.07); color: #fff; }
   .lang.on { opacity: 1; color: #fff; background: rgba(219, 107, 255, 0.16); }
   .lang.on .lang-code { color: #db6bff; }
-  @media (max-width: 1180px) {
+  /* Bandeiras compactas no topo: só o ícone (o código PT/ES/EN aparece no menu mobile) */
+  .lang .lang-code { display: none; }
+  .lang { padding: 6px 7px; }
+  @media (max-width: 1280px) {
     .nav-li { display: none; }
-    .lang .lang-code { display: none; }
-    .lang { padding: 6px 6px; }
   }
 
   /* Bandeiras no menu mobile */
-  .mlangs { display: flex; flex-direction: column; gap: 14px; margin-top: 26px; }
+  .mlangs { display: flex; flex-direction: column; gap: 12px; margin-top: 18px; }
   .mlang {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.03em;
@@ -118,7 +119,7 @@ const homeHref = localizePath("/", locale);
   .mmenu-li {
     display: inline-flex; align-items: center; gap: 12px;
     font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
-    color: var(--tint); margin-top: 22px;
+    color: var(--tint); margin-top: 16px;
   }
   .mmenu-li .ic { width: 20px; height: 20px; }
 </style>
@@ -142,6 +143,7 @@ const homeHref = localizePath("/", locale);
     const open = document.body.classList.toggle("menu");
     document.body.classList.toggle("lock", open);
     hamb.setAttribute("aria-expanded", String(open));
+    if (open && mmenu) mmenu.scrollTop = 0; // sempre abre pelo topo
   });
   mmenu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
   window.addEventListener("keydown", (e) => {
