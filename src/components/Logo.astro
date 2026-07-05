@@ -1,12 +1,34 @@
 ---
 // Logomarca oficial de Ibson Junior (extraída do material de marca em alta).
-// variant "roxa" para fundos claros, "branca" para fundos escuros.
+// surface controla a cor conforme o FUNDO onde a logo assenta:
+//  - "adaptive": roxa em superfície clara (tema claro) e branca no escuro (nav).
+//  - "dark": sempre branca (blocos escuros que existem nos dois temas: rodapé).
+//  - "light": sempre roxa.
 interface Props {
   class?: string;
-  variant?: "roxa" | "branca";
+  surface?: "adaptive" | "dark" | "light";
 }
-const { class: className, variant = "roxa" } = Astro.props;
-const src = variant === "branca" ? "/assets/logo/logo-branca.png" : "/assets/logo/logo-roxa.png";
+const { class: className, surface = "adaptive" } = Astro.props;
+const roxa = "/assets/logo/logo-roxa.png";
+const branca = "/assets/logo/logo-branca.png";
 ---
 
-<img class={className} src={src} alt="Ibson Junior" width="843" height="843" />
+{surface === "dark" && <img class={className} src={branca} alt="Ibson Junior" width="843" height="843" />}
+{surface === "light" && <img class={className} src={roxa} alt="Ibson Junior" width="843" height="843" />}
+{
+  surface === "adaptive" && (
+    <span class:list={["logo-swap", className]}>
+      <img class="logo-roxa" src={roxa} alt="Ibson Junior" width="843" height="843" />
+      <img class="logo-branca" src={branca} alt="Ibson Junior" width="843" height="843" />
+    </span>
+  )
+}
+
+<style is:global>
+  /* Logo adaptativa: mostra a branca no tema escuro e a roxa no claro. */
+  .logo-swap { display: inline-flex; align-items: center; }
+  .logo-swap .logo-roxa { display: none; }
+  .logo-swap .logo-branca { display: block; }
+  :root[data-theme="light"] .logo-swap .logo-roxa { display: block; }
+  :root[data-theme="light"] .logo-swap .logo-branca { display: none; }
+</style>

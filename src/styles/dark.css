@@ -342,3 +342,107 @@ body { background: var(--bg); color: var(--text); }
 :root[data-theme="light"] .subcase .sk,
 :root[data-theme="light"] .casecard .cc-tag { color: var(--accent-deep); }
 :root[data-theme="light"] .shead .rule { background: var(--line-strong); }
+
+/* ==========================================================================
+   TEMA CLARO v2 (revisão de designer): contraste, impacto e blocos escuros
+   intencionais. Objetivo: nada "claro sobre claro" sem querer; onde o design
+   pede um bloco escuro, ele vira uma "ilha escura" com texto claro legível.
+   ========================================================================== */
+
+/* --- ILHAS ESCURAS: Tese, Repertório, Contato, Palestras, rodapé, card
+   WolfLife (.feat), cards de artigo (.acard) e menu mobile são escuros nos
+   DOIS temas. No claro, seus tokens de texto viravam marrom-escuro (ilegível
+   sobre fundo escuro). Aqui restauramos a paleta clara-sobre-escura. --------- */
+:root[data-theme="light"] :is(
+  .tese, .repo.repertorio, .contato, .pal, footer, .feat, .acard, .mmenu
+) {
+  --text: #e9dfc9;
+  --text-soft: #d8cbb2;
+  --text-dim: #a89a84;
+  --heading: #ffffff;
+  --ink: #f4ecdd;
+  --ink-soft: #d8cbb2;
+  --accent: #db6bff;
+  --accent-deep: #c99be0;
+  --glow: rgba(219, 107, 255, 0.45);
+  --line: rgba(255, 255, 255, 0.14);
+  --line-2: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.26);
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-2: rgba(255, 255, 255, 0.09);
+  --hair: rgba(255, 255, 255, 0.14);
+  --hair-2: rgba(255, 255, 255, 0.08);
+}
+/* Rótulos das ilhas escuras seguem dourados (contraste quente sobre o escuro) */
+:root[data-theme="light"] :is(.contato, .repo.repertorio) .shead .lbl { color: var(--gold); }
+/* O card WolfLife (.feat) puxava o fundo de --section-a/-b, que no claro viram
+   creme: dava texto claro sobre fundo claro. Força um card escuro rico. */
+:root[data-theme="light"] .feat {
+  background: linear-gradient(158deg, #241636 0%, #180a2b 62%, #12071e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- BOTÕES E DEGRADÊS COM PUNCH (distintos do escuro): no creme, o violeta
+   precisa de um degradê saturado + brilho roxo para "saltar". ---------------- */
+:root[data-theme="light"] .btn-violet,
+:root[data-theme="light"] .nav-cta {
+  background: linear-gradient(100deg, #5b2ee6 0%, #7b3fe4 55%, #9a5cff 100%);
+  color: #fff;
+  box-shadow: 0 12px 28px -12px rgba(91, 46, 230, 0.55);
+}
+:root[data-theme="light"] .btn-violet:hover,
+:root[data-theme="light"] .nav-cta:hover {
+  box-shadow: 0 20px 44px -14px rgba(91, 46, 230, 0.62);
+  transform: translateY(-2px);
+}
+:root[data-theme="light"] .wh-btn-primary {
+  box-shadow: 0 14px 32px -12px rgba(91, 46, 230, 0.55);
+}
+/* Botão fantasma no claro: borda roxa nítida (era clara demais sobre o creme) */
+:root[data-theme="light"] .wh-btn-ghost {
+  border-color: rgba(91, 46, 230, 0.4);
+  color: var(--accent-deep);
+}
+:root[data-theme="light"] .wh-btn-ghost:hover {
+  border-color: var(--accent-deep);
+  background: rgba(91, 46, 230, 0.06);
+}
+
+/* --- TESE no tema claro: vira BLOCO ROXO de manifesto (impacto/contraste).
+   No escuro ela é uma seção champanhe clara (ritmo); no claro, sem virar
+   escura, ficava champanhe sobre creme, quase sem leitura de bloco. --------- */
+:root[data-theme="light"] .tese {
+  background:
+    radial-gradient(32vw 30vw at 82% 16%, rgba(123, 87, 240, 0.5), transparent 60%),
+    radial-gradient(26vw 26vw at 8% 98%, rgba(201, 79, 138, 0.3), transparent 60%),
+    linear-gradient(158deg, #3a0b63 0%, #2a0148 50%, #150026 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+:root[data-theme="light"] .tese blockquote,
+:root[data-theme="light"] .tese .body p:first-child,
+:root[data-theme="light"] .tese .closing { color: #ffffff; }
+:root[data-theme="light"] .tese .body p { color: #dbcfb6; }
+:root[data-theme="light"] .tese .kicker { color: var(--gold); }
+
+/* --- CORRIGE CLARO-SOBRE-CLARO nas seções claras -------------------------- */
+/* Rótulos de seção (kicker) eram dourados sobre creme (baixo contraste): roxo. */
+:root[data-theme="light"] :is(.sobre, .lkposts, .cases, .prolifer, .gal, .arts, .ment, .vids) .shead .lbl {
+  color: var(--accent-deep);
+}
+/* Cartões de microprova (Sobre): borda e fundo mais definidos. */
+:root[data-theme="light"] .about-proofs .pr {
+  border-color: rgba(91, 46, 230, 0.22);
+  background: linear-gradient(160deg, rgba(91, 46, 230, 0.06), #ffffff);
+}
+:root[data-theme="light"] .about-proofs .pr .k { color: var(--accent-deep); text-shadow: none; }
+/* Número "9 Bi+" (subcase) fica num card claro: usa roxo sólido, não o neon. */
+:root[data-theme="light"] .subcase .num,
+:root[data-theme="light"] .subcase .num em {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--accent-deep);
+  filter: none;
+}
+/* Tag de vídeo/artigo com glow inexistente no claro: roxo sólido legível. */
+:root[data-theme="light"] .vcard .vtag { color: var(--accent-deep); }
