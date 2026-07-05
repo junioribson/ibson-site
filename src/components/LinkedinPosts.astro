@@ -3,6 +3,8 @@
 // site para indexação no Google Images). Cada card abre o post no LinkedIn.
 import { linkedinPosts as lk } from "../data/content";
 const fmt = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1).replace(".0", "") + "k" : String(n));
+// Mostra no máximo 8 posts (os mais recentes). O resto fica no LinkedIn.
+const posts = lk.posts.slice(0, 8);
 ---
 
 <section class="lkposts" id="linkedin">
@@ -20,7 +22,7 @@ const fmt = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1).replace(".0", "") 
       <button class="lk-nav lk-prev" aria-label="Anterior" type="button">‹</button>
       <div class="lk-scroller" id="lk-scroller">
         {
-          lk.posts.map((p) => (
+          posts.map((p) => (
             <a class="lk-card" href={p.url} target="_blank" rel="noopener" aria-label="Abrir post no LinkedIn">
               <div class="lk-media">
                 <img class="lk-img" src={p.image} alt={p.alt} loading="lazy" />
@@ -44,7 +46,7 @@ const fmt = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1).replace(".0", "") 
           ))
         }
       </div>
-      <button class="lk-nav lk-next" aria-label="Próximo" type="button">›</button>
+      <button class="lk-nav lk-next" aria-label="Próximo" type="button" data-profile={lk.profileUrl}>›</button>
     </div>
   </div>
 </section>
@@ -145,5 +147,14 @@ const fmt = (n: number) => (n >= 1000 ? (n / 1000).toFixed(1).replace(".0", "") 
   const next = document.querySelector<HTMLButtonElement>(".lk-next");
   const step = () => Math.round((scroller?.clientWidth || 320) * 0.85);
   prev?.addEventListener("click", () => scroller?.scrollBy({ left: -step(), behavior: "smooth" }));
-  next?.addEventListener("click", () => scroller?.scrollBy({ left: step(), behavior: "smooth" }));
+  next?.addEventListener("click", () => {
+    if (!scroller) return;
+    // No fim do carrossel, a seta leva ao LinkedIn (ver os demais posts).
+    const atEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
+    if (atEnd && next?.dataset.profile) {
+      window.open(next.dataset.profile, "_blank", "noopener");
+      return;
+    }
+    scroller.scrollBy({ left: step(), behavior: "smooth" });
+  });
 </script>
