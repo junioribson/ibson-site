@@ -11,6 +11,33 @@ interface Props {
 
 const { title = seo.title, description = seo.description } = Astro.props;
 const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
+
+// Dados estruturados: diz ao Google que o site é sobre a PESSOA Ibson Junior,
+// com foto e perfis, ajudando a associar a imagem dele ao nome (entidade).
+// TODO(ibson): adicionar mais perfis reais no sameAs (Instagram, etc.) quando confirmados.
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  mainEntity: {
+    "@type": "Person",
+    name: "Ibson Junior",
+    url: "https://ibsonjunior.com.br",
+    image: "https://ibsonjunior.com.br/assets/retratos/ibson-preto.jpg",
+    jobTitle: "Executivo de conteúdo, liderança e comunicação",
+    description:
+      "Executivo de conteúdo, liderança e comunicação. Artigos, palestras e mentorias sobre liderança, IA, cultura, conteúdo e tomada de decisão.",
+    knowsAbout: [
+      "Liderança",
+      "Tomada de decisão",
+      "Inteligência artificial",
+      "Cultura organizacional",
+      "Comunicação executiva",
+      "Estratégia editorial",
+      "Governança pessoal",
+    ],
+    sameAs: ["https://www.linkedin.com/in/ibson-junior/"],
+  },
+};
 ---
 
 <!doctype html>
@@ -27,6 +54,8 @@ const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo.ogTitle} />
