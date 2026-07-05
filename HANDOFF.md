@@ -132,6 +132,27 @@ para o Google indexar as imagens `ibson-junior-*`. Componente pronto, só coment
 
 **A revisar (recomendado):** as traduções ES/EN foram feitas por IA com voz madura; uma revisão de nativo dá o acabamento final "zero erros". Corrigido de passagem: o `governanca.md` (PT) mencionava "Better Collective" (removido).
 
+### Manutenção: manter os 3 idiomas 100% sincronizados (REGRA)
+O site é à prova de falhas: se faltar tradução, o texto aparece em PT (fallback no `getContent`),
+e o botão "Traduzir" só oferece idiomas que existem para aquele artigo (sem 404). Mesmo assim, a
+regra é traduzir SEMPRE que adicionar conteúdo, para não acumular lacunas.
+
+**Ao adicionar um ARTIGO novo (PT em `src/content/artigos/<slug>.md`):**
+1. Criar também `src/content/artigos-es/<slug>.md` e `src/content/artigos-en/<slug>.md` (mesmo slug).
+   Traduzir title/category/excerpt + corpo; localizar `date`; manter `dateISO`/`cover`/`linkedinUrl`/`readingTime`;
+   preservar `<figure>` (só traduz alt/figcaption); sem travessão; sem "Better Collective".
+2. Adicionar o item em `articles.list` nos TRÊS `content.*.ts` (traduzindo category/title/summary).
+
+**Ao adicionar/editar SEÇÃO (`content.ts`) ou microcopy (`i18n/ui.ts`):** replicar a mesma chave
+em `content.es.ts`/`content.en.ts` e nos 3 blocos de `ui.ts`, traduzida.
+
+**Checar lacunas a qualquer momento:** `node scripts/i18n-status.mjs` (lista o que falta em ES/EN;
+sai com erro se houver lacuna). Rodar antes de publicar.
+
+**Fluxo automatizável:** ao rodar via agente (ex.: rotina agendada), depois de adicionar conteúdo,
+rodar `i18n-status`; para cada lacuna, traduzir seguindo as regras acima e rebuildar. Assim o site
+permanece 100% trilíngue conforme cresce.
+
 ### (histórico) Estado anterior: NÃO INICIADA
 
 Objetivo: bandeiras no **topo** (PT-BR, ES, EN). Clicar traduz o **site inteiro** para o idioma.

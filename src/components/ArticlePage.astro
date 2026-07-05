@@ -1,6 +1,6 @@
 ---
 // Página de leitura de um artigo (locale-aware) + botão "Traduzir" com idiomas.
-import { render } from "astro:content";
+import { getCollection, render } from "astro:content";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import { localizePath, normalizeLocale, htmlLang, LANGS } from "../i18n/utils";
@@ -11,6 +11,19 @@ const locale = normalizeLocale(Astro.currentLocale);
 const ui = t(locale);
 const d = entry.data;
 const { Content } = await render(entry);
+
+// Só oferece no botão "Traduzir" os idiomas que já têm este artigo (evita 404).
+const [ptCol, esCol, enCol] = await Promise.all([
+  getCollection("artigos"),
+  getCollection("artigosEs"),
+  getCollection("artigosEn"),
+]);
+const availByLocale: Record<string, boolean> = {
+  pt: ptCol.some((e) => e.id === entry.id),
+  es: esCol.some((e) => e.id === entry.id),
+  en: enCol.some((e) => e.id === entry.id),
+};
+const translateLangs = LANGS.filter((lg) => availByLocale[lg.code]);
 
 const url = new URL(localizePath(`/artigos/${entry.id}`, locale), "https://ibsonjunior.com.br").href;
 const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
@@ -44,7 +57,7 @@ const articleSchema = {
           <summary aria-label={ui.articleTranslateTo}>🌐 {ui.articleTranslate}</summary>
           <div class="art-langs">
             {
-              LANGS.map((lg) => (
+              translateLangs.map((lg) => (
                 <a
                   class:list={["art-lang", { on: lg.code === locale }]}
                   href={localizePath(`/artigos/${entry.id}`, lg.code)}

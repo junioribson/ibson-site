@@ -14,7 +14,13 @@ export const LANGS: { code: Locale; flag: string; short: string; label: string; 
   { code: "en", flag: "🇺🇸", short: "EN", label: "English", htmlLang: "en" },
 ];
 
-const CONTENT = { pt: ptContent, es: esContent, en: enContent };
+// Cada idioma cai para o PT em qualquer export que ainda não foi traduzido,
+// então conteúdo novo nunca quebra o site (mostra em PT até ser traduzido).
+const CONTENT = {
+  pt: { ...ptContent },
+  es: { ...ptContent, ...esContent },
+  en: { ...ptContent, ...enContent },
+};
 
 export function isLocale(x: unknown): x is Locale {
   return typeof x === "string" && (LOCALES as string[]).includes(x);
@@ -24,7 +30,7 @@ export function normalizeLocale(locale?: string | null): Locale {
   return isLocale(locale) ? locale : DEFAULT_LOCALE;
 }
 
-// Conteúdo (content.ts) do idioma pedido, com fallback para PT.
+// Conteúdo (content.ts) do idioma pedido, com fallback para PT export a export.
 export function getContent(locale?: string | null) {
   return CONTENT[normalizeLocale(locale)];
 }
