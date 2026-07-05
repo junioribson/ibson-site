@@ -55,6 +55,9 @@ type UIStrings = {
   brandTagline: string;
   heroScrollLabel: string;
   heroScrollAria: string;
+  galleryClose: string;
+  galleryPrev: string;
+  galleryNext: string;
 };
 
 const UI: Record<"pt" | "es" | "en", UIStrings> = {
@@ -112,6 +115,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     brandTagline: "Conteúdo · Liderança · Decisão",
     heroScrollLabel: "Role",
     heroScrollAria: "Descer",
+    galleryClose: "Fechar",
+    galleryPrev: "Anterior",
+    galleryNext: "Próxima",
   },
   es: {
     footerNavigate: "Navegar",
@@ -167,6 +173,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     brandTagline: "Contenido · Liderazgo · Decisión",
     heroScrollLabel: "Baja",
     heroScrollAria: "Bajar",
+    galleryClose: "Cerrar",
+    galleryPrev: "Anterior",
+    galleryNext: "Siguiente",
   },
   en: {
     footerNavigate: "Navigate",
@@ -222,6 +231,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     brandTagline: "Content · Leadership · Decision",
     heroScrollLabel: "Scroll",
     heroScrollAria: "Scroll down",
+    galleryClose: "Close",
+    galleryPrev: "Previous",
+    galleryNext: "Next",
   },
 };
 

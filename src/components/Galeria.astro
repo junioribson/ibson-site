@@ -35,6 +35,15 @@ const fotos: string[] = [
       }
     </div>
   </div>
+
+  {/* Lightbox (expandir a foto na própria página). Ativado só no desktop via JS. */}
+  <div class="lightbox" id="gal-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" aria-hidden="true">
+    <button class="lb-close" type="button" aria-label={ui.galleryClose}>✕</button>
+    <button class="lb-nav lb-prev" type="button" aria-label={ui.galleryPrev}>‹</button>
+    <figure class="lb-stage"><img class="lb-img" src="" alt="" /></figure>
+    <button class="lb-nav lb-next" type="button" aria-label={ui.galleryNext}>›</button>
+    <div class="lb-count" aria-hidden="true"></div>
+  </div>
 </section>
 
 <style>
@@ -72,4 +81,143 @@ const fotos: string[] = [
   .gcard:hover::after { opacity: 1; }
   @media (max-width: 1100px) { .galgrid2 { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .galgrid2 { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* Lightbox: só no desktop (>1100px) a foto vira clicável e expansível. */
+  .lightbox { display: none; }
+  @media (min-width: 1101px) {
+    .gcard { cursor: zoom-in; }
+    .lightbox {
+      position: fixed; inset: 0; z-index: 200;
+      align-items: center; justify-content: center;
+      padding: 40px 80px;
+      background: rgba(8, 4, 14, 0.9);
+      -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+      opacity: 0; transition: opacity 0.28s var(--e);
+    }
+    .lightbox.open { display: flex; opacity: 1; }
+    .lb-stage { margin: 0; display: flex; }
+    .lb-img {
+      max-width: 90vw; max-height: 86vh; width: auto; height: auto;
+      object-fit: contain; border-radius: 10px;
+      box-shadow: 0 40px 110px -30px rgba(0, 0, 0, 0.85);
+    }
+    .lightbox.open .lb-img { animation: lb-pop 0.32s var(--e); }
+    @keyframes lb-pop { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: none; } }
+    .lb-close {
+      position: fixed; top: 22px; right: 26px;
+      width: 46px; height: 46px; border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.28); background: rgba(255, 255, 255, 0.08);
+      color: #fff; font-size: 19px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s, transform 0.35s var(--e), border-color 0.25s;
+    }
+    .lb-close:hover { background: rgba(255, 255, 255, 0.18); border-color: #fff; transform: rotate(90deg); }
+    .lb-nav {
+      position: fixed; top: 50%; transform: translateY(-50%);
+      width: 54px; height: 54px; border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.22); background: rgba(255, 255, 255, 0.06);
+      color: #fff; font-size: 30px; line-height: 0; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .lb-nav:hover { background: rgba(255, 255, 255, 0.16); border-color: rgba(255, 255, 255, 0.5); }
+    .lb-prev { left: 22px; }
+    .lb-next { right: 22px; }
+    .lb-count {
+      position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.72); font-family: var(--font-mono);
+      font-size: 12px; letter-spacing: 0.12em;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lightbox { transition: none; }
+    .lightbox.open .lb-img { animation: none; }
+  }
 </style>
+
+<script>
+  // Lightbox da galeria: SÓ no desktop (>1100px). Clique/Enter amplia a foto na
+  // própria página; fechar (X / Esc / clique no fundo) volta ao normal; setas e
+  // botões navegam entre as fotos.
+  const desktop = window.matchMedia("(min-width: 1101px)");
+  const lb = document.getElementById("gal-lightbox");
+  const cards = [...document.querySelectorAll<HTMLElement>("#acontecimentos .gcard")];
+
+  if (lb && cards.length) {
+    const img = lb.querySelector<HTMLImageElement>(".lb-img")!;
+    const count = lb.querySelector<HTMLElement>(".lb-count")!;
+    const btnClose = lb.querySelector<HTMLButtonElement>(".lb-close")!;
+    const btnPrev = lb.querySelector<HTMLButtonElement>(".lb-prev")!;
+    const btnNext = lb.querySelector<HTMLButtonElement>(".lb-next")!;
+    let idx = 0;
+    let lastFocus: HTMLElement | null = null;
+
+    const srcOf = (card: HTMLElement) => {
+      const im = card.querySelector("img");
+      return im ? im.currentSrc || im.src : "";
+    };
+    const altOf = (card: HTMLElement) => {
+      const im = card.querySelector("img");
+      return im ? im.alt : "";
+    };
+    const show = (i: number) => {
+      idx = (i + cards.length) % cards.length;
+      img.src = srcOf(cards[idx]);
+      img.alt = altOf(cards[idx]);
+      count.textContent = idx + 1 + " / " + cards.length;
+    };
+    const open = (i: number) => {
+      if (!desktop.matches) return;
+      lastFocus = document.activeElement as HTMLElement;
+      show(i);
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lock");
+      btnClose.focus();
+    };
+    const close = () => {
+      lb.classList.remove("open");
+      lb.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("lock");
+      if (lastFocus) lastFocus.focus();
+    };
+
+    // Torna os cards interativos/acessíveis só no desktop.
+    const enable = (on: boolean) => {
+      cards.forEach((card) => {
+        if (on) {
+          card.setAttribute("role", "button");
+          card.setAttribute("tabindex", "0");
+        } else {
+          card.removeAttribute("role");
+          card.removeAttribute("tabindex");
+        }
+      });
+    };
+    enable(desktop.matches);
+
+    cards.forEach((card, i) => {
+      card.addEventListener("click", () => open(i));
+      card.addEventListener("keydown", (e) => {
+        if ((e.key === "Enter" || e.key === " ") && desktop.matches) {
+          e.preventDefault();
+          open(i);
+        }
+      });
+    });
+    btnClose.addEventListener("click", close);
+    btnPrev.addEventListener("click", () => show(idx - 1));
+    btnNext.addEventListener("click", () => show(idx + 1));
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    window.addEventListener("keydown", (e) => {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(idx - 1);
+      else if (e.key === "ArrowRight") show(idx + 1);
+    });
+    desktop.addEventListener("change", (e) => {
+      enable(e.matches);
+      if (!e.matches) close();
+    });
+  }
+</script>
