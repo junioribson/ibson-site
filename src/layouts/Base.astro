@@ -7,9 +7,12 @@ import { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } from "../data/content";
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  jsonLd?: unknown;
 }
 
-const { title = seo.title, description = seo.description } = Astro.props;
+const { title = seo.title, description = seo.description, ogImage, jsonLd } = Astro.props;
+const socialImage = ogImage ?? seo.ogImage;
 const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
 
 // Dados estruturados: diz ao Google que o site é sobre a PESSOA Ibson Junior,
@@ -60,14 +63,14 @@ const personSchema = {
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
     {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? personSchema)} />
 
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={seo.ogTitle} />
     <meta property="og:description" content={seo.ogDescription} />
-    <meta property="og:image" content={seo.ogImage} />
-    <meta property="og:url" content="https://ibsonjunior.com.br" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@IbsonJunior" />
     <meta name="twitter:creator" content="@IbsonJunior" />

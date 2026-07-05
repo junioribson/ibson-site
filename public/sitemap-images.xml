@@ -24,4 +24,8 @@
     <image:image><image:loc>https://ibsonjunior.com.br/assets/capas/valorizarte.png</image:loc></image:image>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/og/og-ibson.jpg</image:loc></image:image>
   </url>
+  <url>
+    <loc>https://ibsonjunior.com.br/artigos/o-tempo-e-um-oceano/</loc>
+    <image:image><image:loc>https://ibsonjunior.com.br/assets/artigos/ibson-junior-artigo-oceano.webp</image:loc></image:image>
+  </url>
 </urlset>

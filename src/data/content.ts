@@ -42,15 +42,15 @@ export const seo = {
 
 export const nav = {
   links: [
-    { href: "#sobre", label: "Sobre", id: "sobre" },
-    { href: "#cases", label: "Cases", id: "cases" },
-    { href: "#artigos", label: "Artigos", id: "artigos" },
-    { href: "#mentoria", label: "Mentoria", id: "mentoria" },
-    { href: "#palestras", label: "Palestras", id: "palestras" },
-    { href: "#videos", label: "Vídeos", id: "videos" },
-    { href: "#contato", label: "Contato", id: "contato" },
+    { href: "/#sobre", label: "Sobre", id: "sobre" },
+    { href: "/#cases", label: "Cases", id: "cases" },
+    { href: "/#artigos", label: "Artigos", id: "artigos" },
+    { href: "/#mentoria", label: "Mentoria", id: "mentoria" },
+    { href: "/#palestras", label: "Palestras", id: "palestras" },
+    { href: "/#videos", label: "Vídeos", id: "videos" },
+    { href: "/#contato", label: "Contato", id: "contato" },
   ],
-  cta: { href: "#contato", label: "Vamos nos conectar?" },
+  cta: { href: "/#contato", label: "Vamos nos conectar?" },
 };
 
 export const hero = {
@@ -227,6 +227,9 @@ export interface Article {
   readingTime: string;
   url: string;
   cover?: string | null;
+  // Quando o artigo já tem página própria no site (src/content/artigos/<slug>.md),
+  // o card aponta para /artigos/<slug> em vez do LinkedIn.
+  slug?: string;
 }
 
 const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/";
@@ -315,6 +318,7 @@ export const articles = {
       readingTime: "10 min",
       url: ART_URL.oceano,
       cover: "/assets/artigos/ibson-junior-artigo-oceano.webp",
+      slug: "o-tempo-e-um-oceano",
     },
     {
       category: "IA e discernimento",

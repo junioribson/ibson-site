@@ -27,7 +27,12 @@ const grads = [
     <div class="artgrid">
       {
         articles.list.map((a, i) => (
-          <a class="artcard reveal" href={a.url} target="_blank" rel="noopener">
+          <a
+            class="artcard reveal"
+            href={a.slug ? `/artigos/${a.slug}` : a.url}
+            target={a.slug ? undefined : "_blank"}
+            rel={a.slug ? undefined : "noopener"}
+          >
             <div class="art-cover">
               {a.cover ? (
                 <img loading="lazy" src={a.cover} alt={`Artigo de Ibson Junior: ${a.title}`} />
@@ -43,7 +48,7 @@ const grads = [
                 <span class="art-time">{a.readingTime}</span>
               </div>
               <h3>{a.title}</h3>
-              <span class="art-read">Ler artigo ↗</span>
+              <span class="art-read">Ler artigo {a.slug ? "→" : "↗"}</span>
             </div>
           </a>
         ))

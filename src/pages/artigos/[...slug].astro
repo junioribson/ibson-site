@@ -1,0 +1,129 @@
+---
+import { getCollection, render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const artigos = await getCollection("artigos");
+  return artigos.map((a) => ({ params: { slug: a.id }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const { Content } = await render(a);
+const d = a.data;
+const url = `https://ibsonjunior.com.br/artigos/${a.id}`;
+const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: d.title,
+  image: [coverAbs],
+  datePublished: d.dateISO,
+  dateModified: d.dateISO,
+  author: { "@type": "Person", name: "Ibson Junior", url: "https://ibsonjunior.com.br" },
+  publisher: { "@type": "Person", name: "Ibson Junior" },
+  mainEntityOfPage: { "@type": "WebPage", "@id": url },
+  description: d.excerpt,
+  articleSection: d.category,
+  inLanguage: "pt-BR",
+};
+---
+
+<Base
+  title={`${d.title} | Ibson Junior`}
+  description={d.excerpt}
+  ogImage={coverAbs}
+  jsonLd={articleSchema}
+>
+  <Nav />
+  <main id="top" class="artpage">
+    <article class="art">
+      <div class="wrap art-in">
+        <a class="art-back" href="/#artigos">‹ Artigos</a>
+        <div class="art-cat">{d.category}</div>
+        <h1 class="art-title">{d.title}</h1>
+        <div class="art-byline">
+          <span>Por <strong>Ibson Junior</strong></span>
+          <span class="art-dot">·</span>
+          <time datetime={d.dateISO}>{d.date}</time>
+          <span class="art-dot">·</span>
+          <span>{d.readingTime} de leitura</span>
+        </div>
+        <div class="art-cover">
+          <img src={d.cover} alt={`Ibson Junior, artigo: ${d.title}`} width="1200" height="628" loading="eager" />
+        </div>
+        <div class="art-body">
+          <Content />
+        </div>
+        <div class="art-foot">
+          <a class="art-li" href={d.linkedinUrl} target="_blank" rel="noopener">Ver o original no LinkedIn ↗</a>
+          <a class="art-more" href="/#artigos">Ver mais artigos</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  <Footer />
+</Base>
+
+<style>
+  .artpage { padding-top: 92px; }
+  .art-in { max-width: 760px; padding-top: 40px; padding-bottom: 80px; }
+  .art-back {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
+    color: #db6bff; display: inline-block; margin-bottom: 26px;
+  }
+  .art-cat {
+    font-family: var(--font-sans); font-weight: 800; font-size: 12.5px;
+    text-transform: uppercase; letter-spacing: 0.02em; color: #db6bff;
+    text-shadow: 0 0 16px rgba(219, 107, 255, 0.5); margin-bottom: 14px;
+  }
+  .art-title {
+    font-size: clamp(30px, 5vw, 52px); font-weight: 800; letter-spacing: -0.035em;
+    line-height: 1.06; color: #fff; max-width: 20ch;
+  }
+  .art-byline {
+    margin-top: 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-soft);
+  }
+  .art-byline strong { color: #fff; font-weight: 700; }
+  .art-dot { opacity: 0.5; }
+  .art-cover {
+    margin: 34px 0 12px; border-radius: 14px; overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 66px -34px rgba(0, 0, 0, 0.85);
+  }
+  .art-cover img { display: block; width: 100%; height: auto; }
+
+  /* Tipografia de leitura */
+  .art-body { margin-top: 30px; }
+  .art-body :global(p) {
+    font-size: clamp(17px, 1.35vw, 19px); line-height: 1.78;
+    color: #e7dcc6; margin: 0 0 24px; max-width: 68ch;
+  }
+  .art-body :global(p:first-of-type) {
+    font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; color: #fff; font-weight: 500;
+  }
+  .art-body :global(h2) {
+    font-size: clamp(22px, 2.6vw, 30px); font-weight: 800; letter-spacing: -0.025em;
+    line-height: 1.18; color: #fff; margin: 46px 0 16px; max-width: 26ch;
+  }
+  .art-body :global(blockquote) {
+    margin: 32px 0; padding: 4px 0 4px 24px; border-left: 3px solid #db6bff;
+    font-size: clamp(19px, 1.7vw, 23px); line-height: 1.5; color: #fff; font-weight: 600;
+  }
+  .art-body :global(a) { color: #db6bff; text-decoration: underline; text-underline-offset: 3px; }
+  .art-body :global(strong) { color: #fff; }
+  .art-body :global(em) { color: #f0e6d4; }
+  .art-body :global(ul), .art-body :global(ol) { margin: 0 0 24px; padding-left: 24px; }
+  .art-body :global(li) { font-size: 18px; line-height: 1.7; color: #e7dcc6; margin-bottom: 8px; }
+
+  .art-foot {
+    margin-top: 48px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+  }
+  .art-li { color: #db6bff; font-weight: 800; font-size: 14px; text-shadow: 0 0 16px rgba(219, 107, 255, 0.45); }
+  .art-more { color: var(--ink-soft); font-weight: 700; font-size: 14px; }
+  @media (max-width: 620px) { .artpage { padding-top: 80px; } .art-in { padding-bottom: 60px; } }
+</style>
