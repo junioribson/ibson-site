@@ -25,7 +25,7 @@ Y cuando el repertorio se encoge, la persona no pierde apenas creatividad. Pierd
 
 > En otras palabras: la mente que nunca descansa nunca crea de verdad. Apenas ejecuta.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.png" alt="Ejecutivo pensativo ante el laptop con la frase 'mucho movimiento, poca presencia' y una agenda llena al fondo. Ilustración del artículo de Ibson Junior sobre cuando la profesión se vuelve identidad." loading="lazy" width="709" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.png" alt="Ejecutivo pensativo ante el laptop con la frase 'mucho movimiento, poca presencia' y una agenda llena al fondo. Ilustración del artículo de Ibson Junior sobre cuando la profesión se vuelve identidad." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
 
 Y la ejecución sin conciencia, por más eficiente que parezca, sigue siendo apenas movimiento.
 
@@ -39,7 +39,7 @@ Es claro que es legítimo y necesario enfocarse en metas para crecer, así como 
 
 Cuando eso sucede, la carrera deja de ser camino y pasa a ser celda, aunque tenga credencial bonita, salario alto y agenda llena.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.png" alt="Ejecutiva mirando la ciudad por la ventana con la frase 'no toda prisión parece una prisión' y una agenda repleta, metáfora de la rutina que aprisiona. Artículo de Ibson Junior sobre identidad y trabajo." loading="lazy" width="713" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.png" alt="Ejecutiva mirando la ciudad por la ventana con la frase 'no toda prisión parece una prisión' y una agenda repleta, metáfora de la rutina que aprisiona. Artículo de Ibson Junior sobre identidad y trabajo." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
 
 En ese punto, cualquier conquista genera alivio momentáneo, pero no realización. Es como si estuviéramos en un videojuego adictivo, activando nuestro sistema dopaminérgico siempre en busca de recompensas inmediatas, pero que nunca alcanza un propósito mayor y nunca nos deja satisfechos. La meta siguiente ya está posicionada antes incluso de que la anterior sea digerida. Y lo que parecía un camino va revelando su naturaleza real: una cinta. Estás dentro. Estás en movimiento. Pero ya no estás en el control, en la gobernanza de la propia vida.
 
@@ -87,7 +87,7 @@ Encarar esa historia con madurez me ayudó a salir de la negación emocional y a
 
 Hoy entiendo que el autoconocimiento no borra la historia. Cambia la relación que tenemos con ella.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.png" alt="Hombre observando un cuaderno con el dibujo de infancia de un cohete y la frase 'todavía existe alguien más allá de la credencial'. Ilustración del artículo de Ibson Junior sobre cuando la profesión se vuelve identidad." loading="lazy" width="712" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.png" alt="Hombre observando un cuaderno con el dibujo de infancia de un cohete y la frase 'todavía existe alguien más allá de la credencial'. Ilustración del artículo de Ibson Junior sobre cuando la profesión se vuelve identidad." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
 
 **Mi crecimiento profesional se volvió cada vez mayor y más visible a medida que salí del automático, me conocí mejor como persona y pasé a verme más allá de las entregas y del cotidiano profesional inmediato.**
 

@@ -43,7 +43,7 @@ O meio precisa munir o topo de informações sobre a operação. O topo, por sua
 
 O conselho traz o referencial externo que nenhuma das partes visualiza: nem operação, nem meio, nem topo. A bagagem, a experiência e a alteridade desses membros qualifica as informações para tomada de decisão.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.png" alt="Sala de conselho com executivos ao redor da mesa e a marca de Ibson Junior ao centro, sob os pilares qualidade, protocolo e norte. Ilustração do artigo de Ibson Junior sobre a qualidade da decisão na governança." loading="lazy" width="606" height="400" /><figcaption>Um conselho não impõe direção. Ele ilumina o critério. No silêncio estratégico entre qualidade, protocolo e norte, decisões deixam de ser impulsos e passam a ser arquitetura.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.png" alt="Sala de conselho com executivos ao redor da mesa e a marca de Ibson Junior ao centro, sob os pilares qualidade, protocolo e norte. Ilustração do artigo de Ibson Junior sobre a qualidade da decisão na governança." loading="lazy" width="606" style="max-width:606px" height="400" /><figcaption>Um conselho não impõe direção. Ele ilumina o critério. No silêncio estratégico entre qualidade, protocolo e norte, decisões deixam de ser impulsos e passam a ser arquitetura.</figcaption></figure>
 
 ## Conselho: catalisador de qualidade, protocolo e norte
 
@@ -69,7 +69,7 @@ Esse processo coincidiu com o auge da pandemia, quando grande parte do mercado a
 
 > Clareza de critério precedeu qualquer crescimento.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.jpg" alt="Infográfico do recorde histórico do BolaVIP: mais de 1 bilhão de sessões em 2022 (1.001.449.743), a mídia esportiva digital mais lida do Brasil, da FutbolSites. Referência no artigo de Ibson Junior sobre governança e decisão." loading="lazy" width="1000" height="1000" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.jpg" alt="Infográfico do recorde histórico do BolaVIP: mais de 1 bilhão de sessões em 2022 (1.001.449.743), a mídia esportiva digital mais lida do Brasil, da FutbolSites. Referência no artigo de Ibson Junior sobre governança e decisão." loading="lazy" width="1000" style="max-width:1000px" height="1000" /></figure>
 
 O resultado veio em 2022, quando alcançamos a marca de 1 bilhão de sessões e consolidamos o Bolavip como líder de audiência em mídia esportiva digital no Brasil e na América Latina, ultrapassando concorrentes tradicionais. O crescimento tornou-se visível. A arquitetura já existia antes dele.
 

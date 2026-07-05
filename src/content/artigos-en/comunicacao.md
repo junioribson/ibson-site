@@ -41,7 +41,7 @@ To speak is not the same as to be understood. Communication is part of the manag
 
 It is precisely at this point that two inseparable fronts come in: **the framework and the playbook.**
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.png" alt="Diagram comparing the strategic framework (vision, strategy, goals and priorities) and the operation's playbook, a team in a meeting. Illustration from Ibson Junior's article on communication and governance." loading="lazy" width="615" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.png" alt="Diagram comparing the strategic framework (vision, strategy, goals and priorities) and the operation's playbook, a team in a meeting. Illustration from Ibson Junior's article on communication and governance." loading="lazy" width="615" style="max-width:615px" height="400" /></figure>
 
 The framework represents the vision. Where the company wants to go. What the strategic purpose is. What the real priorities are. What is at the center and what is on the periphery. The playbook, in turn, is what brings this vision to life. It is the mechanism that translates strategic thinking into everyday practice.
 

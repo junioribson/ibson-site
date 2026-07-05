@@ -29,7 +29,7 @@ A evolução digital não aconteceu em ruptura, mas em doses. Da internet dos pr
 
 A pandemia da dependência digital não respeita fronteiras entre o pessoal e o profissional e está nos esgotando por inteiro. **Pior: estamos mais superficiais, menos criativos e perdendo profundidade nas decisões que tomamos, nos vínculos que formamos.** Como poderemos levar a humanidade adiante, pensar e levar a cabo tantos planos, se nossos níveis de atenção, aprendizado e empatia estão sendo diretamente impactados por isso?
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-dependencia-digital-trabalho.png" alt="Homem e mulher cercados por ícones de aplicativos e notificações, simbolizando a dependência digital entre vida pessoal e profissional. Ilustração do artigo de Ibson Junior sobre cérebro podre (brainrot) e atenção." loading="lazy" width="954" height="912" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-dependencia-digital-trabalho.png" alt="Homem e mulher cercados por ícones de aplicativos e notificações, simbolizando a dependência digital entre vida pessoal e profissional. Ilustração do artigo de Ibson Junior sobre cérebro podre (brainrot) e atenção." loading="lazy" width="954" style="max-width:954px" height="912" /></figure>
 
 ## O dia não está cheio, ele foi tomado de nós
 
@@ -57,7 +57,7 @@ A ciência comprova que o chamado *multitasking*, ou cérebro multitarefa, é um
 
 O resultado é o oposto da produtividade: a sobrecarga cognitiva afeta toda a atividade profissional e o próprio tecido da comunicação, da cultura e das decisões da empresa, em todos os níveis.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-brainrot-corporativo-infografico.png" alt="Infográfico do artigo de Ibson Junior sobre brainrot corporativo: o multitasking organizacional custa US$ 450 bilhões por ano e até 40% da produtividade, segundo estudo da consultoria Realization com 45 empresas." loading="lazy" width="744" height="397" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-brainrot-corporativo-infografico.png" alt="Infográfico do artigo de Ibson Junior sobre brainrot corporativo: o multitasking organizacional custa US$ 450 bilhões por ano e até 40% da produtividade, segundo estudo da consultoria Realization com 45 empresas." loading="lazy" width="744" style="max-width:744px" height="397" /></figure>
 
 ## Brainrot corporativo: os impactos das reuniões placebo e da atenção fragmentada
 
@@ -71,7 +71,7 @@ Na vida corporativa, somam-se a esses os impactos do excesso de reuniões placeb
 
 Esse não é apenas um problema de eficiência. É um problema de comando. Cada reunião desnecessária redistribui atenção, dilui prioridade e enfraquece a clareza sobre o que realmente importa. Ao final, não se trata de excesso de comunicação, mas de perda de direção.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-reunioes-improdutivas-infografico.png" alt="Infográfico do artigo de Ibson Junior sobre o custo invisível das reuniões improdutivas: US$ 259 bilhões por ano nos Estados Unidos e o impacto da diversidade geracional, com base em pesquisa da London School of Economics (LSE)." loading="lazy" width="872" height="1500" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-cerebro-podre-reunioes-improdutivas-infografico.png" alt="Infográfico do artigo de Ibson Junior sobre o custo invisível das reuniões improdutivas: US$ 259 bilhões por ano nos Estados Unidos e o impacto da diversidade geracional, com base em pesquisa da London School of Economics (LSE)." loading="lazy" width="872" style="max-width:872px" height="1500" /></figure>
 
 Em outubro de 2024, pesquisadores do *The Inclusion Initiative*, da London School of Economics (LSE), publicaram um levantamento com mais de 3.400 profissionais e chegaram a um número difícil de ignorar. [Reuniões improdutivas custam às empresas norte-americanas US$ 259 bilhões por ano. No Reino Unido, as perdas são da ordem de £50 bilhões.](https://www.linkedin.com/redir/redirect?url=https%3A%2F%2Fwww%2Else%2Eac%2Euk%2Fnews%2Flatest-news-from-lse%2Fj-october-2024%2Fmore-than-a-third-of-business-meetings-are-unproductive-due-to-a-lack-of-generational-diversity&urlhash=BBwG&trk=article-ssr-frontend-pulse_little-text-block) Mais de um terço de todas as reuniões corporativas são consideradas improdutivas pelos próprios participantes.
 

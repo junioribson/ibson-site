@@ -23,13 +23,13 @@ There is an observable tension in this context: on one side, strategy as rhetori
 
 Strategy is not what impresses during the presentation. It is not the pretty slide, the special effect, the mere narrative adjusted to the brand. It does not reveal itself at the moment of formulation, but in the consistency of the decisions that follow.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.png" alt="Illustration of a man digging several holes after bags of money, a metaphor for the shortcuts and immediate gains that weaken strategy. Ibson Junior's article on strategy and decision." loading="lazy" width="600" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.png" alt="Illustration of a man digging several holes after bags of money, a metaphor for the shortcuts and immediate gains that weaken strategy. Ibson Junior's article on strategy and decision." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
 
 > Strategy is the ability to sustain a direction over time, even when the environment pressures for changes.
 
 Strategic guidelines require reading the scenario, sensitivity, breadth of vision and, above all, the capacity for permanence. It is not enough to create a direction in a moment of clarity. You have to maintain it when the wind changes, when the temperature rises, when noise, crises, opportunities and temptations arise.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.png" alt="Illustration of a man at the helm of a boat in the middle of a storm, looking through binoculars, a metaphor for sustaining strategic direction under pressure. Ibson Junior's article on strategy." loading="lazy" width="605" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.png" alt="Illustration of a man at the helm of a boat in the middle of a storm, looking through binoculars, a metaphor for sustaining strategic direction under pressure. Ibson Junior's article on strategy." loading="lazy" width="605" style="max-width:605px" height="400" /></figure>
 
 There is a rarely addressed point when it comes to strategy: **emotional sustainment**. Deciding a path is relatively simple. Sustaining that path when doubts, pressures and seemingly better alternatives arise requires emotional maturity. Emotional intelligence, in this context, is not a soft skill. It is a strategic discipline. Without it, any well-defined direction becomes vulnerable at the first sign of discomfort.
 
@@ -49,7 +49,7 @@ Today, however, what is seen in many companies is exactly the opposite. **Organi
 
 In many companies, what is called strategy is already just instinct trying to look like sophistication.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.png" alt="Illustration of a team buried by reports and arrows pointing in all directions, a metaphor for decisions reactive to market noise. Ibson Junior's article on strategy and tactics." loading="lazy" width="600" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.png" alt="Illustration of a team buried by reports and arrows pointing in all directions, a metaphor for decisions reactive to market noise. Ibson Junior's article on strategy and tactics." loading="lazy" width="600" style="max-width:600px" height="400" /></figure>
 
 Every strategy can be improved, refined and deepened. It works like a compass on the open sea. It is not the map drawn before the voyage that guarantees the course, but the ability to keep it when the wind changes, when the current is against you and when the horizon is a fog. That is when you discover whether there was direction or just intention.
 
@@ -99,6 +99,6 @@ When the environment starts to pressure, when execution exposes the limits of th
 
 Strategy does not fail when the plan meets difficulty. It fails when leadership loses the courage to sustain what it defined as direction.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.png" alt="Illustration of a chessboard with the opponent's king toppled, a metaphor for the strategic decision that sustains direction. Ibson Junior's article on strategy and governance." loading="lazy" width="597" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.png" alt="Illustration of a chessboard with the opponent's king toppled, a metaphor for the strategic decision that sustains direction. Ibson Junior's article on strategy and governance." loading="lazy" width="597" style="max-width:597px" height="400" /></figure>
 
 And perhaps that is why the most relevant question is not about the quality of the plan, but about the consistency of the decisions that come after. What really defines strategy in organizations: **the plan that is built or the consistency of the decisions that are sustained over time?**

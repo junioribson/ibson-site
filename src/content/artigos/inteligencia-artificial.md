@@ -31,7 +31,7 @@ A conta dessa grande estafa já está chegando, mas quem irá pagá-la? De acord
 
 **A fatura não é meramente individual, mas coletiva, e as empresas têm muito a ver com isso.** Porém, o autoconhecimento, o autodomínio e a inteligência emocional no nível individual são fundamentais para o efeito cascata dos comportamentos.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.png" alt="Comparação entre uma conversa presencial acolhedora e uma reunião por vídeo, sobre escuta e empatia na liderança. Ilustração do artigo de Ibson Junior sobre inteligência artificial e inteligência emocional." loading="lazy" width="600" height="400" /><figcaption>Liderança que escuta e acolhe abre caminhos que a autoridade nunca alcança.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.png" alt="Comparação entre uma conversa presencial acolhedora e uma reunião por vídeo, sobre escuta e empatia na liderança. Ilustração do artigo de Ibson Junior sobre inteligência artificial e inteligência emocional." loading="lazy" width="600" style="max-width:600px" height="400" /><figcaption>Liderança que escuta e acolhe abre caminhos que a autoridade nunca alcança.</figcaption></figure>
 
 ## O papel da liderança: perceber, acolher, orientar
 

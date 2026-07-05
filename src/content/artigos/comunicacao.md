@@ -41,7 +41,7 @@ Falar não é o mesmo que ser compreendido. A comunicação integra a infraestru
 
 É justamente nesse ponto que entram duas frentes indissociáveis: **o framework e o playbook.**
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.png" alt="Diagrama comparando o framework estratégico (visão, estratégia, metas e prioridades) e o playbook da operação, uma equipe em reunião. Ilustração do artigo de Ibson Junior sobre comunicação e governança." loading="lazy" width="615" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.png" alt="Diagrama comparando o framework estratégico (visão, estratégia, metas e prioridades) e o playbook da operação, uma equipe em reunião. Ilustração do artigo de Ibson Junior sobre comunicação e governança." loading="lazy" width="615" style="max-width:615px" height="400" /></figure>
 
 O framework representa a visão. Onde a empresa quer chegar. Qual é a finalidade estratégica. Quais são as prioridades reais. O que está no centro e o que está na periferia. Já o playbook é o que dá vida a essa visão. É o mecanismo que traduz o pensamento estratégico em prática cotidiana.
 

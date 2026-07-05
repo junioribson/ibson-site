@@ -186,24 +186,21 @@ const articleSchema = {
   .art-body :global(ul), .art-body :global(ol) { margin: 0 0 24px; padding-left: 24px; }
   .art-body :global(li) { font-size: 18px; line-height: 1.7; color: var(--text); margin-bottom: 8px; }
 
-  .art-body :global(figure.art-fig) { margin: 34px 0; }
+  .art-body :global(figure.art-fig) { margin: 34px 0; text-align: center; }
+  /* As figuras NUNCA são ampliadas além da resolução nativa, para não pixelizar.
+     Cada <img> traz um max-width em px igual à sua largura nativa (injetado no
+     markdown), então em telas largas ela para no tamanho real e centraliza; em
+     telas estreitas reduz (width:100%). width:100% + width/height reservam o
+     espaço, sem salto de layout. */
   .art-body :global(figure.art-fig img) {
-    display: block; width: 100%; height: auto; border-radius: 12px;
+    display: block; width: 100%; max-width: 100%; height: auto;
+    margin: 0 auto; border-radius: 12px;
     border: 1px solid var(--line);
     box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.85);
   }
   .art-body :global(figure.art-fig figcaption) {
     margin-top: 12px; font-family: var(--font-mono); font-size: 12.5px;
     letter-spacing: 0.02em; line-height: 1.5; color: var(--ink-soft); text-align: center;
-  }
-  /* Em telas largas, a capa e as figuras "vazam" um pouco além do texto,
-     dando respiro e reduzindo a sensação de faixa estreita no centro. */
-  @media (min-width: 1024px) {
-    .art-cover, .art-body :global(figure.art-fig) {
-      width: min(100% + 160px, 92vw);
-      margin-left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   .art-foot {

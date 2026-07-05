@@ -25,7 +25,7 @@ Without a rich inner life, mental space for creative idleness, personal projects
 
 > In other words: the mind that never rests never truly creates. It only executes.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.png" alt="A pensive executive in front of a laptop with the phrase 'a lot of movement, little presence' and a full agenda in the background. Illustration from Ibson Junior's article on when profession becomes identity." loading="lazy" width="709" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.png" alt="A pensive executive in front of a laptop with the phrase 'a lot of movement, little presence' and a full agenda in the background. Illustration from Ibson Junior's article on when profession becomes identity." loading="lazy" width="709" style="max-width:709px" height="400" /></figure>
 
 And execution without consciousness, however efficient it may seem, remains just movement.
 
@@ -39,7 +39,7 @@ It is clear that it is legitimate and necessary to focus on goals to grow, as we
 
 When this happens, the career stops being a path and becomes a cell, even if it has a beautiful badge, a high salary and a full agenda.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.png" alt="An executive woman looking at the city through the window with the phrase 'not every prison looks like a prison' and a full agenda, a metaphor for the routine that imprisons. Ibson Junior's article on identity and work." loading="lazy" width="713" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.png" alt="An executive woman looking at the city through the window with the phrase 'not every prison looks like a prison' and a full agenda, a metaphor for the routine that imprisons. Ibson Junior's article on identity and work." loading="lazy" width="713" style="max-width:713px" height="400" /></figure>
 
 At this point, any achievement generates momentary relief, but not fulfillment. It is as if we were in an addictive video game, activating our dopaminergic system always in search of immediate rewards, but which never reaches a greater purpose and never leaves us satisfied. The next goal is already positioned before the previous one is even digested. And what seemed like a path gradually reveals its real nature: a treadmill. You are inside. You are in motion. But you are no longer in control, in governance of your own life.
 
@@ -87,7 +87,7 @@ Facing this story with maturity helped me to leave emotional denial and to know 
 
 Today I understand that self-knowledge does not erase the story. It changes the relationship we have with it.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.png" alt="A man looking at a notebook with a childhood drawing of a rocket and the phrase 'there is still someone beyond the badge'. Illustration from Ibson Junior's article on when profession becomes identity." loading="lazy" width="712" height="400" /></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.png" alt="A man looking at a notebook with a childhood drawing of a rocket and the phrase 'there is still someone beyond the badge'. Illustration from Ibson Junior's article on when profession becomes identity." loading="lazy" width="712" style="max-width:712px" height="400" /></figure>
 
 **My professional growth became increasingly greater and more visible as I stepped out of autopilot, got to know myself better as a person and began to see myself beyond deliveries and the immediate professional everyday.**
 

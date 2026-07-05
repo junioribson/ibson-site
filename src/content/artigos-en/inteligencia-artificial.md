@@ -31,7 +31,7 @@ The bill for this great exhaustion is already arriving, but who will pay it? Acc
 
 **The bill is not merely individual, but collective, and companies have a lot to do with it.** However, self-knowledge, self-mastery and emotional intelligence at the individual level are fundamental for the cascade effect of behaviors.
 
-<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.png" alt="Comparison between a warm in-person conversation and a video meeting, about listening and empathy in leadership. Illustration from Ibson Junior's article on artificial intelligence and emotional intelligence." loading="lazy" width="600" height="400" /><figcaption>Leadership that listens and welcomes opens paths that authority never reaches.</figcaption></figure>
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.png" alt="Comparison between a warm in-person conversation and a video meeting, about listening and empathy in leadership. Illustration from Ibson Junior's article on artificial intelligence and emotional intelligence." loading="lazy" width="600" style="max-width:600px" height="400" /><figcaption>Leadership that listens and welcomes opens paths that authority never reaches.</figcaption></figure>
 
 ## The role of leadership: perceive, welcome, guide
 
