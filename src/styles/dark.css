@@ -17,13 +17,13 @@ nav.scrolled {
   background: var(--scrim);
   box-shadow: 0 1px 0 var(--line);
 }
-.brand b { color: var(--cream); }
+.brand b { color: var(--heading); }
 .brand .bs { color: var(--text-dim); }
 .hamb { border-color: var(--line); }
 .hamb span { background: var(--cream); }
 .nav-cta { background: var(--violet); }
 .nav-cta:hover { background: var(--violet-2); }
-.nav-li { border-color: var(--line); color: var(--cream); }
+.nav-li { border-color: var(--line); color: var(--heading); }
 
 /* ---- HERO ---- */
 .hx {
@@ -41,7 +41,7 @@ nav.scrolled {
 .hx-mark path { fill: var(--violet); }
 .hx-btn-fill { background: var(--violet); color: #fff; }
 .hx-btn-fill::before { background: linear-gradient(100deg, var(--violet-2), var(--magenta)); }
-.hx-btn-line { border-color: var(--line-strong); color: var(--cream); }
+.hx-btn-line { border-color: var(--line-strong); color: var(--heading); }
 .hx-btn-line:hover { border-color: var(--heading); background: var(--panel-2); }
 .hx-scroll { color: var(--text-dim); }
 .hx-scroll-line { background: rgba(255, 255, 255, 0.4); }
@@ -91,7 +91,7 @@ nav.scrolled {
 .casecard .cc-tag { color: var(--gold); }
 .casecard h3 { color: var(--heading); }
 .casecard p { color: var(--text-soft); }
-.casecard .cc-cta { border-color: var(--line-strong); color: var(--cream); }
+.casecard .cc-cta { border-color: var(--line-strong); color: var(--heading); }
 .casecard .cc-cta:hover { background: var(--violet); border-color: var(--violet); color: #fff; }
 
 /* Sobre */
@@ -118,7 +118,7 @@ nav.scrolled {
 .artcard { background: var(--panel); }
 .art-body h3 { color: var(--heading); }
 .art-time { color: var(--text-dim); }
-.arts-foot a { color: var(--cream); }
+.arts-foot a { color: var(--accent); }
 
 /* Repertório (marrom): manter, texto já claro */
 .repo.repertorio { border-top: 1px solid var(--line); }
@@ -136,7 +136,7 @@ nav.scrolled {
 .vcard h3 { color: var(--heading); }
 
 /* Botões utilitários no escuro */
-.btn-line { border-color: var(--line-strong); color: var(--cream); }
+.btn-line { border-color: var(--line-strong); color: var(--heading); }
 .btn-line:hover { background: var(--cream); color: #150026; }
 .btn-fill { background: var(--violet); color: #fff; }
 .btn-fill:hover { background: var(--violet-2); }
