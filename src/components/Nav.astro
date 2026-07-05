@@ -157,13 +157,6 @@ const homeHref = localizePath("/", locale);
     if (e.key === "Escape") closeMenu();
   });
 
-  // Ao escolher um idioma nas bandeiras, guarda a preferência (a autodetecção respeita).
-  document.querySelectorAll<HTMLAnchorElement>("[data-lang]").forEach((a) => {
-    a.addEventListener("click", () => {
-      try { localStorage.setItem("lang", a.dataset.lang || ""); } catch (e) {}
-    });
-  });
-
   // Link ativo conforme a seção visível (ids são iguais em todos os idiomas)
   const navLinks = [...document.querySelectorAll<HTMLAnchorElement>(".nav-links a")];
   const ids = navLinks.map((l) => l.dataset.s).filter(Boolean) as string[];
