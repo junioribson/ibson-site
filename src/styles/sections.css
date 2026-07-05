@@ -965,9 +965,17 @@ footer { background: var(--night); color: var(--text-soft); padding: 66px 0 40px
 /* Realce de contraste em rótulos monoespaçados (legibilidade) */
 .shead .lbl { color: #6b5947; }
 
-/* Logo do case (ex.: Futmarketing) no topo do card, com respiro */
-.casecard .cc-logo { height: 60px; width: auto; display: block; margin-bottom: 22px; }
-@media (max-width: 600px) { .casecard .cc-logo { height: 50px; } }
+/* Logo do case (ex.: Futmarketing) no topo do card, com respiro.
+   Chip ESCURO (a marca tem texto branco + símbolo lime): espelha a dinâmica do
+   chip claro da logo WolfLife (cantos arredondados + sombra), garantindo o mesmo
+   destaque nos dois temas. */
+.casecard .cc-logo {
+  box-sizing: content-box;
+  height: 54px; width: auto; display: block; margin-bottom: 24px;
+  padding: 14px 18px; background: #15121b; border-radius: 12px;
+  box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.55);
+}
+@media (max-width: 600px) { .casecard .cc-logo { height: 48px; padding: 12px 16px; } }
 
 /* ==========================================================================
    LINGUAGEM CINEMATOGRÁFICA v4: luz dramática (dourado + violeta) nos blocos.
