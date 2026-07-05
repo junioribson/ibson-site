@@ -19,6 +19,17 @@ export default defineConfig({
         defaultLocale: 'pt',
         locales: { pt: 'pt-BR', es: 'es', en: 'en' },
       },
+      changefreq: 'weekly',
+      priority: 0.7,
+      // Prioridade/frequencia por tipo de pagina (ajuda o crawler a priorizar).
+      serialize(item) {
+        const path = item.url.replace('https://ibsonjunior.com.br', '');
+        if (path === '/') { item.priority = 1.0; item.changefreq = 'weekly'; }
+        else if (path === '/es/' || path === '/en/') { item.priority = 0.9; item.changefreq = 'weekly'; }
+        else if (path === '/artigos/' || path === '/es/artigos/' || path === '/en/artigos/') { item.priority = 0.8; item.changefreq = 'weekly'; }
+        else if (path.includes('/artigos/')) { item.priority = 0.75; item.changefreq = 'monthly'; }
+        return item;
+      },
     }),
   ],
   vite: {

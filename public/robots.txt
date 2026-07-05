@@ -1,4 +1,43 @@
+# robots.txt — ibsonjunior.com.br
+# Site aberto para indexação. Buscadores de IA (GEO) são bem-vindos: queremos
+# que o Ibson seja encontrado e citado por Google, ChatGPT, Perplexity, Gemini,
+# Claude e afins.
+
 User-agent: *
+Allow: /
+
+# Buscadores tradicionais
+User-agent: Googlebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# Buscadores / rastreadores de IA (permitidos de propósito)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Meta-ExternalAgent
 Allow: /
 
 Sitemap: https://ibsonjunior.com.br/sitemap-index.xml

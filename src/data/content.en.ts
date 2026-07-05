@@ -31,7 +31,7 @@ export const GSC_VERIFICATION = "";
 export const seo = {
   title: "Ibson Junior | Judgment, Leadership and Decision",
   description:
-    "Ibson Junior: content, leadership and communication executive. Articles, talks and mentoring to decide with judgment amid AI, noise and pressure.",
+    "Ibson Junior: content, leadership and communication executive. Keynote talks, executive mentoring and advisory on personal branding, communication, culture, team development, AI and decision-making.",
   ogTitle:
     "Ibson Junior | Judgment, leadership and decision in complex times",
   ogDescription:

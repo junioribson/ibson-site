@@ -31,7 +31,7 @@ export const GSC_VERIFICATION = "";
 export const seo = {
   title: "Ibson Junior | Criterio, Liderazgo y Decisión",
   description:
-    "Ibson Junior: ejecutivo de contenido, liderazgo y comunicación. Artículos, charlas y mentorías para decidir con criterio en medio de la IA, el ruido y la presión.",
+    "Ibson Junior: ejecutivo de contenido, liderazgo y comunicación. Charlas, mentoría ejecutiva y consejo sobre marca personal, comunicación, cultura, desarrollo de equipos, IA y toma de decisiones.",
   ogTitle:
     "Ibson Junior | Criterio, liderazgo y decisión en tiempos complejos",
   ogDescription:

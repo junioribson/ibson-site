@@ -3,7 +3,8 @@ import "../styles/fonts.css";
 import "../styles/global.css";
 import "../styles/sections.css";
 import "../styles/dark.css";
-import { getContent, normalizeLocale, htmlLang, localizePath, LANGS } from "../i18n/utils";
+import { getContent, normalizeLocale, htmlLang, localizePath, LANGS, stripLocale } from "../i18n/utils";
+import { siteGraph } from "../data/schema";
 
 interface Props {
   title?: string;
@@ -17,6 +18,7 @@ const { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } = getContent(locale);
 const { title = seo.title, description = seo.description, ogImage, jsonLd } = Astro.props;
 const socialImage = ogImage ?? seo.ogImage;
 const canonical = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
+const isHome = stripLocale(Astro.url.pathname) === "/";
 const alternates = LANGS.map((l) => ({
   hreflang: l.htmlLang,
   href: new URL(localizePath(Astro.url.pathname, l.code), "https://ibsonjunior.com.br").href,
@@ -82,8 +84,9 @@ const personSchema = {
     <link rel="apple-touch-icon" href="/favicon-180.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Ibson Junior — Artigos" href="https://ibsonjunior.com.br/rss.xml" />
     {alternates.map((a) => (<link rel="alternate" hreflang={a.hreflang} href={a.href} />))}
     <link rel="alternate" hreflang="x-default" href="https://ibsonjunior.com.br/" />
     {/* SEM redirecionamento automático de idioma. Cada versão vive numa URL
@@ -91,7 +94,7 @@ const personSchema = {
        e indexarem exatamente a URL certa. A relação entre elas é declarada pelo
        hreflang acima; a troca de idioma é manual (bandeiras no topo). */}
     {GSC_VERIFICATION && <meta name="google-site-verification" content={GSC_VERIFICATION} />}
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd ?? (isHome ? siteGraph(locale) : personSchema))} />
 
 
     <meta property="og:type" content="website" />
