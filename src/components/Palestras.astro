@@ -1,7 +1,7 @@
 ---
 // Palestras: cards cinematográficos com imagem de fundo + texto sobreposto.
 // Clima de noite (lua + estrelas). Sem inventar histórico.
-import { getContent } from "../i18n/utils";
+import { getContent, imgDims } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { talks } = getContent(Astro.currentLocale);
 const ui = t(Astro.currentLocale);
@@ -34,7 +34,7 @@ const ui = t(Astro.currentLocale);
           <article class="pcard">
             <div class="pcard-media">
               {th.cover ? (
-                <img class="pcard-img" loading="lazy" src={th.cover} alt="" />
+                <img class="pcard-img" loading="lazy" src={th.cover} {...imgDims(th.cover)} alt="" />
               ) : (
                 <div class="pcard-img pcard-ph" />
               )}

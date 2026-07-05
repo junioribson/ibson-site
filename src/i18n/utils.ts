@@ -2,6 +2,7 @@
 import * as ptContent from "../data/content";
 import * as esContent from "../data/content.es";
 import * as enContent from "../data/content.en";
+import imageDims from "../data/image-dims.json";
 
 export type Locale = "pt" | "es" | "en";
 export const LOCALES: Locale[] = ["pt", "es", "en"];
@@ -65,4 +66,14 @@ export function articlesCollection(locale?: string | null): "artigos" | "artigos
 export function localeFromPath(pathname: string): Locale {
   const m = pathname.match(/^\/(es|en)(\/|$)/);
   return m ? (m[1] as Locale) : DEFAULT_LOCALE;
+}
+
+// Dimensões intrínsecas (largura/altura) de uma imagem de /public/assets, para
+// reservar o espaço no layout (evita CLS) e satisfazer a auditoria do Lighthouse.
+// O mapa é gerado por script a partir dos arquivos reais. Se a imagem não estiver
+// no mapa, devolve objeto vazio (não adiciona atributos, sem quebrar nada).
+const DIMS = imageDims as Record<string, [number, number]>;
+export function imgDims(src?: string | null): { width?: number; height?: number } {
+  const d = src ? DIMS[src.split("?")[0]] : undefined;
+  return d ? { width: d[0], height: d[1] } : {};
 }

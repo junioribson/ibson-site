@@ -2,7 +2,7 @@
 // Últimos posts no LinkedIn: carrossel de artes (hospedadas no próprio site para
 // indexação no Google Imagens). Cada card mostra a arte COMPLETA (qualquer
 // formato, sem corte) e abre o post exato no LinkedIn ao clicar.
-import { getContent } from "../i18n/utils";
+import { getContent, imgDims } from "../i18n/utils";
 const { linkedinPosts: lk } = getContent(Astro.currentLocale);
 // Mostra no máximo 8 posts (os mais recentes). O resto fica no LinkedIn.
 const posts = lk.posts.slice(0, 8);
@@ -25,7 +25,7 @@ const posts = lk.posts.slice(0, 8);
         {
           posts.map((p) => (
             <a class="lk-card" href={p.url} target="_blank" rel="noopener" aria-label="Abrir post no LinkedIn">
-              <img class="lk-img" src={p.image} alt={p.alt} loading="lazy" />
+              <img class="lk-img" src={p.image} {...imgDims(p.image)} alt={p.alt} loading="lazy" />
               <span class="lk-hint">Ver no LinkedIn ↗</span>
             </a>
           ))

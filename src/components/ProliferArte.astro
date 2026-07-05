@@ -1,7 +1,7 @@
 ---
 // ProliferArte: origem cultural, contadores animados, estante de publicações
 // (só apresentação, sem link) e convite para o Facebook do movimento.
-import { getContent } from "../i18n/utils";
+import { getContent, imgDims } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { cases } = getContent(Astro.currentLocale);
 const ui = t(Astro.currentLocale);
@@ -48,7 +48,7 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
           p.galeria.map((pub) => (
             <figure class="pub">
               <div class="pc">
-                <img loading="lazy" src={pub.src} alt={`Publicação da ProliferArte: ${pub.title}`} />
+                <img loading="lazy" src={pub.src} {...imgDims(pub.src)} alt={`Publicação da ProliferArte: ${pub.title}`} />
               </div>
               <figcaption class="pb"><h3>{pub.title}</h3></figcaption>
             </figure>

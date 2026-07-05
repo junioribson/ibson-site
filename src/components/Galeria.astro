@@ -2,7 +2,7 @@
 // Últimos acontecimentos: galeria limpa e responsiva de aparições recentes.
 // Grade uniforme (mesma proporção), sem legendas. Atualizável: basta trocar/
 // acrescentar caminhos em `fotos` (arquivos em /assets/eventos).
-import { normalizeLocale } from "../i18n/utils";
+import { normalizeLocale, imgDims } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const locale = normalizeLocale(Astro.currentLocale);
 const ui = t(locale);
@@ -29,7 +29,7 @@ const fotos: string[] = [
       {
         fotos.map((src) => (
           <figure class="gcard">
-            <img loading="lazy" src={src} alt="Aparição recente de Ibson Junior" />
+            <img loading="lazy" src={src} {...imgDims(src)} alt="Aparição recente de Ibson Junior" />
           </figure>
         ))
       }

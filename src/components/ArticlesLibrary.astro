@@ -5,7 +5,7 @@ import { getCollection } from "astro:content";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import ArticleCard from "./ArticleCard.astro";
-import { getContent, localizePath, normalizeLocale, articlesCollection } from "../i18n/utils";
+import { getContent, localizePath, normalizeLocale, articlesCollection, imgDims } from "../i18n/utils";
 import { t } from "../i18n/ui";
 
 const locale = normalizeLocale(Astro.currentLocale);
@@ -51,7 +51,7 @@ const collectionSchema = {
       <div class="wrap">
         <a class="feat reveal" href={localizePath(`/artigos/${featured.id}`, locale)}>
           <div class="feat-cover">
-            <img src={featured.data.cover} alt={`Ibson Junior: ${featured.data.title}`} loading="eager" />
+            <img src={featured.data.cover} {...imgDims(featured.data.cover)} alt={`Ibson Junior: ${featured.data.title}`} loading="eager" />
             <span class="feat-badge">{ui.libraryMostRecent}</span>
           </div>
           <div class="feat-body">
