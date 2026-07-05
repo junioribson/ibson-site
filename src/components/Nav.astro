@@ -18,7 +18,7 @@ const homeHref = localizePath("/", locale);
   <div class="nav-in">
     <a class="brand" href={homeHref}>
       <Logo class="brand-logo" surface="adaptive" />
-      <span><b>IBSON JUNIOR</b><span class="bs">Conteúdo · Liderança · Decisão</span></span>
+      <span><b>IBSON JUNIOR</b><span class="bs">{ui.brandTagline}</span></span>
     </a>
     <div class="nav-links">
       {links.map((l) => <a href={localizePath(l.href, locale)} data-s={l.id}>{l.label}</a>)}

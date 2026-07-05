@@ -52,6 +52,7 @@ type UIStrings = {
   proliferLiveTitle: string;
   proliferLiveText: string;
   themeLabel: string;
+  brandTagline: string;
 };
 
 const UI: Record<"pt" | "es" | "en", UIStrings> = {
@@ -106,6 +107,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveTitle: "A ProliferArte é um movimento vivo.",
     proliferLiveText: "Acompanhe as publicações, os artistas e a comunidade na página oficial.",
     themeLabel: "Tema",
+    brandTagline: "Conteúdo · Liderança · Decisão",
   },
   es: {
     footerNavigate: "Navegar",
@@ -158,6 +160,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveTitle: "ProliferArte es un movimiento vivo.",
     proliferLiveText: "Sigue las publicaciones, los artistas y la comunidad en la página oficial.",
     themeLabel: "Tema",
+    brandTagline: "Contenido · Liderazgo · Decisión",
   },
   en: {
     footerNavigate: "Navigate",
@@ -210,6 +213,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     proliferLiveTitle: "ProliferArte is a living movement.",
     proliferLiveText: "Follow the publications, artists and community on the official page.",
     themeLabel: "Theme",
+    brandTagline: "Content · Leadership · Decision",
   },
 };
 
