@@ -14,7 +14,7 @@ Melhorar o posicionamento do Ibson Junior no Google e firmar a autoridade do nom
 
 ---
 
-## FRENTE 1, Páginas de artigos  🟡 EM ANDAMENTO (1 de 9 no ar)
+## FRENTE 1, Páginas de artigos  ✅ CONCLUÍDA (9 de 9 no ar)
 
 Objetivo: reproduzir os artigos do LinkedIn **no site**, idênticos em texto e imagem,
 diagramados em nível premium, com schema `BlogPosting` + canonical próprio (assim o
@@ -32,19 +32,43 @@ Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<
 Ao colar no `.md`: **trocar todo travessão (— ou –) por vírgula/dois-pontos/parênteses** (regra inegociável).
 
 ### Status por artigo (9 no total)
-| # | Título | slug sugerido | URL LinkedIn (fonte) | Capa | Página |
-|---|--------|---------------|----------------------|------|--------|
-| 1 | Na Copa do Mundo, conteúdo não disputa apenas atenção | `na-copa-do-mundo` | pulse/na-copa-do-mundo-conteúdo... `-fxq1c` | ibson-junior-artigo-copa.webp | ❌ falta |
-| 2 | Quando a profissão vira identidade, a pessoa começa a desaparecer | `profissao-identidade` | ⚠️ URL real ainda não capturada (está como LINKEDIN placeholder); pegar em recent-activity/articles | ibson-junior-artigo-identidade.webp | ❌ falta |
-| 3 | Cérebro podre: a pandemia invisível que transforma o trabalho | `cerebro-podre` | pulse/cérebro-podre-pandemia... `-bgeqf` | ibson-junior-artigo-cerebro.webp | ❌ falta |
-| 4 | Nunca se falou tanto de estratégia. E nunca se viu tão pouca | `estrategia` | pulse/nunca-se-falou-tanto-de-estratégia... `-3c5rf` | ibson-junior-artigo-estrategia.webp | ❌ falta |
-| 5 | A qualidade da decisão é o núcleo da governança moderna | `governanca` | pulse/qualidade-da-decisão-núcleo-governança... `-jgk1f` | ibson-junior-artigo-governanca.webp | ❌ falta |
-| 6 | Quando a comunicação falha, a estratégia vira ruído | `comunicacao` | pulse/quando-comunicação-falha... `-sgxre` | ibson-junior-artigo-comunicacao.webp | ❌ falta |
-| 7 | **O tempo é um oceano** | `o-tempo-e-um-oceano` | pulse/o-tempo-é-um-oceano... `-2tstc` | ibson-junior-artigo-oceano.webp | ✅ **NO AR** |
-| 8 | Fascinados pela IA, estamos ignorando o essencial | `inteligencia-artificial` | pulse/fascinados-pela-inteligência-artificial... `-8km7f` | ibson-junior-artigo-ia.webp | ❌ falta |
-| 9 | Cultura não é PowerPoint, mas a energia vital | `cultura` | pulse/cultura-não-é-powerpoint... `-lpiwf` | ibson-junior-artigo-cultura.webp | ❌ falta |
+| # | Título | slug | data real | Página |
+|---|--------|------|-----------|--------|
+| 1 | Na Copa do Mundo, conteúdo não disputa apenas atenção | `na-copa-do-mundo` | 23/06/2026 | ✅ **NO AR** |
+| 2 | Quando a profissão vira identidade, a pessoa começa a desaparecer | `profissao-identidade` | 27/05/2026 | ✅ **NO AR** |
+| 3 | Cérebro podre: a pandemia invisível que transforma o trabalho | `cerebro-podre` | 21/04/2026 | ✅ **NO AR** |
+| 4 | Nunca se falou tanto de estratégia. E nunca se viu tão pouca | `estrategia` | 30/03/2026 | ✅ **NO AR** |
+| 5 | A qualidade da decisão é o núcleo da governança moderna | `governanca` | 25/02/2026 | ✅ **NO AR** |
+| 6 | Quando a comunicação falha, a estratégia vira ruído | `comunicacao` | 30/01/2026 | ✅ **NO AR** |
+| 7 | O tempo é um oceano | `o-tempo-e-um-oceano` | 22/12/2025 | ✅ **NO AR** |
+| 8 | Fascinados pela IA, estamos ignorando o essencial | `inteligencia-artificial` | 25/11/2025 | ✅ **NO AR** |
+| 9 | Cultura não é PowerPoint, mas a energia vital | `cultura` | 28/10/2025 | ✅ **NO AR** |
 
-As URLs completas estão em `src/data/content.ts` no objeto `ART_URL` (linhas ~238-246).
+**Datas reais** foram capturadas do JSON-LD `datePublished` de cada Pulse e estão no frontmatter de cada `.md`.
+
+**Frente 1 fechada:** os 9 artigos têm página própria com canonical + schema BlogPosting. O #2
+(identidade) foi o último, a URL veio do Ibson (logado). Todas as URLs em `src/data/content.ts` (`ART_URL`).
+
+**Imagens internas dos artigos:** 18 imagens internas (fora a capa) foram capturadas na posição
+correta e salvas em `public/assets/artigos/inline/`, renderizadas como `<figure class="art-fig">`
+com legenda quando havia (governança e IA). CSS no template `[...slug].astro`. Qualidade: melhor
+rendition pública do LinkedIn (400 a 1000px de largura, a maioria ~600, 710px). Se o Ibson tiver os
+ORIGINAIS em alta, substituir os arquivos em `inline/` (as dimensões `width/height` são calculadas).
+
+**SEO das imagens (Google Imagens/Discover):** cada imagem tem nome de arquivo descritivo começando
+com `ibson-junior-` + tema/conteúdo (ex.: `ibson-junior-estrategia-leme-tempestade-direcao.png`) e
+ALT rico e fiel ao que a imagem mostra, associando o nome ("Ilustração do artigo de Ibson Junior
+sobre..."). O ALT (invisível ao usuário) é mais completo que a `figcaption` visível. Mapa por imagem
+no gerador `scratchpad/generate-arts.mjs` (const `IMAGES`), na ordem do artigo.
+
+**Bug corrigido nesta rodada:** o extrator gerava markdown quebrado quando havia negritos adjacentes
+ou link dentro de negrito (asteriscos vazando na tela, ex.: `De acordo com a****[revista Nature]`).
+Conversor reescrito (espaço fora da ênfase + fusão de negritos adjacentes + classes `italic font-[700]`).
+Script gerador reutilizável: `scratchpad/generate-arts.mjs` (para novos artigos, é só adicionar ao array).
+
+**Nota editorial:** dois artigos (#8 IA e #5 governança) terminam com um CTA verbatim do original
+("Te convido a me seguir, curtir e compartilhar..."), que faz sentido no LinkedIn mas soa deslocado no
+site. Mantido por fidelidade; decidir com o Ibson se remove nas páginas internas.
 
 ---
 
@@ -117,5 +141,6 @@ senão religa ao virar o dia). Se as rotas não limparem, **toggle do Wi-Fi** ou
 - No Search Console: enviar `sitemap-index.xml` e `sitemap-images.xml` e pedir indexação das páginas novas.
 
 ## Estado do git neste momento
-- 2 commits locais aguardando push (travados pelo Private Relay): `7ee82cd` (seção posts) e `c692412` (páginas de artigos). Último commit já no GitHub: `a2c79b0`.
-- Backup offline disponível: `~/Desktop/ibson-site.bundle` (histórico completo, para AirDrop).
+- Máquina nova (MacBook) configurada: Node v24.18.0 em `~/.local` (cópia em `~/.local/opt/node` p/ o launch.json), deps instaladas, build OK. Idioma do chat fixado em pt-BR na memória.
+- Frente 1 completa e commitada localmente (9 páginas de artigo). **Push pendente:** falta autenticação no GitHub desta máquina. Chave SSH ed25519 já gerada em `~/.ssh/id_ed25519.pub`; o Ibson precisa adicioná-la em github.com/settings/ssh/new. Depois: trocar remote p/ SSH e `git push` (dispara deploy na Vercel).
+- Preview local: `~/.claude/launch.json` (nível home) aponta o astro dev do projeto via `--root`, para o painel de preview funcionar (o working dir da sessão é a home, não a pasta do projeto).

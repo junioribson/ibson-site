@@ -244,6 +244,7 @@ const ART_URL = {
   oceano: "https://www.linkedin.com/pulse/o-tempo-%C3%A9-um-oceano-ibson-junior-2tstc/",
   ia: "https://www.linkedin.com/pulse/fascinados-pela-intelig%C3%AAncia-artificial-estamos-ignorando-junior-8km7f/",
   cultura: "https://www.linkedin.com/pulse/cultura-n%C3%A3o-%C3%A9-powerpoint-mas-energia-vital-que-sustenta-ibson-junior-lpiwf/",
+  identidade: "https://www.linkedin.com/pulse/quando-profiss%C3%A3o-vira-identidade-pessoa-come%C3%A7a-ibson-junior-iue6f/",
 };
 
 export const articles = {
@@ -264,6 +265,7 @@ export const articles = {
       readingTime: "13 min",
       url: ART_URL.copa,
       cover: "/assets/artigos/ibson-junior-artigo-copa.webp",
+      slug: "na-copa-do-mundo",
     },
     {
       category: "Carreira e consciência",
@@ -271,8 +273,9 @@ export const articles = {
       title: "Quando a profissão vira identidade, a pessoa começa a desaparecer",
       summary: "Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra.",
       readingTime: "14 min",
-      url: LINKEDIN,
+      url: ART_URL.identidade,
       cover: "/assets/artigos/ibson-junior-artigo-identidade.webp",
+      slug: "profissao-identidade",
     },
     {
       category: "Produtividade e atenção",
@@ -282,6 +285,7 @@ export const articles = {
       readingTime: "14 min",
       url: ART_URL.cerebro,
       cover: "/assets/artigos/ibson-junior-artigo-cerebro.webp",
+      slug: "cerebro-podre",
     },
     {
       category: "Estratégia e decisão",
@@ -291,6 +295,7 @@ export const articles = {
       readingTime: "9 min",
       url: ART_URL.estrategia,
       cover: "/assets/artigos/ibson-junior-artigo-estrategia.webp",
+      slug: "estrategia",
     },
     {
       category: "Governança e decisão",
@@ -300,6 +305,7 @@ export const articles = {
       readingTime: "8 min",
       url: ART_URL.governanca,
       cover: "/assets/artigos/ibson-junior-artigo-governanca.webp",
+      slug: "governanca",
     },
     {
       category: "Comunicação e cultura",
@@ -309,6 +315,7 @@ export const articles = {
       readingTime: "6 min",
       url: ART_URL.comunicacao,
       cover: "/assets/artigos/ibson-junior-artigo-comunicacao.webp",
+      slug: "comunicacao",
     },
     {
       category: "Vida e trabalho",
@@ -328,6 +335,7 @@ export const articles = {
       readingTime: "8 min",
       url: ART_URL.ia,
       cover: "/assets/artigos/ibson-junior-artigo-ia.webp",
+      slug: "inteligencia-artificial",
     },
     {
       category: "Cultura e liderança",
@@ -337,6 +345,7 @@ export const articles = {
       readingTime: "9 min",
       url: ART_URL.cultura,
       cover: "/assets/artigos/ibson-junior-artigo-cultura.webp",
+      slug: "cultura",
     },
   ] as Article[],
   allUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/articles/",

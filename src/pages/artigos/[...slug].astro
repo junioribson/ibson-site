@@ -119,6 +119,18 @@ const articleSchema = {
   .art-body :global(ul), .art-body :global(ol) { margin: 0 0 24px; padding-left: 24px; }
   .art-body :global(li) { font-size: 18px; line-height: 1.7; color: #e7dcc6; margin-bottom: 8px; }
 
+  /* Imagens internas do artigo (figuras com legenda opcional) */
+  .art-body :global(figure.art-fig) { margin: 34px 0; }
+  .art-body :global(figure.art-fig img) {
+    display: block; width: 100%; height: auto; border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.85);
+  }
+  .art-body :global(figure.art-fig figcaption) {
+    margin-top: 12px; font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.02em; line-height: 1.5; color: var(--ink-soft); text-align: center;
+  }
+
   .art-foot {
     margin-top: 48px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, 0.12);
     display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
