@@ -532,7 +532,7 @@ export const archetypes = {
     alt: "Arte editorial de búho que representa discernimiento, visión y sabiduría.",
   },
   seahorse: {
-    src: "/assets/arquetipos/seahorse-editorial.webp",
+    src: "/assets/arquetipos/moon-network.jpg",
     alt: "Arte editorial de caballito de mar que representa adaptación, cuidado y equilibrio.",
   },
 };

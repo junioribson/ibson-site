@@ -532,7 +532,7 @@ export const archetypes = {
     alt: "Editorial artwork of an owl representing discernment, vision and wisdom.",
   },
   seahorse: {
-    src: "/assets/arquetipos/seahorse-editorial.webp",
+    src: "/assets/arquetipos/moon-network.jpg",
     alt: "Editorial artwork of a seahorse representing adaptation, care and balance.",
   },
 };

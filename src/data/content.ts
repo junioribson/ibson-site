@@ -532,7 +532,7 @@ export const archetypes = {
     alt: "Arte editorial de coruja representando discernimento, visão e sabedoria.",
   },
   seahorse: {
-    src: "/assets/arquetipos/seahorse-editorial.webp",
+    src: "/assets/arquetipos/moon-network.jpg",
     alt: "Arte editorial de cavalo-marinho representando adaptação, cuidado e equilíbrio.",
   },
 };

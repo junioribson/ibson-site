@@ -1,4 +1,5 @@
 ---
+import "../styles/fonts.css";
 import "../styles/global.css";
 import "../styles/sections.css";
 import "../styles/dark.css";
@@ -129,37 +130,36 @@ const personSchema = {
     <meta name="twitter:title" content={seo.ogTitle} />
     <meta name="twitter:description" content={seo.ogDescription} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
-      />
-    </noscript>
+    {/* Fontes auto-hospedadas (sem dependência externa). Pré-carrega as críticas:
+       peso 800 do hero (elemento LCP) e 400 do corpo. */}
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-800-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-400-latin.woff2" crossorigin />
 
     {
       GA_MEASUREMENT_ID && (
-        <>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
-          <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', GA_MEASUREMENT_ID);
-          </script>
-        </>
+        <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+          {/* GA carregado de forma DIFERIDA (após 1ª interação ou quando ocioso),
+             para não pesar no carregamento inicial (menos JS não usado, menor TBT
+             e LCP). Os comandos ficam na fila e disparam quando o gtag.js carrega. */}
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', GA_MEASUREMENT_ID);
+          var __gaLoaded = false;
+          function __loadGA(){
+            if (__gaLoaded) return; __gaLoaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+            document.head.appendChild(s);
+          }
+          var __gaEvs = ['pointerdown','keydown','scroll','touchstart'];
+          function __gaFirst(){ __gaEvs.forEach(function(e){ removeEventListener(e, __gaFirst); }); __loadGA(); }
+          __gaEvs.forEach(function(e){ addEventListener(e, __gaFirst, { passive: true }); });
+          if ('requestIdleCallback' in window) requestIdleCallback(__loadGA, { timeout: 5000 });
+          else setTimeout(__loadGA, 4000);
+        </script>
       )
     }
   </head>
