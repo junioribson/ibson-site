@@ -71,7 +71,7 @@ const { hero } = getContent(Astro.currentLocale);
   }
   .wh-net { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
 
-  .wh-in { position: relative; z-index: 3; max-width: 1180px; }
+  .wh-in { position: relative; z-index: 3; max-width: min(var(--maxw), 1360px); }
 
   .wh-eye { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; opacity: 0; transform: translateY(12px); animation: whr .8s var(--e) .1s forwards; }
   .wh-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px rgba(176, 146, 94, 0.18), 0 0 14px 2px rgba(176, 146, 94, 0.6); }

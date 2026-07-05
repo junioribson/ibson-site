@@ -145,15 +145,11 @@ const collectionSchema = {
     text-shadow: 0 0 16px var(--glow); margin-top: 4px;
   }
   .libgrid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    padding-bottom: 90px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: clamp(20px, 2vw, 28px); padding-bottom: 90px;
   }
   @media (max-width: 900px) {
     .feat { grid-template-columns: 1fr; }
-    .feat-cover { min-height: 220px; aspect-ratio: 16 / 9; }
-    .libgrid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .libgrid { grid-template-columns: 1fr; }
+    .feat-cover { aspect-ratio: auto; height: clamp(200px, 34vw, 300px); }
   }
 </style>

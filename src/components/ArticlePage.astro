@@ -98,10 +98,10 @@ const articleSchema = {
 
 <style>
   .artpage { padding-top: 92px; }
-  .art-in { max-width: 760px; padding-top: 40px; padding-bottom: 80px; }
+  .art-in { max-width: clamp(760px, 74vw, 880px); padding-top: 40px; padding-bottom: 80px; }
   .art-toolbar {
     display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; margin-bottom: 26px; position: relative;
+    gap: 16px; row-gap: 12px; flex-wrap: wrap; margin-bottom: 26px; position: relative;
   }
   .art-back {
     font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
@@ -121,7 +121,7 @@ const articleSchema = {
   .art-translate summary:hover { border-color: var(--accent); color: #fff; background: var(--glow); }
   .art-langs {
     position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
-    display: flex; flex-direction: column; min-width: 180px;
+    display: flex; flex-direction: column; min-width: 180px; max-width: calc(100vw - 40px);
     background: rgba(18, 12, 28, 0.97); backdrop-filter: blur(10px);
     border: 1px solid var(--line); border-radius: 12px;
     padding: 6px; box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.85);
@@ -161,11 +161,12 @@ const articleSchema = {
   .art-body { margin-top: 30px; }
   .art-body :global(p) {
     font-size: clamp(17px, 1.35vw, 19px); line-height: 1.78;
-    color: var(--text); margin: 0 0 24px; max-width: 68ch;
+    color: var(--text); margin: 0 0 24px; max-width: 74ch;
     text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+    text-wrap: pretty; hyphenate-limit-chars: 6 3 2;
   }
   /* Em telas estreitas, justificar deixa buracos: volta ao alinhamento à esquerda. */
-  @media (max-width: 560px) {
+  @media (max-width: 620px) {
     .art-body :global(p) { text-align: left; hyphens: manual; }
   }
   .art-body :global(p:first-of-type) {
@@ -195,6 +196,15 @@ const articleSchema = {
     margin-top: 12px; font-family: var(--font-mono); font-size: 12.5px;
     letter-spacing: 0.02em; line-height: 1.5; color: var(--ink-soft); text-align: center;
   }
+  /* Em telas largas, a capa e as figuras "vazam" um pouco além do texto,
+     dando respiro e reduzindo a sensação de faixa estreita no centro. */
+  @media (min-width: 1024px) {
+    .art-cover, .art-body :global(figure.art-fig) {
+      width: min(100% + 160px, 92vw);
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
   .art-foot {
     margin-top: 48px; padding-top: 26px; border-top: 1px solid var(--line);
@@ -203,5 +213,5 @@ const articleSchema = {
   .art-more { color: var(--accent); font-weight: 800; font-size: 14px; text-shadow: 0 0 16px var(--glow); }
   .art-share { color: var(--ink-soft); font-weight: 700; font-size: 14px; transition: color 0.3s; }
   .art-share:hover { color: var(--accent); }
-  @media (max-width: 620px) { .artpage { padding-top: 80px; } .art-in { padding-bottom: 60px; } }
+  @media (max-width: 620px) { .artpage { padding-top: 94px; } .art-in { padding-bottom: 60px; } }
 </style>

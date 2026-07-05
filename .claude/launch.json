@@ -1,11 +1,6 @@
 {
   "version": "0.0.1",
   "configurations": [
-    {
-      "name": "site",
-      "runtimeExecutable": "/Users/ibsonjunior/.local/opt/node/bin/node",
-      "runtimeArgs": ["node_modules/astro/astro.js", "dev", "--host", "--port", "4321"],
-      "port": 4321
-    }
+    { "name": "ibson-dev", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev"], "port": 4321 }
   ]
 }

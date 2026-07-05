@@ -126,10 +126,10 @@ body.menu .mmenu { transform: none; }
 /* PROLIFERARTE */
 .prolifer { position: relative; overflow: hidden; padding: 120px 0; }
 .prolifer .wrap { position: relative; z-index: 1; }
-.pro-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 54px; align-items: start; margin-bottom: 54px; }
-.pro-grid h2 { font-size: clamp(28px,3.7vw,50px); font-weight: 800; letter-spacing: -.035em; line-height: 1.06; max-width: 18ch; }
+.pro-grid { display: grid; grid-template-columns: 1fr; gap: 54px; align-items: start; margin-bottom: 54px; }
+.pro-grid h2 { font-size: clamp(28px,3.7vw,50px); font-weight: 800; letter-spacing: -.035em; line-height: 1.06; max-width: 20ch; }
 .pro-grid .body { margin-top: 24px; }
-.pro-grid .body p { font-size: 17px; color: var(--ink-soft); line-height: 1.72; margin-bottom: 16px; max-width: 54ch; }
+.pro-grid .body p { font-size: 17px; color: var(--ink-soft); line-height: 1.72; margin-bottom: 16px; max-width: 66ch; }
 .pro-grid .body p strong { color: var(--ink); font-weight: 700; }
 .pro-stats { border-left: 1px solid var(--hair); padding-left: 34px; }
 .pro-stats .ps { margin-bottom: 30px; }
@@ -270,7 +270,7 @@ footer { background: var(--night); color: var(--text-soft); padding: 66px 0 40px
   .feat { grid-template-columns: 1fr; gap: 30px; }
   .feat .fr-ctx { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 30px; }
   .pro-stats { border-left: none; padding-left: 0; display: flex; gap: 40px; flex-wrap: wrap; }
-  .pubs { grid-template-columns: 1fr 1fr; }
+  .pubs { grid-template-columns: 1fr 1fr; gap: 18px; }
   .agrid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
@@ -837,12 +837,13 @@ footer { background: var(--night); color: var(--text-soft); padding: 66px 0 40px
 /* ==========================================================================
    RESPONSIVO v2 (novas seções)
    ========================================================================== */
+@media (max-width: 1024px) { .contato-grid { grid-template-columns: 1fr; gap: 34px; } }
 @media (max-width: 980px) {
   .subcase { grid-template-columns: 1fr; gap: 18px; }
-  .contato-grid { grid-template-columns: 1fr; gap: 34px; }
-  .vgrid { grid-template-columns: 1fr 1fr; }
+  .vgrid { grid-template-columns: 1fr 1fr; gap: 18px; }
   .galgrid { grid-template-columns: repeat(4, 1fr); }
 }
+@media (max-width: 900px) { .cform { grid-template-columns: 1fr; } }
 @media (max-width: 760px) {
   .ment-cols { grid-template-columns: 1fr; }
   .talks-grid { grid-template-columns: 1fr; }
@@ -851,7 +852,6 @@ footer { background: var(--night); color: var(--text-soft); padding: 66px 0 40px
   .vids, .gal { padding: 78px 0; }
   .galgrid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
   .galitem.g-wide { grid-column: span 2; }
-  .cform { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .vgrid { grid-template-columns: 1fr; }

@@ -51,6 +51,12 @@
   --e: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+/* Telas grandes: o conteúdo cresce um pouco para não ficar uma faixa estreita
+   no centro com muito vazio nas laterais (nav e seções usam as mesmas vars). */
+@media (min-width: 1536px) { :root { --maxw: 1440px; --gut: 48px; } }
+@media (min-width: 1728px) { :root { --maxw: 1500px; --gut: 52px; } }
+@media (min-width: 1920px) { :root { --maxw: 1560px; --gut: 56px; } }
+
 /* ==========================================================================
    Base
    ========================================================================== */
