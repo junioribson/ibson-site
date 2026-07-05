@@ -11,7 +11,16 @@ export default defineConfig({
     defaultLocale: 'pt',
     routing: { prefixDefaultLocale: false },
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Emite os alternates hreflang e marca o PT como idioma padrao, reforcando
+      // ao Google que a versao principal e a PT (raiz), nao a /en/ ou /es/.
+      i18n: {
+        defaultLocale: 'pt',
+        locales: { pt: 'pt-BR', es: 'es', en: 'en' },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

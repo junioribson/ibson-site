@@ -83,10 +83,17 @@ const personSchema = {
     {alternates.map((a) => (<link rel="alternate" hreflang={a.hreflang} href={a.href} />))}
     <link rel="alternate" hreflang="x-default" href="https://ibsonjunior.com.br/" />
     <script is:inline>
-      // Autodetecção de idioma: na 1ª visita, se o idioma do navegador for ES/EN,
-      // redireciona; respeita a escolha manual salva (bandeiras). Sem loop.
+      // Autodetecção de idioma SÓ para visitantes humanos. NUNCA redireciona
+      // robôs de busca, medidores nem automação (Googlebot, Lighthouse/PageSpeed,
+      // pré-visualizações), para que a versão PT (principal) seja a indexada e
+      // medida. Respeita a escolha manual salva (bandeiras). Sem loop.
       (function () {
         try {
+          var ua = navigator.userAgent || "";
+          if (
+            navigator.webdriver ||
+            /bot|crawl|spider|slurp|lighthouse|pagespeed|speed insights|gtmetrix|pingdom|headless|preview|facebookexternalhit|whatsapp|telegram|slackbot|discordbot|embedly|applebot|yandex|baidu|duckduckbot|semrush|ahrefs|petalbot|bytespider|google-inspectiontool/i.test(ua)
+          ) return;
           var path = location.pathname;
           var cur = /^\/(es|en)(\/|$)/.test(path) ? RegExp.$1 : "pt";
           function localize(t) {
