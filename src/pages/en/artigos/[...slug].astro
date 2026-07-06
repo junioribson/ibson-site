@@ -10,9 +10,22 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const d = entry.data;
-const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
+// Camadas de SEO com fallback: se o artigo não define, usa o título/excerpt.
+const seoTitle = d.seoTitle ?? d.title;
+const socialTitle = d.socialTitle ?? d.seoTitle ?? d.title;
+const metaDesc = d.seoDescription ?? d.excerpt;
+const ogImg = `https://ibsonjunior.com.br${d.ogImage ?? d.cover}`;
 ---
 
-<Base title={`${d.title} | Ibson Junior`} description={d.excerpt} ogImage={coverAbs}>
+<Base
+  title={`${seoTitle} | Ibson Junior`}
+  description={metaDesc}
+  ogTitle={socialTitle}
+  ogDescription={metaDesc}
+  ogImage={ogImg}
+  ogType="article"
+  publishedTime={d.dateISO}
+  section={d.category}
+>
   <ArticlePage entry={entry} />
 </Base>
