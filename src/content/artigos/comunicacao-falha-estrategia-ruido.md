@@ -1,5 +1,5 @@
 ---
-title: "Quando a comunicação falha, a estratégia vira ruído"
+title: "Comunicação executiva: quando ela falha, a melhor estratégia vira ruído"
 date: "30 de janeiro de 2026"
 dateISO: "2026-01-30"
 category: "Comunicação e cultura"
@@ -7,6 +7,9 @@ readingTime: "6 min"
 cover: "/assets/artigos/ibson-junior-artigo-comunicacao.webp"
 excerpt: "A comunicação sustenta cultura, governança e previsibilidade. Mas costuma ser negligenciada."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-comunica%C3%A7%C3%A3o-falha-estrat%C3%A9gia-vira-ru%C3%ADdo-ibson-junior-sgxre/"
+seoTitle: "Comunicação executiva: quando falha, a estratégia vira ruído"
+socialTitle: "Quando a comunicação falha, a estratégia vira ruído"
+seoDescription: "Comunicação sustenta cultura, governança e previsibilidade, mas costuma ser negligenciada. Quando ela falha, a melhor estratégia vira ruído."
 ---
 
 A comunicação sustenta cultura, governança e previsibilidade. Mas por que, na prática, ela ainda falha onde mais importa?

@@ -28,6 +28,16 @@ Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<
 - Fim de cada artigo (em `ArticlePage.astro`): (1) bloco de fechamento "continue a conversa" com link ao post; (2) bloco **"Você pode se interessar também"** (`articleRelatedTitle` no `ui.ts`) com os **3 artigos mais recentes do mesmo idioma** (exclui o atual), reusando `ArticleCard`. Grid de 3 no desktop, faixa horizontal com scroll-snap (estilo Top Stories) no mobile. Fortalece o internal linking. Critério = recência (site estático não tem "mais acessados" em build; para isso seria preciso puxar do GA).
 - Obs: `articles.list`/`allUrl` em `content.ts` ficaram sem uso (a fonte da verdade agora é a content collection dos `.md`); mantidos por ora, podem ser removidos numa limpeza futura.
 
+**Camadas de título/SEO por artigo (REGRA, feito):** cada `.md` tem 4 camadas no frontmatter, cada uma para uma superfície diferente. Ver `src/content.config.ts` (campos opcionais com fallback) e como são ligadas em `src/pages/**/artigos/[...slug].astro` + `Base.astro`.
+- `title` = **H1** na página (voz editorial, com embasamento e contexto, não a frase curta/filosófica do LinkedIn).
+- `seoTitle` = **`<title>`** do Google (palavra-chave no início, ~55 a 60 caracteres). Fallback: `title`.
+- `socialTitle` = **og:title / twitter:title** (compartilhamento e Discover). Fallback: `seoTitle` → `title`.
+- `seoDescription` = **meta description** (~150 a 155 caracteres, com termos-chave). Fallback: `excerpt`.
+- `ogImage` (opcional) = imagem social dedicada. Fallback: `cover`.
+- Base.astro emite OG/Twitter por página (não mais genérico), `og:locale` (pt_BR/es_ES/en_US), `og:type=article` + `article:*`, e schema único `BlogPosting` (sem ProfilePage duplicado).
+- **Slugs**: descritivos e concisos (3 a 4 palavras-chave, sem stopwords, sem empilhar keyword, seguindo a diretriz de URL do Google). Mesmo slug nos 3 idiomas.
+- **Redirects 301** dos slugs antigos → novos em `vercel.json` (com e sem barra final, nos 3 idiomas). Ao renomear um slug no futuro, SEMPRE adicionar o redirect aqui.
+
 **Sistema já construído (pronto para reuso):**
 - `src/content.config.ts`, coleção `artigos` (glob loader) + schema (title, date, dateISO, category, readingTime, cover, excerpt, linkedinUrl).
 - `src/pages/artigos/[...slug].astro`, template de leitura premium + schema `BlogPosting` + canonical próprio + OG.
@@ -42,15 +52,18 @@ Ao colar no `.md`: **trocar todo travessão (— ou –) por vírgula/dois-ponto
 ### Status por artigo (9 no total)
 | # | Título | slug | data real | Página |
 |---|--------|------|-----------|--------|
-| 1 | Na Copa do Mundo, conteúdo não disputa apenas atenção | `na-copa-do-mundo` | 23/06/2026 | ✅ **NO AR** |
-| 2 | Quando a profissão vira identidade, a pessoa começa a desaparecer | `profissao-identidade` | 27/05/2026 | ✅ **NO AR** |
-| 3 | Cérebro podre: a pandemia invisível que transforma o trabalho | `cerebro-podre` | 21/04/2026 | ✅ **NO AR** |
-| 4 | Nunca se falou tanto de estratégia. E nunca se viu tão pouca | `estrategia` | 30/03/2026 | ✅ **NO AR** |
-| 5 | A qualidade da decisão é o núcleo da governança moderna | `governanca` | 25/02/2026 | ✅ **NO AR** |
-| 6 | Quando a comunicação falha, a estratégia vira ruído | `comunicacao` | 30/01/2026 | ✅ **NO AR** |
-| 7 | O tempo é um oceano | `o-tempo-e-um-oceano` | 22/12/2025 | ✅ **NO AR** |
-| 8 | Fascinados pela IA, estamos ignorando o essencial | `inteligencia-artificial` | 25/11/2025 | ✅ **NO AR** |
-| 9 | Cultura não é PowerPoint, mas a energia vital | `cultura` | 28/10/2025 | ✅ **NO AR** |
+Slugs reescritos (SEO) com 301 dos antigos no `vercel.json`. Slug atual de cada artigo:
+| # | Tema (H1 resumido) | slug atual | slug antigo (redirect 301) | data | Página |
+|---|--------|------|------|------|--------|
+| 1 | Conteúdo na Copa do Mundo e responsabilidade | `conteudo-copa-do-mundo-responsabilidade` | na-copa-do-mundo | 23/06/2026 | ✅ |
+| 2 | Profissão que vira identidade | `profissao-identidade-carreira` | profissao-identidade | 27/05/2026 | ✅ |
+| 3 | Cérebro podre, atenção e produtividade | `cerebro-podre-atencao-produtividade` | cerebro-podre | 21/04/2026 | ✅ |
+| 4 | Estratégia x intenção | `estrategia-e-intencao` | estrategia | 30/03/2026 | ✅ |
+| 5 | Qualidade da decisão e governança | `qualidade-da-decisao-governanca` | governanca | 25/02/2026 | ✅ |
+| 6 | Comunicação que falha vira ruído | `comunicacao-falha-estrategia-ruido` | comunicacao | 30/01/2026 | ✅ |
+| 7 | O tempo é um oceano | `o-tempo-e-um-oceano` | (mantido, sem redirect) | 22/12/2025 | ✅ |
+| 8 | IA e inteligência emocional | `inteligencia-artificial-e-emocional` | inteligencia-artificial | 25/11/2025 | ✅ |
+| 9 | Cultura organizacional não é PowerPoint | `cultura-organizacional-nao-e-powerpoint` | cultura | 28/10/2025 | ✅ |
 
 **Datas reais** foram capturadas do JSON-LD `datePublished` de cada Pulse e estão no frontmatter de cada `.md`.
 
@@ -147,6 +160,8 @@ regra é traduzir SEMPRE que adicionar conteúdo, para não acumular lacunas.
 1. Criar também `src/content/artigos-es/<slug>.md` e `src/content/artigos-en/<slug>.md` (mesmo slug).
    Traduzir title/category/excerpt + corpo; localizar `date`; manter `dateISO`/`cover`/`linkedinUrl`/`readingTime`;
    preservar `<figure>` (só traduz alt/figcaption); sem travessão; sem "Better Collective".
+   **Preencher as camadas de SEO** (`seoTitle`, `socialTitle`, `seoDescription`) nos 3 idiomas, traduzidas
+   (ver a REGRA das camadas na Frente 1). Slug descritivo e conciso; se renomear depois, adicionar 301 no `vercel.json`.
 2. Adicionar o item em `articles.list` nos TRÊS `content.*.ts` (traduzindo category/title/summary).
 
 **Ao adicionar/editar SEÇÃO (`content.ts`) ou microcopy (`i18n/ui.ts`):** replicar a mesma chave

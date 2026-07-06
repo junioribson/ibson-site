@@ -7,6 +7,9 @@ readingTime: "8 min"
 cover: "/assets/artigos/ibson-junior-artigo-governanca.webp"
 excerpt: "Most crises are not born from a lack of strategy, but from the quality of decisions."
 linkedinUrl: "https://www.linkedin.com/pulse/qualidade-da-decis%C3%A3o-%C3%A9-o-n%C3%BAcleo-governan%C3%A7a-moderna-ibson-junior-jgk1f/"
+seoTitle: "Decision quality: the core of modern governance"
+socialTitle: "The quality of the decision is the core of governance"
+seoDescription: "Most crises are not born from a lack of strategy, but from the quality of decisions. Why deciding well is the center of modern governance."
 ---
 
 Most crises are not born from a lack of strategy, but from the fragility of decisions.

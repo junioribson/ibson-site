@@ -1,5 +1,5 @@
 ---
-title: "Cérebro podre: a pandemia invisível que transforma o trabalho"
+title: "Cérebro podre: como a economia da atenção corrói a produtividade no trabalho"
 date: "21 de abril de 2026"
 dateISO: "2026-04-21"
 category: "Produtividade e atenção"
@@ -7,6 +7,9 @@ readingTime: "14 min"
 cover: "/assets/artigos/ibson-junior-artigo-cerebro.webp"
 excerpt: "Entre reuniões placebo e o multitasking tóxico, o desperdício de capital humano custa caro."
 linkedinUrl: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/"
+seoTitle: "Cérebro podre: a atenção corroída e a produtividade no trabalho"
+socialTitle: "Cérebro podre: a pandemia invisível que corrói o trabalho"
+seoDescription: "Reuniões placebo, multitarefa tóxica e a atenção em frangalhos. Como o cérebro podre desperdiça capital humano, e o que fazer a respeito."
 ---
 
 Entre reuniões placebo e o multitasking tóxico, o desperdício de capital humano já custa bilhões. Não falta esforço nas organizações; falta profundidade nas decisões.

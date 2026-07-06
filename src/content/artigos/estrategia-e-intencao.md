@@ -1,5 +1,5 @@
 ---
-title: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca."
+title: "Estratégia não é intenção: por que o critério só aparece sob pressão"
 date: "30 de março de 2026"
 dateISO: "2026-03-30"
 category: "Estratégia e decisão"
@@ -7,6 +7,9 @@ readingTime: "9 min"
 cover: "/assets/artigos/ibson-junior-artigo-estrategia.webp"
 excerpt: "A diferença entre intenção e estratégia aparece quando o ambiente pressiona."
 linkedinUrl: "https://www.linkedin.com/pulse/nunca-se-falou-tanto-de-estrat%C3%A9gia-e-viu-t%C3%A3o-pouca-ibson-junior-3c5rf/"
+seoTitle: "Estratégia ou intenção? O critério aparece sob pressão"
+socialTitle: "Nunca se falou tanto de estratégia. E se viu tão pouca."
+seoDescription: "Todo mundo fala em estratégia, mas poucos a sustentam. A diferença entre intenção e estratégia aparece quando o ambiente pressiona."
 ---
 
 A diferença entre intenção e estratégia aparece quando o ambiente pressiona, mas a empresa não sustenta seu plano.

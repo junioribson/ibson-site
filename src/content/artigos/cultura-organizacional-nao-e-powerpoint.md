@@ -1,5 +1,5 @@
 ---
-title: "Cultura não é PowerPoint, mas a energia vital que sustenta a organização"
+title: "Cultura organizacional não é PowerPoint: é a energia vital que sustenta a empresa"
 date: "28 de outubro de 2025"
 dateISO: "2025-10-28"
 category: "Cultura e liderança"
@@ -7,6 +7,9 @@ readingTime: "9 min"
 cover: "/assets/artigos/ibson-junior-artigo-cultura.webp"
 excerpt: "Quando vivida em todos os níveis, a cultura transforma relações, decisões e resultados."
 linkedinUrl: "https://www.linkedin.com/pulse/cultura-n%C3%A3o-%C3%A9-powerpoint-mas-energia-vital-que-sustenta-ibson-junior-lpiwf/"
+seoTitle: "Cultura organizacional: energia vital, não PowerPoint"
+socialTitle: "Cultura não é PowerPoint. É energia vital."
+seoDescription: "Cultura organizacional não é slide nem mural. É a energia vital que sustenta relações, decisões e resultados quando vivida em todos os níveis."
 ---
 
 Quando vivida em todos os níveis, a cultura transforma relações, fortalece lideranças e impulsiona resultados

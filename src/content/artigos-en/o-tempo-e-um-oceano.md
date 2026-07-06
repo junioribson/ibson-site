@@ -1,5 +1,5 @@
 ---
-title: "Time is an ocean"
+title: "Time is an ocean: priorities, choices and command of your own life"
 date: "December 22, 2025"
 dateISO: "2025-12-22"
 category: "Life and work"
@@ -7,6 +7,9 @@ readingTime: "10 min"
 cover: "/assets/artigos/ibson-junior-artigo-oceano.webp"
 excerpt: "Whoever does not learn to sail becomes a passenger of their own life."
 linkedinUrl: "https://www.linkedin.com/pulse/o-tempo-%C3%A9-um-oceano-ibson-junior-2tstc/"
+seoTitle: "Time is an ocean: priorities and command of your life"
+socialTitle: "Time is an ocean. Those who do not sail become passengers."
+seoDescription: "Those who never learn to sail become passengers in their own life. A reflection on time, priorities and steering your own life instead of drifting."
 ---
 
 Time does not sink anyone. What sinks is sailing without direction.

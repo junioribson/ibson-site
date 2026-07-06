@@ -1,5 +1,5 @@
 ---
-title: "When profession becomes identity, the person starts to disappear"
+title: "When profession becomes identity: the risk of disappearing behind the role"
 date: "May 27, 2026"
 dateISO: "2026-05-27"
 category: "Career and consciousness"
@@ -7,6 +7,9 @@ readingTime: "14 min"
 cover: "/assets/artigos/ibson-junior-artigo-identidade.webp"
 excerpt: "Performing well at work is one thing. Being only the work is another."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-profiss%C3%A3o-vira-identidade-pessoa-come%C3%A7a-ibson-junior-iue6f/"
+seoTitle: "Profession and identity: when the role swallows the person"
+socialTitle: "When profession becomes identity, the person disappears"
+seoDescription: "Performing at work is one thing, being only the work is another. On professional identity, purpose and the risk of vanishing behind the role."
 ---
 
 Performing well at work is one thing. Being only the work is another, and the price of that, silently, is depth itself.

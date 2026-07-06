@@ -1,5 +1,5 @@
 ---
-title: "Strategy has never been talked about so much. And it has never been seen so little."
+title: "Strategy is not intention: why judgment only shows up under pressure"
 date: "March 30, 2026"
 dateISO: "2026-03-30"
 category: "Strategy and decision"
@@ -7,6 +7,9 @@ readingTime: "9 min"
 cover: "/assets/artigos/ibson-junior-artigo-estrategia.webp"
 excerpt: "The difference between intention and strategy appears when the environment applies pressure."
 linkedinUrl: "https://www.linkedin.com/pulse/nunca-se-falou-tanto-de-estrat%C3%A9gia-e-viu-t%C3%A3o-pouca-ibson-junior-3c5rf/"
+seoTitle: "Strategy or intention? Judgment shows up under pressure"
+socialTitle: "Strategy has never been talked about so much, and seen so little"
+seoDescription: "Everyone talks about strategy, but few sustain it. The difference between intention and strategy appears when the environment applies pressure."
 ---
 
 The difference between intention and strategy appears when the environment applies pressure, but the company does not sustain its plan.

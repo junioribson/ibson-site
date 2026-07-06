@@ -1,5 +1,5 @@
 ---
-title: "When communication fails, strategy becomes noise"
+title: "Executive communication: when it fails, the best strategy becomes noise"
 date: "January 30, 2026"
 dateISO: "2026-01-30"
 category: "Communication and culture"
@@ -7,6 +7,9 @@ readingTime: "6 min"
 cover: "/assets/artigos/ibson-junior-artigo-comunicacao.webp"
 excerpt: "Communication sustains culture, governance and predictability. Yet it is usually neglected."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-comunica%C3%A7%C3%A3o-falha-estrat%C3%A9gia-vira-ru%C3%ADdo-ibson-junior-sgxre/"
+seoTitle: "Executive communication: when it fails, strategy is noise"
+socialTitle: "When communication fails, strategy becomes noise"
+seoDescription: "Communication sustains culture, governance and predictability, yet is often neglected. When it fails, even the best strategy becomes noise."
 ---
 
 Communication sustains culture, governance and predictability. But why, in practice, does it still fail where it matters most?

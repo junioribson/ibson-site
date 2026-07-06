@@ -7,6 +7,9 @@ readingTime: "8 min"
 cover: "/assets/artigos/ibson-junior-artigo-governanca.webp"
 excerpt: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões."
 linkedinUrl: "https://www.linkedin.com/pulse/qualidade-da-decis%C3%A3o-%C3%A9-o-n%C3%BAcleo-governan%C3%A7a-moderna-ibson-junior-jgk1f/"
+seoTitle: "Qualidade da decisão: o núcleo da governança moderna"
+socialTitle: "A qualidade da decisão é o núcleo da governança"
+seoDescription: "A maioria das crises não nasce da falta de estratégia, mas da qualidade das decisões. Por que decidir bem é o centro da governança moderna."
 ---
 
 A maioria das crises não nasce da falta de estratégia, mas da fragilidade das decisões.

@@ -1,0 +1,244 @@
+{
+  "redirects": [
+    {
+      "source": "/artigos/na-copa-do-mundo",
+      "destination": "/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/na-copa-do-mundo/",
+      "destination": "/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/na-copa-do-mundo",
+      "destination": "/es/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/na-copa-do-mundo/",
+      "destination": "/es/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/na-copa-do-mundo",
+      "destination": "/en/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/na-copa-do-mundo/",
+      "destination": "/en/artigos/conteudo-copa-do-mundo-responsabilidade/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/profissao-identidade",
+      "destination": "/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/profissao-identidade/",
+      "destination": "/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/profissao-identidade",
+      "destination": "/es/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/profissao-identidade/",
+      "destination": "/es/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/profissao-identidade",
+      "destination": "/en/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/profissao-identidade/",
+      "destination": "/en/artigos/profissao-identidade-carreira/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/cerebro-podre",
+      "destination": "/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/cerebro-podre/",
+      "destination": "/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/cerebro-podre",
+      "destination": "/es/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/cerebro-podre/",
+      "destination": "/es/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/cerebro-podre",
+      "destination": "/en/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/cerebro-podre/",
+      "destination": "/en/artigos/cerebro-podre-atencao-produtividade/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/estrategia",
+      "destination": "/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/estrategia/",
+      "destination": "/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/estrategia",
+      "destination": "/es/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/estrategia/",
+      "destination": "/es/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/estrategia",
+      "destination": "/en/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/estrategia/",
+      "destination": "/en/artigos/estrategia-e-intencao/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/governanca",
+      "destination": "/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/governanca/",
+      "destination": "/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/governanca",
+      "destination": "/es/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/governanca/",
+      "destination": "/es/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/governanca",
+      "destination": "/en/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/governanca/",
+      "destination": "/en/artigos/qualidade-da-decisao-governanca/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/comunicacao",
+      "destination": "/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/comunicacao/",
+      "destination": "/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/comunicacao",
+      "destination": "/es/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/comunicacao/",
+      "destination": "/es/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/comunicacao",
+      "destination": "/en/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/comunicacao/",
+      "destination": "/en/artigos/comunicacao-falha-estrategia-ruido/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/inteligencia-artificial",
+      "destination": "/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/inteligencia-artificial/",
+      "destination": "/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/inteligencia-artificial",
+      "destination": "/es/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/inteligencia-artificial/",
+      "destination": "/es/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/inteligencia-artificial",
+      "destination": "/en/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/inteligencia-artificial/",
+      "destination": "/en/artigos/inteligencia-artificial-e-emocional/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/cultura",
+      "destination": "/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/artigos/cultura/",
+      "destination": "/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/cultura",
+      "destination": "/es/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/es/artigos/cultura/",
+      "destination": "/es/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/cultura",
+      "destination": "/en/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    },
+    {
+      "source": "/en/artigos/cultura/",
+      "destination": "/en/artigos/cultura-organizacional-nao-e-powerpoint/",
+      "permanent": true
+    }
+  ]
+}

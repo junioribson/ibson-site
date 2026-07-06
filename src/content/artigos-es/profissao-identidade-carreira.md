@@ -1,5 +1,5 @@
 ---
-title: "Cuando la profesión se vuelve identidad, la persona empieza a desaparecer"
+title: "Cuando la profesión se vuelve identidad: el riesgo de desaparecer detrás del cargo"
 date: "27 de mayo de 2026"
 dateISO: "2026-05-27"
 category: "Carrera y conciencia"
@@ -7,6 +7,9 @@ readingTime: "14 min"
 cover: "/assets/artigos/ibson-junior-artigo-identidade.webp"
 excerpt: "Rendir bien en el trabajo es una cosa. Ser solo el trabajo es otra."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-profiss%C3%A3o-vira-identidade-pessoa-come%C3%A7a-ibson-junior-iue6f/"
+seoTitle: "Profesión e identidad: cuando el cargo se traga a la persona"
+socialTitle: "Cuando la profesión se vuelve identidad, la persona desaparece"
+seoDescription: "Rendir en el trabajo es una cosa, ser solo el trabajo es otra. Sobre identidad profesional, propósito y el riesgo de desaparecer tras el cargo."
 ---
 
 Rendir bien en el trabajo es una cosa. Ser solo el trabajo es otra, y el precio de eso, silenciosamente, es la propia profundidad.

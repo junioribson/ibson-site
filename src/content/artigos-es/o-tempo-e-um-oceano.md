@@ -1,5 +1,5 @@
 ---
-title: "El tiempo es un océano"
+title: "El tiempo es un océano: prioridades, decisiones y el mando de la propia vida"
 date: "22 de diciembre de 2025"
 dateISO: "2025-12-22"
 category: "Vida y trabajo"
@@ -7,6 +7,9 @@ readingTime: "10 min"
 cover: "/assets/artigos/ibson-junior-artigo-oceano.webp"
 excerpt: "Quien no aprende a navegar se vuelve pasajero de su propia vida."
 linkedinUrl: "https://www.linkedin.com/pulse/o-tempo-%C3%A9-um-oceano-ibson-junior-2tstc/"
+seoTitle: "El tiempo es un océano: prioridades y el mando de la vida"
+socialTitle: "El tiempo es un océano. Quien no navega, se vuelve pasajero."
+seoDescription: "Quien no aprende a navegar se vuelve pasajero de su propia vida. Una reflexión sobre el tiempo, las prioridades y conducir la propia vida."
 ---
 
 El tiempo no hunde a nadie. Lo que hunde es navegar sin dirección.

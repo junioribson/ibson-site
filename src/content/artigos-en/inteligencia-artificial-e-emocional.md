@@ -1,5 +1,5 @@
 ---
-title: "Fascinated by artificial intelligence, we are ignoring the essential"
+title: "Fascinated by artificial intelligence, we forget the emotional intelligence that sustains leadership"
 date: "November 25, 2025"
 dateISO: "2025-11-25"
 category: "AI and discernment"
@@ -7,6 +7,9 @@ readingTime: "8 min"
 cover: "/assets/artigos/ibson-junior-artigo-ia.webp"
 excerpt: "When we do not assess ourselves frankly, we cannot use technology well."
 linkedinUrl: "https://www.linkedin.com/pulse/fascinados-pela-intelig%C3%AAncia-artificial-estamos-ignorando-junior-8km7f/"
+seoTitle: "AI and emotional intelligence: the essence of leadership"
+socialTitle: "Fascinated by AI, ignoring the essential"
+seoDescription: "While everyone is fascinated by artificial intelligence, emotional intelligence remains the essence of leadership. On judgment and humanity."
 ---
 
 When we do not assess ourselves frankly, we cannot lead our own lives. And no technology will solve that.

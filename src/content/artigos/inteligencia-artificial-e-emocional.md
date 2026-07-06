@@ -1,5 +1,5 @@
 ---
-title: "Fascinados pela inteligência artificial, estamos ignorando o essencial"
+title: "Fascinados pela inteligência artificial, esquecemos a inteligência emocional que sustenta a liderança"
 date: "25 de novembro de 2025"
 dateISO: "2025-11-25"
 category: "IA e discernimento"
@@ -7,6 +7,9 @@ readingTime: "8 min"
 cover: "/assets/artigos/ibson-junior-artigo-ia.webp"
 excerpt: "Quando não nos autoavaliamos com franqueza, não conseguimos usar bem a tecnologia."
 linkedinUrl: "https://www.linkedin.com/pulse/fascinados-pela-intelig%C3%AAncia-artificial-estamos-ignorando-junior-8km7f/"
+seoTitle: "IA e inteligência emocional: o essencial da liderança"
+socialTitle: "Fascinados pela IA, ignorando o essencial"
+seoDescription: "Enquanto todos se fascinam pela inteligência artificial, a inteligência emocional segue sendo o essencial da liderança. Sobre discernimento e humanidade."
 ---
 
 Quando não nos autoavaliamos francamente, não conseguimos liderar nossas próprias vidas. E nenhuma tecnologia vai resolver isso.

@@ -1,5 +1,5 @@
 ---
-title: "At the World Cup, content does not just dispute attention. It disputes responsibility."
+title: "At the World Cup, sports content does not just dispute attention: it disputes responsibility"
 date: "June 23, 2026"
 dateISO: "2026-06-23"
 category: "Content and responsibility"
@@ -7,6 +7,9 @@ readingTime: "13 min"
 cover: "/assets/artigos/ibson-junior-artigo-copa.webp"
 excerpt: "Between the roar of a goal and the narrative, covering the World Cup with awareness is more than informing."
 linkedinUrl: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/"
+seoTitle: "Content at the World Cup: attention and responsibility"
+socialTitle: "At the World Cup, content disputes more than attention"
+seoDescription: "Covering the World Cup with judgment means separating the meme from memory. Why sports content disputes responsibility, and not just audience."
 ---
 
 Between the roar of a goal and the narrative, covering the World Cup with awareness is separating the meme from the memory

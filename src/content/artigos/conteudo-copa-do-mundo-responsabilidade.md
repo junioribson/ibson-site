@@ -1,5 +1,5 @@
 ---
-title: "Na Copa do Mundo, conteúdo não disputa apenas atenção. Disputa responsabilidade."
+title: "Na Copa do Mundo, o conteúdo esportivo não disputa só atenção: disputa responsabilidade"
 date: "23 de junho de 2026"
 dateISO: "2026-06-23"
 category: "Conteúdo e responsabilidade"
@@ -7,6 +7,9 @@ readingTime: "13 min"
 cover: "/assets/artigos/ibson-junior-artigo-copa.webp"
 excerpt: "Entre o grito de gol e a narrativa, cobrir a Copa com consciência é mais do que informar."
 linkedinUrl: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/"
+seoTitle: "Conteúdo na Copa do Mundo: entre a atenção e a responsabilidade"
+socialTitle: "Na Copa do Mundo, conteúdo disputa mais que atenção"
+seoDescription: "Cobrir a Copa do Mundo com critério é separar o meme da memória. Por que o conteúdo esportivo disputa responsabilidade, e não apenas audiência."
 ---
 
 Entre o grito de gol e a narrativa, cobrir a Copa com consciência é separar o meme da memória

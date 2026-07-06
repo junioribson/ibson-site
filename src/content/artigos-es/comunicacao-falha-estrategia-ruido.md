@@ -1,5 +1,5 @@
 ---
-title: "Cuando la comunicación falla, la estrategia se vuelve ruido"
+title: "Comunicación ejecutiva: cuando falla, la mejor estrategia se vuelve ruido"
 date: "30 de enero de 2026"
 dateISO: "2026-01-30"
 category: "Comunicación y cultura"
@@ -7,6 +7,9 @@ readingTime: "6 min"
 cover: "/assets/artigos/ibson-junior-artigo-comunicacao.webp"
 excerpt: "La comunicación sostiene cultura, gobernanza y previsibilidad. Pero suele ser descuidada."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-comunica%C3%A7%C3%A3o-falha-estrat%C3%A9gia-vira-ru%C3%ADdo-ibson-junior-sgxre/"
+seoTitle: "Comunicación ejecutiva: cuando falla, la estrategia es ruido"
+socialTitle: "Cuando la comunicación falla, la estrategia se vuelve ruido"
+seoDescription: "La comunicación sostiene cultura, gobernanza y previsibilidad, pero suele ser descuidada. Cuando falla, la mejor estrategia se vuelve ruido."
 ---
 
 La comunicación sostiene cultura, gobernanza y previsibilidad. Pero ¿por qué, en la práctica, todavía falla donde más importa?

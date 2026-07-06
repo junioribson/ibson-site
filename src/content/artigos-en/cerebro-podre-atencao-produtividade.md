@@ -1,5 +1,5 @@
 ---
-title: "Rotten brain: the invisible pandemic transforming work"
+title: "Brain rot: how the attention economy corrodes productivity at work"
 date: "April 21, 2026"
 dateISO: "2026-04-21"
 category: "Productivity and attention"
@@ -7,6 +7,9 @@ readingTime: "14 min"
 cover: "/assets/artigos/ibson-junior-artigo-cerebro.webp"
 excerpt: "Between placebo meetings and toxic multitasking, the waste of human capital comes at a high price."
 linkedinUrl: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/"
+seoTitle: "Brain rot: eroded attention and productivity at work"
+socialTitle: "Brain rot: the invisible pandemic corroding work"
+seoDescription: "Placebo meetings, toxic multitasking and attention in tatters. How brain rot wastes human capital, and what to do about it."
 ---
 
 Between placebo meetings and toxic multitasking, the waste of human capital already costs billions. There is no lack of effort in organizations; there is a lack of depth in decisions.

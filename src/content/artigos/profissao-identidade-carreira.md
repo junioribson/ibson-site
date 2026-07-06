@@ -1,5 +1,5 @@
 ---
-title: "Quando a profissão vira identidade, a pessoa começa a desaparecer"
+title: "Quando a profissão vira identidade: o risco de desaparecer atrás do cargo"
 date: "27 de maio de 2026"
 dateISO: "2026-05-27"
 category: "Carreira e consciência"
@@ -7,6 +7,9 @@ readingTime: "14 min"
 cover: "/assets/artigos/ibson-junior-artigo-identidade.webp"
 excerpt: "Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra."
 linkedinUrl: "https://www.linkedin.com/pulse/quando-profiss%C3%A3o-vira-identidade-pessoa-come%C3%A7a-ibson-junior-iue6f/"
+seoTitle: "Profissão e identidade: quando o cargo engole a pessoa"
+socialTitle: "Quando a profissão vira identidade, a pessoa desaparece"
+seoDescription: "Performar no trabalho é uma coisa, ser apenas o trabalho é outra. Sobre identidade profissional, propósito e o risco de sumir atrás do cargo."
 ---
 
 Performar bem no trabalho é uma coisa. Ser apenas o trabalho é outra, e o preço disso, silenciosamente, é a própria profundidade.
