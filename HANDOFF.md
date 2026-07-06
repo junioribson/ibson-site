@@ -25,7 +25,8 @@ Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<
 - `/artigos` (`src/pages/artigos/index.astro`): **biblioteca premium** com todos os artigos (destaque "Mais recente" + galeria), ordenada por data.
 - Card compartilhado: `src/components/ArticleCard.astro` (home e biblioteca).
 - Páginas de artigo: link "Ver o original no LinkedIn" REMOVIDO (o original agora é o site); rodapé tem "Ver todos os artigos" (`/artigos`) + "Compartilhar no LinkedIn". Voltar leva a `/artigos`.
-- Fim de cada artigo (em `ArticlePage.astro`): (1) bloco de fechamento "continue a conversa" com link ao post; (2) bloco **"Você pode se interessar também"** (`articleRelatedTitle` no `ui.ts`) com os **3 artigos mais recentes do mesmo idioma** (exclui o atual), reusando `ArticleCard`. Grid de 3 no desktop, faixa horizontal com scroll-snap (estilo Top Stories) no mobile. Fortalece o internal linking. Critério = recência (site estático não tem "mais acessados" em build; para isso seria preciso puxar do GA).
+- Fim de cada artigo (em `ArticlePage.astro`): (1) bloco de fechamento "continue a conversa" com link ao post; (2) bloco **"Você pode se interessar também"** (`articleRelatedTitle` no `ui.ts`) com 3 artigos do mesmo idioma (exclui o atual), reusando `ArticleCard`. Grid de 3 no desktop, faixa horizontal com scroll-snap (estilo Top Stories) no mobile.
+- **Clusters de tópico (internal linking temático):** o "Veja também" prioriza artigos do **mesmo tema/pilar**, completando com os mais recentes. O mapa slug→tema fica em `src/data/clusters.ts` (`articleTheme`), 4 pilares: `decisao`, `conteudo`, `lideranca`, `vida`. Quando um pilar acumular ~4+ artigos, vale uma página-pilar dedicada. (Site estático não tem "mais acessados" em build; para isso seria preciso puxar do GA.)
 - Obs: `articles.list`/`allUrl` em `content.ts` ficaram sem uso (a fonte da verdade agora é a content collection dos `.md`); mantidos por ora, podem ser removidos numa limpeza futura.
 
 **Camadas de título/SEO por artigo (REGRA, feito):** cada `.md` tem 4 camadas no frontmatter, cada uma para uma superfície diferente. Ver `src/content.config.ts` (campos opcionais com fallback) e como são ligadas em `src/pages/**/artigos/[...slug].astro` + `Base.astro`.
@@ -162,6 +163,7 @@ regra é traduzir SEMPRE que adicionar conteúdo, para não acumular lacunas.
    preservar `<figure>` (só traduz alt/figcaption); sem travessão; sem "Better Collective".
    **Preencher as camadas de SEO** (`seoTitle`, `socialTitle`, `seoDescription`) nos 3 idiomas, traduzidas
    (ver a REGRA das camadas na Frente 1). Slug descritivo e conciso; se renomear depois, adicionar 301 no `vercel.json`.
+   **Atribuir o tema** do artigo em `src/data/clusters.ts` (`articleTheme`), para o internal linking temático.
 2. Adicionar o item em `articles.list` nos TRÊS `content.*.ts` (traduzindo category/title/summary).
 
 **Ao adicionar/editar SEÇÃO (`content.ts`) ou microcopy (`i18n/ui.ts`):** replicar a mesma chave

@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import ArticleCard from "./ArticleCard.astro";
+import { articleTheme } from "../data/clusters";
 import { localizePath, normalizeLocale, htmlLang, LANGS } from "../i18n/utils";
 import { t } from "../i18n/ui";
 
@@ -26,13 +27,17 @@ const availByLocale: Record<string, boolean> = {
 };
 const translateLangs = LANGS.filter((lg) => availByLocale[lg.code]);
 
-// "Veja também": 3 artigos mais recentes do mesmo idioma, exceto o atual.
-// (Site estático: sem dados de acesso em build; recência é o melhor critério.)
+// "Veja também" com cluster de tópico: prioriza artigos do MESMO tema (internal
+// linking temático, sinal de autoridade de tópico), completando com os mais
+// recentes até 3. Mesmo idioma, exceto o atual.
 const collByLocale: Record<string, typeof ptCol> = { pt: ptCol, es: esCol, en: enCol };
-const related = (collByLocale[locale] ?? ptCol)
+const pool = (collByLocale[locale] ?? ptCol)
   .filter((e) => e.id !== entry.id)
-  .sort((a, b) => (a.data.dateISO < b.data.dateISO ? 1 : -1))
-  .slice(0, 3);
+  .sort((a, b) => (a.data.dateISO < b.data.dateISO ? 1 : -1));
+const currentTheme = articleTheme[entry.id];
+const sameTheme = currentTheme ? pool.filter((e) => articleTheme[e.id] === currentTheme) : [];
+const others = pool.filter((e) => !sameTheme.includes(e));
+const related = [...sameTheme, ...others].slice(0, 3);
 
 const url = new URL(localizePath(`/artigos/${entry.id}`, locale), "https://ibsonjunior.com.br").href;
 const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
