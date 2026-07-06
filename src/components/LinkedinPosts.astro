@@ -3,7 +3,9 @@
 // indexação no Google Imagens). Cada card mostra a arte COMPLETA (qualquer
 // formato, sem corte) e abre o post exato no LinkedIn ao clicar.
 import { getContent, imgDims } from "../i18n/utils";
+import { t } from "../i18n/ui";
 const { linkedinPosts: lk } = getContent(Astro.currentLocale);
+const ui = t(Astro.currentLocale);
 // Mostra no máximo 8 posts (os mais recentes). O resto fica no LinkedIn.
 const posts = lk.posts.slice(0, 8);
 ---
@@ -15,23 +17,23 @@ const posts = lk.posts.slice(0, 8);
     </div>
     <div class="lk-head reveal">
       <h2>{lk.title}</h2>
-      <a class="lk-all" href={lk.profileUrl} target="_blank" rel="noopener">Ver todos ↗</a>
+      <a class="lk-all" href={lk.profileUrl} target="_blank" rel="noopener">{ui.postsSeeAll}</a>
     </div>
     <p class="lk-sub reveal">{lk.subtitle}</p>
 
     <div class="lk-wrap reveal">
-      <button class="lk-nav lk-prev" aria-label="Anterior" type="button">‹</button>
+      <button class="lk-nav lk-prev" aria-label={ui.galleryPrev} type="button">‹</button>
       <div class="lk-scroller" id="lk-scroller">
         {
           posts.map((p) => (
-            <a class="lk-card" href={p.url} target="_blank" rel="noopener" aria-label="Abrir post no LinkedIn">
+            <a class="lk-card" href={p.url} target="_blank" rel="noopener" aria-label={ui.postsCardAria}>
               <img class="lk-img" src={p.image} {...imgDims(p.image)} alt={p.alt} loading="lazy" />
-              <span class="lk-hint">Ver no LinkedIn ↗</span>
+              <span class="lk-hint">{ui.postsHint}</span>
             </a>
           ))
         }
       </div>
-      <button class="lk-nav lk-next" aria-label="Próximo" type="button" data-profile={lk.profileUrl}>›</button>
+      <button class="lk-nav lk-next" aria-label={ui.galleryNext} type="button" data-profile={lk.profileUrl}>›</button>
     </div>
   </div>
 </section>

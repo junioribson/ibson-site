@@ -29,6 +29,7 @@ type SeoCopy = {
   faq: { q: string; a: string }[];
   siteName: string;
   siteDesc: string;
+  audienceType: string;
 };
 
 const COPY: Record<Locale, SeoCopy> = {
@@ -66,6 +67,7 @@ const COPY: Record<Locale, SeoCopy> = {
     siteName: "Ibson Junior",
     siteDesc:
       "Site oficial de Ibson Junior: palestras, mentoria executiva e conselho sobre liderança, comunicação, cultura, marca pessoal e tomada de decisão.",
+    audienceType: "Empresas, lideranças e executivos",
   },
   es: {
     jobTitle: "Ejecutivo de contenido, liderazgo y comunicación",
@@ -101,6 +103,7 @@ const COPY: Record<Locale, SeoCopy> = {
     siteName: "Ibson Junior",
     siteDesc:
       "Sitio oficial de Ibson Junior: charlas, mentoría ejecutiva y consejo sobre liderazgo, comunicación, cultura, marca personal y toma de decisiones.",
+    audienceType: "Empresas, liderazgos y ejecutivos",
   },
   en: {
     jobTitle: "Content, leadership and communication executive",
@@ -136,6 +139,7 @@ const COPY: Record<Locale, SeoCopy> = {
     siteName: "Ibson Junior",
     siteDesc:
       "Official site of Ibson Junior: keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding and decision-making.",
+    audienceType: "Companies, leaders and executives",
   },
 };
 
@@ -155,7 +159,7 @@ export function siteGraph(locale?: string | null) {
       { "@type": "Country", name: "Brasil" },
       { "@type": "AdministrativeArea", name: "Online / remoto" },
     ],
-    audience: { "@type": "BusinessAudience", audienceType: "Empresas, lideranças e executivos" },
+    audience: { "@type": "BusinessAudience", audienceType: c.audienceType },
   }));
 
   return {

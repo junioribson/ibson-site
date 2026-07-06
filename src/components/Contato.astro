@@ -7,6 +7,9 @@ import { getContent } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { contact } = getContent(Astro.currentLocale);
 const ui = t(Astro.currentLocale);
+// Cada botão de rota rápida aponta para um índice de contact.subjects (mesma
+// ordem em todos os idiomas): [palestra, mentoria, entrevista, conselho].
+const QB_TO_SUBJECT = [0, 1, 3, 2];
 import Moon from "./Moon.astro";
 import Icon from "./Icon.astro";
 ---
@@ -29,8 +32,8 @@ import Icon from "./Icon.astro";
           <span>↗</span>
         </a>
         {
-          contact.quickButtons.map((label) => (
-            <a href="#form-contato" data-subject={label} class="qbtn">
+          contact.quickButtons.map((label, i) => (
+            <a href="#form-contato" data-subject={contact.subjects[QB_TO_SUBJECT[i] ?? 0]} class="qbtn">
               {label} <span>→</span>
             </a>
           ))
@@ -93,13 +96,7 @@ import Icon from "./Icon.astro";
   document.querySelectorAll(".quick a[data-subject]").forEach((a) => {
     a.addEventListener("click", () => {
       const sub = a.getAttribute("data-subject") || "";
-      const map = {
-        "Convidar para palestra": "Palestra",
-        "Falar sobre mentoria": "Mentoria",
-        "Propor entrevista": "Entrevista",
-        "Falar sobre conselho/advisory": "Conselho / advisory",
-      };
-      if (assunto && map[sub]) assunto.value = map[sub];
+      if (assunto && sub) assunto.value = sub;
     });
   });
 

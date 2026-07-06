@@ -31,7 +31,7 @@ export const GSC_VERIFICATION = "";
 export const seo = {
   title: "Ibson Junior | Critério, Liderança e Decisão",
   description:
-    "Ibson Junior: executivo de conteúdo, liderança e comunicação. Palestras, mentoria executiva e conselho sobre marca pessoal, comunicação, cultura, desenvolvimento de equipes, IA e tomada de decisão.",
+    "Ibson Junior: executivo de conteúdo, liderança e comunicação. Palestras, mentoria e conselho sobre marca pessoal, comunicação, cultura e decisão.",
   ogTitle:
     "Ibson Junior | Critério, liderança e decisão em tempos complexos",
   ogDescription:

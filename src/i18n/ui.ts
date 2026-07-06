@@ -58,6 +58,9 @@ type UIStrings = {
   galleryClose: string;
   galleryPrev: string;
   galleryNext: string;
+  postsCardAria: string;
+  portraitAlt: string;
+  galleryAlt: string;
 };
 
 const UI: Record<"pt" | "es" | "en", UIStrings> = {
@@ -118,6 +121,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     galleryClose: "Fechar",
     galleryPrev: "Anterior",
     galleryNext: "Próxima",
+    postsCardAria: "Abrir post no LinkedIn",
+    portraitAlt: "Ibson Junior, executivo de conteúdo, liderança e comunicação",
+    galleryAlt: "Aparição recente de Ibson Junior",
   },
   es: {
     footerNavigate: "Navegar",
@@ -176,6 +182,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     galleryClose: "Cerrar",
     galleryPrev: "Anterior",
     galleryNext: "Siguiente",
+    postsCardAria: "Abrir publicación en LinkedIn",
+    portraitAlt: "Ibson Junior, ejecutivo de contenido, liderazgo y comunicación",
+    galleryAlt: "Aparición reciente de Ibson Junior",
   },
   en: {
     footerNavigate: "Navigate",
@@ -234,6 +243,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     galleryClose: "Close",
     galleryPrev: "Previous",
     galleryNext: "Next",
+    postsCardAria: "Open post on LinkedIn",
+    portraitAlt: "Ibson Junior, content, leadership and communication executive",
+    galleryAlt: "Recent appearance of Ibson Junior",
   },
 };
 
