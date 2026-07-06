@@ -194,6 +194,16 @@ avançado, inglês intermediário indo para avançado.
 
 ---
 
+## Autoridade de entidade (SEO de nome: Ibson Junior = Ibson Lima dos Santos Junior = Ibson)
+Objetivo: consolidar a entidade para o Google/IAs e desambiguar do homônimo (ex-jogador).
+- **Fase 1 (feita):** artigos e biblioteca apontam `author`/`publisher`/`about` para o mesmo `@id #person` (definido em cheio na home, `schema.ts`). `BreadcrumbList` (JSON-LD) em artigos e biblioteca. `alternateName` = ["Ibson Lima dos Santos Junior", "Ibson Júnior", "Ibson"] (em `schema.ts` e no `personSchema` do `Base.astro`). Byline do artigo linka para a home.
+- **`sameAs`:** LinkedIn, X e as staff pages (Bolavip/Antenados/Somos Fanáticos). Ibson NÃO controla esses sites (multinacional), então backlink de volta está descartado; a menção via `sameAs` é o teto.
+- **Página `/ibson-junior/` (feita):** "Entity Home" aprofundada (AboutPage → mesmo `#person`, `og:type=profile`, título de intenção informacional distinto da home para não canibalizar). Conteúdo em `identity` (`content.ts`/`.es`/`.en`): bio narrativa (origem curiosa → repertório → audiência → escala → arquitetura de decisão → atuação pública) + bloco factual. Componente `IbsonJunior.astro`, rotas nos 3 idiomas, botão "Saiba mais sobre mim" no Sobre da home (`aboutMore` no `ui.ts`). Cargo público: "Diretor de Conteúdo no Brasil na Futbol Sites". **Nunca "Better Collective".** Idade (38) só no bloco factual. "afiliados" virou "frentes de monetização e parceria".
+- **Wikidata:** item pronto para o Ibson publicar em `docs/wikidata-item.md` (o Claude não cria conta; prepara e guia). Quando publicado, adicionar a URL Q... ao `sameAs`.
+- **Ações do Ibson (fora do site):** PR (matérias em portais de negócio com link), bios de LinkedIn/X com nome completo + link do site, criar o item do Wikidata, pedir indexação das URLs no Search Console.
+- **A confirmar com o Ibson:** coautor de "Conselho Diário" (mantido); "bilhões de visualizações" (mantido, defensável); Board Academy (fica no bloco factual, não no corpo).
+- **Fases seguintes (combinadas):** `/palestras/` e `/mentoria/` como landing pages (aliviando a home + menu levando a elas); depois `/imprensa/` reaproveitando as bios. Hubs `/temas/`, `/notas/` e cases: esperar volume.
+
 ## Regras inegociáveis (resumo, ver CLAUDE.md)
 - **NUNCA** travessão (— ou –). Usar vírgula, ponto, dois-pontos, parênteses.
 - **NUNCA** mencionar Better Collective.
