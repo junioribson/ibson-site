@@ -9,7 +9,15 @@ const ui = t(Astro.currentLocale);
 
 <section class="wh" id="hero">
   <div class="wh-bg" data-parallax data-speed="14">
-    <img src="/assets/arquetipos/wolf-editorial.webp" alt="" aria-hidden="true" fetchpriority="high" width="1916" height="821" />
+    <picture>
+      <source
+        media="(max-width: 900px)"
+        srcset="/assets/arquetipos/wolf-editorial-mobile.webp"
+        width="1200"
+        height="514"
+      />
+      <img src="/assets/arquetipos/wolf-editorial.webp" alt="" aria-hidden="true" fetchpriority="high" width="1916" height="821" />
+    </picture>
   </div>
   <div class="wh-scrim" aria-hidden="true"></div>
   <canvas class="wh-net" aria-hidden="true"></canvas>

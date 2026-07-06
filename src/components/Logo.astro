@@ -9,17 +9,17 @@ interface Props {
   surface?: "adaptive" | "dark" | "light";
 }
 const { class: className, surface = "adaptive" } = Astro.props;
-const roxa = "/assets/logo/logo-roxa.png";
-const branca = "/assets/logo/logo-branca.png";
+const roxa = "/assets/logo/logo-roxa.webp";
+const branca = "/assets/logo/logo-branca.webp";
 ---
 
-{surface === "dark" && <img class={className} src={branca} alt="Ibson Junior" width="843" height="843" />}
-{surface === "light" && <img class={className} src={roxa} alt="Ibson Junior" width="843" height="843" />}
+{surface === "dark" && <img class={className} src={branca} alt="Ibson Junior" width="128" height="128" />}
+{surface === "light" && <img class={className} src={roxa} alt="Ibson Junior" width="128" height="128" />}
 {
   surface === "adaptive" && (
     <span class:list={["logo-swap", className]}>
-      <img class="logo-roxa" src={roxa} alt="Ibson Junior" width="843" height="843" />
-      <img class="logo-branca" src={branca} alt="Ibson Junior" width="843" height="843" />
+      <img class="logo-roxa" src={roxa} alt="Ibson Junior" width="128" height="128" />
+      <img class="logo-branca" src={branca} alt="Ibson Junior" width="128" height="128" />
     </span>
   )
 }
