@@ -31,6 +31,7 @@ type UIStrings = {
   articleCtaTitle: string;
   articleCtaText: string;
   articleCtaButton: string;
+  articleRelatedTitle: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -97,6 +98,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaTitle: "A conversa não termina aqui.",
     articleCtaText: "Se o texto deixou uma pergunta no ar, o lugar de responder é lá. Comentários, discordâncias e outras leituras são bem-vindos no post original.",
     articleCtaButton: "Participar da conversa",
+    articleRelatedTitle: "Você pode se interessar também",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -161,6 +163,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaTitle: "La conversación no termina aquí.",
     articleCtaText: "Si el texto dejó una pregunta en el aire, el lugar para responder está allí. Comentarios, desacuerdos y otras lecturas son bienvenidos en la publicación original.",
     articleCtaButton: "Unirse a la conversación",
+    articleRelatedTitle: "También te puede interesar",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -225,6 +228,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaTitle: "The conversation does not end here.",
     articleCtaText: "If the piece left a question in the air, the place to answer it is there. Comments, disagreements and other readings are welcome on the original post.",
     articleCtaButton: "Join the conversation",
+    articleRelatedTitle: "You might also be interested",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

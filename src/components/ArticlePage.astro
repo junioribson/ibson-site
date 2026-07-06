@@ -3,6 +3,7 @@
 import { getCollection, render } from "astro:content";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
+import ArticleCard from "./ArticleCard.astro";
 import { localizePath, normalizeLocale, htmlLang, LANGS } from "../i18n/utils";
 import { t } from "../i18n/ui";
 
@@ -24,6 +25,14 @@ const availByLocale: Record<string, boolean> = {
   en: enCol.some((e) => e.id === entry.id),
 };
 const translateLangs = LANGS.filter((lg) => availByLocale[lg.code]);
+
+// "Veja também": 3 artigos mais recentes do mesmo idioma, exceto o atual.
+// (Site estático: sem dados de acesso em build; recência é o melhor critério.)
+const collByLocale: Record<string, typeof ptCol> = { pt: ptCol, es: esCol, en: enCol };
+const related = (collByLocale[locale] ?? ptCol)
+  .filter((e) => e.id !== entry.id)
+  .sort((a, b) => (a.data.dateISO < b.data.dateISO ? 1 : -1))
+  .slice(0, 3);
 
 const url = new URL(localizePath(`/artigos/${entry.id}`, locale), "https://ibsonjunior.com.br").href;
 const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
@@ -94,6 +103,25 @@ const articleSchema = {
           {ui.articleCtaButton} <span aria-hidden="true">↗</span>
         </a>
       </aside>
+      {
+        related.length > 0 && (
+          <section class="art-related">
+            <h2 class="art-related-title">{ui.articleRelatedTitle}</h2>
+            <div class="art-related-grid">
+              {related.map((e) => (
+                <ArticleCard
+                  slug={e.id}
+                  title={e.data.title}
+                  cover={e.data.cover}
+                  category={e.data.category}
+                  readingTime={e.data.readingTime}
+                  date={e.data.date}
+                />
+              ))}
+            </div>
+          </section>
+        )
+      }
       <div class="art-foot">
         <a class="art-more" href={localizePath("/artigos", locale)}>{ui.articleSeeAll}</a>
         <a class="art-share" href={shareUrl} target="_blank" rel="noopener">{ui.articleShare}</a>
@@ -244,6 +272,33 @@ const articleSchema = {
   }
   .art-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 22px 44px -16px var(--glow); filter: brightness(1.08); }
   .art-cta-btn span { font-size: 15px; }
+
+  /* "Veja também": circulação interna, estilo Top Stories. */
+  .art-related { margin-top: 56px; padding-top: 34px; border-top: 1px solid var(--line); }
+  .art-related-title {
+    font-family: var(--font-sans); font-weight: 800;
+    font-size: clamp(18px, 2vw, 22px); letter-spacing: -0.02em;
+    line-height: 1.2; color: var(--heading); margin: 0 0 22px;
+  }
+  .art-related-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;
+  }
+  /* Cards mais compactos neste contexto (mini galeria). */
+  .art-related-grid :global(.art-body) { padding: 16px 18px 18px; gap: 9px; }
+  .art-related-grid :global(.art-body h3) { font-size: 16px; line-height: 1.25; }
+  .art-related-grid :global(.art-ex) { display: none; }
+
+  /* Mobile: faixa horizontal com "peek" do próximo card (Top Stories). */
+  @media (max-width: 620px) {
+    .art-related-grid {
+      display: flex; grid-template-columns: none; gap: 14px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; padding-bottom: 6px;
+    }
+    .art-related-grid::-webkit-scrollbar { display: none; }
+    .art-related-grid :global(.artcard) { flex: 0 0 82%; scroll-snap-align: start; }
+  }
 
   .art-foot {
     margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--line);
