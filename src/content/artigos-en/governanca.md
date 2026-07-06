@@ -86,5 +86,3 @@ Deciding under pressure requires maturity. And reactive decisions are costly. At
 Here comes a point that closes the cycle: **decision is culture.** Each decision sends an invisible message about what is tolerated, what is valued and what is rewarded. If the decision is incoherent, culture becomes discourse. Because, in the end, the organization is not what it declares, it is what it decides to sustain.
 
 *Today, I leave here a question for you to answer with sincerity:* **if the quality of decisions were the only metric of governance, how many organizations would really be well evaluated today?**
-
-I invite you to follow me, like and share this article so that the algorithm keeps us always connected. I will share more tips and insights about this in the coming weeks and it would be a pleasure to have interesting exchanges in the comments of my feed.

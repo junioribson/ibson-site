@@ -71,4 +71,4 @@ A cultura organizacional não é um artefato decorativo. Ela não pode se tornar
 
 Se este artigo te fez refletir sobre como sua empresa vive (ou apenas exibe) sua cultura, **convido você a continuar essa jornada comigo aqui no LinkedIn, onde espero** **contribuir com diversos outros temas como liderança, novas tecnologias, inovação, comunicação inteligente, produto, performance e estratégias de negócios.**
 
-Espero que possamos estar conectados para continuar essa conversa de crescimento juntos. Estou curioso para conhecer outras boas práticas, trocar experiências e colocar novas ideias em prática. **Acompanhe meus próximos artigos, conecte-se comigo, comente e compartilhe suas ideias!**
+Espero que possamos estar conectados para continuar essa conversa de crescimento juntos. Estou curioso para conhecer outras boas práticas, trocar experiências e colocar novas ideias em prática.

@@ -71,4 +71,4 @@ Organizational culture is not a decorative artifact. It cannot become an interna
 
 If this article made you reflect on how your company lives (or merely displays) its culture, **I invite you to continue this journey with me here on LinkedIn, where I hope to** **contribute with several other themes such as leadership, new technologies, innovation, intelligent communication, product, performance and business strategies.**
 
-I hope we can be connected to continue this conversation of growing together. I am curious to learn about other good practices, exchange experiences and put new ideas into practice. **Follow my next articles, connect with me, comment and share your ideas!**
+I hope we can be connected to continue this conversation of growing together. I am curious to learn about other good practices, exchange experiences and put new ideas into practice.

@@ -28,6 +28,9 @@ type UIStrings = {
   articleShare: string;
   articleTranslate: string;
   articleTranslateTo: string;
+  articleCtaTitle: string;
+  articleCtaText: string;
+  articleCtaButton: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -91,6 +94,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleShare: "Compartilhar no LinkedIn ↗",
     articleTranslate: "Traduzir",
     articleTranslateTo: "Ler em outro idioma",
+    articleCtaTitle: "A conversa não termina aqui.",
+    articleCtaText: "Se o texto deixou uma pergunta no ar, o lugar de responder é lá. Comentários, discordâncias e outras leituras são bem-vindos no post original.",
+    articleCtaButton: "Participar da conversa",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -152,6 +158,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleShare: "Compartir en LinkedIn ↗",
     articleTranslate: "Traducir",
     articleTranslateTo: "Leer en otro idioma",
+    articleCtaTitle: "La conversación no termina aquí.",
+    articleCtaText: "Si el texto dejó una pregunta en el aire, el lugar para responder está allí. Comentarios, desacuerdos y otras lecturas son bienvenidos en la publicación original.",
+    articleCtaButton: "Unirse a la conversación",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -213,6 +222,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleShare: "Share on LinkedIn ↗",
     articleTranslate: "Translate",
     articleTranslateTo: "Read in another language",
+    articleCtaTitle: "The conversation does not end here.",
+    articleCtaText: "If the piece left a question in the air, the place to answer it is there. Comments, disagreements and other readings are welcome on the original post.",
+    articleCtaButton: "Join the conversation",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

@@ -86,5 +86,3 @@ Decidir bajo presión exige madurez. Y las decisiones reactivas cuestan caro. En
 Aquí entra un punto que cierra el ciclo: **la decisión es cultura.** Cada decisión envía un mensaje invisible sobre lo que se tolera, lo que se valora y lo que se premia. Si la decisión es incoherente, la cultura se vuelve discurso. Porque, al final, la organización no es lo que declara, es lo que decide sostener.
 
 *Hoy, dejo aquí una pregunta para que ustedes respondan con sinceridad:* **si la calidad de las decisiones fuera la única métrica de gobernanza, ¿cuántas organizaciones estarían realmente bien evaluadas hoy?**
-
-Te invito a seguirme, dar like y compartir este artículo para que el algoritmo nos mantenga siempre conectados. Voy a compartir más consejos e insights sobre esto en las próximas semanas y sería un placer tener intercambios interesantes en los comentarios de mi feed.

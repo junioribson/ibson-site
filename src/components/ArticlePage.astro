@@ -87,6 +87,13 @@ const articleSchema = {
       <div class="art-body">
         <Content />
       </div>
+      <aside class="art-cta">
+        <p class="art-cta-title">{ui.articleCtaTitle}</p>
+        <p class="art-cta-text">{ui.articleCtaText}</p>
+        <a class="art-cta-btn" href={d.linkedinUrl} target="_blank" rel="noopener">
+          {ui.articleCtaButton} <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
       <div class="art-foot">
         <a class="art-more" href={localizePath("/artigos", locale)}>{ui.articleSeeAll}</a>
         <a class="art-share" href={shareUrl} target="_blank" rel="noopener">{ui.articleShare}</a>
@@ -210,8 +217,36 @@ const articleSchema = {
     letter-spacing: 0.02em; line-height: 1.5; color: var(--ink-soft); text-align: center;
   }
 
+  /* Bloco de fechamento: convida a continuar a conversa no post do LinkedIn. */
+  .art-cta {
+    margin-top: 52px; padding: clamp(24px, 3vw, 34px);
+    border-radius: 16px; border: 1px solid var(--line);
+    background:
+      radial-gradient(130% 150% at 100% 0%, var(--glow), transparent 55%),
+      var(--panel);
+  }
+  .art-cta-title {
+    font-family: var(--font-sans); font-weight: 800;
+    font-size: clamp(19px, 2.2vw, 25px); letter-spacing: -0.02em;
+    line-height: 1.2; color: var(--heading); margin: 0 0 10px;
+  }
+  .art-cta-text {
+    font-size: 15.5px; line-height: 1.62; color: var(--text);
+    margin: 0 0 22px; max-width: 62ch;
+  }
+  .art-cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-sans); font-weight: 800; font-size: 14.5px;
+    color: #fff; background: var(--accent);
+    padding: 13px 24px; border-radius: 999px;
+    box-shadow: 0 16px 34px -14px var(--glow);
+    transition: transform 0.25s ease, box-shadow 0.3s ease, filter 0.25s ease;
+  }
+  .art-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 22px 44px -16px var(--glow); filter: brightness(1.08); }
+  .art-cta-btn span { font-size: 15px; }
+
   .art-foot {
-    margin-top: 48px; padding-top: 26px; border-top: 1px solid var(--line);
+    margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--line);
     display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
   }
   .art-more { color: var(--accent); font-weight: 800; font-size: 14px; text-shadow: 0 0 16px var(--glow); }
