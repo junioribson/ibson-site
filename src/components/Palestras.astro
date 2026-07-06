@@ -123,6 +123,16 @@ const ui = t(Astro.currentLocale);
     object-position: 58% 15%;
     opacity: 0.96;
     animation: owl-breathe 12s ease-in-out infinite;
+    /* Dissolve a borda ESQUERDA (e um pouco do topo/base) da imagem no escuro,
+       como o lobo do hero: sem retângulo "colado". Só CSS (não pesa no PageSpeed). */
+    -webkit-mask-image:
+      linear-gradient(100deg, transparent 2%, #000 46%),
+      linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(100deg, transparent 2%, #000 46%),
+      linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
+    mask-composite: intersect;
   }
   @keyframes owl-breathe {
     0%, 100% { opacity: 0.9; }
@@ -267,6 +277,7 @@ const ui = t(Astro.currentLocale);
     };
 
     const step = () => {
+      if (!running) return;
       ctx.clearRect(0, 0, W, H);
       for (const n of nodes) {
         n.x += n.vx; n.y += n.vy;
@@ -299,6 +310,7 @@ const ui = t(Astro.currentLocale);
     };
 
     let raf = 0;
+    let running = true;
     sec.addEventListener("mousemove", (e) => {
       const r = sec.getBoundingClientRect();
       mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
@@ -307,5 +319,14 @@ const ui = t(Astro.currentLocale);
     window.addEventListener("resize", build);
     build();
     step();
+    // Pausa quando a seção sai da tela: economiza CPU / protege o TBT no mobile.
+    const vis = new IntersectionObserver(
+      (ents) => ents.forEach((e) => {
+        if (e.isIntersecting && !running) { running = true; raf = requestAnimationFrame(step); }
+        else if (!e.isIntersecting && running) { running = false; cancelAnimationFrame(raf); }
+      }),
+      { threshold: 0 }
+    );
+    vis.observe(sec);
   }
 </script>
