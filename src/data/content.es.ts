@@ -117,6 +117,47 @@ export const about = {
 //   - image: el arte de la publicación en /assets/posts/ibson-junior-post-*.webp (lo envía Ibson)
 //   - url: el enlace de la publicación específica en LinkedIn
 //   - reactions/comments/shares: los conteos (los informa Ibson)
+export const identity = {
+  seoTitle: "Ibson Junior | Ejecutivo de Contenido, Liderazgo y Comunicación",
+  seoDescription:
+    "Ibson Junior, nombre profesional de Ibson Lima dos Santos Junior, es ejecutivo de contenido, liderazgo y comunicación. Trayectoria, repertorio y la arquitectura de decisión, ejecución y gobernanza en entornos digitales complejos.",
+  socialTitle: "Ibson Junior: del internet por teléfono a la arquitectura de la decisión",
+  kicker: "Quién es",
+  h1: "Ibson Junior",
+  subtitle: "Ibson Lima dos Santos Junior, conocido profesionalmente como Ibson Junior.",
+  portrait: "/assets/retratos/ibson-junior-retrato.webp",
+  portraitAlt: "Retrato de Ibson Junior, ejecutivo de contenido, liderazgo y comunicación",
+  bio: [
+    "Ibson Lima dos Santos Junior, conocido profesionalmente como Ibson Junior, es ejecutivo de contenido, liderazgo y comunicación. Trabaja en la arquitectura de sistemas de decisión, ejecución y gobernanza en entornos digitales de alta velocidad, conectando estrategia editorial, cultura, audiencia, tecnología, inteligencia artificial y responsabilidad pública.",
+    "Su relación con la tecnología comenzó antes de cualquier cargo. En 2000 recibió su primer computador, aprendió a navegar por el internet de conexión telefónica y creció junto con la popularización de la red en Brasil. Desde temprano, empezó a observar cómo las personas se conectan, cómo circula la información y cómo las ideas ganan fuerza cuando encuentran el contexto adecuado.",
+    "Esa curiosidad nunca se limitó a un área. A lo largo de su trayectoria pasó por formaciones y experiencias en eventos, informática, seguridad laboral, monitoreo ambiental y otros campos que, a primera vista, podrían parecer distantes entre sí. Para Ibson no era dispersión. Era repertorio. Cada área agregaba una capa para entender tecnología, cultura, negocio, comportamiento humano y comunicación como partes de un mismo sistema.",
+    "Fue en la cultura donde esa inquietud encontró su primera expresión pública. En 2008 fundó ProliferArte, movimiento creado para acercar a las personas al arte, a la palabra y a la expresión. Antes de trabajar con grandes audiencias digitales, ya experimentaba una convicción que atravesaría toda su carrera: la atención verdadera no nace solo del alcance. Nace del sentido.",
+    "En los años siguientes llevó ese aprendizaje a la comunicación digital a escala. En el deporte fue creador de Antenados no Futebol, responsable del nombre y de la concepción de la marca, y tuvo un papel directo en la llegada y el desarrollo de Bolavip en Brasil entre 2017 y 2018. Como CEO de Futmarketing, participó en la construcción, el posicionamiento y la venta de una operación brasileña de medios deportivos. Después fundó WolfLife, ecosistema de comunidades digitales que alcanzó a millones de personas y miles de millones de visualizaciones, vendido en 2025.",
+    "Al operar en entornos de crecimiento, audiencia y alta presión por resultado, una percepción se volvió central: el crecimiento rara vez se pierde solo por falta de estrategia. Muchas veces se pierde por la ausencia de coherencia entre decisión, gobernanza y ejecución. Existen direcciones que no se consolidan, estructuras que crecen sin sostenerse y ejecuciones que ocurren, pero no se repiten con consistencia.",
+    "Esa lectura pasó a orientar su trabajo. Más que formular dirección, Ibson se dedica a entender la arquitectura que hace viable una dirección: cómo se toman las decisiones, cómo se distribuyen las responsabilidades, cómo se preservan los criterios y cómo se mantiene la ejecución cuando la complejidad aumenta.",
+    "Hoy, como Director de Contenido en Brasil en Futbol Sites, lidera una operación que integra editorial, social, datos, audiovisual, BI, negocios y frentes de monetización y alianzas. Su trabajo está menos en la producción aislada de contenido y más en la coordinación de sistemas capaces de sostener claridad, consistencia y responsabilidad en múltiples frentes al mismo tiempo.",
+    "De galerías de arte a comunidades de millones, de la comunicación cultural a los medios deportivos digitales, Ibson siempre lidió con la misma pregunta en diferentes escalas: ¿qué hace que una idea, una operación o una decisión se sostenga?",
+    "Ese repertorio hoy también se traduce más allá de la operación. Actúa como conferencista, mentor ejecutivo y consejero, es coautor del libro Conselho Diário y escribe públicamente sobre inteligencia artificial, cultura, liderazgo, comunicación, reputación, gobernanza y decisión.",
+    "Su marca personal nace de ese encuentro entre experiencia práctica y reflexión pública. Ibson ayuda a personas y organizaciones a decidir, comunicar y crecer con más criterio en medio del exceso. Su convicción es directa: el resultado consistente no nace del esfuerzo puntual. Nace de estructuras claras, responsabilidades bien definidas y decisiones que se sostienen en la ejecución.",
+    "En un tiempo en que todo se acelera, la claridad dejó de ser solo una virtud. Se volvió responsabilidad.",
+  ],
+  factsTitle: "En resumen",
+  facts: [
+    { k: "Nombre", v: "Ibson Lima dos Santos Junior" },
+    { k: "Actuación", v: "Ejecutivo de contenido, liderazgo y comunicación" },
+    { k: "Cargo", v: "Director de Contenido en Brasil en Futbol Sites" },
+    { k: "Territorios", v: "IA, cultura, liderazgo, comunicación, gobernanza y decisión" },
+    { k: "También", v: "Conferencista, mentor ejecutivo y consejero" },
+    { k: "Autor", v: 'Coautor del libro "Conselho Diário"' },
+    { k: "Formación", v: "Gobernanza (Board Academy), entre otras" },
+    { k: "Edad", v: "38 años" },
+  ],
+  ctaTitle: "¿Conversamos?",
+  ctaText: "Para charlas, mentoría, consejo o una conversación profesional.",
+  ctaLabel: "Ponerse en contacto",
+  exploreTitle: "Explora",
+};
+
 export const linkedinPosts = {
   title: "Últimas publicaciones en LinkedIn",
   subtitle:

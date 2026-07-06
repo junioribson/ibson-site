@@ -110,6 +110,50 @@ export const about = {
   ],
 };
 
+// Página de identidade (/ibson-junior/): a "Entity Home" aprofundada. Biografia
+// narrativa (origem curiosa -> repertório -> audiência -> escala -> arquitetura de
+// decisão -> atuação pública), com bloco factual secundário. Mesmo #person do site.
+export const identity = {
+  seoTitle: "Ibson Junior | Executivo de Conteúdo, Liderança e Comunicação",
+  seoDescription:
+    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é executivo de conteúdo, liderança e comunicação. Trajetória, repertório e a arquitetura de decisão, execução e governança em ambientes digitais complexos.",
+  socialTitle: "Ibson Junior: da internet discada à arquitetura da decisão",
+  kicker: "Quem é",
+  h1: "Ibson Junior",
+  subtitle: "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior.",
+  portrait: "/assets/retratos/ibson-junior-retrato.webp",
+  portraitAlt: "Retrato de Ibson Junior, executivo de conteúdo, liderança e comunicação",
+  bio: [
+    "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior, é executivo de conteúdo, liderança e comunicação. Atua na arquitetura de sistemas de decisão, execução e governança em ambientes digitais de alta velocidade, conectando estratégia editorial, cultura, audiência, tecnologia, inteligência artificial e responsabilidade pública.",
+    "Sua relação com tecnologia começou antes de qualquer cargo. Em 2000, ganhou seu primeiro computador, aprendeu a navegar pela internet discada e cresceu junto com a popularização da rede no Brasil. Desde cedo, passou a observar como pessoas se conectam, como informações circulam e como ideias ganham força quando encontram o contexto certo.",
+    "Essa curiosidade nunca ficou restrita a uma área. Ao longo da trajetória, passou por formações e experiências em eventos, informática, segurança do trabalho, monitoria ambiental e outros campos que, à primeira vista, poderiam parecer distantes entre si. Para Ibson, não era dispersão. Era repertório. Cada área acrescentava uma camada para entender tecnologia, cultura, negócio, comportamento humano e comunicação como partes de um mesmo sistema.",
+    "Foi na cultura que essa inquietação encontrou sua primeira expressão pública. Em 2008, fundou a ProliferArte, movimento criado para aproximar pessoas da arte, da palavra e da expressão. Antes de trabalhar com grandes audiências digitais, já experimentava uma convicção que atravessaria toda a sua carreira: atenção verdadeira não nasce apenas de alcance. Nasce de sentido.",
+    "Nos anos seguintes, levou esse aprendizado para a comunicação digital em escala. No esporte, foi criador do Antenados no Futebol, responsável pelo nome e pela concepção da marca, e teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil entre 2017 e 2018. Como CEO da Futmarketing, participou da construção, do posicionamento e da venda de uma operação brasileira de mídia esportiva. Depois, fundou a WolfLife, ecossistema de comunidades digitais que alcançou milhões de pessoas e bilhões de visualizações, vendido em 2025.",
+    "Ao operar em ambientes de crescimento, audiência e alta pressão por resultado, uma percepção foi se tornando central: o crescimento raramente se perde apenas por falta de estratégia. Muitas vezes, ele se perde pela ausência de coerência entre decisão, governança e execução. Existem direções que não se consolidam, estruturas que crescem sem se sustentar e execuções que acontecem, mas não se repetem com consistência.",
+    "Essa leitura passou a orientar sua atuação. Mais do que formular direção, Ibson se dedica a entender a arquitetura que torna uma direção viável: como decisões são tomadas, como responsabilidades são distribuídas, como critérios são preservados e como a execução se mantém quando a complexidade aumenta.",
+    "Hoje, como Diretor de Conteúdo no Brasil na Futbol Sites, lidera uma operação que integra editorial, social, dados, audiovisual, BI, negócios e frentes de monetização e parceria. Sua atuação está menos na produção isolada de conteúdo e mais na coordenação de sistemas capazes de sustentar clareza, consistência e responsabilidade em múltiplas frentes ao mesmo tempo.",
+    "De galerias de arte a comunidades de milhões, da comunicação cultural à mídia esportiva digital, Ibson sempre lidou com a mesma pergunta em diferentes escalas: o que faz uma ideia, uma operação ou uma decisão se sustentar?",
+    "Esse repertório hoje também se traduz para além da operação. Atua como palestrante, mentor executivo e conselheiro, é coautor do livro Conselho Diário e escreve publicamente sobre inteligência artificial, cultura, liderança, comunicação, reputação, governança e decisão.",
+    "Sua marca pessoal nasce desse encontro entre experiência prática e reflexão pública. Ibson ajuda pessoas e organizações a decidir, comunicar e crescer com mais critério em meio ao excesso. Sua convicção é direta: resultado consistente não nasce de esforço pontual. Nasce de estruturas claras, responsabilidades bem definidas e decisões que se sustentam na execução.",
+    "Em um tempo em que tudo acelera, clareza deixou de ser apenas uma virtude. Virou responsabilidade.",
+  ],
+  factsTitle: "Em resumo",
+  facts: [
+    { k: "Nome", v: "Ibson Lima dos Santos Junior" },
+    { k: "Atuação", v: "Executivo de conteúdo, liderança e comunicação" },
+    { k: "Cargo", v: "Diretor de Conteúdo no Brasil na Futbol Sites" },
+    { k: "Territórios", v: "IA, cultura, liderança, comunicação, governança e decisão" },
+    { k: "Também", v: "Palestrante, mentor executivo e conselheiro" },
+    { k: "Autor", v: 'Coautor do livro "Conselho Diário"' },
+    { k: "Formação", v: "Governança (Board Academy), entre outras" },
+    { k: "Idade", v: "38 anos" },
+  ],
+  ctaTitle: "Vamos conversar?",
+  ctaText: "Para palestras, mentoria, conselho ou uma conversa profissional.",
+  ctaLabel: "Entrar em contato",
+  exploreTitle: "Explore",
+};
+
 // Últimos posts no LinkedIn: as artes que o Ibson cria (renomeadas ibson-junior-*)
 // ficam hospedadas AQUI, no próprio site, para o Google Images indexá-las (o LinkedIn
 // é difícil de indexar). Contagens são estáticas (o LinkedIn não expõe API pública).

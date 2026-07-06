@@ -1,0 +1,167 @@
+---
+// Página de identidade (/ibson-junior/): a "Entity Home" aprofundada. Biografia
+// narrativa + bloco factual + links de exploração. Conteúdo em `identity`
+// (content.*.ts). Schema AboutPage (mesmo #person) fica na rota.
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+import { getContent, localizePath, normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const { identity } = getContent(locale);
+const ui = t(locale);
+const home = localizePath("/", locale);
+const explore = [
+  { label: ui.artigosKicker, href: localizePath("/artigos", locale) },
+  { label: ui.kickerPalestras, href: `${home}#palestras` },
+  { label: ui.kickerMentoria, href: `${home}#mentoria` },
+  { label: ui.kickerContato, href: `${home}#contato` },
+];
+---
+
+<Nav />
+<main id="top" class="idpage">
+  <article class="wrap id-in">
+    <a class="id-back" href={home}>‹ {ui.breadcrumbHome}</a>
+
+    <header class="id-head">
+      <div class="id-headtext">
+        <div class="id-kicker">{identity.kicker}</div>
+        <h1 class="id-h1">{identity.h1}</h1>
+        <p class="id-sub">{identity.subtitle}</p>
+      </div>
+      <figure class="id-portrait">
+        <img src={identity.portrait} alt={identity.portraitAlt} width="900" height="1125" loading="eager" />
+      </figure>
+    </header>
+
+    <div class="id-grid">
+      <div class="id-bio">
+        {identity.bio.map((p) => <p>{p}</p>)}
+      </div>
+
+      <aside class="id-aside">
+        <div class="id-facts">
+          <h2>{identity.factsTitle}</h2>
+          <dl>
+            {identity.facts.map((f) => (
+              <div class="id-fact">
+                <dt>{f.k}</dt>
+                <dd set:html={f.v} />
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div class="id-explore">
+          <span class="id-explore-t">{identity.exploreTitle}</span>
+          {explore.map((e) => (<a href={e.href}>{e.label}</a>))}
+        </div>
+      </aside>
+    </div>
+
+    <aside class="id-cta">
+      <p class="id-cta-title">{identity.ctaTitle}</p>
+      <p class="id-cta-text">{identity.ctaText}</p>
+      <a class="id-cta-btn" href={`${home}#contato`}>{identity.ctaLabel} <span aria-hidden="true">→</span></a>
+    </aside>
+  </article>
+</main>
+<Footer />
+
+<style>
+  .idpage { padding-top: 92px; }
+  .id-in { max-width: clamp(760px, 82vw, 1060px); padding-top: 40px; padding-bottom: 80px; }
+  .id-back {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
+    color: var(--accent); display: inline-block; margin-bottom: 30px;
+  }
+  .id-head {
+    display: grid; grid-template-columns: 1fr auto; gap: clamp(24px, 4vw, 56px);
+    align-items: center; margin-bottom: 48px;
+  }
+  .id-kicker {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  }
+  .id-h1 {
+    font-size: clamp(44px, 8vw, 86px); font-weight: 800; letter-spacing: -0.04em;
+    line-height: 0.98; color: var(--heading); margin: 0;
+  }
+  .id-sub {
+    margin-top: 18px; font-size: clamp(16px, 1.6vw, 20px); line-height: 1.5;
+    color: var(--text); max-width: 34ch;
+  }
+  .id-portrait {
+    margin: 0; width: clamp(190px, 26vw, 300px); border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--line); box-shadow: 0 30px 66px -34px rgba(0, 0, 0, 0.85);
+  }
+  .id-portrait img { display: block; width: 100%; height: auto; }
+
+  .id-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .id-bio :global(p) {
+    font-size: clamp(17px, 1.35vw, 19px); line-height: 1.78; color: var(--text);
+    margin: 0 0 22px; max-width: 70ch; text-wrap: pretty;
+  }
+  .id-bio :global(p:first-of-type) {
+    font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; color: var(--heading); font-weight: 500;
+  }
+  .id-bio :global(p:last-of-type) {
+    font-weight: 700; color: var(--heading); font-size: clamp(18px, 1.5vw, 21px);
+  }
+
+  /* Coluna factual (secundária). */
+  .id-aside { position: sticky; top: 104px; display: flex; flex-direction: column; gap: 22px; }
+  .id-facts {
+    border: 1px solid var(--line); border-radius: 14px; background: var(--panel);
+    padding: 22px 22px 8px;
+  }
+  .id-facts h2 {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); margin: 0 0 14px;
+  }
+  .id-fact { padding: 10px 0; border-top: 1px solid var(--line); }
+  .id-fact:first-of-type { border-top: none; }
+  .id-fact dt {
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 3px;
+  }
+  .id-fact dd { margin: 0; font-size: 14.5px; line-height: 1.4; color: var(--heading); font-weight: 600; }
+
+  .id-explore { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; }
+  .id-explore-t {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px;
+  }
+  .id-explore a {
+    font-family: var(--font-sans); font-weight: 700; font-size: 15px; color: var(--heading);
+    padding: 9px 0; border-bottom: 1px solid var(--line); transition: color 0.25s, padding 0.25s;
+  }
+  .id-explore a:hover { color: var(--accent); padding-left: 6px; }
+
+  .id-cta {
+    margin-top: 56px; padding: clamp(24px, 3vw, 36px);
+    border-radius: 16px; border: 1px solid var(--line);
+    background: radial-gradient(130% 150% at 100% 0%, var(--glow), transparent 55%), var(--panel);
+  }
+  .id-cta-title {
+    font-family: var(--font-sans); font-weight: 800; font-size: clamp(20px, 2.4vw, 26px);
+    letter-spacing: -0.02em; color: var(--heading); margin: 0 0 8px;
+  }
+  .id-cta-text { font-size: 15.5px; line-height: 1.6; color: var(--text); margin: 0 0 20px; }
+  .id-cta-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-sans); font-weight: 800; font-size: 14.5px; color: #fff;
+    background: var(--accent); padding: 13px 24px; border-radius: 999px;
+    box-shadow: 0 16px 34px -14px var(--glow);
+    transition: transform 0.25s ease, box-shadow 0.3s ease, filter 0.25s ease;
+  }
+  .id-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 22px 44px -16px var(--glow); filter: brightness(1.08); }
+
+  @media (max-width: 900px) {
+    .id-head { grid-template-columns: 1fr; }
+    .id-portrait { order: -1; width: clamp(160px, 44vw, 240px); }
+    .id-grid { grid-template-columns: 1fr; }
+    .id-aside { position: static; }
+  }
+  @media (max-width: 620px) { .idpage { padding-top: 84px; } .id-in { padding-bottom: 56px; } }
+</style>

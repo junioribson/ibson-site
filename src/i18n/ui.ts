@@ -33,6 +33,7 @@ type UIStrings = {
   articleCtaButton: string;
   articleRelatedTitle: string;
   breadcrumbHome: string;
+  aboutMore: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -101,6 +102,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaButton: "Participar da conversa",
     articleRelatedTitle: "Você pode se interessar também",
     breadcrumbHome: "Início",
+    aboutMore: "Saiba mais sobre mim",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -167,6 +169,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaButton: "Unirse a la conversación",
     articleRelatedTitle: "También te puede interesar",
     breadcrumbHome: "Inicio",
+    aboutMore: "Conoce más sobre mí",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -233,6 +236,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaButton: "Join the conversation",
     articleRelatedTitle: "You might also be interested",
     breadcrumbHome: "Home",
+    aboutMore: "More about me",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

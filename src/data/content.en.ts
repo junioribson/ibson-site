@@ -117,6 +117,47 @@ export const about = {
 //   - image: the post artwork in /assets/posts/ibson-junior-post-*.webp (Ibson sends it)
 //   - url: the link to the specific post on LinkedIn
 //   - reactions/comments/shares: the counts (Ibson provides them)
+export const identity = {
+  seoTitle: "Ibson Junior | Content, Leadership and Communication Executive",
+  seoDescription:
+    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is a content, leadership and communication executive. Journey, repertoire and the architecture of decision, execution and governance in complex digital environments.",
+  socialTitle: "Ibson Junior: from dial-up internet to the architecture of decision",
+  kicker: "Who is",
+  h1: "Ibson Junior",
+  subtitle: "Ibson Lima dos Santos Junior, known professionally as Ibson Junior.",
+  portrait: "/assets/retratos/ibson-junior-retrato.webp",
+  portraitAlt: "Portrait of Ibson Junior, content, leadership and communication executive",
+  bio: [
+    "Ibson Lima dos Santos Junior, known professionally as Ibson Junior, is a content, leadership and communication executive. He works on the architecture of decision, execution and governance systems in high-speed digital environments, connecting editorial strategy, culture, audience, technology, artificial intelligence and public responsibility.",
+    "His relationship with technology began before any job title. In 2000 he got his first computer, learned to navigate the dial-up internet and grew up alongside the spread of the web in Brazil. Early on, he began to observe how people connect, how information circulates and how ideas gain strength when they find the right context.",
+    "That curiosity was never confined to a single field. Along the way he moved through training and experience in events, information technology, workplace safety, environmental monitoring and other areas that, at first glance, might seem distant from one another. For Ibson it was not dispersion. It was repertoire. Each field added a layer to understand technology, culture, business, human behavior and communication as parts of the same system.",
+    "It was in culture that this restlessness found its first public expression. In 2008 he founded ProliferArte, a movement created to bring people closer to art, to the word and to expression. Before working with large digital audiences, he was already testing a conviction that would run through his entire career: true attention is not born of reach alone. It is born of meaning.",
+    "In the following years he brought that lesson to digital communication at scale. In sports, he created Antenados no Futebol, responsible for the name and the concept of the brand, and played a direct role in the arrival and development of Bolavip in Brazil between 2017 and 2018. As CEO of Futmarketing, he took part in building, positioning and selling a Brazilian sports media operation. He then founded WolfLife, a digital community ecosystem that reached millions of people and billions of views, sold in 2025.",
+    "Operating in environments of growth, audience and high pressure for results, one perception became central: growth is rarely lost from a lack of strategy alone. It is often lost from the absence of coherence between decision, governance and execution. There are directions that do not consolidate, structures that grow without sustaining themselves, and executions that happen but do not repeat with consistency.",
+    "That reading came to guide his work. More than formulating direction, Ibson devotes himself to understanding the architecture that makes a direction viable: how decisions are made, how responsibilities are distributed, how criteria are preserved and how execution holds as complexity grows.",
+    "Today, as Content Director in Brazil at Futbol Sites, he leads an operation that integrates editorial, social, data, audiovisual, BI, business and monetization and partnership fronts. His work lies less in isolated content production and more in coordinating systems able to sustain clarity, consistency and responsibility across multiple fronts at once.",
+    "From art galleries to communities of millions, from cultural communication to digital sports media, Ibson has always dealt with the same question at different scales: what makes an idea, an operation or a decision hold?",
+    "That repertoire today also translates beyond the operation. He works as a speaker, executive mentor and advisor, is co-author of the book Conselho Diário and writes publicly about artificial intelligence, culture, leadership, communication, reputation, governance and decision.",
+    "His personal brand is born from this meeting of practical experience and public reflection. Ibson helps people and organizations decide, communicate and grow with more judgment amid the excess. His conviction is direct: consistent results are not born of one-off effort. They are born of clear structures, well-defined responsibilities and decisions that hold up in execution.",
+    "In a time when everything accelerates, clarity has stopped being merely a virtue. It has become a responsibility.",
+  ],
+  factsTitle: "In brief",
+  facts: [
+    { k: "Name", v: "Ibson Lima dos Santos Junior" },
+    { k: "Role", v: "Content, leadership and communication executive" },
+    { k: "Position", v: "Content Director in Brazil at Futbol Sites" },
+    { k: "Domains", v: "AI, culture, leadership, communication, governance and decision" },
+    { k: "Also", v: "Speaker, executive mentor and advisor" },
+    { k: "Author", v: 'Co-author of the book "Conselho Diário"' },
+    { k: "Education", v: "Governance (Board Academy), among others" },
+    { k: "Age", v: "38 years old" },
+  ],
+  ctaTitle: "Shall we talk?",
+  ctaText: "For talks, mentoring, advisory or a professional conversation.",
+  ctaLabel: "Get in touch",
+  exploreTitle: "Explore",
+};
+
 export const linkedinPosts = {
   title: "Latest posts on LinkedIn",
   subtitle:
