@@ -34,6 +34,13 @@ type UIStrings = {
   articleRelatedTitle: string;
   breadcrumbHome: string;
   aboutMore: string;
+  lpThemes: string;
+  lpFormats: string;
+  lpDurations: string;
+  lpTalksCta: string;
+  lpSeeThemes: string;
+  lpTalksSeoTitle: string;
+  lpTalksSeoDesc: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -103,6 +110,14 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleRelatedTitle: "Você pode se interessar também",
     breadcrumbHome: "Início",
     aboutMore: "Saiba mais sobre mim",
+    lpThemes: "Temas das palestras",
+    lpFormats: "Formatos",
+    lpDurations: "Durações",
+    lpTalksCta: "Leve essa conversa para a sua organização",
+    lpSeeThemes: "Ver os temas",
+    lpTalksSeoTitle: "Palestras sobre IA, Liderança e Decisão | Ibson Junior",
+    lpTalksSeoDesc:
+      "Palestras de Ibson Junior para empresas e eventos sobre decidir sob pressão, IA com julgamento humano, comunicação, cultura e liderança.",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -170,6 +185,14 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleRelatedTitle: "También te puede interesar",
     breadcrumbHome: "Inicio",
     aboutMore: "Conoce más sobre mí",
+    lpThemes: "Temas de las charlas",
+    lpFormats: "Formatos",
+    lpDurations: "Duraciones",
+    lpTalksCta: "Lleva esta conversación a tu organización",
+    lpSeeThemes: "Ver los temas",
+    lpTalksSeoTitle: "Charlas sobre IA, Liderazgo y Decisión | Ibson Junior",
+    lpTalksSeoDesc:
+      "Charlas de Ibson Junior para empresas y eventos sobre decidir bajo presión, IA con juicio humano, comunicación, cultura y liderazgo.",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -237,6 +260,14 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleRelatedTitle: "You might also be interested",
     breadcrumbHome: "Home",
     aboutMore: "More about me",
+    lpThemes: "Talk topics",
+    lpFormats: "Formats",
+    lpDurations: "Durations",
+    lpTalksCta: "Bring this conversation to your organization",
+    lpSeeThemes: "See the topics",
+    lpTalksSeoTitle: "Talks on AI, Leadership and Decision | Ibson Junior",
+    lpTalksSeoDesc:
+      "Talks by Ibson Junior for companies and events on deciding under pressure, AI with human judgment, communication, culture and leadership.",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

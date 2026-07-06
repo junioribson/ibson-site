@@ -1,0 +1,12 @@
+---
+import Base from "../../layouts/Base.astro";
+import PalestrasPage from "../../components/PalestrasPage.astro";
+import { normalizeLocale } from "../../i18n/utils";
+import { t } from "../../i18n/ui";
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
+---
+
+<Base title={ui.lpTalksSeoTitle} description={ui.lpTalksSeoDesc} ogDescription={ui.lpTalksSeoDesc}>
+  <PalestrasPage />
+</Base>
