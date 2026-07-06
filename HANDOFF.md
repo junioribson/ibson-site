@@ -202,7 +202,8 @@ Objetivo: consolidar a entidade para o Google/IAs e desambiguar do homônimo (ex
 - **Wikidata:** item pronto para o Ibson publicar em `docs/wikidata-item.md` (o Claude não cria conta; prepara e guia). Quando publicado, adicionar a URL Q... ao `sameAs`.
 - **Ações do Ibson (fora do site):** PR (matérias em portais de negócio com link), bios de LinkedIn/X com nome completo + link do site, criar o item do Wikidata, pedir indexação das URLs no Search Console.
 - **A confirmar com o Ibson:** coautor de "Conselho Diário" (mantido); "bilhões de visualizações" (mantido, defensável); Board Academy (fica no bloco factual, não no corpo).
-- **Fases seguintes (combinadas):** `/palestras/` e `/mentoria/` como landing pages (aliviando a home + menu levando a elas); depois `/imprensa/` reaproveitando as bios. Hubs `/temas/`, `/notas/` e cases: esperar volume.
+- **Landing pages `/palestras/` e `/mentoria/` (feitas):** novo **padrão visual elevado** (hero imersivo com aurora animada em CSS puro, orbs, grid sutil, botões neon, temas com imagem/numerados, CTA de "noite"), claro + escuro, nos 3 idiomas. Componentes `PalestrasPage.astro` e `MentoriaPage.astro` (CSS `.lp-*` duplicado nos dois; extrair para `src/styles/lp.css` se surgir uma 3ª LP). Rotas em `pages/(es|en)/palestras|mentoria.astro`. Conteúdo reaproveitado de `talks`/`mentorship` (content.*). SEO/labels novos no `ui.ts` (`lp*`). Hero é CSS puro (LCP leve). Na home, as seções viraram **teasers** (`LpTeaser.astro`, com id de âncora) que levam às LPs, e o **menu (nav) aponta para as páginas** (`/palestras`, `/mentoria`, localizado). Os antigos `Palestras.astro`/`Mentoria.astro` (seções completas) ficaram **sem uso** (podem ser removidos).
+- **Fases seguintes:** `/imprensa/` reaproveitando as bios. Hubs `/temas/`, `/notas/` e cases: esperar volume.
 
 ## Regras inegociáveis (resumo, ver CLAUDE.md)
 - **NUNCA** travessão (— ou –). Usar vírgula, ponto, dois-pontos, parênteses.
