@@ -116,31 +116,32 @@ const ui = t(Astro.currentLocale);
      scrim, então a imagem e o fundo viram uma coisa só, sem emenda. */
   .pal-owl {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: min(62%, 800px);
-    height: 100%;
+    top: -6%;
+    right: -3%;
+    width: min(66%, 920px);
+    height: 112%;
     z-index: 0;
     pointer-events: none;
     will-change: transform;
+    /* SCREEN no CONTAINER (não no img): o fundo escuro/nebuloso da imagem
+       DESAPARECE (preto -> transparente), sobrando só o brilho dourado da coruja
+       sobre o fundo do bloco. É assim que uma constelação se funde num fundo
+       escuro, sem retângulo. O blend precisa estar aqui (o parallax no elemento
+       cria um contexto de empilhamento; no img ele nao mesclaria com a secao). */
+    mix-blend-mode: screen;
   }
   .pal-owl img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 58% 15%;
-    opacity: 0.96;
+    object-position: 55% 20%;
+    opacity: 0.98;
     animation: owl-breathe 12s ease-in-out infinite;
-    /* Dissolve a borda ESQUERDA (e um pouco do topo/base) da imagem no escuro,
-       como o lobo do hero: sem retângulo "colado". Só CSS (não pesa no PageSpeed). */
-    -webkit-mask-image:
-      linear-gradient(100deg, transparent 2%, #000 46%),
-      linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-image:
-      linear-gradient(100deg, transparent 2%, #000 46%),
-      linear-gradient(180deg, transparent 0%, #000 16%, #000 82%, transparent 100%);
-    mask-composite: intersect;
+    /* Máscara RADIAL: dissolve TODAS as bordas (não só a esquerda), deixando a
+       coruja num halo oval que se apaga no fundo. Some qualquer contorno de
+       retângulo. */
+    -webkit-mask-image: radial-gradient(74% 82% at 60% 40%, #000 42%, transparent 80%);
+    mask-image: radial-gradient(74% 82% at 60% 40%, #000 42%, transparent 80%);
   }
   @keyframes owl-breathe {
     0%, 100% { opacity: 0.9; }
