@@ -127,6 +127,9 @@ const posts = lk.posts.slice(0, 8);
       animation: lk-pulse 2s ease-in-out infinite;
     }
     .lk-next:active { background: linear-gradient(135deg, #8b4cf0, #b06bff); }
+    /* Na ÚLTIMA imagem, a seta vai para a ESQUERDA e vira "‹": permite voltar
+       até a primeira. */
+    .lk-next.at-end { left: 2px; right: auto; transform: translateY(-50%) scaleX(-1); }
     @keyframes lk-pulse {
       0%, 100% { box-shadow: 0 0 14px 1px rgba(139, 92, 255, 0.6), 0 10px 24px -10px rgba(0, 0, 0, 0.5); }
       50% { box-shadow: 0 0 30px 6px rgba(139, 92, 255, 0.95), 0 10px 24px -10px rgba(0, 0, 0, 0.5); }
@@ -141,15 +144,18 @@ const posts = lk.posts.slice(0, 8);
   const prev = document.querySelector<HTMLButtonElement>(".lk-prev");
   const next = document.querySelector<HTMLButtonElement>(".lk-next");
   const step = () => Math.round((scroller?.clientWidth || 320) * 0.85);
+  const atEnd = () => !!scroller && scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
+  // Marca .at-end quando chega na última: a seta vira "‹" e vai para a esquerda.
+  const syncArrow = () => next?.classList.toggle("at-end", atEnd());
+  scroller?.addEventListener("scroll", syncArrow, { passive: true });
+  window.addEventListener("resize", syncArrow);
+  syncArrow();
+
   prev?.addEventListener("click", () => scroller?.scrollBy({ left: -step(), behavior: "smooth" }));
   next?.addEventListener("click", () => {
     if (!scroller) return;
-    // No fim do carrossel, a seta leva ao LinkedIn (ver os demais posts).
-    const atEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
-    if (atEnd && next?.dataset.profile) {
-      window.open(next.dataset.profile, "_blank", "noopener");
-      return;
-    }
-    scroller.scrollBy({ left: step(), behavior: "smooth" });
+    // Na última, a seta volta para a PRIMEIRA; caso contrário, avança um card.
+    if (atEnd()) scroller.scrollTo({ left: 0, behavior: "smooth" });
+    else scroller.scrollBy({ left: step(), behavior: "smooth" });
   });
 </script>
