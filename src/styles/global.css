@@ -49,6 +49,9 @@
   --maxw: 1320px;
   --gut: 40px;
   --e: cubic-bezier(0.19, 1, 0.22, 1);
+  /* Fonte de impacto (display): redonda e grossa, para títulos que precisam
+     impressionar. Auto-hospedada em /public/fonts (Poppins). */
+  --font-display: "Poppins", "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 /* Telas grandes: o conteúdo cresce um pouco para não ficar uma faixa estreita
