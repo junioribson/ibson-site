@@ -25,6 +25,7 @@ Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<
 - `/artigos` (`src/pages/artigos/index.astro`): **biblioteca premium** com todos os artigos (destaque "Mais recente" + galeria), ordenada por data.
 - Card compartilhado: `src/components/ArticleCard.astro` (home e biblioteca).
 - Páginas de artigo: link "Ver o original no LinkedIn" REMOVIDO (o original agora é o site); rodapé tem "Ver todos os artigos" (`/artigos`) + "Compartilhar no LinkedIn". Voltar leva a `/artigos`.
+- Fim de cada artigo (em `ArticlePage.astro`): (1) bloco de fechamento "continue a conversa" com link ao post; (2) bloco **"Você pode se interessar também"** (`articleRelatedTitle` no `ui.ts`) com os **3 artigos mais recentes do mesmo idioma** (exclui o atual), reusando `ArticleCard`. Grid de 3 no desktop, faixa horizontal com scroll-snap (estilo Top Stories) no mobile. Fortalece o internal linking. Critério = recência (site estático não tem "mais acessados" em build; para isso seria preciso puxar do GA).
 - Obs: `articles.list`/`allUrl` em `content.ts` ficaram sem uso (a fonte da verdade agora é a content collection dos `.md`); mantidos por ora, podem ser removidos numa limpeza futura.
 
 **Sistema já construído (pronto para reuso):**
