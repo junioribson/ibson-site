@@ -19,6 +19,10 @@ const PORTRAITS = [
 const SAME_AS = [
   "https://www.linkedin.com/in/ibson-junior/",
   "https://x.com/IbsonJunior",
+  // Créditos em veículos de autoridade que nomeiam Ibson (reconciliação de entidade).
+  "https://br.bolavip.com/staff",
+  "https://www.antenadosnofutebol.com.br/staff",
+  "https://somosfanaticos.fans/br/staff",
 ];
 
 type SeoCopy = {
@@ -169,6 +173,7 @@ export function siteGraph(locale?: string | null) {
         "@type": "Person",
         "@id": PERSON_ID,
         name: "Ibson Junior",
+        alternateName: ["Ibson Lima dos Santos Junior", "Ibson"],
         url: `${SITE}/`,
         image: PORTRAITS,
         jobTitle: c.jobTitle,
