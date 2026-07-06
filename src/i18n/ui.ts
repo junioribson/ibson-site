@@ -32,6 +32,7 @@ type UIStrings = {
   articleCtaText: string;
   articleCtaButton: string;
   articleRelatedTitle: string;
+  breadcrumbHome: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -99,6 +100,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaText: "Se o texto deixou uma pergunta no ar, o lugar de responder é lá. Comentários, discordâncias e outras leituras são bem-vindos no post original.",
     articleCtaButton: "Participar da conversa",
     articleRelatedTitle: "Você pode se interessar também",
+    breadcrumbHome: "Início",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -164,6 +166,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaText: "Si el texto dejó una pregunta en el aire, el lugar para responder está allí. Comentarios, desacuerdos y otras lecturas son bienvenidos en la publicación original.",
     articleCtaButton: "Unirse a la conversación",
     articleRelatedTitle: "También te puede interesar",
+    breadcrumbHome: "Inicio",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -229,6 +232,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     articleCtaText: "If the piece left a question in the air, the place to answer it is there. Comments, disagreements and other readings are welcome on the original post.",
     articleCtaButton: "Join the conversation",
     articleRelatedTitle: "You might also be interested",
+    breadcrumbHome: "Home",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

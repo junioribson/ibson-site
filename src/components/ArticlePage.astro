@@ -43,19 +43,38 @@ const url = new URL(localizePath(`/artigos/${entry.id}`, locale), "https://ibson
 const coverAbs = `https://ibsonjunior.com.br${d.cover}`;
 const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
 
+// Entidade canônica (definida em cheio na home). Autor/publisher apontam para
+// ela por @id, para o Google entender que TODO artigo é da mesma pessoa.
+const PERSON_ID = "https://ibsonjunior.com.br/#person";
+const homePath = localizePath("/", locale);
+const homeAbs = new URL(homePath, "https://ibsonjunior.com.br").href;
+const libAbs = new URL(localizePath("/artigos", locale), "https://ibsonjunior.com.br").href;
+
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: d.title,
-  image: [coverAbs],
-  datePublished: d.dateISO,
-  dateModified: d.dateISO,
-  author: { "@type": "Person", name: "Ibson Junior", url: "https://ibsonjunior.com.br" },
-  publisher: { "@type": "Person", name: "Ibson Junior" },
-  mainEntityOfPage: { "@type": "WebPage", "@id": url },
-  description: d.excerpt,
-  articleSection: d.category,
-  inLanguage: htmlLang(locale),
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      headline: d.title,
+      image: [coverAbs],
+      datePublished: d.dateISO,
+      dateModified: d.dateISO,
+      author: { "@type": "Person", "@id": PERSON_ID, name: "Ibson Junior", url: homeAbs },
+      publisher: { "@type": "Person", "@id": PERSON_ID, name: "Ibson Junior" },
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      description: d.excerpt,
+      articleSection: d.category,
+      inLanguage: htmlLang(locale),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.breadcrumbHome, item: homeAbs },
+        { "@type": "ListItem", position: 2, name: ui.artigosKicker, item: libAbs },
+        { "@type": "ListItem", position: 3, name: d.title, item: url },
+      ],
+    },
+  ],
 };
 ---
 
@@ -89,7 +108,7 @@ const articleSchema = {
       <div class="art-cat">{d.category}</div>
       <h1 class="art-title">{d.title}</h1>
       <div class="art-byline">
-        <span>{ui.articleBy} <strong>Ibson Junior</strong></span>
+        <span>{ui.articleBy} <a class="art-author" href={homePath}><strong>Ibson Junior</strong></a></span>
         <span class="art-dot">·</span>
         <time datetime={d.dateISO}>{d.date}</time>
         <span class="art-dot">·</span>
@@ -191,6 +210,8 @@ const articleSchema = {
     color: #a98bff; text-shadow: 0 0 14px rgba(138, 92, 255, 0.55);
   }
   .art-byline strong { color: var(--heading); font-weight: 700; text-shadow: none; }
+  .art-author { color: inherit; text-decoration: none; }
+  .art-author:hover strong { color: var(--accent); }
   .art-dot { opacity: 0.6; }
   /* No tema claro (fundo creme), o roxo neon vira um roxo vivo e legível. */
   :root[data-theme="light"] .art-byline { color: #5a24d6; text-shadow: none; }

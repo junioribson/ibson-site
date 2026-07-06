@@ -173,7 +173,7 @@ export function siteGraph(locale?: string | null) {
         "@type": "Person",
         "@id": PERSON_ID,
         name: "Ibson Junior",
-        alternateName: ["Ibson Lima dos Santos Junior", "Ibson"],
+        alternateName: ["Ibson Lima dos Santos Junior", "Ibson Júnior", "Ibson"],
         url: `${SITE}/`,
         image: PORTRAITS,
         jobTitle: c.jobTitle,

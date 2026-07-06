@@ -17,19 +17,32 @@ const all = (await getCollection(articlesCollection(locale))).sort((a, b) =>
 );
 const [featured, ...rest] = all;
 
+const libUrl = new URL(localizePath("/artigos", locale), "https://ibsonjunior.com.br").href;
+const homeAbs = new URL(localizePath("/", locale), "https://ibsonjunior.com.br").href;
 const collectionSchema = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: `${articles.title} — Ibson Junior`,
-  url: new URL(localizePath("/artigos", locale), "https://ibsonjunior.com.br").href,
-  about: { "@type": "Person", name: "Ibson Junior", url: "https://ibsonjunior.com.br" },
-  hasPart: all.map((a) => ({
-    "@type": "BlogPosting",
-    headline: a.data.title,
-    url: new URL(localizePath(`/artigos/${a.id}`, locale), "https://ibsonjunior.com.br").href,
-    datePublished: a.data.dateISO,
-    image: `https://ibsonjunior.com.br${a.data.cover}`,
-  })),
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: `${articles.title} — Ibson Junior`,
+      url: libUrl,
+      about: { "@id": "https://ibsonjunior.com.br/#person" },
+      hasPart: all.map((a) => ({
+        "@type": "BlogPosting",
+        headline: a.data.title,
+        url: new URL(localizePath(`/artigos/${a.id}`, locale), "https://ibsonjunior.com.br").href,
+        datePublished: a.data.dateISO,
+        image: `https://ibsonjunior.com.br${a.data.cover}`,
+      })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: ui.breadcrumbHome, item: homeAbs },
+        { "@type": "ListItem", position: 2, name: ui.artigosKicker, item: libUrl },
+      ],
+    },
+  ],
 };
 ---
 
