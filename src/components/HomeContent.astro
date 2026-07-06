@@ -11,11 +11,16 @@ import ProliferArte from "./ProliferArte.astro";
 import Galeria from "./Galeria.astro";
 import Artigos from "./Artigos.astro";
 import Repertorio from "./Repertorio.astro";
-import Mentoria from "./Mentoria.astro";
-import Palestras from "./Palestras.astro";
+import LpTeaser from "./LpTeaser.astro";
 import Videos from "./Videos.astro";
 import Contato from "./Contato.astro";
 import Footer from "./Footer.astro";
+import { getContent, localizePath, normalizeLocale } from "../i18n/utils";
+import { t } from "../i18n/ui";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const { talks, mentorship } = getContent(locale);
+const ui = t(locale);
 ---
 
 <Nav />
@@ -31,8 +36,22 @@ import Footer from "./Footer.astro";
   <Galeria />
   <Artigos />
   <Repertorio />
-  <Mentoria />
-  <Palestras />
+  <LpTeaser
+    id="mentoria"
+    kicker={ui.kickerMentoria}
+    title={mentorship.title}
+    text={mentorship.subtitle}
+    href={localizePath("/mentoria", locale)}
+    label={ui.lpSeeMentoria}
+  />
+  <LpTeaser
+    id="palestras"
+    kicker={ui.kickerPalestras}
+    title={talks.title}
+    text={talks.subtitle}
+    href={localizePath("/palestras", locale)}
+    label={ui.lpSeeTalks}
+  />
   <Videos />
   <Contato />
 </main>

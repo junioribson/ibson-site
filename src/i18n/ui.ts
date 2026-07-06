@@ -44,6 +44,8 @@ type UIStrings = {
   lpMentoriaCta: string;
   lpMentoriaSeoTitle: string;
   lpMentoriaSeoDesc: string;
+  lpSeeTalks: string;
+  lpSeeMentoria: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -125,6 +127,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpMentoriaSeoTitle: "Mentoria Executiva em Liderança, Marca e Decisão | Ibson Junior",
     lpMentoriaSeoDesc:
       "Mentoria executiva individual com Ibson Junior: posicionamento, marca pessoal, comunicação executiva, narrativa e decisão, para transformar repertório em direção.",
+    lpSeeTalks: "Ver palestras",
+    lpSeeMentoria: "Ver mentoria",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -204,6 +208,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpMentoriaSeoTitle: "Mentoría Ejecutiva en Liderazgo, Marca y Decisión | Ibson Junior",
     lpMentoriaSeoDesc:
       "Mentoría ejecutiva individual con Ibson Junior: posicionamiento, marca personal, comunicación ejecutiva, narrativa y decisión, para transformar repertorio en dirección.",
+    lpSeeTalks: "Ver charlas",
+    lpSeeMentoria: "Ver mentoría",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -283,6 +289,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpMentoriaSeoTitle: "Executive Mentoring in Leadership, Brand and Decision | Ibson Junior",
     lpMentoriaSeoDesc:
       "One-on-one executive mentoring with Ibson Junior: positioning, personal brand, executive communication, narrative and decision, to turn repertoire into direction.",
+    lpSeeTalks: "See talks",
+    lpSeeMentoria: "See mentoring",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",
