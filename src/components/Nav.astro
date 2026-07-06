@@ -107,8 +107,9 @@ const homeHref = localizePath("/", locale);
   .lang { padding: 6px 7px; }
   .nav-theme { display: inline-flex; align-items: center; }
   @media (max-width: 1280px) {
+    /* O ícone do LinkedIn sai (fica no menu), mas o botão de TEMA continua
+       visível na barra: quem entra já vê como trocar a aparência. */
     .nav-li { display: none; }
-    .nav-theme { display: none; }
   }
   .mtheme { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
   .mtheme-lbl { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.03em; color: var(--tint); }
@@ -130,13 +131,18 @@ const homeHref = localizePath("/", locale);
   }
   .mmenu-li .ic { width: 20px; height: 20px; }
 
-  /* Telas bem estreitas (~360px): evita aperto/estouro do cabeçalho. */
+  /* Telas bem estreitas (~360px): tudo cabe (logo + nome + bandeiras + tema +
+     hambúrguer) sem estourar nem sobrepor. */
   @media (max-width: 400px) {
-    .nav-in { gap: 8px; }
-    .brand { min-width: 0; }
-    .brand b { font-size: 13px; }
+    .nav-in { gap: 6px; padding-left: 14px; padding-right: 14px; }
+    .brand { min-width: 0; gap: 8px; }
+    .brand b { font-size: 12.5px; }
+    .brand svg, .brand img { height: 28px; }
     .langsel { gap: 0; margin-right: 0; }
-    .lang { padding: 5px 5px; }
+    .lang { padding: 5px 4px; }
+    .lang .lang-flag { font-size: 14px; }
+    .hamb { width: 38px; height: 38px; }
+    .hamb span { left: 9px; }
   }
 </style>
 

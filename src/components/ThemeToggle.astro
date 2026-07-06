@@ -21,7 +21,8 @@
 <style>
   .theme-toggle { background: none; border: 0; padding: 0; cursor: pointer; display: inline-flex; }
   .tt-track {
-    position: relative; width: 62px; height: 30px; border-radius: 999px;
+    --tt-w: 62px; --tt-travel: 32px;
+    position: relative; width: var(--tt-w); height: 30px; border-radius: 999px;
     border: 1px solid var(--line-strong); background: var(--panel-2);
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 8px; transition: background 0.3s, border-color 0.3s;
@@ -33,7 +34,11 @@
     background: linear-gradient(135deg, var(--violet-2), var(--violet));
     box-shadow: 0 4px 12px -3px rgba(91, 46, 230, 0.65);
     transition: transform 0.38s var(--e);
-    transform: translateX(32px); /* padrão (escuro): sobre a lua, à direita */
+    transform: translateX(var(--tt-travel)); /* padrão (escuro): sobre a lua, à direita */
+  }
+  /* Compacto em telas estreitas (cabe na barra do nav sem apertar). */
+  @media (max-width: 560px) {
+    .tt-track { --tt-w: 52px; --tt-travel: 25px; padding: 0 6px; }
   }
   /* Ícone ativo em branco (sob o thumb roxo). Padrão escuro: lua ativa. */
   .tt-moon { color: #fff; }
