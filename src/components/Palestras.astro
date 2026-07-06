@@ -67,19 +67,27 @@ const ui = t(Astro.currentLocale);
      com o roxo apenas como BRILHO suave, nunca como metade clara. Assim não há
      emenda: a imagem se funde no fundo como no hero do lobo. */
   .pal {
+    /* Sem padding proprio: o respiro fica no .pal-top / .pal-body, e o fundo
+       cobre a secao inteira sem faixa. */
+    padding: 0;
     background:
-      radial-gradient(116% 88% at 74% 14%, rgba(102, 48, 158, 0.5) 0%, transparent 56%),
-      radial-gradient(120% 100% at 10% 92%, rgba(52, 14, 92, 0.42) 0%, transparent 58%),
+      /* Fade no TOPO e na BASE ate o preto da pagina: a secao se funde nas
+         vizinhas, sem linha divisoria (nem no comeco nem no fim). */
+      linear-gradient(180deg, #09060f 0%, rgba(9, 6, 15, 0) 16%, rgba(9, 6, 15, 0) 85%, #09060f 100%),
+      /* Brilho roxo no MEIO (nao no topo): evita a faixa dura da divisa. */
+      radial-gradient(88% 70% at 72% 50%, rgba(102, 48, 158, 0.4) 0%, transparent 62%),
+      radial-gradient(120% 100% at 6% 98%, rgba(52, 14, 92, 0.3) 0%, transparent 60%),
       #0b0617;
-    /* Reseta o clip-path diagonal legado (sections.css) que cortava o topo
-       da coruja/estrelas criando uma emenda. Topo reto. */
+    /* Reseta o clip-path diagonal legado (sections.css). */
     clip-path: none;
   }
-  /* Bloco do topo: a coruja vive AQUI, com overflow, então nunca invade os cards */
+  /* Bloco do topo: a coruja vive AQUI, com overflow, então nunca invade os cards.
+     Padding generoso da respiro ao kicker "PALESTRAS" (nao cola na divisa). */
   .pal-top {
     position: relative;
     overflow: hidden;
-    min-height: 600px;
+    min-height: 560px;
+    padding: 120px 0 90px;
     display: flex;
     align-items: center;
   }
@@ -181,12 +189,15 @@ const ui = t(Astro.currentLocale);
   .pal-intro p:first-child { margin-top: 0; }
   .pal-intro :global(strong) { color: var(--heading); font-weight: 700; }
 
+  /* Respiro no fim da seção (o texto não encosta na base). */
+  .pal-body { padding-bottom: 112px; }
   .pcards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 22px;
-    margin: 44px 0 34px;
+    margin: 8px 0 34px;
   }
+  @media (max-width: 760px) { .pal-body { padding-bottom: 78px; } }
   /* Card limpo: imagem em cima, texto num painel CLARO abaixo (contrasta com as
      fotos escuras, texto sempre fora da imagem). */
   .pcard {
