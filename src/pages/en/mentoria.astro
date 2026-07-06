@@ -1,0 +1,12 @@
+---
+import Base from "../../layouts/Base.astro";
+import MentoriaPage from "../../components/MentoriaPage.astro";
+import { normalizeLocale } from "../../i18n/utils";
+import { t } from "../../i18n/ui";
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
+---
+
+<Base title={ui.lpMentoriaSeoTitle} description={ui.lpMentoriaSeoDesc} ogDescription={ui.lpMentoriaSeoDesc}>
+  <MentoriaPage />
+</Base>
