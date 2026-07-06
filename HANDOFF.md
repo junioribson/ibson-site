@@ -73,9 +73,14 @@ ou link dentro de negrito (asteriscos vazando na tela, ex.: `De acordo com a****
 Conversor reescrito (espaço fora da ênfase + fusão de negritos adjacentes + classes `italic font-[700]`).
 Script gerador reutilizável: `scratchpad/generate-arts.mjs` (para novos artigos, é só adicionar ao array).
 
-**Nota editorial:** dois artigos (#8 IA e #5 governança) terminam com um CTA verbatim do original
-("Te convido a me seguir, curtir e compartilhar..."), que faz sentido no LinkedIn mas soa deslocado no
-site. Mantido por fidelidade; decidir com o Ibson se remove nas páginas internas.
+**Bloco de fechamento (feito):** todo artigo termina agora com um bloco padrão no template
+(`ArticlePage.astro`, i18n via `ui.ts`: `articleCtaTitle/Text/Button`) convidando a continuar a
+conversa no post original do LinkedIn (link direto via `linkedinUrl`). Com isso, os CTAs de
+autopromoção que vinham verbatim do LinkedIn ("Te convido a me seguir, curtir e compartilhar...")
+foram REMOVIDOS dos `.md` (governança, IA e a frase em negrito de cultura, nos 3 idiomas),
+preservando a pergunta/fecho natural de cada artigo. Decisão: comentários no próprio site foram
+descartados (Giscus/Disqus exigem conta GitHub ou trazem anúncios e fragmentam o engajamento);
+o engajamento fica concentrado no LinkedIn, o que também reforça a autoridade do perfil.
 
 ---
 
