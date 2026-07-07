@@ -509,6 +509,15 @@ export const talks = {
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Invitar a una charla" },
   note: "Disponible para eventos corporativos, encuentros ejecutivos, paneles, clases especiales, rondas de liderazgo y conversaciones con equipos.",
+  geoNote: "Con base en Porto Alegre (Brasil), para eventos en todo el país (presencial) y también online.",
+  faq: [
+    { q: "¿Qué es un conferencista ejecutivo?", a: "Es un profesional que lleva a líderes y equipos temas de decisión, comunicación, cultura y estrategia con densidad y criterio, sin apelo motivacional vacío. Ibson Junior actúa en ese formato, conectando repertorio ejecutivo real con la conversación de la sala." },
+    { q: "¿Sobre qué temas da charlas Ibson Junior?", a: "Decidir bajo presión, IA con juicio humano, comunicación y contenido, cultura organizacional, gobernanza y liderazgo. Los temas se adaptan al momento de la empresa y del público." },
+    { q: "¿Cómo contratar una charla con Ibson Junior?", a: "Por el formulario de contacto del sitio o por el correo contato@ibsonjunior.com.br. Basta indicar el evento, el público, la fecha y el formato deseado y respondemos con disponibilidad y propuesta." },
+    { q: "¿Ibson Junior atiende en todo Brasil? ¿Hace charlas online?", a: "Sí. La base es Porto Alegre (Brasil), con atención presencial en todo el país (con cobertura de traslado) y también charlas online cuando tiene sentido para el evento." },
+    { q: "¿Cuáles son los formatos y duraciones?", a: "Charla, panel, ronda ejecutiva, taller, clase especial y conversación con liderazgos, en 45, 60 o 90 minutos, según el objetivo del encuentro." },
+    { q: "¿Cuál es la diferencia entre una charla ejecutiva y una motivacional?", a: "La motivacional busca energía momentánea. La ejecutiva organiza una inquietud real y entrega criterio para decidir y comunicar mejor después del evento. El foco es claridad que permanece, no estímulo pasajero." },
+  ],
 };
 
 export const mentorship = {
@@ -550,6 +559,15 @@ export const mentorship = {
   ],
   cta: { href: "#contato", label: "Hablar sobre mentoría" },
   note: "No existe un paquete genérico. El alcance nace del diagnóstico, del momento profesional y de la claridad de lo que necesita cambiar.",
+  geoNote: "Mentoría individual y online, para líderes y ejecutivos.",
+  faq: [
+    { q: "¿Qué es la mentoría ejecutiva?", a: "Es un acompañamiento individual que transforma experiencia en claridad: revisar trayectoria, ajustar posicionamiento y narrativa, y definir los próximos movimientos con más criterio. No es un curso ni una fórmula hecha." },
+    { q: "¿Cómo funciona la mentoría de Ibson Junior?", a: "Comienza por diagnóstico y conduce una conversación estratégica sobre marca personal, comunicación ejecutiva, LinkedIn estratégico, narrativa y gobernanza personal, siempre ligando percepción de valor a decisiones concretas." },
+    { q: "¿Para quién es la mentoría?", a: "Para líderes, gestores, especialistas y ejecutivos en crecimiento o transición que ya tienen historia y quieren organizar posicionamiento, presencia y próximos pasos con más consciencia." },
+    { q: "¿La mentoría es online?", a: "Sí. La mentoría es individual y se conduce online." },
+    { q: "¿Cómo es el formato y la duración?", a: "El alcance nace del diagnóstico y del momento profesional. No hay paquete genérico: el formato y la cadencia se ajustan a lo que necesita cambiar." },
+    { q: "¿Cuál es la diferencia entre mentoría y coaching?", a: "El coaching trabaja proceso y comportamiento de forma más amplia. La mentoría de Ibson Junior parte de repertorio ejecutivo real en liderazgo, contenido, comunicación y decisión, para dar dirección práctica a partir de experiencia vivida." },
+  ],
 };
 
 export const videos = {

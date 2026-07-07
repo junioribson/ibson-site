@@ -514,6 +514,15 @@ export const talks = {
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Convidar para palestra" },
   note: "Disponível para eventos corporativos, encontros executivos, painéis, aulas especiais, rodas de liderança e conversas com equipes.",
+  geoNote: "Baseado em Porto Alegre, para eventos em todo o Brasil (presencial) e também online.",
+  faq: [
+    { q: "O que é um palestrante executivo?", a: "É um profissional que leva a lideranças e equipes temas de decisão, comunicação, cultura e estratégia com densidade e critério, sem apelo motivacional vazio. Ibson Junior atua nesse formato, conectando repertório executivo real à conversa da sala." },
+    { q: "Sobre quais temas Ibson Junior palestra?", a: "Decidir sob pressão, IA com julgamento humano, comunicação e conteúdo, cultura organizacional, governança e liderança. Os temas se adaptam ao momento da empresa e do público." },
+    { q: "Como contratar uma palestra com Ibson Junior?", a: "Pelo formulário de contato do site ou pelo e-mail contato@ibsonjunior.com.br. Basta indicar o evento, o público, a data e o formato desejado que retornamos com disponibilidade e proposta." },
+    { q: "Ibson Junior atende em Porto Alegre e em todo o Brasil? Faz palestra online?", a: "Sim. A base é Porto Alegre (RS), com atendimento presencial em todo o Brasil (mediante custeio de deslocamento) e também palestras online quando faz sentido para o evento." },
+    { q: "Quais são os formatos e durações?", a: "Palestra, painel, roda executiva, workshop, aula especial e conversa com lideranças, em 45, 60 ou 90 minutos, conforme o objetivo do encontro." },
+    { q: "Qual a diferença entre uma palestra executiva e uma motivacional?", a: "A motivacional busca energia momentânea. A executiva organiza uma inquietação real e entrega critério para decidir e comunicar melhor depois que o evento termina. O foco é clareza que permanece, não estímulo passageiro." },
+  ],
 };
 
 export const mentorship = {
@@ -555,6 +564,15 @@ export const mentorship = {
   ],
   cta: { href: "#contato", label: "Falar sobre mentoria" },
   note: "Não existe pacote genérico. O escopo nasce do diagnóstico, do momento profissional e da clareza do que precisa mudar.",
+  geoNote: "Mentoria individual e online, para líderes e executivos em todo o Brasil.",
+  faq: [
+    { q: "O que é mentoria executiva?", a: "É um acompanhamento individual que transforma experiência em clareza: revisar trajetória, ajustar posicionamento e narrativa, e definir os próximos movimentos com mais critério. Não é curso nem fórmula pronta." },
+    { q: "Como funciona a mentoria de Ibson Junior?", a: "Começa por diagnóstico e conduz uma conversa estratégica sobre marca pessoal, comunicação executiva, LinkedIn estratégico, narrativa e governança pessoal, sempre ligando percepção de valor a decisões concretas." },
+    { q: "Para quem é a mentoria?", a: "Para líderes, gestores, especialistas e executivos em crescimento ou transição que já têm história e querem organizar posicionamento, presença e próximos passos com mais consciência." },
+    { q: "A mentoria é online? Atende o Brasil todo?", a: "Sim. A mentoria é individual e conduzida online, atendendo profissionais em todo o Brasil." },
+    { q: "Como é o formato e a duração?", a: "O escopo nasce do diagnóstico e do momento profissional. Não há pacote genérico: o formato e a cadência se ajustam ao que precisa mudar." },
+    { q: "Qual a diferença entre mentoria e coaching?", a: "O coaching trabalha processo e comportamento de forma mais ampla. A mentoria de Ibson Junior parte de repertório executivo real em liderança, conteúdo, comunicação e decisão, para dar direção prática a partir de experiência vivida." },
+  ],
 };
 
 export const videos = {

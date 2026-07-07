@@ -1,12 +1,46 @@
 ---
 import Base from "../../layouts/Base.astro";
 import PalestrasPage from "../../components/PalestrasPage.astro";
-import { normalizeLocale } from "../../i18n/utils";
+import { getContent, normalizeLocale, htmlLang } from "../../i18n/utils";
 import { t } from "../../i18n/ui";
 const locale = normalizeLocale(Astro.currentLocale);
+const { talks } = getContent(locale);
 const ui = t(locale);
+const url = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
+const PERSON = "https://ibsonjunior.com.br/#person";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: ui.lpTalksSeoTitle,
+      serviceType: "Keynote",
+      provider: { "@id": PERSON },
+      inLanguage: htmlLang(locale),
+      areaServed: [
+        { "@type": "City", name: "Porto Alegre" },
+        { "@type": "Country", name: "Brazil" },
+      ],
+      availableChannel: [
+        { "@type": "ServiceChannel", name: "In person" },
+        { "@type": "ServiceChannel", name: "Online" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      inLanguage: htmlLang(locale),
+      mainEntity: talks.faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
 ---
 
-<Base title={ui.lpTalksSeoTitle} description={ui.lpTalksSeoDesc} ogDescription={ui.lpTalksSeoDesc}>
+<Base title={ui.lpTalksSeoTitle} description={ui.lpTalksSeoDesc} ogDescription={ui.lpTalksSeoDesc} jsonLd={schema}>
   <PalestrasPage />
 </Base>

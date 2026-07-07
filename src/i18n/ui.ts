@@ -48,6 +48,7 @@ type UIStrings = {
   lpMentoriaSeoDesc: string;
   lpSeeTalks: string;
   lpSeeMentoria: string;
+  lpFaqTitle: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -124,15 +125,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpDurations: "Durações",
     lpTalksCta: "Leve essa conversa para a sua organização",
     lpSeeThemes: "Ver os temas",
-    lpTalksSeoTitle: "Palestras sobre IA, Liderança e Decisão | Ibson Junior",
+    lpTalksSeoTitle: "Palestrante executivo e estratégico | Ibson Junior",
     lpTalksSeoDesc:
-      "Palestras de Ibson Junior para empresas e eventos sobre decidir sob pressão, IA com julgamento humano, comunicação, cultura e liderança.",
+      "Contrate Ibson Junior, palestrante executivo e estratégico, para palestras corporativas sobre decisão, IA com julgamento humano, cultura, comunicação e liderança. Porto Alegre, Brasil e online.",
     lpMentoriaCta: "Vamos transformar seu repertório em direção",
-    lpMentoriaSeoTitle: "Mentoria Executiva em Liderança, Marca e Decisão | Ibson Junior",
+    lpMentoriaSeoTitle: "Mentoria executiva individual | Ibson Junior",
     lpMentoriaSeoDesc:
-      "Mentoria executiva individual com Ibson Junior: posicionamento, marca pessoal, comunicação executiva, narrativa e decisão, para transformar repertório em direção.",
+      "Mentoria executiva individual e online com Ibson Junior: posicionamento, marca pessoal, comunicação executiva, LinkedIn estratégico e decisão, para líderes e executivos no Brasil.",
     lpSeeTalks: "Ver palestras",
     lpSeeMentoria: "Ver mentoria",
+    lpFaqTitle: "Perguntas frequentes",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -207,15 +209,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpDurations: "Duraciones",
     lpTalksCta: "Lleva esta conversación a tu organización",
     lpSeeThemes: "Ver los temas",
-    lpTalksSeoTitle: "Charlas sobre IA, Liderazgo y Decisión | Ibson Junior",
+    lpTalksSeoTitle: "Conferencista ejecutivo y estratégico | Ibson Junior",
     lpTalksSeoDesc:
-      "Charlas de Ibson Junior para empresas y eventos sobre decidir bajo presión, IA con juicio humano, comunicación, cultura y liderazgo.",
+      "Contrata a Ibson Junior, conferencista ejecutivo y estratégico, para charlas corporativas sobre decisión, IA con juicio humano, cultura, comunicación y liderazgo. Presencial y online.",
     lpMentoriaCta: "Transformemos tu repertorio en dirección",
-    lpMentoriaSeoTitle: "Mentoría Ejecutiva en Liderazgo, Marca y Decisión | Ibson Junior",
+    lpMentoriaSeoTitle: "Mentoría ejecutiva individual | Ibson Junior",
     lpMentoriaSeoDesc:
-      "Mentoría ejecutiva individual con Ibson Junior: posicionamiento, marca personal, comunicación ejecutiva, narrativa y decisión, para transformar repertorio en dirección.",
+      "Mentoría ejecutiva individual y online con Ibson Junior: posicionamiento, marca personal, comunicación ejecutiva, LinkedIn estratégico y decisión, para líderes y ejecutivos.",
     lpSeeTalks: "Ver charlas",
     lpSeeMentoria: "Ver mentoría",
+    lpFaqTitle: "Preguntas frecuentes",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -290,15 +293,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpDurations: "Durations",
     lpTalksCta: "Bring this conversation to your organization",
     lpSeeThemes: "See the topics",
-    lpTalksSeoTitle: "Talks on AI, Leadership and Decision | Ibson Junior",
+    lpTalksSeoTitle: "Executive and strategic keynote speaker | Ibson Junior",
     lpTalksSeoDesc:
-      "Talks by Ibson Junior for companies and events on deciding under pressure, AI with human judgment, communication, culture and leadership.",
+      "Hire Ibson Junior, an executive and strategic keynote speaker, for corporate talks on decision, AI with human judgment, culture, communication and leadership. In person and online.",
     lpMentoriaCta: "Let's turn your repertoire into direction",
-    lpMentoriaSeoTitle: "Executive Mentoring in Leadership, Brand and Decision | Ibson Junior",
+    lpMentoriaSeoTitle: "One-on-one executive mentoring | Ibson Junior",
     lpMentoriaSeoDesc:
-      "One-on-one executive mentoring with Ibson Junior: positioning, personal brand, executive communication, narrative and decision, to turn repertoire into direction.",
+      "One-on-one, online executive mentoring with Ibson Junior: positioning, personal brand, executive communication, strategic LinkedIn and decision, for leaders and executives.",
     lpSeeTalks: "See talks",
     lpSeeMentoria: "See mentoring",
+    lpFaqTitle: "Frequently asked questions",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",

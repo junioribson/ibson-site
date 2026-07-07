@@ -29,6 +29,7 @@ const contato = `${home}#contato`;
         <a class="lp-btn lp-btn-primary" href={contato}><span>{talks.cta.label}</span></a>
         <a class="lp-btn lp-btn-ghost" href="#temas">{ui.lpSeeThemes}</a>
       </div>
+      <p class="lp-geo reveal">{talks.geoNote}</p>
     </div>
     <a class="lp-scroll" href="#tese" aria-label={ui.heroScrollAria}><span></span></a>
   </section>
@@ -71,6 +72,22 @@ const contato = `${home}#contato`;
       <div class="lp-fcol reveal">
         <span class="lp-fcol-t">{ui.lpDurations}</span>
         <div class="lp-chips">{talks.durations.map((d) => <span class="lp-chip">{d}</span>)}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="lp-faq" id="faq">
+    <div class="wrap">
+      <div class="lp-shead reveal"><span class="lp-shead-dot"></span>{ui.lpFaqTitle}</div>
+      <div class="lp-faq-list">
+        {
+          talks.faq.map((f) => (
+            <details class="lp-faq-item reveal">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -178,6 +195,19 @@ const contato = `${home}#contato`;
   .lp-chips { display: flex; flex-wrap: wrap; gap: 10px; }
   .lp-chip { font-family: var(--font-sans); font-weight: 700; font-size: 14px; color: var(--heading); padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); transition: border-color 0.25s, color 0.25s, transform 0.25s; }
   .lp-chip:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .lp-geo { margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.02em; color: var(--ink-soft); }
+
+  /* ===== FAQ (PAA) ===== */
+  .lp-faq { padding: 0 0 clamp(70px, 10vw, 120px); }
+  .lp-faq-list { max-width: 820px; }
+  .lp-faq-item { border-top: 1px solid var(--line); }
+  .lp-faq-item:last-child { border-bottom: 1px solid var(--line); }
+  .lp-faq-item summary { list-style: none; cursor: pointer; padding: 20px 0; font-family: var(--font-sans); font-weight: 700; font-size: clamp(16px, 1.6vw, 19px); color: var(--heading); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .lp-faq-item summary::-webkit-details-marker { display: none; }
+  .lp-faq-item summary::after { content: "+"; font-family: var(--font-mono); font-size: 22px; line-height: 1; color: var(--accent); transition: transform 0.25s var(--e); flex: none; }
+  .lp-faq-item[open] summary::after { transform: rotate(45deg); }
+  .lp-faq-item p { margin: 0 0 20px; font-size: 15.5px; line-height: 1.7; color: var(--text); max-width: 70ch; }
 
   /* ===== CTA FINAL (noite) ===== */
   .lp-final { position: relative; overflow: hidden; padding: clamp(80px, 12vw, 150px) 0; background: linear-gradient(160deg, #1a0733, #2a0148 55%, #150026); text-align: center; }

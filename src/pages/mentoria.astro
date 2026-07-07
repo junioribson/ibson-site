@@ -1,12 +1,40 @@
 ---
 import Base from "../layouts/Base.astro";
 import MentoriaPage from "../components/MentoriaPage.astro";
-import { normalizeLocale } from "../i18n/utils";
+import { getContent, normalizeLocale, htmlLang } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const locale = normalizeLocale(Astro.currentLocale);
+const { mentorship } = getContent(locale);
 const ui = t(locale);
+const url = new URL(Astro.url.pathname, "https://ibsonjunior.com.br").href;
+const PERSON = "https://ibsonjunior.com.br/#person";
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: ui.lpMentoriaSeoTitle,
+      serviceType: "Mentoria executiva",
+      provider: { "@id": PERSON },
+      inLanguage: htmlLang(locale),
+      areaServed: { "@type": "Country", name: "Brasil" },
+      availableChannel: [{ "@type": "ServiceChannel", name: "Online" }],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      inLanguage: htmlLang(locale),
+      mainEntity: mentorship.faq.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
 ---
 
-<Base title={ui.lpMentoriaSeoTitle} description={ui.lpMentoriaSeoDesc} ogDescription={ui.lpMentoriaSeoDesc}>
+<Base title={ui.lpMentoriaSeoTitle} description={ui.lpMentoriaSeoDesc} ogDescription={ui.lpMentoriaSeoDesc} jsonLd={schema}>
   <MentoriaPage />
 </Base>
