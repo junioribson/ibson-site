@@ -148,27 +148,6 @@ const schemaToRender = jsonLd ?? defaultSchema;
     <meta name="twitter:title" content={ogTitleFinal} />
     <meta name="twitter:description" content={ogDescFinal} />
 
-    {/* LCP da home = imagem do lobo no hero. Pré-carrega a variante certa por
-       viewport (mobile leve x desktop full), começando o download já no <head>. */}
-    {isHome && (
-      <link
-        rel="preload"
-        as="image"
-        href="/assets/arquetipos/wolf-editorial-mobile.webp"
-        media="(max-width: 900px)"
-        fetchpriority="high"
-      />
-    )}
-    {isHome && (
-      <link
-        rel="preload"
-        as="image"
-        href="/assets/arquetipos/wolf-editorial.webp"
-        media="(min-width: 901px)"
-        fetchpriority="high"
-      />
-    )}
-
     {/* Fontes auto-hospedadas (sem dependência externa). Pré-carrega as críticas:
        peso 800 do hero (elemento LCP) e 400 do corpo. */}
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-800-latin.woff2" crossorigin />
