@@ -34,6 +34,13 @@ const contato = `${home}#contato`;
     <a class="lp-scroll" href="#lead" aria-label={ui.heroScrollAria}><span></span></a>
   </section>
 
+  <section class="lp-pos">
+    <div class="wrap lp-pos-in reveal">
+      <h2 class="lp-pos-t">{mentorship.positioning.title}</h2>
+      <p class="lp-pos-p">{mentorship.positioning.text}</p>
+    </div>
+  </section>
+
   <section class="lp-tese mt-lead" id="lead">
     <div class="wrap mt-lead-in">
       {mentorship.intro.map((p, i) => <p class:list={["reveal", { "mt-lead-big": i === 0 }]}>{p}</p>)}
@@ -132,6 +139,10 @@ const contato = `${home}#contato`;
   .lp-scroll span { width: 4px; height: 8px; border-radius: 2px; background: var(--accent); margin-top: 7px; animation: scrolldot 1.6s ease-in-out infinite; }
   @keyframes scrolldot { 0%,100% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translateY(12px); } }
 
+  .lp-pos { padding: clamp(56px, 8vw, 92px) 0 0; }
+  .lp-pos-in { max-width: 900px; }
+  .lp-pos-t { font-size: clamp(24px, 3.2vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; color: var(--heading); margin: 0 0 18px; max-width: 24ch; }
+  .lp-pos-p { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.62; color: var(--text); max-width: 66ch; margin: 0; }
   .lp-tese { padding: clamp(64px, 9vw, 120px) 0; }
   .lp-tese-in { max-width: 820px; }
   .lp-tese-p { font-size: clamp(18px, 1.7vw, 22px); line-height: 1.7; color: var(--text); margin: 0 0 22px; }

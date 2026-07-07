@@ -514,6 +514,10 @@ export const talks = {
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Convidar para palestra" },
   note: "Disponível para eventos corporativos, encontros executivos, painéis, aulas especiais, rodas de liderança e conversas com equipes.",
+  positioning: {
+    title: "Palestrante executivo e estratégico para empresas e lideranças",
+    text: "Ibson Junior é palestrante executivo e estratégico. Leva a empresas, eventos e lideranças, em todo o Brasil, presencial ou online, palestras corporativas sobre decisão sob pressão, inteligência artificial com julgamento humano, comunicação, cultura e liderança, com a densidade de quem construiu e liderou operações de conteúdo de grande escala.",
+  },
   geoNote: "Palestrante executivo e estratégico, de Porto Alegre para todo o Brasil. Presencial ou online.",
   faq: [
     { q: "O que é um palestrante executivo?", a: "É quem leva a lideranças e equipes temas de decisão, comunicação, cultura e estratégia com densidade e critério, no lugar de motivação passageira. Ibson Junior traz para o palco o repertório de quem construiu e liderou operações de conteúdo de grande escala, transformando experiência real em clareza para a sala." },
@@ -564,6 +568,10 @@ export const mentorship = {
   ],
   cta: { href: "#contato", label: "Falar sobre mentoria" },
   note: "Não existe pacote genérico. O escopo nasce do diagnóstico, do momento profissional e da clareza do que precisa mudar.",
+  positioning: {
+    title: "Mentoria executiva individual para líderes e executivos",
+    text: "A mentoria executiva de Ibson Junior é individual e online, para líderes e executivos em todo o Brasil. Trabalha posicionamento, marca pessoal, comunicação executiva, LinkedIn estratégico, narrativa e decisão, transformando repertório em direção prática.",
+  },
   geoNote: "Mentoria individual e online, para líderes e executivos em todo o Brasil.",
   faq: [
     { q: "O que é mentoria executiva?", a: "É um acompanhamento individual que transforma experiência em clareza: revisar a trajetória, ajustar posicionamento e narrativa, e definir os próximos movimentos com mais critério. Não é curso nem fórmula pronta, é direção construída a partir do seu momento real." },

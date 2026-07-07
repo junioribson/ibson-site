@@ -34,6 +34,13 @@ const contato = `${home}#contato`;
     <a class="lp-scroll" href="#tese" aria-label={ui.heroScrollAria}><span></span></a>
   </section>
 
+  <section class="lp-pos">
+    <div class="wrap lp-pos-in reveal">
+      <h2 class="lp-pos-t">{talks.positioning.title}</h2>
+      <p class="lp-pos-p">{talks.positioning.text}</p>
+    </div>
+  </section>
+
   <section class="lp-tese" id="tese">
     <div class="wrap lp-tese-in">
       {talks.intro.map((p, i) => <p class:list={["lp-tese-p reveal", { lead: i === 0 }]} set:html={p} />)}
@@ -163,6 +170,12 @@ const contato = `${home}#contato`;
   .lp-scroll { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 2; width: 26px; height: 42px; border: 2px solid var(--line-strong, var(--line)); border-radius: 14px; display: flex; justify-content: center; }
   .lp-scroll span { width: 4px; height: 8px; border-radius: 2px; background: var(--accent); margin-top: 7px; animation: scrolldot 1.6s ease-in-out infinite; }
   @keyframes scrolldot { 0%,100% { opacity: 0; transform: translateY(0); } 40% { opacity: 1; } 80% { opacity: 0; transform: translateY(12px); } }
+
+  /* ===== POSICIONAMENTO (SEO + Ads) ===== */
+  .lp-pos { padding: clamp(56px, 8vw, 92px) 0 0; }
+  .lp-pos-in { max-width: 900px; }
+  .lp-pos-t { font-size: clamp(24px, 3.2vw, 40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; color: var(--heading); margin: 0 0 18px; max-width: 24ch; }
+  .lp-pos-p { font-size: clamp(17px, 1.6vw, 21px); line-height: 1.62; color: var(--text); max-width: 66ch; margin: 0; }
 
   /* ===== TESE ===== */
   .lp-tese { padding: clamp(70px, 10vw, 130px) 0; }

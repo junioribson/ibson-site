@@ -509,6 +509,10 @@ export const talks = {
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Invitar a una charla" },
   note: "Disponible para eventos corporativos, encuentros ejecutivos, paneles, clases especiales, rondas de liderazgo y conversaciones con equipos.",
+  positioning: {
+    title: "Conferencista ejecutivo y estratégico para empresas y liderazgos",
+    text: "Ibson Junior es conferencista ejecutivo y estratégico. Lleva a empresas, eventos y liderazgos, en todo Brasil, presencial u online, charlas corporativas sobre decisión bajo presión, inteligencia artificial con juicio humano, comunicación, cultura y liderazgo, con la densidad de quien construyó y lideró operaciones de contenido de gran escala.",
+  },
   geoNote: "Conferencista ejecutivo y estratégico, para eventos en todo Brasil. Presencial u online.",
   faq: [
     { q: "¿Qué es un conferencista ejecutivo?", a: "Es quien lleva a líderes y equipos temas de decisión, comunicación, cultura y estrategia con densidad y criterio, en lugar de motivación pasajera. Ibson Junior lleva al escenario el repertorio de quien construyó y lideró operaciones de contenido de gran escala, transformando experiencia real en claridad para la sala." },
@@ -559,6 +563,10 @@ export const mentorship = {
   ],
   cta: { href: "#contato", label: "Hablar sobre mentoría" },
   note: "No existe un paquete genérico. El alcance nace del diagnóstico, del momento profesional y de la claridad de lo que necesita cambiar.",
+  positioning: {
+    title: "Mentoría ejecutiva individual para líderes y ejecutivos",
+    text: "La mentoría ejecutiva de Ibson Junior es individual y online, para líderes y ejecutivos. Trabaja posicionamiento, marca personal, comunicación ejecutiva, LinkedIn estratégico, narrativa y decisión, transformando repertorio en dirección práctica.",
+  },
   geoNote: "Mentoría individual y online, para líderes y ejecutivos.",
   faq: [
     { q: "¿Qué es la mentoría ejecutiva?", a: "Es un acompañamiento individual que transforma experiencia en claridad: revisar la trayectoria, ajustar posicionamiento y narrativa, y definir los próximos movimientos con más criterio. No es un curso ni una fórmula hecha, es dirección construida a partir de tu momento real." },

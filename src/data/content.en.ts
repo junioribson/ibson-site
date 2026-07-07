@@ -509,6 +509,10 @@ export const talks = {
   durations: ["45 minutes", "60 minutes", "90 minutes"],
   cta: { href: "#contato", label: "Invite for a talk" },
   note: "Available for corporate events, executive gatherings, panels, special lectures, leadership roundtables and conversations with teams.",
+  positioning: {
+    title: "Executive and strategic keynote speaker for companies and leaders",
+    text: "Ibson Junior is an executive and strategic keynote speaker. He brings to companies, events and leadership teams, across Brazil, in person or online, corporate talks on deciding under pressure, artificial intelligence with human judgment, communication, culture and leadership, with the depth of someone who built and led large-scale content operations.",
+  },
   geoNote: "Executive and strategic keynote speaker, for events across Brazil. In person or online.",
   faq: [
     { q: "What is an executive keynote speaker?", a: "Someone who brings leaders and teams topics of decision, communication, culture and strategy with depth and judgment, instead of passing motivation. Ibson Junior brings to the stage the repertoire of someone who built and led large-scale content operations, turning real experience into clarity for the room." },
@@ -559,6 +563,10 @@ export const mentorship = {
   ],
   cta: { href: "#contato", label: "Talk about mentoring" },
   note: "There is no generic package. The scope emerges from the diagnosis, the professional moment and the clarity of what needs to change.",
+  positioning: {
+    title: "One-on-one executive mentoring for leaders and executives",
+    text: "Ibson Junior executive mentoring is one-on-one and online, for leaders and executives. It works on positioning, personal brand, executive communication, strategic LinkedIn, narrative and decision, turning repertoire into practical direction.",
+  },
   geoNote: "One-on-one, online mentoring for leaders and executives.",
   faq: [
     { q: "What is executive mentoring?", a: "A one-on-one process that turns experience into clarity: reviewing the journey, adjusting positioning and narrative, and defining the next moves with more judgment. It is not a course or a ready-made formula, it is direction built from your real moment." },
