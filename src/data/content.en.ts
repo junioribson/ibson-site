@@ -158,6 +158,44 @@ export const identity = {
   exploreTitle: "Explore",
 };
 
+export const press = {
+  seoTitle: "Press kit | Ibson Junior",
+  seoDescription:
+    "Ibson Junior press materials: bios in three lengths, official photo, topics, contact and official links. Name for citation: Ibson Junior.",
+  kicker: "Press",
+  h1: "Press kit",
+  intro:
+    "Ready-to-use material for journalists, event organizers and partners. Feel free to use the bios, photo and links below.",
+  citeLabel: "Name for citation",
+  citeName: "Ibson Junior",
+  fullLabel: "Full name",
+  fullName: "Ibson Lima dos Santos Junior",
+  roleLabel: "Position",
+  role: "Content Director in Brazil at Futbol Sites",
+  biosTitle: "Biographies",
+  bioShortLabel: "Short",
+  bioMediumLabel: "Medium",
+  bioLongLabel: "Long",
+  bioShort:
+    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is a content, leadership and communication executive. Content Director in Brazil at Futbol Sites, he works with editorial strategy, AI, culture, audience, governance and decision in complex digital environments.",
+  bioMedium:
+    "Ibson Lima dos Santos Junior, known professionally as Ibson Junior, is a content, leadership and communication executive. He works on the architecture of decision, execution and governance systems in high-speed digital environments, connecting editorial strategy, culture, audience, technology, artificial intelligence and public responsibility. His path began in curiosity about technology, back in the dial-up internet era, and expanded across areas such as culture, events, IT, communication, digital communities, sports media and leadership. He founded ProliferArte in 2008, created Antenados no Futebol, played a direct role in the arrival and development of Bolavip in Brazil, was CEO of Futmarketing and founded WolfLife, a digital community ecosystem sold in 2025. Today he is Content Director in Brazil at Futbol Sites and writes about AI, leadership, culture, communication, governance, reputation and decision. His central thesis is that, in times of excess and speed, consistent results depend on clarity, judgment and structures able to sustain good decisions in execution.",
+  copy: "Copy",
+  copied: "Copied",
+  topicsTitle: "Topics for interviews and talks",
+  topics: [
+    "Deciding under pressure",
+    "AI with human judgment",
+    "Content and responsibility",
+    "Culture and governance",
+    "Leadership and decision",
+    "Reputation and public presence",
+  ],
+  photoTitle: "Official photo",
+  photoDownload: "Open photo",
+  contactTitle: "Contact and official links",
+};
+
 export const linkedinPosts = {
   title: "Latest posts on LinkedIn",
   subtitle:

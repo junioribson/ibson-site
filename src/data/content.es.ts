@@ -158,6 +158,44 @@ export const identity = {
   exploreTitle: "Explora",
 };
 
+export const press = {
+  seoTitle: "Kit de prensa | Ibson Junior",
+  seoDescription:
+    "Material de prensa de Ibson Junior: biografías en tres tamaños, foto oficial, temas, contacto y enlaces oficiales. Nombre para citar: Ibson Junior.",
+  kicker: "Prensa",
+  h1: "Kit de prensa",
+  intro:
+    "Material listo para periodistas, organizadores de eventos y socios. Puedes usar las biografías, la foto y los enlaces de abajo.",
+  citeLabel: "Nombre para citar",
+  citeName: "Ibson Junior",
+  fullLabel: "Nombre completo",
+  fullName: "Ibson Lima dos Santos Junior",
+  roleLabel: "Cargo",
+  role: "Director de Contenido en Brasil en Futbol Sites",
+  biosTitle: "Biografías",
+  bioShortLabel: "Corta",
+  bioMediumLabel: "Media",
+  bioLongLabel: "Larga",
+  bioShort:
+    "Ibson Junior, nombre profesional de Ibson Lima dos Santos Junior, es ejecutivo de contenido, liderazgo y comunicación. Director de Contenido en Brasil en Futbol Sites, trabaja con estrategia editorial, IA, cultura, audiencia, gobernanza y decisión en entornos digitales complejos.",
+  bioMedium:
+    "Ibson Lima dos Santos Junior, conocido profesionalmente como Ibson Junior, es ejecutivo de contenido, liderazgo y comunicación. Trabaja en la arquitectura de sistemas de decisión, ejecución y gobernanza en entornos digitales de alta velocidad, conectando estrategia editorial, cultura, audiencia, tecnología, inteligencia artificial y responsabilidad pública. Su trayectoria comenzó en la curiosidad por la tecnología, aún en la época del internet por teléfono, y se expandió por áreas como cultura, eventos, informática, comunicación, comunidades digitales, medios deportivos y liderazgo. Fundó ProliferArte en 2008, fue creador de Antenados no Futebol, tuvo un papel directo en la llegada y el desarrollo de Bolavip en Brasil, fue CEO de Futmarketing y fundó WolfLife, ecosistema de comunidades digitales vendido en 2025. Hoy es Director de Contenido en Brasil en Futbol Sites y escribe sobre IA, liderazgo, cultura, comunicación, gobernanza, reputación y decisión. Su tesis central es que, en tiempos de exceso y velocidad, el resultado consistente depende de claridad, criterio y estructuras capaces de sostener buenas decisiones en la ejecución.",
+  copy: "Copiar",
+  copied: "Copiado",
+  topicsTitle: "Temas para entrevistas y charlas",
+  topics: [
+    "Decidir bajo presión",
+    "IA con juicio humano",
+    "Contenido y responsabilidad",
+    "Cultura y gobernanza",
+    "Liderazgo y decisión",
+    "Reputación y presencia pública",
+  ],
+  photoTitle: "Foto oficial",
+  photoDownload: "Abrir foto",
+  contactTitle: "Contacto y enlaces oficiales",
+};
+
 export const linkedinPosts = {
   title: "Últimas publicaciones en LinkedIn",
   subtitle:

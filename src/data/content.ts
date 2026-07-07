@@ -154,6 +154,46 @@ export const identity = {
   exploreTitle: "Explore",
 };
 
+// Kit de imprensa (/imprensa/): material pronto para jornalistas, organizadores de
+// eventos e parceiros. Reaproveita a bio longa e a foto do `identity`.
+export const press = {
+  seoTitle: "Kit de imprensa | Ibson Junior",
+  seoDescription:
+    "Material de imprensa de Ibson Junior: biografias em três tamanhos, foto oficial, temas, contato e links oficiais. Nome para citação: Ibson Junior.",
+  kicker: "Imprensa",
+  h1: "Kit de imprensa",
+  intro:
+    "Material pronto para jornalistas, organizadores de eventos e parceiros. Fique à vontade para usar as biografias, a foto e os links abaixo.",
+  citeLabel: "Nome para citação",
+  citeName: "Ibson Junior",
+  fullLabel: "Nome completo",
+  fullName: "Ibson Lima dos Santos Junior",
+  roleLabel: "Cargo",
+  role: "Diretor de Conteúdo no Brasil na Futbol Sites",
+  biosTitle: "Biografias",
+  bioShortLabel: "Curta",
+  bioMediumLabel: "Média",
+  bioLongLabel: "Longa",
+  bioShort:
+    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é executivo de conteúdo, liderança e comunicação. Diretor de Conteúdo no Brasil na Futbol Sites, atua com estratégia editorial, IA, cultura, audiência, governança e decisão em ambientes digitais complexos.",
+  bioMedium:
+    "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior, é executivo de conteúdo, liderança e comunicação. Atua na arquitetura de sistemas de decisão, execução e governança em ambientes digitais de alta velocidade, conectando estratégia editorial, cultura, audiência, tecnologia, inteligência artificial e responsabilidade pública. Sua trajetória começou na curiosidade pela tecnologia, ainda na época da internet discada, e se expandiu por áreas como cultura, eventos, informática, comunicação, comunidades digitais, mídia esportiva e liderança. Fundou a ProliferArte em 2008, foi criador do Antenados no Futebol, teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil, foi CEO da Futmarketing e fundou a WolfLife, ecossistema de comunidades digitais vendido em 2025. Hoje, é Diretor de Conteúdo no Brasil na Futbol Sites e escreve sobre IA, liderança, cultura, comunicação, governança, reputação e decisão. Sua tese central é que, em tempos de excesso e velocidade, resultado consistente depende de clareza, critério e estruturas capazes de sustentar boas decisões na execução.",
+  copy: "Copiar",
+  copied: "Copiado",
+  topicsTitle: "Temas para entrevistas e palestras",
+  topics: [
+    "Decidir sob pressão",
+    "IA com julgamento humano",
+    "Conteúdo e responsabilidade",
+    "Cultura e governança",
+    "Liderança e decisão",
+    "Reputação e presença pública",
+  ],
+  photoTitle: "Foto oficial",
+  photoDownload: "Abrir foto",
+  contactTitle: "Contato e links oficiais",
+};
+
 // Últimos posts no LinkedIn: as artes que o Ibson cria (renomeadas ibson-junior-*)
 // ficam hospedadas AQUI, no próprio site, para o Google Images indexá-las (o LinkedIn
 // é difícil de indexar). Contagens são estáticas (o LinkedIn não expõe API pública).

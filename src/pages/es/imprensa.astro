@@ -1,0 +1,11 @@
+---
+import Base from "../../layouts/Base.astro";
+import ImprensaPage from "../../components/ImprensaPage.astro";
+import { getContent, normalizeLocale } from "../../i18n/utils";
+const locale = normalizeLocale(Astro.currentLocale);
+const { press } = getContent(locale);
+---
+
+<Base title={press.seoTitle} description={press.seoDescription} ogDescription={press.seoDescription}>
+  <ImprensaPage />
+</Base>
