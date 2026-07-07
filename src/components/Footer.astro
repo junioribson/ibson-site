@@ -18,6 +18,8 @@ const ui = t(locale);
       <div class="fcol">
         <h3 class="fcol-h">{ui.footerNavigate}</h3>
         {nav.links.map((l) => <a href={localizePath(l.href, locale)}>{l.label}</a>)}
+        <a href={localizePath("/ibson-junior", locale)}>{ui.footerAbout}</a>
+        <a href={localizePath("/imprensa", locale)}>{ui.footerPress}</a>
       </div>
       <div class="fcol">
         <h3 class="fcol-h">{ui.footerConnect}</h3>

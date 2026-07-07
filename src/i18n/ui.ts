@@ -7,6 +7,8 @@ type UIStrings = {
   footerEmail: string;
   footerInviteTalk: string;
   footerTalkMentoring: string;
+  footerAbout: string;
+  footerPress: string;
   footerRights: string;
   footerTagline: string;
   connectLinkedin: string;
@@ -88,6 +90,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerEmail: "E-mail ↗",
     footerInviteTalk: "Convidar para palestra",
     footerTalkMentoring: "Falar sobre mentoria",
+    footerAbout: "Sobre mim",
+    footerPress: "Imprensa",
     footerRights: "© 2026 IBSON JUNIOR · SITE OFICIAL",
     footerTagline: "CONSCIÊNCIA · LIDERANÇA · DECISÃO",
     connectLinkedin: "Conecte-se comigo no LinkedIn",
@@ -169,6 +173,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerEmail: "Correo ↗",
     footerInviteTalk: "Invitar a una charla",
     footerTalkMentoring: "Hablar sobre mentoría",
+    footerAbout: "Sobre mí",
+    footerPress: "Prensa",
     footerRights: "© 2026 IBSON JUNIOR · SITIO OFICIAL",
     footerTagline: "CONCIENCIA · LIDERAZGO · DECISIÓN",
     connectLinkedin: "Conéctate conmigo en LinkedIn",
@@ -250,6 +256,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerEmail: "Email ↗",
     footerInviteTalk: "Invite to a talk",
     footerTalkMentoring: "Talk about mentoring",
+    footerAbout: "About me",
+    footerPress: "Press",
     footerRights: "© 2026 IBSON JUNIOR · OFFICIAL SITE",
     footerTagline: "AWARENESS · LEADERSHIP · DECISION",
     connectLinkedin: "Connect with me on LinkedIn",
