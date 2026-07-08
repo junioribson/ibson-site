@@ -45,3 +45,89 @@ export const themeLabel: Record<"pt" | "es" | "en", Record<Theme, string>> = {
     vida: "Life and work",
   },
 };
+
+// Ordem de exibição dos temas (hubs e listas).
+export const themeOrder: Theme[] = ["decisao", "lideranca", "conteudo", "vida"];
+
+// Slug do hub de cada tema (igual nos 3 idiomas; muda só o prefixo /es//en/).
+export const themeSlug: Record<Theme, string> = {
+  decisao: "estrategia-e-decisao",
+  conteudo: "conteudo-e-comunicacao",
+  lideranca: "lideranca-e-cultura",
+  vida: "vida-e-trabalho",
+};
+
+export function slugToTheme(slug: string): Theme | null {
+  const entry = (Object.entries(themeSlug) as [Theme, string][]).find(([, s]) => s === slug);
+  return entry ? entry[0] : null;
+}
+
+// Conteúdo dos hubs de tema (páginas-pilar /temas/<slug>/), por idioma.
+export const themeHub: Record<"pt" | "es" | "en", Record<Theme, { seoTitle: string; seoDescription: string; intro: string }>> = {
+  pt: {
+    decisao: {
+      seoTitle: "Estratégia e decisão | Artigos de Ibson Junior",
+      seoDescription: "Artigos de Ibson Junior sobre estratégia, tomada de decisão, governança e critério sob pressão.",
+      intro: "O que faz uma direção se sustentar: a diferença entre intenção e estratégia, a qualidade da decisão e a governança que mantém critério quando a pressão aumenta.",
+    },
+    conteudo: {
+      seoTitle: "Conteúdo e comunicação | Artigos de Ibson Junior",
+      seoDescription: "Artigos de Ibson Junior sobre conteúdo, comunicação executiva, responsabilidade editorial e o que sustenta a mensagem em escala.",
+      intro: "Comunicar com critério: conteúdo e responsabilidade, a comunicação que sustenta cultura e governança, e o que acontece quando a mensagem falha e vira ruído.",
+    },
+    lideranca: {
+      seoTitle: "Liderança e cultura | Artigos de Ibson Junior",
+      seoDescription: "Artigos de Ibson Junior sobre liderança, cultura organizacional e inteligência artificial com julgamento humano.",
+      intro: "Liderar e sustentar cultura: a cultura organizacional que é energia vital (não PowerPoint) e a inteligência emocional que a IA não substitui.",
+    },
+    vida: {
+      seoTitle: "Vida e trabalho | Artigos de Ibson Junior",
+      seoDescription: "Artigos de Ibson Junior sobre carreira, atenção, produtividade e o equilíbrio entre profissão e identidade.",
+      intro: "Viver e trabalhar com mais consciência: a atenção corroída pelo cérebro podre, o risco de a profissão virar identidade, e o tempo como um oceano de prioridades.",
+    },
+  },
+  es: {
+    decisao: {
+      seoTitle: "Estrategia y decisión | Artículos de Ibson Junior",
+      seoDescription: "Artículos de Ibson Junior sobre estrategia, toma de decisiones, gobernanza y criterio bajo presión.",
+      intro: "Lo que hace que una dirección se sostenga: la diferencia entre intención y estrategia, la calidad de la decisión y la gobernanza que mantiene criterio cuando la presión aumenta.",
+    },
+    conteudo: {
+      seoTitle: "Contenido y comunicación | Artículos de Ibson Junior",
+      seoDescription: "Artículos de Ibson Junior sobre contenido, comunicación ejecutiva, responsabilidad editorial y lo que sostiene el mensaje a escala.",
+      intro: "Comunicar con criterio: contenido y responsabilidad, la comunicación que sostiene cultura y gobernanza, y lo que pasa cuando el mensaje falla y se vuelve ruido.",
+    },
+    lideranca: {
+      seoTitle: "Liderazgo y cultura | Artículos de Ibson Junior",
+      seoDescription: "Artículos de Ibson Junior sobre liderazgo, cultura organizacional e inteligencia artificial con juicio humano.",
+      intro: "Liderar y sostener cultura: la cultura organizacional que es energía vital (no un PowerPoint) y la inteligencia emocional que la IA no reemplaza.",
+    },
+    vida: {
+      seoTitle: "Vida y trabajo | Artículos de Ibson Junior",
+      seoDescription: "Artículos de Ibson Junior sobre carrera, atención, productividad y el equilibrio entre profesión e identidad.",
+      intro: "Vivir y trabajar con más consciencia: la atención corroída por el cerebro podrido, el riesgo de que la profesión se vuelva identidad, y el tiempo como un océano de prioridades.",
+    },
+  },
+  en: {
+    decisao: {
+      seoTitle: "Strategy and decision | Ibson Junior articles",
+      seoDescription: "Articles by Ibson Junior on strategy, decision-making, governance and judgment under pressure.",
+      intro: "What makes a direction hold: the difference between intention and strategy, the quality of the decision and the governance that keeps judgment as pressure rises.",
+    },
+    conteudo: {
+      seoTitle: "Content and communication | Ibson Junior articles",
+      seoDescription: "Articles by Ibson Junior on content, executive communication, editorial responsibility and what sustains the message at scale.",
+      intro: "Communicating with judgment: content and responsibility, the communication that sustains culture and governance, and what happens when the message fails and becomes noise.",
+    },
+    lideranca: {
+      seoTitle: "Leadership and culture | Ibson Junior articles",
+      seoDescription: "Articles by Ibson Junior on leadership, organizational culture and artificial intelligence with human judgment.",
+      intro: "Leading and sustaining culture: the organizational culture that is vital energy (not PowerPoint) and the emotional intelligence that AI does not replace.",
+    },
+    vida: {
+      seoTitle: "Life and work | Ibson Junior articles",
+      seoDescription: "Articles by Ibson Junior on career, attention, productivity and the balance between profession and identity.",
+      intro: "Living and working with more awareness: attention eroded by brain rot, the risk of profession becoming identity, and time as an ocean of priorities.",
+    },
+  },
+};

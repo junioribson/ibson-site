@@ -4,7 +4,7 @@ import { getCollection, render } from "astro:content";
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import ArticleCard from "./ArticleCard.astro";
-import { articleTheme } from "../data/clusters";
+import { articleTheme, themeSlug, themeLabel } from "../data/clusters";
 import { localizePath, normalizeLocale, htmlLang, LANGS } from "../i18n/utils";
 import { t } from "../i18n/ui";
 
@@ -147,6 +147,11 @@ const articleSchema = {
         )
       }
       <div class="art-foot">
+        {currentTheme && (
+          <a class="art-more" href={localizePath(`/temas/${themeSlug[currentTheme]}`, locale)}>
+            {ui.themeLabel}: {themeLabel[locale][currentTheme]}
+          </a>
+        )}
         <a class="art-more" href={localizePath("/artigos", locale)}>{ui.articleSeeAll}</a>
         <a class="art-share" href={shareUrl} target="_blank" rel="noopener">{ui.articleShare}</a>
       </div>

@@ -7,6 +7,7 @@ import Footer from "./Footer.astro";
 import ArticleCard from "./ArticleCard.astro";
 import { getContent, localizePath, normalizeLocale, articlesCollection, imgDims } from "../i18n/utils";
 import { t } from "../i18n/ui";
+import { themeOrder, themeLabel, themeSlug } from "../data/clusters";
 
 const locale = normalizeLocale(Astro.currentLocale);
 const { articles } = getContent(locale);
@@ -99,6 +100,22 @@ const collectionSchema = {
       </div>
     )
   }
+
+  <section class="wrap lib-hubs">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.exploreByTheme}</span>
+    </div>
+    <div class="lib-hubs-grid">
+      {
+        themeOrder.map((th) => (
+          <a class="lib-hub reveal" href={localizePath(`/temas/${themeSlug[th]}`, locale)}>
+            <span>{themeLabel[locale][th]}</span>
+            <span class="lib-hub-arrow" aria-hidden="true">→</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
 </main>
 <Footer />
 
@@ -117,6 +134,19 @@ const collectionSchema = {
     margin-top: 18px; max-width: 62ch; font-size: clamp(16px, 1.5vw, 19px);
     line-height: 1.6; color: var(--text-soft);
   }
+  .lib-hubs { margin-top: clamp(48px, 7vw, 80px); }
+  .lib-hubs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
+  .lib-hub {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel);
+    font-family: var(--font-sans); font-weight: 800; font-size: clamp(17px, 1.8vw, 21px);
+    letter-spacing: -0.02em; color: var(--heading);
+    transition: transform 0.3s var(--e), border-color 0.3s, box-shadow 0.3s;
+  }
+  .lib-hub:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 24px 44px -30px rgba(90, 30, 200, 0.5); }
+  .lib-hub-arrow { color: var(--accent); transition: transform 0.25s var(--e); flex: none; }
+  .lib-hub:hover .lib-hub-arrow { transform: translateX(4px); }
+  @media (max-width: 620px) { .lib-hubs-grid { grid-template-columns: 1fr; } }
   .feat {
     display: grid; grid-template-columns: 1.15fr 1fr; gap: 0;
     margin: 40px 0 52px; border: 1px solid var(--hair); border-radius: 12px;
