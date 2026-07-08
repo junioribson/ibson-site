@@ -1,4 +1,4 @@
-# robots.txt — ibsonjunior.com.br
+# robots.txt: ibsonjunior.com.br
 # Site aberto para indexação. Buscadores de IA (GEO) são bem-vindos: queremos
 # que o Ibson seja encontrado e citado por Google, ChatGPT, Perplexity, Gemini,
 # Claude e afins.

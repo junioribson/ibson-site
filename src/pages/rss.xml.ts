@@ -36,7 +36,7 @@ export async function GET() {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ibson Junior — Artigos e ensaios</title>
+    <title>Ibson Junior | Artigos e ensaios</title>
     <link>${SITE}/artigos/</link>
     <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml" />
     <description>Artigos de Ibson Junior sobre liderança, comunicação, cultura, IA, marca pessoal e tomada de decisão.</description>
