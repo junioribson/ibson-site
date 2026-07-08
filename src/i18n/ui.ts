@@ -48,6 +48,7 @@ type UIStrings = {
   lpMentoriaSeoDesc: string;
   lpSeeTalks: string;
   lpSeeMentoria: string;
+  lpExploreMore: string;
   lpFaqTitle: string;
   articleFaqTitle: string;
   exploreByTheme: string;
@@ -136,6 +137,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
       "Mentoria executiva individual e online com Ibson Junior: posicionamento, marca pessoal, comunicação executiva, LinkedIn estratégico e decisão, para líderes e executivos no Brasil.",
     lpSeeTalks: "Ver palestras",
     lpSeeMentoria: "Ver mentoria",
+    lpExploreMore: "Continue explorando",
     lpFaqTitle: "Perguntas frequentes",
     articleFaqTitle: "Entendendo melhor alguns pontos",
     exploreByTheme: "Explore por tema",
@@ -222,6 +224,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
       "Mentoría ejecutiva individual y online con Ibson Junior: posicionamiento, marca personal, comunicación ejecutiva, LinkedIn estratégico y decisión, para líderes y ejecutivos.",
     lpSeeTalks: "Ver charlas",
     lpSeeMentoria: "Ver mentoría",
+    lpExploreMore: "Sigue explorando",
     lpFaqTitle: "Preguntas frecuentes",
     articleFaqTitle: "Entendiendo mejor algunos puntos",
     exploreByTheme: "Explora por tema",
@@ -308,6 +311,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
       "One-on-one, online executive mentoring with Ibson Junior: positioning, personal brand, executive communication, strategic LinkedIn and decision, for leaders and executives.",
     lpSeeTalks: "See talks",
     lpSeeMentoria: "See mentoring",
+    lpExploreMore: "Keep exploring",
     lpFaqTitle: "Frequently asked questions",
     articleFaqTitle: "A closer look at a few points",
     exploreByTheme: "Explore by topic",
