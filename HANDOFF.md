@@ -206,6 +206,14 @@ Objetivo: consolidar a entidade para o Google/IAs e desambiguar do homônimo (ex
 - **Página `/imprensa/` (feita):** press kit com bios curta/média/longa (botão "Copiar"), foto oficial, temas para entrevistas, contato e links oficiais. Componente `ImprensaPage.astro`, conteúdo em `press` (content.*), reaproveita `identity` (bio longa + foto). Rotas nos 3 idiomas. Nome de citação: Ibson Junior; nome completo: Ibson Lima dos Santos Junior; cargo: Diretor de Conteúdo no Brasil na Futbol Sites. TODO opcional: adicionar link "Imprensa" no rodapé para descoberta.
 - **Fases seguintes:** Hubs `/temas/`, `/notas/` e cases dedicados: esperar mais volume de conteúdo por tema antes de criar (evitar páginas rasas).
 
+## SEO orgânico (missão em curso: palestras, mentoria, artigos)
+Objetivo: rankear no Google para termos comerciais (palestrante executivo/estratégico, mentoria executiva, geo Porto Alegre/Brasil) e informacionais (temas dos artigos), e capturar PAA.
+- **Log de palavras-chave:** `docs/seo-keywords.md`, 574 termos por cluster/intenção/página/prioridade (gerado por time de agentes). Ativo vivo, expandir com o Search Console.
+- **Fase 1 (feita), LPs `/palestras/` e `/mentoria/`:** title/meta com termos-alvo (`ui.ts`: lp*SeoTitle/Desc), **bloco de posicionamento** (H2 + parágrafo com densidade dos termos) + **FAQ (PAA)** + `FAQPage schema` + `Service schema` com `areaServed` (Porto Alegre/RS/Brasil) e canal presencial+online. Conteúdo `talks`/`mentorship` (content.*): `positioning`, `geoNote`, `faq`. Posicionamento **nacional** ("de Porto Alegre para todo o Brasil"), sem "custeio de deslocamento" (isso é da proposta).
+- **Fase 2 (feita), hubs de tema:** `/temas/<slug>/` (4 pilares: estrategia-e-decisao, lideranca-e-cultura, conteudo-e-comunicacao, vida-e-trabalho), nos 3 idiomas, com H1/tese/lista de artigos + `CollectionPage`/`BreadcrumbList` schema. Dados em `src/data/clusters.ts` (`themeSlug`, `themeHub`, `themeOrder`, `slugToTheme`). `/artigos` linka pros 4 hubs; cada artigo linka pro hub do seu tema. Componente `HubPage.astro`, rotas `pages/**/temas/[theme].astro`.
+- **Ações do Ibson:** pedir indexação no Search Console das URLs novas (`/palestras/`, `/mentoria/`, os 4 `/temas/*`, `/artigos`); PR (backlinks) é a alavanca off-page que falta.
+- **Fase 3 (pendente):** otimização fina por artigo (H2 em pergunta, FAQ por artigo onde couber) + expandir termos com dados reais do Search Console.
+
 ## Regras inegociáveis (resumo, ver CLAUDE.md)
 - **NUNCA** travessão (— ou –). Usar vírgula, ponto, dois-pontos, parênteses.
 - **NUNCA** mencionar Better Collective.
