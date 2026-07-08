@@ -28,6 +28,7 @@ const SAME_AS = [
 type SeoCopy = {
   jobTitle: string;
   personDesc: string;
+  disambig: string;
   knowsAbout: string[];
   services: { name: string; type: string; desc: string }[];
   faq: { q: string; a: string }[];
@@ -41,6 +42,8 @@ const COPY: Record<Locale, SeoCopy> = {
     jobTitle: "Executivo de conteúdo, liderança e comunicação",
     personDesc:
       "Ibson Junior é executivo de conteúdo, liderança e comunicação, Diretor de Conteúdo na Futbol Sites. Fundou a WolfLife (vendida em 2025), lidera a ProliferArte desde 2008 e foi CEO da Futmarketing. Atua com palestras, mentoria executiva e conselho sobre liderança, comunicação, cultura, marca pessoal, desenvolvimento de equipes, inteligência artificial e tomada de decisão.",
+    disambig:
+      "Executivo de conteúdo, liderança e comunicação; Diretor de Conteúdo na Futbol Sites, fundador da WolfLife e do movimento cultural ProliferArte. Palestrante executivo e mentor executivo, com base em Porto Alegre.",
     knowsAbout: [
       "Palestra", "Mentoria", "Conselheiro", "Marca pessoal", "Comunicação",
       "Desenvolvimento de equipes", "Cultura organizacional", "Liderança",
@@ -77,6 +80,8 @@ const COPY: Record<Locale, SeoCopy> = {
     jobTitle: "Ejecutivo de contenido, liderazgo y comunicación",
     personDesc:
       "Ibson Junior es ejecutivo de contenido, liderazgo y comunicación, Director de Contenido en Futbol Sites. Fundó WolfLife (vendida en 2025), lidera ProliferArte desde 2008 y fue CEO de Futmarketing. Ofrece charlas, mentoría ejecutiva y consejo sobre liderazgo, comunicación, cultura, marca personal, desarrollo de equipos, inteligencia artificial y toma de decisiones.",
+    disambig:
+      "Ejecutivo de contenido, liderazgo y comunicación; Director de Contenido en Futbol Sites, fundador de WolfLife y del movimiento cultural ProliferArte. Conferencista ejecutivo y mentor ejecutivo, con base en Porto Alegre.",
     knowsAbout: [
       "Charlas", "Mentoría", "Consejero", "Marca personal", "Comunicación",
       "Desarrollo de equipos", "Cultura organizacional", "Liderazgo",
@@ -113,6 +118,8 @@ const COPY: Record<Locale, SeoCopy> = {
     jobTitle: "Content, leadership and communication executive",
     personDesc:
       "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), leads ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding, team development, artificial intelligence and decision-making.",
+    disambig:
+      "Content, leadership and communication executive; Content Director at Futbol Sites, founder of WolfLife and of the ProliferArte cultural movement. Executive keynote speaker and executive mentor, based in Porto Alegre, Brazil.",
     knowsAbout: [
       "Keynote speaking", "Mentoring", "Advisor", "Personal branding", "Communication",
       "Team development", "Organizational culture", "Leadership",
@@ -147,6 +154,38 @@ const COPY: Record<Locale, SeoCopy> = {
   },
 };
 
+// Campos-base da entidade Ibson (compartilhados entre a home e as páginas
+// secundárias). Inclui disambiguatingDescription: o campo do schema.org feito
+// para separar homônimos (evita a confusão com outros "Ibson" na busca).
+function basePerson(c: SeoCopy) {
+  return {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: "Ibson Junior",
+    alternateName: ["Ibson Lima dos Santos Junior", "Ibson Júnior", "Ibson"],
+    url: `${SITE}/`,
+    image: PORTRAITS,
+    jobTitle: c.jobTitle,
+    description: c.personDesc,
+    disambiguatingDescription: c.disambig,
+    email: "mailto:contato@ibsonjunior.com.br",
+    knowsAbout: c.knowsAbout,
+    sameAs: SAME_AS,
+  };
+}
+
+// Nó Person autossuficiente para páginas que NÃO são a home (LPs, /ibson-junior/).
+// Cada página é avaliada isoladamente pelo Google: sem este nó, um provider/about
+// apontando para #person fica pendurado (referência quebrada). worksFor vai inline
+// para o nó resolver sozinho na página, sem depender do grafo da home.
+export function personNode(locale?: string | null) {
+  const c = COPY[normalizeLocale(locale)];
+  return {
+    ...basePerson(c),
+    worksFor: { "@type": "Organization", name: "Futbol Sites", url: "https://www.futbolsites.net/pt" },
+  };
+}
+
 // Grafo completo para a home (a página-entidade principal).
 export function siteGraph(locale?: string | null) {
   const l = normalizeLocale(locale);
@@ -170,18 +209,8 @@ export function siteGraph(locale?: string | null) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Person",
-        "@id": PERSON_ID,
-        name: "Ibson Junior",
-        alternateName: ["Ibson Lima dos Santos Junior", "Ibson Júnior", "Ibson"],
-        url: `${SITE}/`,
-        image: PORTRAITS,
-        jobTitle: c.jobTitle,
-        description: c.personDesc,
-        email: "mailto:contato@ibsonjunior.com.br",
+        ...basePerson(c),
         worksFor: { "@id": ORG_ID },
-        knowsAbout: c.knowsAbout,
-        sameAs: SAME_AS,
         makesOffer: services.map((s) => ({ "@type": "Offer", itemOffered: s })),
       },
       {

@@ -49,6 +49,7 @@ type UIStrings = {
   lpSeeTalks: string;
   lpSeeMentoria: string;
   lpFaqTitle: string;
+  articleFaqTitle: string;
   exploreByTheme: string;
   kickerSobre: string;
   kickerCases: string;
@@ -136,6 +137,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpSeeTalks: "Ver palestras",
     lpSeeMentoria: "Ver mentoria",
     lpFaqTitle: "Perguntas frequentes",
+    articleFaqTitle: "Entendendo melhor alguns pontos",
     exploreByTheme: "Explore por tema",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
@@ -221,6 +223,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpSeeTalks: "Ver charlas",
     lpSeeMentoria: "Ver mentoría",
     lpFaqTitle: "Preguntas frecuentes",
+    articleFaqTitle: "Entendiendo mejor algunos puntos",
     exploreByTheme: "Explora por tema",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
@@ -306,6 +309,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpSeeTalks: "See talks",
     lpSeeMentoria: "See mentoring",
     lpFaqTitle: "Frequently asked questions",
+    articleFaqTitle: "A closer look at a few points",
     exploreByTheme: "Explore by topic",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",

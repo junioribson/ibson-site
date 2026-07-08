@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import PalestrasPage from "../components/PalestrasPage.astro";
 import { getContent, normalizeLocale, htmlLang, localizePath } from "../i18n/utils";
+import { personNode } from "../data/schema";
 import { t } from "../i18n/ui";
 const locale = normalizeLocale(Astro.currentLocale);
 const { talks } = getContent(locale);
@@ -12,6 +13,7 @@ const PERSON = "https://ibsonjunior.com.br/#person";
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    personNode(locale),
     {
       "@type": "Service",
       "@id": `${url}#service`,
