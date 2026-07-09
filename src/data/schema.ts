@@ -235,6 +235,9 @@ export function siteGraph(locale?: string | null) {
         url: homeUrl,
         name: c.siteName,
         isPartOf: { "@id": WEBSITE_ID },
+        // mainEntity é obrigatório no rich result de Página de Perfil (ProfilePage):
+        // identifica de quem é o perfil. about fica como reforço.
+        mainEntity: { "@id": PERSON_ID },
         about: { "@id": PERSON_ID },
         inLanguage: l === "pt" ? "pt-BR" : l,
       },
