@@ -70,7 +70,7 @@ Para cada página/artigo, tratar como CAMADAS separadas (não repetir a mesma fr
 - Guardar essas camadas no schema do conteúdo (frontmatter/collection): `seoTitle`, `socialTitle`,
   `seoDescription`, `focusKeyword`, etc. (opcionais, com fallback para o title).
 
-## 5. Dados estruturados (schema.org / JSON-LD) — LEIA COM ATENÇÃO
+## 5. Dados estruturados (schema.org / JSON-LD): LEIA COM ATENÇÃO
 
 Isto foi a fonte do nosso pior bug. Regras:
 
@@ -100,9 +100,9 @@ Isto foi a fonte do nosso pior bug. Regras:
   (uma regra serve aos 3).
 - **Sitemap de imagens** próprio (`scripts/gen-sitemap-images.mjs`): mapeia cada imagem à página onde
   aparece, para o Google Images indexar suas artes. Nomeie os arquivos com prefixo da marca + tema
-  (`marca-assunto.webp`) — filename é sinal de SEO de imagem.
+  (`marca-assunto.webp`), o filename é sinal de SEO de imagem.
 - `robots.txt`: aberto para buscadores tradicionais E crawlers de IA (GPTBot, ClaudeBot, PerplexityBot,
-  Google-Extended, etc. — GEO). Aponte os 2 sitemaps.
+  Google-Extended, etc., o chamado GEO). Aponte os 2 sitemaps.
 - `llms.txt` (rota que gera o arquivo, atualiza sozinha): título, resumo e links das páginas-chave, para
   ChatGPT/Perplexity/Gemini entenderem o site.
 - **Hubs de tópico + linkagem interna:** agrupar conteúdo por tema (`/temas/<slug>/`), cada peça linka
@@ -153,7 +153,7 @@ Isto foi a fonte do nosso pior bug. Regras:
 - DNS: nameservers do host (Vercel) ou registros apontando; domínio no registrador (Registro.br para .com.br).
 - **Custo real:** hospedagem/analytics/form/e-mail = grátis. Único gasto recorrente: o domínio (~R$40/ano).
 
-## 11. Autoridade de entidade (off-page) — adapte
+## 11. Autoridade de entidade (off-page): adapte
 
 - **`sameAs`** no schema apontando para todos os perfis oficiais + fontes que citam a entidade. Fechar o
   ciclo: os perfis apontam de volta pro site (links nofollow, mas o valor é CONSOLIDAÇÃO de entidade, não
