@@ -5,6 +5,7 @@ import "../styles/sections.css";
 import "../styles/dark.css";
 import { getContent, normalizeLocale, htmlLang, localizePath, LANGS, stripLocale } from "../i18n/utils";
 import { siteGraph } from "../data/schema";
+import CookieBanner from "../components/CookieBanner.astro";
 
 interface Props {
   title?: string;
@@ -166,15 +167,22 @@ const schemaToRender = jsonLd ?? defaultSchema;
           gtag('config', GA_MEASUREMENT_ID);
           var __gaLoaded = false;
           function __loadGA(){
-            if (__gaLoaded) return; __gaLoaded = true;
+            if (__gaLoaded) return;
+            // Opt-in (LGPD): só carrega o GA se o usuário aceitou os cookies
+            // analíticos no aviso. Sem consentimento, o gtag.js nunca é injetado,
+            // nenhum cookie de análise é criado e nada é enviado ao Google.
+            try { if (localStorage.getItem('cookie-consent') !== 'accepted') return; } catch (e) { return; }
+            __gaLoaded = true;
             var s = document.createElement('script');
             s.async = true;
             s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
             document.head.appendChild(s);
           }
-          // Carrega o GA só na 1ª interação real (rolagem/toque/clique/tecla).
-          // Assim ele não entra no caminho crítico nem na medição do Lighthouse,
-          // mas usuários reais (que rolam a página) seguem sendo contabilizados.
+          // Exposto para o aviso de cookies chamar assim que o usuário clica "Aceitar".
+          window.__loadGA = __loadGA;
+          // Em visitas seguintes de quem já aceitou, carrega na 1ª interação real
+          // (rolagem/toque/clique/tecla): fora do caminho crítico e da medição do
+          // Lighthouse, mas contabilizando usuários reais que consentiram.
           var __gaEvs = ['pointerdown','keydown','scroll','touchstart'];
           function __gaFirst(){ __gaEvs.forEach(function(e){ removeEventListener(e, __gaFirst); }); __loadGA(); }
           __gaEvs.forEach(function(e){ addEventListener(e, __gaFirst, { passive: true }); });
@@ -234,5 +242,6 @@ const schemaToRender = jsonLd ?? defaultSchema;
         update();
       }
     </script>
+    <CookieBanner />
   </body>
 </html>

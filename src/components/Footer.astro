@@ -31,6 +31,7 @@ const ui = t(locale);
     </div>
     <div class="foot-base">
       <span>{ui.footerRights}</span>
+      <a class="foot-priv" href={localizePath("/politica-de-privacidade", locale)}>{ui.privacyPolicy}</a>
       <span>{ui.footerTagline}</span>
     </div>
   </div>
@@ -38,4 +39,6 @@ const ui = t(locale);
 
 <style>
   .foot-logo { color: #fff; }
+  .foot-priv { color: var(--text-soft); transition: color 0.25s; text-underline-offset: 2px; }
+  .foot-priv:hover { color: var(--accent); text-decoration: underline; }
 </style>

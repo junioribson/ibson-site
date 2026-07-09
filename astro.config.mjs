@@ -36,6 +36,7 @@ export default defineConfig({
         else if (p.startsWith('/temas/')) { pr = 0.8; cf = 'weekly'; }
         else if (p.startsWith('/artigos/')) { pr = 0.75; cf = 'monthly'; }
         else if (p === '/imprensa/') { pr = 0.6; cf = 'yearly'; }
+        else if (p === '/politica-de-privacidade/') { pr = 0.3; cf = 'yearly'; }
         item.priority = pr;
         item.changefreq = cf;
         return item;

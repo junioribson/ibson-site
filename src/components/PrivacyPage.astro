@@ -1,0 +1,67 @@
+---
+// Página de Política de Privacidade (LGPD), locale-aware. Layout editorial
+// sóbrio, reutilizando os tokens do site. Conteúdo em src/data/privacy.ts.
+import Nav from "./Nav.astro";
+import Footer from "./Footer.astro";
+import { normalizeLocale, localizePath } from "../i18n/utils";
+import { t } from "../i18n/ui";
+import { privacyDoc } from "../data/privacy";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
+const doc = privacyDoc(locale);
+---
+
+<Nav />
+<main id="top" class="privpage">
+  <article class="wrap priv-in">
+    <a class="priv-back" href={localizePath("/", locale)}>{ui.breadcrumbHome}</a>
+    <h1 class="priv-title">{doc.title}</h1>
+    <p class="priv-updated">{doc.updatedLabel}: {doc.updated}</p>
+    <p class="priv-intro" set:html={doc.intro} />
+
+    {
+      doc.sections.map((s) => (
+        <section class="priv-sec">
+          <h2>{s.h}</h2>
+          {s.p.map((par) => (
+            <div class="priv-p" set:html={par} />
+          ))}
+        </section>
+      ))
+    }
+  </article>
+</main>
+<Footer />
+
+<style>
+  .privpage { padding-top: 92px; }
+  .priv-in { max-width: clamp(680px, 72vw, 820px); padding-top: 42px; padding-bottom: 90px; }
+  .priv-back {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
+    color: var(--accent); display: inline-block; margin-bottom: 24px;
+  }
+  .priv-title {
+    font-size: clamp(30px, 5vw, 50px); font-weight: 800; letter-spacing: -0.035em;
+    line-height: 1.05; color: var(--heading);
+  }
+  .priv-updated {
+    margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px;
+    letter-spacing: 0.02em; color: var(--ink-soft);
+  }
+  .priv-intro {
+    margin-top: 22px; font-size: clamp(17px, 1.5vw, 19px); line-height: 1.7;
+    color: var(--heading); font-weight: 500; max-width: 68ch;
+  }
+  .priv-sec { margin-top: clamp(34px, 5vw, 48px); }
+  .priv-sec h2 {
+    font-size: clamp(19px, 2.2vw, 25px); font-weight: 800; letter-spacing: -0.025em;
+    line-height: 1.2; color: var(--heading); margin: 0 0 14px;
+  }
+  .priv-p { font-size: 16px; line-height: 1.72; color: var(--text); margin: 0 0 14px; max-width: 70ch; }
+  .priv-p :global(strong) { color: var(--heading); }
+  .priv-p :global(a) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .priv-p :global(ul) { margin: 6px 0 0; padding-left: 22px; }
+  .priv-p :global(li) { margin-bottom: 8px; }
+  @media (max-width: 620px) { .privpage { padding-top: 94px; } }
+</style>

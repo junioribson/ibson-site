@@ -1,0 +1,90 @@
+---
+// Aviso de cookies (LGPD), opt-in. Sóbrio, cores da identidade (creme + roxo).
+// Sem biblioteca externa: markup + CSS + JS inline (~2KB), position: fixed (0 CLS).
+// O Google Analytics só carrega após "Aceitar" (ver o gate em Base.astro:
+// window.__loadGA). A escolha fica em localStorage, não reaparece depois de decidida.
+import { normalizeLocale, localizePath } from "../i18n/utils";
+import { t } from "../i18n/ui";
+
+const locale = normalizeLocale(Astro.currentLocale);
+const ui = t(locale);
+const privacyHref = localizePath("/politica-de-privacidade", locale);
+---
+
+<div id="cookie-banner" class="ckb" role="dialog" aria-label={ui.cookieTitle} aria-live="polite" hidden>
+  <div class="ckb-card">
+    <p class="ckb-text">
+      {ui.cookieText} <a class="ckb-link" href={privacyHref}>{ui.privacyPolicy}</a>
+    </p>
+    <div class="ckb-actions">
+      <button type="button" class="ckb-btn ckb-refuse" data-refuse>{ui.cookieRefuse}</button>
+      <button type="button" class="ckb-btn ckb-accept" data-accept>{ui.cookieAccept}</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ckb {
+    position: fixed; z-index: 200; left: 16px; right: 16px; bottom: 16px;
+    display: flex; justify-content: center; pointer-events: none;
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ckb.show { opacity: 1; transform: translateY(0); }
+  .ckb-card {
+    pointer-events: auto; width: 100%; max-width: 620px;
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    padding: 16px 20px; border-radius: 16px;
+    background: var(--panel, #f4eeDF); border: 1px solid var(--line, rgba(28,14,4,0.14));
+    box-shadow: 0 24px 60px -24px rgba(42, 1, 72, 0.45);
+    backdrop-filter: blur(8px);
+  }
+  .ckb-text {
+    flex: 1 1 260px; margin: 0;
+    font-family: var(--font-sans); font-size: 13.5px; line-height: 1.55;
+    color: var(--text, #3a2c22);
+  }
+  .ckb-link { color: var(--accent, #5b2ee6); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+  .ckb-actions { display: flex; gap: 10px; flex: 0 0 auto; }
+  .ckb-btn {
+    font-family: var(--font-sans); font-weight: 800; font-size: 13.5px;
+    padding: 10px 20px; border-radius: 999px; cursor: pointer;
+    border: 1px solid transparent; transition: transform 0.2s ease, filter 0.2s ease, background 0.2s ease, color 0.2s ease;
+  }
+  .ckb-btn:hover { transform: translateY(-1px); }
+  .ckb-accept { background: var(--accent, #5b2ee6); color: #fff; box-shadow: 0 12px 26px -12px rgba(91, 46, 230, 0.7); }
+  .ckb-accept:hover { filter: brightness(1.08); }
+  .ckb-refuse { background: transparent; color: var(--heading, #1c0e04); border-color: var(--line-strong, rgba(28,14,4,0.28)); }
+  .ckb-refuse:hover { background: rgba(28, 14, 4, 0.05); }
+  @media (max-width: 560px) {
+    .ckb { left: 10px; right: 10px; bottom: 10px; }
+    .ckb-card { padding: 14px 16px; }
+    .ckb-actions { width: 100%; }
+    .ckb-btn { flex: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ckb { transition: opacity 0.2s ease; transform: none; } }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = "cookie-consent";
+    var el = document.getElementById("cookie-banner");
+    if (!el) return;
+    var stored;
+    try { stored = localStorage.getItem(KEY); } catch (e) { stored = "refused"; }
+    // Já decidiu (ou storage bloqueado): não incomoda e GA fica desligado por padrão.
+    if (stored === "accepted" || stored === "refused") { el.remove(); return; }
+    el.hidden = false;
+    requestAnimationFrame(function () { el.classList.add("show"); });
+    function decide(v) {
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+      el.classList.remove("show");
+      if (v === "accepted" && typeof window.__loadGA === "function") window.__loadGA();
+      setTimeout(function () { if (el && el.parentNode) el.remove(); }, 450);
+    }
+    var a = el.querySelector("[data-accept]");
+    var r = el.querySelector("[data-refuse]");
+    if (a) a.addEventListener("click", function () { decide("accepted"); });
+    if (r) r.addEventListener("click", function () { decide("refused"); });
+  })();
+</script>

@@ -52,6 +52,11 @@ type UIStrings = {
   lpFaqTitle: string;
   articleFaqTitle: string;
   exploreByTheme: string;
+  cookieTitle: string;
+  cookieText: string;
+  cookieAccept: string;
+  cookieRefuse: string;
+  privacyPolicy: string;
   kickerSobre: string;
   kickerCases: string;
   kickerGaleria: string;
@@ -141,6 +146,11 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpFaqTitle: "Perguntas frequentes",
     articleFaqTitle: "Entendendo melhor alguns pontos",
     exploreByTheme: "Explore por tema",
+    cookieTitle: "Aviso de cookies",
+    cookieText: "Usamos cookies para entender como o site é usado e melhorar sua experiência. Você decide.",
+    cookieAccept: "Aceitar",
+    cookieRefuse: "Recusar",
+    privacyPolicy: "Política de privacidade",
     kickerSobre: "Sobre",
     kickerCases: "Cases & Trajetória",
     kickerGaleria: "Últimos acontecimentos",
@@ -228,6 +238,11 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpFaqTitle: "Preguntas frecuentes",
     articleFaqTitle: "Entendiendo mejor algunos puntos",
     exploreByTheme: "Explora por tema",
+    cookieTitle: "Aviso de cookies",
+    cookieText: "Usamos cookies para entender cómo se usa el sitio y mejorar tu experiencia. Tú decides.",
+    cookieAccept: "Aceptar",
+    cookieRefuse: "Rechazar",
+    privacyPolicy: "Política de privacidad",
     kickerSobre: "Sobre mí",
     kickerCases: "Casos y trayectoria",
     kickerGaleria: "Últimos acontecimientos",
@@ -315,6 +330,11 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     lpFaqTitle: "Frequently asked questions",
     articleFaqTitle: "A closer look at a few points",
     exploreByTheme: "Explore by topic",
+    cookieTitle: "Cookie notice",
+    cookieText: "We use cookies to understand how the site is used and improve your experience. You decide.",
+    cookieAccept: "Accept",
+    cookieRefuse: "Decline",
+    privacyPolicy: "Privacy policy",
     kickerSobre: "About",
     kickerCases: "Cases & Journey",
     kickerGaleria: "Latest happenings",
