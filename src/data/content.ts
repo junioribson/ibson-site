@@ -208,8 +208,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-07-05.
+  // Última atualização: 2026-07-09.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-noticia-mudou-de-caminho.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7480719864920358912/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: a notícia não mudou só de formato, mudou de caminho.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-todos-publicam-poucos-informam.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7479968668077064192/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: todo mundo publica, poucos informam.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-vitoria-postura.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7479149707659825152/",
@@ -239,16 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-decisao-capital-humano.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7460712281094430721/",
       alt: "Arte de post de Ibson Junior no LinkedIn: quem decide não é quem entende o problema.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7459923332491001856/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: multitarefa não existe, existe troca constante de atenção.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-governanca-decisao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7459628428930105344/",
-      alt: "Foto de Ibson Junior em evento da Board Academy, sobre governança, conselho e tomada de decisão.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
