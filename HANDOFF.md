@@ -101,21 +101,26 @@ o engajamento fica concentrado no LinkedIn, o que também reforça a autoridade 
 
 ## FRENTE 2, Seção "Últimos posts no LinkedIn"  ✅ NO AR (8 posts reais)
 
-**Como está:** carrossel na home (após "Sobre") com os 8 posts mais recentes, cada card = arte
-completa (qualquer formato, sem corte, altura fixa/largura auto), sem contagens, clique abre o post.
-Artes em `public/assets/posts/ibson-junior-post-<tema>.jpg`, dados em `linkedinPosts` (`content.ts`).
+**Como está:** carrossel na home (após "Sobre", via `HomeContent.astro` → `LinkedinPosts.astro`, id="linkedin")
+com os 8 posts mais recentes (o componente faz `slice(0, 8)`), cada card = arte completa (sem corte),
+sem contagens, clique abre o post. Artes em `public/assets/posts/ibson-junior-post-<tema>.webp`, dados em
+`linkedinPosts.posts` (`content.ts`). Última atualização: 2026-07-09 (8 posts).
 
-### Como ATUALIZAR a cada 3-4 dias (fluxo repetível)
+### Como ATUALIZAR (fluxo PROVADO ao vivo, ~2 min). Gatilho: o Ibson diz "atualiza os posts".
 Depende do navegador logado (a página de atividades exige login; scraping anônimo não funciona).
-1. Extensão **Claude for Chrome** conectada + Chrome logado no LinkedIn do Ibson.
-2. Abrir `https://www.linkedin.com/in/ibson-junior/recent-activity/all/`, rolar p/ carregar ~8 posts.
-3. Rodar no navegador o JS que lista os posts com imagem (retorna `urn` + texto). Snippet salvo em
-   `scripts/linkedin-extract.js` (colar via javascript_tool).
-4. Para cada urn: baixar a arte pública. `node scripts/update-linkedin-posts.mjs '<json com urn/slug>'`
-   (usa o `og:image` do permalink `feed/update/urn:li:activity:<urn>/`, ~980px, sem login).
-5. Ver cada arte (a frase da arte às vezes difere da legenda) e escrever o ALT fiel + slug SEO.
-6. Atualizar o array `posts` em `content.ts` (mais recente primeiro) e a data de "Última atualização".
-7. `npm run build` e `git push` (deploy Vercel).
+1. Extensão **Claude for Chrome** conectada (list_connected_browsers NÃO pode vir vazio) + Chrome logado no LinkedIn. "Logado" != "extensão conectada": é o ícone do Claude na barra que conecta à sessão.
+2. navigate `https://www.linkedin.com/in/ibson-junior/recent-activity/all/`. Rode JS **SÍNCRONO** com `JSON.stringify(...)` (o async retorna `{}` pela serialização do tool) que rola e lista os `[data-urn^="urn:li:activity"]` com imagem `media.licdn.com` (exceto displayphoto/framedphoto/EntityPhoto/company-logo/profile-banner): `urn` + texto.
+3. NOVOS = urn com imagem que NÃO estão nas urls de `content.ts`. Se nenhum, pare.
+4. `node scripts/update-linkedin-posts.mjs '[{"urn":"...","slug":"..."}]'` baixa a arte (og:image do permalink, sem login) como jpg.
+5. Converta jpg→webp com **sharp** (quality 82; não há cwebp), apague o jpg. Read na arte e escreva o ALT FIEL à frase (sem travessão): "Arte de post de Ibson Junior no LinkedIn: <frase>."
+6. `content.ts`: prepend os novos (mais recente primeiro), REMOVA os mais antigos p/ manter MÁX 8, apague os arquivos de imagem removidos, atualize "Última atualização".
+7. Regenere `public/sitemap-images.xml` (gerador varre artigos+palestras+posts/retratos/arquetipos). `npm run build`. Cheque rede `curl --interface en1 github`. `git push`. Verifique ao vivo a arte nova na home.
+
+### Automação dos posts (estado real, jul/2026)
+- **TETO REAL:** atualizar o site exige LER o LinkedIn do Ibson, que exige o **navegador logado**, que exige o **Mac ligado**. Logo, NÃO existe atualização com o computador desligado. Sem contorno.
+- **CronCreate** (agendador local) é **session-only**: morre ao fechar o Claude Code e expira em 7 dias, mesmo com `durable:true`. Headless não serve (extensão do Chrome é interativa). Não há serviço 24/7.
+- **Cadência combinada com o Ibson:** ele roda o gatilho "atualiza os posts" quando está no PC **seg/qua** (post sai 17h30, checar após 18h10). O post de **sábado** (9h30, ele fora) é pego **automaticamente na segunda**: o passo 3 adiciona TODOS os posts novos desde a última atualização (self-heal). Site fica no máx. 1 fim de semana atrás.
+- Criados nesta sessão (morrem ao fechar o Claude): 2 CronCreate de sessão (seg/qua 18h10; sáb 9h45) com o runbook completo, caso a sessão fique aberta. Opção NÃO configurada: lembrete durável na nuvem (persiste), oferecido, Ibson pode pedir depois.
 
 ### (histórico) Estado anterior: CONSTRUÍDA, DESATIVADA (aguardava dados reais)
 
