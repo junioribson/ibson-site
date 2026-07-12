@@ -160,10 +160,15 @@ Isto foi a fonte do nosso pior bug. Regras:
   PageRank).
 - **Bios consistentes** em todos os perfis, com a MESMA descrição do `disambiguatingDescription`. Todos
   contando a mesma história = o Google/IAs consolidam a entidade.
-- **Wikidata:** para entidade notável (pessoa/org com fontes independentes), criar item com referências
-  (o Claude não cria conta; prepara e guia; você publica). Item com só fontes próprias pode ser apagado
-  por notabilidade, por isso anexar fontes independentes. Depois, adicionar a URL `Q...` ao `sameAs`.
-  (Para site não-pessoal sem notabilidade clara, isto pode não se aplicar; priorize `sameAs` + PR.)
+- **Wikidata (CUIDADO, lição real):** só vale a pena com **notabilidade clara e independente** (artigo
+  na Wikipédia, OU várias matérias de imprensa SOBRE a pessoa/entidade). No projeto pessoal criamos um
+  item e ele foi **nomeado e APAGADO por notabilidade em menos de 1 dia** ("Fails WD:N"), mesmo com
+  identificadores (LinkedIn/X/site) e uma notícia de aquisição. Dois erros nossos: (1) fontes fracas
+  (mayoria próprias + cobertura da EMPRESA, não da pessoa); (2) **conflito de interesse**: o Wikidata
+  desencoraja você criar item SOBRE VOCÊ MESMO (self-promotion). Regras: não crie item sobre si; só crie
+  com fontes independentes fortes; nunca aponte o `sameAs` para um item que pode ser apagado sem antes
+  confirmar que sobreviveu. **Para a maioria dos sites, pule o Wikidata** e invista em `sameAs` (perfis
+  reais) + PR. Se um dia tiver imprensa independente de verdade, aí sim o item se sustenta sozinho.
 - **PR/backlinks:** a alavanca off-page que mais acelera termos comerciais disputados. É relacionamento,
   não código.
 

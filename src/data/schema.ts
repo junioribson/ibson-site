@@ -19,9 +19,6 @@ const PORTRAITS = [
 const SAME_AS = [
   "https://www.linkedin.com/in/ibson-junior/",
   "https://x.com/IbsonJunior",
-  // Wikidata (Q140469163): fecha o ciclo entidade site<->Wikidata; fonte forte
-  // para o Knowledge Graph e as IAs reconciliarem quem é o Ibson.
-  "https://www.wikidata.org/wiki/Q140469163",
   // Créditos em veículos de autoridade que nomeiam Ibson (reconciliação de entidade).
   "https://br.bolavip.com/staff",
   "https://www.antenadosnofutebol.com.br/staff",
