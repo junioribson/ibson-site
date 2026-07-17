@@ -1,328 +1,159 @@
 ---
-// DEMO ISOLADA da "opção 3" (estilo agência: escuro, dramático, 3D/WebGL, scroll
-// cinematográfico). noindex, NÃO linkada, NÃO afeta o site real. Usa conteúdo e
-// paleta do Ibson. Página autossuficiente (não usa o Base/layout do site).
-const heroLines = ["Estratégia começa", "quando a pressão", "chega."];
-const nums = [
-  { v: 9, suf: "Bi+", t: "visualizações" },
-  { v: 150, suf: "Mi+", t: "seguidores na rede" },
-  { v: 6, suf: "Bi+", t: "impressões por ano" },
-  { v: 2025, suf: "", t: "venda da WolfLife" },
-];
+// DEMO da "opção 3" (linguagem artística mais dramática) SEM transformar o site:
+// renderiza o HOME REAL inteiro (Base + HomeContent = todas as seções, todo o texto,
+// responsivo, com o toggle de tema real). A liberdade artística é a CAMADA por cima:
+// no hero, a constelação vira uma ESFERA de partículas 3D (WebGL) cujos PONTOS reagem
+// ao mouse (deformam, formando figuras). noindex, não linkada, NÃO afeta produção.
+import Base from "../layouts/Base.astro";
+import HomeContent from "../components/HomeContent.astro";
 ---
 
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Demo, opção 3 (estilo agência) | Ibson Junior</title>
-    <script is:inline>
-      // Mesmo padrão do site: dark é o default, claro via data-theme="light".
-      try { if (localStorage.getItem("theme") === "light") document.documentElement.setAttribute("data-theme", "light"); } catch (e) {}
-    </script>
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-800-latin.woff2" crossorigin />
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-400-latin.woff2" crossorigin />
-    <style is:global>
-      @font-face { font-family: "Jakarta"; font-weight: 400; font-display: swap; src: url("/fonts/jakarta-400-latin.woff2") format("woff2"); }
-      @font-face { font-family: "Jakarta"; font-weight: 700; font-display: swap; src: url("/fonts/jakarta-700-latin.woff2") format("woff2"); }
-      @font-face { font-family: "Jakarta"; font-weight: 800; font-display: swap; src: url("/fonts/jakarta-800-latin.woff2") format("woff2"); }
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      :root {
-        --bg: #070510; --bg2: #0c0820; --ink: #f4f1ff; --soft: #b7b0d6;
-        --violet: #7a4aff; --violet2: #a882ff; --magenta: #e05aa8; --gold: #d8b874;
-      }
-      html { background: var(--bg); }
-      body { font-family: "Jakarta", system-ui, sans-serif; color: var(--ink); background: var(--bg); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-      .dwrap { width: min(1240px, 90vw); margin: 0 auto; }
-      a { color: inherit; text-decoration: none; }
+<Base demo noindex title="Demo, opção 3 | Ibson Junior" description="Demonstração isolada de direção de arte. Não indexar.">
+  <HomeContent />
+  <div class="demo-badge">Demo, opção 3 (direção de arte). Não afeta ibsonjunior.com.br</div>
+</Base>
 
-      /* NAV */
-      .dnav { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; padding: 22px clamp(20px, 5vw, 60px); mix-blend-mode: difference; }
-      .dnav b { font-weight: 800; letter-spacing: -0.02em; font-size: 17px; }
-      .dnav .dtag { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--soft); }
+<style is:global>
+  /* Camada "opção 3" (só sob body[data-demo]). Não remove/resume nada: troca a cena
+     de fundo do hero pela esfera e realça o drama. Theme-aware (herda o toggle do site). */
+  body[data-demo] .wh-net { display: none; }
+  body[data-demo] .wh-bg { display: none; }
+  body[data-demo] .demo-sphere { position: absolute; inset: 0; z-index: 0; }
+  /* Um scrim um pouco mais forte à esquerda, para o texto respirar sobre a esfera. */
+  body[data-demo] .wh-scrim {
+    background:
+      linear-gradient(90deg, var(--bg) 22%, color-mix(in srgb, var(--bg) 78%, transparent) 44%, transparent 70%),
+      linear-gradient(0deg, var(--bg) 2%, transparent 26%);
+  }
+  /* Selo de demo, discreto. */
+  body[data-demo] .demo-badge {
+    position: fixed; z-index: 120; left: 16px; bottom: 16px;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.04em;
+    color: var(--text-soft); background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border: 1px solid var(--line); padding: 8px 14px; border-radius: 100px; backdrop-filter: blur(8px);
+  }
+</style>
 
-      /* HERO */
-      .dhero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
-      .dhero-sphere { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
-      .dhero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-        background: radial-gradient(70% 60% at 20% 50%, rgba(7,5,16,.86), rgba(7,5,16,.4) 60%, transparent),
-                    linear-gradient(180deg, transparent 60%, var(--bg)); }
-      .dhero-in { position: relative; z-index: 2; }
-      .dkicker { font-size: 12px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--violet2); display: inline-flex; align-items: center; gap: 12px; margin-bottom: 30px; }
-      .dkicker::before { content: ""; width: 34px; height: 1px; background: linear-gradient(90deg, var(--violet), transparent); }
-      .dh1 { font-weight: 800; font-size: clamp(48px, 9vw, 150px); line-height: 0.92; letter-spacing: -0.05em; }
-      .dh1 .dl { display: block; overflow: hidden; padding-bottom: 0.06em; }
-      .dh1 .dl > span { display: inline-block; transform: translateY(110%); }
-      .dh1 em { font-style: normal; background: linear-gradient(100deg, var(--violet2), var(--magenta) 55%, var(--gold)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-      .dsub { margin-top: 34px; max-width: 46ch; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.6; color: var(--soft); opacity: 0; }
-      .dcta { margin-top: 40px; display: flex; gap: 16px; opacity: 0; }
-      .dbtn { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; padding: 17px 34px; border-radius: 100px; position: relative; overflow: hidden; }
-      .dbtn-p { background: linear-gradient(100deg, var(--violet), var(--magenta)); color: #fff; box-shadow: 0 20px 50px -18px rgba(122,74,255,.8); }
-      .dbtn-g { border: 1px solid rgba(255,255,255,.2); color: var(--ink); }
-      .dbtn span { position: relative; z-index: 2; }
-      .dbtn-p::after { content: ""; position: absolute; inset: 0; left: -80%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.4), transparent); transform: skewX(-18deg); }
-      .dbtn-p:hover::after { animation: dsh .8s ease; }
-      @keyframes dsh { from { left: -80%; } to { left: 130%; } }
-      .dscroll { position: absolute; z-index: 2; bottom: 28px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--soft); opacity: 0; }
+<script>
+  import * as THREE from "three";
 
-      /* STATEMENT */
-      .dstate { padding: clamp(120px, 20vh, 240px) 0; }
-      .dbig { font-weight: 800; font-size: clamp(30px, 4.6vw, 68px); line-height: 1.12; letter-spacing: -0.03em; max-width: 20ch; }
-      .dbig em { font-style: normal; background: linear-gradient(100deg, var(--violet2), var(--magenta)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-      .dword { display: inline-block; opacity: 0.16; }
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hero = document.getElementById("hero");
 
-      /* NUMBERS */
-      .dnums { padding: clamp(80px, 12vh, 160px) 0; border-top: 1px solid rgba(255,255,255,.08); }
-      .dnums-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-      .dnum { display: flex; flex-direction: column; }
-      .dnum b { font-weight: 800; font-size: clamp(40px, 6vw, 92px); letter-spacing: -0.04em; line-height: 1; background: linear-gradient(120deg, var(--ink), var(--violet2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-      .dnum small { margin-top: 14px; font-size: 13px; letter-spacing: 0.04em; color: var(--soft); }
-      @media (max-width: 820px) { .dnums-grid { grid-template-columns: 1fr 1fr; gap: 44px 20px; } }
+  if (hero && !reduce) {
+    const canvas = document.createElement("canvas");
+    canvas.className = "demo-sphere";
+    canvas.setAttribute("aria-hidden", "true");
+    hero.insertBefore(canvas, hero.firstChild);
 
-      /* PINNED */
-      .dpin { position: relative; }
-      .dpin-stage { min-height: 100svh; display: flex; align-items: center; overflow: hidden; background: linear-gradient(160deg, #0e0826, #06040f 70%); }
-      .dpin-track { display: flex; gap: 8vw; padding: 0 8vw; will-change: transform; }
-      .dpin-card { flex: 0 0 62vw; }
-      .dpin-card .dpc-k { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--violet2); margin-bottom: 20px; display: block; }
-      .dpin-card h3 { font-weight: 800; font-size: clamp(30px, 5vw, 72px); line-height: 1.04; letter-spacing: -0.035em; max-width: 16ch; }
-      .dpin-card p { margin-top: 22px; max-width: 40ch; color: var(--soft); font-size: clamp(15px, 1.4vw, 19px); line-height: 1.6; }
-      @media (max-width: 820px) { .dpin-card { flex-basis: 82vw; } }
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    const scene = new THREE.Scene();
+    const cam = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+    cam.position.z = 3.2;
 
-      /* FOOT */
-      .dfoot { padding: clamp(80px, 12vh, 160px) 0 90px; border-top: 1px solid rgba(255,255,255,.08); text-align: center; }
-      .dfoot h2 { font-weight: 800; font-size: clamp(30px, 5vw, 74px); letter-spacing: -0.035em; }
-      .dfoot .dbtn { margin-top: 36px; }
-      .dnote { position: fixed; z-index: 30; left: 16px; bottom: 16px; font-size: 11px; color: var(--soft); background: rgba(12,8,32,.8); border: 1px solid rgba(255,255,255,.12); padding: 8px 14px; border-radius: 100px; backdrop-filter: blur(8px); }
+    // Pontos distribuídos numa esfera (fibonacci). Guardamos a posição "casa".
+    const N = 2200;
+    const home = new Float32Array(N * 3);
+    const cur = new Float32Array(N * 3);
+    for (let i = 0; i < N; i++) {
+      const phi = Math.acos(1 - (2 * (i + 0.5)) / N);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      const x = Math.sin(phi) * Math.cos(theta), y = Math.sin(phi) * Math.sin(theta), z = Math.cos(phi);
+      home[i * 3] = x; home[i * 3 + 1] = y; home[i * 3 + 2] = z;
+      cur[i * 3] = x; cur[i * 3 + 1] = y; cur[i * 3 + 2] = z;
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(cur, 3));
 
-      /* Toggle de tema (no nav) */
-      .dtoggle { display: inline-flex; align-items: center; gap: 10px; background: none; border: none; color: inherit; cursor: pointer; font: inherit; padding: 6px 0; }
-      .dtoggle-ic { font-size: 16px; opacity: 0.85; transition: transform 0.4s var(--e, cubic-bezier(0.16,1,0.3,1)); }
-      .dtoggle:hover .dtoggle-ic { transform: rotate(180deg); }
+    const mat = new THREE.PointsMaterial({ size: 0.02, transparent: true, depthWrite: false });
+    const glowMat = new THREE.PointsMaterial({ size: 0.055, transparent: true, depthWrite: false });
+    const applyTheme = () => {
+      const light = document.documentElement.getAttribute("data-theme") === "light";
+      mat.color = new THREE.Color(light ? "#5b2ee6" : "#a98bff");
+      mat.opacity = 0.92;
+      mat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+      mat.needsUpdate = true;
+      glowMat.color = new THREE.Color(light ? "#c94f8a" : "#e05aa8");
+      glowMat.opacity = light ? 0.16 : 0.3;
+      glowMat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+      glowMat.needsUpdate = true;
+    };
+    applyTheme();
+    new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
-      /* ===== TEMA CLARO (mesmo toggle do site) ===== */
-      :root[data-theme="light"] {
-        --bg: #f2ede3; --bg2: #eae3d5; --ink: #1c0e04; --soft: #6a5f52;
-        --violet: #5b2ee6; --violet2: #7b3fd0; --magenta: #c94f8a; --gold: #a9762e;
-      }
-      :root[data-theme="light"] .dnav { mix-blend-mode: normal; }
-      :root[data-theme="light"] .dhero::after {
-        background: radial-gradient(72% 62% at 18% 50%, rgba(242, 237, 227, 0.92), rgba(242, 237, 227, 0.5) 60%, transparent),
-                    linear-gradient(180deg, transparent 58%, var(--bg));
-      }
-      :root[data-theme="light"] .dpin-stage { background: linear-gradient(160deg, #efe8fb, #f4efe6 72%); }
-      :root[data-theme="light"] .dbtn-g { border-color: rgba(28, 14, 4, 0.22); }
-      :root[data-theme="light"] .dbtn-p::after { background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent); }
-      :root[data-theme="light"] .dnums, :root[data-theme="light"] .dfoot { border-color: rgba(28, 14, 4, 0.1); }
-      :root[data-theme="light"] .dnote { background: rgba(255, 255, 255, 0.85); border-color: rgba(28, 14, 4, 0.12); }
+    const grp = new THREE.Group();
+    grp.add(new THREE.Points(geo, glowMat));
+    grp.add(new THREE.Points(geo, mat));
+    scene.add(grp);
 
-      @media (prefers-reduced-motion: reduce) {
-        .dh1 .dl > span, .dsub, .dcta, .dscroll { transform: none !important; opacity: 1 !important; }
-        .dword { opacity: 1 !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="dnav"><b>IBSON JUNIOR</b><button class="dtoggle" id="dtoggle" aria-label="Alternar tema claro/escuro"><span class="dtag">Demo, opção 3</span> <span class="dtoggle-ic">◐</span></button></nav>
+    // Responsivo: em telas largas a esfera fica à direita e maior; no mobile, menor,
+    // mais ao centro/atrás, e com menos intensidade (fica de cenário).
+    let W = 0, H = 0, radiusPx = 150;
+    const resize = () => {
+      W = hero.clientWidth; H = hero.clientHeight;
+      renderer.setSize(W, H, false);
+      cam.aspect = W / H; cam.updateProjectionMatrix();
+      const small = W < 820;
+      // escala e posição responsivas: a esfera aparece bem no canto direito, sem
+      // cobrir o texto (que fica à esquerda com o scrim). No mobile fica de cenário.
+      grp.scale.setScalar(small ? 1.05 : 1.5);
+      grp.position.x = small ? 0.15 : 0.78;
+      grp.position.y = small ? 0.5 : 0.02;
+      cam.position.z = small ? 3.6 : 3.2;
+      radiusPx = Math.min(W, H) * (small ? 0.24 : 0.22);
+      canvas.style.opacity = small ? "0.55" : "1";
+    };
+    resize();
+    addEventListener("resize", resize);
 
-    <section class="dhero">
-      <canvas class="dhero-sphere" id="sphere"></canvas>
-      <div class="dwrap dhero-in">
-        <span class="dkicker">Executivo de conteúdo, liderança e comunicação</span>
-        <h1 class="dh1">
-          {heroLines.map((l) => (
-            <span class="dl"><span set:html={l.replace("pressão", "<em>pressão</em>")}></span></span>
-          ))}
-        </h1>
-        <p class="dsub" id="dsub">Num tempo em que todos disputam atenção, a diferença está em quem ainda consegue sustentar critério.</p>
-        <div class="dcta" id="dcta">
-          <a class="dbtn dbtn-p" href="#"><span>Conhecer a trajetória</span></a>
-          <a class="dbtn dbtn-g" href="#"><span>Falar comigo</span></a>
-        </div>
-      </div>
-      <span class="dscroll" id="dscroll">Role para ver</span>
-    </section>
+    // Mouse relativo ao hero (para deformar os pontos onde o cursor está).
+    const mouse = { x: -9999, y: -9999, active: false };
+    let rect = hero.getBoundingClientRect();
+    hero.addEventListener("pointermove", (e) => { mouse.x = e.clientX - rect.left; mouse.y = e.clientY - rect.top; mouse.active = true; });
+    hero.addEventListener("pointerleave", () => { mouse.active = false; });
+    addEventListener("scroll", () => { rect = hero.getBoundingClientRect(); }, { passive: true });
 
-    <section class="dstate">
-      <div class="dwrap">
-        <p class="dbig" id="statement">Em um mundo que produz mais conteúdo do que capacidade de interpretação, o diferencial não está em <em>aparecer mais</em>. Está em <em>decidir melhor</em>.</p>
-      </div>
-    </section>
-
-    <section class="dnums">
-      <div class="dwrap dnums-grid">
-        {nums.map((n) => (
-          <div class="dnum">
-            <b><span class="dcount" data-c={n.v}>0</span>{n.suf}</b>
-            <small>{n.t}</small>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <section class="dpin">
-      <div class="dpin-stage">
-        <div class="dpin-track" id="pintrack">
-          <div class="dpin-card"><span class="dpc-k">01, Decisão</span><h3>Separar urgência de importância.</h3><p>O critério não aparece no calmo. Aparece quando velocidade, volume e pressão tentam ocupar o lugar da clareza.</p></div>
-          <div class="dpin-card"><span class="dpc-k">02, Cultura</span><h3>É a energia vital, não o PowerPoint.</h3><p>Cultura é o que a organização aprende a tolerar. Os sinais invisíveis moldam a empresa antes do discurso oficial.</p></div>
-          <div class="dpin-card"><span class="dpc-k">03, Inteligência</span><h3>A IA é motor. O humano segue no volante.</h3><p>Fascinados pela inteligência artificial, não podemos esquecer a inteligência emocional que sustenta a liderança.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="dfoot">
-      <div class="dwrap">
-        <h2 class="reveal">Isto é a opção 3, no seu conteúdo.</h2>
-        <a class="dbtn dbtn-p" href="/"><span>Voltar ao site real</span></a>
-      </div>
-    </footer>
-
-    <div class="dnote">Demo isolada, estilo agência. Não afeta ibsonjunior.com.br</div>
-
-    <script>
-      import * as THREE from "three";
-      import { gsap } from "gsap";
-      import { ScrollTrigger } from "gsap/ScrollTrigger";
-      import Lenis from "lenis";
-
-      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      // Toggle de tema (persiste na MESMA chave "theme" do site; dark é o default)
-      const dtoggle = document.getElementById("dtoggle");
-      dtoggle?.addEventListener("click", () => {
-        const light = document.documentElement.getAttribute("data-theme") === "light";
-        if (light) document.documentElement.removeAttribute("data-theme");
-        else document.documentElement.setAttribute("data-theme", "light");
-        try { localStorage.setItem("theme", light ? "dark" : "light"); } catch (e) {}
-        (window as unknown as { __demoSphere?: () => void }).__demoSphere?.();
-      });
-
-      // ---- Esfera de partículas 3D (WebGL) ----
-      const canvas = document.getElementById("sphere") as HTMLCanvasElement;
-      if (canvas && !reduce) {
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
-        const scene = new THREE.Scene();
-        const cam = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-        cam.position.z = 3.1;
-
-        const N = 3000;
-        const pos = new Float32Array(N * 3);
-        for (let i = 0; i < N; i++) {
-          const phi = Math.acos(1 - (2 * (i + 0.5)) / N);
-          const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-          pos[i * 3] = Math.sin(phi) * Math.cos(theta);
-          pos[i * 3 + 1] = Math.sin(phi) * Math.sin(theta);
-          pos[i * 3 + 2] = Math.cos(phi);
+    const attr = geo.getAttribute("position") as THREE.BufferAttribute;
+    const proj = new THREE.Vector3();
+    let raf = 0, on = true, t = 0;
+    const tick = () => {
+      if (!on) return;
+      t += 0.01;
+      grp.rotation.y += 0.0006; // giro quase imperceptível; o "movimento" é dos pontos
+      grp.updateMatrixWorld();
+      for (let i = 0; i < N; i++) {
+        const i3 = i * 3;
+        const hx = home[i3], hy = home[i3 + 1], hz = home[i3 + 2];
+        // respiração sutil (vida mesmo sem mouse)
+        const breathe = 1 + Math.sin(t * 1.4 + i * 0.35) * 0.012;
+        let tx = hx * breathe, ty = hy * breathe, tz = hz * breathe;
+        // deformação: pontos perto do cursor incham para fora (formam figuras)
+        if (mouse.active) {
+          proj.set(hx, hy, hz).applyMatrix4(grp.matrixWorld).project(cam);
+          const sx = (proj.x * 0.5 + 0.5) * W, sy = (-proj.y * 0.5 + 0.5) * H;
+          const d = Math.hypot(sx - mouse.x, sy - mouse.y);
+          if (d < radiusPx) {
+            const f = 1 - d / radiusPx;
+            const push = 1 + f * f * 0.7;
+            tx = hx * push; ty = hy * push; tz = hz * push;
+          }
         }
-        const geo = new THREE.BufferGeometry();
-        geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-        const mat = new THREE.PointsMaterial({ size: 0.02, transparent: true, depthWrite: false });
-        const glowMat = new THREE.PointsMaterial({ size: 0.05, transparent: true, depthWrite: false });
-        // No claro: pontos roxos com blending NORMAL (o additive lavaria no fundo creme).
-        const applySphereTheme = () => {
-          const light = document.documentElement.getAttribute("data-theme") === "light";
-          mat.color = new THREE.Color(light ? "#5b2ee6" : "#9a7bff");
-          mat.opacity = 0.9;
-          mat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
-          mat.needsUpdate = true;
-          glowMat.color = new THREE.Color(light ? "#c94f8a" : "#e05aa8");
-          glowMat.opacity = light ? 0.16 : 0.28;
-          glowMat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
-          glowMat.needsUpdate = true;
-        };
-        applySphereTheme();
-        (window as unknown as { __demoSphere?: () => void }).__demoSphere = applySphereTheme;
-        const sphere = new THREE.Points(geo, mat);
-        sphere.scale.setScalar(1.35);
-        const glow = new THREE.Points(geo, glowMat);
-        glow.scale.setScalar(1.36);
-        const grp = new THREE.Group();
-        grp.add(sphere); grp.add(glow);
-        grp.position.x = 1.05;
-        scene.add(grp);
-
-        const resize = () => {
-          const w = canvas.clientWidth, h = canvas.clientHeight;
-          renderer.setSize(w, h, false);
-          cam.aspect = w / h; cam.updateProjectionMatrix();
-          grp.position.x = w < 820 ? 0 : 1.05;
-        };
-        resize();
-        addEventListener("resize", resize);
-
-        const mouse = { x: 0, y: 0 };
-        addEventListener("pointermove", (e) => { mouse.x = (e.clientX / innerWidth - 0.5); mouse.y = (e.clientY / innerHeight - 0.5); });
-
-        let raf = 0, on = true;
-        const tick = () => {
-          if (!on) return;
-          grp.rotation.y += 0.0016;
-          grp.rotation.x += (mouse.y * 0.5 - grp.rotation.x) * 0.03;
-          grp.rotation.z += (mouse.x * 0.3 - grp.rotation.z) * 0.03;
-          renderer.render(scene, cam);
-          raf = requestAnimationFrame(tick);
-        };
-        tick();
-        new IntersectionObserver((es) => es.forEach((en) => {
-          if (en.isIntersecting && !on) { on = true; raf = requestAnimationFrame(tick); }
-          else if (!en.isIntersecting && on) { on = false; cancelAnimationFrame(raf); }
-        })).observe(document.querySelector(".dhero")!);
+        // mola de volta à posição alvo (suave)
+        cur[i3] += (tx - cur[i3]) * 0.14;
+        cur[i3 + 1] += (ty - cur[i3 + 1]) * 0.14;
+        cur[i3 + 2] += (tz - cur[i3 + 2]) * 0.14;
       }
+      attr.needsUpdate = true;
+      renderer.render(scene, cam);
+      raf = requestAnimationFrame(tick);
+    };
+    tick();
 
-      // ---- Smooth scroll + GSAP ----
-      if (!reduce) {
-        gsap.registerPlugin(ScrollTrigger);
-        const lenis = new Lenis({ duration: 1.1 });
-        lenis.on("scroll", ScrollTrigger.update);
-        const raf = (t: number) => { lenis.raf(t); requestAnimationFrame(raf); };
-        requestAnimationFrame(raf);
-
-        // Entrada do hero (baseline via gsap.set, depois anima, evita o conflito de %)
-        try {
-          gsap.set(".dh1 .dl > span", { yPercent: 110 });
-          gsap.set(["#dsub", "#dcta", "#dscroll"], { opacity: 0 });
-          gsap.set(["#dsub", "#dcta"], { y: 20 });
-          gsap.to(".dh1 .dl > span", { yPercent: 0, duration: 1.2, stagger: 0.14, ease: "expo.out", delay: 0.15 });
-          gsap.to("#dsub", { opacity: 1, y: 0, duration: 0.9, ease: "expo.out", delay: 0.55 });
-          gsap.to("#dcta", { opacity: 1, y: 0, duration: 0.9, ease: "expo.out", delay: 0.7 });
-          gsap.to("#dscroll", { opacity: 1, duration: 0.8, delay: 1.0 });
-        } catch (e) { console.error("DEMO hero err", e); }
-
-        // Statement: palavras acendem conforme entra
-        const st = document.getElementById("statement")!;
-        const html = st.innerHTML;
-        st.innerHTML = html.replace(/(<em>.*?<\/em>|[^\s<]+)(\s*)/g, (_m, word, sp) => `<span class="dword">${word}</span>${sp}`);
-        gsap.to(".dstate .dword", {
-          opacity: 1, duration: 0.5, stagger: 0.06, ease: "none",
-          scrollTrigger: { trigger: ".dstate", start: "top 70%", end: "bottom 75%", scrub: 0.4 },
-        });
-
-        // Números contam
-        document.querySelectorAll<HTMLElement>(".dcount").forEach((el) => {
-          const target = parseFloat(el.dataset.c || "0");
-          const o = { v: 0 };
-          ScrollTrigger.create({ trigger: el, start: "top 88%", once: true, onEnter: () => gsap.to(o, { v: target, duration: 1.8, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(o.v).toLocaleString("pt-BR"); } }) });
-        });
-
-        // Reveals genéricos
-        gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) => {
-          gsap.from(el, { opacity: 0, y: 50, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 85%" } });
-        });
-
-        // Pin horizontal: as cenas deslizam lateralmente enquanto a seção prende
-        const track = document.getElementById("pintrack");
-        if (track && matchMedia("(min-width: 821px)").matches) {
-          const dist = track.scrollWidth - innerWidth + innerWidth * 0.16;
-          gsap.to(track, {
-            x: -dist, ease: "none",
-            scrollTrigger: { trigger: ".dpin", start: "top top", end: "+=" + dist, pin: ".dpin-stage", scrub: 0.6, anticipatePin: 1 },
-          });
-        }
-        addEventListener("load", () => ScrollTrigger.refresh());
-      }
-    </script>
-  </body>
-</html>
+    // pausa quando o hero sai da tela (economia)
+    new IntersectionObserver((es) => es.forEach((en) => {
+      if (en.isIntersecting && !on) { on = true; raf = requestAnimationFrame(tick); }
+      else if (!en.isIntersecting && on) { on = false; cancelAnimationFrame(raf); }
+    })).observe(hero);
+  }
+</script>

@@ -17,8 +17,11 @@ interface Props {
   publishedTime?: string;
   section?: string;
   jsonLd?: unknown;
+  demo?: boolean;
+  noindex?: boolean;
 }
 
+const { demo, noindex } = Astro.props;
 const locale = normalizeLocale(Astro.currentLocale);
 const { seo, GA_MEASUREMENT_ID, GSC_VERIFICATION } = getContent(locale);
 const {
@@ -119,7 +122,7 @@ const schemaToRender = jsonLd ?? defaultSchema;
     <link rel="apple-touch-icon" href="/favicon-180.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="Ibson Junior | Artigos" href="https://ibsonjunior.com.br/rss.xml" />
     {alternates.map((a) => (<link rel="alternate" hreflang={a.hreflang} href={a.href} />))}
@@ -203,7 +206,7 @@ const schemaToRender = jsonLd ?? defaultSchema;
       })();
     </script>
   </head>
-  <body>
+  <body data-demo={demo ? "" : undefined}>
     <div class="grain" aria-hidden="true"></div>
     <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
     <slot />
