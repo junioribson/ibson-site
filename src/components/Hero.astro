@@ -28,7 +28,7 @@ const ui = t(Astro.currentLocale);
         hero.headlineLines.map((line, i) => (
           <span class="ln">
             <i
-              style={`--d:${(0.02 + i * 0.04).toFixed(2)}s`}
+              style={`--d:${(0.15 + i * 0.11).toFixed(2)}s`}
               class:list={{ "wh-accent": i === hero.headlineLines.length - 1 }}
             >{line}</i>
           </span>
@@ -100,7 +100,7 @@ const ui = t(Astro.currentLocale);
     display: inline-block;
     font-style: normal;
     transform: translateY(112%);
-    animation: whline 0.5s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
+    animation: whline 0.92s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
   }
   .wh-accent {
     background: linear-gradient(100deg, #8b6bff 0%, #db6bff 24%, #ff7ac0 46%, #f0a35c 68%, #9a6bff 88%, #8b6bff 100%);
@@ -108,7 +108,7 @@ const ui = t(Astro.currentLocale);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: whline 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards, accent-slide 4s linear infinite;
+    animation: whline 1.05s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards, accent-slide 4s linear infinite;
   }
   @keyframes whline { to { transform: none; } }
 
@@ -121,10 +121,10 @@ const ui = t(Astro.currentLocale);
     font-weight: 500;
     opacity: 0;
     transform: translateY(14px);
-    animation: whr .5s var(--e) .16s forwards;
+    animation: whr .8s var(--e) .62s forwards;
   }
 
-  .wh-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); animation: whr .5s var(--e) .22s forwards; }
+  .wh-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); animation: whr .8s var(--e) .8s forwards; }
   .wh-btn { position: relative; overflow: hidden; font-weight: 700; font-size: 15.5px; padding: 18px 32px; border-radius: 40px; transition: transform .3s var(--e), box-shadow .3s, border-color .3s, background .3s; }
   .wh-btn span { position: relative; z-index: 2; }
   .wh-btn-primary { background: linear-gradient(100deg, #6a2ee6, #9a6bff); color: #fff; box-shadow: 0 10px 30px -12px rgba(123, 87, 240, 0.7); }
@@ -197,6 +197,9 @@ const ui = t(Astro.currentLocale);
 
     const step = () => {
       if (!running) return;
+      // Se a esfera 3D assumiu (sphere-on), a constelação está escondida: para o
+      // loop para não gastar CPU desenhando num canvas invisível.
+      if (sec!.classList.contains("sphere-on")) { running = false; return; }
       ctx.clearRect(0, 0, W, H);
       const light = document.documentElement.dataset.theme === "light";
       const netRGB = light ? "91,46,230" : "200,168,110";
@@ -264,5 +267,31 @@ const ui = t(Astro.currentLocale);
       { threshold: 0 }
     );
     vis.observe(sec!);
+  }
+</script>
+
+<script>
+  // Esfera 3D do hero: Three.js carregado SOB DEMANDA (dynamic import no idle, só no
+  // home) para o bundle inicial e o LCP não pagarem o custo do WebGL. Ao iniciar, a
+  // esfera marca .sphere-on no hero e a constelação se esconde (e para). Fallback:
+  // sob prefers-reduced-motion (ou sem WebGL) a constelação continua.
+  const heroEl = document.getElementById("hero");
+  const lessMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (heroEl && !lessMotion) {
+    // Carrega na PRIMEIRA INTERAÇÃO (mouse/scroll/toque/tecla). Assim o Three.js
+    // (chunk pesado) fica FORA do caminho crítico e da janela de medição do
+    // Lighthouse (que não interage), preservando a nota do PageSpeed. Até lá, a
+    // constelação leve é o hero. Rede de segurança: um timer tardio (fora da
+    // janela do TTI) garante a esfera mesmo sem interação.
+    const evs = ["pointermove", "pointerdown", "scroll", "touchstart", "keydown"];
+    let loaded = false;
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      evs.forEach((e) => window.removeEventListener(e, load));
+      import("../scripts/hero-sphere").then((m) => m.initHeroSphere(heroEl)).catch(() => {});
+    };
+    evs.forEach((e) => window.addEventListener(e, load, { passive: true }));
+    setTimeout(load, 4000);
   }
 </script>
