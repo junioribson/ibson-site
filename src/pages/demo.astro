@@ -18,6 +18,10 @@ const nums = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Demo, opção 3 (estilo agência) | Ibson Junior</title>
+    <script is:inline>
+      // Mesmo padrão do site: dark é o default, claro via data-theme="light".
+      try { if (localStorage.getItem("theme") === "light") document.documentElement.setAttribute("data-theme", "light"); } catch (e) {}
+    </script>
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-800-latin.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="/fonts/jakarta-400-latin.woff2" crossorigin />
     <style is:global>
@@ -93,6 +97,27 @@ const nums = [
       .dfoot .dbtn { margin-top: 36px; }
       .dnote { position: fixed; z-index: 30; left: 16px; bottom: 16px; font-size: 11px; color: var(--soft); background: rgba(12,8,32,.8); border: 1px solid rgba(255,255,255,.12); padding: 8px 14px; border-radius: 100px; backdrop-filter: blur(8px); }
 
+      /* Toggle de tema (no nav) */
+      .dtoggle { display: inline-flex; align-items: center; gap: 10px; background: none; border: none; color: inherit; cursor: pointer; font: inherit; padding: 6px 0; }
+      .dtoggle-ic { font-size: 16px; opacity: 0.85; transition: transform 0.4s var(--e, cubic-bezier(0.16,1,0.3,1)); }
+      .dtoggle:hover .dtoggle-ic { transform: rotate(180deg); }
+
+      /* ===== TEMA CLARO (mesmo toggle do site) ===== */
+      :root[data-theme="light"] {
+        --bg: #f2ede3; --bg2: #eae3d5; --ink: #1c0e04; --soft: #6a5f52;
+        --violet: #5b2ee6; --violet2: #7b3fd0; --magenta: #c94f8a; --gold: #a9762e;
+      }
+      :root[data-theme="light"] .dnav { mix-blend-mode: normal; }
+      :root[data-theme="light"] .dhero::after {
+        background: radial-gradient(72% 62% at 18% 50%, rgba(242, 237, 227, 0.92), rgba(242, 237, 227, 0.5) 60%, transparent),
+                    linear-gradient(180deg, transparent 58%, var(--bg));
+      }
+      :root[data-theme="light"] .dpin-stage { background: linear-gradient(160deg, #efe8fb, #f4efe6 72%); }
+      :root[data-theme="light"] .dbtn-g { border-color: rgba(28, 14, 4, 0.22); }
+      :root[data-theme="light"] .dbtn-p::after { background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent); }
+      :root[data-theme="light"] .dnums, :root[data-theme="light"] .dfoot { border-color: rgba(28, 14, 4, 0.1); }
+      :root[data-theme="light"] .dnote { background: rgba(255, 255, 255, 0.85); border-color: rgba(28, 14, 4, 0.12); }
+
       @media (prefers-reduced-motion: reduce) {
         .dh1 .dl > span, .dsub, .dcta, .dscroll { transform: none !important; opacity: 1 !important; }
         .dword { opacity: 1 !important; }
@@ -100,7 +125,7 @@ const nums = [
     </style>
   </head>
   <body>
-    <nav class="dnav"><b>IBSON JUNIOR</b><span class="dtag">Demo, opção 3</span></nav>
+    <nav class="dnav"><b>IBSON JUNIOR</b><button class="dtoggle" id="dtoggle" aria-label="Alternar tema claro/escuro"><span class="dtag">Demo, opção 3</span> <span class="dtoggle-ic">◐</span></button></nav>
 
     <section class="dhero">
       <canvas class="dhero-sphere" id="sphere"></canvas>
@@ -164,6 +189,16 @@ const nums = [
 
       const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+      // Toggle de tema (persiste na MESMA chave "theme" do site; dark é o default)
+      const dtoggle = document.getElementById("dtoggle");
+      dtoggle?.addEventListener("click", () => {
+        const light = document.documentElement.getAttribute("data-theme") === "light";
+        if (light) document.documentElement.removeAttribute("data-theme");
+        else document.documentElement.setAttribute("data-theme", "light");
+        try { localStorage.setItem("theme", light ? "dark" : "light"); } catch (e) {}
+        (window as unknown as { __demoSphere?: () => void }).__demoSphere?.();
+      });
+
       // ---- Esfera de partículas 3D (WebGL) ----
       const canvas = document.getElementById("sphere") as HTMLCanvasElement;
       if (canvas && !reduce) {
@@ -184,10 +219,24 @@ const nums = [
         }
         const geo = new THREE.BufferGeometry();
         geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-        const mat = new THREE.PointsMaterial({ size: 0.02, color: new THREE.Color("#9a7bff"), transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false });
+        const mat = new THREE.PointsMaterial({ size: 0.02, transparent: true, depthWrite: false });
+        const glowMat = new THREE.PointsMaterial({ size: 0.05, transparent: true, depthWrite: false });
+        // No claro: pontos roxos com blending NORMAL (o additive lavaria no fundo creme).
+        const applySphereTheme = () => {
+          const light = document.documentElement.getAttribute("data-theme") === "light";
+          mat.color = new THREE.Color(light ? "#5b2ee6" : "#9a7bff");
+          mat.opacity = 0.9;
+          mat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+          mat.needsUpdate = true;
+          glowMat.color = new THREE.Color(light ? "#c94f8a" : "#e05aa8");
+          glowMat.opacity = light ? 0.16 : 0.28;
+          glowMat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
+          glowMat.needsUpdate = true;
+        };
+        applySphereTheme();
+        (window as unknown as { __demoSphere?: () => void }).__demoSphere = applySphereTheme;
         const sphere = new THREE.Points(geo, mat);
         sphere.scale.setScalar(1.35);
-        const glowMat = new THREE.PointsMaterial({ size: 0.05, color: new THREE.Color("#e05aa8"), transparent: true, opacity: 0.28, blending: THREE.AdditiveBlending, depthWrite: false });
         const glow = new THREE.Points(geo, glowMat);
         glow.scale.setScalar(1.36);
         const grp = new THREE.Group();
