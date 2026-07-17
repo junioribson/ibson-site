@@ -189,58 +189,29 @@ const schemaToRender = jsonLd ?? defaultSchema;
         </script>
       )
     }
+    <script is:inline>
+      /* Ativa a camada de motion o quanto antes (evita flash de conteudo). Sob
+         prefers-reduced-motion nao esconde nada. Timeout de seguranca: se o modulo
+         de motion nao assumir em 2.5s, revela tudo (o modulo cancela esse timeout). */
+      (function () {
+        try {
+          if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          var d = document.documentElement;
+          d.classList.add('js-motion');
+          window.__motionSafety = setTimeout(function () { d.classList.add('motion-fallback'); }, 2500);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
     <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
     <slot />
 
+    {/* Camada de movimento (Lenis + GSAP): smooth scroll, reveals, parallax por
+        scroll e botoes magneticos. Ver src/scripts/motion.ts. */}
     <script>
-      // Reveal on scroll (respeita prefers-reduced-motion via CSS)
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("on");
-              io.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-      );
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
-      // Movimento: barra de progresso + parallax leve nas camadas de arquétipo.
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (!reduce) {
-        const bar = document.getElementById("scrollbar");
-        const layers = [...document.querySelectorAll<HTMLElement>(".arch-layer, [data-parallax]")];
-        let ticking = false;
-        const update = () => {
-          const h = document.documentElement.scrollHeight - window.innerHeight;
-          const p = h > 0 ? window.scrollY / h : 0;
-          if (bar) bar.style.transform = `scaleX(${p})`;
-          const vh = window.innerHeight;
-          for (const el of layers) {
-            const r = el.getBoundingClientRect();
-            if (r.bottom < -200 || r.top > vh + 200) continue; // fora da tela: pula
-            const center = r.top + r.height / 2;
-            const off = (center - vh / 2) / vh; // -1..1 aprox
-            const speed = parseFloat(el.dataset.speed || (el.classList.contains("arch-layer") ? "34" : "26"));
-            el.style.transform = `translate3d(0, ${(-off * speed).toFixed(1)}px, 0)`;
-          }
-          ticking = false;
-        };
-        const onScroll = () => {
-          if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(update);
-          }
-        };
-        window.addEventListener("scroll", onScroll, { passive: true });
-        window.addEventListener("resize", onScroll, { passive: true });
-        update();
-      }
+      import "../scripts/motion.ts";
     </script>
     <CookieBanner />
   </body>
