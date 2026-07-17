@@ -28,7 +28,7 @@ const ui = t(Astro.currentLocale);
         hero.headlineLines.map((line, i) => (
           <span class="ln">
             <i
-              style={`--d:${(0.02 + i * 0.04).toFixed(2)}s`}
+              style={`--d:${(0.15 + i * 0.11).toFixed(2)}s`}
               class:list={{ "wh-accent": i === hero.headlineLines.length - 1 }}
             >{line}</i>
           </span>
@@ -100,7 +100,7 @@ const ui = t(Astro.currentLocale);
     display: inline-block;
     font-style: normal;
     transform: translateY(112%);
-    animation: whline 0.5s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
+    animation: whline 0.92s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
   }
   .wh-accent {
     background: linear-gradient(100deg, #8b6bff 0%, #db6bff 24%, #ff7ac0 46%, #f0a35c 68%, #9a6bff 88%, #8b6bff 100%);
@@ -108,7 +108,7 @@ const ui = t(Astro.currentLocale);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: whline 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards, accent-slide 4s linear infinite;
+    animation: whline 1.05s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards, accent-slide 4s linear infinite;
   }
   @keyframes whline { to { transform: none; } }
 
@@ -121,10 +121,10 @@ const ui = t(Astro.currentLocale);
     font-weight: 500;
     opacity: 0;
     transform: translateY(14px);
-    animation: whr .5s var(--e) .16s forwards;
+    animation: whr .8s var(--e) .62s forwards;
   }
 
-  .wh-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); animation: whr .5s var(--e) .22s forwards; }
+  .wh-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); animation: whr .8s var(--e) .8s forwards; }
   .wh-btn { position: relative; overflow: hidden; font-weight: 700; font-size: 15.5px; padding: 18px 32px; border-radius: 40px; transition: transform .3s var(--e), box-shadow .3s, border-color .3s, background .3s; }
   .wh-btn span { position: relative; z-index: 2; }
   .wh-btn-primary { background: linear-gradient(100deg, #6a2ee6, #9a6bff); color: #fff; box-shadow: 0 10px 30px -12px rgba(123, 87, 240, 0.7); }

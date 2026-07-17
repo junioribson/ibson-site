@@ -119,6 +119,26 @@ if (reduce || !root.classList.contains("js-motion")) {
 
     // 4) Interações de mouse (tilt 3D nos cards + botões magnéticos), só ponteiro fino
     if (window.matchMedia("(pointer: fine)").matches) {
+      // Profundidade reativa ao mouse no hero: o bloco de texto se move numa camada
+      // (soma à constelação, que já reage ao cursor). Efeito de cena com profundidade.
+      const hero = document.getElementById("hero");
+      const heroIn = hero?.querySelector<HTMLElement>(".wh-in");
+      if (hero && heroIn) {
+        let tick = false;
+        hero.addEventListener("pointermove", (ev) => {
+          if (tick) return;
+          tick = true;
+          requestAnimationFrame(() => {
+            const r = hero.getBoundingClientRect();
+            const px = (ev.clientX - r.left) / r.width - 0.5;
+            const py = (ev.clientY - r.top) / r.height - 0.5;
+            gsap.to(heroIn, { x: px * -26, y: py * -18, duration: 0.9, ease: "power2.out" });
+            tick = false;
+          });
+        });
+        hero.addEventListener("pointerleave", () => gsap.to(heroIn, { x: 0, y: 0, duration: 1, ease: "power3.out" }));
+      }
+
       // Tilt 3D leve nos cards ao passar o mouse
       gsap.utils.toArray<HTMLElement>(".artcard, .lk-card, .lib-hub, .lp-link, .feat, .theme-card").forEach((card) => {
         card.addEventListener("pointermove", (ev) => {
