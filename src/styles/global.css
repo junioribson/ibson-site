@@ -216,6 +216,22 @@ html.js-motion .stagger > * { opacity: 0; }
 html.js-motion.motion-fallback .reveal,
 html.js-motion.motion-fallback .stagger > * { opacity: 1 !important; transform: none !important; }
 
+/* Brilho que varre os CTAs no hover (puro CSS). Desligado sob reduced-motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .wh-btn, .lp-btn, .art-cta-btn { position: relative; overflow: hidden; isolation: isolate; }
+  .wh-btn::after, .lp-btn::after, .art-cta-btn::after {
+    content: ""; position: absolute; top: 0; left: -75%; width: 45%; height: 100%; z-index: 1;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+    transform: skewX(-18deg); pointer-events: none; opacity: 0;
+  }
+  .wh-btn:hover::after, .lp-btn:hover::after, .art-cta-btn:hover::after { animation: btn-shine 0.85s ease; }
+  @keyframes btn-shine {
+    0% { left: -75%; opacity: 0; }
+    18% { opacity: 1; }
+    100% { left: 130%; opacity: 0; }
+  }
+}
+
 /* Barra de progresso de rolagem (topo) */
 .scrollbar {
   position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 90;
