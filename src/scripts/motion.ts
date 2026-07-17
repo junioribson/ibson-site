@@ -1,12 +1,10 @@
-// Camada de movimento "ousada", mas na identidade do site (sem mudar cores/estética).
-// Stack: Lenis (smooth scroll) + GSAP/ScrollTrigger (reveals, parallax por scroll,
-// botões magnéticos). Auto-hospedado (bundle do Vite), sem CDN externo.
+// Camada de movimento SUAVE (sem efeitos de mouse que tremem a tela). Só:
+// smooth scroll (Lenis), reveals limpos no scroll e contagem dos números dos cases.
+// Nada de parallax de mouse, tilt ou pin. Auto-hospedado (bundle do Vite), sem CDN.
 //
-// Segurança/acessibilidade:
-// - Sob prefers-reduced-motion, NADA disso roda (o CSS deixa tudo visível e estático).
-// - O CSS só esconde .reveal quando <html class="js-motion"> (setado inline no head).
-//   Se este módulo falhar, um timeout de segurança adiciona .motion-fallback e revela
-//   tudo, então o conteúdo nunca fica preso invisível.
+// Acessibilidade: sob prefers-reduced-motion NADA disso roda (o CSS deixa tudo
+// visível e estático). O CSS só esconde .reveal quando <html class="js-motion">;
+// se este módulo falhar, o timeout de segurança revela tudo (.motion-fallback).
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -26,7 +24,7 @@ if (reduce || !root.classList.contains("js-motion")) {
     if (w.__motionSafety) clearTimeout(w.__motionSafety);
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1) Smooth scroll + barra de progresso + sync do ScrollTrigger
+    // 1) Smooth scroll (Lenis) + barra de progresso + sync do ScrollTrigger
     const lenis = new Lenis({
       duration: 1.05,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -45,7 +43,7 @@ if (reduce || !root.classList.contains("js-motion")) {
     };
     requestAnimationFrame(raf);
 
-    // Âncoras internas rolam suave (usa o Lenis em vez do salto nativo)
+    // Âncoras internas rolam suave via Lenis
     document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach((a) => {
       let url: URL;
       try { url = new URL(a.href, location.href); } catch { return; }
@@ -59,28 +57,36 @@ if (reduce || !root.classList.contains("js-motion")) {
       });
     });
 
-    // 2) Reveals ousados: slide amplo + leve escala, stagger, disparados no scroll
-    gsap.set(".reveal", { opacity: 0, y: 78, scale: 0.94 });
+    // 2) Reveals limpos: fade + slide suave, com stagger. Nada de escala/tremor.
+    gsap.set(".reveal", { opacity: 0, y: 40 });
     ScrollTrigger.batch(".reveal", {
-      start: "top 90%",
+      start: "top 88%",
       onEnter: (els) =>
-        gsap.to(els, { opacity: 1, y: 0, scale: 1, duration: 1.15, stagger: 0.16, ease: "expo.out", overwrite: true }),
+        gsap.to(els, { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: "power2.out", overwrite: true }),
     });
-
-    // Grades .stagger: cascata mais marcada, com leve profundidade 3D
     gsap.utils.toArray<HTMLElement>(".stagger").forEach((c) => {
       const kids = Array.from(c.children) as HTMLElement[];
       if (!kids.length) return;
-      gsap.set(kids, { opacity: 0, y: 64, rotateX: 10, transformOrigin: "50% 100%", transformPerspective: 900 });
+      gsap.set(kids, { opacity: 0, y: 30 });
       ScrollTrigger.create({
         trigger: c,
         start: "top 86%",
         once: true,
-        onEnter: () => gsap.to(kids, { opacity: 1, y: 0, rotateX: 0, duration: 0.95, stagger: 0.1, ease: "power4.out" }),
+        onEnter: () => gsap.to(kids, { opacity: 1, y: 0, duration: 0.8, stagger: 0.09, ease: "power2.out" }),
       });
     });
 
-    // 2b) Números dos cases "contam" ao entrar na tela
+    // 3) Parallax por scroll bem suave (não é mouse). Camadas de fundo apenas.
+    gsap.utils.toArray<HTMLElement>("[data-parallax], .arch-layer").forEach((el) => {
+      const speed = parseFloat(el.dataset.speed || "7");
+      gsap.to(el, {
+        yPercent: -speed,
+        ease: "none",
+        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
+      });
+    });
+
+    // 4) Números dos cases contam ao entrar na tela
     gsap.utils.toArray<HTMLElement>(".fs .n").forEach((el) => {
       const raw = (el.textContent || "").trim();
       const m = raw.match(/^(\D*)(\d[\d.,]*)(.*)$/);
@@ -98,7 +104,7 @@ if (reduce || !root.classList.contains("js-motion")) {
         onEnter: () =>
           gsap.to(obj, {
             v: target,
-            duration: 1.7,
+            duration: 1.6,
             ease: "power2.out",
             onUpdate: () => {
               el.textContent = pre + obj.v.toLocaleString("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
@@ -107,96 +113,6 @@ if (reduce || !root.classList.contains("js-motion")) {
       });
     });
 
-    // 3) Parallax por scroll (scrub) nas camadas marcadas
-    gsap.utils.toArray<HTMLElement>("[data-parallax], .arch-layer").forEach((el) => {
-      const speed = parseFloat(el.dataset.speed || "10");
-      gsap.to(el, {
-        yPercent: -speed,
-        ease: "none",
-        scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true },
-      });
-    });
-
-    // 3b) Cena central (Tese): scroll TRAVADO (pin) com tipografia cinética. Só no
-    // desktop largo; em telas menores o CSS mostra tudo estático (sem pin).
-    const thesisEl = document.querySelector<HTMLElement>("[data-thesis]");
-    if (thesisEl && window.matchMedia("(min-width: 901px)").matches) {
-      const pin = thesisEl.querySelector<HTMLElement>(".tese-pin");
-      const main = thesisEl.querySelector<HTMLElement>("[data-thesis-main]");
-      const words = thesisEl.querySelectorAll<HTMLElement>(".tese-title .tw > span");
-      const body = thesisEl.querySelector<HTMLElement>("[data-thesis-body]");
-      const closing = thesisEl.querySelector<HTMLElement>("[data-thesis-closing]");
-      const atmos = thesisEl.querySelector<HTMLElement>(".tese-atmos");
-      const inner = closing?.querySelector<HTMLElement>(".tese-closing");
-      if (pin && main && words.length && closing) {
-        gsap.set(words, { yPercent: 118 });
-        if (body) gsap.set(body, { opacity: 0, y: 34 });
-        gsap.set(closing, { opacity: 0 });
-        const tl = gsap.timeline({
-          scrollTrigger: { trigger: thesisEl, start: "top top", end: "+=2000", pin, scrub: 0.6, anticipatePin: 1 },
-        });
-        if (atmos) tl.to(atmos, { scale: 1.18, ease: "none", duration: 6 }, 0);
-        tl.to(words, { yPercent: 0, duration: 1.4, stagger: 0.18, ease: "power3.out" }, 0.1);
-        if (body) tl.to(body, { opacity: 1, y: 0, duration: 1 }, 1.3);
-        tl.to(main, { opacity: 0, y: -70, duration: 1.2 }, 2.7);
-        tl.to(closing, { opacity: 1, duration: 1 }, 3.1);
-        if (inner) tl.from(inner, { scale: 0.9, y: 30, duration: 1.3, ease: "power3.out" }, 3.1);
-      }
-    }
-
-    // 4) Interações de mouse (tilt 3D nos cards + botões magnéticos), só ponteiro fino
-    if (window.matchMedia("(pointer: fine)").matches) {
-      // Profundidade reativa ao mouse no hero: o bloco de texto se move numa camada
-      // (soma à constelação, que já reage ao cursor). Efeito de cena com profundidade.
-      const hero = document.getElementById("hero");
-      const heroIn = hero?.querySelector<HTMLElement>(".wh-in");
-      if (hero && heroIn) {
-        let tick = false;
-        hero.addEventListener("pointermove", (ev) => {
-          if (tick) return;
-          tick = true;
-          requestAnimationFrame(() => {
-            const r = hero.getBoundingClientRect();
-            const px = (ev.clientX - r.left) / r.width - 0.5;
-            const py = (ev.clientY - r.top) / r.height - 0.5;
-            gsap.to(heroIn, { x: px * -26, y: py * -18, duration: 0.9, ease: "power2.out" });
-            tick = false;
-          });
-        });
-        hero.addEventListener("pointerleave", () => gsap.to(heroIn, { x: 0, y: 0, duration: 1, ease: "power3.out" }));
-      }
-
-      // Tilt 3D leve nos cards ao passar o mouse
-      gsap.utils.toArray<HTMLElement>(".artcard, .lk-card, .lib-hub, .lp-link, .feat, .theme-card").forEach((card) => {
-        card.addEventListener("pointermove", (ev) => {
-          const r = card.getBoundingClientRect();
-          const px = (ev.clientX - r.left) / r.width - 0.5;
-          const py = (ev.clientY - r.top) / r.height - 0.5;
-          gsap.to(card, { rotateY: px * 7, rotateX: -py * 7, duration: 0.4, ease: "power2.out", transformPerspective: 800, transformOrigin: "center" });
-        });
-        card.addEventListener("pointerleave", () =>
-          gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: "power3.out" })
-        );
-      });
-
-      gsap.utils.toArray<HTMLElement>(".wh-btn, .lp-btn, .art-cta-btn").forEach((btn) => {
-        const s = 0.32;
-        btn.addEventListener("pointermove", (ev) => {
-          const r = btn.getBoundingClientRect();
-          gsap.to(btn, {
-            x: (ev.clientX - r.left - r.width / 2) * s,
-            y: (ev.clientY - r.top - r.height / 2) * s,
-            duration: 0.5,
-            ease: "power3.out",
-          });
-        });
-        btn.addEventListener("pointerleave", () =>
-          gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.4)" })
-        );
-      });
-    }
-
-    // Recalcula posições após carregar fontes/imagens (evita triggers deslocados)
     window.addEventListener("load", () => ScrollTrigger.refresh());
   } catch {
     revealFallback();
