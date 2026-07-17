@@ -25,6 +25,17 @@ import HomeContent from "../components/HomeContent.astro";
       linear-gradient(90deg, var(--bg) 22%, color-mix(in srgb, var(--bg) 78%, transparent) 44%, transparent 70%),
       linear-gradient(0deg, var(--bg) 2%, transparent 26%);
   }
+  /* ===== Camada "opção 3" no SITE INTEIRO (atinge todas as seções pelos
+     elementos compartilhados: kicker .lbl, .dot, .rule e os h2). ===== */
+  body[data-demo] .shead .lbl {
+    background: linear-gradient(100deg, #8b6bff, #db6bff 46%, #ff7ac0);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  body[data-demo] .shead .dot { background: #a882ff; box-shadow: 0 0 10px 2px rgba(122, 74, 255, 0.7); }
+  body[data-demo] .shead .rule { background: linear-gradient(90deg, #a882ff, transparent); opacity: 0.9; }
+  /* h2 de seção um pouco mais dramático em todo o site */
+  body[data-demo] main :is(section) h2 { letter-spacing: -0.04em; }
+
   /* Selo de demo, discreto. */
   body[data-demo] .demo-badge {
     position: fixed; z-index: 120; left: 16px; bottom: 16px;
