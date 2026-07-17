@@ -16,18 +16,34 @@ import HomeContent from "../components/HomeContent.astro";
 <style is:global>
   /* Camada "opção 3" (só sob body[data-demo]). Não remove/resume nada: troca a cena
      de fundo do hero pela esfera e realça o drama. Theme-aware (herda o toggle do site). */
-  /* Hero: no ESCURO a esfera brilha; no CLARO ela vira quadrados faltos sobre o
-     creme (ruim), então no claro volta a constelação real (limpa e desenhada). */
+  /* Hero: a esfera fica nos DOIS temas. No ESCURO o brilho aditivo já dá o halo.
+     No CLARO os pontos ficam roxo escuro (nítidos sobre o creme) e a esfera ganha
+     uma BORDA rosa neon (o .demo-halo, posicionado via JS para acompanhá-la). */
   body[data-demo] .wh-net { display: none; }
   body[data-demo] .wh-bg { display: none; }
   body[data-demo] .demo-sphere { position: absolute; inset: 0; z-index: 0; }
-  :root[data-theme="light"] body[data-demo] .demo-sphere { display: none; }
-  :root[data-theme="light"] body[data-demo] .wh-net { display: block; }
-  /* Um scrim um pouco mais forte à esquerda, para o texto respirar sobre a esfera. */
+  body[data-demo] .demo-halo {
+    position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; display: none;
+    background: radial-gradient(closest-side,
+      transparent 56%, rgba(255, 45, 140, 0.6) 70%, rgba(255, 45, 140, 0.16) 80%, transparent 92%);
+    box-shadow: 0 0 60px rgba(255, 45, 140, 0.35);
+    filter: blur(5px);
+  }
+  :root[data-theme="light"] body[data-demo] .demo-halo { display: block; }
+  /* Um scrim mais forte à esquerda, para o texto respirar sobre a esfera. */
   body[data-demo] .wh-scrim {
     background:
       linear-gradient(90deg, var(--bg) 22%, color-mix(in srgb, var(--bg) 78%, transparent) 44%, transparent 70%),
       linear-gradient(0deg, var(--bg) 2%, transparent 26%);
+  }
+  /* No CLARO, o scrim base só mascara na vertical (feito p/ a constelação sutil),
+     então a esfera + o halo neon vazavam sobre o texto. Este scrim (especificidade
+     maior que o do tema) mascara a ESQUERDA, protegendo o texto, e libera a direita
+     onde a esfera e a borda neon aparecem nítidas. */
+  :root[data-theme="light"] body[data-demo] .wh-scrim {
+    background:
+      linear-gradient(90deg, var(--bg) 33%, color-mix(in srgb, var(--bg) 84%, transparent) 51%, transparent 65%),
+      linear-gradient(0deg, var(--bg) 2%, transparent 30%);
   }
   /* ===== Camada "opção 3" no SITE INTEIRO (atinge todas as seções pelos
      elementos compartilhados: kicker .lbl, .dot, .rule e os h2). ===== */
@@ -141,6 +157,11 @@ import HomeContent from "../components/HomeContent.astro";
     canvas.className = "demo-sphere";
     canvas.setAttribute("aria-hidden", "true");
     hero.insertBefore(canvas, hero.firstChild);
+    // Borda rosa neon (só aparece no tema claro, via CSS); posicionada em resize().
+    const halo = document.createElement("div");
+    halo.className = "demo-halo";
+    halo.setAttribute("aria-hidden", "true");
+    hero.insertBefore(halo, hero.firstChild);
 
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
@@ -166,17 +187,21 @@ import HomeContent from "../components/HomeContent.astro";
     const glowMat = new THREE.PointsMaterial({ size: 0.055, transparent: true, depthWrite: false });
     const applyTheme = () => {
       const light = document.documentElement.getAttribute("data-theme") === "light";
-      mat.color = new THREE.Color(light ? "#5b2ee6" : "#a98bff");
-      mat.opacity = 0.92;
+      // Claro: pontos roxo escuro, nítidos sobre o creme (a borda neon vem do .demo-halo).
+      // Escuro: violeta claro com brilho aditivo (halo pela própria luz somada).
+      mat.color = new THREE.Color(light ? "#33065c" : "#a98bff");
+      mat.opacity = light ? 0.95 : 0.92;
       mat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
       mat.needsUpdate = true;
-      glowMat.color = new THREE.Color(light ? "#c94f8a" : "#e05aa8");
-      glowMat.opacity = light ? 0.16 : 0.3;
+      // No claro o glow de partículas (quadrados faltos) é desligado: a borda vira o halo CSS.
+      glowMat.color = new THREE.Color(light ? "#33065c" : "#e05aa8");
+      glowMat.opacity = light ? 0 : 0.3;
       glowMat.blending = light ? THREE.NormalBlending : THREE.AdditiveBlending;
       glowMat.needsUpdate = true;
     };
     applyTheme();
-    new MutationObserver(applyTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    // Ao trocar de tema, reaplica cores E reposiciona/reopacifica (resize já existe).
+    new MutationObserver(() => { applyTheme(); resize(); }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 
     const grp = new THREE.Group();
     grp.add(new THREE.Points(geo, glowMat));
@@ -198,9 +223,30 @@ import HomeContent from "../components/HomeContent.astro";
       grp.position.y = small ? 0.5 : 0.02;
       cam.position.z = small ? 3.6 : 3.2;
       radiusPx = Math.min(W, H) * (small ? 0.24 : 0.22);
-      canvas.style.opacity = small ? "0.55" : "1";
+      // No mobile a esfera é cenário. No claro os pontos roxo escuro aparecem mais
+      // que o violeta do escuro, então baixamos mais a opacidade para não competir
+      // com o texto (creme = fundo claro).
+      const lightNow = document.documentElement.getAttribute("data-theme") === "light";
+      canvas.style.opacity = small ? (lightNow ? "0.4" : "0.55") : "1";
+      // Posiciona a borda neon (halo) exatamente ao redor da esfera: projeta o centro
+      // e um ponto do "topo" (raio) para a tela e mede o raio em pixels.
+      grp.updateMatrixWorld();
+      const c = new THREE.Vector3(0, 0, 0).applyMatrix4(grp.matrixWorld).project(cam);
+      const e = new THREE.Vector3(0, 1, 0).applyMatrix4(grp.matrixWorld).project(cam);
+      const cx = (c.x * 0.5 + 0.5) * W, cy = (-c.y * 0.5 + 0.5) * H;
+      const ex = (e.x * 0.5 + 0.5) * W, ey = (-e.y * 0.5 + 0.5) * H;
+      const rPx = Math.hypot(ex - cx, ey - cy);
+      const d = rPx * 3;
+      halo.style.left = (cx - d / 2) + "px";
+      halo.style.top = (cy - d / 2) + "px";
+      halo.style.width = d + "px";
+      halo.style.height = d + "px";
+      halo.style.opacity = small ? "0.7" : "1";
     };
     resize();
+    // Reposiciona depois do layout assentar (o halo depende de clientWidth/Height).
+    requestAnimationFrame(resize);
+    addEventListener("load", resize);
     addEventListener("resize", resize);
 
     // Mouse relativo ao hero (para deformar os pontos onde o cursor está).
