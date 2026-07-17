@@ -84,6 +84,39 @@ import HomeContent from "../components/HomeContent.astro";
   }
   body[data-demo] .cases .feat .fbtn:hover, body[data-demo] .cases .casecard .cc-cta:hover { filter: brightness(1.1); transform: translateY(-2px); }
 
+  /* ================= OPÇÃO 3 no SITE INTEIRO (todas as seções) ================= */
+  /* Fundo dramático com brilhos, por seção (theme-aware via var(--bg)). Exclui o
+     hero (tem a esfera), o Cases (já feito) e Palestras (já é dark dramático). */
+  body[data-demo] main > section:not(.wh):not(.cases):not(.pal) {
+    background:
+      radial-gradient(58% 44% at 85% 12%, rgba(122, 74, 255, 0.09), transparent 58%),
+      var(--bg);
+  }
+  :root:not([data-theme="light"]) body[data-demo] main > section:not(.wh):not(.cases):not(.pal) {
+    background:
+      radial-gradient(58% 44% at 85% 12%, rgba(122, 74, 255, 0.16), transparent 58%),
+      radial-gradient(40% 30% at 5% 92%, rgba(201, 79, 138, 0.09), transparent 60%),
+      var(--bg);
+  }
+
+  /* Botões primários viram gradiente com glow (site todo) */
+  body[data-demo] :is(.btn-primary, .btn-violet, .btn-lg, .id-cta, .ment-cta, .lp-cta, .teaser-btn) {
+    background: linear-gradient(100deg, #6a2ee6, #c94f8a) !important;
+    color: #fff !important; border-color: transparent !important;
+    box-shadow: 0 16px 40px -16px rgba(122, 74, 255, 0.75);
+  }
+  body[data-demo] :is(.btn-primary, .btn-violet, .btn-lg, .id-cta, .ment-cta, .lp-cta, .teaser-btn):hover {
+    filter: brightness(1.1); transform: translateY(-2px);
+  }
+  /* Botões ghost/outline ganham borda com brilho roxo */
+  body[data-demo] :is(.btn-ghost, .btn-outline) { border-color: rgba(122, 74, 255, 0.55) !important; }
+
+  /* Cards ganham borda e glow sutis (publicações, mentoria, vídeos, teasers, artigos) */
+  body[data-demo] :is(.pcard, .ment-card, .vcard, .teaser, .artcard, .feat) {
+    border: 1px solid rgba(122, 74, 255, 0.22);
+    box-shadow: 0 34px 90px -55px rgba(122, 74, 255, 0.5);
+  }
+
   /* Selo de demo, discreto. */
   body[data-demo] .demo-badge {
     position: fixed; z-index: 120; left: 16px; bottom: 16px;
