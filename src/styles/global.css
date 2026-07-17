@@ -210,8 +210,7 @@ a { color: inherit; text-decoration: none; }
    então o conteúdo nunca fica preso invisível. */
 /* Com o motion ativo, o Lenis controla o scroll suave: desliga o smooth do CSS
    para os dois nao brigarem. */
-html.js-motion { scroll-behavior: auto; }
-html.js-motion .reveal { opacity: 0; will-change: opacity, transform; }
+html.js-motion .reveal { opacity: 0; }
 html.js-motion .stagger > * { opacity: 0; }
 html.js-motion.motion-fallback .reveal,
 html.js-motion.motion-fallback .stagger > * { opacity: 1 !important; transform: none !important; }
