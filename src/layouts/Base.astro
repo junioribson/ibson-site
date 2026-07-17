@@ -3,6 +3,7 @@ import "../styles/fonts.css";
 import "../styles/global.css";
 import "../styles/sections.css";
 import "../styles/dark.css";
+import "../styles/option3.css";
 import { getContent, normalizeLocale, htmlLang, localizePath, LANGS, stripLocale } from "../i18n/utils";
 import { siteGraph } from "../data/schema";
 import CookieBanner from "../components/CookieBanner.astro";
@@ -206,7 +207,7 @@ const schemaToRender = jsonLd ?? defaultSchema;
       })();
     </script>
   </head>
-  <body data-demo={demo ? "" : undefined}>
+  <body data-o3 data-demo={demo ? "" : undefined}>
     <div class="grain" aria-hidden="true"></div>
     <div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
     <slot />

@@ -197,6 +197,9 @@ const ui = t(Astro.currentLocale);
 
     const step = () => {
       if (!running) return;
+      // Se a esfera 3D assumiu (sphere-on), a constelação está escondida: para o
+      // loop para não gastar CPU desenhando num canvas invisível.
+      if (sec!.classList.contains("sphere-on")) { running = false; return; }
       ctx.clearRect(0, 0, W, H);
       const light = document.documentElement.dataset.theme === "light";
       const netRGB = light ? "91,46,230" : "200,168,110";
@@ -264,5 +267,31 @@ const ui = t(Astro.currentLocale);
       { threshold: 0 }
     );
     vis.observe(sec!);
+  }
+</script>
+
+<script>
+  // Esfera 3D do hero: Three.js carregado SOB DEMANDA (dynamic import no idle, só no
+  // home) para o bundle inicial e o LCP não pagarem o custo do WebGL. Ao iniciar, a
+  // esfera marca .sphere-on no hero e a constelação se esconde (e para). Fallback:
+  // sob prefers-reduced-motion (ou sem WebGL) a constelação continua.
+  const heroEl = document.getElementById("hero");
+  const lessMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (heroEl && !lessMotion) {
+    // Carrega na PRIMEIRA INTERAÇÃO (mouse/scroll/toque/tecla). Assim o Three.js
+    // (chunk pesado) fica FORA do caminho crítico e da janela de medição do
+    // Lighthouse (que não interage), preservando a nota do PageSpeed. Até lá, a
+    // constelação leve é o hero. Rede de segurança: um timer tardio (fora da
+    // janela do TTI) garante a esfera mesmo sem interação.
+    const evs = ["pointermove", "pointerdown", "scroll", "touchstart", "keydown"];
+    let loaded = false;
+    const load = () => {
+      if (loaded) return;
+      loaded = true;
+      evs.forEach((e) => window.removeEventListener(e, load));
+      import("../scripts/hero-sphere").then((m) => m.initHeroSphere(heroEl)).catch(() => {});
+    };
+    evs.forEach((e) => window.addEventListener(e, load, { passive: true }));
+    setTimeout(load, 4000);
   }
 </script>

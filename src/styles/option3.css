@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Camada "opção 3" (direção de arte dramática), aplicada ao site inteiro via
+   body[data-o3] (ligado no Base). Theme-aware: herda o toggle claro/escuro.
+   Não remove nem resume conteúdo: só realça (esfera no hero, kickers/botões em
+   gradiente, cards com glow, números gigantes nos cases).
+   O hero fica gateado em .sphere-on: se a esfera não iniciar (sem WebGL ou
+   prefers-reduced-motion), a constelação (.wh-net) segue como fallback.
+   ========================================================================== */
+
+/* ===== Hero: esfera de partículas (nos dois temas) ===== */
+body[data-o3] .wh.sphere-on .wh-net { display: none; }
+body[data-o3] .wh.sphere-on .wh-bg { display: none; }
+body[data-o3] .o3-sphere { position: absolute; inset: 0; z-index: 0; }
+body[data-o3] .o3-halo {
+  position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; display: none;
+  background: radial-gradient(closest-side,
+    transparent 56%, rgba(255, 45, 140, 0.6) 70%, rgba(255, 45, 140, 0.16) 80%, transparent 92%);
+  box-shadow: 0 0 60px rgba(255, 45, 140, 0.35);
+  filter: blur(5px);
+}
+/* Borda rosa neon: só no claro (no escuro o brilho aditivo já dá o halo). */
+:root[data-theme="light"] body[data-o3] .o3-halo { display: block; }
+
+/* Scrim mais forte à esquerda, para o texto respirar sobre a esfera. */
+body[data-o3] .wh.sphere-on .wh-scrim {
+  background:
+    linear-gradient(90deg, var(--bg) 22%, color-mix(in srgb, var(--bg) 78%, transparent) 44%, transparent 70%),
+    linear-gradient(0deg, var(--bg) 2%, transparent 26%);
+}
+/* No CLARO o scrim base só mascara na vertical (feito p/ a constelação sutil),
+   então a esfera + o halo neon vazavam sobre o texto. Este mascara a ESQUERDA,
+   protegendo o texto, e libera a direita onde a esfera aparece nítida. */
+:root[data-theme="light"] body[data-o3] .wh.sphere-on .wh-scrim {
+  background:
+    linear-gradient(90deg, var(--bg) 33%, color-mix(in srgb, var(--bg) 84%, transparent) 51%, transparent 65%),
+    linear-gradient(0deg, var(--bg) 2%, transparent 30%);
+}
+
+/* ===== Elementos compartilhados (todas as seções/páginas) ===== */
+/* Kicker (bolinha + régua + rótulo) em gradiente. */
+body[data-o3] .shead .lbl {
+  background: linear-gradient(100deg, #8b6bff, #db6bff 46%, #ff7ac0);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+body[data-o3] .shead .dot { background: #a882ff; box-shadow: 0 0 10px 2px rgba(122, 74, 255, 0.7); }
+body[data-o3] .shead .rule { background: linear-gradient(90deg, #a882ff, transparent); opacity: 0.9; }
+body[data-o3] main :is(section) h2 { letter-spacing: -0.04em; }
+
+/* ===== Cases: seção-estrela (números gigantes, card dramático) ===== */
+body[data-o3] .cases {
+  background:
+    radial-gradient(60% 46% at 88% 4%, rgba(122, 74, 255, 0.05), transparent 60%),
+    radial-gradient(48% 40% at 3% 98%, rgba(201, 79, 138, 0.04), transparent 60%),
+    var(--bg);
+}
+:root:not([data-theme="light"]) body[data-o3] .cases {
+  background:
+    radial-gradient(70% 55% at 84% 6%, rgba(122, 74, 255, 0.22), transparent 58%),
+    radial-gradient(55% 45% at 4% 96%, rgba(201, 79, 138, 0.14), transparent 58%),
+    #08060e;
+}
+body[data-o3] .cases .cases-head h2 { font-size: clamp(36px, 5.6vw, 80px); letter-spacing: -0.045em; line-height: 1.0; }
+
+body[data-o3] .cases .feat {
+  border-radius: 22px; border: 1px solid rgba(122, 74, 255, 0.28);
+  box-shadow: 0 50px 130px -55px rgba(122, 74, 255, 0.7);
+  background: linear-gradient(150deg, #140a2e, #0a0618 70%);
+}
+body[data-o3] .cases .feat .fglow { width: 62%; height: 180%; background: radial-gradient(circle, rgba(122, 74, 255, 0.55), transparent 62%); filter: blur(46px); }
+
+body[data-o3] .cases .fstats { gap: clamp(22px, 3vw, 44px) clamp(30px, 4vw, 58px); margin-top: 30px; }
+body[data-o3] .cases .fstats .fs .n {
+  font-size: clamp(42px, 6vw, 84px); line-height: 0.86; letter-spacing: -0.05em; color: #fff;
+  background: linear-gradient(120deg, #ffffff, #a882ff 72%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+body[data-o3] .cases .fstats .fs .t { font-size: 11.5px; margin-top: 8px; }
+
+body[data-o3] .cases .subcase .num { font-size: clamp(52px, 8vw, 120px); line-height: 0.86; letter-spacing: -0.05em; }
+body[data-o3] .cases .subcase .num em {
+  background: linear-gradient(120deg, #a882ff, #e05aa8);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+
+body[data-o3] .cases .feat .fbtn, body[data-o3] .cases .casecard .cc-cta {
+  background: linear-gradient(100deg, #6a2ee6, #c94f8a); color: #fff; border: none;
+  border-radius: 100px; padding: 14px 26px; box-shadow: 0 16px 40px -16px rgba(122, 74, 255, 0.8);
+  letter-spacing: 0.04em;
+}
+body[data-o3] .cases .feat .fbtn:hover, body[data-o3] .cases .casecard .cc-cta:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* ===== Brilho ambiente por seção (respiro preservado: só a IMAGEM muda) =====
+   Só nas seções "claras" comuns. As seções já escuras-dramáticas (Hero, Cases,
+   Palestras, Tese, Repertório, Contato) ficam de fora: mexer no fundo delas
+   apagava o escuro e deixava texto claro sobre creme (sem contraste). */
+body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+  background-image: radial-gradient(46% 36% at 90% 6%, rgba(122, 74, 255, 0.04), transparent 62%);
+}
+:root:not([data-theme="light"]) body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+  background-image: radial-gradient(50% 40% at 90% 6%, rgba(122, 74, 255, 0.13), transparent 62%);
+}
+
+/* ===== Botões e cards (site todo) ===== */
+body[data-o3] :is(.btn-primary, .btn-violet, .btn-lg, .id-cta, .ment-cta, .lp-cta, .teaser-btn) {
+  background: linear-gradient(100deg, #6a2ee6, #c94f8a) !important;
+  color: #fff !important; border-color: transparent !important;
+  box-shadow: 0 16px 40px -16px rgba(122, 74, 255, 0.75);
+}
+body[data-o3] :is(.btn-primary, .btn-violet, .btn-lg, .id-cta, .ment-cta, .lp-cta, .teaser-btn):hover {
+  filter: brightness(1.1); transform: translateY(-2px);
+}
+body[data-o3] :is(.btn-ghost, .btn-outline) { border-color: rgba(122, 74, 255, 0.55) !important; }
+
+body[data-o3] :is(.pcard, .ment-card, .vcard, .teaser, .artcard, .feat) {
+  border: 1px solid rgba(122, 74, 255, 0.22);
+  box-shadow: 0 34px 90px -55px rgba(122, 74, 255, 0.5);
+}
+
+/* Acessibilidade: sob prefers-reduced-motion o hover não desloca. */
+@media (prefers-reduced-motion: reduce) {
+  body[data-o3] :is(.btn-primary, .btn-violet, .btn-lg, .id-cta, .ment-cta, .lp-cta, .teaser-btn):hover {
+    transform: none;
+  }
+}
