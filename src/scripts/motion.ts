@@ -117,6 +117,33 @@ if (reduce || !root.classList.contains("js-motion")) {
       });
     });
 
+    // 3b) Cena central (Tese): scroll TRAVADO (pin) com tipografia cinética. Só no
+    // desktop largo; em telas menores o CSS mostra tudo estático (sem pin).
+    const thesisEl = document.querySelector<HTMLElement>("[data-thesis]");
+    if (thesisEl && window.matchMedia("(min-width: 901px)").matches) {
+      const pin = thesisEl.querySelector<HTMLElement>(".tese-pin");
+      const main = thesisEl.querySelector<HTMLElement>("[data-thesis-main]");
+      const words = thesisEl.querySelectorAll<HTMLElement>(".tese-title .tw > span");
+      const body = thesisEl.querySelector<HTMLElement>("[data-thesis-body]");
+      const closing = thesisEl.querySelector<HTMLElement>("[data-thesis-closing]");
+      const atmos = thesisEl.querySelector<HTMLElement>(".tese-atmos");
+      const inner = closing?.querySelector<HTMLElement>(".tese-closing");
+      if (pin && main && words.length && closing) {
+        gsap.set(words, { yPercent: 118 });
+        if (body) gsap.set(body, { opacity: 0, y: 34 });
+        gsap.set(closing, { opacity: 0 });
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: thesisEl, start: "top top", end: "+=2000", pin, scrub: 0.6, anticipatePin: 1 },
+        });
+        if (atmos) tl.to(atmos, { scale: 1.18, ease: "none", duration: 6 }, 0);
+        tl.to(words, { yPercent: 0, duration: 1.4, stagger: 0.18, ease: "power3.out" }, 0.1);
+        if (body) tl.to(body, { opacity: 1, y: 0, duration: 1 }, 1.3);
+        tl.to(main, { opacity: 0, y: -70, duration: 1.2 }, 2.7);
+        tl.to(closing, { opacity: 1, duration: 1 }, 3.1);
+        if (inner) tl.from(inner, { scale: 0.9, y: 30, duration: 1.3, ease: "power3.out" }, 3.1);
+      }
+    }
+
     // 4) Interações de mouse (tilt 3D nos cards + botões magnéticos), só ponteiro fino
     if (window.matchMedia("(pointer: fine)").matches) {
       // Profundidade reativa ao mouse no hero: o bloco de texto se move numa camada
