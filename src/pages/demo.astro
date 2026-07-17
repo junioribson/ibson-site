@@ -16,9 +16,13 @@ import HomeContent from "../components/HomeContent.astro";
 <style is:global>
   /* Camada "opção 3" (só sob body[data-demo]). Não remove/resume nada: troca a cena
      de fundo do hero pela esfera e realça o drama. Theme-aware (herda o toggle do site). */
+  /* Hero: no ESCURO a esfera brilha; no CLARO ela vira quadrados faltos sobre o
+     creme (ruim), então no claro volta a constelação real (limpa e desenhada). */
   body[data-demo] .wh-net { display: none; }
   body[data-demo] .wh-bg { display: none; }
   body[data-demo] .demo-sphere { position: absolute; inset: 0; z-index: 0; }
+  :root[data-theme="light"] body[data-demo] .demo-sphere { display: none; }
+  :root[data-theme="light"] body[data-demo] .wh-net { display: block; }
   /* Um scrim um pouco mais forte à esquerda, para o texto respirar sobre a esfera. */
   body[data-demo] .wh-scrim {
     background:
@@ -40,8 +44,8 @@ import HomeContent from "../components/HomeContent.astro";
   /* Fundo dramático com glows (theme-aware). Nenhum conteúdo removido. */
   body[data-demo] .cases {
     background:
-      radial-gradient(70% 55% at 84% 6%, rgba(122, 74, 255, 0.16), transparent 55%),
-      radial-gradient(55% 45% at 4% 96%, rgba(201, 79, 138, 0.12), transparent 55%),
+      radial-gradient(60% 46% at 88% 4%, rgba(122, 74, 255, 0.05), transparent 60%),
+      radial-gradient(48% 40% at 3% 98%, rgba(201, 79, 138, 0.04), transparent 60%),
       var(--bg);
   }
   :root:not([data-theme="light"]) body[data-demo] .cases {
@@ -87,16 +91,16 @@ import HomeContent from "../components/HomeContent.astro";
   /* ================= OPÇÃO 3 no SITE INTEIRO (todas as seções) ================= */
   /* Fundo dramático com brilhos, por seção (theme-aware via var(--bg)). Exclui o
      hero (tem a esfera), o Cases (já feito) e Palestras (já é dark dramático). */
-  body[data-demo] main > section:not(.wh):not(.cases):not(.pal) {
-    background:
-      radial-gradient(58% 44% at 85% 12%, rgba(122, 74, 255, 0.09), transparent 58%),
-      var(--bg);
+  /* Brilho ambiente SÓ nas seções "claras" comuns (Sobre, ProliferArte, Galeria,
+     Artigos, Mentoria, Vídeos). As seções que JÁ têm fundo escuro dramático próprio
+     (Hero, Cases, Palestras, Tese, Repertório, Contato) ficam de fora: mexer nelas
+     apagava o fundo escuro e deixava texto claro sobre creme (sem contraste). Só a
+     IMAGEM do brilho é trocada, então a cor/ritmo alternado das seções continua vivo. */
+  body[data-demo] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+    background-image: radial-gradient(46% 36% at 90% 6%, rgba(122, 74, 255, 0.04), transparent 62%);
   }
-  :root:not([data-theme="light"]) body[data-demo] main > section:not(.wh):not(.cases):not(.pal) {
-    background:
-      radial-gradient(58% 44% at 85% 12%, rgba(122, 74, 255, 0.16), transparent 58%),
-      radial-gradient(40% 30% at 5% 92%, rgba(201, 79, 138, 0.09), transparent 60%),
-      var(--bg);
+  :root:not([data-theme="light"]) body[data-demo] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+    background-image: radial-gradient(50% 40% at 90% 6%, rgba(122, 74, 255, 0.13), transparent 62%);
   }
 
   /* Botões primários viram gradiente com glow (site todo) */
