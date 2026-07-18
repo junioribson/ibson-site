@@ -278,7 +278,7 @@ export const audienceArchitecture = {
   metrics: [
     { n: "+12B", label: "engagement accumulated over 18 years of networks, communities and content" },
     // Views > engagement, always. Consolidated across ALL fronts.
-    { n: "+20B", label: "views accumulated across video, communities and distribution" },
+    { n: "+20B", label: "views accumulated across static posts, video, communities and distribution" },
     { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
     // Consolidated across ALL fronts, hence "combined": it does not clash with the
     // "+160M followers on the network" from the WolfLife case, which is one of them.
