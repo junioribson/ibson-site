@@ -285,7 +285,10 @@ export const audienceArchitecture = {
   },
   metrics: [
     { n: "+12 Bi", label: "engajamento acumulado em 18 anos de redes, comunidades e conteúdo" },
-    { n: "+9 Bi", label: "visualizações geradas em distribuição por comunidades" },
+    // Visualizações > engajamento, sempre: quem vê é muito mais do que quem
+    // interage. Consolidado de TODAS as frentes, por isso maior que os "9 Bi+"
+    // do case TikTok, que é uma delas. Fecha com o total: 20+12+15+1 = 48 de 50.
+    { n: "+20 Bi", label: "visualizações acumuladas em vídeo, comunidades e distribuição" },
     { n: "+1 Bi", label: "sessões em um único ano de operação editorial, o recorde da operação" },
     // Consolidado de TODAS as frentes. Não conflita com os "+160 Mi seguidores na
     // rede" do case WolfLife, que é uma delas: por isso o rótulo diz "conjunto".

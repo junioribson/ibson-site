@@ -35,9 +35,17 @@ const privacyHref = localizePath("/politica-de-privacidade", locale);
     pointer-events: auto; width: 100%; max-width: 620px;
     display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
     padding: 16px 20px; border-radius: 16px;
-    background: var(--panel, #f4eeDF); border: 1px solid var(--line, rgba(28,14,4,0.14));
-    box-shadow: 0 24px 60px -24px rgba(42, 1, 72, 0.45);
-    backdrop-filter: blur(8px);
+    /* Fundo SÓLIDO e explícito: o aviso flutua por cima de qualquer seção, inclusive
+       as escuras. Antes usava var(--panel), que no tema escuro é quase transparente
+       (rgba(255,255,255,.045)) e sumia sobre os blocos escuros. */
+    background: #ffffff;
+    border: 1px solid rgba(28, 14, 4, 0.16);
+    box-shadow: 0 24px 60px -20px rgba(42, 1, 72, 0.5);
+  }
+  :root:not([data-theme="light"]) .ckb-card {
+    background: #1b1030;
+    border-color: rgba(168, 130, 255, 0.32);
+    box-shadow: 0 24px 64px -18px rgba(0, 0, 0, 0.75);
   }
   .ckb-text {
     flex: 1 1 260px; margin: 0;

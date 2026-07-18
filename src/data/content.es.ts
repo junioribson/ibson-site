@@ -277,7 +277,8 @@ export const audienceArchitecture = {
   },
   metrics: [
     { n: "+12 MM", label: "interacción acumulada en 18 años de redes, comunidades y contenido" },
-    { n: "+9 MM", label: "visualizaciones generadas en distribución por comunidades" },
+    // Visualizaciones > interacción, siempre. Consolidado de TODOS los frentes.
+    { n: "+20 MM", label: "visualizaciones acumuladas en vídeo, comunidades y distribución" },
     { n: "+1 MM", label: "sesiones en un solo año de operación editorial, el récord de la operación" },
     // Consolidado de TODOS los frentes, por eso el rótulo dice "conjunto": no choca
     // con los "+160 M seguidores en la red" del caso WolfLife, que es uno de ellos.
