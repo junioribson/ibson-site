@@ -86,7 +86,7 @@ if (reduce || !root.classList.contains("js-motion")) {
           el.textContent = pre + fmt(0, dec) + suf;
           gsap.to(obj, {
             v: target,
-            duration: 1.6,
+            duration: 3.2,
             ease: "power2.out",
             onUpdate: () => {
               el.textContent = pre + fmt(obj.v, dec) + suf;
