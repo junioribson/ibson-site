@@ -248,6 +248,47 @@ export const linkedinPosts = {
   ] as Array<{ image: string; url: string; alt: string }>,
 };
 
+// Authority block between the biography and the cases. METRIC RIGOR: "people",
+// "users", "sessions" and "impressions" are NOT the same thing. The largest number
+// is stated as "digital touchpoints", never as "people reached".
+export const audienceArchitecture = {
+  kicker: "Content · Audience · Algorithm · Behaviour",
+  title: "The architecture behind the audience.",
+  subhead:
+    "Before a piece of content reaches millions, someone has to understand the environment, the behaviour, the format, the timing and the responsibility of what is put into circulation.",
+  body: [
+    "Since 2008, Ibson Junior has worked at the point where culture, technology, human behaviour and distribution meet.",
+    "What began as a cultural community became the repertoire to build, lead and scale digital assets across different environments: social networks, websites, communities, video, editorial operations and content strategy.",
+    "The logic was never simply to produce more. It was to learn to read signals before they become obvious, to turn behaviour into strategy, to shape narratives with distribution potential and to hold judgment when the environment rewards speed, repetition and noise.",
+    "In content, reach is the visible part. Before it there is a less apparent architecture: reading the environment, understanding the audience, choosing the format, timing, narrative, distribution, data, cultural repertoire and editorial responsibility.",
+    "Because going viral is not only about understanding the algorithm. It is about understanding people. It is about noticing what they recognise, share, save, comment on, reject or turn into belonging.",
+    "That is why his work in content combines editorial strategy, human behaviour, data reading, culture, leadership and distribution. The goal is not only to reach more people. It is to build messages, operations and decisions that make sense at scale.",
+  ],
+  impact: [
+    "Content that appears can be born of volume.",
+    "Content that endures is born of reading.",
+  ],
+  featured: {
+    n: "+10B",
+    label: "consolidated digital touchpoints",
+    note: "across impressions, views, sessions, reach and engagement in projects, communities and editorial operations.",
+  },
+  metrics: [
+    { n: "+200M", label: "users and audiences on digital assets led by strategy" },
+    { n: "+1B", label: "sessions in a single year of editorial operation" },
+    { n: "18 years", label: "building culture, community, content and digital audience" },
+    { n: "+1.5M", label: "people in a cultural community" },
+    { n: "+30M/month", label: "monthly reach in community and cultural distribution" },
+    { n: "+6B/year", label: "impressions across digital community ecosystems" },
+  ],
+  note: "Figures consolidated from projects in culture, community, digital media and editorial operations. The metrics represent different dimensions of reach, distribution, consumption and interaction.",
+  ctas: {
+    primary: { href: "#cases", label: "See impact cases" },
+    secondary: { href: "#palestras", label: "Explore talks and mentoring" },
+  },
+  metricsAria: "Consolidated indicators of impact in content and audience",
+};
+
 export const cases = {
   title: "Cases that connect audience, culture and business.",
   subtitle:

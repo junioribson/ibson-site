@@ -104,10 +104,10 @@ body[data-o3] .cases .feat .fbtn:hover, body[data-o3] .cases .casecard .cc-cta:h
    Só nas seções "claras" comuns. As seções já escuras-dramáticas (Hero, Cases,
    Palestras, Tese, Repertório, Contato) ficam de fora: mexer no fundo delas
    apagava o escuro e deixava texto claro sobre creme (sem contraste). */
-body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato):not(.arq) {
   background-image: radial-gradient(46% 36% at 90% 6%, rgba(122, 74, 255, 0.04), transparent 62%);
 }
-:root:not([data-theme="light"]) body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato) {
+:root:not([data-theme="light"]) body[data-o3] main > section:not(.wh):not(.cases):not(.pal):not(.tese):not(.repo):not(.contato):not(.arq) {
   background-image: radial-gradient(50% 40% at 90% 6%, rgba(122, 74, 255, 0.13), transparent 62%);
 }
 

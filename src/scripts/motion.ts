@@ -64,7 +64,7 @@ if (reduce || !root.classList.contains("js-motion")) {
     const enStyle = langTag.toLowerCase().startsWith("en");
     const fmt = (v: number, dec: number) =>
       v.toLocaleString(langTag, { minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: false });
-    gsap.utils.toArray<HTMLElement>(".fs .n").forEach((el) => {
+    gsap.utils.toArray<HTMLElement>(".fs .n, .arq-n").forEach((el) => {
       const raw = (el.textContent || "").trim();
       const m = raw.match(/^(\D*)(\d[\d.,]*)(.*)$/);
       if (!m) return;
@@ -76,12 +76,14 @@ if (reduce || !root.classList.contains("js-motion")) {
       if (!isFinite(target)) return;
       const dec = (numStr.split(enStyle ? "." : ",")[1] || "").length;
       const obj = { v: 0 };
-      el.textContent = pre + fmt(0, dec) + suf;
+      // NÃO zera o número aqui: se o ScrollTrigger falhasse, o card ficaria preso em
+      // "0". O valor real só sai da tela no instante em que a contagem começa.
       ScrollTrigger.create({
         trigger: el,
         start: "top 92%",
         once: true,
-        onEnter: () =>
+        onEnter: () => {
+          el.textContent = pre + fmt(0, dec) + suf;
           gsap.to(obj, {
             v: target,
             duration: 1.6,
@@ -89,7 +91,14 @@ if (reduce || !root.classList.contains("js-motion")) {
             onUpdate: () => {
               el.textContent = pre + fmt(obj.v, dec) + suf;
             },
-          }),
+            // Ao terminar, restaura o texto ORIGINAL. Esses números são prova de
+            // credibilidade: nunca podem parar num valor intermediário (ex.: "+9 Bi"
+            // no lugar de "+10 Bi") por arredondamento ou animação interrompida.
+            onComplete: () => {
+              el.textContent = raw;
+            },
+          });
+        },
       });
     });
 

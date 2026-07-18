@@ -248,6 +248,47 @@ export const linkedinPosts = {
   ] as Array<{ image: string; url: string; alt: string }>,
 };
 
+// Bloque de autoridad entre la biografía y los casos. RIGOR DE LAS MÉTRICAS:
+// "personas", "usuarios", "sesiones" e "impresiones" NO son lo mismo. El número
+// mayor se declara como "puntos de contacto digitales", nunca como "personas".
+export const audienceArchitecture = {
+  kicker: "Contenido · Audiencia · Algoritmo · Comportamiento",
+  title: "La arquitectura detrás de la audiencia.",
+  subhead:
+    "Antes de que un contenido llegue a millones, alguien necesita entender el entorno, el comportamiento, el formato, el tiempo y la responsabilidad de lo que se pondrá en circulación.",
+  body: [
+    "Desde 2008, Ibson Junior trabaja en el punto donde la cultura, la tecnología, el comportamiento humano y la distribución se encuentran.",
+    "Lo que empezó como una comunidad cultural se convirtió en repertorio para construir, liderar y escalar activos digitales en distintos entornos: redes sociales, sitios, comunidades, vídeos, operaciones editoriales y estrategias de contenido.",
+    "La lógica nunca fue solo producir más. Fue aprender a leer señales antes de que se vuelvan obvias, transformar comportamiento en estrategia, organizar narrativas con potencial de distribución y sostener criterio cuando el entorno favorece velocidad, repetición y ruido.",
+    "En contenido, el alcance es la parte visible. Antes de él existe una arquitectura menos aparente: lectura del entorno, comprensión de la audiencia, elección de formato, timing, narrativa, distribución, datos, repertorio cultural y responsabilidad editorial.",
+    "Porque viralizar no es solo entender el algoritmo. Es entender a las personas. Es percibir lo que reconocen, comparten, guardan, comentan, rechazan o convierten en pertenencia.",
+    "Por eso su trabajo en contenido combina estrategia editorial, comportamiento humano, lectura de datos, cultura, liderazgo y distribución. El objetivo no es solo llegar a más gente. Es construir mensajes, operaciones y decisiones que tengan sentido a escala.",
+  ],
+  impact: [
+    "El contenido que aparece puede nacer del volumen.",
+    "El contenido que permanece nace de la lectura.",
+  ],
+  featured: {
+    n: "+10 MM",
+    label: "puntos de contacto digitales consolidados",
+    note: "entre impresiones, visualizaciones, sesiones, alcance e interacción en proyectos, comunidades y operaciones editoriales.",
+  },
+  metrics: [
+    { n: "+200 M", label: "usuarios y audiencias en activos digitales conducidos por estrategia" },
+    { n: "+1 MM", label: "sesiones en un solo año de operación editorial" },
+    { n: "18 años", label: "construyendo cultura, comunidad, contenido y audiencia digital" },
+    { n: "+1,5 M", label: "personas en comunidad cultural" },
+    { n: "+30 M/mes", label: "alcance mensual en comunidad y distribución cultural" },
+    { n: "+6 MM/año", label: "impresiones en ecosistemas digitales de comunidad" },
+  ],
+  note: "Números consolidados a partir de proyectos de cultura, comunidad, medios digitales y operaciones editoriales. Las métricas representan distintas dimensiones de alcance, distribución, consumo e interacción.",
+  ctas: {
+    primary: { href: "#cases", label: "Ver casos de impacto" },
+    secondary: { href: "#palestras", label: "Conocer charlas y mentorías" },
+  },
+  metricsAria: "Indicadores consolidados de impacto en contenido y audiencia",
+};
+
 export const cases = {
   title: "Casos que conectan audiencia, cultura y negocios.",
   subtitle:
