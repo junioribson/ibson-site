@@ -169,12 +169,16 @@ const ui = t(Astro.currentLocale);
 </style>
 
 <script>
-  // Rede de pontos (constelação) animada e reativa ao cursor
+  // Rede de pontos (constelação) animada e reativa ao cursor. Na camada "opção 3"
+  // (data-o3) o hero é a ESFERA 3D: a constelação fica escondida (CSS), então nem
+  // roda aqui, para não desenhar num canvas invisível e não haver flash antes da
+  // esfera. Fora do data-o3 (defensivo), a constelação segue funcionando.
   const sec = document.getElementById("hero");
   const canvas = sec?.querySelector<HTMLCanvasElement>(".wh-net");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const o3 = document.body.hasAttribute("data-o3");
 
-  if (canvas && !reduce) {
+  if (canvas && !reduce && !o3) {
     const ctx = canvas.getContext("2d")!;
     let W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
     let rect = sec!.getBoundingClientRect(); // cache: evita reflow forçado a cada mousemove

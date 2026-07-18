@@ -8,32 +8,43 @@
    ========================================================================== */
 
 /* ===== Hero: esfera de partículas (nos dois temas) ===== */
-body[data-o3] .wh.sphere-on .wh-net { display: none; }
-body[data-o3] .wh.sphere-on .wh-bg { display: none; }
-body[data-o3] .o3-sphere { position: absolute; inset: 0; z-index: 0; }
-body[data-o3] .o3-halo {
-  position: absolute; z-index: 0; border-radius: 50%; pointer-events: none; display: none;
-  background: radial-gradient(closest-side,
-    transparent 56%, rgba(255, 45, 140, 0.6) 70%, rgba(255, 45, 140, 0.16) 80%, transparent 92%);
-  box-shadow: 0 0 60px rgba(255, 45, 140, 0.35);
-  filter: blur(5px);
+/* O LOBO e a constelação saem SEMPRE (não só quando a esfera monta): assim não há
+   mais o "flash do hero do lobo" antes da esfera aparecer. Sob prefers-reduced-motion
+   a esfera não monta e o hero fica limpo (só título), o que é aceitável e acessível. */
+body[data-o3] .wh .wh-bg { display: none; }
+body[data-o3] .wh .wh-net { display: none; }
+/* A esfera entra com fade suave (evita "pop"). A opacidade-alvo é definida no JS
+   por tier/tema; a transição faz a subida a partir do 0. */
+body[data-o3] .o3-sphere {
+  position: absolute; inset: 0; z-index: 0;
+  opacity: 0; transition: opacity 0.8s ease;
 }
-/* Borda rosa neon: só no claro (no escuro o brilho aditivo já dá o halo). */
-:root[data-theme="light"] body[data-o3] .o3-halo { display: block; }
 
-/* Scrim mais forte à esquerda, para o texto respirar sobre a esfera. */
-body[data-o3] .wh.sphere-on .wh-scrim {
+/* Scrim = MÁSCARA de legibilidade. Desenha o fundo (var(--bg), theme-aware) por cima
+   da faixa onde fica o texto, escondendo as partículas ali; nas bordas fica
+   transparente, deixando os pontos aparecerem no topo e nas duas laterais.
+   Desktop: texto à esquerda -> protege uma elipse à esquerda/centro. */
+body[data-o3] .wh .wh-scrim {
   background:
-    linear-gradient(90deg, var(--bg) 22%, color-mix(in srgb, var(--bg) 78%, transparent) 44%, transparent 70%),
-    linear-gradient(0deg, var(--bg) 2%, transparent 26%);
+    radial-gradient(66% 70% at 36% 56%, var(--bg) 0%, var(--bg) 52%, transparent 84%),
+    linear-gradient(0deg, var(--bg) 3%, transparent 26%);
 }
-/* No CLARO o scrim base só mascara na vertical (feito p/ a constelação sutil),
-   então a esfera + o halo neon vazavam sobre o texto. Este mascara a ESQUERDA,
-   protegendo o texto, e libera a direita onde a esfera aparece nítida. */
-:root[data-theme="light"] body[data-o3] .wh.sphere-on .wh-scrim {
-  background:
-    linear-gradient(90deg, var(--bg) 33%, color-mix(in srgb, var(--bg) 84%, transparent) 51%, transparent 65%),
-    linear-gradient(0deg, var(--bg) 2%, transparent 30%);
+/* Tablet/iPad: texto ocupa mais largura -> elipse um pouco mais ampla e central. */
+@media (max-width: 1080px) {
+  body[data-o3] .wh .wh-scrim {
+    background:
+      radial-gradient(74% 66% at 42% 56%, var(--bg) 0%, var(--bg) 54%, transparent 86%),
+      linear-gradient(0deg, var(--bg) 3%, transparent 24%);
+  }
+}
+/* Mobile: texto centralizado e ocupando quase tudo -> protege o centro/baixo, os
+   pontos aparecem principalmente no topo. */
+@media (max-width: 700px) {
+  body[data-o3] .wh .wh-scrim {
+    background:
+      radial-gradient(115% 58% at 50% 61%, var(--bg) 0%, var(--bg) 58%, transparent 90%),
+      linear-gradient(0deg, var(--bg) 4%, transparent 20%);
+  }
 }
 
 /* ===== Elementos compartilhados (todas as seções/páginas) ===== */
