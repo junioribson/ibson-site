@@ -3,22 +3,14 @@
    body[data-o3] (ligado no Base). Theme-aware: herda o toggle claro/escuro.
    Não remove nem resume conteúdo: só realça (esfera no hero, kickers/botões em
    gradiente, cards com glow, números gigantes nos cases).
-   O hero fica gateado em .sphere-on: se a esfera não iniciar (sem WebGL ou
-   prefers-reduced-motion), a constelação (.wh-net) segue como fallback.
+   O hero é um céu estrelado em canvas 2D (.wh-net), desenhado no Hero.astro.
    ========================================================================== */
 
 /* ===== Hero: esfera de partículas (nos dois temas) ===== */
-/* O LOBO e a constelação saem SEMPRE (não só quando a esfera monta): assim não há
-   mais o "flash do hero do lobo" antes da esfera aparecer. Sob prefers-reduced-motion
-   a esfera não monta e o hero fica limpo (só título), o que é aceitável e acessível. */
+/* O LOBO sai sempre (fim do "flash do hero do lobo"). O céu estrelado é desenhado
+   no próprio canvas .wh-net, em 2D: sem WebGL, sem chunk pesado e sem fade, então
+   ele já está lá no primeiro quadro. Ver o script em Hero.astro. */
 body[data-o3] .wh .wh-bg { display: none; }
-body[data-o3] .wh .wh-net { display: none; }
-/* A esfera entra com fade suave (evita "pop"). A opacidade-alvo é definida no JS
-   por tier/tema; a transição faz a subida a partir do 0. */
-body[data-o3] .o3-sphere {
-  position: absolute; inset: 0; z-index: 0;
-  opacity: 0; transition: opacity 0.8s ease;
-}
 
 /* Scrim = MÁSCARA de legibilidade. Desenha o fundo (var(--bg), theme-aware) por cima
    da faixa onde fica o texto, escondendo as partículas ali; nas bordas fica

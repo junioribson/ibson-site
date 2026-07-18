@@ -280,7 +280,7 @@ export const audienceArchitecture = {
     { n: "+9B", label: "views generated through community distribution" },
     { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
     // Consolidated across ALL fronts, hence "combined": it does not clash with the
-    // "+150M followers on the network" from the WolfLife case, which is one of them.
+    // "+160M followers on the network" from the WolfLife case, which is one of them.
     { n: "+200M", label: "followers across the combined networks and digital communities" },
     { n: "18 years", label: "building culture, community, content and digital audience" },
   ],
@@ -305,9 +305,9 @@ export const cases = {
       "Ibson founded the operation and took part in its sale in 2025, consolidating a cycle of building, scale and value realization.",
     ],
     provas: [
-      { n: "+150M", t: "followers on the network" },
-      { n: "+6B", t: "annual impressions" },
-      { n: "+100M", t: "reached per month" },
+      { n: "+160M", t: "followers on the network" },
+      { n: "+15B", t: "impressions" },
+      { n: "785M", t: "reach per month" },
       { n: "2025", t: "sale of the operation" },
     ],
     aprendizado:

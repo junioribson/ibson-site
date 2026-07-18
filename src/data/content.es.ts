@@ -280,7 +280,7 @@ export const audienceArchitecture = {
     { n: "+9 MM", label: "visualizaciones generadas en distribución por comunidades" },
     { n: "+1 MM", label: "sesiones en un solo año de operación editorial, el récord de la operación" },
     // Consolidado de TODOS los frentes, por eso el rótulo dice "conjunto": no choca
-    // con los "+150 M seguidores en la red" del caso WolfLife, que es uno de ellos.
+    // con los "+160 M seguidores en la red" del caso WolfLife, que es uno de ellos.
     { n: "+200 M", label: "seguidores en el conjunto de redes y comunidades digitales" },
     { n: "18 años", label: "construyendo cultura, comunidad, contenido y audiencia digital" },
   ],
@@ -305,9 +305,9 @@ export const cases = {
       "Ibson fundó la operación y participó en su venta en 2025, consolidando un ciclo de construcción, escala y realización de valor.",
     ],
     provas: [
-      { n: "+150 M", t: "seguidores en la red" },
-      { n: "+6 MM", t: "impresiones anuales" },
-      { n: "+100 M", t: "alcanzados por mes" },
+      { n: "+160 M", t: "seguidores en la red" },
+      { n: "+15 MM", t: "impresiones" },
+      { n: "785 M", t: "alcance por mes" },
       { n: "2025", t: "venta de la operación" },
     ],
     aprendizado:
