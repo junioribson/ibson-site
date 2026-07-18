@@ -271,15 +271,17 @@ export const audienceArchitecture = {
   // All cards are CONSOLIDATED (18 years), with no monthly or annual slice. The only
   // short window is "+1B in a single year", which earns its place as a record.
   featured: {
-    n: "+30B",
+    n: "+50B",
     label: "consolidated digital touchpoints",
     note: "an 18 year total across impressions, views, sessions, reach and engagement, on social networks and websites, spanning own projects, communities and editorial operations.",
   },
   metrics: [
+    { n: "+12B", label: "engagement accumulated over 18 years of networks, communities and content" },
     { n: "+9B", label: "views generated through community distribution" },
     { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
-    { n: "+150M", label: "followers gathered across networks and digital communities" },
-    { n: "+1.5M", label: "people in a cultural community, since 2008" },
+    // Consolidated across ALL fronts, hence "combined": it does not clash with the
+    // "+150M followers on the network" from the WolfLife case, which is one of them.
+    { n: "+200M", label: "followers across the combined networks and digital communities" },
     { n: "18 years", label: "building culture, community, content and digital audience" },
   ],
   note: "Figures consolidated over 18 years of projects in culture, community, digital media and editorial operations, combining social networks and websites. The metrics represent different dimensions of reach, distribution, consumption and interaction, and should not be read as unique people.",

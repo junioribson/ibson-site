@@ -271,15 +271,17 @@ export const audienceArchitecture = {
   // Todos los cards son CONSOLIDADOS (18 años), sin recorte mensual ni anual. La
   // única ventana corta es "+1 MM en un solo año", que entra por ser récord.
   featured: {
-    n: "+30 MM",
+    n: "+50 MM",
     label: "puntos de contacto digitales consolidados",
     note: "suma de 18 años entre impresiones, visualizaciones, sesiones, alcance e interacción, en redes sociales y sitios web, considerando proyectos propios, comunidades y operaciones editoriales.",
   },
   metrics: [
+    { n: "+12 MM", label: "interacción acumulada en 18 años de redes, comunidades y contenido" },
     { n: "+9 MM", label: "visualizaciones generadas en distribución por comunidades" },
     { n: "+1 MM", label: "sesiones en un solo año de operación editorial, el récord de la operación" },
-    { n: "+150 M", label: "seguidores reunidos en redes y comunidades digitales" },
-    { n: "+1,5 M", label: "personas en comunidad cultural, desde 2008" },
+    // Consolidado de TODOS los frentes, por eso el rótulo dice "conjunto": no choca
+    // con los "+150 M seguidores en la red" del caso WolfLife, que es uno de ellos.
+    { n: "+200 M", label: "seguidores en el conjunto de redes y comunidades digitales" },
     { n: "18 años", label: "construyendo cultura, comunidad, contenido y audiencia digital" },
   ],
   note: "Números consolidados en 18 años de proyectos de cultura, comunidad, medios digitales y operaciones editoriales, sumando redes sociales y sitios web. Las métricas representan distintas dimensiones de alcance, distribución, consumo e interacción, y no deben leerse como personas únicas.",
