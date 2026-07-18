@@ -208,8 +208,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-07-09.
+  // Última atualização: 2026-07-18.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: a gente começa a escolher melhor quando para de confundir intensidade com importância, clareza também é maturidade.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-jornalismo-proporcao.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7483263627806793728/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: a pressa mostra o acontecimento, o jornalismo dá proporção.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-criterio-vira-lideranca.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7482535582297059328/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: quando tudo parece urgente, critério vira liderança.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-repeticao-e-sinal.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7481671238621396993/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: eu demorei para entender que nem tudo que se repete é fase, às vezes é sinal, consciência também é decisão.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-noticia-mudou-de-caminho.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7480719864920358912/",
@@ -229,26 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7478545542411632642/",
       alt: "Arte de post de Ibson Junior no LinkedIn: a IA pode ser motor, o humano precisa continuar no volante.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7477458378286493696/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: velocidade entrega alcance, critério constrói relevância.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-cansaco-limite.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7476605347814825984/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: tem coisa que a gente só chama de força porque ainda não aprendeu a chamar de limite, maturidade também é cuidado.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7476008937306275840/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: estar perto da notícia aumenta a responsabilidade.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7460712281094430721/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: quem decide não é quem entende o problema.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
