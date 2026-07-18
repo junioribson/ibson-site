@@ -171,10 +171,12 @@ const ui = t(Astro.currentLocale);
 <script>
   // CÉU ESTRELADO do hero, em canvas 2D (leve, sem WebGL e sem dependência).
   //
-  // Ideia: estrelas de verdade vistas num lugar escuro. Tamanhos e brilhos variados,
-  // cintilância e deriva lenta dão vida própria mesmo parado. Ao redor do cursor as
-  // estrelas acendem e se ligam em CONSTELAÇÕES, então a pessoa sente que está
-  // conduzindo a animação (referência: o facho que segue o mouse no trakto.io).
+  // Ideia: estrelas de verdade vistas num lugar escuro, ligadas por uma malha que
+  // pulsa como SINAPSE. Tamanhos e brilhos variados, cintilância e deriva lenta dão
+  // vida própria; por cima, as ligações disparam e apagam em ritmos diferentes pelo
+  // bloco inteiro, formando desenhos novos o tempo todo e nunca ficando sem conexão.
+  // O cursor não cria as ligações, ele INTENSIFICA as que passam por perto, mantendo
+  // a sensação de conduzir a cena (referência: o facho que segue o mouse no trakto.io).
   //
   // Em telas sem hover (celular/tablet) e enquanto ninguém mexe o mouse, um ponto
   // "condutor" passeia sozinho pela cena, para o efeito nunca ficar morto.
@@ -193,6 +195,11 @@ const ui = t(Astro.currentLocale);
       vx: number; vy: number; warm: boolean; boost: number;
     }
     let stars: Star[] = [];
+    // Pares vizinhos (as sinapses). Como as estrelas derivam devagar, a lista de
+    // vizinhos só é refeita de tempos em tempos; a cada quadro percorremos essa
+    // lista curta, o que mantém a malha leve mesmo com muitos fios na tela.
+    let pairs: { a: Star; b: Star; ph: number; sp: number }[] = [];
+    let pairsAt = -1e9;
 
     const isLight = () => document.documentElement.dataset.theme === "light";
 
@@ -240,6 +247,40 @@ const ui = t(Astro.currentLocale);
       buildGlow();
     };
 
+    // Alcance de uma sinapse: proporcional à tela, com piso e teto para a malha
+    // ficar densa o bastante no celular e não virar teia no desktop grande.
+    const linkDist = () => Math.min(150, Math.max(88, Math.min(W, H) * 0.17));
+
+    // Zona de respiro do texto. O canvas fica ACIMA do scrim, então a máscara de CSS
+    // não segura os fios: quem atenua é isto. A malha continua cobrindo o bloco
+    // inteiro, só perde peso onde ficam título, subtítulo e botões, para o texto não
+    // disputar leitura com as linhas. A elipse acompanha o layout de cada largura.
+    const textFade = (x: number, y: number) => {
+      const narrow = W < 700;
+      const cx = W * (narrow ? 0.5 : 0.36);
+      const cy = H * (narrow ? 0.58 : 0.56);
+      const rx = W * (narrow ? 0.62 : 0.4);
+      const ry = H * (narrow ? 0.34 : 0.33);
+      const dx = (x - cx) / rx, dy = (y - cy) / ry;
+      const q = dx * dx + dy * dy;
+      return q >= 1 ? 1 : 0.3 + 0.7 * q;
+    };
+    const buildPairs = () => {
+      const L = linkDist();
+      pairs = [];
+      for (let i = 0; i < stars.length; i++) {
+        for (let j = i + 1; j < stars.length; j++) {
+          const a = stars[i], b = stars[j];
+          const dx = a.bx - b.bx, dy = a.by - b.by;
+          if (dx * dx + dy * dy >= L * L) continue;
+          // Velocidade e fase próprias por ligação: é isso que faz umas acenderem
+          // enquanto outras apagam, em vários pontos ao mesmo tempo.
+          pairs.push({ a, b, ph: Math.random() * Math.PI * 2, sp: 4 + Math.random() * 10 });
+        }
+      }
+      if (pairs.length > 900) pairs.length = 900; // teto de segurança
+    };
+
     // Ponto condutor: o cursor quando existe, senão um passeio automático.
     const ptr = { x: 0, y: 0, on: false };
     let lastMove = -1e9, auto = 0, t = 0;
@@ -272,7 +313,6 @@ const ui = t(Astro.currentLocale);
       const py = ptr.on && !idle ? ptr.y : H * (0.44 + 0.26 * Math.sin(auto * 0.73));
 
       const R = Math.min(W, H) * 0.32;
-      const near: Star[] = [];
 
       for (const s of stars) {
         // Deriva lenta e contínua (vida própria), com wrap nas bordas.
@@ -288,29 +328,32 @@ const ui = t(Astro.currentLocale);
         const tx = s.bx + dx * pull, ty = s.by + dy * pull;
         s.x += (tx - s.x) * 0.11;
         s.y += (ty - s.y) * 0.11;
-        if (s.boost > 0.07) near.push(s);
       }
 
-      // CONSTELAÇÕES: só entre estrelas acesas pelo facho. É isso que dá a sensação
-      // de que a pessoa está desenhando o céu com o mouse.
-      const link = Math.min(155, R * 0.6);
+      // SINAPSES: a malha cobre o bloco INTEIRO, não só o entorno do cursor. Cada
+      // ligação tem fase e velocidade próprias, então umas disparam enquanto outras
+      // apagam, sem nunca deixar a cena sem conexões, formando desenhos diferentes o
+      // tempo todo. O expoente alto no pulso encurta o "aceso", dando o estalo de
+      // sinapse em vez de um respiro lento. Perto do cursor a malha acende mais.
+      const L = linkDist();
+      if (t - pairsAt > 0.5) { buildPairs(); pairsAt = t; }
       ctx.lineWidth = 1;
-      for (let i = 0; i < near.length; i++) {
-        for (let j = i + 1; j < near.length; j++) {
-          const a = near[i], b = near[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist >= link) continue;
-          // No claro a linha precisa de mais peso: traço escuro sobre creme rende
-          // menos contraste do que traço claro sobre preto.
-          const al = (1 - dist / link) * Math.min(a.boost, b.boost) * (light ? 0.8 : 0.7);
-          if (al < 0.015) continue;
-          ctx.strokeStyle = light ? `rgba(68,2,111,${al})` : `rgba(176,150,255,${al})`;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
+      for (const p of pairs) {
+        const dx = p.a.x - p.b.x, dy = p.a.y - p.b.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist >= L) continue;
+        const pulse = 0.5 + 0.5 * Math.sin(t * p.sp + p.ph);
+        const hot = Math.max(p.a.boost, p.b.boost);
+        // No claro a linha precisa de mais peso: traço escuro sobre creme rende
+        // menos contraste do que traço claro sobre preto.
+        const fade = textFade((p.a.x + p.b.x) / 2, (p.a.y + p.b.y) / 2);
+        const al = Math.pow(pulse, 3) * (1 - dist / L) * (light ? 0.62 : 0.5) * (1 + hot * 2.4) * fade;
+        if (al < 0.012) continue;
+        ctx.strokeStyle = light ? `rgba(68,2,111,${al})` : `rgba(176,150,255,${al})`;
+        ctx.beginPath();
+        ctx.moveTo(p.a.x, p.a.y);
+        ctx.lineTo(p.b.x, p.b.y);
+        ctx.stroke();
       }
 
       // Estrelas: núcleo nítido + halo nas maiores e nas acesas pelo facho.
