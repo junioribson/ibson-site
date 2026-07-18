@@ -276,20 +276,21 @@ export const audienceArchitecture = {
     "Conteúdo que aparece pode nascer de volume.",
     "Conteúdo que permanece nasce de leitura.",
   ],
+  // Todos os cards são CONSOLIDADOS (18 anos), sem recorte mensal ou anual. A única
+  // janela curta é o "+1 Bi em um único ano", que entra justamente por ser recorde.
   featured: {
-    n: "+10 Bi",
+    n: "+30 Bi",
     label: "pontos de contato digitais consolidados",
-    note: "entre impressões, visualizações, sessões, alcance e engajamento em projetos, comunidades e operações editoriais.",
+    note: "somatório de 18 anos entre impressões, visualizações, sessões, alcance e engajamento, em redes sociais e sites, considerando projetos próprios, comunidades e operações editoriais.",
   },
   metrics: [
-    { n: "+200 Mi", label: "usuários e audiências em ativos digitais conduzidos por estratégia" },
-    { n: "+1 Bi", label: "sessões em um único ano de operação editorial" },
+    { n: "+9 Bi", label: "visualizações geradas em distribuição por comunidades" },
+    { n: "+1 Bi", label: "sessões em um único ano de operação editorial, o recorde da operação" },
+    { n: "+150 Mi", label: "seguidores reunidos em redes e comunidades digitais" },
+    { n: "+1,5 Mi", label: "pessoas em comunidade cultural, desde 2008" },
     { n: "18 anos", label: "construindo cultura, comunidade, conteúdo e audiência digital" },
-    { n: "+1,5 Mi", label: "pessoas em comunidade cultural" },
-    { n: "+30 Mi/mês", label: "alcance mensal em comunidade e distribuição cultural" },
-    { n: "+6 Bi/ano", label: "impressões em ecossistemas digitais de comunidade" },
   ],
-  note: "Números consolidados a partir de projetos de cultura, comunidade, mídia digital e operações editoriais. As métricas representam diferentes dimensões de alcance, distribuição, consumo e interação.",
+  note: "Números consolidados em 18 anos de projetos de cultura, comunidade, mídia digital e operações editoriais, somando redes sociais e sites. As métricas representam diferentes dimensões de alcance, distribuição, consumo e interação, e não devem ser lidas como pessoas únicas.",
   ctas: {
     primary: { href: "#cases", label: "Ver cases de impacto" },
     secondary: { href: "#palestras", label: "Conhecer palestras e mentorias" },

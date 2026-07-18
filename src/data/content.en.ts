@@ -268,20 +268,21 @@ export const audienceArchitecture = {
     "Content that appears can be born of volume.",
     "Content that endures is born of reading.",
   ],
+  // All cards are CONSOLIDATED (18 years), with no monthly or annual slice. The only
+  // short window is "+1B in a single year", which earns its place as a record.
   featured: {
-    n: "+10B",
+    n: "+30B",
     label: "consolidated digital touchpoints",
-    note: "across impressions, views, sessions, reach and engagement in projects, communities and editorial operations.",
+    note: "an 18 year total across impressions, views, sessions, reach and engagement, on social networks and websites, spanning own projects, communities and editorial operations.",
   },
   metrics: [
-    { n: "+200M", label: "users and audiences on digital assets led by strategy" },
-    { n: "+1B", label: "sessions in a single year of editorial operation" },
+    { n: "+9B", label: "views generated through community distribution" },
+    { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
+    { n: "+150M", label: "followers gathered across networks and digital communities" },
+    { n: "+1.5M", label: "people in a cultural community, since 2008" },
     { n: "18 years", label: "building culture, community, content and digital audience" },
-    { n: "+1.5M", label: "people in a cultural community" },
-    { n: "+30M/month", label: "monthly reach in community and cultural distribution" },
-    { n: "+6B/year", label: "impressions across digital community ecosystems" },
   ],
-  note: "Figures consolidated from projects in culture, community, digital media and editorial operations. The metrics represent different dimensions of reach, distribution, consumption and interaction.",
+  note: "Figures consolidated over 18 years of projects in culture, community, digital media and editorial operations, combining social networks and websites. The metrics represent different dimensions of reach, distribution, consumption and interaction, and should not be read as unique people.",
   ctas: {
     primary: { href: "#cases", label: "See impact cases" },
     secondary: { href: "#palestras", label: "Explore talks and mentoring" },

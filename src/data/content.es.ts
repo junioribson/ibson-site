@@ -268,20 +268,21 @@ export const audienceArchitecture = {
     "El contenido que aparece puede nacer del volumen.",
     "El contenido que permanece nace de la lectura.",
   ],
+  // Todos los cards son CONSOLIDADOS (18 años), sin recorte mensual ni anual. La
+  // única ventana corta es "+1 MM en un solo año", que entra por ser récord.
   featured: {
-    n: "+10 MM",
+    n: "+30 MM",
     label: "puntos de contacto digitales consolidados",
-    note: "entre impresiones, visualizaciones, sesiones, alcance e interacción en proyectos, comunidades y operaciones editoriales.",
+    note: "suma de 18 años entre impresiones, visualizaciones, sesiones, alcance e interacción, en redes sociales y sitios web, considerando proyectos propios, comunidades y operaciones editoriales.",
   },
   metrics: [
-    { n: "+200 M", label: "usuarios y audiencias en activos digitales conducidos por estrategia" },
-    { n: "+1 MM", label: "sesiones en un solo año de operación editorial" },
+    { n: "+9 MM", label: "visualizaciones generadas en distribución por comunidades" },
+    { n: "+1 MM", label: "sesiones en un solo año de operación editorial, el récord de la operación" },
+    { n: "+150 M", label: "seguidores reunidos en redes y comunidades digitales" },
+    { n: "+1,5 M", label: "personas en comunidad cultural, desde 2008" },
     { n: "18 años", label: "construyendo cultura, comunidad, contenido y audiencia digital" },
-    { n: "+1,5 M", label: "personas en comunidad cultural" },
-    { n: "+30 M/mes", label: "alcance mensual en comunidad y distribución cultural" },
-    { n: "+6 MM/año", label: "impresiones en ecosistemas digitales de comunidad" },
   ],
-  note: "Números consolidados a partir de proyectos de cultura, comunidad, medios digitales y operaciones editoriales. Las métricas representan distintas dimensiones de alcance, distribución, consumo e interacción.",
+  note: "Números consolidados en 18 años de proyectos de cultura, comunidad, medios digitales y operaciones editoriales, sumando redes sociales y sitios web. Las métricas representan distintas dimensiones de alcance, distribución, consumo e interacción, y no deben leerse como personas únicas.",
   ctas: {
     primary: { href: "#cases", label: "Ver casos de impacto" },
     secondary: { href: "#palestras", label: "Conocer charlas y mentorías" },
