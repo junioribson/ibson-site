@@ -311,9 +311,9 @@ export const cases = {
     // Real covers extracted from Ibson's PDFs (publications and collections).
     // TODO(link): point the `url` of each publication when there is a page/store.
     galeria: [
-      { title: "ProliferArte Magazine: Portrait", src: "/assets/capas/revista-retrato.webp" as string | null, url: "#" },
-      { title: "ValorizArte: Overflowing Perception", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
-      { title: "Open Mind: Evolution of Thoughts", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
+      { title: "Revista ProliferArte: Retrato", src: "/assets/capas/revista-retrato.webp" as string | null, url: "#" },
+      { title: "ValorizArte: Transbordando Percepção", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
+      { title: "Mente Aberta: Evolução dos Pensamentos", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
     ],
   },
 };
@@ -566,7 +566,7 @@ export const mentorship = {
   note: "There is no generic package. The scope emerges from the diagnosis, the professional moment and the clarity of what needs to change.",
   positioning: {
     title: "One-on-one executive mentoring for leaders and executives",
-    text: "Ibson Junior executive mentoring is one-on-one and online, for leaders and executives across Brazil. As an executive mentor, he leads mentoring for executives that combines positioning, personal brand, executive communication, strategic LinkedIn, narrative and decision. It is leadership and career mentoring that turns repertoire into practical direction.",
+    text: "Ibson Junior's executive mentoring is one-on-one and online, for leaders and executives across Brazil. As an executive mentor, he leads mentoring for executives that combines positioning, personal brand, executive communication, strategic LinkedIn, narrative and decision. It is leadership and career mentoring that turns repertoire into practical direction.",
   },
   geoNote: "One-on-one, online mentoring for leaders and executives.",
   faq: [

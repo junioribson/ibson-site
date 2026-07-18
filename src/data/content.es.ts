@@ -121,7 +121,7 @@ export const identity = {
   seoTitle: "Ibson Junior | Ejecutivo de Contenido, Liderazgo y Comunicación",
   seoDescription:
     "Ibson Junior, nombre profesional de Ibson Lima dos Santos Junior, es ejecutivo de contenido, liderazgo y comunicación. Trayectoria, repertorio y la arquitectura de decisión, ejecución y gobernanza en entornos digitales complejos.",
-  socialTitle: "Ibson Junior: del internet por teléfono a la arquitectura de la decisión",
+  socialTitle: "Ibson Junior: de la internet por línea telefónica a la arquitectura de la decisión",
   kicker: "Quién es",
   h1: "Ibson Junior",
   subtitle: "Ibson Lima dos Santos Junior, conocido profesionalmente como Ibson Junior.",
@@ -312,8 +312,8 @@ export const cases = {
     // TODO(link): apuntar `url` de cada publicación cuando haya página/tienda.
     galeria: [
       { title: "Revista ProliferArte: Retrato", src: "/assets/capas/revista-retrato.webp" as string | null, url: "#" },
-      { title: "ValorizArte: Transbordando Percepción", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
-      { title: "Mente Abierta: Evolución de los Pensamientos", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
+      { title: "ValorizArte: Transbordando Percepção", src: "/assets/capas/valorizarte.webp" as string | null, url: "#" },
+      { title: "Mente Aberta: Evolução dos Pensamentos", src: "/assets/capas/mente-aberta.webp" as string | null, url: "#" },
     ],
   },
 };
@@ -505,7 +505,7 @@ export const talks = {
       cover: "/assets/palestras/palestra-identidade.webp",
     },
   ],
-  formats: ["Charla", "Panel", "Ronda ejecutiva", "Workshop", "Clase especial", "Conversación con liderazgos"],
+  formats: ["Charla", "Panel", "Ronda ejecutiva", "Taller", "Clase especial", "Conversación con liderazgos"],
   durations: ["45 minutos", "60 minutos", "90 minutos"],
   cta: { href: "#contato", label: "Invitar a una charla" },
   note: "Disponible para eventos corporativos, encuentros ejecutivos, paneles, clases especiales, rondas de liderazgo y conversaciones con equipos.",

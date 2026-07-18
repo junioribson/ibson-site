@@ -117,7 +117,7 @@ const COPY: Record<Locale, SeoCopy> = {
   en: {
     jobTitle: "Content, leadership and communication executive",
     personDesc:
-      "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), leads ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding, team development, artificial intelligence and decision-making.",
+      "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), has led ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding, team development, artificial intelligence and decision-making.",
     disambig:
       "Content, leadership and communication executive; Content Director at Futbol Sites, founder of WolfLife and of the ProliferArte cultural movement. Executive keynote speaker and executive mentor, based in Porto Alegre, Brazil.",
     knowsAbout: [
@@ -137,7 +137,7 @@ const COPY: Record<Locale, SeoCopy> = {
     ],
     faq: [
       { q: "Who is Ibson Junior?",
-        a: "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), leads ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory." },
+        a: "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), has led ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory." },
       { q: "Does Ibson Junior give corporate talks?",
         a: "Yes. He delivers keynotes and talks for companies, events and leaders on deciding under pressure, communication, organizational culture, artificial intelligence with human judgment, leadership and team development, in formats such as talk, panel, executive roundtable and workshop." },
       { q: "How does Ibson Junior's mentoring work?",

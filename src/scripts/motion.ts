@@ -57,17 +57,26 @@ if (reduce || !root.classList.contains("js-motion")) {
       });
     });
 
-    // Números dos cases contam ao entrar na tela
+    // Números dos cases contam ao entrar na tela. Formatação por IDIOMA e SEM
+    // agrupamento de milhar: assim um ano como "2025" nunca vira "2.025", e
+    // decimais respeitam o separador do idioma (en: ponto; pt/es: vírgula).
+    const langTag = document.documentElement.lang || "pt-BR";
+    const enStyle = langTag.toLowerCase().startsWith("en");
+    const fmt = (v: number, dec: number) =>
+      v.toLocaleString(langTag, { minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: false });
     gsap.utils.toArray<HTMLElement>(".fs .n").forEach((el) => {
       const raw = (el.textContent || "").trim();
       const m = raw.match(/^(\D*)(\d[\d.,]*)(.*)$/);
       if (!m) return;
-      const pre = m[1], suf = m[3];
-      const target = parseFloat(m[2].replace(/\./g, "").replace(",", "."));
+      const pre = m[1], suf = m[3], numStr = m[2];
+      // Parse respeitando o separador decimal do idioma.
+      const target = enStyle
+        ? parseFloat(numStr.replace(/,/g, ""))
+        : parseFloat(numStr.replace(/\./g, "").replace(",", "."));
       if (!isFinite(target)) return;
-      const dec = (m[2].split(/[.,]/)[1] || "").length;
+      const dec = (numStr.split(enStyle ? "." : ",")[1] || "").length;
       const obj = { v: 0 };
-      el.textContent = pre + "0" + suf;
+      el.textContent = pre + fmt(0, dec) + suf;
       ScrollTrigger.create({
         trigger: el,
         start: "top 92%",
@@ -78,7 +87,7 @@ if (reduce || !root.classList.contains("js-motion")) {
             duration: 1.6,
             ease: "power2.out",
             onUpdate: () => {
-              el.textContent = pre + obj.v.toLocaleString("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec }) + suf;
+              el.textContent = pre + fmt(obj.v, dec) + suf;
             },
           }),
       });

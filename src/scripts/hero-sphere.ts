@@ -79,10 +79,14 @@ export function initHeroSphere(hero: HTMLElement) {
     W = hero.clientWidth; H = hero.clientHeight;
     renderer.setSize(W, H, false);
     cam.aspect = W / H; cam.updateProjectionMatrix();
+    // Tiers: celular (<820) = cenário central e fraco atrás do texto. Tablet
+    // (820-1080) = MESMA posição do desktop (canto direito), só um pouco MENOR,
+    // para não invadir o título no iPad. Desktop (>1080) = esfera cheia. Como a
+    // posição do tablet é a do desktop, o halo (posicionado por projeção) continua
+    // acoplado à esfera; muda só a escala.
     const small = W < 820;
-    // escala e posição responsivas: a esfera aparece bem no canto direito, sem
-    // cobrir o texto (que fica à esquerda com o scrim). No mobile fica de cenário.
-    grp.scale.setScalar(small ? 1.05 : 1.5);
+    const tablet = !small && W < 1080;
+    grp.scale.setScalar(small ? 1.05 : tablet ? 1.25 : 1.5);
     grp.position.x = small ? 0.15 : 0.78;
     grp.position.y = small ? 0.5 : 0.02;
     cam.position.z = small ? 3.6 : 3.2;
