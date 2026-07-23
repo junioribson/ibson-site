@@ -208,8 +208,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-07-18.
+  // Última atualização: 2026-07-23.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: bajulação convence por um tempo, a atitude desmascara de vez.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-lealdade-valor-relacao.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484312287743488000/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: conhecimento impressiona, lealdade define valor.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
@@ -239,16 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-todos-publicam-poucos-informam.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7479968668077064192/",
       alt: "Arte de post de Ibson Junior no LinkedIn: todo mundo publica, poucos informam.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-vitoria-postura.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7479149707659825152/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: eu admiro quem cresce sem transformar ninguém em degrau, caráter também é conquista.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7478545542411632642/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a IA pode ser motor, o humano precisa continuar no volante.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
