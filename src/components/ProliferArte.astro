@@ -1,13 +1,18 @@
 ---
 // ProliferArte: origem cultural, contadores animados, estante de publicações
 // (só apresentação, sem link) e convite para o Facebook do movimento.
-import { getContent, imgDims } from "../i18n/utils";
+import { getContent, imgDims, htmlLang } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { cases } = getContent(Astro.currentLocale);
 const ui = t(Astro.currentLocale);
 import Icon from "./Icon.astro";
 const p = cases.proliferarte;
 const FACEBOOK = "https://www.facebook.com/ProliferArte/";
+// Valor final JÁ formatado no HTML (não "0"): crawlers e navegadores sem JS leem o
+// número real. A contagem animada zera e sobe só quando o contador entra na tela.
+const LANG = htmlLang(Astro.currentLocale);
+const fmtCount = (to = 0, decimals = 0, suffix = "") =>
+  to.toLocaleString(LANG, { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
 ---
 
 <section class="prolifer" id="proliferarte">
@@ -32,7 +37,7 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
               <div class="pc-n">{s.display}</div>
             ) : (
               <div class="pc-n">
-                <span class="count" data-to={s.to} data-decimals={s.decimals ?? 0} data-suffix={s.suffix ?? ""}>0{s.suffix}</span>
+                <span class="count" data-to={s.to} data-decimals={s.decimals ?? 0} data-suffix={s.suffix ?? ""}>{fmtCount(s.to, s.decimals ?? 0, s.suffix ?? "")}</span>
               </div>
             )}
             <div class="pc-t">{s.label}</div>
@@ -148,7 +153,9 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
 </style>
 
 <script>
-  const fmt = (v: number, decimals: number) => v.toLocaleString("pt-BR", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+  // Mesmo separador decimal do idioma da página (ex.: "1.5M+" no EN, "1,5 Mi+" no PT).
+  const LANG = document.documentElement.lang || "pt-BR";
+  const fmt = (v: number, decimals: number) => v.toLocaleString(LANG, { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
   const animate = (el: HTMLElement) => {
     const to = parseFloat(el.dataset.to || "0");
     const decimals = parseInt(el.dataset.decimals || "0", 10);
@@ -165,8 +172,12 @@ const FACEBOOK = "https://www.facebook.com/ProliferArte/";
     };
     requestAnimationFrame(step);
   };
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) { animate(e.target as HTMLElement); io.unobserve(e.target); } });
-  }, { threshold: 0.4 });
-  document.querySelectorAll<HTMLElement>(".count").forEach((el) => io.observe(el));
+  // Sob prefers-reduced-motion não anima: o valor real já está no HTML, então basta
+  // deixá-lo. Assim também não há o "flash" de 0 para quem pede menos movimento.
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { animate(e.target as HTMLElement); io.unobserve(e.target); } });
+    }, { threshold: 0.4 });
+    document.querySelectorAll<HTMLElement>(".count").forEach((el) => io.observe(el));
+  }
 </script>
