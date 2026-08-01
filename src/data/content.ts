@@ -208,8 +208,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-07-23.
+  // Última atualização: 2026-08-01.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: mais cedo ou mais tarde, a verdade sempre aparece.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-processo-merece-presenca.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7486958671873118208/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: foi libertador entender: o processo merece presença. O resultado é consequência.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
@@ -239,16 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-repeticao-e-sinal.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7481671238621396993/",
       alt: "Arte de post de Ibson Junior no LinkedIn: eu demorei para entender que nem tudo que se repete é fase, às vezes é sinal, consciência também é decisão.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-noticia-mudou-de-caminho.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7480719864920358912/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a notícia não mudou só de formato, mudou de caminho.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-todos-publicam-poucos-informam.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7479968668077064192/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: todo mundo publica, poucos informam.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
