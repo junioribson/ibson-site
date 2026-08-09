@@ -208,8 +208,23 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-08-01.
+  // Última atualização: 2026-08-08.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: pessoas mudam ambientes, por mais pessoas verdadeiras, positivas, autênticas, humildes e íntegras, por menos espaço para falsidade, negatividade, dissimulação, arrogância e egoísmo, toda presença deixa um efeito.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: uma coisa é fato, nem todo conteúdo tem conteúdo, com uma escadaria iluminada que sobe entre monitores apagados até uma passagem aberta para a montanha.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7489744353872019456/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: para alguns, ser positivo é natural, para outros, a positividade alheia incomoda, e esse incômodo revela onde mora o negativo.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
@@ -234,21 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
       alt: "Arte de post de Ibson Junior no LinkedIn: a gente começa a escolher melhor quando para de confundir intensidade com importância, clareza também é maturidade.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-jornalismo-proporcao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7483263627806793728/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a pressa mostra o acontecimento, o jornalismo dá proporção.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-criterio-vira-lideranca.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7482535582297059328/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: quando tudo parece urgente, critério vira liderança.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-repeticao-e-sinal.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7481671238621396993/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: eu demorei para entender que nem tudo que se repete é fase, às vezes é sinal, consciência também é decisão.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

@@ -203,47 +203,47 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-07-05.
+  // Last update: 2026-08-08.
   posts: [
     {
-      image: "/assets/posts/ibson-junior-post-vitoria-postura.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7479149707659825152/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: I admire those who grow without turning anyone into a stepping stone, character is also an achievement.",
+      image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: people change environments, for more people who are truthful, positive, authentic, humble and honest, for less room for falsehood, negativity, pretence, arrogance and selfishness, every presence leaves an effect.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-ia-criterio-conteudo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7478545542411632642/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: AI can be the engine, the human must stay at the wheel.",
+      image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: one thing is a fact, not every piece of content has content, with a lit staircase rising among switched off monitors towards an open passage to the mountain.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-copa-alcance-reputacao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7477458378286493696/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: speed delivers reach, judgment builds relevance.",
+      image: "/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7489744353872019456/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: for some, being positive is natural, for others, someone else's positivity is uncomfortable, and that discomfort reveals where the negative lives.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cansaco-limite.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7476605347814825984/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: there are things we only call strength because we have not yet learned to call them a limit, maturity is also care.",
+      image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: sooner or later, the truth always shows up.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-noticia-responsabilidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7476008937306275840/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: being close to the news increases responsibility.",
+      image: "/assets/posts/ibson-junior-post-processo-merece-presenca.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7486958671873118208/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: it was freeing to understand that the process deserves presence. The result is a consequence.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-decisao-capital-humano.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7460712281094430721/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: the one who decides is not the one who understands the problem.",
+      image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: flattery convinces for a while, attitude exposes for good.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-multitarefa-atencao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7459923332491001856/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: multitasking does not exist, there is a constant switching of attention.",
+      image: "/assets/posts/ibson-junior-post-lealdade-valor-relacao.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484312287743488000/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: knowledge impresses, loyalty defines value.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-governanca-decisao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7459628428930105344/",
-      alt: "Photo of Ibson Junior at a Board Academy event, on governance, boards and decision-making.",
+      image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: we start choosing better when we stop confusing intensity with importance, clarity is also maturity.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
