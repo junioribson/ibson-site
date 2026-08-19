@@ -208,8 +208,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-08-08.
+  // Última atualização: 2026-08-19.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: ser humano sem empatia é ser menos humano.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: o melhor talento no lugar errado vira o problema que a estrutura tenta esconder.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7494362316571045888/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: grandeza não ocupa todo espaço, ela cria espaço.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7493411011182657536/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: quem terceiriza a causa constrói discurso, quem assume o próprio papel constrói reputação.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
@@ -229,26 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
       alt: "Arte de post de Ibson Junior no LinkedIn: mais cedo ou mais tarde, a verdade sempre aparece.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-processo-merece-presenca.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7486958671873118208/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: foi libertador entender: o processo merece presença. O resultado é consequência.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: bajulação convence por um tempo, a atitude desmascara de vez.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-lealdade-valor-relacao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484312287743488000/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: conhecimento impressiona, lealdade define valor.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a gente começa a escolher melhor quando para de confundir intensidade com importância, clareza também é maturidade.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

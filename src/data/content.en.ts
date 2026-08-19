@@ -203,8 +203,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-08-08.
+  // Last update: 2026-08-19.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: being human without empathy is being less human.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: the best talent in the wrong place becomes the problem the structure tries to hide.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7494362316571045888/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: greatness does not take up all the space, it creates space.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7493411011182657536/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: whoever outsources the cause builds discourse, whoever takes on their own role builds reputation.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
@@ -224,26 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
       alt: "Post artwork by Ibson Junior on LinkedIn: sooner or later, the truth always shows up.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-processo-merece-presenca.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7486958671873118208/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: it was freeing to understand that the process deserves presence. The result is a consequence.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: flattery convinces for a while, attitude exposes for good.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-lealdade-valor-relacao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484312287743488000/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: knowledge impresses, loyalty defines value.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: we start choosing better when we stop confusing intensity with importance, clarity is also maturity.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

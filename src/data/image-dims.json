@@ -1,1 +1,238 @@
-{"/assets/arquetipos/moon-network.webp":[700,300],"/assets/arquetipos/owl-editorial.webp":[766,1150],"/assets/arquetipos/wolf-editorial.webp":[1916,821],"/assets/artigos/ibson-junior-artigo-cerebro.webp":[800,450],"/assets/artigos/ibson-junior-artigo-comunicacao.webp":[1726,1138],"/assets/artigos/ibson-junior-artigo-copa.webp":[2000,1122],"/assets/artigos/ibson-junior-artigo-cultura.webp":[1536,1024],"/assets/artigos/ibson-junior-artigo-estrategia.webp":[1280,719],"/assets/artigos/ibson-junior-artigo-governanca.webp":[1280,719],"/assets/artigos/ibson-junior-artigo-ia.webp":[1200,627],"/assets/artigos/ibson-junior-artigo-identidade.webp":[2000,1125],"/assets/artigos/ibson-junior-artigo-oceano.webp":[1200,627],"/assets/artigos/inline/ibson-junior-cerebro-podre-brainrot-corporativo-infografico.webp":[744,397],"/assets/artigos/inline/ibson-junior-cerebro-podre-dependencia-digital-trabalho.webp":[954,912],"/assets/artigos/inline/ibson-junior-cerebro-podre-reunioes-improdutivas-infografico.webp":[872,1500],"/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.webp":[615,400],"/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.webp":[709,400],"/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.webp":[713,400],"/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.webp":[710,400],"/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.webp":[712,400],"/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.webp":[600,400],"/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.webp":[600,400],"/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.webp":[605,400],"/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.webp":[597,400],"/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.webp":[1000,1000],"/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.webp":[606,400],"/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.webp":[600,400],"/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.webp":[712,400],"/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.webp":[709,400],"/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.webp":[713,400],"/assets/capas/mente-aberta.webp":[595,842],"/assets/capas/revista-retrato.webp":[624,794],"/assets/capas/valorizarte.webp":[768,1229],"/assets/eventos/board-academy.webp":[1500,1125],"/assets/eventos/board-conselheiros.webp":[1125,1500],"/assets/eventos/board-grupo.webp":[1500,843],"/assets/eventos/board-livro.webp":[1500,999],"/assets/logo/futmarketing.png":[900,834],"/assets/logo/logo-branca.png":[843,843],"/assets/logo/logo-roxa.png":[843,843],"/assets/logo/proliferarte.png":[800,800],"/assets/logo/wolflife.png":[460,447],"/assets/og/og-ibson.jpg":[1200,630],"/assets/palestras/palestra-conteudo.webp":[1672,941],"/assets/palestras/palestra-criterio.webp":[1672,941],"/assets/palestras/palestra-cultura.webp":[1672,941],"/assets/palestras/palestra-governanca.webp":[1672,941],"/assets/palestras/palestra-ia.webp":[1672,941],"/assets/palestras/palestra-identidade.webp":[1672,941],"/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp":[836,1044],"/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp":[850,1062],"/assets/posts/ibson-junior-post-presenca-ambiente.webp":[746,932],"/assets/retratos/ibson-junior-executivo.webp":[514,900],"/assets/retratos/ibson-junior-retrato.webp":[1330,1400]}
+{
+  "/assets/arquetipos/moon-network.webp": [
+    700,
+    300
+  ],
+  "/assets/arquetipos/owl-editorial.webp": [
+    766,
+    1150
+  ],
+  "/assets/arquetipos/wolf-editorial.webp": [
+    1916,
+    821
+  ],
+  "/assets/artigos/ibson-junior-artigo-cerebro.webp": [
+    800,
+    450
+  ],
+  "/assets/artigos/ibson-junior-artigo-comunicacao.webp": [
+    1726,
+    1138
+  ],
+  "/assets/artigos/ibson-junior-artigo-copa.webp": [
+    2000,
+    1122
+  ],
+  "/assets/artigos/ibson-junior-artigo-cultura.webp": [
+    1536,
+    1024
+  ],
+  "/assets/artigos/ibson-junior-artigo-estrategia.webp": [
+    1280,
+    719
+  ],
+  "/assets/artigos/ibson-junior-artigo-governanca.webp": [
+    1280,
+    719
+  ],
+  "/assets/artigos/ibson-junior-artigo-ia.webp": [
+    1200,
+    627
+  ],
+  "/assets/artigos/ibson-junior-artigo-identidade.webp": [
+    2000,
+    1125
+  ],
+  "/assets/artigos/ibson-junior-artigo-oceano.webp": [
+    1200,
+    627
+  ],
+  "/assets/artigos/inline/ibson-junior-cerebro-podre-brainrot-corporativo-infografico.webp": [
+    744,
+    397
+  ],
+  "/assets/artigos/inline/ibson-junior-cerebro-podre-dependencia-digital-trabalho.webp": [
+    954,
+    912
+  ],
+  "/assets/artigos/inline/ibson-junior-cerebro-podre-reunioes-improdutivas-infografico.webp": [
+    872,
+    1500
+  ],
+  "/assets/artigos/inline/ibson-junior-comunicacao-framework-estrategico-playbook-operacao.webp": [
+    615,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-copa-do-mundo-conteudo-digital-multitelas.webp": [
+    709,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-copa-do-mundo-redacao-jornalismo.webp": [
+    713,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-copa-do-mundo-reflexao-atencao.webp": [
+    710,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-copa-do-mundo-torcedores-estadio.webp": [
+    712,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-estrategia-atalhos-ganho-imediato.webp": [
+    600,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-estrategia-decisoes-reativas-ruido.webp": [
+    600,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-estrategia-leme-tempestade-direcao.webp": [
+    605,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-estrategia-xadrez-decisao-madura.webp": [
+    597,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-governanca-bolavip-recorde-sessoes-futbolsites.webp": [
+    1000,
+    1000
+  ],
+  "/assets/artigos/inline/ibson-junior-governanca-conselho-qualidade-decisao.webp": [
+    606,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.webp": [
+    600,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-profissao-identidade-alem-do-cracha.webp": [
+    712,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-profissao-identidade-muito-movimento-pouca-presenca.webp": [
+    709,
+    400
+  ],
+  "/assets/artigos/inline/ibson-junior-profissao-identidade-rotina-que-aprisiona.webp": [
+    713,
+    400
+  ],
+  "/assets/capas/mente-aberta.webp": [
+    595,
+    842
+  ],
+  "/assets/capas/revista-retrato.webp": [
+    624,
+    794
+  ],
+  "/assets/capas/valorizarte.webp": [
+    768,
+    1229
+  ],
+  "/assets/eventos/board-academy.webp": [
+    1500,
+    1125
+  ],
+  "/assets/eventos/board-conselheiros.webp": [
+    1125,
+    1500
+  ],
+  "/assets/eventos/board-grupo.webp": [
+    1500,
+    843
+  ],
+  "/assets/eventos/board-livro.webp": [
+    1500,
+    999
+  ],
+  "/assets/logo/futmarketing.png": [
+    900,
+    834
+  ],
+  "/assets/logo/logo-branca.png": [
+    843,
+    843
+  ],
+  "/assets/logo/logo-roxa.png": [
+    843,
+    843
+  ],
+  "/assets/logo/proliferarte.png": [
+    800,
+    800
+  ],
+  "/assets/logo/wolflife.png": [
+    460,
+    447
+  ],
+  "/assets/og/og-ibson.jpg": [
+    1200,
+    630
+  ],
+  "/assets/palestras/palestra-conteudo.webp": [
+    1672,
+    941
+  ],
+  "/assets/palestras/palestra-criterio.webp": [
+    1672,
+    941
+  ],
+  "/assets/palestras/palestra-cultura.webp": [
+    1672,
+    941
+  ],
+  "/assets/palestras/palestra-governanca.webp": [
+    1672,
+    941
+  ],
+  "/assets/palestras/palestra-ia.webp": [
+    1672,
+    941
+  ],
+  "/assets/palestras/palestra-identidade.webp": [
+    1672,
+    941
+  ],
+  "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp": [
+    836,
+    1044
+  ],
+  "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp": [
+    1024,
+    1280
+  ],
+  "/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp": [
+    850,
+    1062
+  ],
+  "/assets/posts/ibson-junior-post-presenca-ambiente.webp": [
+    746,
+    932
+  ],
+  "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp": [
+    1024,
+    1280
+  ],
+  "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp": [
+    1024,
+    1280
+  ],
+  "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp": [
+    1080,
+    1350
+  ],
+  "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp": [
+    978,
+    1222
+  ],
+  "/assets/retratos/ibson-junior-executivo.webp": [
+    514,
+    900
+  ],
+  "/assets/retratos/ibson-junior-retrato.webp": [
+    1330,
+    1400
+  ]
+}

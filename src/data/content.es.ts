@@ -203,8 +203,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Publicaciones reales de LinkedIn, de la más reciente a la más antigua (leídas de la página
   // de actividad). Actualizar cada 3-4 días con el mismo flujo (navegador con sesión iniciada).
-  // Última actualización: 2026-08-08.
+  // Última actualización: 2026-08-19.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: ser humano sin empatía es ser menos humano.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: el mejor talento en el lugar equivocado se vuelve el problema que la estructura intenta esconder.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7494362316571045888/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: la grandeza no ocupa todo el espacio, ella crea espacio.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7493411011182657536/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: quien terceriza la causa construye discurso, quien asume el propio papel construye reputación.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
@@ -224,26 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: tarde o temprano, la verdad siempre aparece.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-processo-merece-presenca.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7486958671873118208/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: fue liberador entender que el proceso merece presencia. El resultado es consecuencia.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-bajulacao-atitude.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7485064752281604096/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: la adulación convence por un tiempo, la actitud desenmascara de una vez.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-lealdade-valor-relacao.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484312287743488000/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: el conocimiento impresiona, la lealtad define el valor.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-intensidade-importancia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7484223053519020032/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: empezamos a elegir mejor cuando dejamos de confundir intensidad con importancia, la claridad también es madurez.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
