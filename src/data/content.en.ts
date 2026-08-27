@@ -203,8 +203,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-08-19.
+  // Last update: 2026-08-27.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: what was done to you does not have to decide what you will do to others.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7496899009652039680/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: respect is not a prize for agreement.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
@@ -234,16 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
       alt: "Post artwork by Ibson Junior on LinkedIn: one thing is a fact, not every piece of content has content, with a lit staircase rising among switched off monitors towards an open passage to the mountain.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7489744353872019456/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: for some, being positive is natural, for others, someone else's positivity is uncomfortable, and that discomfort reveals where the negative lives.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: sooner or later, the truth always shows up.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

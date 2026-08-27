@@ -203,8 +203,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Publicaciones reales de LinkedIn, de la más reciente a la más antigua (leídas de la página
   // de actividad). Actualizar cada 3-4 días con el mismo flujo (navegador con sesión iniciada).
-  // Última actualización: 2026-08-19.
+  // Última actualización: 2026-08-27.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: lo que hicieron contigo no necesita decidir lo que harás con los demás.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7496899009652039680/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: el respeto no es un premio por estar de acuerdo.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
@@ -234,16 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: una cosa es un hecho, no todo contenido tiene contenido, con una escalera iluminada que sube entre monitores apagados hasta un paso abierto hacia la montaña.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-positivo-negativo-incomodo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7489744353872019456/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: para algunos, ser positivo es natural, para otros, la positividad ajena incomoda, y esa incomodidad revela dónde vive lo negativo.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-verdade-sempre-aparece.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7487971399656071168/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: tarde o temprano, la verdad siempre aparece.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
