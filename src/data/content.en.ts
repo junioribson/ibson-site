@@ -380,6 +380,7 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/"
 
 // Real links for each article on LinkedIn (sent by Ibson).
 const ART_URL = {
+  entrega: "https://www.linkedin.com/pulse/cada-entrega-tamb%C3%A9m-assina-o-seu-nome-ibson-junior-rxe2f/",
   copa: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/",
   cerebro: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/",
   estrategia: "https://www.linkedin.com/pulse/nunca-se-falou-tanto-de-estrat%C3%A9gia-e-viu-t%C3%A3o-pouca-ibson-junior-3c5rf/",
@@ -401,6 +402,16 @@ export const articles = {
   // TODO(asset): add the real cover of each article in /assets/artigos and point it in `cover`.
   // TODO(title): some titles appear truncated in the screenshot; confirm their endings.
   list: [
+    {
+      category: "Personal brand and reputation",
+      date: "2026",
+      title: "Every delivery also signs your name",
+      summary: "Communication only makes legible an evidence that your daily delivery either built or did not.",
+      readingTime: "13 min",
+      url: ART_URL.entrega,
+      cover: "/assets/artigos/ibson-junior-artigo-entrega.webp",
+      slug: "marca-pessoal-entrega-reputacao",
+    },
     {
       category: "Content and responsibility",
       date: "2026",

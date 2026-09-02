@@ -19,6 +19,7 @@ export const articleTheme: Record<string, Theme> = {
   "cultura-organizacional-nao-e-powerpoint": "lideranca",
   "inteligencia-artificial-e-emocional": "lideranca",
   // Vida, carreira e atenção
+  "marca-pessoal-entrega-reputacao": "vida",
   "profissao-identidade-carreira": "vida",
   "cerebro-podre-atencao-produtividade": "vida",
   "o-tempo-e-um-oceano": "vida",

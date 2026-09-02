@@ -38,6 +38,10 @@
     <image:image><image:loc>https://ibsonjunior.com.br/assets/artigos/inline/ibson-junior-inteligencia-artificial-lideranca-escuta-empatia.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://ibsonjunior.com.br/artigos/marca-pessoal-entrega-reputacao/</loc>
+    <image:image><image:loc>https://ibsonjunior.com.br/assets/artigos/ibson-junior-artigo-entrega.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://ibsonjunior.com.br/artigos/o-tempo-e-um-oceano/</loc>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/artigos/ibson-junior-artigo-oceano.webp</image:loc></image:image>
   </url>
@@ -67,6 +71,7 @@
     <loc>https://ibsonjunior.com.br/</loc>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/retratos/ibson-junior-executivo.webp</image:loc></image:image>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/retratos/ibson-junior-retrato.webp</image:loc></image:image>
+    <image:image><image:loc>https://ibsonjunior.com.br/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp</image:loc></image:image>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp</image:loc></image:image>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp</image:loc></image:image>
     <image:image><image:loc>https://ibsonjunior.com.br/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp</image:loc></image:image>

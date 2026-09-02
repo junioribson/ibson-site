@@ -50,12 +50,13 @@ Google entende que a versão oficial é a do site). Cada artigo vira `/artigos/<
 "Retorne VERBATIM no português original. NÃO traduza. NÃO resuma." (sem isso ele traduz).
 Ao colar no `.md`: **trocar todo travessão (— ou –) por vírgula/dois-pontos/parênteses** (regra inegociável).
 
-### Status por artigo (9 no total)
+### Status por artigo (10 no total)
 | # | Título | slug | data real | Página |
 |---|--------|------|-----------|--------|
 Slugs reescritos (SEO) com 301 dos antigos no `vercel.json`. Slug atual de cada artigo:
 | # | Tema (H1 resumido) | slug atual | slug antigo (redirect 301) | data | Página |
 |---|--------|------|------|------|--------|
+| 0 | Marca pessoal, entrega e reputação | `marca-pessoal-entrega-reputacao` | (novo, sem redirect) | 01/09/2026 | ✅ |
 | 1 | Conteúdo na Copa do Mundo e responsabilidade | `conteudo-copa-do-mundo-responsabilidade` | na-copa-do-mundo | 23/06/2026 | ✅ |
 | 2 | Profissão que vira identidade | `profissao-identidade-carreira` | profissao-identidade | 27/05/2026 | ✅ |
 | 3 | Cérebro podre, atenção e produtividade | `cerebro-podre-atencao-produtividade` | cerebro-podre | 21/04/2026 | ✅ |
