@@ -1,12 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.ibsonjunior.com.br" }],
-      "destination": "https://ibsonjunior.com.br/:path*",
-      "permanent": true
-    },
-    {
       "source": "/artigos/na-copa-do-mundo",
       "destination": "/artigos/conteudo-copa-do-mundo-responsabilidade/",
       "permanent": true
