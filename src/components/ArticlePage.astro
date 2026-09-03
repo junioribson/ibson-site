@@ -269,10 +269,6 @@ const articleSchema = {
     text-align: justify; hyphens: auto; -webkit-hyphens: auto;
     text-wrap: pretty; hyphenate-limit-chars: 6 3 2;
   }
-  /* Em telas estreitas, justificar deixa buracos: volta ao alinhamento à esquerda. */
-  @media (max-width: 620px) {
-    .art-body :global(p) { text-align: left; hyphens: manual; }
-  }
   .art-body :global(p:first-of-type) {
     font-size: clamp(19px, 1.6vw, 22px); line-height: 1.6; color: var(--heading); font-weight: 500;
   }
