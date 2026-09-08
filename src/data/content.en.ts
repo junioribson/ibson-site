@@ -203,8 +203,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-08-27.
+  // Last update: 2026-09-07.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: the company that treats mental health as compliance takes care on paper and falls ill at the desk.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-lider-que-nao-e-dependencia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501968663378358273/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: a leader is not measured by what they solve alone, they are measured by what stops depending on them.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cultura-e-noticia-ruim.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501381007728766976/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: culture shows up in the way leadership receives bad news.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7499431910646153216/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: the job title defines responsibilities, it does not define who will have the best idea.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
@@ -224,26 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
       alt: "Post artwork by Ibson Junior on LinkedIn: the best talent in the wrong place becomes the problem the structure tries to hide.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7494362316571045888/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: greatness does not take up all the space, it creates space.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7493411011182657536/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: whoever outsources the cause builds discourse, whoever takes on their own role builds reputation.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: people change environments, for more people who are truthful, positive, authentic, humble and honest, for less room for falsehood, negativity, pretence, arrogance and selfishness, every presence leaves an effect.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: one thing is a fact, not every piece of content has content, with a lit staircase rising among switched off monitors towards an open passage to the mountain.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

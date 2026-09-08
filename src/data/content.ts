@@ -208,8 +208,28 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-08-27.
+  // Última atualização: 2026-09-07.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: a empresa que trata saúde mental como conformidade cuida no papel e adoece na mesa.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-lider-que-nao-e-dependencia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501968663378358273/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: um líder não é medido pelo que resolve sozinho, é medido pelo que deixa de depender dele.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cultura-e-noticia-ruim.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501381007728766976/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: a cultura aparece na forma como a liderança recebe uma notícia ruim.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7499431910646153216/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: o cargo define responsabilidades, não define quem terá a melhor ideia.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
@@ -229,26 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
       alt: "Arte de post de Ibson Junior no LinkedIn: o melhor talento no lugar errado vira o problema que a estrutura tenta esconder.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-grandeza-cria-espaco.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7494362316571045888/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: grandeza não ocupa todo espaço, ela cria espaço.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-terceirizar-a-causa.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7493411011182657536/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: quem terceiriza a causa constrói discurso, quem assume o próprio papel constrói reputação.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-presenca-ambiente.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491821773664006144/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: pessoas mudam ambientes, por mais pessoas verdadeiras, positivas, autênticas, humildes e íntegras, por menos espaço para falsidade, negatividade, dissimulação, arrogância e egoísmo, toda presença deixa um efeito.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-conteudo-que-tem-conteudo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7491240091978481665/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: uma coisa é fato, nem todo conteúdo tem conteúdo, com uma escadaria iluminada que sobe entre monitores apagados até uma passagem aberta para a montanha.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
