@@ -49,6 +49,8 @@ Antes de ampliar la visibilidad, el primer movimiento debe ser una auditoría de
 
 Empezar solo por la visibilidad tiende a ampliar una fragilidad en vez de corregirla. Cuanto mayor es la exposición, más rápido aparece la distancia entre lo que se comunicó y lo que la persona consigue entregar. Una reputación construida así hasta genera atención, pero difícilmente sostiene confianza cuando llega la primera entrega relevante.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-iceberg-substancia-visibilidade.webp" alt="Iceberg con la mayor parte sumergida y un ejecutivo en un bote observando solo la punta visible. Ilustración del artículo de Ibson Junior sobre sustancia invisible y visibilidad en la marca personal." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 Lo opuesto también es una trampa. Cuando la sustancia ya existe, seguir acumulando preparación se vuelve una forma sofisticada de esconderse. En ese caso, la visibilidad necesita entrar de inmediato como traducción del valor ya construido, no como proyecto para después.
 
 La secuencia más segura respeta un orden: reconocer las evidencias que ya existen, organizar una narrativa verdadera y distribuirla en los espacios adecuados. Primero algo real para sostener, después claridad para que ese valor pueda ser reconocido. Invertir eso es lo que produce reputaciones que no resisten el primer desafío.
@@ -77,6 +79,8 @@ Existe una señal que separa a quien cumple una tarea de quien construye capital
 
 El criterio de quien hizo el trabajo no está en el resultado. Está en las decisiones que la entrega lleva por dentro. Qué se priorizó, qué se rechazó, cómo se protegió la calidad ante las restricciones, cómo se trataron los conflictos y cómo se distribuyó el crédito. Dos personas pueden entregar el mismo output y revelar criterios opuestos en el camino.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-ceramista-oficio-entrega.webp" alt="Ceramista concentrado moldeando una pieza de barro en el torno, con las manos cubiertas de arcilla. Ilustración del artículo de Ibson Junior sobre la entrega que construye capital profesional, y no solo cumple una tarea." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 Quien construye repertorio no sabe solo decir qué hizo. Consigue explicar por qué eligió ese camino, qué alternativas descartó, qué riesgos asumió de forma consciente y qué haría distinto en una próxima situación parecida. Esa capacidad de reconstruir el razonamiento es lo que transforma una ejecución aislada en juicio transferible. Es la diferencia entre haber hecho algo y haber aprendido a decidir.
 
 Un resultado resuelve una necesidad presente. El capital profesional amplía la capacidad de enfrentar lo que todavía va a aparecer. Por eso la entrega más valiosa rara vez es la más vistosa. Es aquella que aumenta la confianza, produce aprendizaje que otra persona puede usar y deja al sistema menos dependiente de la improvisación la próxima vez que llegue la presión.
@@ -104,6 +108,8 @@ El error más común de quien percibe su propia contribución invisible es inten
 Autoría y autopromoción no son lo mismo. La autoría vuelve clara la contribución. La autopromoción intenta concentrar atención. La diferencia fina es que la autoría madura aumenta la claridad sin disminuir la contribución de los demás, mientras que la autopromoción necesita borrar el trabajo colectivo alrededor para parecer más grande de lo que fue.
 
 Existe una estructura más segura para comunicar valor, y no empieza por ti. Empieza por el resultado colectivo, reconoce a las personas o áreas involucradas y solo entonces explica con precisión cuál fue la responsabilidad individual. En vez de decir que fue fundamental o decisivo, describe acciones concretas: estructuró el proceso, definió criterios, integró áreas, condujo una negociación, resolvió un impasse. El verbo y la responsabilidad pesan más que el adjetivo.
+
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-reuniao-portfolio-autoria.webp" alt="Ejecutivo de espaldas frente a un panel de tres personas en una sala de reunión, con pilas de portafolios morados sobre la mesa. Ilustración del artículo de Ibson Junior sobre autoría, proporción del crédito y la diferencia entre aclarar y concentrar atención." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
 
 Antes de comunicar una contribución, vale someter la narrativa a tres preguntas:
 

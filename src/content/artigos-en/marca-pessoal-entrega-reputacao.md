@@ -49,6 +49,8 @@ Before expanding visibility, the first move should be an audit of substance. Thi
 
 Starting with visibility alone tends to amplify a weakness rather than correct it. The greater the exposure, the faster the gap appears between what was communicated and what the person can actually deliver. A reputation built that way may generate attention, but it rarely sustains trust when the first meaningful delivery arrives.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-iceberg-substancia-visibilidade.webp" alt="An iceberg with most of its mass underwater and an executive on a boat looking only at the visible tip. Illustration from Ibson Junior's article on invisible substance and visibility in a personal brand." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 The opposite is also a trap. When substance already exists, continuing to accumulate preparation becomes a sophisticated way of hiding. In that case, visibility needs to enter immediately as a translation of value already built, not as a project for later.
 
 The safest sequence respects an order: recognize the evidence that already exists, organize a truthful narrative and distribute it in the right spaces. First something real to stand on, then clarity so that value can be recognized. Inverting that is what produces reputations that do not survive the first challenge.
@@ -77,6 +79,8 @@ There is a signal that separates whoever completes a task from whoever builds pr
 
 The judgment of whoever did the work is not in the result. It is in the choices the delivery carries inside it. What was prioritized, what was refused, how quality was protected under constraints, how conflicts were handled and how credit was distributed. Two people can deliver the same output and reveal opposite criteria along the way.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-ceramista-oficio-entrega.webp" alt="A focused potter shaping a clay bowl on the wheel, hands covered in clay. Illustration from Ibson Junior's article on the delivery that builds professional capital rather than merely completing a task." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 Whoever builds repertoire does not only know how to say what they did. They can explain why they chose that path, which alternatives they discarded, which risks they took knowingly and what they would do differently in a similar situation. That ability to reconstruct the reasoning is what turns an isolated execution into transferable judgment. It is the difference between having done something and having learned to decide.
 
 A result solves a present need. Professional capital expands the capacity to face what is still coming. That is why the most valuable delivery is rarely the flashiest. It is the one that increases trust, produces learning someone else can use and leaves the system less dependent on improvisation the next time pressure arrives.
@@ -104,6 +108,8 @@ The most common mistake of someone who feels their contribution is invisible is 
 Authorship and self-promotion are not the same thing. Authorship makes a contribution clear. Self-promotion tries to concentrate attention. The fine difference is that mature authorship increases clarity without diminishing everyone else's contribution, while self-promotion has to erase the collective work around it in order to look bigger than it was.
 
 There is a safer structure for communicating value, and it does not start with you. It starts with the collective result, acknowledges the people or areas involved and only then explains precisely what the individual responsibility was. Instead of saying you were essential or decisive, describe concrete actions: structured the process, defined criteria, integrated areas, led a negotiation, resolved a deadlock. Verbs and responsibility weigh more than adjectives.
+
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-reuniao-portfolio-autoria.webp" alt="An executive seen from behind facing a panel of three people in a meeting room, with stacks of purple portfolios on the table. Illustration from Ibson Junior's article on authorship, proportion of credit and the difference between clarifying and concentrating attention." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
 
 Before communicating a contribution, it is worth putting the narrative through three questions:
 

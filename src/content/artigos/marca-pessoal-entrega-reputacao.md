@@ -49,6 +49,8 @@ Antes de ampliar a visibilidade, o primeiro movimento deve ser uma auditoria de 
 
 Começar apenas pela visibilidade tende a ampliar uma fragilidade em vez de corrigi-la. Quanto maior a exposição, mais rápido aparece a distância entre o que foi comunicado e o que a pessoa consegue entregar. Uma reputação construída dessa forma até gera atenção, mas dificilmente sustenta confiança quando chega a primeira entrega relevante.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-iceberg-substancia-visibilidade.webp" alt="Iceberg com a maior parte submersa e um executivo em um bote observando apenas a ponta visível. Ilustração do artigo de Ibson Junior sobre substância invisível e visibilidade na marca pessoal." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 O oposto também é armadilha. Quando a substância já existe, continuar acumulando preparação vira uma forma sofisticada de esconder-se. Nesse caso, a visibilidade precisa entrar imediatamente como tradução do valor já construído, não como projeto para depois.
 
 A sequência mais segura respeita uma ordem: reconhecer as evidências que já existem, organizar uma narrativa verdadeira e distribuí-la nos espaços adequados. Primeiro algo real para sustentar, depois clareza para que esse valor possa ser reconhecido. Inverter isso é o que produz reputações que não resistem ao primeiro desafio.
@@ -77,6 +79,8 @@ Existe um sinal que separa quem cumpre tarefa de quem constrói capital profissi
 
 O critério de quem fez o trabalho não está no resultado. Está nas escolhas que a entrega carrega por dentro. O que foi priorizado, o que foi recusado, como a qualidade foi protegida diante das restrições, como os conflitos foram tratados e como o crédito foi distribuído. Duas pessoas podem entregar o mesmo output e revelar critérios opostos no caminho.
 
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-ceramista-oficio-entrega.webp" alt="Ceramista concentrado moldando uma peça de barro no torno, com as mãos cobertas de argila. Ilustração do artigo de Ibson Junior sobre a entrega que constrói capital profissional, e não apenas cumpre tarefa." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
+
 Quem constrói repertório não sabe apenas dizer o que fez. Consegue explicar por que escolheu aquele caminho, quais alternativas descartou, que riscos assumiu de forma consciente e o que faria diferente numa próxima situação parecida. Essa capacidade de reconstruir o raciocínio é o que transforma uma execução isolada em julgamento transferível. É a diferença entre ter feito algo e ter aprendido a decidir.
 
 Um resultado resolve uma necessidade presente. O capital profissional amplia a capacidade de enfrentar o que ainda vai aparecer. Por isso a entrega mais valiosa raramente é a mais vistosa. É aquela que aumenta confiança, produz aprendizado que outra pessoa consegue usar e deixa o sistema menos dependente de improviso na próxima vez que a pressão chegar.
@@ -104,6 +108,8 @@ O erro mais comum de quem percebe a própria contribuição invisível é tentar
 Autoria e autopromoção não são a mesma coisa. Autoria torna clara a contribuição. Autopromoção tenta concentrar atenção. A diferença fina é que a autoria madura aumenta a clareza sem diminuir a contribuição dos demais, enquanto a autopromoção precisa apagar o trabalho coletivo ao redor para parecer maior do que foi.
 
 Existe uma estrutura mais segura para comunicar valor, e ela não começa por você. Começa pelo resultado coletivo, reconhece as pessoas ou áreas envolvidas e só então explica com precisão qual foi a responsabilidade individual. Em vez de dizer que foi fundamental ou decisivo, descreva ações concretas: estruturou o processo, definiu critérios, integrou áreas, conduziu uma negociação, resolveu um impasse. Verbo e responsabilidade pesam mais do que adjetivo.
+
+<figure class="art-fig"><img src="/assets/artigos/inline/ibson-junior-marca-pessoal-reuniao-portfolio-autoria.webp" alt="Executivo de costas diante de uma banca de três pessoas em uma sala de reunião, com pilhas de portfólios roxos sobre a mesa. Ilustração do artigo de Ibson Junior sobre autoria, proporção do crédito e a diferença entre esclarecer e concentrar atenção." loading="lazy" width="709" style="max-width:709px" height="473" /></figure>
 
 Antes de comunicar uma contribuição, vale submeter a narrativa a três perguntas:
 
