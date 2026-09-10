@@ -203,8 +203,13 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Publicaciones reales de LinkedIn, de la más reciente a la más antigua (leídas de la página
   // de actividad). Actualizar cada 3-4 días con el mismo flujo (navegador con sesión iniciada).
-  // Última actualización: 2026-09-07.
+  // Última actualización: 2026-09-10.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: una nueva prioridad sin una renuncia es solo más sobrecarga.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
@@ -239,11 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: ser humano sin empatía es ser menos humano.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: el mejor talento en el lugar equivocado se vuelve el problema que la estructura intenta esconder.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

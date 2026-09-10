@@ -203,8 +203,13 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-09-07.
+  // Last update: 2026-09-10.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: a new priority without a trade-off is just more overload.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
@@ -239,11 +244,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
       alt: "Post artwork by Ibson Junior on LinkedIn: being human without empathy is being less human.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-talento-no-lugar-errado.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495222945980719105/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: the best talent in the wrong place becomes the problem the structure tries to hide.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
