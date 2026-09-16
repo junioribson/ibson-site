@@ -208,8 +208,18 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-09-10.
+  // Última atualização: 2026-09-16.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: duas metas podem estar certas, a decisão entre elas ainda precisa de alguém.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: quando a voz mais influente fala primeiro, as outras ideias podem nem aparecer.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
@@ -239,16 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
       alt: "Arte de post de Ibson Junior no LinkedIn: o que fizeram com você não precisa decidir o que você fará com os outros.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7496899009652039680/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: respeito não é prêmio por concordância.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: ser humano sem empatia é ser menos humano.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
