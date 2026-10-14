@@ -208,8 +208,38 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Posts reais do LinkedIn, do mais recente para o mais antigo (lidos da página de
   // atividades). Atualizar a cada 3-4 dias pelo mesmo fluxo (navegador logado).
-  // Última atualização: 2026-09-16.
+  // Última atualização: 2026-10-13.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-ser-bom-com-as-pessoas.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7514063328801947652/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: ser bom no que faz não dispensa ser bom com as pessoas. Firmeza para decidir, humildade para ouvir, respeito para discordar.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-explicar-pouco-omitir-contexto.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7510801849684484096/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: o que ficou claro na sua cabeça ainda precisa chegar à conversa.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-obvio-tambem-foi-aprendido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7509578849328861184/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: ter aprendido antes não torna menor quem está aprendendo agora.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-quem-nao-estava-na-sala.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7508265209631813632/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: uma decisão precisa fazer sentido também para quem não estava na sala.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-conteudo-sem-criterio-escala-ruido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7507042121762279425/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: conteúdo sem critério não escala relevância. Escala ruído.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-clareza-se-mede.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7506090798405455872/",
+      alt: "Arte de post de Ibson Junior no LinkedIn: comunicar não é enviar a mensagem. É impedir que ela se perca no caminho.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
@@ -219,36 +249,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
       alt: "Arte de post de Ibson Junior no LinkedIn: quando a voz mais influente fala primeiro, as outras ideias podem nem aparecer.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: uma nova prioridade sem uma renúncia é apenas mais sobrecarga.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a empresa que trata saúde mental como conformidade cuida no papel e adoece na mesa.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-lider-que-nao-e-dependencia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501968663378358273/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: um líder não é medido pelo que resolve sozinho, é medido pelo que deixa de depender dele.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-cultura-e-noticia-ruim.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501381007728766976/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: a cultura aparece na forma como a liderança recebe uma notícia ruim.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7499431910646153216/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: o cargo define responsabilidades, não define quem terá a melhor ideia.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
-      alt: "Arte de post de Ibson Junior no LinkedIn: o que fizeram com você não precisa decidir o que você fará com os outros.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

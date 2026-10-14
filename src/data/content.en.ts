@@ -203,47 +203,47 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-09-10.
+  // Last update: 2026-10-13.
   posts: [
     {
-      image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: a new priority without a trade-off is just more overload.",
+      image: "/assets/posts/ibson-junior-post-ser-bom-com-as-pessoas.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7514063328801947652/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: being good at what you do does not excuse you from being good to people. Firmness to decide, humility to listen, respect to disagree.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: the company that treats mental health as compliance takes care on paper and falls ill at the desk.",
+      image: "/assets/posts/ibson-junior-post-explicar-pouco-omitir-contexto.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7510801849684484096/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: what became clear in your head still needs to reach the conversation.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-lider-que-nao-e-dependencia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501968663378358273/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: a leader is not measured by what they solve alone, they are measured by what stops depending on them.",
+      image: "/assets/posts/ibson-junior-post-obvio-tambem-foi-aprendido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7509578849328861184/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: having learned first does not make the person learning now any smaller.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cultura-e-noticia-ruim.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501381007728766976/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: culture shows up in the way leadership receives bad news.",
+      image: "/assets/posts/ibson-junior-post-quem-nao-estava-na-sala.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7508265209631813632/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: a decision also needs to make sense to those who were not in the room.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7499431910646153216/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: the job title defines responsibilities, it does not define who will have the best idea.",
+      image: "/assets/posts/ibson-junior-post-conteudo-sem-criterio-escala-ruido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7507042121762279425/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: content without criteria does not scale relevance. It scales noise.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: what was done to you does not have to decide what you will do to others.",
+      image: "/assets/posts/ibson-junior-post-clareza-se-mede.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7506090798405455872/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: communicating is not sending the message. It is keeping it from getting lost along the way.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7496899009652039680/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: respect is not a prize for agreement.",
+      image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: two goals can both be right, the decision between them still needs someone.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: being human without empathy is being less human.",
+      image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: when the most influential voice speaks first, the other ideas may never show up.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

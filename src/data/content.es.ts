@@ -203,47 +203,47 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Publicaciones reales de LinkedIn, de la más reciente a la más antigua (leídas de la página
   // de actividad). Actualizar cada 3-4 días con el mismo flujo (navegador con sesión iniciada).
-  // Última actualización: 2026-09-10.
+  // Última actualización: 2026-10-13.
   posts: [
     {
-      image: "/assets/posts/ibson-junior-post-prioridade-sem-renuncia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7503554079978332160/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: una nueva prioridad sin una renuncia es solo más sobrecarga.",
+      image: "/assets/posts/ibson-junior-post-ser-bom-com-as-pessoas.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7514063328801947652/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: ser bueno en lo que haces no te exime de ser bueno con las personas. Firmeza para decidir, humildad para escuchar, respeto para discrepar.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-saude-mental-nao-e-conformidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7502829303110365184/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: la empresa que trata la salud mental como conformidad cuida en el papel y enferma en la mesa.",
+      image: "/assets/posts/ibson-junior-post-explicar-pouco-omitir-contexto.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7510801849684484096/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: lo que quedó claro en tu cabeza todavía necesita llegar a la conversación.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-lider-que-nao-e-dependencia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501968663378358273/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: un líder no se mide por lo que resuelve solo, se mide por lo que deja de depender de él.",
+      image: "/assets/posts/ibson-junior-post-obvio-tambem-foi-aprendido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7509578849328861184/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: haber aprendido antes no hace menor a quien está aprendiendo ahora.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cultura-e-noticia-ruim.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7501381007728766976/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: la cultura aparece en la forma en que el liderazgo recibe una mala noticia.",
+      image: "/assets/posts/ibson-junior-post-quem-nao-estava-na-sala.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7508265209631813632/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: una decisión también necesita tener sentido para quien no estaba en la sala.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-cargo-nao-define-a-melhor-ideia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7499431910646153216/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: el cargo define responsabilidades, no define quién tendrá la mejor idea.",
+      image: "/assets/posts/ibson-junior-post-conteudo-sem-criterio-escala-ruido.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7507042121762279425/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: contenido sin criterio no escala relevancia. Escala ruido.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-quebrar-o-ciclo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7498481001464246272/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: lo que hicieron contigo no necesita decidir lo que harás con los demás.",
+      image: "/assets/posts/ibson-junior-post-clareza-se-mede.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7506090798405455872/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: comunicar no es enviar el mensaje. Es impedir que se pierda en el camino.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-discordar-sem-tirar-dignidade.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7496899009652039680/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: el respeto no es un premio por estar de acuerdo.",
+      image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: dos metas pueden estar en lo cierto, la decisión entre ellas todavía necesita a alguien.",
     },
     {
-      image: "/assets/posts/ibson-junior-post-ser-humano-sem-empatia.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7495947710538280961/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: ser humano sin empatía es ser menos humano.",
+      image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: cuando la voz más influyente habla primero, las otras ideas pueden ni aparecer.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
