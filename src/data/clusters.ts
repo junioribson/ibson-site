@@ -13,6 +13,7 @@ export const articleTheme: Record<string, Theme> = {
   "estrategia-e-intencao": "decisao",
   "qualidade-da-decisao-governanca": "decisao",
   // Conteúdo, comunicação e responsabilidade
+  "audiencia-alcance-relacao": "conteudo",
   "conteudo-copa-do-mundo-responsabilidade": "conteudo",
   "comunicacao-falha-estrategia-ruido": "conteudo",
   // Liderança, cultura e IA

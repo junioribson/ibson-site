@@ -31,6 +31,10 @@
     1536,
     800
   ],
+  "/assets/artigos/ibson-junior-artigo-audiencia.webp": [
+    1536,
+    800
+  ],
   "/assets/artigos/ibson-junior-artigo-estrategia.webp": [
     1280,
     719
@@ -250,5 +254,21 @@
   "/assets/retratos/ibson-junior-retrato.webp": [
     1330,
     1400
+  ],
+  "/assets/artigos/inline/ibson-junior-audiencia-porta-relacao-continuidade.webp": [
+    1536,
+    1024
+  ],
+  "/assets/artigos/inline/ibson-junior-audiencia-relacao-acesso-capacidade-alternativas.webp": [
+    1536,
+    1024
+  ],
+  "/assets/artigos/inline/ibson-junior-audiencia-encontrado-procurado.webp": [
+    1536,
+    1024
+  ],
+  "/assets/artigos/inline/ibson-junior-audiencia-plataformas-dependencia-algoritmo.webp": [
+    1536,
+    1024
   ]
 }

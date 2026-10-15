@@ -380,6 +380,7 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/"
 
 // Enlaces reales de cada artículo en LinkedIn (enviados por Ibson).
 const ART_URL = {
+  audiencia: "https://www.linkedin.com/pulse/audi%C3%AAncia-que-chega-e-rela%C3%A7%C3%A3o-fica-ibson-junior-eyllf/",
   entrega: "https://www.linkedin.com/pulse/cada-entrega-tamb%C3%A9m-assina-o-seu-nome-ibson-junior-rxe2f/",
   copa: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/",
   cerebro: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/",
@@ -402,6 +403,16 @@ export const articles = {
   // TODO(asset): agregar la portada real de cada artículo en /assets/artigos y apuntar en `cover`.
   // TODO(titulo): algunos títulos aparecen truncados en la captura; confirmar los finales.
   list: [
+    {
+      category: "Audiencia y distribución",
+      date: "2026",
+      title: "La audiencia que llega y la relación que queda",
+      summary: "Alcanzar y mantener son trabajos distintos. Qué hace volver al público cuando la plataforma cambia las reglas.",
+      readingTime: "15 min",
+      url: ART_URL.audiencia,
+      cover: "/assets/artigos/ibson-junior-artigo-audiencia.webp",
+      slug: "audiencia-alcance-relacao",
+    },
     {
       category: "Marca personal y reputación",
       date: "2026",

@@ -380,6 +380,7 @@ const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/"
 
 // Real links for each article on LinkedIn (sent by Ibson).
 const ART_URL = {
+  audiencia: "https://www.linkedin.com/pulse/audi%C3%AAncia-que-chega-e-rela%C3%A7%C3%A3o-fica-ibson-junior-eyllf/",
   entrega: "https://www.linkedin.com/pulse/cada-entrega-tamb%C3%A9m-assina-o-seu-nome-ibson-junior-rxe2f/",
   copa: "https://www.linkedin.com/pulse/na-copa-do-mundo-conte%C3%BAdo-n%C3%A3o-disputa-apenas-aten%C3%A7%C3%A3o-ibson-junior-fxq1c/",
   cerebro: "https://www.linkedin.com/pulse/c%C3%A9rebro-podre-pandemia-invis%C3%ADvel-que-transforma-em-reativos-junior-bgeqf/",
@@ -402,6 +403,16 @@ export const articles = {
   // TODO(asset): add the real cover of each article in /assets/artigos and point it in `cover`.
   // TODO(title): some titles appear truncated in the screenshot; confirm their endings.
   list: [
+    {
+      category: "Audience and distribution",
+      date: "2026",
+      title: "The audience that arrives and the relationship that stays",
+      summary: "Reaching and keeping are different jobs. What brings an audience back when the platform changes the rules.",
+      readingTime: "14 min",
+      url: ART_URL.audiencia,
+      cover: "/assets/artigos/ibson-junior-artigo-audiencia.webp",
+      slug: "audiencia-alcance-relacao",
+    },
     {
       category: "Personal brand and reputation",
       date: "2026",
