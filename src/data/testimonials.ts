@@ -70,4 +70,18 @@ export const testimonials: Testimonial[] = [
       "Sua experiência e visão estratégica certamente trarão contribuições relevantes para um mercado em profunda transformação, especialmente nas áreas de comunicação, marketing e mídia digital.",
     kind: "comment",
   },
+  {
+    name: "Íris Marini",
+    headline: "Jornalista · Social Media · Empreendedora · Cantora",
+    quote:
+      "Ibson, você é um profissional e empreendedor visionário. Tenho a mais completa certeza de que a semente que você plantar daqui em diante vai germinar e dar lugar a outras florestas. Pra mim, sempre será honra máxima ter trabalhado com você.",
+    kind: "comment",
+  },
+  {
+    name: "Beatriz Paparazo",
+    headline: "Jornalista · Editora-chefe · Produtora de conteúdo",
+    quote:
+      "Não tenho palavras para agradecer por esse tempo de trabalho juntos e por você ter apostado no meu potencial quando eu mais precisei. Que você siga brilhando e iluminando novos times. Estarei sempre aqui na torcida por você.",
+    kind: "comment",
+  },
 ];
