@@ -19,6 +19,10 @@ type UIStrings = {
   depoRec: string;
   depoComment: string;
   depoCta: string;
+  credKicker: string;
+  credTitle: string;
+  credNote: string;
+  credItems: { name: string; role: string; href?: string }[];
   connectLinkedin: string;
   menuTagline: string;
   postsKicker: string;
@@ -119,6 +123,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     depoRec: "Recomendação",
     depoComment: "Comentário",
     depoCta: "Ver no LinkedIn",
+    credKicker: "Trajetória comprovável",
+    credTitle: "Operações reais: construídas, lideradas e vendidas.",
+    credNote: "Não é retórica. Cada frente abaixo existe, e pode ser conferida.",
+    credItems: [
+      { name: "Futmarketing", role: "Cofundador, CEO e CSO · operação vendida", href: "https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" },
+      { name: "WolfLife", role: "Fundador · vendida em 2025", href: "https://wolflife.com.br/" },
+      { name: "ProliferArte", role: "Fundador · desde 2008", href: "https://www.facebook.com/ProliferArte/" },
+      { name: "Antenados no Futebol", role: "Criador da marca", href: "https://www.antenadosnofutebol.com.br/" },
+      { name: "Board Academy", role: "Conselheiro Consultivo" },
+    ],
     connectLinkedin: "Conecte-se comigo no LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE",
     postsKicker: "LinkedIn",
@@ -219,6 +233,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     depoRec: "Recomendación",
     depoComment: "Comentario",
     depoCta: "Ver en LinkedIn",
+    credKicker: "Trayectoria comprobable",
+    credTitle: "Operaciones reales: construidas, lideradas y vendidas.",
+    credNote: "No es retórica. Cada frente de abajo existe y se puede comprobar.",
+    credItems: [
+      { name: "Futmarketing", role: "Cofundador, CEO y CSO · operación vendida", href: "https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" },
+      { name: "WolfLife", role: "Fundador · vendida en 2025", href: "https://wolflife.com.br/" },
+      { name: "ProliferArte", role: "Fundador · desde 2008", href: "https://www.facebook.com/ProliferArte/" },
+      { name: "Antenados no Futebol", role: "Creador de la marca", href: "https://www.antenadosnofutebol.com.br/" },
+      { name: "Board Academy", role: "Consejero Consultivo" },
+    ],
     connectLinkedin: "Conéctate conmigo en LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONCIENCIA · DECISIÓN · RESPONSABILIDAD",
     postsKicker: "LinkedIn",
@@ -319,6 +343,16 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     depoRec: "Recommendation",
     depoComment: "Comment",
     depoCta: "See on LinkedIn",
+    credKicker: "Track record you can verify",
+    credTitle: "Real operations: built, led and sold.",
+    credNote: "Not rhetoric. Every item below is real, and you can check it.",
+    credItems: [
+      { name: "Futmarketing", role: "Co-founder, CEO & CSO · acquired", href: "https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" },
+      { name: "WolfLife", role: "Founder · acquired in 2025", href: "https://wolflife.com.br/" },
+      { name: "ProliferArte", role: "Founder · since 2008", href: "https://www.facebook.com/ProliferArte/" },
+      { name: "Antenados no Futebol", role: "Brand creator", href: "https://www.antenadosnofutebol.com.br/" },
+      { name: "Board Academy", role: "Advisory Board Member" },
+    ],
     connectLinkedin: "Connect with me on LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · AWARENESS · DECISION · RESPONSIBILITY",
     postsKicker: "LinkedIn",

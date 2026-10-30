@@ -1,0 +1,79 @@
+---
+// Credenciais: faixa de prova de autoridade. Operações reais, construídas e vendidas,
+// cada uma com link para a fonte quando existe (sem logos de terceiros, sem invenção).
+// Âncora de confiança logo após o Sobre. Dois temas.
+import { t } from "../i18n/ui";
+import { normalizeLocale } from "../i18n/utils";
+const ui = t(normalizeLocale(Astro.currentLocale));
+---
+
+<section class="cred" id="credenciais">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.credKicker}</span>
+    </div>
+    <div class="cred-head">
+      <h2 class="cred-title reveal">{ui.credTitle}</h2>
+      <p class="cred-note reveal d1">{ui.credNote}</p>
+    </div>
+
+    <div class="cred-row">
+      {
+        ui.credItems.map((c) =>
+          c.href ? (
+            <a class="cred-item is-link reveal" href={c.href} target="_blank" rel="noopener">
+              <span class="cred-name">{c.name} <span class="cred-arrow" aria-hidden="true">↗</span></span>
+              <span class="cred-role">{c.role}</span>
+            </a>
+          ) : (
+            <div class="cred-item reveal">
+              <span class="cred-name">{c.name}</span>
+              <span class="cred-role">{c.role}</span>
+            </div>
+          )
+        )
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .cred { padding: clamp(54px, 7vw, 92px) 0; background: var(--bg); }
+  .cred-head { margin-top: 10px; max-width: 760px; }
+  .cred-title {
+    font-weight: 800; letter-spacing: -0.02em; line-height: 1.08;
+    font-size: clamp(24px, 3.4vw, 38px); color: var(--heading); text-wrap: balance;
+  }
+  .cred-note { margin-top: 14px; font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 60ch; }
+
+  .cred-row {
+    margin-top: 34px;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  }
+  .cred-item {
+    display: flex; flex-direction: column; gap: 8px;
+    border: 1px solid var(--line); border-radius: 14px; background: var(--panel);
+    padding: 18px 18px 20px; min-height: 104px;
+  }
+  .cred-item.is-link {
+    transition: transform 0.35s var(--e), border-color 0.3s, box-shadow 0.35s var(--e);
+  }
+  .cred-item.is-link:hover {
+    transform: translateY(-4px); border-color: var(--accent);
+    box-shadow: 0 24px 46px -34px rgba(90, 30, 200, 0.5);
+  }
+  .cred-name {
+    font-weight: 800; font-size: 15.5px; letter-spacing: -0.01em; color: var(--heading);
+    display: inline-flex; align-items: baseline; gap: 6px;
+  }
+  .cred-arrow { font-weight: 700; color: var(--accent); transition: transform 0.25s var(--e); }
+  .cred-item.is-link:hover .cred-arrow { transform: translate(2px, -2px); }
+  .cred-role {
+    margin-top: auto; font-family: var(--font-mono); font-size: 11px; line-height: 1.45;
+    letter-spacing: 0.01em; color: var(--ink-soft);
+  }
+
+  @media (max-width: 1020px) { .cred-row { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 680px) { .cred-row { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .cred-row { grid-template-columns: 1fr; } }
+</style>
