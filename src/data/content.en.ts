@@ -251,7 +251,7 @@ export const linkedinPosts = {
 
 // Authority block between the biography and the cases. METRIC RIGOR: "people",
 // "users", "sessions" and "impressions" are NOT the same thing. The largest number
-// is stated as "digital touchpoints", never as "people reached".
+// is stated as "impressions", never as "people reached".
 export const audienceArchitecture = {
   kicker: "Content · Audience · Algorithm · Behaviour",
   title: "The architecture behind the audience.",
@@ -272,19 +272,20 @@ export const audienceArchitecture = {
   // All cards are CONSOLIDATED (18 years), with no monthly or annual slice. The only
   // short window is "+1B in a single year", which earns its place as a record.
   featured: {
-    n: "+50B",
-    label: "consolidated digital touchpoints",
-    note: "an 18 year total across impressions, views, sessions, reach and engagement, on social networks and websites, spanning own projects, communities and editorial operations.",
+    n: "+100B",
+    label: "impressions",
+    note: "an 18 year total across social networks and websites, spanning own projects, communities and editorial operations.",
   },
   metrics: [
     { n: "+12B", label: "engagement accumulated over 18 years of networks, communities and content" },
     // Views > engagement, always. Consolidated across ALL fronts.
     { n: "+20B", label: "views accumulated across static posts, video, communities and distribution" },
-    { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
+    { n: "+1B", label: "sessions on the Bolavip Brasil website in 2022, the operation's record" },
     // Consolidated across ALL fronts, hence "combined": it does not clash with the
     // "+160M followers on the network" from the WolfLife case, which is one of them.
     { n: "+200M", label: "followers across the combined networks and digital communities" },
     { n: "18 years", label: "building culture, community, content and digital audience" },
+    { n: "No. 1", label: "in Brazil's digital sports audience, December 2024" },
   ],
   note: "Figures consolidated over 18 years of projects in culture, community, digital media and editorial operations, combining social networks and websites. The metrics represent different dimensions of reach, distribution, consumption and interaction, and should not be read as unique people.",
   ctas: {
@@ -327,6 +328,7 @@ export const cases = {
     tag: "Sports media · Digital operation · M&A",
     body: [
       `At ${FUTMARKETING_NAME}, Ibson co-founded the company, served as CEO and CSO and took part in the building, positioning and sale of a Brazilian digital sports media operation. The partnership with Futbol Sites began in 2017, alongside the partnership with 90min, and was the origin of a nine-year cycle.`,
+      "On the sports operation's social networks there were months above 1 billion impressions. In June 2026 alone there were 879 million impressions and 42 million video views in a single month.",
       "The work involved creating the site Antenados no Futebol, including choosing the name and the initial conception of the project, as well as direct involvement in bringing Bolavip to Brazil, between 2017 and 2018, when the brand already existed in South American countries but had not yet been consolidated in the Brazilian market.",
       "The case shows an important dimension of his journey: turning editorial vision, audience and market opportunity into a strategic asset.",
       "The sale of the operation was reported by Yahoo Finance, serving as external validation of the move's relevance within the sports media and marketing market.",

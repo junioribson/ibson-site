@@ -258,7 +258,7 @@ export const linkedinPosts = {
 // depois são consequência de repertório (conteúdo, comunidade, algoritmo, leitura de
 // comportamento), não eventos isolados.
 // RIGOR DAS MÉTRICAS: "pessoas", "usuários", "sessões", "impressões" e "visualizações"
-// NÃO são a mesma coisa. O número-mãe é declarado como "pontos de contato digitais",
+// NÃO são a mesma coisa. O número-mãe é declarado como "impressões",
 // nunca como "pessoas impactadas".
 export const audienceArchitecture = {
   kicker: "Conteúdo · Audiência · Algoritmo · Comportamento",
@@ -280,21 +280,22 @@ export const audienceArchitecture = {
   // Todos os cards são CONSOLIDADOS (18 anos), sem recorte mensal ou anual. A única
   // janela curta é o "+1 Bi em um único ano", que entra justamente por ser recorde.
   featured: {
-    n: "+50 Bi",
-    label: "pontos de contato digitais consolidados",
-    note: "somatório de 18 anos entre impressões, visualizações, sessões, alcance e engajamento, em redes sociais e sites, considerando projetos próprios, comunidades e operações editoriais.",
+    n: "+100 Bi",
+    label: "impressões",
+    note: "somatório de 18 anos entre redes sociais e sites, considerando projetos próprios, comunidades e operações editoriais.",
   },
   metrics: [
     { n: "+12 Bi", label: "engajamento acumulado em 18 anos de redes, comunidades e conteúdo" },
     // Visualizações > engajamento, sempre: quem vê é muito mais do que quem
-    // interage. Consolidado de TODAS as frentes, por isso maior que os "9 Bi+"
-    // do case TikTok, que é uma delas. Fecha com o total: 20+12+15+1 = 48 de 50.
+    // interage. Impressões (o número-mãe) é a dimensão mais ampla, acima de
+    // visualizações, que ficam acima de engajamento. Consolidado de TODAS as frentes.
     { n: "+20 Bi", label: "visualizações acumuladas em post estático, vídeo, comunidades e distribuição" },
-    { n: "+1 Bi", label: "sessões em um único ano de operação editorial, o recorde da operação" },
+    { n: "+1 Bi", label: "sessões no site do Bolavip Brasil em 2022, o recorde da operação" },
     // Consolidado de TODAS as frentes. Não conflita com os "+160 Mi seguidores na
     // rede" do case WolfLife, que é uma delas: por isso o rótulo diz "conjunto".
     { n: "+200 Mi", label: "seguidores no conjunto das redes e comunidades digitais" },
     { n: "18 anos", label: "construindo cultura, comunidade, conteúdo e audiência digital" },
+    { n: "1º lugar", label: "em audiência esportiva digital do Brasil, dezembro de 2024" },
   ],
   note: "Números consolidados em 18 anos de projetos de cultura, comunidade, mídia digital e operações editoriais, somando redes sociais e sites. As métricas representam diferentes dimensões de alcance, distribuição, consumo e interação, e não devem ser lidas como pessoas únicas.",
   ctas: {
@@ -337,6 +338,7 @@ export const cases = {
     tag: "Mídia esportiva · Operação digital · M&A",
     body: [
       `Na ${FUTMARKETING_NAME}, Ibson cofundou a empresa, atuou como CEO e CSO e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital. A parceria com a Futbol Sites começou em 2017, em paralelo à parceria com a 90min, e foi a origem de um ciclo de nove anos.`,
+      "Nas redes sociais da operação esportiva houve meses acima de 1 bilhão de impressões. Só em junho de 2026 foram 879 milhões de impressões e 42 milhões de visualizações de vídeo em um único mês.",
       "A atuação envolveu a criação do site Antenados no Futebol, incluindo a escolha do nome e a concepção inicial do projeto, além da participação direta na chegada da Bolavip ao Brasil, entre 2017 e 2018, quando a marca já existia em países da América do Sul, mas ainda não havia sido consolidada no mercado brasileiro.",
       "O case mostra uma dimensão importante da sua trajetória: transformar visão editorial, audiência e oportunidade de mercado em ativo estratégico.",
       "A venda da operação foi noticiada pelo Yahoo Finance, funcionando como chancela externa da relevância do movimento dentro do mercado de mídia e marketing esportivo.",
