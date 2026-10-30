@@ -30,7 +30,7 @@ export const GSC_VERIFICATION = "";
 export const seo = {
   title: "Ibson Junior | Consejero consultivo, contenido y decisión",
   description:
-    "Consejero consultivo y ejecutivo de contenido y producto digital. Ex-CEO y CSO, dos operaciones vendidas, nueve años en la operación líder en audiencia deportiva digital de Brasil.",
+    "Consejero consultivo y ejecutivo de contenido y producto digital. Ex-CEO y CSO, dos operaciones vendidas y nueve años liderando audiencia deportiva en Brasil.",
   ogTitle:
     "Ibson Junior | Criterio, liderazgo y decisión en tiempos complejos",
   ogDescription:

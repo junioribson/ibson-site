@@ -30,7 +30,7 @@ export const GSC_VERIFICATION = "";
 export const seo = {
   title: "Ibson Junior | Advisory board member, content and decision",
   description:
-    "Advisory board member and content and digital product executive. Former CEO and CSO, two operations sold, nine years at the operation leading Brazil's digital sports audience.",
+    "Advisory board member and content and digital product executive. Former CEO and CSO, two companies sold, nine years leading digital sports audience in Brazil.",
   ogTitle:
     "Ibson Junior | Judgment, leadership and decision in complex times",
   ogDescription:
