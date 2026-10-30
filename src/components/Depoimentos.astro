@@ -72,6 +72,8 @@ const ui = t(normalizeLocale(Astro.currentLocale));
   }
   .depo-tag.is-rec { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
   .depo-tag.is-comment { color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, transparent); }
+  /* Tema claro: dourado-claro falhava WCAG AA (2.0:1); bronze escuro para legibilidade. */
+  :root[data-theme="light"] .depo-tag.is-comment { color: #6b4a1a; }
   .depo-via {
     display: inline-flex; align-items: center; gap: 6px;
     font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--ink-soft);

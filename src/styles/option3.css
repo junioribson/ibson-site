@@ -45,6 +45,18 @@ body[data-o3] .shead .lbl {
   background: linear-gradient(100deg, #8b6bff, #db6bff 46%, #ff7ac0);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
+/* Tema claro: aprofunda o gradiente do kicker para passar WCAG AA sobre o creme
+   (os stops claros falhavam ~2.8:1). Mantém a identidade violeta->magenta, agora
+   legível. Corrige todos os eyebrows de uma vez (o clip:text anulava os color: antigos). */
+:root[data-theme="light"] body[data-o3] .shead .lbl {
+  background-image: linear-gradient(100deg, #5b2ee6, #7c2d9e 52%, #a21c84);
+}
+/* Exceção: seções de fundo ESCURO mesmo no tema claro (arquitetura, repertório)
+   mantêm o gradiente claro, que já tem alto contraste sobre o escuro. O gradiente
+   profundo acima falharia nelas (magenta escuro sobre fundo escuro). */
+:root[data-theme="light"] body[data-o3] :is(.arq, .repo) .shead .lbl {
+  background-image: linear-gradient(100deg, #8b6bff, #db6bff 46%, #ff7ac0);
+}
 body[data-o3] .shead .dot { background: #a882ff; box-shadow: 0 0 10px 2px rgba(122, 74, 255, 0.7); }
 body[data-o3] .shead .rule { background: linear-gradient(90deg, #a882ff, transparent); opacity: 0.9; }
 body[data-o3] main :is(section) h2 { letter-spacing: -0.04em; }
