@@ -90,8 +90,14 @@ const REP_ALT = {
         </dl>
       </div>
       <div class="rep-photo-col reveal d1">
-        <img class="rep-photo rep-photo-dark" src="/assets/retratos/ibson-preto.webp" alt={REP_ALT.dark} width="915" height="1600" loading="lazy" style="object-position:50% 18%" />
-        <img class="rep-photo rep-photo-light" src="/assets/retratos/ibson-marrom.webp" alt={REP_ALT.light} width="1086" height="1448" loading="lazy" style="object-position:50% 15%" />
+        <picture style="display:contents">
+          <source srcset="/assets/retratos/ibson-preto.avif" type="image/avif" />
+          <img class="rep-photo rep-photo-dark" src="/assets/retratos/ibson-preto.webp" alt={REP_ALT.dark} width="915" height="1600" loading="lazy" style="object-position:50% 18%" />
+        </picture>
+        <picture style="display:contents">
+          <source srcset="/assets/retratos/ibson-marrom.avif" type="image/avif" />
+          <img class="rep-photo rep-photo-light" src="/assets/retratos/ibson-marrom.webp" alt={REP_ALT.light} width="1086" height="1448" loading="lazy" style="object-position:50% 15%" />
+        </picture>
       </div>
     </div>
   </div>

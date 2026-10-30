@@ -45,7 +45,10 @@ const relLinks = [
         </div>
         <figure class="lp-hero-photo reveal">
           <div class="lp-hero-frame">
-            <img src="/assets/retratos/ibson-preto.webp" alt={ui.portraitAlt} width="915" height="1600" loading="eager" style="object-position:50% 15%" />
+            <picture style="display:contents">
+              <source srcset="/assets/retratos/ibson-preto.avif" type="image/avif" />
+              <img src="/assets/retratos/ibson-preto.webp" alt={ui.portraitAlt} width="915" height="1600" loading="eager" style="object-position:50% 15%" />
+            </picture>
           </div>
         </figure>
       </div>

@@ -25,8 +25,14 @@ const ALT = {
     <div class="sobre-grid">
       <div class="sobre-photo reveal">
         <div class="fr">
-          <img class="portrait-dark" src="/assets/retratos/ibson-poltrona.webp" alt={ALT.dark} width="1086" height="1448" style="object-position:50% 32%" />
-          <img class="portrait-light" src="/assets/retratos/ibson-colete.webp" alt={ALT.light} width="1024" height="1536" loading="lazy" style="object-position:50% 12%" />
+          <picture style="display:contents">
+            <source srcset="/assets/retratos/ibson-poltrona.avif" type="image/avif" />
+            <img class="portrait-dark" src="/assets/retratos/ibson-poltrona.webp" alt={ALT.dark} width="1086" height="1448" style="object-position:50% 32%" />
+          </picture>
+          <picture style="display:contents">
+            <source srcset="/assets/retratos/ibson-colete.avif" type="image/avif" />
+            <img class="portrait-light" src="/assets/retratos/ibson-colete.webp" alt={ALT.light} width="1024" height="1536" loading="lazy" style="object-position:50% 12%" />
+          </picture>
         </div>
       </div>
       <div class="sobre-text reveal d1">

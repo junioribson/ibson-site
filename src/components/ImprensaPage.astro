@@ -34,7 +34,10 @@ const EMAIL = "contato@ibsonjunior.com.br";
         </div>
         <figure class="prs-hero-photo reveal">
           <div class="prs-hero-frame">
-            <img src={press.photo} alt={press.photoAlt} width="898" height="1600" loading="eager" />
+            <picture style="display:contents">
+              <source srcset={press.photo.replace(/\.webp$/, ".avif")} type="image/avif" />
+              <img src={press.photo} alt={press.photoAlt} width="898" height="1600" loading="eager" />
+            </picture>
           </div>
           <figcaption>
             <span class="prs-photo-label">{press.photoTitle}</span>
