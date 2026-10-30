@@ -9,8 +9,6 @@
 // ============================================================================
 
 // Grafía oficial confirmada por Ibson (y en el CLAUDE.md): Futmarketing.
-// TODO(fato): reconfirmar la grafía definitiva de la marca (Futmarketing, Footmarketing
-// o Foot Marketing) antes de publicar, en caso de que Ibson quiera revisar.
 export const FUTMARKETING_NAME = "Futmarketing";
 
 // TODO(fato): confirmar el rol exacto en la operación (usando CEO según el brief).

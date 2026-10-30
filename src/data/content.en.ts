@@ -9,8 +9,6 @@
 // ============================================================================
 
 // Official spelling confirmed by Ibson (and in CLAUDE.md): Futmarketing.
-// TODO(fact): reconfirm the definitive brand spelling (Futmarketing, Footmarketing
-// or Foot Marketing) before publishing, in case Ibson wants to review it.
 export const FUTMARKETING_NAME = "Futmarketing";
 
 // TODO(fact): confirm the exact role in the operation (using CEO as per the brief).
