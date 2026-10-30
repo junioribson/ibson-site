@@ -308,7 +308,9 @@ footer { background: var(--night); color: var(--text-soft); padding: 66px 0 40px
   .pubs { grid-template-columns: 1fr 1fr; gap: 14px; } .pub .pb { flex-direction: column; align-items: flex-start; gap: 6px; }
   .agrid { grid-template-columns: 1fr; } .acard .cov { aspect-ratio: 16/11; }
   .foot-top { grid-template-columns: 1fr 1fr; gap: 26px 22px; } .foot-base { flex-direction: column; gap: 6px; }
-  .fcol a { margin-bottom: 10px; font-size: 14px; } .fcol-links { grid-template-columns: 1fr; }
+  /* Alvos de toque confortaveis no rodape (antes 22px de altura; agora ~40px). */
+  .fcol a { margin-bottom: 2px; padding: 9px 0; font-size: 14px; display: inline-block; } .fcol-links { grid-template-columns: 1fr; }
+  .fcol-links a { padding: 10px 0; }
   .pal .moon { width: 110px; right: 5%; top: 8%; }
 }
 /* Telefone: lua vira banner de destaque no topo do Contato, texto depois */
