@@ -8,7 +8,13 @@ const locale = normalizeLocale(Astro.currentLocale);
 const { about } = getContent(locale);
 const ui = t(locale);
 const aboutMoreHref = localizePath("/ibson-junior", locale);
-const photo: string | null = "/assets/retratos/ibson-junior-retrato.webp";
+// Retrato com troca por tema: fundo escuro (marrom) no tema escuro, fundo claro
+// (colete) no tema claro. O frame .fr (aspect 4/5, object-fit cover) faz o recorte.
+const ALT = {
+  pt: { dark: "Ibson Junior, conselheiro consultivo e executivo de conteúdo e produto digital, retrato em estúdio de braços cruzados", light: "Ibson Junior sorrindo, retrato de busto em fundo claro" },
+  es: { dark: "Ibson Junior, consejero consultivo y ejecutivo de contenido y producto digital, retrato de estudio con brazos cruzados", light: "Ibson Junior sonriendo, retrato de busto sobre fondo claro" },
+  en: { dark: "Ibson Junior, advisory board member and content and digital product executive, studio portrait with arms crossed", light: "Ibson Junior smiling, head and shoulders portrait on light background" },
+}[locale];
 ---
 
 <section class="sobre" id="sobre">
@@ -19,15 +25,8 @@ const photo: string | null = "/assets/retratos/ibson-junior-retrato.webp";
     <div class="sobre-grid">
       <div class="sobre-photo reveal">
         <div class="fr">
-          {
-            photo ? (
-              <img src={photo} alt={ui.portraitAlt} width="1330" height="1400" />
-            ) : (
-              <div class="ph-portrait" aria-label="Retrato editorial de Ibson Junior (a chegar)">
-                <span>RETRATO</span>
-              </div>
-            )
-          }
+          <img class="portrait-dark" src="/assets/retratos/ibson-marrom.webp" alt={ALT.dark} width="1086" height="1448" style="object-position:50% 18%" />
+          <img class="portrait-light" src="/assets/retratos/ibson-colete.webp" alt={ALT.light} width="1024" height="1536" loading="lazy" style="object-position:50% 12%" />
         </div>
       </div>
       <div class="sobre-text reveal d1">
@@ -77,18 +76,9 @@ const photo: string | null = "/assets/retratos/ibson-junior-retrato.webp";
   }
   .about-more span { transition: transform 0.25s var(--e); }
   .about-more:hover span { transform: translateX(4px); }
-  .ph-portrait {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(160deg, var(--purple-deep), var(--night));
-  }
-  .ph-portrait span {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    letter-spacing: 0.34em;
-    color: rgba(255, 255, 255, 0.5);
-  }
+  /* Troca de retrato por tema: marrom (fundo escuro) no tema escuro; colete (fundo
+     claro) no tema claro. Só um aparece; o frame .fr recorta via object-fit cover. */
+  .portrait-light { display: none; }
+  :root[data-theme="light"] .portrait-dark { display: none; }
+  :root[data-theme="light"] .portrait-light { display: block; }
 </style>

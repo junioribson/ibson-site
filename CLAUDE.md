@@ -27,7 +27,7 @@ Repertório, Mentoria, Palestras, Vídeos, Contato. Camada de conteúdo editáve
 
 ## Regras inegociáveis (Don'ts)
 - NUNCA usar travessão (— ou –) em nenhum texto. Usar vírgula, ponto, dois-pontos ou parênteses.
-- Cargo atual permitido: "Diretor de Conteúdo na Futbol Sites" (pode nomear a Futbol Sites, de forma discreta). NUNCA mencionar Better Collective. O site é sobre o repertório dele, sem dar protagonismo ao cargo.
+- Cargo: Ibson encerrou em outubro de 2026 um ciclo de nove anos com a Futbol Sites (2017 a 2026). Hoje é conselheiro consultivo e executivo independente. A Futbol Sites e o cargo de Diretor de Conteúdo no Brasil só aparecem no PASSADO (ex-Diretor, nomeável de forma discreta), nunca como atuação atual. NUNCA mencionar Better Collective. O site é sobre o repertório dele, sem dar protagonismo ao cargo.
 - Nome oficial do case de mídia esportiva: Futmarketing (não Footmarketing).
 - Credencial de conselho: conselheiro administrativo de Dr. José Eduardo (osteopata D.O., criador do método Mães que Curam, referência de mercado com mais de 2 milhões de seguidores), há mais de 1 ano.
 - Logomarca oficial: marca triangular (montanha) em `/public/assets/logo/logo-roxa.png` (fundo claro) e `logo-branca.png` (fundo escuro), extraída do material de marca do Ibson. Não usar marca desenhada à mão.
@@ -46,7 +46,7 @@ Repertório, Mentoria, Palestras, Vídeos, Contato. Camada de conteúdo editáve
 - Logomarca (triângulo/pico) em `/public/assets/logo-*.png`: roxa em fundo claro, branca em fundo escuro. Discreta.
 
 ## Sitemap (seções)
-1. Hero: só efeito de cor (aurora animada na paleta), sem foto. Frase-âncora: "Nunca se falou tanto de estratégia. E nunca se viu tão pouca." Positioning: Estrategista Digital, Mentor, Palestrante.
+1. Hero: só efeito de cor (aurora animada na paleta), sem foto. Frase-âncora: "Quando tudo acelera, clareza vira responsabilidade." Positioning: Conselheiro consultivo e executivo independente, mentor e palestrante.
 2. Tese/Manifesto: intenção vs estratégia; atenção como ativo.
 3. Sobre: foto (retrato navy). Fio condutor: "de galerias de arte a comunidades de milhões, sempre lidei com audiência".
 4. Cases: WolfLife/TikTok (9 Bi+ de views; +150 Mi seguidores, +6 Bi impressões/ano, +100 Mi alcance/mês; vendida 2025; botão wolflife.com.br). Futmarketing M&A com botão "Ver a notícia" (Yahoo Finance).

@@ -15,9 +15,9 @@ export async function GET() {
 
   const body = `# Ibson Junior
 
-> Executivo de conteúdo, liderança e comunicação. Diretor de Conteúdo na Futbol Sites. Oferece palestras e keynotes, mentoria executiva individual e conselho (advisory) sobre liderança, comunicação, cultura organizacional, marca pessoal, desenvolvimento de equipes, inteligência artificial e tomada de decisão.
+> Conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Ex-Diretor de Conteúdo na Futbol Sites (ciclo 2017 a 2026). Oferece palestras e keynotes, mentoria executiva individual e conselho (advisory) sobre liderança, comunicação, cultura organizacional, marca pessoal, desenvolvimento de equipes, inteligência artificial e tomada de decisão.
 
-Ibson Junior fundou a WolfLife (ecossistema de comunidades digitais, vendido em 2025), lidera a ProliferArte desde 2008 e foi CEO da Futmarketing. Escreve artigos e leva palestras e mentorias sobre decidir com critério em meio ao ruído, à IA e à pressão. Base: Brasil (atendimento presencial e remoto). Idiomas do site: português (principal), espanhol e inglês.
+Ibson Junior cofundou a Futmarketing (CEO e CSO) e fundou a WolfLife, ambas vendidas, lidera a ProliferArte desde 2008 e encerrou em 2026 um ciclo de nove anos com a Futbol Sites. Escreve artigos e leva palestras e mentorias sobre decidir com critério em meio ao ruído, à IA e à pressão. Base: Brasil (atendimento presencial e remoto). Idiomas do site: português (principal), espanhol e inglês.
 
 Contato: contato@ibsonjunior.com.br
 LinkedIn: https://www.linkedin.com/in/ibson-junior/

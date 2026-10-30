@@ -10,19 +10,14 @@ import { normalizeLocale, type Locale } from "../i18n/utils";
 const SITE = "https://ibsonjunior.com.br";
 const PERSON_ID = `${SITE}/#person`;
 const WEBSITE_ID = `${SITE}/#website`;
-const ORG_ID = `${SITE}/#futbolsites`;
 
 const PORTRAITS = [
-  `${SITE}/assets/retratos/ibson-junior-executivo.webp`,
-  `${SITE}/assets/retratos/ibson-junior-retrato.webp`,
+  `${SITE}/assets/retratos/ibson-colete.webp`,
+  `${SITE}/assets/retratos/ibson-cinza.webp`,
 ];
 const SAME_AS = [
   "https://www.linkedin.com/in/ibson-junior/",
   "https://x.com/IbsonJunior",
-  // Créditos em veículos de autoridade que nomeiam Ibson (reconciliação de entidade).
-  "https://br.bolavip.com/staff",
-  "https://www.antenadosnofutebol.com.br/staff",
-  "https://somosfanaticos.fans/br/staff",
 ];
 
 type SeoCopy = {
@@ -35,21 +30,23 @@ type SeoCopy = {
   siteName: string;
   siteDesc: string;
   audienceType: string;
+  occupations: string[];
 };
 
 const COPY: Record<Locale, SeoCopy> = {
   pt: {
-    jobTitle: "Executivo de conteúdo, liderança e comunicação",
+    jobTitle: "Conselheiro consultivo e executivo de conteúdo, liderança e comunicação",
     personDesc:
-      "Ibson Junior é executivo de conteúdo, liderança e comunicação, Diretor de Conteúdo na Futbol Sites. Fundou a WolfLife (vendida em 2025), lidera a ProliferArte desde 2008 e foi CEO da Futmarketing. Atua com palestras, mentoria executiva e conselho sobre liderança, comunicação, cultura, marca pessoal, desenvolvimento de equipes, inteligência artificial e tomada de decisão.",
+      "Ibson Junior é conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Ex-CEO e CSO, cofundou a Futmarketing e fundou a WolfLife, ambas vendidas, lidera a ProliferArte desde 2008 e construiu entre 2017 e 2026 um ciclo de nove anos com a Futbol Sites, operação que liderou a audiência esportiva digital do Brasil. Atua com palestras, mentoria executiva e conselho sobre liderança, comunicação, cultura, governança, inteligência artificial e tomada de decisão.",
     disambig:
-      "Executivo de conteúdo, liderança e comunicação; Diretor de Conteúdo na Futbol Sites, fundador da WolfLife e do movimento cultural ProliferArte. Palestrante executivo e mentor executivo, com base em Porto Alegre.",
+      "Conselheiro consultivo e executivo de conteúdo, liderança e comunicação; fundador da WolfLife e do movimento cultural ProliferArte, ex-Diretor de Conteúdo na Futbol Sites (2017 a 2026). Palestrante executivo e mentor executivo, com base em Porto Alegre.",
     knowsAbout: [
       "Palestra", "Mentoria", "Conselheiro", "Marca pessoal", "Comunicação",
       "Desenvolvimento de equipes", "Cultura organizacional", "Liderança",
       "Comunicação executiva", "Tomada de decisão", "Inteligência artificial",
       "Governança pessoal", "Posicionamento", "Narrativa profissional",
       "LinkedIn estratégico", "Estratégia editorial", "Conteúdo",
+      "Governança corporativa", "Conselho consultivo", "Produto digital", "Integração pós-aquisição",
     ],
     services: [
       { name: "Palestras e keynotes corporativos", type: "Palestra",
@@ -61,7 +58,7 @@ const COPY: Record<Locale, SeoCopy> = {
     ],
     faq: [
       { q: "Quem é Ibson Junior?",
-        a: "Ibson Junior é executivo de conteúdo, liderança e comunicação, Diretor de Conteúdo na Futbol Sites. Fundou a WolfLife (vendida em 2025), lidera a ProliferArte desde 2008 e foi CEO da Futmarketing. Atua com palestras, mentoria executiva e conselho." },
+        a: "Ibson Junior é conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Cofundou a Futmarketing e fundou a WolfLife, ambas vendidas, lidera a ProliferArte desde 2008 e encerrou em 2026 um ciclo de nove anos com a Futbol Sites. Atua com palestras, mentoria executiva e conselho." },
       { q: "Ibson Junior faz palestras corporativas?",
         a: "Sim. Ele leva palestras e keynotes para empresas, eventos e lideranças sobre decidir sob pressão, comunicação, cultura organizacional, inteligência artificial com julgamento humano, liderança e desenvolvimento de equipes, em formatos como palestra, painel, roda executiva e workshop." },
       { q: "Como funciona a mentoria do Ibson Junior?",
@@ -75,19 +72,21 @@ const COPY: Record<Locale, SeoCopy> = {
     siteDesc:
       "Site oficial de Ibson Junior: palestras, mentoria executiva e conselho sobre liderança, comunicação, cultura, marca pessoal e tomada de decisão.",
     audienceType: "Empresas, lideranças e executivos",
+    occupations: ["Conselheiro consultivo", "Diretor de Conteúdo, Futbol Sites (2026)", "Head of Digital Product Brasil, Futbol Sites (2021 a 2026)", "Cofundador, CEO e CSO, Futmarketing (2017 a 2025)", "Fundador e CEO, WolfLife (2021 a 2025)", "Fundador, ProliferArte (desde 2008)"],
   },
   es: {
-    jobTitle: "Ejecutivo de contenido, liderazgo y comunicación",
+    jobTitle: "Consejero consultivo y ejecutivo de contenido, liderazgo y comunicación",
     personDesc:
-      "Ibson Junior es ejecutivo de contenido, liderazgo y comunicación, Director de Contenido en Futbol Sites. Fundó WolfLife (vendida en 2025), lidera ProliferArte desde 2008 y fue CEO de Futmarketing. Ofrece charlas, mentoría ejecutiva y consejo sobre liderazgo, comunicación, cultura, marca personal, desarrollo de equipos, inteligencia artificial y toma de decisiones.",
+      "Ibson Junior es consejero consultivo y ejecutivo de contenido, liderazgo y comunicación. Ex-CEO y CSO, cofundó Futmarketing y fundó WolfLife, ambas vendidas, lidera ProliferArte desde 2008 y construyó entre 2017 y 2026 un ciclo de nueve años con Futbol Sites, operación que lideró la audiencia deportiva digital de Brasil. Ofrece charlas, mentoría ejecutiva y consejo sobre liderazgo, comunicación, cultura, gobernanza, inteligencia artificial y toma de decisiones.",
     disambig:
-      "Ejecutivo de contenido, liderazgo y comunicación; Director de Contenido en Futbol Sites, fundador de WolfLife y del movimiento cultural ProliferArte. Conferencista ejecutivo y mentor ejecutivo, con base en Porto Alegre.",
+      "Consejero consultivo y ejecutivo de contenido, liderazgo y comunicación; fundador de WolfLife y del movimiento cultural ProliferArte, ex Director de Contenido en Futbol Sites (2017 a 2026). Conferencista ejecutivo y mentor ejecutivo, con base en Porto Alegre.",
     knowsAbout: [
       "Charlas", "Mentoría", "Consejero", "Marca personal", "Comunicación",
       "Desarrollo de equipos", "Cultura organizacional", "Liderazgo",
       "Comunicación ejecutiva", "Toma de decisiones", "Inteligencia artificial",
       "Gobernanza personal", "Posicionamiento", "Narrativa profesional",
       "LinkedIn estratégico", "Estrategia editorial", "Contenido",
+      "Gobernanza corporativa", "Consejo consultivo", "Producto digital", "Integración pos-adquisición",
     ],
     services: [
       { name: "Charlas y keynotes corporativos", type: "Charla",
@@ -99,7 +98,7 @@ const COPY: Record<Locale, SeoCopy> = {
     ],
     faq: [
       { q: "¿Quién es Ibson Junior?",
-        a: "Ibson Junior es ejecutivo de contenido, liderazgo y comunicación, Director de Contenido en Futbol Sites. Fundó WolfLife (vendida en 2025), lidera ProliferArte desde 2008 y fue CEO de Futmarketing. Ofrece charlas, mentoría ejecutiva y consejo." },
+        a: "Ibson Junior es consejero consultivo y ejecutivo de contenido, liderazgo y comunicación. Cofundó Futmarketing y fundó WolfLife, ambas vendidas, lidera ProliferArte desde 2008 y en 2026 cerró un ciclo de nueve años con Futbol Sites. Ofrece charlas, mentoría ejecutiva y consejo." },
       { q: "¿Ibson Junior da charlas corporativas?",
         a: "Sí. Lleva charlas y keynotes a empresas, eventos y liderazgos sobre decidir bajo presión, comunicación, cultura organizacional, inteligencia artificial con juicio humano, liderazgo y desarrollo de equipos, en formatos como charla, panel, mesa ejecutiva y workshop." },
       { q: "¿Cómo funciona la mentoría de Ibson Junior?",
@@ -113,19 +112,21 @@ const COPY: Record<Locale, SeoCopy> = {
     siteDesc:
       "Sitio oficial de Ibson Junior: charlas, mentoría ejecutiva y consejo sobre liderazgo, comunicación, cultura, marca personal y toma de decisiones.",
     audienceType: "Empresas, liderazgos y ejecutivos",
+    occupations: ["Consejero consultivo", "Director de Contenido, Futbol Sites (2026)", "Head of Digital Product Brasil, Futbol Sites (2021 a 2026)", "Cofundador, CEO y CSO, Futmarketing (2017 a 2025)", "Fundador y CEO, WolfLife (2021 a 2025)", "Fundador, ProliferArte (desde 2008)"],
   },
   en: {
-    jobTitle: "Content, leadership and communication executive",
+    jobTitle: "Advisory board member and content, leadership and communication executive",
     personDesc:
-      "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), has led ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding, team development, artificial intelligence and decision-making.",
+      "Ibson Junior is an advisory board member and content, leadership and communication executive. A former CEO and CSO, he co-founded Futmarketing and founded WolfLife, both sold, has led ProliferArte since 2008 and between 2017 and 2026 built a nine-year cycle with Futbol Sites, the operation that led Brazil's digital sports audience. He offers keynote talks, executive mentoring and advisory on leadership, communication, culture, governance, artificial intelligence and decision-making.",
     disambig:
-      "Content, leadership and communication executive; Content Director at Futbol Sites, founder of WolfLife and of the ProliferArte cultural movement. Executive keynote speaker and executive mentor, based in Porto Alegre, Brazil.",
+      "Advisory board member and content, leadership and communication executive; founder of WolfLife and of the ProliferArte cultural movement, former Content Director at Futbol Sites (2017 to 2026). Executive keynote speaker and executive mentor, based in Porto Alegre, Brazil.",
     knowsAbout: [
       "Keynote speaking", "Mentoring", "Advisor", "Personal branding", "Communication",
       "Team development", "Organizational culture", "Leadership",
       "Executive communication", "Decision-making", "Artificial intelligence",
       "Personal governance", "Positioning", "Professional narrative",
       "Strategic LinkedIn", "Editorial strategy", "Content",
+      "Corporate governance", "Advisory board", "Digital product", "Post-acquisition integration",
     ],
     services: [
       { name: "Corporate keynote talks", type: "Keynote / talk",
@@ -137,7 +138,7 @@ const COPY: Record<Locale, SeoCopy> = {
     ],
     faq: [
       { q: "Who is Ibson Junior?",
-        a: "Ibson Junior is a content, leadership and communication executive, Content Director at Futbol Sites. He founded WolfLife (sold in 2025), has led ProliferArte since 2008 and was CEO of Futmarketing. He offers keynote talks, executive mentoring and advisory." },
+        a: "Ibson Junior is an advisory board member and content, leadership and communication executive. He co-founded Futmarketing and founded WolfLife, both sold, has led ProliferArte since 2008 and in 2026 closed a nine-year cycle with Futbol Sites. He offers keynote talks, executive mentoring and advisory." },
       { q: "Does Ibson Junior give corporate talks?",
         a: "Yes. He delivers keynotes and talks for companies, events and leaders on deciding under pressure, communication, organizational culture, artificial intelligence with human judgment, leadership and team development, in formats such as talk, panel, executive roundtable and workshop." },
       { q: "How does Ibson Junior's mentoring work?",
@@ -151,6 +152,7 @@ const COPY: Record<Locale, SeoCopy> = {
     siteDesc:
       "Official site of Ibson Junior: keynote talks, executive mentoring and advisory on leadership, communication, culture, personal branding and decision-making.",
     audienceType: "Companies, leaders and executives",
+    occupations: ["Advisory board member", "Content Director, Futbol Sites (2026)", "Head of Digital Product Brazil, Futbol Sites (2021 to 2026)", "Co-founder, CEO and CSO, Futmarketing (2017 to 2025)", "Founder and CEO, WolfLife (2021 to 2025)", "Founder, ProliferArte (since 2008)"],
   },
 };
 
@@ -171,19 +173,16 @@ function basePerson(c: SeoCopy) {
     email: "mailto:contato@ibsonjunior.com.br",
     knowsAbout: c.knowsAbout,
     sameAs: SAME_AS,
+    hasOccupation: c.occupations.map((n) => ({ "@type": "Occupation", name: n })),
   };
 }
 
 // Nó Person autossuficiente para páginas que NÃO são a home (LPs, /ibson-junior/).
 // Cada página é avaliada isoladamente pelo Google: sem este nó, um provider/about
-// apontando para #person fica pendurado (referência quebrada). worksFor vai inline
-// para o nó resolver sozinho na página, sem depender do grafo da home.
+// apontando para #person fica pendurado (referência quebrada).
 export function personNode(locale?: string | null) {
   const c = COPY[normalizeLocale(locale)];
-  return {
-    ...basePerson(c),
-    worksFor: { "@type": "Organization", name: "Futbol Sites", url: "https://www.futbolsites.net/pt" },
-  };
+  return { ...basePerson(c) };
 }
 
 // Grafo completo para a home (a página-entidade principal).
@@ -210,14 +209,7 @@ export function siteGraph(locale?: string | null) {
     "@graph": [
       {
         ...basePerson(c),
-        worksFor: { "@id": ORG_ID },
         makesOffer: services.map((s) => ({ "@type": "Offer", itemOffered: s })),
-      },
-      {
-        "@type": "Organization",
-        "@id": ORG_ID,
-        name: "Futbol Sites",
-        url: "https://www.futbolsites.net/pt",
       },
       {
         "@type": "WebSite",

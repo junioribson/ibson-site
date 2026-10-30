@@ -9,17 +9,16 @@
 // ============================================================================
 
 // Official spelling confirmed by Ibson (and in CLAUDE.md): Futmarketing.
-// TODO(fact): reconfirm the definitive brand spelling (Futmarketing, Footmarketing
-// or Foot Marketing) before publishing, in case Ibson wants to review it.
 export const FUTMARKETING_NAME = "Futmarketing";
 
 // TODO(fact): confirm the exact role in the operation (using CEO as per the brief).
 export const FUTMARKETING_ROLE = "CEO";
 
-// Current role allowed by Ibson (and in CLAUDE.md): Content Director at
-// Futbol Sites, with the option to hyperlink the official site. NEVER mention Better Collective.
+// Current standing (2026 transition): the Futbol Sites cycle (2017 to 2026) has
+// ended. Today: advisory board member and independent executive, former Content
+// Director. NEVER mention Better Collective. Futbol Sites only in the past.
 export const FUTBOL_SITES_URL = "https://www.futbolsites.net/pt";
-export const CARGO_ATUAL = "Content Director at Futbol Sites";
+export const CARGO_ATUAL = "Advisory board member and independent executive";
 
 // Analytics and Search Console. Fill in when Ibson creates the Google accounts:
 // - GA_MEASUREMENT_ID: the Google Analytics 4 ID, in the format "G-XXXXXXXXXX".
@@ -29,15 +28,15 @@ export const GA_MEASUREMENT_ID = "G-5S4SJGES22";
 export const GSC_VERIFICATION = "";
 
 export const seo = {
-  title: "Ibson Junior | Judgment, Leadership and Decision",
+  title: "Ibson Junior | Advisory board member, content and decision",
   description:
-    "Ibson Junior: content, leadership and communication executive. Talks, mentoring and advisory on personal branding, communication, culture and decision.",
+    "Advisory board member and content and digital product executive. Former CEO and CSO, two operations sold, nine years at the operation leading Brazil's digital sports audience.",
   ogTitle:
     "Ibson Junior | Judgment, leadership and decision in complex times",
   ogDescription:
     "Reflections, articles, talks and executive conversations on leadership, AI, culture, content, communication and decision-making in environments of pressure, information overload and transformation.",
   // TODO(asset): generate a 1200x630 Open Graph image and save it in public/assets/og/og-ibson.jpg
-  ogImage: "/assets/og/og-ibson.jpg",
+  ogImage: "/assets/og/og-ibson-2026.jpg",
 };
 
 export const nav = {
@@ -66,13 +65,13 @@ export const hero = {
     secondary: { href: "#contato", label: "Invite for a conversation" },
     tertiary: { href: "#artigos", label: "Read articles" },
   },
-  // Discreet micro-proofs: generic role, without naming the current employer.
+  // Discreet micro-proofs: current positioning, no employer in office.
   microprovas: [
-    CARGO_ATUAL,
-    "Founder of WolfLife",
-    "Founder of ProliferArte",
-    `${FUTMARKETING_ROLE} of ${FUTMARKETING_NAME}, involved in building and selling the operation`,
-    "Monthly articles on AI, culture, leadership, content and responsibility",
+    "Advisory board member and independent executive",
+    "Nine years with Futbol Sites (2017 to 2026)",
+    "Founder of WolfLife and ProliferArte",
+    "Co-founder, CEO and CSO of Futmarketing",
+    "Monthly articles on AI, culture, leadership and decision",
   ],
 };
 
@@ -93,20 +92,20 @@ export const about = {
     "Before talking about authority, it is worth understanding the path that built the repertoire.",
   body: [
     '<strong>Ibson Lima dos Santos Junior</strong>, known professionally as <a href="https://www.linkedin.com/in/ibson-junior/" target="_blank" rel="noopener">Ibson Junior</a>, is a <strong>content, leadership and communication executive</strong>, with a path built across digital media, editorial strategy, culture, digital business and audience building.',
-    'His experience spans projects that connect attention, community, narrative and results. He founded <strong><a href="https://wolflife.com.br/" target="_blank" rel="noopener">WolfLife</a></strong>, an ecosystem of digital communities sold in 2025, has led <strong><a href="https://www.facebook.com/ProliferArte/" target="_blank" rel="noopener">ProliferArte</a></strong> since 2008 and served as <strong><a href="https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" target="_blank" rel="noopener">CEO of Futmarketing</a></strong>, taking part in the building, positioning and sale of a Brazilian digital sports media operation.',
+    'His experience spans projects that connect attention, community, narrative and results. He founded <strong><a href="https://wolflife.com.br/" target="_blank" rel="noopener">WolfLife</a></strong>, an ecosystem of digital communities sold in 2025, has led <strong><a href="https://www.facebook.com/ProliferArte/" target="_blank" rel="noopener">ProliferArte</a></strong> since 2008 and <strong><a href="https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" target="_blank" rel="noopener">co-founded and led Futmarketing as CEO and CSO</a></strong>, taking part in the building, positioning and sale of a Brazilian digital sports media operation.',
     'He was also the creator of the site <strong><a href="https://www.antenadosnofutebol.com.br/" target="_blank" rel="noopener">Antenados no Futebol</a></strong>, responsible for the name and the initial conception of the brand, and played a direct role in bringing <strong>Bolavip</strong> to Brazil, in a move started between 2017 and 2018, when the brand already existed in other South American countries but was not yet operating in the Brazilian market.',
-    'Today, he works as <strong>Content Director at <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a></strong>, leading editorial operations and reflecting publicly on AI, attention, responsibility, culture, leadership and decision-making.',
+    "Between 2017 and 2026 he built a nine-year cycle with Futbol Sites, through three changes of control. He began as an external partner through Futmarketing, the company he co-founded and led as CEO and CSO, became Head of Digital Product in Brazil in 2021 and Content Director in 2026, responsible for Bolavip Brasil and Somos Fanáticos, following the acquisitions and leading integrations and restructurings. As Content Director he led an operation that integrated editorial, social, data, video, BI, business, monetization and partnerships, with more than one hundred people involved. He closed that cycle in October 2026. Today he serves on advisory boards and works as an independent executive, writing publicly about AI, culture, leadership, communication, governance and decision-making.",
     "Along this path, a principle took hold that runs through every project: audience is not sustained by volume, but by judgment. By care with framing, by coherence between what is said and what is done and by the responsibility of those who communicate at scale.",
     "The thread running through his journey is the ability to <em>build meaning in highly complex environments</em>: to understand the context, organize the narrative, decide with judgment and turn audience into perceived value. It is that repertoire, formed at the meeting of culture, business and communication, that he now brings to articles, mentoring, talks and board conversations.",
   ],
   microprovas: [
     { k: "WolfLife", v: "large-scale digital community" },
     { k: "ProliferArte", v: "cultural movement active since 2008" },
-    { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} and involvement in the sale of the operation` },
+    { k: FUTMARKETING_NAME, v: "co-founder, CEO and CSO; operation sold in 2022" },
     { k: "Antenados no Futebol", v: "creation, name and initial conception" },
     { k: "Bolavip Brasil", v: "involvement in bringing the brand to the country" },
-    { k: "Futbol Sites", v: "Content Director, editorial leadership in Brazil" },
-    { k: "Board", v: "advisory work and governance training" },
+    { k: "Futbol Sites", v: "nine years (2017 to 2026), from external partner to Head of Digital Product and Content Director" },
+    { k: "Board", v: "advisory board member; governance training" },
   ],
 };
 
@@ -118,24 +117,24 @@ export const about = {
 //   - url: the link to the specific post on LinkedIn
 //   - reactions/comments/shares: the counts (Ibson provides them)
 export const identity = {
-  seoTitle: "Ibson Junior | Content, Leadership and Communication Executive",
+  seoTitle: "Ibson Junior | Advisory board member, content and decision",
   seoDescription:
-    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is a content, leadership and communication executive. Journey, repertoire and the architecture of decision, execution and governance in complex digital environments.",
+    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is an advisory board member and content, leadership and communication executive. Journey, repertoire and the architecture of decision, execution and governance in complex digital environments.",
   socialTitle: "Ibson Junior: from dial-up internet to the architecture of decision",
   kicker: "Who is",
   h1: "Ibson Junior",
   subtitle: "Ibson Lima dos Santos Junior, known professionally as Ibson Junior.",
-  portrait: "/assets/retratos/ibson-junior-retrato.webp",
-  portraitAlt: "Portrait of Ibson Junior, content, leadership and communication executive",
+  portrait: "/assets/retratos/ibson-cinza.webp",
+  portraitAlt: "Ibson Junior seated and leaning forward, studio portrait on grey background",
   bio: [
     "Ibson Lima dos Santos Junior, known professionally as Ibson Junior, is a content, leadership and communication executive. He works on the architecture of decision, execution and governance systems in high-speed digital environments, connecting editorial strategy, culture, audience, technology, artificial intelligence and public responsibility.",
     "His relationship with technology began before any job title. In 2000 he got his first computer, learned to navigate the dial-up internet and grew up alongside the spread of the web in Brazil. Early on, he began to observe how people connect, how information circulates and how ideas gain strength when they find the right context.",
     "That curiosity was never confined to a single field. Along the way he moved through training and experience in events, information technology, workplace safety, environmental monitoring and other areas that, at first glance, might seem distant from one another. For Ibson it was not dispersion. It was repertoire. Each field added a layer to understand technology, culture, business, human behavior and communication as parts of the same system.",
     "It was in culture that this restlessness found its first public expression. In 2008 he founded ProliferArte, a movement created to bring people closer to art, to the word and to expression. Before working with large digital audiences, he was already testing a conviction that would run through his entire career: true attention is not born of reach alone. It is born of meaning.",
-    "In the following years he brought that lesson to digital communication at scale. In sports, he created Antenados no Futebol, responsible for the name and the concept of the brand, and played a direct role in the arrival and development of Bolavip in Brazil between 2017 and 2018. As CEO of Futmarketing, he took part in building, positioning and selling a Brazilian sports media operation. He then founded WolfLife, a digital community ecosystem that reached millions of people and billions of views, sold in 2025.",
+    "In the following years he brought that lesson to digital communication at scale. In sports, he created Antenados no Futebol, responsible for the name and the concept of the brand, and played a direct role in the arrival and development of Bolavip in Brazil between 2017 and 2018. He co-founded and led Futmarketing as CEO and CSO, taking part in building, positioning and selling a Brazilian sports media operation. He then founded WolfLife, a digital community ecosystem that reached millions of people and billions of views, sold in 2025.",
     "Operating in environments of growth, audience and high pressure for results, one perception became central: growth is rarely lost from a lack of strategy alone. It is often lost from the absence of coherence between decision, governance and execution. There are directions that do not consolidate, structures that grow without sustaining themselves, and executions that happen but do not repeat with consistency.",
     "That reading came to guide his work. More than formulating direction, Ibson devotes himself to understanding the architecture that makes a direction viable: how decisions are made, how responsibilities are distributed, how criteria are preserved and how execution holds as complexity grows.",
-    "Today, as Content Director in Brazil at Futbol Sites, he leads an operation that integrates editorial, social, data, audiovisual, BI, business and monetization and partnership fronts. His work lies less in isolated content production and more in coordinating systems able to sustain clarity, consistency and responsibility across multiple fronts at once.",
+    "Between 2017 and 2026 he built a nine-year cycle with Futbol Sites, through three changes of control. He began as an external partner through Futmarketing, the company he co-founded and led as CEO and CSO, became Head of Digital Product in Brazil in 2021 and Content Director in 2026, responsible for Bolavip Brasil and Somos Fanáticos, following the acquisitions and leading integrations and restructurings. As Content Director he led an operation that integrated editorial, social, data, video, BI, business, monetization and partnerships, with more than one hundred people involved. He closed that cycle in October 2026. Today he serves on advisory boards and works as an independent executive, writing publicly about AI, culture, leadership, communication, governance and decision-making.",
     "From art galleries to communities of millions, from cultural communication to digital sports media, Ibson has always dealt with the same question at different scales: what makes an idea, an operation or a decision hold?",
     "That repertoire today also translates beyond the operation. He works as a speaker, executive mentor and advisor, is co-author of the book Conselho Diário and writes publicly about artificial intelligence, culture, leadership, communication, reputation, governance and decision.",
     "His personal brand is born from this meeting of practical experience and public reflection. Ibson helps people and organizations decide, communicate and grow with more judgment amid the excess. His conviction is direct: consistent results are not born of one-off effort. They are born of clear structures, well-defined responsibilities and decisions that hold up in execution.",
@@ -144,8 +143,8 @@ export const identity = {
   factsTitle: "In brief",
   facts: [
     { k: "Name", v: "Ibson Lima dos Santos Junior" },
-    { k: "Role", v: "Content, leadership and communication executive" },
-    { k: "Position", v: "Content Director in Brazil at Futbol Sites" },
+    { k: "Profile", v: "Advisory board member and content, leadership and communication executive" },
+    { k: "Current role", v: "Advisory board member and independent executive; former Content Director in Brazil at Futbol Sites (2017 to 2026)" },
     { k: "Domains", v: "AI, culture, leadership, communication, governance and decision" },
     { k: "Also", v: "Speaker, executive mentor and advisor" },
     { k: "Author", v: 'Co-author of the book "Conselho Diário"' },
@@ -170,16 +169,16 @@ export const press = {
   citeName: "Ibson Junior",
   fullLabel: "Full name",
   fullName: "Ibson Lima dos Santos Junior",
-  roleLabel: "Position",
-  role: "Content Director in Brazil at Futbol Sites",
+  roleLabel: "Current role",
+  role: "Advisory board member and independent executive; former Content Director in Brazil at Futbol Sites (2017 to 2026)",
   biosTitle: "Biographies",
   bioShortLabel: "Short",
   bioMediumLabel: "Medium",
   bioLongLabel: "Long",
   bioShort:
-    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is a content, leadership and communication executive. Content Director in Brazil at Futbol Sites, he works with editorial strategy, AI, culture, audience, governance and decision in complex digital environments.",
+    "Ibson Junior, professional name of Ibson Lima dos Santos Junior, is an advisory board member and content, leadership and communication executive. A former CEO and CSO, he co-founded and sold two digital operations and in 2026 closed a nine-year cycle with Futbol Sites, the operation that led Brazil's digital sports audience. He works with strategy, governance and decision in complex digital environments.",
   bioMedium:
-    "Ibson Lima dos Santos Junior, known professionally as Ibson Junior, is a content, leadership and communication executive. He works on the architecture of decision, execution and governance systems in high-speed digital environments, connecting editorial strategy, culture, audience, technology, artificial intelligence and public responsibility. His path began in curiosity about technology, back in the dial-up internet era, and expanded across areas such as culture, events, IT, communication, digital communities, sports media and leadership. He founded ProliferArte in 2008, created Antenados no Futebol, played a direct role in the arrival and development of Bolavip in Brazil, was CEO of Futmarketing and founded WolfLife, a digital community ecosystem sold in 2025. Today he is Content Director in Brazil at Futbol Sites and writes about AI, leadership, culture, communication, governance, reputation and decision. His central thesis is that, in times of excess and speed, consistent results depend on clarity, judgment and structures able to sustain good decisions in execution.",
+    "Ibson Lima dos Santos Junior, known professionally as Ibson Junior, is an advisory board member and content, leadership and communication executive. He works on the architecture of decision, execution and governance systems in high-speed digital environments, connecting editorial strategy, culture, audience, technology, artificial intelligence and public responsibility. His path began in curiosity about technology, back in the dial-up internet era, and expanded across areas such as culture, events, IT, communication, digital communities, sports media and leadership. He founded ProliferArte in 2008, created Antenados no Futebol, played a direct role in the arrival and development of Bolavip in Brazil, co-founded and led Futmarketing as CEO and CSO and founded WolfLife, a digital community ecosystem sold in 2025. Between 2017 and 2026 he built a nine-year cycle with Futbol Sites, from external partner to Head of Digital Product and Content Director in Brazil, closed in October 2026. Today he serves on advisory boards and works as an independent executive, writing about AI, leadership, culture, communication, governance, reputation and decision. His central thesis is that, in times of excess and speed, consistent results depend on clarity, judgment and structures able to sustain good decisions in execution.",
   copy: "Copy",
   copied: "Copied",
   topicsTitle: "Topics for interviews and talks",
@@ -193,6 +192,8 @@ export const press = {
   ],
   photoTitle: "Official photo",
   photoDownload: "Open photo",
+  photo: "/assets/retratos/ibson-colete.webp",
+  photoAlt: "Ibson Junior smiling, head and shoulders portrait on light background",
   contactTitle: "Contact and official links",
 };
 
@@ -250,7 +251,7 @@ export const linkedinPosts = {
 
 // Authority block between the biography and the cases. METRIC RIGOR: "people",
 // "users", "sessions" and "impressions" are NOT the same thing. The largest number
-// is stated as "digital touchpoints", never as "people reached".
+// is stated as "impressions", never as "people reached".
 export const audienceArchitecture = {
   kicker: "Content · Audience · Algorithm · Behaviour",
   title: "The architecture behind the audience.",
@@ -271,19 +272,20 @@ export const audienceArchitecture = {
   // All cards are CONSOLIDATED (18 years), with no monthly or annual slice. The only
   // short window is "+1B in a single year", which earns its place as a record.
   featured: {
-    n: "+50B",
-    label: "consolidated digital touchpoints",
-    note: "an 18 year total across impressions, views, sessions, reach and engagement, on social networks and websites, spanning own projects, communities and editorial operations.",
+    n: "+100B",
+    label: "impressions",
+    note: "an 18 year total across social networks and websites, spanning own projects, communities and editorial operations.",
   },
   metrics: [
     { n: "+12B", label: "engagement accumulated over 18 years of networks, communities and content" },
     // Views > engagement, always. Consolidated across ALL fronts.
     { n: "+20B", label: "views accumulated across static posts, video, communities and distribution" },
-    { n: "+1B", label: "sessions in a single year of editorial operation, the operation's record" },
+    { n: "+1B", label: "sessions on the Bolavip Brasil website in 2022, the operation's record" },
     // Consolidated across ALL fronts, hence "combined": it does not clash with the
     // "+160M followers on the network" from the WolfLife case, which is one of them.
     { n: "+200M", label: "followers across the combined networks and digital communities" },
     { n: "18 years", label: "building culture, community, content and digital audience" },
+    { n: "No. 1", label: "in Brazil's digital sports audience, December 2024" },
   ],
   note: "Figures consolidated over 18 years of projects in culture, community, digital media and editorial operations, combining social networks and websites. The metrics represent different dimensions of reach, distribution, consumption and interaction, and should not be read as unique people.",
   ctas: {
@@ -325,7 +327,8 @@ export const cases = {
     name: FUTMARKETING_NAME,
     tag: "Sports media · Digital operation · M&A",
     body: [
-      `At ${FUTMARKETING_NAME}, Ibson served as ${FUTMARKETING_ROLE} and took part in the building, positioning and sale of a Brazilian digital sports media operation.`,
+      `At ${FUTMARKETING_NAME}, Ibson co-founded the company, served as CEO and CSO and took part in the building, positioning and sale of a Brazilian digital sports media operation. The partnership with Futbol Sites began in 2017, alongside the partnership with 90min, and was the origin of a nine-year cycle.`,
+      "On the sports operation's social networks there were months above 1 billion impressions. In June 2026 alone there were 879 million impressions and 42 million video views in a single month.",
       "The work involved creating the site Antenados no Futebol, including choosing the name and the initial conception of the project, as well as direct involvement in bringing Bolavip to Brazil, between 2017 and 2018, when the brand already existed in South American countries but had not yet been consolidated in the Brazilian market.",
       "The case shows an important dimension of his journey: turning editorial vision, audience and market opportunity into a strategic asset.",
       "The sale of the operation was reported by Yahoo Finance, serving as external validation of the move's relevance within the sports media and marketing market.",
