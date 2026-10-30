@@ -38,7 +38,7 @@ export const seo = {
   ogDescription:
     "Reflexões, artigos, palestras e conversas executivas sobre liderança, IA, cultura, conteúdo, comunicação e tomada de decisão em ambientes de pressão, excesso de informação e transformação.",
   // TODO(asset): gerar imagem Open Graph 1200x630 e salvar em public/assets/og/og-ibson.jpg
-  ogImage: "/assets/og/og-ibson.jpg",
+  ogImage: "/assets/og/og-ibson-2026.jpg",
 };
 
 export const nav = {
@@ -122,8 +122,8 @@ export const identity = {
   kicker: "Quem é",
   h1: "Ibson Junior",
   subtitle: "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior.",
-  portrait: "/assets/retratos/ibson-junior-retrato.webp",
-  portraitAlt: "Retrato de Ibson Junior, executivo de conteúdo, liderança e comunicação",
+  portrait: "/assets/retratos/ibson-cinza.webp",
+  portraitAlt: "Ibson Junior sentado, inclinado para a frente, retrato em estúdio com fundo cinza",
   bio: [
     "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior, é executivo de conteúdo, liderança e comunicação. Atua na arquitetura de sistemas de decisão, execução e governança em ambientes digitais de alta velocidade, conectando estratégia editorial, cultura, audiência, tecnologia, inteligência artificial e responsabilidade pública.",
     "Sua relação com tecnologia começou antes de qualquer cargo. Em 2000, ganhou seu primeiro computador, aprendeu a navegar pela internet discada e cresceu junto com a popularização da rede no Brasil. Desde cedo, passou a observar como pessoas se conectam, como informações circulam e como ideias ganham força quando encontram o contexto certo.",
@@ -192,6 +192,8 @@ export const press = {
   ],
   photoTitle: "Foto oficial",
   photoDownload: "Abrir foto",
+  photo: "/assets/retratos/ibson-colete.webp",
+  photoAlt: "Ibson Junior sorrindo, retrato de busto em fundo claro",
   contactTitle: "Contato e links oficiais",
 };
 

@@ -56,6 +56,13 @@ const REP = {
 } as const;
 const rep = REP[locale];
 const itens = rep.itens;
+// Retrato com troca por tema: poltrona (fundo escuro) no tema escuro, cinza (fundo
+// claro) no tema claro. A moldura (object-fit cover, 4/5) faz o recorte.
+const REP_ALT = {
+  pt: { dark: "Ibson Junior sentado em poltrona de couro, retrato editorial em estúdio", light: "Ibson Junior sentado, inclinado para a frente, retrato em estúdio com fundo cinza" },
+  es: { dark: "Ibson Junior sentado en un sillón de cuero, retrato editorial de estudio", light: "Ibson Junior sentado e inclinado hacia adelante, retrato de estudio con fondo gris" },
+  en: { dark: "Ibson Junior seated in a leather armchair, editorial studio portrait", light: "Ibson Junior seated and leaning forward, studio portrait on grey background" },
+}[locale];
 ---
 
 <section class="repo repertorio" id="repertorio">
@@ -83,14 +90,8 @@ const itens = rep.itens;
         </dl>
       </div>
       <div class="rep-photo-col reveal d1">
-        <img
-          class="rep-photo"
-          src="/assets/retratos/ibson-junior-executivo.webp"
-          alt={ui.portraitAlt}
-          width="514"
-          height="900"
-          loading="lazy"
-        />
+        <img class="rep-photo rep-photo-dark" src="/assets/retratos/ibson-poltrona.webp" alt={REP_ALT.dark} width="1086" height="1448" loading="lazy" style="object-position:50% 20%" />
+        <img class="rep-photo rep-photo-light" src="/assets/retratos/ibson-cinza.webp" alt={REP_ALT.light} width="1086" height="1448" loading="lazy" style="object-position:50% 15%" />
       </div>
     </div>
   </div>
@@ -113,6 +114,10 @@ const itens = rep.itens;
     border-radius: 14px;
     box-shadow: 0 30px 66px -34px rgba(0, 0, 0, 0.85);
   }
+  /* Troca por tema: poltrona (escuro) / cinza (claro). Só um renderiza. */
+  .rep-photo-light { display: none; }
+  :root[data-theme="light"] .rep-photo-dark { display: none; }
+  :root[data-theme="light"] .rep-photo-light { display: block; }
   .repertorio h2 {
     font-size: clamp(26px, 3.4vw, 44px);
     font-weight: 800;
