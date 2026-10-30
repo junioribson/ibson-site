@@ -192,8 +192,8 @@ export const press = {
   ],
   photoTitle: "Foto oficial",
   photoDownload: "Abrir foto",
-  photo: "/assets/retratos/ibson-colete.webp",
-  photoAlt: "Ibson Junior sonriendo, retrato de busto sobre fondo claro",
+  photo: "/assets/retratos/ibson-navy.webp",
+  photoAlt: "Ibson Junior con blazer azul marino y camisa blanca, retrato oficial para prensa",
   contactTitle: "Contacto y enlaces oficiales",
 };
 
@@ -272,7 +272,7 @@ export const audienceArchitecture = {
   // Todos los cards son CONSOLIDADOS (18 años), sin recorte mensual ni anual. La
   // única ventana corta es "+1 MM en un solo año", que entra por ser récord.
   featured: {
-    n: "+100 MM",
+    n: "+115 MM",
     label: "impresiones",
     note: "suma de 18 años entre redes sociales y sitios web, considerando proyectos propios, comunidades y operaciones editoriales.",
   },
@@ -379,7 +379,6 @@ export interface Article {
   slug?: string;
 }
 
-const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/";
 
 // Enlaces reales de cada artículo en LinkedIn (enviados por Ibson).
 const ART_URL = {

@@ -12,8 +12,8 @@ const PERSON_ID = `${SITE}/#person`;
 const WEBSITE_ID = `${SITE}/#website`;
 
 const PORTRAITS = [
+  `${SITE}/assets/retratos/ibson-navy.webp`,
   `${SITE}/assets/retratos/ibson-colete.webp`,
-  `${SITE}/assets/retratos/ibson-cinza.webp`,
 ];
 const SAME_AS = [
   "https://www.linkedin.com/in/ibson-junior/",

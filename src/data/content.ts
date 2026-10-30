@@ -190,8 +190,8 @@ export const press = {
   ],
   photoTitle: "Foto oficial",
   photoDownload: "Abrir foto",
-  photo: "/assets/retratos/ibson-colete.webp",
-  photoAlt: "Ibson Junior sorrindo, retrato de busto em fundo claro",
+  photo: "/assets/retratos/ibson-navy.webp",
+  photoAlt: "Ibson Junior de blazer azul-marinho e camisa branca, retrato oficial para imprensa",
   contactTitle: "Contato e links oficiais",
 };
 
@@ -280,7 +280,7 @@ export const audienceArchitecture = {
   // Todos os cards são CONSOLIDADOS (18 anos), sem recorte mensal ou anual. A única
   // janela curta é o "+1 Bi em um único ano", que entra justamente por ser recorde.
   featured: {
-    n: "+100 Bi",
+    n: "+115 Bi",
     label: "impressões",
     note: "somatório de 18 anos entre redes sociais e sites, considerando projetos próprios, comunidades e operações editoriais.",
   },
@@ -389,7 +389,6 @@ export interface Article {
   slug?: string;
 }
 
-const LINKEDIN = "https://www.linkedin.com/in/ibson-junior/recent-activity/all/";
 
 // Links reais de cada artigo no LinkedIn (enviados pelo Ibson).
 const ART_URL = {

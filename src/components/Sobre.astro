@@ -11,9 +11,9 @@ const aboutMoreHref = localizePath("/ibson-junior", locale);
 // Retrato com troca por tema: fundo escuro (marrom) no tema escuro, fundo claro
 // (colete) no tema claro. O frame .fr (aspect 4/5, object-fit cover) faz o recorte.
 const ALT = {
-  pt: { dark: "Ibson Junior, conselheiro consultivo e executivo de conteúdo e produto digital, retrato em estúdio de braços cruzados", light: "Ibson Junior sorrindo, retrato de busto em fundo claro" },
-  es: { dark: "Ibson Junior, consejero consultivo y ejecutivo de contenido y producto digital, retrato de estudio con brazos cruzados", light: "Ibson Junior sonriendo, retrato de busto sobre fondo claro" },
-  en: { dark: "Ibson Junior, advisory board member and content and digital product executive, studio portrait with arms crossed", light: "Ibson Junior smiling, head and shoulders portrait on light background" },
+  pt: { dark: "Ibson Junior sentado em poltrona de couro, terno escuro, retrato editorial em estúdio", light: "Ibson Junior sorrindo, retrato de busto em fundo claro" },
+  es: { dark: "Ibson Junior sentado en un sillón de cuero, traje oscuro, retrato editorial de estudio", light: "Ibson Junior sonriendo, retrato de busto sobre fondo claro" },
+  en: { dark: "Ibson Junior seated in a leather armchair, dark suit, editorial studio portrait", light: "Ibson Junior smiling, head and shoulders portrait on light background" },
 }[locale];
 ---
 
@@ -25,7 +25,7 @@ const ALT = {
     <div class="sobre-grid">
       <div class="sobre-photo reveal">
         <div class="fr">
-          <img class="portrait-dark" src="/assets/retratos/ibson-marrom.webp" alt={ALT.dark} width="1086" height="1448" style="object-position:50% 18%" />
+          <img class="portrait-dark" src="/assets/retratos/ibson-poltrona.webp" alt={ALT.dark} width="1086" height="1448" style="object-position:50% 32%" />
           <img class="portrait-light" src="/assets/retratos/ibson-colete.webp" alt={ALT.light} width="1024" height="1536" loading="lazy" style="object-position:50% 12%" />
         </div>
       </div>
