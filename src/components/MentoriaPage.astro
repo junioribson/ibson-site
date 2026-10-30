@@ -3,6 +3,7 @@
 // animado, blocos e CTA de noite). Conteúdo em `mentorship` (content.*.ts).
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
+import Depoimentos from "./Depoimentos.astro";
 import { getContent, normalizeLocale, localizePath } from "../i18n/utils";
 import { t } from "../i18n/ui";
 import { themeLabel } from "../data/clusters";
@@ -121,6 +122,8 @@ const relLinks = [
       </div>
     </div>
   </nav>
+
+  <Depoimentos />
 
   <section class="lp-final">
     <div class="lp-final-bg" aria-hidden="true"><span class="orb orb-f1"></span><span class="orb orb-f2"></span></div>
