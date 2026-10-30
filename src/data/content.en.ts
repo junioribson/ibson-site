@@ -204,8 +204,23 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Real LinkedIn posts, from most recent to oldest (read from the activity
   // page). Update every 3-4 days through the same flow (logged-in browser).
-  // Last update: 2026-10-13.
+  // Last update: 2026-10-30.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-encerro-um-ciclo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7521631571658006530/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: portrait of Ibson Junior in a brown suit and green shirt, arms crossed, smiling, against a dark background.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cargos-diferentes-respeito-igual.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7518049640957648896/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: the roles are different. The respect is the same. That is culture.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-visto-por-milhoes.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7516600103860862976/",
+      alt: "Post artwork by Ibson Junior on LinkedIn: illustration of people talking across several social networks and AI tools, with a thoughtful young man at the center in front of a laptop.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-ser-bom-com-as-pessoas.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7514063328801947652/",
@@ -230,21 +245,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-conteudo-sem-criterio-escala-ruido.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7507042121762279425/",
       alt: "Post artwork by Ibson Junior on LinkedIn: content without criteria does not scale relevance. It scales noise.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-clareza-se-mede.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7506090798405455872/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: communicating is not sending the message. It is keeping it from getting lost along the way.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: two goals can both be right, the decision between them still needs someone.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
-      alt: "Post artwork by Ibson Junior on LinkedIn: when the most influential voice speaks first, the other ideas may never show up.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };

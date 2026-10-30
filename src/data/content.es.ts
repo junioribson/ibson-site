@@ -204,8 +204,23 @@ export const linkedinPosts = {
   profileUrl: "https://www.linkedin.com/in/ibson-junior/recent-activity/all/",
   // Publicaciones reales de LinkedIn, de la más reciente a la más antigua (leídas de la página
   // de actividad). Actualizar cada 3-4 días con el mismo flujo (navegador con sesión iniciada).
-  // Última actualización: 2026-10-13.
+  // Última actualización: 2026-10-30.
   posts: [
+    {
+      image: "/assets/posts/ibson-junior-post-encerro-um-ciclo.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7521631571658006530/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: retrato de Ibson Junior con traje marrón y camisa verde, brazos cruzados, sonriendo, sobre fondo oscuro.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-cargos-diferentes-respeito-igual.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7518049640957648896/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: los cargos son diferentes. El respeto es el mismo. Eso es cultura.",
+    },
+    {
+      image: "/assets/posts/ibson-junior-post-visto-por-milhoes.webp",
+      url: "https://www.linkedin.com/feed/update/urn:li:activity:7516600103860862976/",
+      alt: "Arte de publicación de Ibson Junior en LinkedIn: ilustración de personas conversando en varias redes sociales y herramientas de IA, con un joven pensativo en el centro frente a la laptop.",
+    },
     {
       image: "/assets/posts/ibson-junior-post-ser-bom-com-as-pessoas.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7514063328801947652/",
@@ -230,21 +245,6 @@ export const linkedinPosts = {
       image: "/assets/posts/ibson-junior-post-conteudo-sem-criterio-escala-ruido.webp",
       url: "https://www.linkedin.com/feed/update/urn:li:activity:7507042121762279425/",
       alt: "Arte de publicación de Ibson Junior en LinkedIn: contenido sin criterio no escala relevancia. Escala ruido.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-clareza-se-mede.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7506090798405455872/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: comunicar no es enviar el mensaje. Es impedir que se pierda en el camino.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-metas-em-conflito.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7505366019922837504/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: dos metas pueden estar en lo cierto, la decisión entre ellas todavía necesita a alguien.",
-    },
-    {
-      image: "/assets/posts/ibson-junior-post-falar-por-ultimo.webp",
-      url: "https://www.linkedin.com/feed/update/urn:li:activity:7504501705867157504/",
-      alt: "Arte de publicación de Ibson Junior en LinkedIn: cuando la voz más influyente habla primero, las otras ideas pueden ni aparecer.",
     },
   ] as Array<{ image: string; url: string; alt: string }>,
 };
