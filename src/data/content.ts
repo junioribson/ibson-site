@@ -16,10 +16,11 @@ export const FUTMARKETING_NAME = "Futmarketing";
 // TODO(fato): confirmar o papel exato na operação (usando CEO conforme brief).
 export const FUTMARKETING_ROLE = "CEO";
 
-// Cargo atual permitido pelo Ibson (e no CLAUDE.md): Diretor de Conteúdo na
-// Futbol Sites, podendo hiperlinkar o site oficial. NUNCA mencionar Better Collective.
+// Atuação atual (transição 2026): o ciclo com a Futbol Sites (2017 a 2026) foi
+// encerrado. Hoje: conselheiro consultivo e executivo independente, ex-Diretor de
+// Conteúdo. NUNCA mencionar Better Collective. Futbol Sites só no passado.
 export const FUTBOL_SITES_URL = "https://www.futbolsites.net/pt";
-export const CARGO_ATUAL = "Diretor de Conteúdo na Futbol Sites";
+export const CARGO_ATUAL = "Conselheiro consultivo e executivo independente";
 
 // Analytics e Search Console. Preencher quando o Ibson criar as contas Google:
 // - GA_MEASUREMENT_ID: o ID do Google Analytics 4, no formato "G-XXXXXXXXXX".
@@ -29,9 +30,9 @@ export const GA_MEASUREMENT_ID = "G-5S4SJGES22";
 export const GSC_VERIFICATION = "";
 
 export const seo = {
-  title: "Ibson Junior | Critério, Liderança e Decisão",
+  title: "Ibson Junior | Conselheiro consultivo, conteúdo e decisão",
   description:
-    "Ibson Junior: executivo de conteúdo, liderança e comunicação. Palestras, mentoria e conselho sobre marca pessoal, comunicação, cultura e decisão.",
+    "Conselheiro consultivo e executivo de conteúdo e produto digital. Ex-CEO e CSO, duas operações vendidas, nove anos na operação líder em audiência esportiva digital do Brasil.",
   ogTitle:
     "Ibson Junior | Critério, liderança e decisão em tempos complexos",
   ogDescription:
@@ -66,13 +67,13 @@ export const hero = {
     secondary: { href: "#contato", label: "Convidar para uma conversa" },
     tertiary: { href: "#artigos", label: "Ler artigos" },
   },
-  // Microprovas discretas: cargo genérico, sem nomear empregador atual.
+  // Microprovas discretas: posicionamento atual, sem empregador em exercício.
   microprovas: [
-    CARGO_ATUAL,
-    "Fundador da WolfLife",
-    "Fundador da ProliferArte",
-    `${FUTMARKETING_ROLE} da ${FUTMARKETING_NAME}, com participação na construção e venda da operação`,
-    "Artigos mensais sobre IA, cultura, liderança, conteúdo e responsabilidade",
+    "Conselheiro consultivo e executivo independente",
+    "Nove anos com a Futbol Sites (2017 a 2026)",
+    "Fundador da WolfLife e da ProliferArte",
+    "Cofundador, CEO e CSO da Futmarketing",
+    "Artigos mensais sobre IA, cultura, liderança e decisão",
   ],
 };
 
@@ -93,20 +94,20 @@ export const about = {
     "Antes de falar sobre autoridade, é preciso entender o caminho que construiu o repertório.",
   body: [
     '<strong>Ibson Lima dos Santos Junior</strong>, que assina como <a href="https://www.linkedin.com/in/ibson-junior/" target="_blank" rel="noopener">Ibson Junior</a>, é <strong>executivo de conteúdo, liderança e comunicação</strong>, com trajetória construída entre mídia digital, estratégia editorial, cultura, negócios digitais e construção de audiência.',
-    'Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong><a href="https://wolflife.com.br/" target="_blank" rel="noopener">WolfLife</a></strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong><a href="https://www.facebook.com/ProliferArte/" target="_blank" rel="noopener">ProliferArte</a></strong> desde 2008 e atuou como <strong><a href="https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" target="_blank" rel="noopener">CEO da Futmarketing</a></strong>, participando da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.',
+    'Sua experiência passa por projetos que conectam atenção, comunidade, narrativa e resultado. Fundou a <strong><a href="https://wolflife.com.br/" target="_blank" rel="noopener">WolfLife</a></strong>, ecossistema de comunidades digitais vendido em 2025, lidera a <strong><a href="https://www.facebook.com/ProliferArte/" target="_blank" rel="noopener">ProliferArte</a></strong> desde 2008 e <strong><a href="https://es-us.finanzas.yahoo.com/noticias/compra-millonaria-gigante-medios-marketing-090600505.html" target="_blank" rel="noopener">cofundou e dirigiu a Futmarketing como CEO e CSO</a></strong>, participando da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.',
     'Também foi criador do site <strong><a href="https://www.antenadosnofutebol.com.br/" target="_blank" rel="noopener">Antenados no Futebol</a></strong>, responsável pelo nome e pela concepção inicial da marca, e teve papel direto na chegada da <strong>Bolavip</strong> ao Brasil, em um movimento iniciado entre 2017 e 2018, quando a marca já existia em outros países da América do Sul, mas ainda não operava no mercado brasileiro.',
-    'Hoje, atua como <strong>Diretor de Conteúdo na <a href="https://www.futbolsites.net/pt" target="_blank" rel="noopener">Futbol Sites</a></strong>, liderando operações editoriais e refletindo publicamente sobre IA, atenção, responsabilidade, cultura, liderança e tomada de decisão.',
+    "Entre 2017 e 2026, construiu um ciclo de nove anos com a Futbol Sites, que atravessou três mudanças de controle. Começou como parceiro externo pela Futmarketing, empresa que cofundou e dirigiu como CEO e CSO, foi Head of Digital Product no Brasil a partir de 2021 e Diretor de Conteúdo em 2026, responsável por Bolavip Brasil e Somos Fanáticos, acompanhando as aquisições e conduzindo integrações e reestruturações. Como Diretor de Conteúdo, liderou uma operação que integrava editorial, social, dados, audiovisual, BI, negócios e frentes de monetização e parceria, com mais de cem pessoas envolvidas. Encerrou esse ciclo em outubro de 2026. Hoje atua em conselhos consultivos e como executivo independente, e escreve publicamente sobre IA, cultura, liderança, comunicação, governança e decisão.",
     "Ao longo desse percurso, foi se firmando um princípio que atravessa cada projeto: audiência não se sustenta pelo volume, e sim pelo critério. Pelo cuidado com o enquadramento, pela coerência entre o que se diz e o que se faz e pela responsabilidade de quem comunica em escala.",
     "O fio condutor da sua trajetória é a capacidade de <em>construir sentido em ambientes de alta complexidade</em>: entender o contexto, organizar a narrativa, decidir com critério e transformar audiência em percepção de valor. É esse repertório, formado no encontro entre cultura, negócio e comunicação, que ele leva hoje para artigos, mentorias, palestras e conversas de conselho.",
   ],
   microprovas: [
     { k: "WolfLife", v: "comunidade digital de grande escala" },
     { k: "ProliferArte", v: "movimento cultural ativo desde 2008" },
-    { k: FUTMARKETING_NAME, v: `${FUTMARKETING_ROLE} e participação na venda da operação` },
+    { k: FUTMARKETING_NAME, v: "cofundador, CEO e CSO; operação vendida em 2022" },
     { k: "Antenados no Futebol", v: "criação, nome e concepção inicial" },
     { k: "Bolavip Brasil", v: "participação na chegada da marca ao país" },
-    { k: "Futbol Sites", v: "Diretor de Conteúdo, liderança editorial no Brasil" },
-    { k: "Conselho", v: "atuação administrativa e formação em governança" },
+    { k: "Futbol Sites", v: "nove anos (2017 a 2026), de parceiro externo a Head of Digital Product e Diretor de Conteúdo" },
+    { k: "Conselho", v: "conselheiro consultivo; formação em governança" },
   ],
 };
 
@@ -114,9 +115,9 @@ export const about = {
 // narrativa (origem curiosa -> repertório -> audiência -> escala -> arquitetura de
 // decisão -> atuação pública), com bloco factual secundário. Mesmo #person do site.
 export const identity = {
-  seoTitle: "Ibson Junior | Executivo de Conteúdo, Liderança e Comunicação",
+  seoTitle: "Ibson Junior | Conselheiro consultivo e executivo de conteúdo",
   seoDescription:
-    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é executivo de conteúdo, liderança e comunicação. Trajetória, repertório e a arquitetura de decisão, execução e governança em ambientes digitais complexos.",
+    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Trajetória, repertório e a arquitetura de decisão, execução e governança em ambientes digitais complexos.",
   socialTitle: "Ibson Junior: da internet discada à arquitetura da decisão",
   kicker: "Quem é",
   h1: "Ibson Junior",
@@ -128,10 +129,10 @@ export const identity = {
     "Sua relação com tecnologia começou antes de qualquer cargo. Em 2000, ganhou seu primeiro computador, aprendeu a navegar pela internet discada e cresceu junto com a popularização da rede no Brasil. Desde cedo, passou a observar como pessoas se conectam, como informações circulam e como ideias ganham força quando encontram o contexto certo.",
     "Essa curiosidade nunca ficou restrita a uma área. Ao longo da trajetória, passou por formações e experiências em eventos, informática, segurança do trabalho, monitoria ambiental e outros campos que, à primeira vista, poderiam parecer distantes entre si. Para Ibson, não era dispersão. Era repertório. Cada área acrescentava uma camada para entender tecnologia, cultura, negócio, comportamento humano e comunicação como partes de um mesmo sistema.",
     "Foi na cultura que essa inquietação encontrou sua primeira expressão pública. Em 2008, fundou a ProliferArte, movimento criado para aproximar pessoas da arte, da palavra e da expressão. Antes de trabalhar com grandes audiências digitais, já experimentava uma convicção que atravessaria toda a sua carreira: atenção verdadeira não nasce apenas de alcance. Nasce de sentido.",
-    "Nos anos seguintes, levou esse aprendizado para a comunicação digital em escala. No esporte, foi criador do Antenados no Futebol, responsável pelo nome e pela concepção da marca, e teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil entre 2017 e 2018. Como CEO da Futmarketing, participou da construção, do posicionamento e da venda de uma operação brasileira de mídia esportiva. Depois, fundou a WolfLife, ecossistema de comunidades digitais que alcançou milhões de pessoas e bilhões de visualizações, vendido em 2025.",
+    "Nos anos seguintes, levou esse aprendizado para a comunicação digital em escala. No esporte, foi criador do Antenados no Futebol, responsável pelo nome e pela concepção da marca, e teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil entre 2017 e 2018. Cofundou a Futmarketing e a dirigiu como CEO e CSO, participando da construção, do posicionamento e da venda de uma operação brasileira de mídia esportiva. Depois, fundou a WolfLife, ecossistema de comunidades digitais que alcançou milhões de pessoas e bilhões de visualizações, vendido em 2025.",
     "Ao operar em ambientes de crescimento, audiência e alta pressão por resultado, uma percepção foi se tornando central: o crescimento raramente se perde apenas por falta de estratégia. Muitas vezes, ele se perde pela ausência de coerência entre decisão, governança e execução. Existem direções que não se consolidam, estruturas que crescem sem se sustentar e execuções que acontecem, mas não se repetem com consistência.",
     "Essa leitura passou a orientar sua atuação. Mais do que formular direção, Ibson se dedica a entender a arquitetura que torna uma direção viável: como decisões são tomadas, como responsabilidades são distribuídas, como critérios são preservados e como a execução se mantém quando a complexidade aumenta.",
-    "Hoje, como Diretor de Conteúdo no Brasil na Futbol Sites, lidera uma operação que integra editorial, social, dados, audiovisual, BI, negócios e frentes de monetização e parceria. Sua atuação está menos na produção isolada de conteúdo e mais na coordenação de sistemas capazes de sustentar clareza, consistência e responsabilidade em múltiplas frentes ao mesmo tempo.",
+    "Entre 2017 e 2026, construiu um ciclo de nove anos com a Futbol Sites, que atravessou três mudanças de controle. Começou como parceiro externo pela Futmarketing, empresa que cofundou e dirigiu como CEO e CSO, foi Head of Digital Product no Brasil a partir de 2021 e Diretor de Conteúdo em 2026, responsável por Bolavip Brasil e Somos Fanáticos, acompanhando as aquisições e conduzindo integrações e reestruturações. Como Diretor de Conteúdo, liderou uma operação que integrava editorial, social, dados, audiovisual, BI, negócios e frentes de monetização e parceria, com mais de cem pessoas envolvidas. Encerrou esse ciclo em outubro de 2026. Hoje atua em conselhos consultivos e como executivo independente, e escreve publicamente sobre IA, cultura, liderança, comunicação, governança e decisão.",
     "De galerias de arte a comunidades de milhões, da comunicação cultural à mídia esportiva digital, Ibson sempre lidou com a mesma pergunta em diferentes escalas: o que faz uma ideia, uma operação ou uma decisão se sustentar?",
     "Esse repertório hoje também se traduz para além da operação. Atua como palestrante, mentor executivo e conselheiro, é coautor do livro Conselho Diário e escreve publicamente sobre inteligência artificial, cultura, liderança, comunicação, reputação, governança e decisão.",
     "Sua marca pessoal nasce desse encontro entre experiência prática e reflexão pública. Ibson ajuda pessoas e organizações a decidir, comunicar e crescer com mais critério em meio ao excesso. Sua convicção é direta: resultado consistente não nasce de esforço pontual. Nasce de estruturas claras, responsabilidades bem definidas e decisões que se sustentam na execução.",
@@ -140,8 +141,8 @@ export const identity = {
   factsTitle: "Em resumo",
   facts: [
     { k: "Nome", v: "Ibson Lima dos Santos Junior" },
-    { k: "Atuação", v: "Executivo de conteúdo, liderança e comunicação" },
-    { k: "Cargo", v: "Diretor de Conteúdo no Brasil na Futbol Sites" },
+    { k: "Perfil", v: "Conselheiro consultivo e executivo de conteúdo, liderança e comunicação" },
+    { k: "Atuação atual", v: "Conselheiro consultivo e executivo independente; ex-Diretor de Conteúdo no Brasil na Futbol Sites (2017 a 2026)" },
     { k: "Territórios", v: "IA, cultura, liderança, comunicação, governança e decisão" },
     { k: "Também", v: "Palestrante, mentor executivo e conselheiro" },
     { k: "Autor", v: 'Coautor do livro "Conselho Diário"' },
@@ -168,16 +169,16 @@ export const press = {
   citeName: "Ibson Junior",
   fullLabel: "Nome completo",
   fullName: "Ibson Lima dos Santos Junior",
-  roleLabel: "Cargo",
-  role: "Diretor de Conteúdo no Brasil na Futbol Sites",
+  roleLabel: "Atuação atual",
+  role: "Conselheiro consultivo e executivo independente; ex-Diretor de Conteúdo no Brasil na Futbol Sites (2017 a 2026)",
   biosTitle: "Biografias",
   bioShortLabel: "Curta",
   bioMediumLabel: "Média",
   bioLongLabel: "Longa",
   bioShort:
-    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é executivo de conteúdo, liderança e comunicação. Diretor de Conteúdo no Brasil na Futbol Sites, atua com estratégia editorial, IA, cultura, audiência, governança e decisão em ambientes digitais complexos.",
+    "Ibson Junior, nome profissional de Ibson Lima dos Santos Junior, é conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Ex-CEO e CSO, cofundou e vendeu duas operações digitais e encerrou em 2026 um ciclo de nove anos na Futbol Sites, a operação que liderou a audiência esportiva digital do Brasil. Atua com estratégia, governança e decisão em ambientes digitais complexos.",
   bioMedium:
-    "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior, é executivo de conteúdo, liderança e comunicação. Atua na arquitetura de sistemas de decisão, execução e governança em ambientes digitais de alta velocidade, conectando estratégia editorial, cultura, audiência, tecnologia, inteligência artificial e responsabilidade pública. Sua trajetória começou na curiosidade pela tecnologia, ainda na época da internet discada, e se expandiu por áreas como cultura, eventos, informática, comunicação, comunidades digitais, mídia esportiva e liderança. Fundou a ProliferArte em 2008, foi criador do Antenados no Futebol, teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil, foi CEO da Futmarketing e fundou a WolfLife, ecossistema de comunidades digitais vendido em 2025. Hoje, é Diretor de Conteúdo no Brasil na Futbol Sites e escreve sobre IA, liderança, cultura, comunicação, governança, reputação e decisão. Sua tese central é que, em tempos de excesso e velocidade, resultado consistente depende de clareza, critério e estruturas capazes de sustentar boas decisões na execução.",
+    "Ibson Lima dos Santos Junior, conhecido profissionalmente como Ibson Junior, é conselheiro consultivo e executivo de conteúdo, liderança e comunicação. Atua na arquitetura de sistemas de decisão, execução e governança em ambientes digitais de alta velocidade, conectando estratégia editorial, cultura, audiência, tecnologia, inteligência artificial e responsabilidade pública. Sua trajetória começou na curiosidade pela tecnologia, ainda na época da internet discada, e se expandiu por áreas como cultura, eventos, informática, comunicação, comunidades digitais, mídia esportiva e liderança. Fundou a ProliferArte em 2008, foi criador do Antenados no Futebol, teve papel direto na chegada e no desenvolvimento da Bolavip no Brasil, cofundou e dirigiu a Futmarketing como CEO e CSO e fundou a WolfLife, ecossistema de comunidades digitais vendido em 2025. Entre 2017 e 2026 construiu um ciclo de nove anos com a Futbol Sites, de parceiro externo a Head of Digital Product e Diretor de Conteúdo no Brasil, encerrado em outubro de 2026. Hoje atua em conselhos consultivos e como executivo independente, e escreve sobre IA, liderança, cultura, comunicação, governança, reputação e decisão. Sua tese central é que, em tempos de excesso e velocidade, resultado consistente depende de clareza, critério e estruturas capazes de sustentar boas decisões na execução.",
   copy: "Copiar",
   copied: "Copiado",
   topicsTitle: "Temas para entrevistas e palestras",
@@ -335,7 +336,7 @@ export const cases = {
     name: FUTMARKETING_NAME,
     tag: "Mídia esportiva · Operação digital · M&A",
     body: [
-      `Na ${FUTMARKETING_NAME}, Ibson atuou como ${FUTMARKETING_ROLE} e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital.`,
+      `Na ${FUTMARKETING_NAME}, Ibson cofundou a empresa, atuou como CEO e CSO e participou da construção, posicionamento e venda de uma operação brasileira de mídia esportiva digital. A parceria com a Futbol Sites começou em 2017, em paralelo à parceria com a 90min, e foi a origem de um ciclo de nove anos.`,
       "A atuação envolveu a criação do site Antenados no Futebol, incluindo a escolha do nome e a concepção inicial do projeto, além da participação direta na chegada da Bolavip ao Brasil, entre 2017 e 2018, quando a marca já existia em países da América do Sul, mas ainda não havia sido consolidada no mercado brasileiro.",
       "O case mostra uma dimensão importante da sua trajetória: transformar visão editorial, audiência e oportunidade de mercado em ativo estratégico.",
       "A venda da operação foi noticiada pelo Yahoo Finance, funcionando como chancela externa da relevância do movimento dentro do mercado de mídia e marketing esportivo.",
