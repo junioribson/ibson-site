@@ -13,6 +13,12 @@ type UIStrings = {
   footerTagline: string;
   footerCtaTitle: string;
   footerCtaBtn: string;
+  kickerDepoimentos: string;
+  depoTitle: string;
+  depoNote: string;
+  depoRec: string;
+  depoComment: string;
+  depoCta: string;
   connectLinkedin: string;
   menuTagline: string;
   postsKicker: string;
@@ -107,6 +113,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerTagline: "CONSCIÊNCIA · LIDERANÇA · DECISÃO",
     footerCtaTitle: "Vamos levar mais critério à sua próxima decisão?",
     footerCtaBtn: "Vamos nos conectar",
+    kickerDepoimentos: "Depoimentos",
+    depoTitle: "O que dizem quem trabalhou comigo.",
+    depoNote: "Recortes reais do LinkedIn: recomendações e comentários publicados por líderes, colegas e parceiros.",
+    depoRec: "Recomendação",
+    depoComment: "Comentário",
+    depoCta: "Ver no LinkedIn",
     connectLinkedin: "Conecte-se comigo no LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE",
     postsKicker: "LinkedIn",
@@ -201,6 +213,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerTagline: "CONCIENCIA · LIDERAZGO · DECISIÓN",
     footerCtaTitle: "¿Llevamos más criterio a tu próxima decisión?",
     footerCtaBtn: "Conectemos",
+    kickerDepoimentos: "Testimonios",
+    depoTitle: "Lo que dicen quienes trabajaron conmigo.",
+    depoNote: "Recortes reales de LinkedIn: recomendaciones y comentarios publicados por líderes, colegas y socios.",
+    depoRec: "Recomendación",
+    depoComment: "Comentario",
+    depoCta: "Ver en LinkedIn",
     connectLinkedin: "Conéctate conmigo en LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONCIENCIA · DECISIÓN · RESPONSABILIDAD",
     postsKicker: "LinkedIn",
@@ -295,6 +313,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerTagline: "AWARENESS · LEADERSHIP · DECISION",
     footerCtaTitle: "Ready to bring more judgment to your next decision?",
     footerCtaBtn: "Let's connect",
+    kickerDepoimentos: "Testimonials",
+    depoTitle: "What people who worked with me say.",
+    depoNote: "Real excerpts from LinkedIn: recommendations and comments posted by leaders, colleagues and partners.",
+    depoRec: "Recommendation",
+    depoComment: "Comment",
+    depoCta: "See on LinkedIn",
     connectLinkedin: "Connect with me on LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · AWARENESS · DECISION · RESPONSIBILITY",
     postsKicker: "LinkedIn",

@@ -1,8 +1,7 @@
 ---
 // Contato: rotas claras por intenção + formulário.
-// O formulário compõe um e-mail no cliente (mailto), sem backend.
-// TODO(infra): integrar um serviço de formulário (ex.: Formspree) para receber
-// envios sem depender do cliente de e-mail do visitante.
+// O formulário envia de verdade via Web3Forms (fetch no submit, sem recarregar a
+// página), com honeypot anti-spam e feedback ao visitante. Fallback: e-mail direto.
 import { getContent } from "../i18n/utils";
 import { t } from "../i18n/ui";
 const { contact } = getContent(Astro.currentLocale);

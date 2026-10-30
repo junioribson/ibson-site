@@ -1,0 +1,101 @@
+---
+// Depoimentos: parede de recortes reais do LinkedIn (recomendações + comentários).
+// Prova social antes do contato. Nome + headline + citação; fonte marcada. Dois temas.
+import { testimonials, LINKEDIN_PROFILE } from "../data/testimonials";
+import { t } from "../i18n/ui";
+import { normalizeLocale } from "../i18n/utils";
+import Icon from "./Icon.astro";
+const ui = t(normalizeLocale(Astro.currentLocale));
+---
+
+<section class="depo" id="depoimentos">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="dot"></span><span class="rule"></span><span class="lbl">{ui.kickerDepoimentos}</span>
+    </div>
+    <div class="depo-head">
+      <h2 class="display reveal">{ui.depoTitle}</h2>
+      <p class="depo-note reveal d1"><Icon name="linkedin" class="li-ic" /> {ui.depoNote}</p>
+    </div>
+
+    <div class="depo-wall">
+      {
+        testimonials.map((d) => (
+          <figure class="depo-card reveal">
+            <div class="depo-top">
+              <span class:list={["depo-tag", d.kind === "rec" ? "is-rec" : "is-comment"]}>
+                {d.kind === "rec" ? ui.depoRec : ui.depoComment}
+              </span>
+              <span class="depo-via"><Icon name="linkedin" class="li-ic" /> LinkedIn</span>
+            </div>
+            <blockquote>{d.quote}</blockquote>
+            <figcaption>
+              <span class="depo-name">{d.name}</span>
+              <span class="depo-role">{d.headline}</span>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+
+    <a class="depo-all reveal" href={LINKEDIN_PROFILE} target="_blank" rel="noopener">
+      {ui.depoCta} <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .depo { padding: clamp(64px, 9vw, 120px) 0; background: var(--bg); }
+  .depo-head { margin-top: 10px; max-width: 760px; }
+  .depo-head h2 { color: var(--heading); }
+  .depo-note {
+    display: flex; align-items: flex-start; gap: 9px; margin-top: 16px;
+    font-size: 15px; line-height: 1.55; color: var(--ink-soft); max-width: 62ch;
+  }
+  .li-ic { width: 16px; height: 16px; color: #0a66c2; flex: none; margin-top: 2px; }
+  :root[data-theme="dark"] .li-ic { color: #70b5f9; }
+
+  /* Parede em colunas (masonry natural); cada card não quebra entre colunas. */
+  .depo-wall { margin-top: 38px; columns: 3; column-gap: 20px; }
+  .depo-card {
+    break-inside: avoid; width: 100%; margin: 0 0 20px; display: inline-block;
+    border: 1px solid var(--line); border-radius: 16px; background: var(--panel);
+    padding: 22px 24px 24px; position: relative;
+    transition: transform 0.35s var(--e), border-color 0.3s, box-shadow 0.35s var(--e);
+  }
+  .depo-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 26px 50px -34px rgba(90, 30, 200, 0.5); }
+
+  .depo-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+  .depo-tag {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 700; padding: 4px 9px; border-radius: 7px;
+  }
+  .depo-tag.is-rec { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, transparent); }
+  .depo-tag.is-comment { color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, transparent); }
+  .depo-via {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.04em; color: var(--ink-soft);
+  }
+  .depo-via .li-ic { margin-top: 0; }
+
+  .depo-card blockquote {
+    margin: 0 0 18px; font-size: 15.5px; line-height: 1.62; color: var(--text);
+    quotes: "“" "”"; text-wrap: pretty;
+  }
+  .depo-card blockquote::before { content: open-quote; color: var(--accent); font-weight: 800; margin-right: 1px; }
+  .depo-card blockquote::after { content: close-quote; color: var(--accent); font-weight: 800; }
+
+  .depo-card figcaption { border-top: 1px solid var(--line); padding-top: 14px; }
+  .depo-name { display: block; font-weight: 800; font-size: 15px; color: var(--heading); letter-spacing: -0.01em; }
+  .depo-role { display: block; margin-top: 4px; font-family: var(--font-mono); font-size: 11px; line-height: 1.45; color: var(--ink-soft); }
+
+  .depo-all {
+    display: inline-flex; align-items: center; gap: 8px; margin-top: 20px;
+    font-family: var(--font-sans); font-weight: 800; font-size: 14.5px; color: var(--accent); text-shadow: 0 0 16px var(--glow);
+    transition: gap 0.25s var(--e);
+  }
+  .depo-all:hover { gap: 12px; }
+
+  @media (max-width: 920px) { .depo-wall { columns: 2; } }
+  @media (max-width: 580px) { .depo-wall { columns: 1; } }
+</style>

@@ -14,6 +14,7 @@ import Artigos from "./Artigos.astro";
 import Repertorio from "./Repertorio.astro";
 import LpTeaser from "./LpTeaser.astro";
 import Videos from "./Videos.astro";
+import Depoimentos from "./Depoimentos.astro";
 import Contato from "./Contato.astro";
 import Footer from "./Footer.astro";
 import { getContent, localizePath, normalizeLocale } from "../i18n/utils";
@@ -55,6 +56,7 @@ const ui = t(locale);
     label={ui.lpSeeTalks}
   />
   <Videos />
+  <Depoimentos />
   <Contato />
 </main>
 <Footer />
