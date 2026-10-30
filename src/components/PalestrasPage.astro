@@ -31,14 +31,23 @@ const relLinks = [
     </div>
     <div class="wrap lp-hero-in">
       <a class="lp-back" href={home}>‹ {ui.breadcrumbHome}</a>
-      <span class="lp-kicker reveal">{ui.kickerPalestras}</span>
-      <h1 class="lp-title reveal">{talks.title}</h1>
-      <p class="lp-lead reveal">{talks.subtitle}</p>
-      <div class="lp-cta-row reveal">
-        <a class="lp-btn lp-btn-primary" href={contato}><span>{talks.cta.label}</span></a>
-        <a class="lp-btn lp-btn-ghost" href="#temas">{ui.lpSeeThemes}</a>
+      <div class="lp-hero-grid">
+        <div class="lp-hero-copy">
+          <span class="lp-kicker reveal">{ui.kickerPalestras}</span>
+          <h1 class="lp-title reveal">{talks.title}</h1>
+          <p class="lp-lead reveal">{talks.subtitle}</p>
+          <div class="lp-cta-row reveal">
+            <a class="lp-btn lp-btn-primary" href={contato}><span>{talks.cta.label}</span></a>
+            <a class="lp-btn lp-btn-ghost" href="#temas">{ui.lpSeeThemes}</a>
+          </div>
+          <p class="lp-geo reveal">{talks.geoNote}</p>
+        </div>
+        <figure class="lp-hero-photo reveal">
+          <div class="lp-hero-frame">
+            <img src="/assets/retratos/ibson-preto.webp" alt={ui.portraitAlt} width="915" height="1600" loading="eager" style="object-position:50% 15%" />
+          </div>
+        </figure>
       </div>
-      <p class="lp-geo reveal">{talks.geoNote}</p>
     </div>
     <a class="lp-scroll" href="#tese" aria-label={ui.heroScrollAria}><span></span></a>
   </section>
@@ -162,7 +171,16 @@ const relLinks = [
   @keyframes drift3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(3vw,-3vw) scale(1.12); } }
   @media (prefers-reduced-motion: reduce) { .orb { animation: none !important; } }
 
-  .lp-hero-in { position: relative; z-index: 2; max-width: 980px; }
+  .lp-hero-in { position: relative; z-index: 2; max-width: 1200px; width: 100%; }
+  .lp-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(300px, 34vw, 420px); gap: clamp(30px, 5vw, 72px); align-items: center; }
+  .lp-hero-copy { min-width: 0; }
+  .lp-hero-copy .lp-title { max-width: 15ch; }
+  .lp-hero-photo { position: relative; margin: 0; }
+  .lp-hero-photo::before { content: ""; position: absolute; inset: -12%; z-index: -1; background: var(--lp-neon); filter: blur(66px); opacity: 0.4; border-radius: 44px; }
+  :root[data-theme="light"] .lp-hero-photo::before { opacity: 0.24; }
+  .lp-hero-frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 20px; border: 1px solid var(--line-strong, var(--line)); box-shadow: 0 50px 100px -44px rgba(0, 0, 0, 0.9); background: var(--panel); }
+  .lp-hero-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .lp-hero-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(10, 4, 20, 0.45)); pointer-events: none; }
   .lp-kicker {
     display: inline-block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.24em;
     text-transform: uppercase; color: var(--accent); text-shadow: 0 0 20px var(--glow); margin-bottom: 22px;
@@ -262,9 +280,16 @@ const relLinks = [
   .lp-final-note { margin: 22px auto 34px; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.6; color: rgba(255, 255, 255, 0.78); max-width: 60ch; }
 
   @media (max-width: 980px) { .lp-temas-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 900px) {
+    .lp-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+    .lp-hero-photo { max-width: 340px; }
+    .lp-hero-copy .lp-title { max-width: 18ch; }
+    .lp-hero { min-height: auto; padding: 124px 0 80px; }
+  }
   @media (max-width: 640px) {
     .lp-temas-grid { grid-template-columns: 1fr; }
     .lp-formats-in { grid-template-columns: 1fr; gap: 30px; }
     .lp-hero { min-height: auto; padding: 116px 0 72px; }
+    .lp-hero-photo { max-width: 100%; }
   }
 </style>

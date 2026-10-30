@@ -5,28 +5,37 @@ import { t } from "../i18n/ui";
 const locale = normalizeLocale(Astro.currentLocale);
 const { footer, nav } = getContent(locale);
 const ui = t(locale);
+const contato = localizePath("/#contato", locale);
+const EMAIL = "contato@ibsonjunior.com.br";
 ---
 
 <footer>
   <div class="wrap">
+    <div class="foot-cta">
+      <h2 class="foot-cta-t">{ui.footerCtaTitle}</h2>
+      <a class="foot-cta-btn" href={contato}><span>{ui.footerCtaBtn}</span><span aria-hidden="true">→</span></a>
+    </div>
     <div class="foot-top">
       <div class="foot-brand">
         <Logo class="foot-logo" surface="dark" />
         <b>{footer.name.toUpperCase()}</b><span class="s">{footer.line}</span>
         <p>{footer.complement}</p>
+        <a class="foot-mail" href={`mailto:${EMAIL}`}>{EMAIL}</a>
       </div>
       <div class="fcol">
         <h3 class="fcol-h">{ui.footerNavigate}</h3>
-        {nav.links.map((l) => <a href={localizePath(l.href, locale)}>{l.label}</a>)}
-        <a href={localizePath("/ibson-junior", locale)}>{ui.footerAbout}</a>
-        <a href={localizePath("/imprensa", locale)}>{ui.footerPress}</a>
+        <div class="fcol-links">
+          {nav.links.map((l) => <a href={localizePath(l.href, locale)}>{l.label}</a>)}
+          <a href={localizePath("/ibson-junior", locale)}>{ui.footerAbout}</a>
+          <a href={localizePath("/imprensa", locale)}>{ui.footerPress}</a>
+        </div>
       </div>
       <div class="fcol">
         <h3 class="fcol-h">{ui.footerConnect}</h3>
         <a href="https://www.linkedin.com/in/ibson-junior/" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="mailto:contato@ibsonjunior.com.br">{ui.footerEmail}</a>
-        <a href={localizePath("/#contato", locale)}>{ui.footerInviteTalk}</a>
-        <a href={localizePath("/#contato", locale)}>{ui.footerTalkMentoring}</a>
+        <a href={`mailto:${EMAIL}`}>{ui.footerEmail}</a>
+        <a href={contato}>{ui.footerInviteTalk}</a>
+        <a href={contato}>{ui.footerTalkMentoring}</a>
       </div>
     </div>
     <div class="foot-base">

@@ -11,6 +11,8 @@ type UIStrings = {
   footerPress: string;
   footerRights: string;
   footerTagline: string;
+  footerCtaTitle: string;
+  footerCtaBtn: string;
   connectLinkedin: string;
   menuTagline: string;
   postsKicker: string;
@@ -103,6 +105,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerPress: "Imprensa",
     footerRights: "© 2026 IBSON JUNIOR · SITE OFICIAL",
     footerTagline: "CONSCIÊNCIA · LIDERANÇA · DECISÃO",
+    footerCtaTitle: "Vamos levar mais critério à sua próxima decisão?",
+    footerCtaBtn: "Vamos nos conectar",
     connectLinkedin: "Conecte-se comigo no LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONSCIÊNCIA · DECISÃO · RESPONSABILIDADE",
     postsKicker: "LinkedIn",
@@ -195,6 +199,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerPress: "Prensa",
     footerRights: "© 2026 IBSON JUNIOR · SITIO OFICIAL",
     footerTagline: "CONCIENCIA · LIDERAZGO · DECISIÓN",
+    footerCtaTitle: "¿Llevamos más criterio a tu próxima decisión?",
+    footerCtaBtn: "Conectemos",
     connectLinkedin: "Conéctate conmigo en LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · CONCIENCIA · DECISIÓN · RESPONSABILIDAD",
     postsKicker: "LinkedIn",
@@ -287,6 +293,8 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     footerPress: "Press",
     footerRights: "© 2026 IBSON JUNIOR · OFFICIAL SITE",
     footerTagline: "AWARENESS · LEADERSHIP · DECISION",
+    footerCtaTitle: "Ready to bring more judgment to your next decision?",
+    footerCtaBtn: "Let's connect",
     connectLinkedin: "Connect with me on LinkedIn",
     menuTagline: "IBSONJUNIOR.COM.BR · AWARENESS · DECISION · RESPONSIBILITY",
     postsKicker: "LinkedIn",
