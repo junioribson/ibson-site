@@ -1,6 +1,7 @@
 ---
-// Kit de imprensa (/imprensa/): bios (curta/média/longa) com botão copiar, foto
-// oficial, temas, contato e links oficiais. Reaproveita `identity` (bio longa + foto).
+// Kit de imprensa (/imprensa/): hero de duas colunas (texto + foto oficial em
+// destaque), faixa de identidade, biografias com copiar, temas e contato.
+// Reaproveita `press` (textos) e a foto oficial (navy). Dois temas, responsivo.
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import { getContent, normalizeLocale, localizePath } from "../i18n/utils";
@@ -19,15 +20,32 @@ const EMAIL = "contato@ibsonjunior.com.br";
 <main id="top" class="prs">
   <section class="prs-hero">
     <span class="prs-orb" aria-hidden="true"></span>
-    <div class="wrap prs-hero-in">
-      <a class="prs-back" href={home}>‹ {ui.breadcrumbHome}</a>
-      <span class="prs-kicker reveal">{press.kicker}</span>
-      <h1 class="prs-h1 reveal">{press.h1}</h1>
-      <p class="prs-intro reveal">{press.intro}</p>
+    <div class="wrap">
+      <a class="prs-back reveal" href={home}>‹ {ui.breadcrumbHome}</a>
+      <div class="prs-hero-grid">
+        <div class="prs-hero-copy">
+          <span class="prs-kicker reveal">{press.kicker}</span>
+          <h1 class="prs-h1 reveal">{press.h1}</h1>
+          <p class="prs-intro reveal">{press.intro}</p>
+          <div class="prs-hero-links reveal">
+            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+            <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+        <figure class="prs-hero-photo reveal">
+          <div class="prs-hero-frame">
+            <img src={press.photo} alt={press.photoAlt} width="898" height="1600" loading="eager" />
+          </div>
+          <figcaption>
+            <span class="prs-photo-label">{press.photoTitle}</span>
+            <a class="prs-dl" href={press.photo} download target="_blank" rel="noopener">{press.photoDownload} ↗</a>
+          </figcaption>
+        </figure>
+      </div>
       <dl class="prs-cite reveal">
         <div><dt>{press.citeLabel}</dt><dd>{press.citeName}</dd></div>
         <div><dt>{press.fullLabel}</dt><dd>{press.fullName}</dd></div>
-        <div><dt>{press.roleLabel}</dt><dd>{press.role}</dd></div>
+        <div class="prs-cite-wide"><dt>{press.roleLabel}</dt><dd>{press.role}</dd></div>
       </dl>
     </div>
   </section>
@@ -50,24 +68,18 @@ const EMAIL = "contato@ibsonjunior.com.br";
     </div>
   </section>
 
-  <section class="wrap prs-sec prs-grid2">
-    <div class="prs-photo reveal">
-      <div class="prs-shead"><span class="prs-dot"></span>{press.photoTitle}</div>
-      <figure>
-        <img src={press.photo} alt={press.photoAlt} width="898" height="1600" loading="lazy" />
-      </figure>
-      <a class="prs-dl" href={press.photo} target="_blank" rel="noopener">{press.photoDownload} ↗</a>
-    </div>
-    <div class="prs-topics reveal">
+  <section class="wrap prs-sec prs-kit">
+    <div class="prs-kit-col reveal">
       <div class="prs-shead"><span class="prs-dot"></span>{press.topicsTitle}</div>
       <div class="prs-chips">{press.topics.map((tp) => <span class="prs-chip">{tp}</span>)}</div>
-
-      <div class="prs-shead prs-contact-h"><span class="prs-dot"></span>{press.contactTitle}</div>
+    </div>
+    <div class="prs-kit-col reveal">
+      <div class="prs-shead"><span class="prs-dot"></span>{press.contactTitle}</div>
       <div class="prs-links">
-        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-        <a href={LINKEDIN} target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href={X} target="_blank" rel="noopener">X (@IbsonJunior) ↗</a>
-        <a href={home}>ibsonjunior.com.br</a>
+        <a href={`mailto:${EMAIL}`}><span>{EMAIL}</span><span aria-hidden="true">→</span></a>
+        <a href={LINKEDIN} target="_blank" rel="noopener"><span>LinkedIn</span><span aria-hidden="true">↗</span></a>
+        <a href={X} target="_blank" rel="noopener"><span>X (@IbsonJunior)</span><span aria-hidden="true">↗</span></a>
+        <a href={home}><span>ibsonjunior.com.br</span><span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
@@ -89,53 +101,77 @@ const EMAIL = "contato@ibsonjunior.com.br";
 </script>
 
 <style>
-  .prs-hero { position: relative; overflow: hidden; padding: 130px 0 56px; background: var(--bg); }
-  .prs-orb { position: absolute; width: 42vw; height: 42vw; right: -12vw; top: -18vw; z-index: 0; border-radius: 50%; filter: blur(80px); background: radial-gradient(circle, #7b57f0, transparent 66%); opacity: 0.24; pointer-events: none; }
-  :root[data-theme="light"] .prs-orb { opacity: 0.16; }
-  .prs-hero-in { position: relative; z-index: 2; max-width: 900px; }
-  .prs-back { display: block; width: fit-content; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 26px; }
-  .prs-kicker { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); text-shadow: 0 0 18px var(--glow); margin-bottom: 16px; }
-  .prs-h1 { font-size: clamp(36px, 6vw, 68px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.02; color: var(--heading); margin: 0; }
-  .prs-intro { margin-top: 18px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: var(--text); max-width: 60ch; }
-  .prs-cite { margin: 34px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .prs-cite div { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 14px 16px; }
-  .prs-cite dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
-  .prs-cite dd { margin: 0; font-size: 14.5px; font-weight: 700; color: var(--heading); line-height: 1.3; }
+  main.prs { padding-bottom: clamp(70px, 10vw, 120px); }
 
-  .prs-sec { padding: clamp(48px, 7vw, 84px) 0 0; }
+  /* Hero: texto + foto oficial em destaque. */
+  .prs-hero { position: relative; overflow: hidden; padding: 128px 0 10px; background: var(--bg); }
+  .prs-orb { position: absolute; width: 46vw; height: 46vw; right: -14vw; top: -16vw; z-index: 0; border-radius: 50%; filter: blur(90px); background: radial-gradient(circle, #7b57f0, transparent 66%); opacity: 0.22; pointer-events: none; }
+  :root[data-theme="light"] .prs-orb { opacity: 0.14; }
+  .prs-hero .wrap { position: relative; z-index: 2; }
+  .prs-back { display: block; width: fit-content; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 28px; }
+
+  .prs-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 5vw, 66px); align-items: center; }
+  .prs-kicker { display: inline-block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); text-shadow: 0 0 18px var(--glow); margin-bottom: 16px; }
+  .prs-h1 { font-size: clamp(38px, 6vw, 72px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.0; color: var(--heading); margin: 0; }
+  .prs-intro { margin-top: 20px; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.62; color: var(--text); max-width: 46ch; }
+  .prs-hero-links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px; }
+  .prs-hero-links a { font-family: var(--font-sans); font-weight: 800; font-size: 14.5px; color: var(--accent); text-shadow: 0 0 16px var(--glow); }
+
+  .prs-hero-photo { margin: 0; }
+  .prs-hero-frame { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.85); background: var(--panel); }
+  .prs-hero-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; display: block; }
+  .prs-hero-photo figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; }
+  .prs-photo-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+  .prs-dl { font-family: var(--font-sans); font-weight: 800; font-size: 13px; color: var(--accent); text-shadow: 0 0 16px var(--glow); }
+
+  /* Faixa de identidade. */
+  .prs-cite { margin: clamp(36px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+  .prs-cite div { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); padding: 15px 17px; }
+  .prs-cite-wide { grid-column: span 2; }
+  .prs-cite dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .prs-cite dd { margin: 0; font-size: 14.5px; font-weight: 700; color: var(--heading); line-height: 1.32; }
+
+  .prs-sec { padding: clamp(52px, 7vw, 88px) 0 0; }
   .prs-shead { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 22px; }
   .prs-dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(120deg, #6a2ee6, #c94f8a); box-shadow: 0 0 14px var(--glow); }
 
+  /* Biografias. */
   .prs-bios { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   .prs-bio-long { grid-column: 1 / -1; }
-  .prs-bio { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 20px 22px 22px; }
-  .prs-bio header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .prs-bio { position: relative; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); padding: 22px 24px 24px; overflow: hidden; }
+  .prs-bio::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, #6a2ee6, #c94f8a); opacity: 0.8; }
+  .prs-bio header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
   .prs-bio-l { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
   .prs-copy { font-family: var(--font-sans); font-weight: 700; font-size: 12.5px; color: var(--heading); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; transition: border-color 0.25s, color 0.25s, background 0.25s; }
   .prs-copy:hover { border-color: var(--accent); color: var(--accent); }
   .prs-copy.ok { border-color: var(--accent); color: #fff; background: var(--accent); }
   .prs-bio p { font-size: 15px; line-height: 1.66; color: var(--text); margin: 0 0 14px; }
   .prs-bio p:last-child { margin-bottom: 0; }
-  .prs-bio-long #bio-long { columns: 2; column-gap: 34px; }
+  .prs-bio-long #bio-long { columns: 2; column-gap: 36px; }
   .prs-bio-long #bio-long p { break-inside: avoid; }
 
-  .prs-grid2 { display: grid; grid-template-columns: 300px 1fr; gap: clamp(28px, 5vw, 60px); align-items: start; }
-  .prs-photo figure { margin: 0 0 14px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 26px 54px -34px rgba(0,0,0,0.8); }
-  .prs-photo img { display: block; width: 100%; height: auto; }
-  .prs-dl { font-family: var(--font-sans); font-weight: 800; font-size: 13.5px; color: var(--accent); text-shadow: 0 0 16px var(--glow); }
-  .prs-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
-  .prs-chip { font-family: var(--font-sans); font-weight: 700; font-size: 14px; color: var(--heading); padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); }
-  .prs-contact-h { margin-top: 4px; }
-  .prs-links { display: flex; flex-direction: column; gap: 2px; }
-  .prs-links a { font-family: var(--font-sans); font-weight: 700; font-size: 15.5px; color: var(--heading); padding: 11px 0; border-bottom: 1px solid var(--line); transition: color 0.25s, padding-left 0.25s; }
-  .prs-links a:hover { color: var(--accent); padding-left: 6px; }
+  /* Kit: temas + contato. */
+  .prs-kit { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px); align-items: start; }
+  .prs-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .prs-chip { font-family: var(--font-sans); font-weight: 700; font-size: 14px; color: var(--heading); padding: 10px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--panel); transition: border-color 0.25s, color 0.25s; }
+  .prs-chip:hover { border-color: var(--accent); color: var(--accent); }
+  .prs-links { display: flex; flex-direction: column; }
+  .prs-links a { display: flex; align-items: center; justify-content: space-between; gap: 14px; font-family: var(--font-sans); font-weight: 700; font-size: 15.5px; color: var(--heading); padding: 14px 2px; border-bottom: 1px solid var(--line); transition: color 0.25s, padding-left 0.25s; }
+  .prs-links a:first-child { border-top: 1px solid var(--line); }
+  .prs-links a span:last-child { color: var(--accent); }
+  .prs-links a:hover { color: var(--accent); padding-left: 8px; }
 
-  main.prs { padding-bottom: clamp(70px, 10vw, 120px); }
-  @media (max-width: 820px) {
-    .prs-cite { grid-template-columns: 1fr; }
+  @media (max-width: 900px) {
+    .prs-hero-grid { grid-template-columns: 1fr; gap: 34px; }
+    .prs-hero-photo { max-width: 320px; }
+    .prs-cite { grid-template-columns: 1fr 1fr; }
+    .prs-cite-wide { grid-column: 1 / -1; }
     .prs-bios { grid-template-columns: 1fr; }
     .prs-bio-long #bio-long { columns: 1; }
-    .prs-grid2 { grid-template-columns: 1fr; }
-    .prs-photo figure { max-width: 260px; }
+    .prs-kit { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 520px) {
+    .prs-cite { grid-template-columns: 1fr; }
+    .prs-hero-photo { max-width: 100%; }
   }
 </style>
