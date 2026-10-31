@@ -90,10 +90,11 @@ const breadcrumb = isHome
   <head>
     <meta charset="UTF-8" />
     <script is:inline>
-      // Aplica o tema (claro/escuro) antes da renderização, sem flash. Padrão: CLARO.
+      // Aplica o tema (claro/escuro) antes da renderização, sem flash. Padrão: ESCURO.
+      // Quem já escolheu um tema (localStorage) continua com o dele; o toggle no topo troca.
       // Também define o theme-color (cor da barra do navegador) conforme o tema.
       (function () {
-        var t = "light";
+        var t = "dark";
         try {
           var s = localStorage.getItem("theme");
           if (s === "light" || s === "dark") t = s;
