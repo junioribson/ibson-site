@@ -26,6 +26,9 @@ export const CARGO_ATUAL = "Advisory board member and independent executive";
 // While they are empty, nothing is injected (the site does not break, no useless calls).
 export const GA_MEASUREMENT_ID = "G-5S4SJGES22";
 export const GSC_VERIFICATION = "";
+// Microsoft Clarity (heatmap and session recording): project ID. Loaded only
+// after cookie consent, like GA. Empty = dormant.
+export const CLARITY_ID = "";
 
 export const seo = {
   title: "Ibson Junior | Advisory board member, content and decision",

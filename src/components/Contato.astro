@@ -136,6 +136,8 @@ import { waLink } from "../data/whatsapp";
         btn.textContent = "Enviado ✓";
         note.style.color = "#8ff0b8";
         note.textContent = successMsg;
+        // Conversão: avisa a camada de medição (track.ts dispara generate_lead).
+        window.dispatchEvent(new CustomEvent("ij:lead"));
       } else {
         throw new Error(json.message || "falha");
       }

@@ -87,7 +87,10 @@ const privacyHref = localizePath("/politica-de-privacidade", locale);
     function decide(v) {
       try { localStorage.setItem(KEY, v); } catch (e) {}
       el.classList.remove("show");
-      if (v === "accepted" && typeof window.__loadGA === "function") window.__loadGA();
+      if (v === "accepted") {
+        if (typeof window.__loadGA === "function") window.__loadGA();
+        if (typeof window.__loadClarity === "function") window.__loadClarity();
+      }
       setTimeout(function () { if (el && el.parentNode) el.remove(); }, 450);
     }
     var a = el.querySelector("[data-accept]");

@@ -26,6 +26,9 @@ export const CARGO_ATUAL = "Conselheiro consultivo e executivo independente";
 // Enquanto estiverem vazios, nada é injetado (site não quebra, sem chamadas inúteis).
 export const GA_MEASUREMENT_ID = "G-5S4SJGES22";
 export const GSC_VERIFICATION = "";
+// Microsoft Clarity (heatmap e gravação de sessão, grátis): ID do projeto.
+// Carregado só após o consentimento de cookies, como o GA. Vazio = dormente.
+export const CLARITY_ID = "";
 
 export const seo = {
   title: "Ibson Junior | Conselheiro consultivo, conteúdo e decisão",

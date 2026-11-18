@@ -4,9 +4,11 @@
 import Nav from "./Nav.astro";
 import Footer from "./Footer.astro";
 import Depoimentos from "./Depoimentos.astro";
+import Icon from "./Icon.astro";
 import { getContent, normalizeLocale, localizePath } from "../i18n/utils";
 import { t } from "../i18n/ui";
 import { themeLabel } from "../data/clusters";
+import { waLink } from "../data/whatsapp";
 
 const locale = normalizeLocale(Astro.currentLocale);
 const { mentorship } = getContent(locale);
@@ -39,6 +41,7 @@ const relLinks = [
           <p class="lp-lead reveal">{mentorship.subtitle}</p>
           <div class="lp-cta-row reveal">
             <a class="lp-btn lp-btn-primary" href={contato}><span>{mentorship.cta.label}</span></a>
+            <a class="lp-btn lp-btn-wa" href={waLink(ui.waPrefill)} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /><span>{ui.ctaWhats}</span></a>
             <a class="lp-btn lp-btn-ghost" href="#oque">{ui.mentWhatIs}</a>
           </div>
           <p class="lp-geo reveal">{mentorship.geoNote}</p>
@@ -178,6 +181,8 @@ const relLinks = [
   .lp-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 26px 54px -16px rgba(201, 79, 138, 0.7); filter: brightness(1.07); }
   .lp-btn-lg { padding: 18px 40px; font-size: 16px; }
   .lp-btn-ghost { color: var(--heading); border: 1px solid var(--line-strong, var(--line)); background: var(--panel); }
+  .lp-btn-wa { color: #fff; background: #25d366; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 16px 38px -16px rgba(37, 211, 102, 0.6); }
+  .lp-btn-wa:hover { transform: translateY(-3px); background: #1ebe5b; box-shadow: 0 24px 50px -18px rgba(37, 211, 102, 0.6); }
   .lp-btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
   .lp-scroll { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 2; width: 26px; height: 42px; border: 2px solid var(--line-strong, var(--line)); border-radius: 14px; display: flex; justify-content: center; }
   .lp-scroll span { width: 4px; height: 8px; border-radius: 2px; background: var(--accent); margin-top: 7px; animation: scrolldot 1.6s ease-in-out infinite; }
