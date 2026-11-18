@@ -20,7 +20,10 @@ export async function GET() {
 Ibson Junior cofundou a Futmarketing (CEO e CSO) e fundou a WolfLife, ambas vendidas, lidera a ProliferArte desde 2008 e encerrou em 2026 um ciclo de nove anos com a Futbol Sites. Escreve artigos e leva palestras e mentorias sobre decidir com critério em meio ao ruído, à IA e à pressão. Base: Brasil (atendimento presencial e remoto). Idiomas do site: português (principal), espanhol e inglês.
 
 Contato: contato@ibsonjunior.com.br
+WhatsApp: https://wa.me/5551995343587
 LinkedIn: https://www.linkedin.com/in/ibson-junior/
+Instagram: https://www.instagram.com/ibsonjunior.com.br/
+X: https://x.com/IbsonJunior
 
 ## Serviços
 - [Palestras e keynotes corporativos](${SITE}/palestras/): palestrante executivo e estratégico para empresas, eventos e lideranças, sobre decidir sob pressão, comunicação, cultura, IA com julgamento humano, liderança e desenvolvimento de equipes. Formatos: palestra, painel, roda executiva, workshop, aula especial. Base em Porto Alegre, atende todo o Brasil, presencial ou online.

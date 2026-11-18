@@ -77,6 +77,9 @@ type UIStrings = {
   kickerPalestras: string;
   kickerVideos: string;
   kickerContato: string;
+  ctaWhats: string;
+  waAria: string;
+  waPrefill: string;
   proliferSince: string;
   formName: string;
   formCompany: string;
@@ -189,6 +192,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     kickerPalestras: "Palestras",
     kickerVideos: "Vídeos",
     kickerContato: "Contato",
+    ctaWhats: "Falar no WhatsApp",
+    waAria: "Abrir conversa no WhatsApp",
+    waPrefill: "Olá, Ibson! Vim pelo seu site.",
     proliferSince: "desde 2008",
     formName: "Nome",
     formCompany: "Empresa",
@@ -299,6 +305,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     kickerPalestras: "Charlas",
     kickerVideos: "Vídeos",
     kickerContato: "Contacto",
+    ctaWhats: "Hablar por WhatsApp",
+    waAria: "Abrir conversación en WhatsApp",
+    waPrefill: "¡Hola, Ibson! Vine por tu sitio.",
     proliferSince: "desde 2008",
     formName: "Nombre",
     formCompany: "Empresa",
@@ -409,6 +418,9 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     kickerPalestras: "Talks",
     kickerVideos: "Videos",
     kickerContato: "Contact",
+    ctaWhats: "Chat on WhatsApp",
+    waAria: "Open WhatsApp chat",
+    waPrefill: "Hi, Ibson! I came from your site.",
     proliferSince: "since 2008",
     formName: "Name",
     formCompany: "Company",

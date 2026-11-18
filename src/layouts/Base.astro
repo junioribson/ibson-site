@@ -7,6 +7,7 @@ import "../styles/option3.css";
 import { getContent, normalizeLocale, htmlLang, localizePath, LANGS, stripLocale } from "../i18n/utils";
 import { siteGraph, personNode } from "../data/schema";
 import CookieBanner from "../components/CookieBanner.astro";
+import WhatsAppFloat from "../components/WhatsAppFloat.astro";
 
 interface Props {
   title?: string;
@@ -208,6 +209,7 @@ const breadcrumb = isHome
     <script>
       import "../scripts/motion.ts";
     </script>
+    <WhatsAppFloat />
     <CookieBanner />
   </body>
 </html>

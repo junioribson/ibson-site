@@ -18,6 +18,7 @@ const PORTRAITS = [
 const SAME_AS = [
   "https://www.linkedin.com/in/ibson-junior/",
   "https://x.com/IbsonJunior",
+  "https://www.instagram.com/ibsonjunior.com.br/",
 ];
 
 type SeoCopy = {
