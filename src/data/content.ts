@@ -601,6 +601,9 @@ export const talks = {
     { q: "Ibson Junior faz palestras em todo o Brasil? E online?", a: "Sim. Com base em Porto Alegre, Ibson Junior atua como palestrante em todo o Brasil, presencialmente, e também no formato online. Data, formato e logística de cada evento são alinhados diretamente na proposta." },
     { q: "Quais são os formatos e durações?", a: "Palestra, painel, roda executiva, workshop, aula especial e conversa com lideranças, em 45, 60 ou 90 minutos, conforme o objetivo do encontro." },
     { q: "Qual a diferença entre uma palestra executiva e uma motivacional?", a: "A motivacional busca energia momentânea. A executiva organiza uma inquietação real e entrega critério para decidir e comunicar melhor depois que o evento termina. O foco é clareza que permanece, não estímulo passageiro." },
+    { q: "Quem é o palestrante Ibson Junior?", a: "É conselheiro consultivo e executivo de conteúdo, liderança e comunicação, fundador da WolfLife e da ProliferArte e ex-Diretor de Conteúdo na Futbol Sites. Leva ao palco o repertório de quem construiu e liderou operações de conteúdo de grande escala no Brasil." },
+    { q: "Ibson Junior tem palestra sobre inteligência artificial?", a: "Sim. Uma de suas frentes é inteligência artificial com julgamento humano: como decidir, comunicar e liderar com critério quando a IA acelera tudo, sem terceirizar o discernimento à tecnologia." },
+    { q: "Para que tipos de evento a palestra serve?", a: "Convenções e eventos corporativos, encontros e offsites executivos, painéis, aulas especiais, kickoffs, rodas de liderança e conversas com equipes, presencial ou online." },
   ],
 };
 
@@ -656,6 +659,9 @@ export const mentorship = {
     { q: "A mentoria é online? Atende o Brasil todo?", a: "Sim. A mentoria é individual e conduzida online, atendendo profissionais em todo o Brasil, com base em Porto Alegre." },
     { q: "Como é o formato e a duração?", a: "O escopo nasce do diagnóstico e do momento profissional. Não há pacote genérico: o formato e a cadência se ajustam ao que precisa mudar." },
     { q: "Qual a diferença entre mentoria e coaching?", a: "O coaching trabalha processo e comportamento de forma mais ampla. A mentoria de Ibson Junior parte de repertório executivo real em liderança, conteúdo, comunicação e decisão, para dar direção prática a partir de experiência vivida." },
+    { q: "Quem conduz a mentoria?", a: "A mentoria é conduzida pelo próprio Ibson Junior, conselheiro consultivo e executivo de conteúdo, liderança e comunicação, fundador da WolfLife e da ProliferArte. É repertório executivo real aplicado ao seu momento, não teoria de curso." },
+    { q: "A mentoria ajuda com marca pessoal e LinkedIn?", a: "Sim. Marca pessoal, posicionamento, narrativa profissional e LinkedIn estratégico são parte central do trabalho, sempre ligados à percepção de valor e a decisões concretas de carreira." },
+    { q: "Em quanto tempo aparecem resultados?", a: "Depende do ponto de partida e do que precisa mudar. Como o escopo nasce do diagnóstico, os primeiros ganhos costumam ser de clareza: entender território, posicionamento e próximos movimentos antes de produzir mais." },
   ],
 };
 

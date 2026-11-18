@@ -591,6 +591,9 @@ export const talks = {
     { q: "Does Ibson Junior speak across Brazil? And online?", a: "Yes. Based in Porto Alegre, Ibson Junior works as a speaker across Brazil, in person, and also online. Date, format and logistics for each event are agreed in the proposal." },
     { q: "What are the formats and durations?", a: "Talk, panel, executive roundtable, workshop, special lecture and leadership conversation, in 45, 60 or 90 minutes, depending on the goal of the gathering." },
     { q: "What is the difference between an executive and a motivational talk?", a: "The motivational one seeks momentary energy. The executive one organizes a real concern and delivers judgment to decide and communicate better after the event. The focus is clarity that lasts, not passing stimulus." },
+    { q: "Who is the speaker Ibson Junior?", a: "He is an advisory board member and content, leadership and communication executive, founder of WolfLife and ProliferArte and former Content Director at Futbol Sites. He brings to the stage the repertoire of someone who built and led large-scale content operations in Brazil." },
+    { q: "Does Ibson Junior have a talk on artificial intelligence?", a: "Yes. One of his themes is artificial intelligence with human judgment: how to decide, communicate and lead with judgment when AI accelerates everything, without outsourcing discernment to technology." },
+    { q: "What types of event is the talk for?", a: "Conventions and corporate events, executive gatherings and offsites, panels, special lectures, kickoffs, leadership roundtables and team conversations, in person or online." },
   ],
 };
 
@@ -646,6 +649,9 @@ export const mentorship = {
     { q: "Is the mentoring online? Does it serve all of Brazil?", a: "Yes. The mentoring is one-on-one and conducted online, serving professionals across Brazil, based in Porto Alegre." },
     { q: "What is the format and duration?", a: "The scope emerges from the diagnosis and the professional moment. There is no generic package: format and cadence adjust to what needs to change." },
     { q: "What is the difference between mentoring and coaching?", a: "Coaching works on process and behavior more broadly. Ibson Junior's mentoring starts from real executive repertoire in leadership, content, communication and decision, to give practical direction from lived experience." },
+    { q: "Who leads the mentoring?", a: "The mentoring is led by Ibson Junior himself, an advisory board member and content, leadership and communication executive, founder of WolfLife and ProliferArte. It is real executive repertoire applied to your moment, not course theory." },
+    { q: "Does the mentoring help with personal brand and LinkedIn?", a: "Yes. Personal brand, positioning, professional narrative and strategic LinkedIn are central to the work, always tied to perceived value and concrete career decisions." },
+    { q: "How soon do results appear?", a: "It depends on the starting point and what needs to change. Since the scope emerges from the diagnosis, the first gains are usually clarity: understanding territory, positioning and next moves before producing more." },
   ],
 };
 

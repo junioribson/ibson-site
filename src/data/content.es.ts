@@ -591,6 +591,9 @@ export const talks = {
     { q: "¿Ibson Junior da charlas en todo Brasil? ¿Y online?", a: "Sí. Con base en Porto Alegre, Ibson Junior actúa como conferencista en todo Brasil, de forma presencial, y también en formato online. Fecha, formato y logística de cada evento se acuerdan en la propuesta." },
     { q: "¿Cuáles son los formatos y duraciones?", a: "Charla, panel, ronda ejecutiva, taller, clase especial y conversación con liderazgos, en 45, 60 o 90 minutos, según el objetivo del encuentro." },
     { q: "¿Cuál es la diferencia entre una charla ejecutiva y una motivacional?", a: "La motivacional busca energía momentánea. La ejecutiva organiza una inquietud real y entrega criterio para decidir y comunicar mejor después del evento. El foco es claridad que permanece, no estímulo pasajero." },
+    { q: "¿Quién es el conferencista Ibson Junior?", a: "Es consejero consultivo y ejecutivo de contenido, liderazgo y comunicación, fundador de WolfLife y de ProliferArte y ex Director de Contenido en Futbol Sites. Lleva al escenario el repertorio de quien construyó y lideró operaciones de contenido de gran escala en Brasil." },
+    { q: "¿Ibson Junior tiene charla sobre inteligencia artificial?", a: "Sí. Una de sus líneas es la inteligencia artificial con juicio humano: cómo decidir, comunicar y liderar con criterio cuando la IA acelera todo, sin delegar el discernimiento a la tecnología." },
+    { q: "¿Para qué tipos de evento sirve la charla?", a: "Convenciones y eventos corporativos, encuentros y offsites ejecutivos, paneles, clases especiales, kickoffs, mesas de liderazgo y conversaciones con equipos, presencial u online." },
   ],
 };
 
@@ -646,6 +649,9 @@ export const mentorship = {
     { q: "¿La mentoría es online? ¿Atiende a todo Brasil?", a: "Sí. La mentoría es individual y se conduce online, atendiendo a profesionales en todo Brasil, con base en Porto Alegre." },
     { q: "¿Cómo es el formato y la duración?", a: "El alcance nace del diagnóstico y del momento profesional. No hay paquete genérico: el formato y la cadencia se ajustan a lo que necesita cambiar." },
     { q: "¿Cuál es la diferencia entre mentoría y coaching?", a: "El coaching trabaja proceso y comportamiento de forma más amplia. La mentoría de Ibson Junior parte de repertorio ejecutivo real en liderazgo, contenido, comunicación y decisión, para dar dirección práctica a partir de experiencia vivida." },
+    { q: "¿Quién conduce la mentoría?", a: "La mentoría la conduce el propio Ibson Junior, consejero consultivo y ejecutivo de contenido, liderazgo y comunicación, fundador de WolfLife y de ProliferArte. Es repertorio ejecutivo real aplicado a tu momento, no teoría de curso." },
+    { q: "¿La mentoría ayuda con marca personal y LinkedIn?", a: "Sí. Marca personal, posicionamiento, narrativa profesional y LinkedIn estratégico son parte central del trabajo, siempre ligados a la percepción de valor y a decisiones concretas de carrera." },
+    { q: "¿En cuánto tiempo aparecen resultados?", a: "Depende del punto de partida y de lo que necesita cambiar. Como el alcance nace del diagnóstico, las primeras ganancias suelen ser de claridad: entender territorio, posicionamiento y próximos movimientos antes de producir más." },
   ],
 };
 
