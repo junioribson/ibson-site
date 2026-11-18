@@ -40,7 +40,7 @@ const { wolflife: w, tiktok: t, footmarketing: f } = cases;
       </div>
       <div class="fr-ctx">
         {w.body.map((p) => <p>{p}</p>)}
-        <div class="learn"><b>O que fica.</b> {w.aprendizado}</div>
+        <div class="learn"><b>{ui.casesLearnLabel}</b> {w.aprendizado}</div>
         <a class="fbtn" href={w.cta.href} target="_blank" rel="noopener" style="margin-top:22px">
           {w.cta.label} ↗
         </a>
@@ -57,7 +57,7 @@ const { wolflife: w, tiktok: t, footmarketing: f } = cases;
         </svg>
         <div class="subcase-nums">
           <div class="num">9 <em>Bi+</em></div>
-          <div class="num-sub">visualizações</div>
+          <div class="num-sub">{ui.casesViews}</div>
         </div>
       </div>
       <div>

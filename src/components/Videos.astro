@@ -13,7 +13,7 @@ const ui = t(Astro.currentLocale);
     </div>
     <div class="arts-head reveal">
       <h2>{videos.title}</h2>
-      <div class="meta">Em construção</div>
+      <div class="meta">{ui.videosWip}</div>
     </div>
     <p class="vids-intro reveal">{videos.intro}</p>
 
@@ -23,7 +23,7 @@ const ui = t(Astro.currentLocale);
           <div class="vcard reveal">
             <div class="vthumb"><span class="play" aria-hidden="true"></span></div>
             <div class="vtx">
-              <div class="vtag">Reflexão em vídeo</div>
+              <div class="vtag">{ui.videoTag}</div>
               <h3>{title}</h3>
             </div>
           </div>

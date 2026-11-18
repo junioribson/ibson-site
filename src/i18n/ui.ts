@@ -80,6 +80,12 @@ type UIStrings = {
   ctaWhats: string;
   waAria: string;
   waPrefill: string;
+  casesLearnLabel: string;
+  casesViews: string;
+  pubsLabel: string;
+  videosWip: string;
+  videoTag: string;
+  followFacebook: string;
   proliferSince: string;
   formName: string;
   formCompany: string;
@@ -195,6 +201,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Falar no WhatsApp",
     waAria: "Abrir conversa no WhatsApp",
     waPrefill: "Olá, Ibson! Vim pelo seu site.",
+    casesLearnLabel: "O que fica.",
+    casesViews: "visualizações",
+    pubsLabel: "Publicações e coletâneas",
+    videosWip: "Em construção",
+    videoTag: "Reflexão em vídeo",
+    followFacebook: "Seguir no Facebook",
     proliferSince: "desde 2008",
     formName: "Nome",
     formCompany: "Empresa",
@@ -308,6 +320,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Hablar por WhatsApp",
     waAria: "Abrir conversación en WhatsApp",
     waPrefill: "¡Hola, Ibson! Vine por tu sitio.",
+    casesLearnLabel: "Lo que queda.",
+    casesViews: "visualizaciones",
+    pubsLabel: "Publicaciones y colecciones",
+    videosWip: "En construcción",
+    videoTag: "Reflexión en video",
+    followFacebook: "Seguir en Facebook",
     proliferSince: "desde 2008",
     formName: "Nombre",
     formCompany: "Empresa",
@@ -421,6 +439,12 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Chat on WhatsApp",
     waAria: "Open WhatsApp chat",
     waPrefill: "Hi, Ibson! I came from your site.",
+    casesLearnLabel: "What stays.",
+    casesViews: "views",
+    pubsLabel: "Publications and collections",
+    videosWip: "In progress",
+    videoTag: "Video reflection",
+    followFacebook: "Follow on Facebook",
     proliferSince: "since 2008",
     formName: "Name",
     formCompany: "Company",

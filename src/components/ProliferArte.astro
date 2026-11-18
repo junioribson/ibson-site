@@ -47,7 +47,7 @@ const fmtCount = (to = 0, decimals = 0, suffix = "") =>
     </div>
 
     <div class="reveal">
-      <div class="pubs-lbl">Publicações e coletâneas</div>
+      <div class="pubs-lbl">{ui.pubsLabel}</div>
       <div class="pubs">
         {
           p.galeria.map((pub) => (
@@ -69,7 +69,7 @@ const fmtCount = (to = 0, decimals = 0, suffix = "") =>
         <p>{ui.proliferLiveText}</p>
       </div>
       <a class="pro-fb-btn" href={FACEBOOK} target="_blank" rel="noopener">
-        <Icon name="facebook" class="ic" /> Seguir no Facebook
+        <Icon name="facebook" class="ic" /> {ui.followFacebook}
       </a>
     </div>
   </div>
