@@ -6,8 +6,8 @@
 // O que mede:
 // 1. UTM: captura utm_* e gclid do anúncio, guarda na sessão e carimba os links
 //    de WhatsApp, para o lead chegar já dizendo de onde veio (qualificação).
-// 2. Conversão: clique no WhatsApp e envio do formulário viram "generate_lead"
-//    (evento recomendado do GA4), mais "wa_click" como detalhe de engajamento.
+// 2. Conversão: clique no WhatsApp e envio do formulário viram "qualify_lead"
+//    (evento principal já existente no GA4), mais "wa_click" como engajamento.
 // 3. Scroll: dispara "scroll_depth" em 25/50/75/90%, uma vez cada, para ver até
 //    onde a pessoa absorve o conteúdo e onde está o gargalo.
 
@@ -86,15 +86,15 @@ function wireWhatsappClicks(a: Attrib) {
       campaign: a.utm_campaign || "(direct)",
       source: a.utm_source || "(direct)",
     };
-    track("wa_click", payload);
-    track("generate_lead", payload); // evento de conversão (marcar como key event no GA4)
+    track("wa_click", payload); // engajamento (não é conversão)
+    track("qualify_lead", payload); // conversão: evento principal no GA4
   }, { capture: true });
 }
 
 // O formulário avisa o sucesso por um CustomEvent (disparado em Contato.astro).
 function wireFormLead(a: Attrib) {
   window.addEventListener("ij:lead", () => {
-    track("generate_lead", {
+    track("qualify_lead", {
       method: "form",
       campaign: a.utm_campaign || "(direct)",
       source: a.utm_source || "(direct)",
