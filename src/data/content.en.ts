@@ -57,6 +57,8 @@ export const nav = {
 
 export const hero = {
   topline: "Content · Leadership · Decision · AI · Culture",
+  eyebrow: "Advisory board member and independent executive · Mentor and speaker",
+  proof: "Two digital operations sold · Nine years leading large-scale content operations · CEO and CSO in sports media",
   headline: "When everything accelerates, clarity becomes a responsibility.",
   headlineLines: ["When everything accelerates,", "clarity becomes", "a responsibility."],
   subheadline:

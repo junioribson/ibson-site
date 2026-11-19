@@ -57,6 +57,8 @@ export const nav = {
 
 export const hero = {
   topline: "Conteúdo · Liderança · Decisão · IA · Cultura",
+  eyebrow: "Conselheiro consultivo e executivo independente · Mentor e palestrante",
+  proof: "Duas operações digitais vendidas · Nove anos liderando operações de conteúdo de grande escala · CEO e CSO na mídia esportiva",
   headline: "Quando tudo acelera, clareza vira responsabilidade.",
   headlineLines: ["Quando tudo acelera,", "clareza vira", "responsabilidade."],
   subheadline:

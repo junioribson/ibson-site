@@ -23,6 +23,7 @@ const ui = t(Astro.currentLocale);
   <canvas class="wh-net" aria-hidden="true"></canvas>
 
   <div class="wrap wh-in">
+    <div class="wh-eye"><span class="wh-dot"></span><span class="wh-k">{hero.eyebrow}</span></div>
     <h1 class="wh-h1">
       {
         hero.headlineLines.map((line, i) => (
@@ -42,6 +43,8 @@ const ui = t(Astro.currentLocale);
       <a class="wh-btn wh-btn-primary" href={hero.ctas.primary.href}><span>{hero.ctas.primary.label}</span></a>
       <a class="wh-btn wh-btn-ghost" href={hero.ctas.secondary.href}><span>{hero.ctas.secondary.label}</span></a>
     </div>
+
+    <p class="wh-proof">{hero.proof}</p>
   </div>
 
   <a class="wh-scroll" href="#tese" aria-label={ui.heroScrollAria}><span>{ui.heroScrollLabel}</span><span class="wh-scroll-line"></span></a>
@@ -122,6 +125,19 @@ const ui = t(Astro.currentLocale);
     opacity: 0;
     transform: translateY(14px);
     animation: whr .8s var(--e) .62s forwards;
+  }
+
+  .wh-proof {
+    margin-top: 26px;
+    max-width: 54ch;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    line-height: 1.7;
+    color: var(--text-dim);
+    opacity: 0;
+    transform: translateY(14px);
+    animation: whr .8s var(--e) .92s forwards;
   }
 
   .wh-cta { margin-top: 40px; display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; transform: translateY(14px); animation: whr .8s var(--e) .8s forwards; }
