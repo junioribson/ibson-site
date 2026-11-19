@@ -80,6 +80,7 @@ type UIStrings = {
   ctaWhats: string;
   waAria: string;
   waPrefill: string;
+  waPrefillMentoria: string;
   casesLearnLabel: string;
   casesViews: string;
   pubsLabel: string;
@@ -201,6 +202,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Falar no WhatsApp",
     waAria: "Abrir conversa no WhatsApp",
     waPrefill: "Olá, Ibson! Vim pelo seu site.",
+    waPrefillMentoria: "Olá, Ibson! Vim pela página de mentoria e queria começar com um diagnóstico.",
     casesLearnLabel: "O que fica.",
     casesViews: "visualizações",
     pubsLabel: "Publicações e coletâneas",
@@ -320,6 +322,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Hablar por WhatsApp",
     waAria: "Abrir conversación en WhatsApp",
     waPrefill: "¡Hola, Ibson! Vine por tu sitio.",
+    waPrefillMentoria: "¡Hola, Ibson! Vine por la página de mentoría y quería empezar con un diagnóstico.",
     casesLearnLabel: "Lo que queda.",
     casesViews: "visualizaciones",
     pubsLabel: "Publicaciones y colecciones",
@@ -439,6 +442,7 @@ const UI: Record<"pt" | "es" | "en", UIStrings> = {
     ctaWhats: "Chat on WhatsApp",
     waAria: "Open WhatsApp chat",
     waPrefill: "Hi, Ibson! I came from your site.",
+    waPrefillMentoria: "Hi, Ibson! I came from the mentoring page and I'd like to start with a diagnosis.",
     casesLearnLabel: "What stays.",
     casesViews: "views",
     pubsLabel: "Publications and collections",

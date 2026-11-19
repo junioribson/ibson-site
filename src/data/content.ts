@@ -647,7 +647,15 @@ export const mentorship = {
     "Direção de carreira",
     "Presença e percepção de valor",
   ],
-  cta: { href: "#contato", label: "Falar sobre mentoria" },
+  cta: { href: "#contato", label: "Comece com um diagnóstico" },
+  howItStarts: {
+    label: "Como começa",
+    steps: [
+      { t: "Conversa de diagnóstico", d: "Uma conversa, sem compromisso, para entender o seu momento, os seus objetivos e o que precisa mudar." },
+      { t: "Escopo e proposta", d: "Se fizer sentido, você responde um questionário rápido e recebe uma proposta clara, com formato, cadência e investimento." },
+      { t: "Roadmap prático", d: "A partir daí, o caminho: as prioridades e os próximos movimentos para transformar repertório em direção." },
+    ],
+  },
   note: "Não existe pacote genérico. O escopo nasce do diagnóstico, do momento profissional e da clareza do que precisa mudar.",
   positioning: {
     title: "Mentoria executiva individual para líderes e executivos",

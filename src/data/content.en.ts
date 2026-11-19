@@ -637,7 +637,15 @@ export const mentorship = {
     "Career direction",
     "Presence and perceived value",
   ],
-  cta: { href: "#contato", label: "Talk about mentoring" },
+  cta: { href: "#contato", label: "Start with a diagnosis" },
+  howItStarts: {
+    label: "How it starts",
+    steps: [
+      { t: "Diagnostic conversation", d: "A conversation, no strings attached, to understand your moment, your goals and what needs to change." },
+      { t: "Scope and proposal", d: "If it makes sense, you fill out a quick questionnaire and receive a clear proposal, with format, cadence and investment." },
+      { t: "Practical roadmap", d: "From there, the path: the priorities and next moves to turn your repertoire into direction." },
+    ],
+  },
   note: "There is no generic package. The scope emerges from the diagnosis, the professional moment and the clarity of what needs to change.",
   positioning: {
     title: "One-on-one executive mentoring for leaders and executives",

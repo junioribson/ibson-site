@@ -40,8 +40,7 @@ const relLinks = [
           <h1 class="lp-title reveal">{mentorship.title}</h1>
           <p class="lp-lead reveal">{mentorship.subtitle}</p>
           <div class="lp-cta-row reveal">
-            <a class="lp-btn lp-btn-primary" href={contato}><span>{mentorship.cta.label}</span></a>
-            <a class="lp-btn lp-btn-wa" href={waLink(ui.waPrefill)} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /><span>{ui.ctaWhats}</span></a>
+            <a class="lp-btn lp-btn-primary" href={waLink(ui.waPrefillMentoria)} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /><span>{mentorship.cta.label}</span></a>
             <a class="lp-btn lp-btn-ghost" href="#oque">{ui.mentWhatIs}</a>
           </div>
           <p class="lp-geo reveal">{mentorship.geoNote}</p>
@@ -76,6 +75,23 @@ const relLinks = [
     <div class="wrap lp-tese-in">
       <div class="lp-shead reveal"><span class="lp-shead-dot"></span>{ui.mentWhatIs}</div>
       {mentorship.whatIs.map((p, i) => <p class:list={["lp-tese-p reveal", { lead: i === 0 }]}>{p}</p>)}
+    </div>
+  </section>
+
+  <section class="mt-start" id="como-comeca">
+    <div class="wrap">
+      <div class="lp-shead reveal"><span class="lp-shead-dot"></span>{mentorship.howItStarts.label}</div>
+      <div class="mt-start-grid">
+        {
+          mentorship.howItStarts.steps.map((s, i) => (
+            <div class="mt-step reveal">
+              <span class="mt-step-n">{String(i + 1).padStart(2, "0")}</span>
+              <h3>{s.t}</h3>
+              <p>{s.d}</p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </section>
 
@@ -238,6 +254,16 @@ const relLinks = [
   .mt-lead-big { font-size: clamp(26px, 3.6vw, 44px) !important; line-height: 1.16 !important; font-weight: 800; letter-spacing: -0.03em; color: var(--heading) !important; margin-bottom: 18px !important; }
   .mt-section { padding-top: clamp(56px, 8vw, 96px); }
   .mt-who { padding: 0 0 clamp(56px, 8vw, 100px); }
+
+  /* Como começa: passos do diagnóstico */
+  .mt-start { padding: 0 0 clamp(56px, 8vw, 100px); }
+  .mt-start-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; counter-reset: s; }
+  .mt-step { position: relative; padding: 24px 22px 26px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); transition: transform 0.35s var(--e), border-color 0.3s, box-shadow 0.35s var(--e); }
+  .mt-step:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 24px 44px -28px rgba(90, 30, 200, 0.5); }
+  .mt-step-n { font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--accent); }
+  .mt-step h3 { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.24; color: var(--heading); margin: 12px 0 9px; }
+  .mt-step p { font-size: 14.5px; line-height: 1.62; color: var(--text); margin: 0; }
+  @media (max-width: 760px) { .mt-start-grid { grid-template-columns: 1fr; } }
 
   .mt-topics { padding: 0 0 clamp(70px, 10vw, 130px); }
   .mt-topics-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }

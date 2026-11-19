@@ -637,7 +637,15 @@ export const mentorship = {
     "Dirección de carrera",
     "Presencia y percepción de valor",
   ],
-  cta: { href: "#contato", label: "Hablar sobre mentoría" },
+  cta: { href: "#contato", label: "Empieza con un diagnóstico" },
+  howItStarts: {
+    label: "Cómo empieza",
+    steps: [
+      { t: "Conversación de diagnóstico", d: "Una conversación, sin compromiso, para entender tu momento, tus objetivos y lo que necesita cambiar." },
+      { t: "Alcance y propuesta", d: "Si tiene sentido, respondes un cuestionario rápido y recibes una propuesta clara, con formato, cadencia e inversión." },
+      { t: "Hoja de ruta práctica", d: "A partir de ahí, el camino: las prioridades y los próximos movimientos para transformar repertorio en dirección." },
+    ],
+  },
   note: "No existe un paquete genérico. El alcance nace del diagnóstico, del momento profesional y de la claridad de lo que necesita cambiar.",
   positioning: {
     title: "Mentoría ejecutiva individual para líderes y ejecutivos",
